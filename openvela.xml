@@ -186,6 +186,7 @@
   <project path="frameworks/system/vibrator" name="frameworks_system_vibrator"/>
   <project path="nuttx" name="nuttx" remote="my-vela-crypto">
     <linkfile src="tools/build.sh" dest="build.sh"/>
+    <linkfile src="tools/run-emulator.sh" dest="run-emulator.sh"/>
   </project>
   <project path="nuttx/drivers/mtd/dhara" name="nuttx_drivers_mtd_dhara"/>
   <project path="nuttx/drivers/segger/SystemView" name="nuttx_drivers_segger_SystemView"/>
