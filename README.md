@@ -14,7 +14,7 @@
 
 ```bash
 sudo apt update
-sudo apt install git curl cmake python3 libc++abi-dev build-essential
+sudo apt install git curl cmake python3 libc++abi-dev build-essential adb
 
 curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
 sudo apt-get install git-lfs
@@ -158,3 +158,28 @@ git remote set-url origin https://github.com/my-vela-crypto/manifests.git
 ### 模拟器报 `No initial vela_system image`
 
 说明 `cmake_out/` 产物未 staging 到 `nuttx/`，请使用 `./run-emulator.sh` 而非直接 `./emulator.sh`。
+
+### UI 启动时提示找不到 ADB
+
+用 GUI 启动模拟器时，若弹出：
+
+```text
+Could not automatically detect an ADB binary...
+```
+
+说明宿主机未安装 `adb`。openvela 预置包不含 ADB，需自行安装：
+
+```bash
+sudo apt install adb
+```
+
+安装后重启模拟器即可。若仍提示，在模拟器窗口 **Extended Controls (`...`) → Settings → General** 中，将 ADB 路径设为 `/usr/bin/adb`。
+
+验证：
+
+```bash
+adb devices
+# 模拟器运行时应显示 emulator-5554 等设备
+```
+
+此警告不影响 NSH 终端（`goldfish-armv8a-ap>`）的基本使用；仅在使用 `adb shell`、`adb push` 等调试功能时需要安装。
