@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <manifest>
-  <remote fetch="../open-vela/" name="openvela"/>
-  <remote fetch="../" name="git"/>
+  <remote fetch="https://gitee.com/open-vela/" name="openvela"/>
+  <remote fetch="https://github.com/" name="git"/>
   <remote fetch="https://github.com/my-vela-crypto/" name="my-vela-crypto"/>
   <default remote="openvela" revision="dev"/>
 
