@@ -8,9 +8,10 @@
 
 ## 环境要求
 
-- Ubuntu 22.04（x86_64 / arm64）
+- Ubuntu 22.04（**x86_64 / arm64 均可**）
 - 至少 40 GB 磁盘、16 GB 内存
-- 已安装：git、git-lfs、curl、cmake、python3、build-essential
+- 源码路径**仅使用英文字母**（不要用 `桌面` 等中文目录，否则编译/模拟器会异常）
+- 已安装：git、git-lfs、curl、python3、build-essential（cmake/ninja 由 prebuilts 提供，ARM 宿主会自动选用对应架构）
 
 ```bash
 sudo apt update
@@ -51,10 +52,17 @@ repo sync -c -j8
 
 ## 编译（goldfish arm64 模拟器）
 
-在 openvela 根目录：
+在 openvela 根目录（x86_64 与 arm64 宿主使用**相同命令**；`build.sh` 会在 ARM 上自动选用 `linux-aarch64` 的 cmake/ninja）：
 
 ```bash
 ./build.sh vendor/openvela/boards/vela/configs/goldfish-arm64-v8a-ap/ --cmake -j$(nproc)
+```
+
+ARM 宿主若报找不到 prebuilts，请先完整同步：
+
+```bash
+repo sync -c -j8
+ls prebuilts/cmake/linux-aarch64/bin/cmake
 ```
 
 编译产物位于：
@@ -153,6 +161,20 @@ git remote -v
 
 ```bash
 git remote set-url origin https://github.com/my-vela-crypto/manifests.git
+```
+
+### ARM 宿主编译报 `ld-linux-x86-64.so.2` / rosetta error
+
+说明在 ARM 机器上调用了 x86_64 的 cmake。请确保：
+
+1. 源码在**纯英文路径**（如 `~/openvela`）
+2. 已 `repo sync` 且存在 `prebuilts/cmake/linux-aarch64/`
+3. 使用本 manifest 提供的 **nuttx fork** 中的 `build.sh`（已含 ARM 自动处理；`repo sync` 后根目录 `./build.sh` 即为此版本）
+
+若仍失败，可手动验证：
+
+```bash
+file "$(which cmake)"   # ARM 上应含 ARM aarch64，而非 x86-64
 ```
 
 ### 模拟器报 `No initial vela_system image`
