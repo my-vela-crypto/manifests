@@ -1,0 +1,4 @@
+# SPDX-License-Identifier: Apache-2.0
+ifneq ($(CONFIG_EXAMPLES_ENCFS_TEST),)
+CONFIGURED_APPS += $(APPDIR)/examples/encfs_test
+endif

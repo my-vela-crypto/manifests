@@ -205,3 +205,102 @@ adb devices
 ```
 
 此警告不影响 NSH 终端（`goldfish-armv8a-ap>`）的基本使用；仅在使用 `adb shell`、`adb push` 等调试功能时需要安装。
+
+## EncFS 高级操作系统课程项目
+
+第二层 `encpathfs` 负责透明、可认证的文件名加密，第三层 `encfs` 负责密钥派生、建盘、挂载、状态和失败回滚。完整链路是 `/data → encpathfs → 隐藏的 FatFs/exFAT → /dev/encdata0 → blkcrypt → /dev/virtblk1`。
+
+当前交付包含三部分：`patches/nuttx/encfs.patch` 保存内核实现与构建入口变化，`patches/vendor_openvela/encfs.patch` 保存板级变化，`overlays/apps/` 保存新增应用。即使团队 nuttx 远端暂未包含本次修改，也可在记录的原始基线上从 manifest 补丁重现；apps/vendor 远程写权限不可用不妨碍复现。补丁基线和全部文件校验值由 `encfs-sources.json` 记录。
+
+首次同步后，根目录的快捷链接可能尚不存在，**先执行 Python 入口**：
+
+```bash
+repo sync -c -j8
+python3 .repo/manifests/tools/apply_encfs.py
+```
+
+脚本先完成两个仓库补丁及全部 apps 覆盖文件的校验和/冲突预检，再应用变化；只有成功后才创建根目录 `apply-encfs.sh`。以后可用该快捷入口重复应用，已安装的相同内容不会再次改写：
+
+```bash
+./apply-encfs.sh
+```
+
+脚本遇到基线或本地修改冲突时，先处理冲突，不要强行覆盖成员改动。升级同步后也应重新应用并检查结果。后续若改用已包含这些变化的团队仓库，应同时调整补丁与覆盖文件，避免重复维护。
+
+### 构建加密专用配置
+
+```bash
+./build.sh vendor/openvela/boards/vela/configs/goldfish-arm64-v8a-ap-encfs/ --cmake -j$(nproc)
+```
+
+输出目录是 `cmake_out/vela_goldfish-arm64-v8a-ap-encfs/`。该配置包含测试 API 和验收命令，使用 `encfs> ` 提示符。初始 `vela_data.bin` 是新的 256 MiB 空白盘，不含明文 FAT 或预置文件；第一次开机 `encfs start` 失败并进入 NSH 属于预期。启动失败不会回退到普通 FAT 或 tmpfs `/data`。
+
+### 首次建盘与日常使用
+
+首次选择一个新的专用实例名并记住它。以下变量在当前宿主终端中保留，重启时使用相同值：
+
+```bash
+ENCFS_AVD_DIR="$PWD/encfs-manual-avd"
+ENCFS_INSTANCE="encfs-demo-$(date +%Y%m%d-%H%M%S)"
+mkdir -p "$ENCFS_AVD_DIR"
+printf '%s\n' "$ENCFS_INSTANCE"
+ANDROID_AVD_HOME="$ENCFS_AVD_DIR" CUSTOM_AVD_SPACE="$ENCFS_AVD_DIR" \
+  ./run-emulator.sh goldfish-arm64-v8a-ap-encfs \
+  -keep "$ENCFS_INSTANCE" -no-window -no-audio -gpu off -accel off
+```
+
+在 Guest 的 `encfs> ` 提示符下，只有首次明确要清空这个专用数据盘时执行：
+
+```text
+encfs provision --erase
+encfs start
+encfs status
+mkdir /data/demo
+echo course-data > /data/demo/readme.txt
+cat /data/demo/readme.txt
+encfs stop
+```
+
+`provision --erase` 会通过加密设备重新格式化为 exFAT，破坏卷内旧数据；普通 `start` 不格式化、不补建卷头。所有需要保留的文件应通过 `/data` 写入。先 `encfs stop` 成功，再退出模拟器。
+
+日常重启复用相同 `-keep "$ENCFS_INSTANCE"` 和两个目录变量，**不要再次 provision**。启动脚本会尝试 `encfs start`；手动重复 start 也可：
+
+```text
+encfs start
+cat /data/demo/readme.txt
+encfs status
+encfs stop
+```
+
+打开文件或目录时 stop 返回忙，运行状态保留；释放句柄后重试。有清理错误时保留资源及错误阶段，先处理或重试 stop，不在线换钥。
+
+### 可复现验收
+
+宿主检查：
+
+```bash
+python3 nuttx/tools/tests/encfs_crypto/test_crypto.py
+python3 nuttx/tools/tests/encpathfs/test_encpathfs.py
+nuttx/tools/tests/encfs_manager/run_host_tests.sh
+```
+
+真实模拟器 runner 需要 Python `pexpect`（Ubuntu 可安装 `python3-pexpect`）：
+
+```bash
+python3 .repo/manifests/tools/test_encfs.py \
+  --source-root "$PWD" \
+  --build-dir "$PWD/cmake_out/vela_goldfish-arm64-v8a-ap-encfs" \
+  --results-dir "$PWD/encfs-results/acceptance-$(date +%Y%m%d-%H%M%S)"
+```
+
+Runner 新建专用实例，依次验证独立名称层、完整链路写入、同一加密实例重启读回。只有首次完整链路阶段执行显式 provision。每阶段干净卸载并结束模拟器后，它检查实际 `avd/<实例>.vvd/vela_data.bin`，保留串口日志、镜像路径/哈希与 `report.json`。独立普通 exFAT 解析应显示 `.p` 下为 `E1_` 名称；完整加密盘应检索不到指定完整内容及逻辑文件名。任一断言失败即非零退出。当前预编译模拟器会另外创建 `$HOME/.vela/<唯一实例>.ini` 注册文件，数据镜像仍保存在本次结果目录。
+
+本文不预填模拟器 PASS；请以实际运行报告为准。详细接口、卷格式和测试判据见 [接口说明](docs/encfs_interfaces.md) 与 [验收计划](docs/encfs_test_plan.md)。
+
+### 当前边界
+
+- QEMU 的 `board_uniquekey()` 返回固定伪密钥；本配置还开启 `CONFIG_ENCFS_TESTING`。它用于课程演示，不是生产密钥保护方案。
+- 主密钥固定 32 字节，经 HKDF-SHA256、分别以不含 NUL 的 `blkcrypt`/`encpathfs` 为 salt 派生两层 32 字节子密钥。
+- 逻辑名只支持 1–128 字节可打印 ASCII；128 字节编码后为 234 字节。中文 UTF-8、软/硬链接和 mmap 不在支持范围内。
+- 下层实际格式是 FatFs 管理的 **exFAT**，挂载类型仍为 `fatfs`。已有目标 rename 返回 `EEXIST`，不承诺替换语义或断电原子性。
+- XTS 不提供文件内容或任意扇区认证；SIV 认证文件名及卷元数据。未检出已知字符串不是完整安全证明，空白未写区域也不应声称已加密或已安全擦除。

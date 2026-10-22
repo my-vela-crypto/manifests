@@ -1,0 +1,28 @@
+{
+  "format": 1,
+  "patches": {
+    "nuttx": {
+      "file": "patches/nuttx/encfs.patch",
+      "sha256": "ff27041ccd490e9a3454e6a7c0978bc6601ef7a3f0e52311f79521e60fecc697",
+      "base": "52939a185be4c940c83c843ae1f0b076f3d1d861"
+    },
+    "vendor/openvela": {
+      "file": "patches/vendor_openvela/encfs.patch",
+      "sha256": "5e2469704ed83b112a75ea05f7a7318ab02185f102bceb2928918fb7bcc56fd8",
+      "base": "4351221032aa88cb9da86336c53afe0cb6159e3e"
+    }
+  },
+  "overlays": {
+    "system/encfs/CMakeLists.txt": "c955f3bc5dec502ecb045104e35cdbcb5e91650e237b7b5b0ec1195bdf917db5",
+    "system/encfs/Kconfig": "88280695957c1a15ecbb2ab2c1336d54cc22e4c47bbba02b73187a3856dfc138",
+    "system/encfs/Make.defs": "4510a4826de8cef9f6256d3b574ddfc6d2b59d2d168d5f84476eaba4db677e56",
+    "system/encfs/Makefile": "94d37d86a056281599094abccbb7d0470bd5665c9c5414daea412901092bf17e",
+    "system/encfs/encfs_main.c": "4d72c4aea6eb0703616d97f5a9b5ff99a7fc8ec7d978b48490832f6b8625834a",
+    "examples/encfs_test/CMakeLists.txt": "b34c7b8132c06b9403f4309c426429a81db8055ce4c14a14e77c9e98cfb82d30",
+    "examples/encfs_test/Kconfig": "b68cd31ad01bffe72c77141f2a6e6a8d174ca2471cde4b391e0eb5aaeb1b5248",
+    "examples/encfs_test/Make.defs": "b280451d46f95c3856ab392aa9e5154bac0d81d59e7e77501857c7897b5bc800",
+    "examples/encfs_test/Makefile": "8c2aad92aa10319c26405a55c74fbc387a9e349d517ff42eb19165670753916d",
+    "examples/encfs_test/encfs_test_main.c": "b67ac98d28ee4a7ff5475afee792ed28ce7e6832d0b6371aae2b3284aa589961"
+  },
+  "apps_base": "7b36f2344dbe9a5c9526462128545442267d2314"
+}

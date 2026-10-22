@@ -1,0 +1,188 @@
+diff --git a/boards/vela/CMakeLists.txt b/boards/vela/CMakeLists.txt
+index 8713990..cdec033 100644
+--- a/boards/vela/CMakeLists.txt
++++ b/boards/vela/CMakeLists.txt
+@@ -107,14 +107,24 @@ if(qemu_args_str)
+   file(WRITE ${CMAKE_BINARY_DIR}/qemu_args.txt "${qemu_args}")
+ endif()
+ 
+-add_custom_target(
+-  gen_images ALL
+-  DEPENDS nuttx
+-  WORKING_DIRECTORY .
+-  COMMAND genromfs -f ${CMAKE_BINARY_DIR}/vela_system.bin -d ${NUTTX_BOARD_ABS_DIR}/prebuilts/system
+-  COMMAND dd if=/dev/zero of=${CMAKE_BINARY_DIR}/vela_data.bin bs=1M count=256
+-  COMMAND mkfs.fat ${CMAKE_BINARY_DIR}/vela_data.bin
+-  COMMAND mcopy -i ${CMAKE_BINARY_DIR}/vela_data.bin -sv ${NUTTX_BOARD_ABS_DIR}/prebuilts/data/ ::)
++# Encrypted volumes are explicitly provisioned inside the guest.  Never put
++# plaintext assets or a plaintext FAT filesystem in their initial data image.
++if(CONFIG_ENCFSMGR)
++  add_custom_target(
++    gen_images ALL
++    DEPENDS nuttx
++    COMMAND genromfs -f ${CMAKE_BINARY_DIR}/vela_system.bin -d ${NUTTX_BOARD_ABS_DIR}/prebuilts/system
++    COMMAND ${CMAKE_COMMAND} -E rm -f ${CMAKE_BINARY_DIR}/vela_data.bin
++    COMMAND truncate -s 256M ${CMAKE_BINARY_DIR}/vela_data.bin)
++else()
++  add_custom_target(
++    gen_images ALL
++    DEPENDS nuttx
++    COMMAND genromfs -f ${CMAKE_BINARY_DIR}/vela_system.bin -d ${NUTTX_BOARD_ABS_DIR}/prebuilts/system
++    COMMAND dd if=/dev/zero of=${CMAKE_BINARY_DIR}/vela_data.bin bs=1M count=256
++    COMMAND mkfs.fat ${CMAKE_BINARY_DIR}/vela_data.bin
++    COMMAND mcopy -i ${CMAKE_BINARY_DIR}/vela_data.bin -sv ${NUTTX_BOARD_ABS_DIR}/prebuilts/data/ ::)
++endif()
+ 
+ if(CONFIG_VELA_AP)
+   add_custom_target(
+diff --git a/boards/vela/configs/goldfish-arm64-v8a-ap-encfs/defconfig b/boards/vela/configs/goldfish-arm64-v8a-ap-encfs/defconfig
+new file mode 100644
+index 0000000..b1cc833
+--- /dev/null
++++ b/boards/vela/configs/goldfish-arm64-v8a-ap-encfs/defconfig
+@@ -0,0 +1,75 @@
++# Dedicated flat-build storage integration target; no GUI/services use /data.
++CONFIG_ALLOW_BSD_COMPONENTS=y
++CONFIG_ALLOW_MIT_COMPONENTS=y
++CONFIG_ARCH="arm64"
++CONFIG_ARCH_ARM64=y
++CONFIG_ARCH_BOARD_CUSTOM=y
++CONFIG_ARCH_BOARD_CUSTOM_DIR="../vendor/openvela/boards/vela/"
++CONFIG_ARCH_BOARD_CUSTOM_DIR_RELPATH=y
++CONFIG_ARCH_BOARD_CUSTOM_NAME="ap"
++CONFIG_ARCH_CHIP="goldfish"
++CONFIG_ARCH_CHIP_GOLDFISH_ARM64=y
++CONFIG_ARCH_INTERRUPTSTACK=4096
++CONFIG_ARM64_GIC_VERSION=2
++CONFIG_ARM64_STRING_FUNCTION=y
++CONFIG_BOARD_EARLY_INITIALIZE=y
++CONFIG_BOARD_LATE_INITIALIZE=y
++CONFIG_BOARDCTL_POWEROFF=y
++CONFIG_BOARDCTL_RESET=y
++CONFIG_BOARDCTL_UNIQUEKEY=y
++CONFIG_BOARDCTL_UNIQUEKEY_SIZE=32
++CONFIG_BUILTIN=y
++CONFIG_CRYPTO=y
++CONFIG_CRYPTO_SW_AES=y
++CONFIG_CRYPTO_AES_SIV=y
++CONFIG_CRYPTO_HKDF_SHA256=y
++CONFIG_BLKCRYPT=y
++CONFIG_DEBUG_FEATURES=y
++CONFIG_DEBUG_ASSERTIONS=y
++CONFIG_DEBUG_SYMBOLS=y
++CONFIG_DEBUG_CUSTOMOPT=y
++CONFIG_DEBUG_OPTLEVEL="-O2"
++CONFIG_DEFAULT_TASK_STACKSIZE=16384
++CONFIG_IDLETHREAD_STACKSIZE=8192
++CONFIG_DEVICE_TREE=y
++CONFIG_DEV_SIMPLE_ADDRENV=y
++CONFIG_DRIVERS_VIRTIO_BLK=y
++CONFIG_DRIVERS_VIRTIO_MMIO=y
++CONFIG_ETC_ROMFS=y
++CONFIG_FS_BINFS=y
++CONFIG_FS_FATFS=y
++CONFIG_FS_PROCFS=y
++CONFIG_FS_ROMFS=y
++CONFIG_FS_TMPFS=y
++CONFIG_FS_ENCPATHFS=y
++CONFIG_ENCFSMGR=y
++CONFIG_ENCFS_TESTING=y
++CONFIG_SYSTEM_ENCFS=y
++CONFIG_EXAMPLES_ENCFS_TEST=y
++CONFIG_NAME_MAX=255
++CONFIG_PATH_MAX=1024
++CONFIG_INIT_ENTRYPOINT="nsh_main"
++CONFIG_NSH_ARCHINIT=y
++CONFIG_NSH_BUILTIN_APPS=y
++CONFIG_NSH_READLINE=y
++CONFIG_NSH_PROMPT_STRING="encfs> "
++CONFIG_NSH_MAXARGUMENTS=16
++CONFIG_RAM_SIZE=134217728
++CONFIG_RAM_START=0x40000000
++CONFIG_RAMLOG=y
++CONFIG_RAMLOG_SYSLOG=y
++CONFIG_SCHED_HAVE_PARENT=y
++CONFIG_SCHED_WAITPID=y
++CONFIG_SCHED_CHILD_STATUS=y
++CONFIG_SIG_DEFAULT=y
++CONFIG_RAW_BINARY=y
++CONFIG_STACK_COLORATION=y
++CONFIG_SYSTEM_NSH=y
++CONFIG_SYSTEM_POPEN=y
++CONFIG_SYSLOG_CHARDEV=y
++CONFIG_SYSLOG_DEVPATH="/dev/ttyS1"
++CONFIG_UART1_BASE=0x9000000
++CONFIG_UART1_IRQ=33
++CONFIG_UART1_PL011=y
++CONFIG_UART1_SERIAL_CONSOLE=y
++CONFIG_UART_PL011=y
+diff --git a/boards/vela/prebuilts/tools/run_emulator.sh b/boards/vela/prebuilts/tools/run_emulator.sh
+index 498c5f2..fa7562e 100755
+--- a/boards/vela/prebuilts/tools/run_emulator.sh
++++ b/boards/vela/prebuilts/tools/run_emulator.sh
+@@ -33,7 +33,7 @@ fi
+ 
+ # default variables
+ 
+-AVD_HOME="${HOME}/.vela/vvd"
++AVD_HOME="${ANDROID_AVD_HOME:-${HOME}/.vela/vvd}"
+ AVD_NAME="Vela_Generic_Device"
+ AVD_DISPLAY_NAME=$(echo ${AVD_NAME} | tr '_' ' ')
+ 
+@@ -89,13 +89,20 @@ HOST_9PFS_DIR=${HOST_9PFS_DIR:-"${AVD_PATH}/share"}
+ AVD_INI="${AVD_HOME}/${AVD_NAME}.ini"
+ AVD_CONFIG_INI="${AVD_PATH}/config.ini"
+ 
+-mkdir -p ${AVD_PATH}
++mkdir -p "${AVD_HOME}" "${AVD_PATH}"
+ 
+ cat << EOF > ${AVD_INI}
+ path=${AVD_PATH}
+-path.rel=avd/${AVD_PATH_REL}
+ EOF
+ 
++# The bundled Vela emulator resolves VVD registrations directly in ~/.vela,
++# even when ANDROID_AVD_HOME or CUSTOM_AVD_SPACE selects an external data disk.
++# Publish only the selected instance's registration; its images stay in AVD_PATH.
++mkdir -p "${HOME}/.vela"
++if [[ "${AVD_INI}" != "${HOME}/.vela/${AVD_NAME}.ini" ]]; then
++  cp "${AVD_INI}" "${HOME}/.vela/${AVD_NAME}.ini"
++fi
++
+ if [ -n "$(file -bL ${NUTTX_BIN} | grep 'ELF 64-bit LSB executable, ARM aarch64')" ]; then
+   AVD_ABI="arm64-v8a"
+   AVD_ARCH="arm64"
+diff --git a/boards/vela/src/etc/init.d/rc.sysinit b/boards/vela/src/etc/init.d/rc.sysinit
+index 9224c8f..a38e7ac 100644
+--- a/boards/vela/src/etc/init.d/rc.sysinit
++++ b/boards/vela/src/etc/init.d/rc.sysinit
+@@ -50,6 +50,9 @@ mount -t hostfs -o fs=vendor/qemu/boards/vela/resource /host
+ mount -t romfs /dev/virtblk0 /system
+ #endif
+ 
++#ifdef CONFIG_ENCFSMGR
++encfs start
++#else
+ #ifdef CONFIG_FS_FATFS
+ mount -t fatfs /dev/virtblk1 /data
+ if [ ! -e /data ]
+@@ -57,16 +60,17 @@ then
+     mount -t fatfs  /dev/virtblk0 /data
+ fi
+ #endif
++#endif /* CONFIG_ENCFSMGR */
+ 
+ #ifdef CONFIG_FS_V9FS
+ mount -t v9fs -o trans=virtio,tag=host /share
+ #endif
+ 
+-#if defined(CONFIG_FS_RPMSGFS) && defined(CONFIG_VELA_TEE)
++#if defined(CONFIG_FS_RPMSGFS) && defined(CONFIG_VELA_TEE) && !defined(CONFIG_ENCFSMGR)
+ mount -t rpmsgfs -o cpu=ap,fs=/data /data
+ #endif
+ 
+-#if defined(CONFIG_FS_TMPFS) && !defined(CONFIG_VELA_TEE)
++#if defined(CONFIG_FS_TMPFS) && !defined(CONFIG_VELA_TEE) && !defined(CONFIG_ENCFSMGR)
+ if [ ! -e /data ]
+ then
+     echo "not found /data, create tmpfs instead"

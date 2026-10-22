@@ -1,0 +1,8 @@
+# SPDX-License-Identifier: Apache-2.0
+config SYSTEM_ENCFS
+	bool "encfs: encrypted data volume control"
+	default n
+	depends on ENCFSMGR
+	depends on BUILD_FLAT
+	help
+	  Control the encrypted data volume. Provision requires --erase.
