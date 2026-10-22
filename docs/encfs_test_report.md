@@ -1,6 +1,6 @@
 # 第二、三层实现与测试报告
 
-日期：2026 年 10 月 22 日，Asia/Shanghai。状态：源码实现、ARM64 编译和真实模拟器验收均完成；团队远端发布因权限不足未完成。
+日期：2026 年 10 月 22 日，Asia/Shanghai。状态：源码实现、ARM64 编译和真实模拟器验收均完成；团队远端发布因本执行环境尚未对齐有效认证而未完成。
 
 ## 实现范围
 
@@ -82,7 +82,7 @@ python3 .repo/manifests/tools/test_encfs.py --source-root "$PWD"
 | apps | `791f4edb8b53b7389a379f4551562bbd8aa08387` |
 | vendor/openvela | `a5ebb9c9c0dcb53fb8f23acd007c02abb1b0fa22` |
 
-HTTPS 缺少凭据，SSH 身份是 `AC1Liu`，实际推送 `my-vela-crypto/nuttx` 被拒绝。连接的 GitHub 同样确认团队 nuttx 与 manifests 的权限均为 `pull=true, push=false`。本次没有创建组织 fork，也没有向官方上游推送；保留原 manifest 的有效引用，通过可校验补丁/覆盖文件复现，避免指向未创建仓库。取得团队写权限后可发布这些本地提交与 manifest 交付文件。
+用户已确认 GitHub Desktop 可以推送。本执行环境的 HTTPS 尚无凭据助手；分别使用本机 `AC1Liu`、`Brilliance-Zjh` 两套 SSH 身份实际推送时均被拒绝。GitHub 连接器实际写入返回 `403 Resource not accessible by integration`，其返回的 `push=false` 不能据此推断用户账号没有写权限。当前待解决的是让本执行环境使用 GitHub Desktop 已授权的同一认证。源码和测试成果已保存在本地提交及交付包，本次未向官方上游推送或写入不存在的 fork 引用。
 
 ## 已知边界
 
