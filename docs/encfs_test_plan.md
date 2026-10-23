@@ -26,6 +26,9 @@ Runner 要求 Python 3.9+ 和 `pexpect`；全部宿主脚本建议统一使用 U
 python3 nuttx/tools/tests/encfs_crypto/test_crypto.py
 python3 nuttx/tools/tests/encpathfs/test_encpathfs.py
 nuttx/tools/tests/encfs_manager/run_host_tests.sh
+python3 nuttx/tools/tests/encfs_crypto/test_blkcrypt.py
+python3 nuttx/tools/tests/encfs_crypto/test_vfs_lifecycle.py
+python3 nuttx/tools/tests/encfs_crypto/test_directory_rewind.py
 ```
 
 | 检查 | 使用的真实源码 | 检查范围与限制 |
@@ -56,13 +59,14 @@ python3 .repo/manifests/tools/test_encfs.py \
 
 每次验收新建一个普通名称层实例和一个完整加密实例。`ANDROID_AVD_HOME`、`CUSTOM_AVD_SPACE` 都指向本次结果目录的 `avd/`。当前预编译模拟器还需要 `$HOME/.vela/<实例>.ini` 注册信息，板级启动脚本仅为本次唯一名称写入注册文件；数据盘本身仍位于结果目录。运行环境必须允许模拟器访问正常用户配置和 IPC。不会删除其他实例，也不会拿日常使用的数据盘做破坏性测试。
 
-三阶段流程：
+扩展验收默认包含六次实际开机。`--reboot-count` 设置同一加密盘的冷启动次数，默认 3，范围 1–20；这些阶段均禁止重新 provision。流程如下：
 
 | 阶段 | Guest 操作 | Host 预期 |
 | --- | --- | --- |
 | `standalone` | 新实例运行 `encfs_test standalone`；直接在专用 `/dev/virtblk1` 格式化普通 exFAT，再挂名称层；包括错误 path_key 的元数据认证拒绝和正常文件操作 | 完整测试内容在普通下层镜像中可找到；`secret.txt` 的 ASCII/UTF-16LE 不出现；解析 exFAT 根的 `.p`，其可见目录和文件名全部以 `E1_` 开头 |
+| `corruption` | 独立新实例运行 `encfs_test corruption`；分别注入 10 类卷头/物理根错误及 6 类真实下层目录项损坏，检查拒绝、恢复、重挂和资源释放 | 此模式只反复格式化自己的新盘；保存日志和盘哈希，不把损坏夹具作为正常加密镜像验收 |
 | `encrypted-write` | 另一个新实例执行 `encfs provision --erase`，再运行 `encfs_test write`；覆盖真实三层、生命周期和异常测试，最后 stop | 实际加密盘找不到完整测试内容及指定逻辑名称的 ASCII/UTF-16LE；首扇区不暴露普通 exFAT 头 |
-| `encrypted-reboot` | 保留并重启上一步同一实例、同一路径数据盘，运行 `encfs_test verify`；此阶段不 provision | 读回内容及逻辑目录一致；重启前镜像哈希与上一步停机后相同；再次检查加密镜像 |
+| `encrypted-reboot` 及后续编号阶段 | 逐次保留并重启上一步同一实例、同一路径数据盘，运行 `encfs_test verify`；此阶段不 provision | 读回内容及逻辑目录一致；重启前镜像哈希与上一步停机后相同；再次检查加密镜像 |
 
 每次 Guest 命令完成必须回到 `encfs> `。测试程序必须输出对应模式的一条 `ENCFS_TEST_RESULT mode=<模式> pass=<数量> fail=0`，且通过数大于 0。缺少总结行、超时、Guest 退出、任一失败断言或镜像检查失败都会令 runner 非零退出，不会据部分日志宣告通过。
 
@@ -70,7 +74,7 @@ python3 .repo/manifests/tools/test_encfs.py \
 
 ## Guest 用例覆盖
 
-`encfs_test crypto` 只运行密码与组件名检查。`standalone` 包含算法检查及独立名称层文件测试，会格式化它所在实例的原始数据盘，不能在持久化样本上执行。`write`/`all` 需要已 provision 的完整卷；`verify` 只读取已有样本。
+`encfs_test crypto` 只运行密码与组件名检查。`standalone` 包含算法检查及独立名称层文件测试，会格式化它所在实例的原始数据盘，不能在持久化样本上执行。`corruption` 会在专用新盘反复建盘，禁止在持久化样本或日常数据盘执行。`write`/`all` 需要已 provision 的完整卷；`verify` 只读取已有样本。
 
 | 组别 | 通过条件 |
 | --- | --- |
@@ -78,10 +82,14 @@ python3 .repo/manifests/tools/test_encfs.py \
 | 基本文件操作 | mkdir、open、write、fsync、fstat、随机定位、dup、读回、stat/statfs、truncate 正确 |
 | 目录/变更 | readdir 恢复逻辑名，rewind 正确；目录整体 rename 后子项可访问；跨目录移动、unlink/rmdir 正确；已有目标 rename 返回 `EEXIST` |
 | 回归 | 最长逻辑名可创建/删除；缺失父目录失败；多轮创建、写入、校验和删除无异常 |
+| 扩展文件回归 | 区分大小写名称、规范路径与编码膨胀边界正确；普通名称层及完整加密层各完成 1000 轮变长、多扇区、偏移覆盖、fsync、完整读回、重开、rename 和删除；JSON 记录实际次数、字节数、耗时 |
+| 属性与 ioctl | chmod/fchmod、chown/fchown、utimensat/futimens 符合当前 FatFs 能力；FIOC_FILEPATH 只返回逻辑路径，其他 ioctl 拒绝；不把接受权限位等同权限控制 |
+| 损坏卷与目录项 | 10 类卷头/根目录损坏均拒挂，6 类坏物理名称经真实 readdir 拒绝；rewind 后再次检测同一损坏，修复后可重新挂载 |
+| 外部操作恢复 | 外部卸载 upper 后不虚报 READY，stop 可清理并允许重新 start；同路径替代挂载中的样本不被管理器卸载 |
 | 卷头认证 | 重复 initialize 不覆盖已有卷；普通 FatFs 上错误 path_key 挂名称层失败，下层仍可用；正确 key 可继续挂载 |
 | 忙时卸载 | 打开文件或目录时 stop 返回 `-EBUSY`，仍为 READY；关闭后可停止；运行时换测试主钥返回 `-EBUSY` |
 | 异常启动 | 缺失或错误 master 不留下可用加密挂载/块节点；register/key/lower/upper 故障逐一回滚为无残留资源，再 start 可成功 |
-| 重启 | 同次运行多轮 stop/start 内容一致；两次真实开机之间不重新 provision，逻辑路径和内容仍可恢复 |
+| 重启 | 同次运行 100 次 stop/start 内容一致；默认三次独立冷启动之间不重新 provision，逻辑路径和内容仍可恢复 |
 
 更多低层 I/O 清理失败由宿主生命周期测试验证。当前四个 Guest failpoint 都在对应操作前触发，不能据此声称已测试任意物理设备错误或掉电场景。
 
@@ -94,10 +102,13 @@ report.json
 standalone.serial.log
 encrypted-write.serial.log
 encrypted-reboot.serial.log
+encrypted-reboot-02.serial.log
+encrypted-reboot-03.serial.log
+corruption.serial.log
 avd/<独立实例>.vvd/vela_data.bin
 ```
 
-失败发生得早时，后续阶段日志可能尚未创建。`report.json` 记录固件与配置哈希、各模块 Git revision 和未提交修改、实际启动参数、Guest 命令及总结、每个阶段状态、镜像绝对路径、大小及 SHA-256、目录解析结果、原始失败及异常追踪。整体 `status` 必须为 `passed`，并有三个通过阶段，才可填写本轮完整验收通过。需要强制结束进程等异常时，报告会标记；失败后取得的哈希只作为保留样本记录，不能替代成功断言。
+失败发生得早时，后续阶段日志可能尚未创建。`report.json` 记录固件与配置哈希、各模块 Git revision 和未提交修改、实际启动参数、Guest 命令及总结、每个阶段状态、镜像绝对路径、大小及 SHA-256、目录解析结果、原始失败及异常追踪。整体 `status` 必须为 `passed`，并全部要求的阶段通过，才可填写本轮完整验收通过。需要强制结束进程等异常时，报告会标记；失败后取得的哈希只作为保留样本记录，不能替代成功断言。
 
 若 start 失败，先运行 `encfs status` 查看原始阶段、错误与回滚错误。第一次空白盘应显式 provision；错误密钥、损坏元数据或已有卷不能通过自动格式化“修复”。若 stop 忙，关闭文件/目录后重试；有残留资源时保留日志并重试 stop，不直接换钥或注销下层设备。
 

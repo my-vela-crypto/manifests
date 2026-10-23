@@ -155,6 +155,10 @@ NSH 的破坏性入口必须写出 `encfs provision --erase`；仅 `encfs provis
 
 `stage/error` 保存原始失败，`cleanup_stage/cleanup_error` 保存随后回滚失败。逆序清理在失败处停止，保留其依赖；例如下层卸载失败时不得先注销块设备。元数据异常关闭先调用 `encpathfs_recover()`。忙时 stop 保持 READY，释放句柄后可重试；有残留资源时 start/provision/换钥返回 `-EBUSY`，先重试 stop。重复 READY start 不重跑挂载，也可能保留上一次忙时 stop 的诊断，应同时查看本次命令的 `result`。
 
+管理器以 inode 序号、操作表和私有上下文记录挂载身份。`start`、`stop` 和状态查询核对实际挂载；外部直接卸载 `/data` 后，状态降为 `BLOCK_KEYED`，`start` 返回 `-EBUSY`，先 `encfs stop` 清理后再启动。核对及卸载受同一 inode 树锁保护；管理器不卸载同路径的替代挂载，也不长期保留会阻止普通卸载的 inode 引用。
+
+属性操作沿用当前 FatFs 的能力：普通权限位经 `chmod/fchmod` 接受，但不持久化，`stat` 报告 `0777`；属主修改返回 `EPERM`。mtime 经路径或打开句柄修改，以 FAT 的两秒精度保存。这不等于完整 POSIX 权限控制。
+
 错误阶段枚举依次为 `NONE(0)`、`REGISTER(1)`、`MASTER(2)`、`DERIVE(3)`、`BLOCK_KEY(4)`、`LOWER_MOUNT(5)`、`FORMAT(6)`、`PATH_KEY(7)`、`UPPER_MOUNT(8)`、`INITIALIZE(9)`、`UPPER_UMOUNT(10)`、`LOWER_UMOUNT(11)`、`UNREGISTER(12)`、`PREPARE_UPPER(13)`。`PREPARE_UPPER` 实际先执行，追加枚举值是为了保持既有值不变。
 
 ## 测试专用接口

@@ -3,7 +3,7 @@
   "patches": {
     "nuttx": {
       "file": "patches/nuttx/encfs.patch",
-      "sha256": "ff27041ccd490e9a3454e6a7c0978bc6601ef7a3f0e52311f79521e60fecc697",
+      "sha256": "a809b3010a500ae26fcb378282e62efc9ed3120edc83ea3c757056c299b66a23",
       "base": "52939a185be4c940c83c843ae1f0b076f3d1d861"
     },
     "vendor/openvela": {
@@ -18,11 +18,14 @@
     "system/encfs/Make.defs": "4510a4826de8cef9f6256d3b574ddfc6d2b59d2d168d5f84476eaba4db677e56",
     "system/encfs/Makefile": "94d37d86a056281599094abccbb7d0470bd5665c9c5414daea412901092bf17e",
     "system/encfs/encfs_main.c": "4d72c4aea6eb0703616d97f5a9b5ff99a7fc8ec7d978b48490832f6b8625834a",
-    "examples/encfs_test/CMakeLists.txt": "b34c7b8132c06b9403f4309c426429a81db8055ce4c14a14e77c9e98cfb82d30",
+    "examples/encfs_test/CMakeLists.txt": "b7a451474f1145561ed3f4bf6f62d31a86b0824a124543fa0bb72635cc61a7ef",
     "examples/encfs_test/Kconfig": "b68cd31ad01bffe72c77141f2a6e6a8d174ca2471cde4b391e0eb5aaeb1b5248",
     "examples/encfs_test/Make.defs": "b280451d46f95c3856ab392aa9e5154bac0d81d59e7e77501857c7897b5bc800",
-    "examples/encfs_test/Makefile": "8c2aad92aa10319c26405a55c74fbc387a9e349d517ff42eb19165670753916d",
-    "examples/encfs_test/encfs_test_main.c": "b67ac98d28ee4a7ff5475afee792ed28ce7e6832d0b6371aae2b3284aa589961"
+    "examples/encfs_test/Makefile": "56b3e7d9664f70f354fefcec21fa43850703555bcece81af5ad5e7f2f37321a1",
+    "examples/encfs_test/encfs_test_corruption.c": "46b394c0e475fd8aec42c2669886cdcde074feb870f54421b315dd536fca2593",
+    "examples/encfs_test/encfs_test_extended.c": "5ff5664d07f082deeba2767e50386db7719d480f6319d8ab4e42bf315c294bbe",
+    "examples/encfs_test/encfs_test_main.c": "39b6cbf78bcbac1c2b3fc43538cc07e1dae2210926a5587bfc9e32ac30493d08",
+    "examples/encfs_test/encfs_test_shared.h": "27cf1684f7d6236d18b8dd61178d8f3176b1ca65c4f8d7b8295ba4dafa0339a8"
   },
   "apps_base": "7b36f2344dbe9a5c9526462128545442267d2314"
 }

@@ -21,6 +21,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
+#include "encfs_test_shared.h"
 
 /* This long marker is searched in the actual host image after clean shutdown. */
 
@@ -44,6 +45,11 @@ static unsigned int g_fail;
         printf("[FAIL] %s errno=%d\n", label, errno); \
       } \
   } while (0)
+
+void encfs_test_check(const char *label, bool condition)
+{
+  CHECK(label, condition);
+}
 
 static size_t unhex(const char *hex, uint8_t *out)
 {
@@ -276,6 +282,7 @@ static void filesystem_tests(void)
     }
 
   CHECK("24-cycle file regression", i == 24);
+  encfs_test_extended();
 }
 
 static void lifecycle_tests(void)
@@ -330,13 +337,14 @@ static void lifecycle_tests(void)
       closedir(dir);
     }
 
-  for (i = 0; i < 3; i++)
+  for (i = 0; i < 100; i++)
     {
       if (encfs_stop() < 0 || encfs_start() < 0 ||
           !read_matches(TEST_FILE, TEST_CONTENT)) break;
     }
 
-  CHECK("three restart cycles", i == 3);
+  printf("ENCFS_RESTART_RESULT requested=100 completed=%d\n", i);
+  CHECK("100 restart cycles", i == 100);
   CHECK("stop before negative tests", encfs_stop() == 0);
   CHECK("stopped is idempotent", encfs_stop() == 0);
   ret = blkcrypt_register(ENCFS_BLOCK_DEVICE, ENCFS_PARENT_DEVICE);
@@ -389,6 +397,64 @@ static void lifecycle_tests(void)
 
   CHECK("restart after negative tests", encfs_start() == 0);
   CHECK("negative tests preserve content", read_matches(TEST_FILE, TEST_CONTENT));
+}
+
+static void external_unmount_tests(void)
+{
+  struct encfs_status_s status;
+  int ret;
+  int fd;
+
+  ret = umount(ENCFS_UPPER_PATH);
+  CHECK("external upper unmount", ret == 0);
+  if (ret < 0)
+    {
+      return;
+    }
+
+  CHECK("status reconciles externally removed upper",
+        encfs_get_status(&status) == 0 && !status.upper_mounted &&
+        !status.lower_visible && status.state != ENCFS_READY);
+  ret = encfs_start();
+  CHECK("start never falsely reports externally removed upper ready",
+        (ret == 0 && read_matches(TEST_FILE, TEST_CONTENT)) || ret == -EBUSY);
+  CHECK("stop recovers after external upper unmount", encfs_stop() == 0);
+  CHECK("external unmount recovery releases block node",
+        access(ENCFS_BLOCK_DEVICE, F_OK) < 0);
+  CHECK("restart after external upper unmount", encfs_start() == 0 &&
+        read_matches(TEST_FILE, TEST_CONTENT));
+
+  ret = umount(ENCFS_UPPER_PATH);
+  CHECK("external unmount before unrelated target", ret == 0);
+  if (ret < 0)
+    {
+      return;
+    }
+
+  ret = mount(NULL, ENCFS_UPPER_PATH, "tmpfs", 0, NULL);
+  CHECK("mount unrelated filesystem at former upper", ret == 0);
+  if (ret == 0)
+    {
+      fd = open("/data/unrelated-marker", O_CREAT | O_TRUNC | O_WRONLY, 0666);
+      CHECK("create unrelated mount marker", fd >= 0);
+      if (fd >= 0)
+        {
+          CHECK("write unrelated mount marker", write(fd, "foreign", 7) == 7);
+          close(fd);
+        }
+
+      ret = encfs_stop();
+      CHECK("stop handles replaced target without unrelated unmount",
+            (ret == 0 || ret == -EBUSY) &&
+            read_matches("/data/unrelated-marker", "foreign"));
+      CHECK("start refuses unrelated upper mount", encfs_start() < 0 &&
+            read_matches("/data/unrelated-marker", "foreign"));
+      CHECK("remove unrelated filesystem", umount(ENCFS_UPPER_PATH) == 0);
+    }
+
+  CHECK("cleanup after unrelated upper mount", encfs_stop() == 0);
+  CHECK("restart after unrelated upper mount", encfs_start() == 0 &&
+        read_matches(TEST_FILE, TEST_CONTENT));
 }
 
 static void standalone_tests(void)
@@ -444,12 +510,17 @@ int main(int argc, FAR char *argv[])
       crypto_tests();
       standalone_tests();
     }
+  else if (strcmp(mode, "corruption") == 0)
+    {
+      encfs_test_corruption();
+    }
   else if (strcmp(mode, "write") == 0 || strcmp(mode, "all") == 0)
     {
       crypto_tests();
       CHECK("start encrypted chain", encfs_start() == 0);
       filesystem_tests();
       lifecycle_tests();
+      external_unmount_tests();
       CHECK("clean stop", encfs_stop() == 0);
     }
   else if (strcmp(mode, "verify") == 0)
@@ -461,7 +532,8 @@ int main(int argc, FAR char *argv[])
     }
   else
     {
-      fprintf(stderr, "Usage: encfs_test crypto|standalone|write|verify|all\n");
+      fprintf(stderr, "Usage: encfs_test "
+                      "crypto|standalone|corruption|write|verify|all\n");
       return EXIT_FAILURE;
     }
 

@@ -2,8 +2,9 @@
 """Run real Vela EncFS acceptance tests in newly created emulator data disks.
 
 Requires Python 3.9+ and pexpect. No test instance or image is reused from a
-previous invocation. The encrypted instance is reused only for phase 3, which
-never provisions. Serial logs, actual image paths, hashes, and assertions are
+previous invocation. Plaintext corruption fixtures have their own disk. The
+encrypted instance is reused for cold-boot verification, which never
+provisions. Serial logs, actual image paths, hashes, and assertions are
 retained on both success and failure.
 """
 
@@ -304,6 +305,24 @@ class Emulator:
                 f"Guest did not emit the expected result for {mode}")
         passed, failed = map(int, matches[0][1:])
         self.phase["guest_result"] = {"mode": mode, "pass": passed, "fail": failed}
+        stress = re.findall(r"ENCFS_STRESS_RESULT requested=(\d+) completed=(\d+) "
+                            r"bytes=(\d+) elapsed_ns=(\d+)", output)
+        if mode in ("standalone", "write"):
+            require(len(stress) == 1, "Guest did not emit one stress result")
+            requested, completed, count, elapsed = map(int, stress[0])
+            self.phase["stress_result"] = {
+                "requested": requested, "completed": completed,
+                "bytes": count, "elapsed_ns": elapsed,
+            }
+            require(requested == 1000 and completed == requested and count > 0,
+                    "Guest did not complete the required file regression")
+        if mode == "write":
+            restarts = re.findall(r"ENCFS_RESTART_RESULT requested=(\d+) completed=(\d+)", output)
+            require(len(restarts) == 1, "Guest did not emit one lifecycle result")
+            requested, completed = map(int, restarts[0])
+            self.phase["restart_result"] = {"requested": requested, "completed": completed}
+            require(requested == 100 and completed == requested,
+                    "Guest did not complete the required lifecycle regression")
         require(passed > 0 and failed == 0, f"Guest {mode} failed: pass={passed}, fail={failed}")
 
     def encfs(self, action):
@@ -394,17 +413,23 @@ class Emulator:
 def run_suite(args, report):
     suffix = datetime.now(SHANGHAI).strftime("%Y%m%d-%H%M%S") + "-" + uuid.uuid4().hex[:8]
     plain_instance = "encfs-plain-" + suffix
+    corruption_instance = "encfs-corrupt-" + suffix
     encrypted_instance = "encfs-crypt-" + suffix
     avd = args.results_dir / "avd"
     avd.mkdir()
     plain_image = avd / (plain_instance + ".vvd") / "vela_data.bin"
+    corruption_image = avd / (corruption_instance + ".vvd") / "vela_data.bin"
     encrypted_image = avd / (encrypted_instance + ".vvd") / "vela_data.bin"
-    require(not plain_image.parent.exists() and not encrypted_image.parent.exists(),
+    require(not any(image.parent.exists() for image in
+                    (plain_image, corruption_image, encrypted_image)),
             "Dedicated test instances must be new")
-    for name, instance, mode in (("standalone", plain_instance, "standalone"),
-                                 ("encrypted-write", encrypted_instance, "write"),
-                                 ("encrypted-reboot", encrypted_instance, "verify")):
-        image = plain_image if mode == "standalone" else encrypted_image
+    phases = [("standalone", plain_instance, "standalone", plain_image),
+              ("corruption", corruption_instance, "corruption", corruption_image),
+              ("encrypted-write", encrypted_instance, "write", encrypted_image)]
+    for index in range(args.reboot_count):
+        name = "encrypted-reboot" if index == 0 else f"encrypted-reboot-{index + 1:02d}"
+        phases.append((name, encrypted_instance, "verify", encrypted_image))
+    for name, instance, mode, image in phases:
         phase = {"name": name, "status": "running", "image": {"path": str(image)},
                  "registry_path": str(Path.home() / ".vela" / (instance + ".ini"))}
         report["phases"].append(phase)
@@ -419,7 +444,13 @@ def run_suite(args, report):
                 emulator.encfs("provision --erase")
             emulator.test(mode)
             emulator.encfs("stop")
-        inspect_image(image, encrypted=mode != "standalone", result=phase["image"])
+        if mode == "corruption":
+            phase["image"].update({"path": str(image.resolve()),
+                                   "encrypted": False, "size": image.stat().st_size,
+                                   "sha256": sha256(image),
+                                   "purpose": "isolated malformed-metadata fixtures"})
+        else:
+            inspect_image(image, encrypted=mode != "standalone", result=phase["image"])
         phase["status"] = "passed"
         print(f"[{now()}] {name}: passed; image {phase['image']['sha256']}", flush=True)
 
@@ -432,7 +463,11 @@ def parse_args(argv=None):
     parser.add_argument("--boot-timeout", type=float, default=240)
     parser.add_argument("--command-timeout", type=float, default=240)
     parser.add_argument("--shutdown-timeout", type=float, default=30)
+    parser.add_argument("--reboot-count", type=int, default=3,
+                        help="independent cold boots of the same encrypted image (1..20)")
     args = parser.parse_args(argv)
+    if not 1 <= args.reboot_count <= 20:
+        parser.error("--reboot-count must be between 1 and 20")
     args.source_root = args.source_root.resolve()
     args.build_dir = (args.build_dir or args.source_root / "cmake_out" / ("vela_" + CONFIG)).resolve()
     stamp = datetime.now(SHANGHAI).strftime("%Y%m%d-%H%M%S") + "-" + uuid.uuid4().hex[:6]
