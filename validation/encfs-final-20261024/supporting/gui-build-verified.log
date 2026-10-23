@@ -1,0 +1,33 @@
+LIBCLANG_PATH set to: /home/tourist/Desktop/openvela/prebuilts/rust/linux/extra_libs
+including vendor/infineon/boards/aurix/build/vendorsetup.sh
+including vendor/infineon/boards/aurix_tc3/build/vendorsetup.sh
+including vendor/openvela/boards/build/vendorsetup.sh
+grep: dor/openvela/boards/vela/configs/goldfish-arm64-v8a-ap-encfs-gui//defconfig: 没有那个文件或目录
+ lunch vendor/openvela/boards/vela/configs/goldfish-arm64-v8a-ap-encfs-gui/ cmake_out/vela_goldfish-arm64-v8a-ap-encfs-gui 
+The current build configuration lunched with: [32m[openvela]-[vela]-[goldfish-arm64-v8a-ap-encfs-gui]![0m
+
+[32m#### BINARY directory is set: /home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-gui[0m
+
+  cmake --build /home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-gui -j4  --
+[1/17] cd /home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-gui/libs/libc/misc && /home/tourist/Desktop/openvela/prebuilts/tools/cmake/bin/cmake -E touch /home/tourist/Desktop/openvela/nuttx/libs/libc/misc/lib_utsname.c
+[2/17] Generating bin output directories
+[3/17] cd /home/tourist/Desktop/openvela/nuttx && /home/tourist/Desktop/openvela/prebuilts/tools/cmake/bin/cmake -DKCONFIG_CONFIG=/home/tourist/Desktop/openvela/vendor/openvela/boards/vela/configs/goldfish-arm64-v8a-ap-encfs-gui/defconfig -DNUTTX_DIR=/home/tourist/Desktop/openvela/nuttx -DCMAKE_BINARY_DIR=/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-gui -P /home/tourist/Desktop/openvela/nuttx/cmake/nuttx_generate_dts.cmake
+[4/17] cd /home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-gui/boards/exclude_board && genromfs -f /home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-gui/vela_system.bin -d /home/tourist/Desktop/openvela/vendor/openvela/boards/vela/prebuilts/system && /home/tourist/Desktop/openvela/prebuilts/tools/cmake/bin/cmake -E rm -f /home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-gui/vela_data.bin && truncate -s 256M /home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-gui/vela_data.bin
+[5/17] Generating nuttx.bin
+[6/17] Generating nuttx.hex
+[7/17] Generating allsyms_first.c
+[8/17] Building C object CMakeFiles/first_link.dir/allsyms_first.c.o
+[9/17] Linking CXX executable first_link
+Memory region         Used Size  Region Size  %age Used
+[10/17] Generating allsyms_second.c
+[11/17] Building C object CMakeFiles/second_link.dir/allsyms_second.c.o
+[12/17] Linking CXX executable second_link
+Memory region         Used Size  Region Size  %age Used
+[13/17] Generating allsyms_final.c
+[14/17] Building C object CMakeFiles/final_nuttx.dir/allsyms_final.c.o
+[15/17] Linking CXX executable final_nuttx
+Memory region         Used Size  Region Size  %age Used
+[16/17] Generating System.map
+[17/17] cd /home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-gui && cp nuttx vela_ap.elf && cp nuttx vela_ap.bin
+
+#### build completed successfully (7 seconds) ####

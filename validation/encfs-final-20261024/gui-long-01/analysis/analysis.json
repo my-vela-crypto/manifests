@@ -1,0 +1,2209 @@
+{
+  "status": "passed",
+  "analyzed_at": "2026-10-23T16:32:03+00:00",
+  "results_directory": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01",
+  "input_report": {
+    "path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/report.json",
+    "sha256": "ae50082ae0bd717f16761a7319ad7188ee22e9d519c48746143770b9f2b13b2c"
+  },
+  "input_serial": {
+    "path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/gui-widgets-storage.serial.log",
+    "sha256": "ec9da1835fa74d1ceb85f62d8ba778d77e60e058ebdef0a480093e169ec06ba2"
+  },
+  "validation": {
+    "report_and_all_phase_statuses_passed": true,
+    "statistics_match_independently_parsed_serial": true,
+    "each_worker_met_requested_duration": true,
+    "both_worker_counts_advance_in_every_progress_interval": true,
+    "payload_counters_match_deterministic_completed_cycle_pattern": true,
+    "maximum_allowed_progress_gap_seconds": 95.0,
+    "verified_framebuffer_png_count": 47,
+    "verified_stress_header_count": 26,
+    "selected_tab_header_policy": "exact RGB equality at (680,0,1280,70)"
+  },
+  "workload": {
+    "requested_seconds": 3600,
+    "guest_elapsed_ms": 3600477,
+    "host_elapsed_seconds": 3602.993,
+    "completed_iterations": 31336,
+    "worker0_iterations": 15651,
+    "worker1_iterations": 15685,
+    "worker0_elapsed_ms": 3600017,
+    "worker1_elapsed_ms": 3600217,
+    "logical_written_bytes": 300596674,
+    "logical_verified_read_bytes": 597903932,
+    "errors": 0,
+    "counter_scope": "Logical test payload only; not physical device I/O",
+    "progress_sample_count": 120
+  },
+  "global_heap": {
+    "scope": "Global allocator usage including GUI and other tasks",
+    "unit": "bytes",
+    "steady_after_seconds": 300.0,
+    "all_progress_sample_count": 120,
+    "active_sample_count": 119,
+    "steady_sample_count": 110,
+    "final_cleanup_sample_excluded_from_steady_OLS": {
+      "elapsed_ms": 3600477,
+      "iterations": 31336,
+      "written_bytes": 300596674,
+      "verified_bytes": 597903932,
+      "worker0_iterations": 15651,
+      "worker1_iterations": 15685,
+      "errors": 0,
+      "heap_used": 5371584,
+      "heap_free": 117245568
+    },
+    "interpretation": "A bounded run describes observed global heap behavior. It does not establish absence of leaks or attribute changes to EncFS.",
+    "steady_available": true,
+    "minimum_used_bytes": 5651184,
+    "maximum_used_bytes": 5659472,
+    "first_used_bytes": 5654224,
+    "last_used_bytes": 5658416,
+    "first_elapsed_seconds": 300.416,
+    "last_elapsed_seconds": 3572.982,
+    "last_minus_first_bytes": 4192,
+    "mean_used_bytes": 5656376.290909091,
+    "minimum_free_bytes": 116957680,
+    "maximum_free_bytes": 116965968,
+    "OLS": {
+      "slope_bytes_per_second": 0.04807049696698155,
+      "slope_bytes_per_hour": 173.05378908113357,
+      "intercept_bytes": 5656283.192430633,
+      "r_squared": 0.0008091030267024513
+    }
+  },
+  "progress_samples": [
+    {
+      "elapsed_ms": 30230,
+      "iterations": 259,
+      "written_bytes": 2376998,
+      "verified_bytes": 4726826,
+      "worker0_iterations": 120,
+      "worker1_iterations": 139,
+      "errors": 0,
+      "heap_used": 5657264,
+      "heap_free": 116959888
+    },
+    {
+      "elapsed_ms": 60246,
+      "iterations": 516,
+      "written_bytes": 4960320,
+      "verified_bytes": 9866332,
+      "worker0_iterations": 242,
+      "worker1_iterations": 274,
+      "errors": 0,
+      "heap_used": 5654448,
+      "heap_free": 116962704
+    },
+    {
+      "elapsed_ms": 90262,
+      "iterations": 778,
+      "written_bytes": 7392127,
+      "verified_bytes": 14702732,
+      "worker0_iterations": 367,
+      "worker1_iterations": 411,
+      "errors": 0,
+      "heap_used": 5657488,
+      "heap_free": 116959664
+    },
+    {
+      "elapsed_ms": 120284,
+      "iterations": 1038,
+      "written_bytes": 9845469,
+      "verified_bytes": 19582136,
+      "worker0_iterations": 492,
+      "worker1_iterations": 546,
+      "errors": 0,
+      "heap_used": 5655056,
+      "heap_free": 116962096
+    },
+    {
+      "elapsed_ms": 150302,
+      "iterations": 1294,
+      "written_bytes": 12351870,
+      "verified_bytes": 24568040,
+      "worker0_iterations": 597,
+      "worker1_iterations": 697,
+      "errors": 0,
+      "heap_used": 5657152,
+      "heap_free": 116960000
+    },
+    {
+      "elapsed_ms": 180338,
+      "iterations": 1556,
+      "written_bytes": 14826402,
+      "verified_bytes": 29489428,
+      "worker0_iterations": 703,
+      "worker1_iterations": 853,
+      "errors": 0,
+      "heap_used": 5657264,
+      "heap_free": 116959888
+    },
+    {
+      "elapsed_ms": 210363,
+      "iterations": 1812,
+      "written_bytes": 17282613,
+      "verified_bytes": 34374980,
+      "worker0_iterations": 813,
+      "worker1_iterations": 999,
+      "errors": 0,
+      "heap_used": 5657264,
+      "heap_free": 116959888
+    },
+    {
+      "elapsed_ms": 240380,
+      "iterations": 2071,
+      "written_bytes": 19778336,
+      "verified_bytes": 39339380,
+      "worker0_iterations": 929,
+      "worker1_iterations": 1142,
+      "errors": 0,
+      "heap_used": 5657264,
+      "heap_free": 116959888
+    },
+    {
+      "elapsed_ms": 270397,
+      "iterations": 2333,
+      "written_bytes": 22309700,
+      "verified_bytes": 44374436,
+      "worker0_iterations": 1048,
+      "worker1_iterations": 1285,
+      "errors": 0,
+      "heap_used": 5658416,
+      "heap_free": 116958736
+    },
+    {
+      "elapsed_ms": 300416,
+      "iterations": 2593,
+      "written_bytes": 24775857,
+      "verified_bytes": 49279442,
+      "worker0_iterations": 1176,
+      "worker1_iterations": 1417,
+      "errors": 0,
+      "heap_used": 5654224,
+      "heap_free": 116962928
+    },
+    {
+      "elapsed_ms": 330444,
+      "iterations": 2851,
+      "written_bytes": 27270554,
+      "verified_bytes": 54241796,
+      "worker0_iterations": 1302,
+      "worker1_iterations": 1549,
+      "errors": 0,
+      "heap_used": 5657264,
+      "heap_free": 116959888
+    },
+    {
+      "elapsed_ms": 360467,
+      "iterations": 3110,
+      "written_bytes": 29736181,
+      "verified_bytes": 59145776,
+      "worker0_iterations": 1429,
+      "worker1_iterations": 1681,
+      "errors": 0,
+      "heap_used": 5657264,
+      "heap_free": 116959888
+    },
+    {
+      "elapsed_ms": 390497,
+      "iterations": 3371,
+      "written_bytes": 32240227,
+      "verified_bytes": 64126558,
+      "worker0_iterations": 1558,
+      "worker1_iterations": 1813,
+      "errors": 0,
+      "heap_used": 5656432,
+      "heap_free": 116960720
+    },
+    {
+      "elapsed_ms": 420516,
+      "iterations": 3634,
+      "written_bytes": 34768985,
+      "verified_bytes": 69156494,
+      "worker0_iterations": 1682,
+      "worker1_iterations": 1952,
+      "errors": 0,
+      "heap_used": 5657152,
+      "heap_free": 116960000
+    },
+    {
+      "elapsed_ms": 450545,
+      "iterations": 3894,
+      "written_bytes": 37295544,
+      "verified_bytes": 74182336,
+      "worker0_iterations": 1814,
+      "worker1_iterations": 2080,
+      "errors": 0,
+      "heap_used": 5656432,
+      "heap_free": 116960720
+    },
+    {
+      "elapsed_ms": 480566,
+      "iterations": 4155,
+      "written_bytes": 39762278,
+      "verified_bytes": 79088366,
+      "worker0_iterations": 1968,
+      "worker1_iterations": 2187,
+      "errors": 0,
+      "heap_used": 5657488,
+      "heap_free": 116959664
+    },
+    {
+      "elapsed_ms": 510586,
+      "iterations": 4417,
+      "written_bytes": 42270490,
+      "verified_bytes": 84077342,
+      "worker0_iterations": 2120,
+      "worker1_iterations": 2297,
+      "errors": 0,
+      "heap_used": 5659472,
+      "heap_free": 116957680
+    },
+    {
+      "elapsed_ms": 540613,
+      "iterations": 4679,
+      "written_bytes": 44782792,
+      "verified_bytes": 89074506,
+      "worker0_iterations": 2264,
+      "worker1_iterations": 2415,
+      "errors": 0,
+      "heap_used": 5656432,
+      "heap_free": 116960720
+    },
+    {
+      "elapsed_ms": 570635,
+      "iterations": 4941,
+      "written_bytes": 47322751,
+      "verified_bytes": 94126976,
+      "worker0_iterations": 2408,
+      "worker1_iterations": 2533,
+      "errors": 0,
+      "heap_used": 5657488,
+      "heap_free": 116959664
+    },
+    {
+      "elapsed_ms": 600656,
+      "iterations": 5204,
+      "written_bytes": 49855205,
+      "verified_bytes": 99164078,
+      "worker0_iterations": 2551,
+      "worker1_iterations": 2653,
+      "errors": 0,
+      "heap_used": 5654224,
+      "heap_free": 116962928
+    },
+    {
+      "elapsed_ms": 630710,
+      "iterations": 5459,
+      "written_bytes": 52348165,
+      "verified_bytes": 104123360,
+      "worker0_iterations": 2685,
+      "worker1_iterations": 2774,
+      "errors": 0,
+      "heap_used": 5656432,
+      "heap_free": 116960720
+    },
+    {
+      "elapsed_ms": 660731,
+      "iterations": 5721,
+      "written_bytes": 54792371,
+      "verified_bytes": 108984328,
+      "worker0_iterations": 2823,
+      "worker1_iterations": 2898,
+      "errors": 0,
+      "heap_used": 5657488,
+      "heap_free": 116959664
+    },
+    {
+      "elapsed_ms": 690748,
+      "iterations": 5978,
+      "written_bytes": 57240459,
+      "verified_bytes": 113853496,
+      "worker0_iterations": 2957,
+      "worker1_iterations": 3021,
+      "errors": 0,
+      "heap_used": 5656432,
+      "heap_free": 116960720
+    },
+    {
+      "elapsed_ms": 720766,
+      "iterations": 6237,
+      "written_bytes": 59840233,
+      "verified_bytes": 119025774,
+      "worker0_iterations": 3091,
+      "worker1_iterations": 3146,
+      "errors": 0,
+      "heap_used": 5654736,
+      "heap_free": 116962416
+    },
+    {
+      "elapsed_ms": 750787,
+      "iterations": 6499,
+      "written_bytes": 62276266,
+      "verified_bytes": 123870362,
+      "worker0_iterations": 3227,
+      "worker1_iterations": 3272,
+      "errors": 0,
+      "heap_used": 5651184,
+      "heap_free": 116965968
+    },
+    {
+      "elapsed_ms": 780805,
+      "iterations": 6759,
+      "written_bytes": 64746056,
+      "verified_bytes": 128782534,
+      "worker0_iterations": 3362,
+      "worker1_iterations": 3397,
+      "errors": 0,
+      "heap_used": 5657264,
+      "heap_free": 116959888
+    },
+    {
+      "elapsed_ms": 810823,
+      "iterations": 7016,
+      "written_bytes": 67251358,
+      "verified_bytes": 133766392,
+      "worker0_iterations": 3496,
+      "worker1_iterations": 3520,
+      "errors": 0,
+      "heap_used": 5653936,
+      "heap_free": 116963216
+    },
+    {
+      "elapsed_ms": 840849,
+      "iterations": 7271,
+      "written_bytes": 69672190,
+      "verified_bytes": 138581288,
+      "worker0_iterations": 3627,
+      "worker1_iterations": 3644,
+      "errors": 0,
+      "heap_used": 5654224,
+      "heap_free": 116962928
+    },
+    {
+      "elapsed_ms": 870872,
+      "iterations": 7528,
+      "written_bytes": 72117265,
+      "verified_bytes": 143444304,
+      "worker0_iterations": 3758,
+      "worker1_iterations": 3770,
+      "errors": 0,
+      "heap_used": 5657776,
+      "heap_free": 116959376
+    },
+    {
+      "elapsed_ms": 900889,
+      "iterations": 7789,
+      "written_bytes": 74633603,
+      "verified_bytes": 148449668,
+      "worker0_iterations": 3891,
+      "worker1_iterations": 3898,
+      "errors": 0,
+      "heap_used": 5656432,
+      "heap_free": 116960720
+    },
+    {
+      "elapsed_ms": 930910,
+      "iterations": 8043,
+      "written_bytes": 77084626,
+      "verified_bytes": 153324980,
+      "worker0_iterations": 4019,
+      "worker1_iterations": 4024,
+      "errors": 0,
+      "heap_used": 5655056,
+      "heap_free": 116962096
+    },
+    {
+      "elapsed_ms": 960941,
+      "iterations": 8299,
+      "written_bytes": 79509090,
+      "verified_bytes": 158147038,
+      "worker0_iterations": 4145,
+      "worker1_iterations": 4154,
+      "errors": 0,
+      "heap_used": 5657488,
+      "heap_free": 116959664
+    },
+    {
+      "elapsed_ms": 990960,
+      "iterations": 8554,
+      "written_bytes": 81961204,
+      "verified_bytes": 163024396,
+      "worker0_iterations": 4266,
+      "worker1_iterations": 4288,
+      "errors": 0,
+      "heap_used": 5655056,
+      "heap_free": 116962096
+    },
+    {
+      "elapsed_ms": 1020982,
+      "iterations": 8818,
+      "written_bytes": 84494059,
+      "verified_bytes": 168062524,
+      "worker0_iterations": 4388,
+      "worker1_iterations": 4430,
+      "errors": 0,
+      "heap_used": 5657264,
+      "heap_free": 116959888
+    },
+    {
+      "elapsed_ms": 1051003,
+      "iterations": 9076,
+      "written_bytes": 87004676,
+      "verified_bytes": 173056622,
+      "worker0_iterations": 4513,
+      "worker1_iterations": 4563,
+      "errors": 0,
+      "heap_used": 5659472,
+      "heap_free": 116957680
+    },
+    {
+      "elapsed_ms": 1081021,
+      "iterations": 9339,
+      "written_bytes": 89537019,
+      "verified_bytes": 178093726,
+      "worker0_iterations": 4633,
+      "worker1_iterations": 4706,
+      "errors": 0,
+      "heap_used": 5656432,
+      "heap_free": 116960720
+    },
+    {
+      "elapsed_ms": 1111038,
+      "iterations": 9603,
+      "written_bytes": 92046337,
+      "verified_bytes": 183084752,
+      "worker0_iterations": 4738,
+      "worker1_iterations": 4865,
+      "errors": 0,
+      "heap_used": 5655056,
+      "heap_free": 116962096
+    },
+    {
+      "elapsed_ms": 1141053,
+      "iterations": 9863,
+      "written_bytes": 94520223,
+      "verified_bytes": 188005114,
+      "worker0_iterations": 4849,
+      "worker1_iterations": 5014,
+      "errors": 0,
+      "heap_used": 5657264,
+      "heap_free": 116959888
+    },
+    {
+      "elapsed_ms": 1171080,
+      "iterations": 10124,
+      "written_bytes": 97036623,
+      "verified_bytes": 193010474,
+      "worker0_iterations": 4960,
+      "worker1_iterations": 5164,
+      "errors": 0,
+      "heap_used": 5656432,
+      "heap_free": 116960720
+    },
+    {
+      "elapsed_ms": 1201097,
+      "iterations": 10385,
+      "written_bytes": 99540606,
+      "verified_bytes": 197991260,
+      "worker0_iterations": 5079,
+      "worker1_iterations": 5306,
+      "errors": 0,
+      "heap_used": 5656432,
+      "heap_free": 116960720
+    },
+    {
+      "elapsed_ms": 1231158,
+      "iterations": 10645,
+      "written_bytes": 102029917,
+      "verified_bytes": 202942346,
+      "worker0_iterations": 5202,
+      "worker1_iterations": 5443,
+      "errors": 0,
+      "heap_used": 5657264,
+      "heap_free": 116959888
+    },
+    {
+      "elapsed_ms": 1261182,
+      "iterations": 10909,
+      "written_bytes": 104603733,
+      "verified_bytes": 208062398,
+      "worker0_iterations": 5332,
+      "worker1_iterations": 5577,
+      "errors": 0,
+      "heap_used": 5653392,
+      "heap_free": 116963760
+    },
+    {
+      "elapsed_ms": 1291218,
+      "iterations": 11174,
+      "written_bytes": 107127007,
+      "verified_bytes": 213081068,
+      "worker0_iterations": 5461,
+      "worker1_iterations": 5713,
+      "errors": 0,
+      "heap_used": 5653168,
+      "heap_free": 116963984
+    },
+    {
+      "elapsed_ms": 1321236,
+      "iterations": 11439,
+      "written_bytes": 109670680,
+      "verified_bytes": 218140700,
+      "worker0_iterations": 5591,
+      "worker1_iterations": 5848,
+      "errors": 0,
+      "heap_used": 5659472,
+      "heap_free": 116957680
+    },
+    {
+      "elapsed_ms": 1351261,
+      "iterations": 11700,
+      "written_bytes": 112145145,
+      "verified_bytes": 223062088,
+      "worker0_iterations": 5718,
+      "worker1_iterations": 5982,
+      "errors": 0,
+      "heap_used": 5658416,
+      "heap_free": 116958736
+    },
+    {
+      "elapsed_ms": 1381291,
+      "iterations": 11964,
+      "written_bytes": 114727615,
+      "verified_bytes": 228199546,
+      "worker0_iterations": 5843,
+      "worker1_iterations": 6121,
+      "errors": 0,
+      "heap_used": 5656432,
+      "heap_free": 116960720
+    },
+    {
+      "elapsed_ms": 1411309,
+      "iterations": 12229,
+      "written_bytes": 117227437,
+      "verified_bytes": 233171114,
+      "worker0_iterations": 5994,
+      "worker1_iterations": 6235,
+      "errors": 0,
+      "heap_used": 5657264,
+      "heap_free": 116959888
+    },
+    {
+      "elapsed_ms": 1441327,
+      "iterations": 12493,
+      "written_bytes": 119760357,
+      "verified_bytes": 238209242,
+      "worker0_iterations": 6148,
+      "worker1_iterations": 6345,
+      "errors": 0,
+      "heap_used": 5657264,
+      "heap_free": 116959888
+    },
+    {
+      "elapsed_ms": 1471346,
+      "iterations": 12757,
+      "written_bytes": 122323372,
+      "verified_bytes": 243307790,
+      "worker0_iterations": 6297,
+      "worker1_iterations": 6460,
+      "errors": 0,
+      "heap_used": 5654448,
+      "heap_free": 116962704
+    },
+    {
+      "elapsed_ms": 1501364,
+      "iterations": 13018,
+      "written_bytes": 124797323,
+      "verified_bytes": 248228152,
+      "worker0_iterations": 6442,
+      "worker1_iterations": 6576,
+      "errors": 0,
+      "heap_used": 5657776,
+      "heap_free": 116959376
+    },
+    {
+      "elapsed_ms": 1531382,
+      "iterations": 13272,
+      "written_bytes": 127286170,
+      "verified_bytes": 253179242,
+      "worker0_iterations": 6579,
+      "worker1_iterations": 6693,
+      "errors": 0,
+      "heap_used": 5656432,
+      "heap_free": 116960720
+    },
+    {
+      "elapsed_ms": 1561399,
+      "iterations": 13535,
+      "written_bytes": 129757647,
+      "verified_bytes": 258094486,
+      "worker0_iterations": 6720,
+      "worker1_iterations": 6815,
+      "errors": 0,
+      "heap_used": 5659472,
+      "heap_free": 116957680
+    },
+    {
+      "elapsed_ms": 1591426,
+      "iterations": 13796,
+      "written_bytes": 132265790,
+      "verified_bytes": 263083462,
+      "worker0_iterations": 6858,
+      "worker1_iterations": 6938,
+      "errors": 0,
+      "heap_used": 5657152,
+      "heap_free": 116960000
+    },
+    {
+      "elapsed_ms": 1621446,
+      "iterations": 14058,
+      "written_bytes": 134812964,
+      "verified_bytes": 268150264,
+      "worker0_iterations": 6995,
+      "worker1_iterations": 7063,
+      "errors": 0,
+      "heap_used": 5657264,
+      "heap_free": 116959888
+    },
+    {
+      "elapsed_ms": 1651475,
+      "iterations": 14319,
+      "written_bytes": 137316959,
+      "verified_bytes": 273131046,
+      "worker0_iterations": 7130,
+      "worker1_iterations": 7189,
+      "errors": 0,
+      "heap_used": 5657488,
+      "heap_free": 116959664
+    },
+    {
+      "elapsed_ms": 1681504,
+      "iterations": 14584,
+      "written_bytes": 139878224,
+      "verified_bytes": 278225496,
+      "worker0_iterations": 7270,
+      "worker1_iterations": 7314,
+      "errors": 0,
+      "heap_used": 5654224,
+      "heap_free": 116962928
+    },
+    {
+      "elapsed_ms": 1711526,
+      "iterations": 14843,
+      "written_bytes": 142312568,
+      "verified_bytes": 283067012,
+      "worker0_iterations": 7402,
+      "worker1_iterations": 7441,
+      "errors": 0,
+      "heap_used": 5653392,
+      "heap_free": 116963760
+    },
+    {
+      "elapsed_ms": 1741546,
+      "iterations": 15105,
+      "written_bytes": 144840235,
+      "verified_bytes": 288094904,
+      "worker0_iterations": 7539,
+      "worker1_iterations": 7566,
+      "errors": 0,
+      "heap_used": 5655024,
+      "heap_free": 116962128
+    },
+    {
+      "elapsed_ms": 1771566,
+      "iterations": 15366,
+      "written_bytes": 147341274,
+      "verified_bytes": 293069540,
+      "worker0_iterations": 7673,
+      "worker1_iterations": 7693,
+      "errors": 0,
+      "heap_used": 5657776,
+      "heap_free": 116959376
+    },
+    {
+      "elapsed_ms": 1801587,
+      "iterations": 15627,
+      "written_bytes": 149822330,
+      "verified_bytes": 298004242,
+      "worker0_iterations": 7808,
+      "worker1_iterations": 7819,
+      "errors": 0,
+      "heap_used": 5657264,
+      "heap_free": 116959888
+    },
+    {
+      "elapsed_ms": 1831612,
+      "iterations": 15888,
+      "written_bytes": 152326376,
+      "verified_bytes": 302985024,
+      "worker0_iterations": 7940,
+      "worker1_iterations": 7948,
+      "errors": 0,
+      "heap_used": 5653680,
+      "heap_free": 116963472
+    },
+    {
+      "elapsed_ms": 1861628,
+      "iterations": 16147,
+      "written_bytes": 154848722,
+      "verified_bytes": 308002674,
+      "worker0_iterations": 8072,
+      "worker1_iterations": 8075,
+      "errors": 0,
+      "heap_used": 5655280,
+      "heap_free": 116961872
+    },
+    {
+      "elapsed_ms": 1891652,
+      "iterations": 16409,
+      "written_bytes": 157381113,
+      "verified_bytes": 313039778,
+      "worker0_iterations": 8204,
+      "worker1_iterations": 8205,
+      "errors": 0,
+      "heap_used": 5657488,
+      "heap_free": 116959664
+    },
+    {
+      "elapsed_ms": 1921671,
+      "iterations": 16673,
+      "written_bytes": 159864946,
+      "verified_bytes": 317979602,
+      "worker0_iterations": 8326,
+      "worker1_iterations": 8347,
+      "errors": 0,
+      "heap_used": 5657264,
+      "heap_free": 116959888
+    },
+    {
+      "elapsed_ms": 1951700,
+      "iterations": 16932,
+      "written_bytes": 162360668,
+      "verified_bytes": 322944002,
+      "worker0_iterations": 8447,
+      "worker1_iterations": 8485,
+      "errors": 0,
+      "heap_used": 5657264,
+      "heap_free": 116959888
+    },
+    {
+      "elapsed_ms": 1981736,
+      "iterations": 17196,
+      "written_bytes": 164893587,
+      "verified_bytes": 327982130,
+      "worker0_iterations": 8574,
+      "worker1_iterations": 8622,
+      "errors": 0,
+      "heap_used": 5657488,
+      "heap_free": 116959664
+    },
+    {
+      "elapsed_ms": 2011770,
+      "iterations": 17458,
+      "written_bytes": 167424886,
+      "verified_bytes": 333017186,
+      "worker0_iterations": 8700,
+      "worker1_iterations": 8758,
+      "errors": 0,
+      "heap_used": 5655056,
+      "heap_free": 116962096
+    },
+    {
+      "elapsed_ms": 2041802,
+      "iterations": 17718,
+      "written_bytes": 169921204,
+      "verified_bytes": 337982612,
+      "worker0_iterations": 8804,
+      "worker1_iterations": 8914,
+      "errors": 0,
+      "heap_used": 5656432,
+      "heap_free": 116960720
+    },
+    {
+      "elapsed_ms": 2071823,
+      "iterations": 17982,
+      "written_bytes": 172457640,
+      "verified_bytes": 343027904,
+      "worker0_iterations": 8913,
+      "worker1_iterations": 9069,
+      "errors": 0,
+      "heap_used": 5654224,
+      "heap_free": 116962928
+    },
+    {
+      "elapsed_ms": 2101857,
+      "iterations": 18242,
+      "written_bytes": 174923912,
+      "verified_bytes": 347932910,
+      "worker0_iterations": 9026,
+      "worker1_iterations": 9216,
+      "errors": 0,
+      "heap_used": 5657264,
+      "heap_free": 116959888
+    },
+    {
+      "elapsed_ms": 2131882,
+      "iterations": 18499,
+      "written_bytes": 177384224,
+      "verified_bytes": 352826654,
+      "worker0_iterations": 9140,
+      "worker1_iterations": 9359,
+      "errors": 0,
+      "heap_used": 5657488,
+      "heap_free": 116959664
+    },
+    {
+      "elapsed_ms": 2161901,
+      "iterations": 18761,
+      "written_bytes": 179892497,
+      "verified_bytes": 357815630,
+      "worker0_iterations": 9261,
+      "worker1_iterations": 9500,
+      "errors": 0,
+      "heap_used": 5654224,
+      "heap_free": 116962928
+    },
+    {
+      "elapsed_ms": 2191923,
+      "iterations": 19026,
+      "written_bytes": 182433675,
+      "verified_bytes": 362870140,
+      "worker0_iterations": 9392,
+      "worker1_iterations": 9634,
+      "errors": 0,
+      "heap_used": 5657776,
+      "heap_free": 116959376
+    },
+    {
+      "elapsed_ms": 2221944,
+      "iterations": 19285,
+      "written_bytes": 184944824,
+      "verified_bytes": 367865264,
+      "worker0_iterations": 9519,
+      "worker1_iterations": 9766,
+      "errors": 0,
+      "heap_used": 5655056,
+      "heap_free": 116962096
+    },
+    {
+      "elapsed_ms": 2251967,
+      "iterations": 19549,
+      "written_bytes": 187542241,
+      "verified_bytes": 373032418,
+      "worker0_iterations": 9648,
+      "worker1_iterations": 9901,
+      "errors": 0,
+      "heap_used": 5656432,
+      "heap_free": 116960720
+    },
+    {
+      "elapsed_ms": 2281988,
+      "iterations": 19815,
+      "written_bytes": 190015916,
+      "verified_bytes": 377951756,
+      "worker0_iterations": 9778,
+      "worker1_iterations": 10037,
+      "errors": 0,
+      "heap_used": 5657488,
+      "heap_free": 116959664
+    },
+    {
+      "elapsed_ms": 2312030,
+      "iterations": 20074,
+      "written_bytes": 192541832,
+      "verified_bytes": 382976576,
+      "worker0_iterations": 9901,
+      "worker1_iterations": 10173,
+      "errors": 0,
+      "heap_used": 5657488,
+      "heap_free": 116959664
+    },
+    {
+      "elapsed_ms": 2342060,
+      "iterations": 20336,
+      "written_bytes": 195009211,
+      "verified_bytes": 387883628,
+      "worker0_iterations": 10042,
+      "worker1_iterations": 10294,
+      "errors": 0,
+      "heap_used": 5656432,
+      "heap_free": 116960720
+    },
+    {
+      "elapsed_ms": 2372080,
+      "iterations": 20600,
+      "written_bytes": 197542066,
+      "verified_bytes": 392921756,
+      "worker0_iterations": 10196,
+      "worker1_iterations": 10404,
+      "errors": 0,
+      "heap_used": 5654224,
+      "heap_free": 116962928
+    },
+    {
+      "elapsed_ms": 2402095,
+      "iterations": 20869,
+      "written_bytes": 200126916,
+      "verified_bytes": 398063308,
+      "worker0_iterations": 10349,
+      "worker1_iterations": 10520,
+      "errors": 0,
+      "heap_used": 5654224,
+      "heap_free": 116962928
+    },
+    {
+      "elapsed_ms": 2432117,
+      "iterations": 21128,
+      "written_bytes": 202607906,
+      "verified_bytes": 402998012,
+      "worker0_iterations": 10493,
+      "worker1_iterations": 10635,
+      "errors": 0,
+      "heap_used": 5656432,
+      "heap_free": 116960720
+    },
+    {
+      "elapsed_ms": 2462137,
+      "iterations": 21391,
+      "written_bytes": 205124439,
+      "verified_bytes": 408003370,
+      "worker0_iterations": 10636,
+      "worker1_iterations": 10755,
+      "errors": 0,
+      "heap_used": 5657264,
+      "heap_free": 116959888
+    },
+    {
+      "elapsed_ms": 2492159,
+      "iterations": 21656,
+      "written_bytes": 207673746,
+      "verified_bytes": 413074268,
+      "worker0_iterations": 10779,
+      "worker1_iterations": 10877,
+      "errors": 0,
+      "heap_used": 5658416,
+      "heap_free": 116958736
+    },
+    {
+      "elapsed_ms": 2522175,
+      "iterations": 21919,
+      "written_bytes": 210243463,
+      "verified_bytes": 418186126,
+      "worker0_iterations": 10919,
+      "worker1_iterations": 11000,
+      "errors": 0,
+      "heap_used": 5655280,
+      "heap_free": 116961872
+    },
+    {
+      "elapsed_ms": 2552198,
+      "iterations": 22181,
+      "written_bytes": 212710712,
+      "verified_bytes": 423093178,
+      "worker0_iterations": 11054,
+      "worker1_iterations": 11127,
+      "errors": 0,
+      "heap_used": 5656432,
+      "heap_free": 116960720
+    },
+    {
+      "elapsed_ms": 2582222,
+      "iterations": 22445,
+      "written_bytes": 215243697,
+      "verified_bytes": 428131306,
+      "worker0_iterations": 11194,
+      "worker1_iterations": 11251,
+      "errors": 0,
+      "heap_used": 5653392,
+      "heap_free": 116963760
+    },
+    {
+      "elapsed_ms": 2612260,
+      "iterations": 22706,
+      "written_bytes": 217751840,
+      "verified_bytes": 433120282,
+      "worker0_iterations": 11328,
+      "worker1_iterations": 11378,
+      "errors": 0,
+      "heap_used": 5655280,
+      "heap_free": 116961872
+    },
+    {
+      "elapsed_ms": 2642282,
+      "iterations": 22965,
+      "written_bytes": 220232830,
+      "verified_bytes": 438054986,
+      "worker0_iterations": 11461,
+      "worker1_iterations": 11504,
+      "errors": 0,
+      "heap_used": 5656432,
+      "heap_free": 116960720
+    },
+    {
+      "elapsed_ms": 2672302,
+      "iterations": 23227,
+      "written_bytes": 222794288,
+      "verified_bytes": 443150462,
+      "worker0_iterations": 11598,
+      "worker1_iterations": 11629,
+      "errors": 0,
+      "heap_used": 5656432,
+      "heap_free": 116960720
+    },
+    {
+      "elapsed_ms": 2702334,
+      "iterations": 23493,
+      "written_bytes": 225298668,
+      "verified_bytes": 448131242,
+      "worker0_iterations": 11736,
+      "worker1_iterations": 11757,
+      "errors": 0,
+      "heap_used": 5657264,
+      "heap_free": 116959888
+    },
+    {
+      "elapsed_ms": 2732352,
+      "iterations": 23752,
+      "written_bytes": 227794455,
+      "verified_bytes": 453095642,
+      "worker0_iterations": 11868,
+      "worker1_iterations": 11884,
+      "errors": 0,
+      "heap_used": 5657264,
+      "heap_free": 116959888
+    },
+    {
+      "elapsed_ms": 2762366,
+      "iterations": 24010,
+      "written_bytes": 230258992,
+      "verified_bytes": 457997576,
+      "worker0_iterations": 12000,
+      "worker1_iterations": 12010,
+      "errors": 0,
+      "heap_used": 5657264,
+      "heap_free": 116959888
+    },
+    {
+      "elapsed_ms": 2792387,
+      "iterations": 24272,
+      "written_bytes": 232767202,
+      "verified_bytes": 462986552,
+      "worker0_iterations": 12132,
+      "worker1_iterations": 12140,
+      "errors": 0,
+      "heap_used": 5657488,
+      "heap_free": 116959664
+    },
+    {
+      "elapsed_ms": 2822403,
+      "iterations": 24537,
+      "written_bytes": 235361564,
+      "verified_bytes": 468147562,
+      "worker0_iterations": 12266,
+      "worker1_iterations": 12271,
+      "errors": 0,
+      "heap_used": 5656432,
+      "heap_free": 116960720
+    },
+    {
+      "elapsed_ms": 2852422,
+      "iterations": 24796,
+      "written_bytes": 237819529,
+      "verified_bytes": 473036186,
+      "worker0_iterations": 12390,
+      "worker1_iterations": 12406,
+      "errors": 0,
+      "heap_used": 5656432,
+      "heap_free": 116960720
+    },
+    {
+      "elapsed_ms": 2882442,
+      "iterations": 25057,
+      "written_bytes": 240320502,
+      "verified_bytes": 478010822,
+      "worker0_iterations": 12513,
+      "worker1_iterations": 12544,
+      "errors": 0,
+      "heap_used": 5657488,
+      "heap_free": 116959664
+    },
+    {
+      "elapsed_ms": 2912468,
+      "iterations": 25319,
+      "written_bytes": 242818011,
+      "verified_bytes": 482978294,
+      "worker0_iterations": 12638,
+      "worker1_iterations": 12681,
+      "errors": 0,
+      "heap_used": 5657264,
+      "heap_free": 116959888
+    },
+    {
+      "elapsed_ms": 2942486,
+      "iterations": 25581,
+      "written_bytes": 245379981,
+      "verified_bytes": 488074792,
+      "worker0_iterations": 12762,
+      "worker1_iterations": 12819,
+      "errors": 0,
+      "heap_used": 5657488,
+      "heap_free": 116959664
+    },
+    {
+      "elapsed_ms": 2972508,
+      "iterations": 25842,
+      "written_bytes": 247911231,
+      "verified_bytes": 493109850,
+      "worker0_iterations": 12874,
+      "worker1_iterations": 12968,
+      "errors": 0,
+      "heap_used": 5651760,
+      "heap_free": 116965392
+    },
+    {
+      "elapsed_ms": 3002545,
+      "iterations": 26101,
+      "written_bytes": 250376859,
+      "verified_bytes": 498013830,
+      "worker0_iterations": 12979,
+      "worker1_iterations": 13122,
+      "errors": 0,
+      "heap_used": 5656432,
+      "heap_free": 116960720
+    },
+    {
+      "elapsed_ms": 3032577,
+      "iterations": 26364,
+      "written_bytes": 252844173,
+      "verified_bytes": 502920884,
+      "worker0_iterations": 13089,
+      "worker1_iterations": 13275,
+      "errors": 0,
+      "heap_used": 5654224,
+      "heap_free": 116962928
+    },
+    {
+      "elapsed_ms": 3062600,
+      "iterations": 26624,
+      "written_bytes": 255344058,
+      "verified_bytes": 507893474,
+      "worker0_iterations": 13206,
+      "worker1_iterations": 13418,
+      "errors": 0,
+      "heap_used": 5657264,
+      "heap_free": 116959888
+    },
+    {
+      "elapsed_ms": 3092618,
+      "iterations": 26885,
+      "written_bytes": 257871260,
+      "verified_bytes": 512920340,
+      "worker0_iterations": 13324,
+      "worker1_iterations": 13561,
+      "errors": 0,
+      "heap_used": 5656432,
+      "heap_free": 116960720
+    },
+    {
+      "elapsed_ms": 3122640,
+      "iterations": 27147,
+      "written_bytes": 260403023,
+      "verified_bytes": 517956422,
+      "worker0_iterations": 13452,
+      "worker1_iterations": 13695,
+      "errors": 0,
+      "heap_used": 5656432,
+      "heap_free": 116960720
+    },
+    {
+      "elapsed_ms": 3152665,
+      "iterations": 27414,
+      "written_bytes": 262922268,
+      "verified_bytes": 522966898,
+      "worker0_iterations": 13583,
+      "worker1_iterations": 13831,
+      "errors": 0,
+      "heap_used": 5656432,
+      "heap_free": 116960720
+    },
+    {
+      "elapsed_ms": 3182686,
+      "iterations": 27678,
+      "written_bytes": 265451092,
+      "verified_bytes": 527996834,
+      "worker0_iterations": 13712,
+      "worker1_iterations": 13966,
+      "errors": 0,
+      "heap_used": 5656432,
+      "heap_free": 116960720
+    },
+    {
+      "elapsed_ms": 3212701,
+      "iterations": 27937,
+      "written_bytes": 267985329,
+      "verified_bytes": 533038034,
+      "worker0_iterations": 13838,
+      "worker1_iterations": 14099,
+      "errors": 0,
+      "heap_used": 5659472,
+      "heap_free": 116957680
+    },
+    {
+      "elapsed_ms": 3242719,
+      "iterations": 28197,
+      "written_bytes": 270497502,
+      "verified_bytes": 538035204,
+      "worker0_iterations": 13964,
+      "worker1_iterations": 14233,
+      "errors": 0,
+      "heap_used": 5657488,
+      "heap_free": 116959664
+    },
+    {
+      "elapsed_ms": 3272737,
+      "iterations": 28462,
+      "written_bytes": 272973143,
+      "verified_bytes": 542958640,
+      "worker0_iterations": 14098,
+      "worker1_iterations": 14364,
+      "errors": 0,
+      "heap_used": 5657264,
+      "heap_free": 116959888
+    },
+    {
+      "elapsed_ms": 3302760,
+      "iterations": 28727,
+      "written_bytes": 275501970,
+      "verified_bytes": 547988574,
+      "worker0_iterations": 14254,
+      "worker1_iterations": 14473,
+      "errors": 0,
+      "heap_used": 5657264,
+      "heap_free": 116959888
+    },
+    {
+      "elapsed_ms": 3332781,
+      "iterations": 28989,
+      "written_bytes": 278034886,
+      "verified_bytes": 553026704,
+      "worker0_iterations": 14405,
+      "worker1_iterations": 14584,
+      "errors": 0,
+      "heap_used": 5654224,
+      "heap_free": 116962928
+    },
+    {
+      "elapsed_ms": 3362803,
+      "iterations": 29247,
+      "written_bytes": 280533150,
+      "verified_bytes": 557996224,
+      "worker0_iterations": 14549,
+      "worker1_iterations": 14698,
+      "errors": 0,
+      "heap_used": 5657152,
+      "heap_free": 116960000
+    },
+    {
+      "elapsed_ms": 3392822,
+      "iterations": 29510,
+      "written_bytes": 283077333,
+      "verified_bytes": 563056880,
+      "worker0_iterations": 14694,
+      "worker1_iterations": 14816,
+      "errors": 0,
+      "heap_used": 5657776,
+      "heap_free": 116959376
+    },
+    {
+      "elapsed_ms": 3422837,
+      "iterations": 29776,
+      "written_bytes": 285610717,
+      "verified_bytes": 568096032,
+      "worker0_iterations": 14837,
+      "worker1_iterations": 14939,
+      "errors": 0,
+      "heap_used": 5656432,
+      "heap_free": 116960720
+    },
+    {
+      "elapsed_ms": 3452853,
+      "iterations": 30038,
+      "written_bytes": 288124116,
+      "verified_bytes": 573095252,
+      "worker0_iterations": 14975,
+      "worker1_iterations": 15063,
+      "errors": 0,
+      "heap_used": 5654448,
+      "heap_free": 116962704
+    },
+    {
+      "elapsed_ms": 3482885,
+      "iterations": 30302,
+      "written_bytes": 290626876,
+      "verified_bytes": 578072960,
+      "worker0_iterations": 15113,
+      "worker1_iterations": 15189,
+      "errors": 0,
+      "heap_used": 5657264,
+      "heap_free": 116959888
+    },
+    {
+      "elapsed_ms": 3512934,
+      "iterations": 30565,
+      "written_bytes": 293189375,
+      "verified_bytes": 583170482,
+      "worker0_iterations": 15251,
+      "worker1_iterations": 15314,
+      "errors": 0,
+      "heap_used": 5653392,
+      "heap_free": 116963760
+    },
+    {
+      "elapsed_ms": 3542953,
+      "iterations": 30830,
+      "written_bytes": 295692781,
+      "verified_bytes": 588149216,
+      "worker0_iterations": 15388,
+      "worker1_iterations": 15442,
+      "errors": 0,
+      "heap_used": 5657264,
+      "heap_free": 116959888
+    },
+    {
+      "elapsed_ms": 3572982,
+      "iterations": 31094,
+      "written_bytes": 298255795,
+      "verified_bytes": 593247764,
+      "worker0_iterations": 15525,
+      "worker1_iterations": 15569,
+      "errors": 0,
+      "heap_used": 5658416,
+      "heap_free": 116958736
+    },
+    {
+      "elapsed_ms": 3600477,
+      "iterations": 31336,
+      "written_bytes": 300596674,
+      "verified_bytes": 597903932,
+      "worker0_iterations": 15651,
+      "worker1_iterations": 15685,
+      "errors": 0,
+      "heap_used": 5371584,
+      "heap_free": 117245568
+    }
+  ],
+  "verified_framebuffers": [
+    {
+      "phase": "gui-music",
+      "label": "initial",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-music-initial.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-music-initial.png",
+      "sha256": "07c51d1ad37d48b7f69e1c2b8d92f9d42f4e8b4c6958f3b19bc68e4c6e32abd0",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-music",
+      "label": "animated",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-music-animated.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-music-animated.png",
+      "sha256": "1453989d495a004af03e7cedd0ca04fd7851a196b7de54663f2c590307a612d0",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-keypad",
+      "label": "initial",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-keypad-initial.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-keypad-initial.png",
+      "sha256": "ab493c9374845f5b362cfc36463f0a6e8d2976220af449daf4b59fa0c7b5727f",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-keypad",
+      "label": "after-touch",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-keypad-after-touch.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-keypad-after-touch.png",
+      "sha256": "ab493c9374845f5b362cfc36463f0a6e8d2976220af449daf4b59fa0c7b5727f",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-stress-demo",
+      "label": "initial",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-stress-demo-initial.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-stress-demo-initial.png",
+      "sha256": "bf247a452a153ae25c5ed8cd2b1e731be1994e057cd3a1fb391651239cadaada",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-stress-demo",
+      "label": "animated",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-stress-demo-animated.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-stress-demo-animated.png",
+      "sha256": "1b2aaa46a2e73c8db58bcbc33da404918c460e287be446133fe42fee22591c80",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-widgets-storage",
+      "label": "initial",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-initial.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-initial.png",
+      "sha256": "5be7e9964763a238f6e4d27a87bb6d7880207276513b8395c3b39b56836704ee",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-widgets-storage",
+      "label": "profile",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-profile.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-profile.png",
+      "sha256": "5be7e9964763a238f6e4d27a87bb6d7880207276513b8395c3b39b56836704ee",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-widgets-storage",
+      "label": "analytics",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-analytics.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-analytics.png",
+      "sha256": "e439cb62d8e4b90f0f8514332e776f50a49330a65bacb9518e50d4c4b75236f2",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-widgets-storage",
+      "label": "shop",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-shop.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-shop.png",
+      "sha256": "fe59f3b6e9d7a9150edc6604af160333625625a4f70302ab892ba0d0dbb81cd2",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-widgets-storage",
+      "label": "checkbox-toggled",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-checkbox-toggled.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-checkbox-toggled.png",
+      "sha256": "70471371685064ed98ec1450b39254077306ab015da545057424cdda05e11aae",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-widgets-storage",
+      "label": "slider-before",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-slider-before.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-slider-before.png",
+      "sha256": "5be7e9964763a238f6e4d27a87bb6d7880207276513b8395c3b39b56836704ee",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-widgets-storage",
+      "label": "slider-after",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-slider-after.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-slider-after.png",
+      "sha256": "a8f2ea67bc85e3da0eae688e0670943e74c4c9c6b8a997eda29ac970fb1d4993",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-widgets-storage",
+      "label": "after-storage-regression",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-after-storage-regression.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-after-storage-regression.png",
+      "sha256": "a8f2ea67bc85e3da0eae688e0670943e74c4c9c6b8a997eda29ac970fb1d4993",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-widgets-storage",
+      "label": "stress-001-analytics",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-stress-001-analytics.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-stress-001-analytics.png",
+      "sha256": "4fced03015b55052943caa07a64f78743df0242d23a3fcbf10a7a731f75f606f",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-widgets-storage",
+      "label": "stress-001-shop",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-stress-001-shop.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-stress-001-shop.png",
+      "sha256": "70471371685064ed98ec1450b39254077306ab015da545057424cdda05e11aae",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-widgets-storage",
+      "label": "stress-010-analytics",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-stress-010-analytics.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-stress-010-analytics.png",
+      "sha256": "e439cb62d8e4b90f0f8514332e776f50a49330a65bacb9518e50d4c4b75236f2",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-widgets-storage",
+      "label": "stress-010-shop",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-stress-010-shop.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-stress-010-shop.png",
+      "sha256": "70471371685064ed98ec1450b39254077306ab015da545057424cdda05e11aae",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-widgets-storage",
+      "label": "stress-020-analytics",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-stress-020-analytics.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-stress-020-analytics.png",
+      "sha256": "e439cb62d8e4b90f0f8514332e776f50a49330a65bacb9518e50d4c4b75236f2",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-widgets-storage",
+      "label": "stress-020-shop",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-stress-020-shop.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-stress-020-shop.png",
+      "sha256": "70471371685064ed98ec1450b39254077306ab015da545057424cdda05e11aae",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-widgets-storage",
+      "label": "stress-030-analytics",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-stress-030-analytics.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-stress-030-analytics.png",
+      "sha256": "e439cb62d8e4b90f0f8514332e776f50a49330a65bacb9518e50d4c4b75236f2",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-widgets-storage",
+      "label": "stress-030-shop",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-stress-030-shop.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-stress-030-shop.png",
+      "sha256": "70471371685064ed98ec1450b39254077306ab015da545057424cdda05e11aae",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-widgets-storage",
+      "label": "stress-040-analytics",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-stress-040-analytics.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-stress-040-analytics.png",
+      "sha256": "e439cb62d8e4b90f0f8514332e776f50a49330a65bacb9518e50d4c4b75236f2",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-widgets-storage",
+      "label": "stress-040-shop",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-stress-040-shop.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-stress-040-shop.png",
+      "sha256": "70471371685064ed98ec1450b39254077306ab015da545057424cdda05e11aae",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-widgets-storage",
+      "label": "stress-050-analytics",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-stress-050-analytics.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-stress-050-analytics.png",
+      "sha256": "e439cb62d8e4b90f0f8514332e776f50a49330a65bacb9518e50d4c4b75236f2",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-widgets-storage",
+      "label": "stress-050-shop",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-stress-050-shop.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-stress-050-shop.png",
+      "sha256": "70471371685064ed98ec1450b39254077306ab015da545057424cdda05e11aae",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-widgets-storage",
+      "label": "stress-060-analytics",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-stress-060-analytics.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-stress-060-analytics.png",
+      "sha256": "e439cb62d8e4b90f0f8514332e776f50a49330a65bacb9518e50d4c4b75236f2",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-widgets-storage",
+      "label": "stress-060-shop",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-stress-060-shop.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-stress-060-shop.png",
+      "sha256": "70471371685064ed98ec1450b39254077306ab015da545057424cdda05e11aae",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-widgets-storage",
+      "label": "stress-070-analytics",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-stress-070-analytics.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-stress-070-analytics.png",
+      "sha256": "e439cb62d8e4b90f0f8514332e776f50a49330a65bacb9518e50d4c4b75236f2",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-widgets-storage",
+      "label": "stress-070-shop",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-stress-070-shop.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-stress-070-shop.png",
+      "sha256": "70471371685064ed98ec1450b39254077306ab015da545057424cdda05e11aae",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-widgets-storage",
+      "label": "stress-080-analytics",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-stress-080-analytics.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-stress-080-analytics.png",
+      "sha256": "6df54f3ad11041bfdf8c8c7ae543d516106e72374544dcdac3b1f37aebfaee70",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-widgets-storage",
+      "label": "stress-080-shop",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-stress-080-shop.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-stress-080-shop.png",
+      "sha256": "70471371685064ed98ec1450b39254077306ab015da545057424cdda05e11aae",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-widgets-storage",
+      "label": "stress-090-analytics",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-stress-090-analytics.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-stress-090-analytics.png",
+      "sha256": "62f6e22952940b42316a5647d5e6a06466488dc67cbaa1fb087114cf6df78f28",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-widgets-storage",
+      "label": "stress-090-shop",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-stress-090-shop.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-stress-090-shop.png",
+      "sha256": "70471371685064ed98ec1450b39254077306ab015da545057424cdda05e11aae",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-widgets-storage",
+      "label": "stress-100-analytics",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-stress-100-analytics.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-stress-100-analytics.png",
+      "sha256": "d63308c869d21fbe28dc9352d9b3d164e75238ee482d466e37b7b9cc7074bd09",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-widgets-storage",
+      "label": "stress-100-shop",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-stress-100-shop.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-stress-100-shop.png",
+      "sha256": "70471371685064ed98ec1450b39254077306ab015da545057424cdda05e11aae",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-widgets-storage",
+      "label": "stress-110-analytics",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-stress-110-analytics.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-stress-110-analytics.png",
+      "sha256": "6df54f3ad11041bfdf8c8c7ae543d516106e72374544dcdac3b1f37aebfaee70",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-widgets-storage",
+      "label": "stress-110-shop",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-stress-110-shop.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-stress-110-shop.png",
+      "sha256": "70471371685064ed98ec1450b39254077306ab015da545057424cdda05e11aae",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-widgets-storage",
+      "label": "stress-120-analytics",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-stress-120-analytics.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-stress-120-analytics.png",
+      "sha256": "e439cb62d8e4b90f0f8514332e776f50a49330a65bacb9518e50d4c4b75236f2",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-widgets-storage",
+      "label": "stress-120-shop",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-stress-120-shop.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-stress-120-shop.png",
+      "sha256": "70471371685064ed98ec1450b39254077306ab015da545057424cdda05e11aae",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-persistence-coldboot",
+      "label": "initial",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-persistence-coldboot-initial.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-persistence-coldboot-initial.png",
+      "sha256": "5be7e9964763a238f6e4d27a87bb6d7880207276513b8395c3b39b56836704ee",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-persistence-coldboot",
+      "label": "profile",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-persistence-coldboot-profile.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-persistence-coldboot-profile.png",
+      "sha256": "5be7e9964763a238f6e4d27a87bb6d7880207276513b8395c3b39b56836704ee",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-persistence-coldboot",
+      "label": "analytics",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-persistence-coldboot-analytics.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-persistence-coldboot-analytics.png",
+      "sha256": "e439cb62d8e4b90f0f8514332e776f50a49330a65bacb9518e50d4c4b75236f2",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-persistence-coldboot",
+      "label": "shop",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-persistence-coldboot-shop.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-persistence-coldboot-shop.png",
+      "sha256": "fe59f3b6e9d7a9150edc6604af160333625625a4f70302ab892ba0d0dbb81cd2",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-persistence-coldboot",
+      "label": "checkbox-toggled",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-persistence-coldboot-checkbox-toggled.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-persistence-coldboot-checkbox-toggled.png",
+      "sha256": "70471371685064ed98ec1450b39254077306ab015da545057424cdda05e11aae",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-persistence-coldboot",
+      "label": "slider-before",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-persistence-coldboot-slider-before.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-persistence-coldboot-slider-before.png",
+      "sha256": "5be7e9964763a238f6e4d27a87bb6d7880207276513b8395c3b39b56836704ee",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-persistence-coldboot",
+      "label": "slider-after",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-persistence-coldboot-slider-after.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-persistence-coldboot-slider-after.png",
+      "sha256": "a8f2ea67bc85e3da0eae688e0670943e74c4c9c6b8a997eda29ac970fb1d4993",
+      "width": 1280,
+      "height": 800
+    }
+  ],
+  "stress_selected_tab_comparisons": [
+    {
+      "checkpoint_index": 1,
+      "page": "analytics",
+      "frame_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-stress-001-analytics.png",
+      "baseline_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-analytics.png",
+      "crop": [
+        680,
+        0,
+        1280,
+        70
+      ],
+      "different_pixels": 0,
+      "match_policy": "exact RGB pixel equality"
+    },
+    {
+      "checkpoint_index": 1,
+      "page": "shop",
+      "frame_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-stress-001-shop.png",
+      "baseline_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-shop.png",
+      "crop": [
+        680,
+        0,
+        1280,
+        70
+      ],
+      "different_pixels": 0,
+      "match_policy": "exact RGB pixel equality"
+    },
+    {
+      "checkpoint_index": 10,
+      "page": "analytics",
+      "frame_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-stress-010-analytics.png",
+      "baseline_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-analytics.png",
+      "crop": [
+        680,
+        0,
+        1280,
+        70
+      ],
+      "different_pixels": 0,
+      "match_policy": "exact RGB pixel equality"
+    },
+    {
+      "checkpoint_index": 10,
+      "page": "shop",
+      "frame_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-stress-010-shop.png",
+      "baseline_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-shop.png",
+      "crop": [
+        680,
+        0,
+        1280,
+        70
+      ],
+      "different_pixels": 0,
+      "match_policy": "exact RGB pixel equality"
+    },
+    {
+      "checkpoint_index": 20,
+      "page": "analytics",
+      "frame_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-stress-020-analytics.png",
+      "baseline_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-analytics.png",
+      "crop": [
+        680,
+        0,
+        1280,
+        70
+      ],
+      "different_pixels": 0,
+      "match_policy": "exact RGB pixel equality"
+    },
+    {
+      "checkpoint_index": 20,
+      "page": "shop",
+      "frame_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-stress-020-shop.png",
+      "baseline_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-shop.png",
+      "crop": [
+        680,
+        0,
+        1280,
+        70
+      ],
+      "different_pixels": 0,
+      "match_policy": "exact RGB pixel equality"
+    },
+    {
+      "checkpoint_index": 30,
+      "page": "analytics",
+      "frame_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-stress-030-analytics.png",
+      "baseline_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-analytics.png",
+      "crop": [
+        680,
+        0,
+        1280,
+        70
+      ],
+      "different_pixels": 0,
+      "match_policy": "exact RGB pixel equality"
+    },
+    {
+      "checkpoint_index": 30,
+      "page": "shop",
+      "frame_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-stress-030-shop.png",
+      "baseline_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-shop.png",
+      "crop": [
+        680,
+        0,
+        1280,
+        70
+      ],
+      "different_pixels": 0,
+      "match_policy": "exact RGB pixel equality"
+    },
+    {
+      "checkpoint_index": 40,
+      "page": "analytics",
+      "frame_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-stress-040-analytics.png",
+      "baseline_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-analytics.png",
+      "crop": [
+        680,
+        0,
+        1280,
+        70
+      ],
+      "different_pixels": 0,
+      "match_policy": "exact RGB pixel equality"
+    },
+    {
+      "checkpoint_index": 40,
+      "page": "shop",
+      "frame_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-stress-040-shop.png",
+      "baseline_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-shop.png",
+      "crop": [
+        680,
+        0,
+        1280,
+        70
+      ],
+      "different_pixels": 0,
+      "match_policy": "exact RGB pixel equality"
+    },
+    {
+      "checkpoint_index": 50,
+      "page": "analytics",
+      "frame_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-stress-050-analytics.png",
+      "baseline_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-analytics.png",
+      "crop": [
+        680,
+        0,
+        1280,
+        70
+      ],
+      "different_pixels": 0,
+      "match_policy": "exact RGB pixel equality"
+    },
+    {
+      "checkpoint_index": 50,
+      "page": "shop",
+      "frame_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-stress-050-shop.png",
+      "baseline_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-shop.png",
+      "crop": [
+        680,
+        0,
+        1280,
+        70
+      ],
+      "different_pixels": 0,
+      "match_policy": "exact RGB pixel equality"
+    },
+    {
+      "checkpoint_index": 60,
+      "page": "analytics",
+      "frame_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-stress-060-analytics.png",
+      "baseline_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-analytics.png",
+      "crop": [
+        680,
+        0,
+        1280,
+        70
+      ],
+      "different_pixels": 0,
+      "match_policy": "exact RGB pixel equality"
+    },
+    {
+      "checkpoint_index": 60,
+      "page": "shop",
+      "frame_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-stress-060-shop.png",
+      "baseline_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-shop.png",
+      "crop": [
+        680,
+        0,
+        1280,
+        70
+      ],
+      "different_pixels": 0,
+      "match_policy": "exact RGB pixel equality"
+    },
+    {
+      "checkpoint_index": 70,
+      "page": "analytics",
+      "frame_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-stress-070-analytics.png",
+      "baseline_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-analytics.png",
+      "crop": [
+        680,
+        0,
+        1280,
+        70
+      ],
+      "different_pixels": 0,
+      "match_policy": "exact RGB pixel equality"
+    },
+    {
+      "checkpoint_index": 70,
+      "page": "shop",
+      "frame_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-stress-070-shop.png",
+      "baseline_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-shop.png",
+      "crop": [
+        680,
+        0,
+        1280,
+        70
+      ],
+      "different_pixels": 0,
+      "match_policy": "exact RGB pixel equality"
+    },
+    {
+      "checkpoint_index": 80,
+      "page": "analytics",
+      "frame_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-stress-080-analytics.png",
+      "baseline_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-analytics.png",
+      "crop": [
+        680,
+        0,
+        1280,
+        70
+      ],
+      "different_pixels": 0,
+      "match_policy": "exact RGB pixel equality"
+    },
+    {
+      "checkpoint_index": 80,
+      "page": "shop",
+      "frame_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-stress-080-shop.png",
+      "baseline_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-shop.png",
+      "crop": [
+        680,
+        0,
+        1280,
+        70
+      ],
+      "different_pixels": 0,
+      "match_policy": "exact RGB pixel equality"
+    },
+    {
+      "checkpoint_index": 90,
+      "page": "analytics",
+      "frame_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-stress-090-analytics.png",
+      "baseline_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-analytics.png",
+      "crop": [
+        680,
+        0,
+        1280,
+        70
+      ],
+      "different_pixels": 0,
+      "match_policy": "exact RGB pixel equality"
+    },
+    {
+      "checkpoint_index": 90,
+      "page": "shop",
+      "frame_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-stress-090-shop.png",
+      "baseline_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-shop.png",
+      "crop": [
+        680,
+        0,
+        1280,
+        70
+      ],
+      "different_pixels": 0,
+      "match_policy": "exact RGB pixel equality"
+    },
+    {
+      "checkpoint_index": 100,
+      "page": "analytics",
+      "frame_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-stress-100-analytics.png",
+      "baseline_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-analytics.png",
+      "crop": [
+        680,
+        0,
+        1280,
+        70
+      ],
+      "different_pixels": 0,
+      "match_policy": "exact RGB pixel equality"
+    },
+    {
+      "checkpoint_index": 100,
+      "page": "shop",
+      "frame_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-stress-100-shop.png",
+      "baseline_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-shop.png",
+      "crop": [
+        680,
+        0,
+        1280,
+        70
+      ],
+      "different_pixels": 0,
+      "match_policy": "exact RGB pixel equality"
+    },
+    {
+      "checkpoint_index": 110,
+      "page": "analytics",
+      "frame_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-stress-110-analytics.png",
+      "baseline_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-analytics.png",
+      "crop": [
+        680,
+        0,
+        1280,
+        70
+      ],
+      "different_pixels": 0,
+      "match_policy": "exact RGB pixel equality"
+    },
+    {
+      "checkpoint_index": 110,
+      "page": "shop",
+      "frame_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-stress-110-shop.png",
+      "baseline_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-shop.png",
+      "crop": [
+        680,
+        0,
+        1280,
+        70
+      ],
+      "different_pixels": 0,
+      "match_policy": "exact RGB pixel equality"
+    },
+    {
+      "checkpoint_index": 120,
+      "page": "analytics",
+      "frame_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-stress-120-analytics.png",
+      "baseline_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-analytics.png",
+      "crop": [
+        680,
+        0,
+        1280,
+        70
+      ],
+      "different_pixels": 0,
+      "match_policy": "exact RGB pixel equality"
+    },
+    {
+      "checkpoint_index": 120,
+      "page": "shop",
+      "frame_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-stress-120-shop.png",
+      "baseline_path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/frames/gui-widgets-storage-shop.png",
+      "crop": [
+        680,
+        0,
+        1280,
+        70
+      ],
+      "different_pixels": 0,
+      "match_policy": "exact RGB pixel equality"
+    }
+  ],
+  "plot_backend": "stdlib SVG (matplotlib unavailable)",
+  "plots": [
+    {
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/analysis/worker_iterations.svg",
+      "sha256": "3679f97ce92c33f72b2bf514aea89731919a809a7b099af623ea7aa3f0e6b087",
+      "format": "SVG"
+    },
+    {
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-long-01/analysis/global_heap.svg",
+      "sha256": "1ff9c3abc9527d2b9c26af71f775aebad83e3a4bd7951771b2efb291d7873c20",
+      "format": "SVG"
+    }
+  ],
+  "limitations": [
+    "This bounded run is not an endurance guarantee or proof of zero leaks.",
+    "Global heap samples include GUI and other tasks; they do not isolate EncFS.",
+    "Payload byte counters exclude metadata, alignment and other physical I/O.",
+    "Framebuffer hashes establish integrity; header checks specifically verify stress-time page selection, not every possible GUI interaction.",
+    "Power-loss and hardware fault recovery are not tested by this analysis."
+  ]
+}

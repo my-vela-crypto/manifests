@@ -1,0 +1,4 @@
+ENCFS_LONG_STRESS_START requested_seconds=60 workers=2 seed=6e637273 max_live_file_bytes=131074 root=/tmp/encfs-stress-hostcheck/load-11-6613459
+ENCFS_LONG_STRESS_PROGRESS elapsed_ms=30016 iterations=92749 written_bytes=889805347 verified_bytes=1769874906 worker0_iterations=46713 worker1_iterations=46036 errors=0 heap_used=273344 heap_free=197696
+ENCFS_LONG_STRESS_PROGRESS elapsed_ms=60187 iterations=191880 written_bytes=1840920391 verified_bytes=3661699140 worker0_iterations=97042 worker1_iterations=94838 errors=0 heap_used=9856 heap_free=395648
+ENCFS_LONG_STRESS_RESULT requested_seconds=60 elapsed_ms=60187 workers=2 iterations=191880 written_bytes=1840920391 verified_bytes=3661699140 worker0_iterations=97042 worker1_iterations=94838 worker0_elapsed_ms=60000 worker1_elapsed_ms=60000 errors=0 completed=1 heap_before=0 heap_after=9856

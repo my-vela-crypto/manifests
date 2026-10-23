@@ -1,0 +1,18 @@
+[
+  {
+    "svg": "global_heap.svg",
+    "svg_sha256": "1ff9c3abc9527d2b9c26af71f775aebad83e3a4bd7951771b2efb291d7873c20",
+    "png": "global_heap.png",
+    "png_sha256": "cef13a53af5e695f48921b7a407f4394ef7e7c458a1be60b3e21841545ab16b7",
+    "width": 1100,
+    "height": 650
+  },
+  {
+    "svg": "worker_iterations.svg",
+    "svg_sha256": "3679f97ce92c33f72b2bf514aea89731919a809a7b099af623ea7aa3f0e6b087",
+    "png": "worker_iterations.png",
+    "png_sha256": "4e8ec48b909d7e8dc5d7ab5c2075f0f343a0d6f703b803fb54276954d4f93513",
+    "width": 1100,
+    "height": 650
+  }
+]

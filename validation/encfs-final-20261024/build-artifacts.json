@@ -1,0 +1,216 @@
+{
+  "acceptance-04": {
+    "build_artifacts": {
+      "nuttx": {
+        "path": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs/nuttx",
+        "size": 7064168,
+        "sha256": "b0efd843d7fe5856665a7bd0a602a4336bf26bb134e70bf03981d85b32d64835"
+      },
+      "nuttx.bin": {
+        "path": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs/nuttx.bin",
+        "size": 1613824,
+        "sha256": "a24531f9a892e8e2ea17a32d6ce070c0d9c2f01011efdccdc1f2bc59da0f0ada"
+      },
+      "vela_data.bin": {
+        "path": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs/vela_data.bin",
+        "size": 268435456,
+        "sha256": "a6d72ac7690f53be6ae46ba88506bd97302a093f7108472bd9efc3cefda06484"
+      },
+      "vela_system.bin": {
+        "path": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs/vela_system.bin",
+        "size": 1024,
+        "sha256": "9a21edc2cb0d8e252a088150b82de6c2000f95e927127207a9816e2c90dcc4c7"
+      },
+      ".config": {
+        "path": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs/.config",
+        "size": 52902,
+        "sha256": "d688134f18ff96ddf04571fbd7a2f31566773da30e462c2aa8e20323d18de4c5"
+      }
+    },
+    "source_revisions": {
+      "nuttx": {
+        "revision": "7934920bb876195f2f45fc76b863235d5129c6e3",
+        "dirty": false,
+        "changes": []
+      },
+      "apps": {
+        "revision": "b3b26aab77d67c8e15e626da07f6c9470b0a599f",
+        "dirty": true,
+        "changes": [
+          "?? testing/drivers/nist-sts/.gitee/",
+          "?? testing/drivers/nist-sts/.github/",
+          "?? testing/drivers/nist-sts/sts/"
+        ]
+      },
+      "vendor_openvela": {
+        "revision": "eb539d2fa01e427e1013f839986c6f1025bb373a",
+        "dirty": false,
+        "changes": []
+      },
+      "manifests": {
+        "revision": "bd30cb831a75785d34e246b2d75ef0e0862b725b",
+        "dirty": true,
+        "changes": [
+          " M docs/encfs_interfaces.md",
+          " M docs/encfs_test_plan.md",
+          " M encfs-sources.json",
+          " M overlays/apps/examples/encfs_test/CMakeLists.txt",
+          " M overlays/apps/examples/encfs_test/Kconfig",
+          " M overlays/apps/examples/encfs_test/Makefile",
+          " M overlays/apps/examples/encfs_test/encfs_test_main.c",
+          " M overlays/apps/examples/encfs_test/encfs_test_shared.h",
+          " M overlays/apps/system/encfs/Kconfig",
+          " M overlays/apps/system/encfs/encfs_main.c",
+          " M patches/vendor_openvela/encfs.patch",
+          " M tools/test_encfs.py",
+          "?? overlays/apps/examples/encfs_test/encfs_test_stress.c",
+          "?? overlays/apps/system/encfs/tests/",
+          "?? tools/test_encfs_gui.py"
+        ]
+      }
+    }
+  },
+  "gui-long-01": {
+    "build_artifacts": {
+      "nuttx": {
+        "path": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-gui/nuttx",
+        "size": 61178112,
+        "sha256": "2c1e34a236e2ea1e0659a4a9916ed17ec20faf0b05e65f1c5ecc3fca68ab5e39"
+      },
+      "nuttx.bin": {
+        "path": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-gui/nuttx.bin",
+        "size": 7032832,
+        "sha256": "7fa19e020ddf878aa5cc4c94859bf22960fb357ed932128da2e530f0a6a930e3"
+      },
+      "vela_data.bin": {
+        "path": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-gui/vela_data.bin",
+        "size": 268435456,
+        "sha256": "a6d72ac7690f53be6ae46ba88506bd97302a093f7108472bd9efc3cefda06484"
+      },
+      "vela_system.bin": {
+        "path": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-gui/vela_system.bin",
+        "size": 1024,
+        "sha256": "183bb78ee4cb724f18559fc3325c8b5beda73a2afc8213c55fb032c056b47f3e"
+      },
+      ".config": {
+        "path": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-gui/.config",
+        "size": 106287,
+        "sha256": "ed89b21121bc9790b04e1e7d5e01b4707011c3090cd342231af5c568101ac8ae"
+      }
+    },
+    "source_revisions": {
+      "nuttx": {
+        "revision": "7934920bb876195f2f45fc76b863235d5129c6e3",
+        "dirty": false,
+        "changes": []
+      },
+      "apps": {
+        "revision": "b3b26aab77d67c8e15e626da07f6c9470b0a599f",
+        "dirty": true,
+        "changes": [
+          "?? testing/drivers/nist-sts/.gitee/",
+          "?? testing/drivers/nist-sts/.github/",
+          "?? testing/drivers/nist-sts/sts/"
+        ]
+      },
+      "vendor_openvela": {
+        "revision": "eb539d2fa01e427e1013f839986c6f1025bb373a",
+        "dirty": false,
+        "changes": []
+      },
+      "manifests": {
+        "revision": "bd30cb831a75785d34e246b2d75ef0e0862b725b",
+        "dirty": true,
+        "changes": [
+          " M docs/encfs_interfaces.md",
+          " M docs/encfs_test_plan.md",
+          " M encfs-sources.json",
+          " M overlays/apps/examples/encfs_test/CMakeLists.txt",
+          " M overlays/apps/examples/encfs_test/Kconfig",
+          " M overlays/apps/examples/encfs_test/Makefile",
+          " M overlays/apps/examples/encfs_test/encfs_test_main.c",
+          " M overlays/apps/examples/encfs_test/encfs_test_shared.h",
+          " M overlays/apps/system/encfs/Kconfig",
+          " M overlays/apps/system/encfs/encfs_main.c",
+          " M patches/vendor_openvela/encfs.patch",
+          " M tools/test_encfs.py",
+          "?? overlays/apps/examples/encfs_test/encfs_test_stress.c",
+          "?? overlays/apps/system/encfs/tests/",
+          "?? tools/test_encfs_gui.py"
+        ]
+      }
+    }
+  },
+  "gui-keypad-controls-02": {
+    "build_artifacts": {
+      "nuttx": {
+        "path": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-gui/nuttx",
+        "size": 61178112,
+        "sha256": "2c1e34a236e2ea1e0659a4a9916ed17ec20faf0b05e65f1c5ecc3fca68ab5e39"
+      },
+      "nuttx.bin": {
+        "path": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-gui/nuttx.bin",
+        "size": 7032832,
+        "sha256": "7fa19e020ddf878aa5cc4c94859bf22960fb357ed932128da2e530f0a6a930e3"
+      },
+      "vela_data.bin": {
+        "path": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-gui/vela_data.bin",
+        "size": 268435456,
+        "sha256": "a6d72ac7690f53be6ae46ba88506bd97302a093f7108472bd9efc3cefda06484"
+      },
+      "vela_system.bin": {
+        "path": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-gui/vela_system.bin",
+        "size": 1024,
+        "sha256": "183bb78ee4cb724f18559fc3325c8b5beda73a2afc8213c55fb032c056b47f3e"
+      },
+      ".config": {
+        "path": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-gui/.config",
+        "size": 106287,
+        "sha256": "ed89b21121bc9790b04e1e7d5e01b4707011c3090cd342231af5c568101ac8ae"
+      }
+    },
+    "source_revisions": {
+      "nuttx": {
+        "revision": "7934920bb876195f2f45fc76b863235d5129c6e3",
+        "dirty": false,
+        "changes": []
+      },
+      "apps": {
+        "revision": "b3b26aab77d67c8e15e626da07f6c9470b0a599f",
+        "dirty": true,
+        "changes": [
+          "?? testing/drivers/nist-sts/.gitee/",
+          "?? testing/drivers/nist-sts/.github/",
+          "?? testing/drivers/nist-sts/sts/"
+        ]
+      },
+      "vendor_openvela": {
+        "revision": "eb539d2fa01e427e1013f839986c6f1025bb373a",
+        "dirty": false,
+        "changes": []
+      },
+      "manifests": {
+        "revision": "bd30cb831a75785d34e246b2d75ef0e0862b725b",
+        "dirty": true,
+        "changes": [
+          " M README.md",
+          " M docs/encfs_interfaces.md",
+          " M docs/encfs_test_plan.md",
+          " M encfs-sources.json",
+          " M overlays/apps/examples/encfs_test/CMakeLists.txt",
+          " M overlays/apps/examples/encfs_test/Kconfig",
+          " M overlays/apps/examples/encfs_test/Makefile",
+          " M overlays/apps/examples/encfs_test/encfs_test_main.c",
+          " M overlays/apps/examples/encfs_test/encfs_test_shared.h",
+          " M overlays/apps/system/encfs/Kconfig",
+          " M overlays/apps/system/encfs/encfs_main.c",
+          " M patches/vendor_openvela/encfs.patch",
+          " M tools/test_encfs.py",
+          "?? overlays/apps/examples/encfs_test/encfs_test_stress.c",
+          "?? overlays/apps/system/encfs/tests/",
+          "?? tools/test_encfs_gui.py"
+        ]
+      }
+    }
+  }
+}
