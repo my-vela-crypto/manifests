@@ -1,6 +1,6 @@
 # 第二、三层实现与测试报告
 
-日期：2026 年 10 月 22 日，Asia/Shanghai。状态：源码实现、ARM64 编译和真实模拟器验收均完成；团队远端发布因本执行环境尚未对齐有效认证而未完成。
+验收日期：2026 年 10 月 22 日，Asia/Shanghai；发布检查更新于 2026 年 10 月 23 日。状态：源码实现、ARM64 编译和真实模拟器验收均完成；有效 HTTPS 登录下，团队目标仓库仍拒绝本次写入，远端发布尚未完成。
 
 ## 实现范围
 
@@ -82,7 +82,7 @@ python3 .repo/manifests/tools/test_encfs.py --source-root "$PWD"
 | apps | `791f4edb8b53b7389a379f4551562bbd8aa08387` |
 | vendor/openvela | `a5ebb9c9c0dcb53fb8f23acd007c02abb1b0fa22` |
 
-用户已确认 GitHub Desktop 可以推送。本执行环境的 HTTPS 尚无凭据助手；分别使用本机 `AC1Liu`、`Brilliance-Zjh` 两套 SSH 身份实际推送时均被拒绝。GitHub 连接器实际写入返回 `403 Resource not accessible by integration`，其返回的 `push=false` 不能据此推断用户账号没有写权限。当前待解决的是让本执行环境使用 GitHub Desktop 已授权的同一认证。源码和测试成果已保存在本地提交及交付包，本次未向官方上游推送或写入不存在的 fork 引用。
+2026 年 10 月 23 日通过 GitHub CLI 官方网页登录，直接接口确认当前身份为 `AC1Liu`，授权包含 `repo`，目标组织成员状态为 `active`。在这次有效 HTTPS 登录下，`my-vela-crypto/nuttx` 的实际推送及 `my-vela-crypto/manifests` 的无写入推送预检均收到 GitHub 的 `403 Permission denied to AC1Liu`；直接接口对这两个具体仓库返回 `push: false`。用户确认 GitHub Desktop 可以推送，Desktop 的实际远端与此结果之间的差异尚待核对。此前连接器的集成访问错误不能证明用户没有写权限。源码和测试成果均保存在本地提交及交付包，最新诊断随包保存为 `validation/openvela-encfs-https-publish.log`；未向官方上游推送或写入不存在的 fork 引用。
 
 ## 已知边界
 
