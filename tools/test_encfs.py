@@ -251,9 +251,11 @@ class Emulator:
 
     def __enter__(self):
         args = self.args
-        command = [str(args.source_root / "run-emulator.sh"), CONFIG,
+        command = [str(args.source_root / "run-emulator.sh"),
+                   getattr(args, "config", CONFIG),
                    "-keep", self.instance, "-no-window", "-no-audio",
-                   "-gpu", "off", "-accel", "off"]
+                   "-gpu", getattr(args, "gpu", "off"), "-accel", "off"]
+        command.extend(getattr(args, "emulator_args", []))
         env = os.environ.copy()
         env.update({"ANDROID_AVD_HOME": str(args.results_dir / "avd"),
                     "CUSTOM_AVD_SPACE": str(args.results_dir / "avd"),
@@ -283,12 +285,12 @@ class Emulator:
                 self.phase["shutdown_error"] = str(cleanup_error)
             raise
 
-    def command(self, command):
+    def command(self, command, timeout=None):
         record = {"command": command, "started_at": now()}
         self.phase["commands"].append(record)
         self.child.sendline(command)
         try:
-            self.child.expect_exact(PROMPT, timeout=self.args.command_timeout)
+            self.child.expect_exact(PROMPT, timeout=timeout or self.args.command_timeout)
         except (pexpect.EOF, pexpect.TIMEOUT) as exc:
             record["output_tail"] = self.child.before[-4000:]
             record["error"] = type(exc).__name__

@@ -10,6 +10,98 @@
 #include <stdlib.h>
 #include <string.h>
 
+static void usage(void)
+{
+  fprintf(stderr, "Usage: encfs start|stop|status|provision --erase\n");
+#ifdef CONFIG_ENCFS_TESTING
+  fprintf(stderr, "       encfs testkey <64-hex-digits>|board|none\n"
+          "       Test keys only; stop the volume before changing keys.\n"
+          "       board restores the board key; none simulates no key.\n");
+#endif
+}
+
+#ifdef CONFIG_ENCFS_TESTING
+static int hex_value(char ch)
+{
+  if (ch >= '0' && ch <= '9')
+    {
+      return ch - '0';
+    }
+
+  if (ch >= 'a' && ch <= 'f')
+    {
+      return ch - 'a' + 10;
+    }
+
+  if (ch >= 'A' && ch <= 'F')
+    {
+      return ch - 'A' + 10;
+    }
+
+  return -1;
+}
+
+static int test_key(FAR const char *text)
+{
+  uint8_t key[ENCFS_MASTER_KEY_SIZE] = {0};
+  FAR volatile uint8_t *wipe = key;
+  unsigned int i;
+  int high;
+  int low;
+  int ret = -EINVAL;
+
+  if (strcmp(text, "board") == 0)
+    {
+      ret = encfs_test_use_board_key();
+    }
+  else if (strcmp(text, "none") == 0)
+    {
+      ret = encfs_test_set_master(NULL, 0);
+    }
+  else if (strlen(text) == sizeof(key) * 2)
+    {
+      for (i = 0; i < sizeof(key); i++)
+        {
+          high = hex_value(text[i * 2]);
+          low = hex_value(text[i * 2 + 1]);
+          if (high < 0 || low < 0)
+            {
+              goto out;
+            }
+
+          key[i] = (uint8_t)((high << 4) | low);
+        }
+
+      ret = encfs_test_set_master(key, sizeof(key));
+    }
+
+out:
+  /* Keep parsed key material out of the CLI's stack after every outcome. */
+
+  for (i = 0; i < sizeof(key); i++)
+    {
+      wipe[i] = 0;
+    }
+
+  if (ret == -EINVAL)
+    {
+      fprintf(stderr, "encfs: testkey expects exactly 64 hexadecimal digits, "
+              "board, or none\n");
+    }
+  else if (ret == -EBUSY)
+    {
+      fprintf(stderr, "encfs: stop the volume and release all resources "
+              "before changing the test key\n");
+    }
+  else if (ret == 0)
+    {
+      printf("encfs: test key source changed\n");
+    }
+
+  return ret;
+}
+#endif
+
 static const char *state_name(enum encfs_state_e state)
 {
   static const char *const names[] =
@@ -46,9 +138,15 @@ int main(int argc, FAR char *argv[])
     {
       ret = 0;
     }
+#ifdef CONFIG_ENCFS_TESTING
+  else if (argc == 3 && strcmp(argv[1], "testkey") == 0)
+    {
+      ret = test_key(argv[2]);
+    }
+#endif
   else
     {
-      fprintf(stderr, "Usage: encfs start|stop|status|provision --erase\n");
+      usage();
       return EXIT_FAILURE;
     }
 

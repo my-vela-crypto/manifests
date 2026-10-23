@@ -72,6 +72,62 @@ python3 .repo/manifests/tools/test_encfs.py \
 
 每阶段测试后执行 `encfs stop`，要求状态 STOPPED，再对本次独立模拟器进程组发 SIGTERM，等待 EOF 和进程结束后才读镜像。需要 SIGKILL 的阶段不计作干净停机通过。检查对象是 `avd/<实例>.vvd/vela_data.bin`，不是构建目录中的初始空白盘。
 
+## NSH 测试密钥、完整 GUI 与定时压力回归
+
+完整 GUI 配置 `goldfish-arm64-v8a-ap-encfs-gui` 从原 `goldfish-arm64-v8a-ap` 配置扩展，保留 LVGL、Binder servicemanager、KVDB、ADB、音频、网络及原调试功能，同时启用 EncFS、NSH 测试主密钥入口、真实帧缓冲截图 `fbcapture` 和触控输入工具 `input`。GUI demo 的图像等资源编入固件；系统 ROMFS 仍按原板级规则打包，空白数据盘不预装明文文件。
+
+从工作区根目录构建并运行完整回归：
+
+```bash
+./build.sh vendor/openvela/boards/vela/configs/goldfish-arm64-v8a-ap-encfs-gui/ --cmake -j4
+python3 .repo/manifests/tools/test_encfs_gui.py \
+  --source-root "$PWD" \
+  --build-dir "$PWD/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-gui" \
+  --results-dir "$PWD/encfs-results/gui-stress-$(date +%Y%m%d-%H%M%S)" \
+  --stress-seconds 3600
+```
+
+若该构建目录已用旧版 defconfig 配置，先通过相同构建入口执行 `--cmake resetconfig`，再正常编译，核对最终 `.config` 中 `FBCAPTURE`、`GRAPHICS_INPUT_TOOL`、`ENCFS_TESTING` 均为 `y`。GUI runner 另依赖 Pillow（`PIL`），例如使用 `sudo apt install python3-pexpect python3-pil` 安装宿主依赖。`--stress-seconds` 默认 3600，可设 60–86400；60 秒只适合快速验证，不能将其结果描述为一小时压力通过。结果目录须不存在或为空。
+
+该 runner 在独立实例中使用 `-gpu swiftshader_indirect`，通过 Guest 的 `/dev/fb0` 读取真实渲染帧，通过 `/dev/utouch` 注入触控，不复用存储 runner 的 `-gpu off`。模拟器的 `/share` 是本实例的 9p 导出目录，截图写入该路径，不影响加密卷中的持久化样本。正常用户配置、IPC 和实际数据盘隔离要求与上一节一致。
+
+七个开机阶段按下表执行；手工主密钥实例和板级密钥 GUI 实例使用不同的新数据盘，同一实例后续启动复用其原盘：
+
+| 阶段 | 操作与预期 |
+| --- | --- |
+| `manual-key` | `encfs stop` 后，通过 `encfs testkey <64hex>\|board\|none` 选择测试来源；检查缺钥、非法长度/字符拒绝、READY 时换钥拒绝；只在新盘用公开夹具 A 执行一次 provision；夹具 B 或 board 拒挂后重新选 A，原内容应仍可恢复 |
+| `manual-key-coldboot` | 不再 provision；冷启动后 stop 并重新输入 A，读回相同文件，再 stop；停机盘哈希应与上阶段相同，已知明文内容和逻辑文件名不出现在原始镜像 |
+| `gui-music` | GUI 新盘首次用板级来源 provision，然后启动 `lvgldemo music &`；GUI 任务应存活、初始画面有效，后续动画应改变超过 1000 个像素 |
+| `gui-keypad` | 同盘冷启动，不 provision；启动 `lvgldemo keypad_encoder &`，注入点击和滑动，保存前后截图，供人工核对交互画面 |
+| `gui-stress-demo` | 同盘启动 `lvgldemo stress &`；这里的 stress 是 LVGL 图形动画 demo，要求有效帧和动画变化，不将其等同文件系统定时压力 |
+| `gui-widgets-storage` | 启动 widgets，点击 Profile/Analytics/Shop 并检查画面变化；GUI 与原服务存活时执行 `encfs_test write` 的完整加密回归，再启动两个文件系统线程持续请求时长，并周期检查 NSH、READY、GUI、内存及触控画面 |
+| `gui-persistence-coldboot` | 定时压力结束、干净 stop 后，同盘冷启动 widgets 并再次触控；`encfs_test verify` 应读回持久化样本，原始加密盘检查通过，最终盘哈希应与压力阶段停机后相同 |
+
+公开夹具 A 为 `000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f`，B 为 `202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f`。测试入口仅在 `CONFIG_ENCFS_TESTING=y` 时存在。换来源前须 stop 且没有残留资源；非法输入返回 `-EINVAL` 并保持旧来源，运行时返回 `-EBUSY`。错误/缺失主密钥只应拒绝挂载、回滚资源；恢复正确 A 后应仍能读取样本，期间禁止重新 provision。命令参数可能被 NSH 回显、串口日志或历史保存，因此仅输入公开测试材料，不输入真实秘密。完整语义见 `encfs_interfaces.md` 的测试专用接口节。
+
+可在自己的独立新测试实例内手工复核 GUI；首次 provision 完成后：
+
+```text
+encfs start
+lvgldemo widgets &
+fbcapture -d /dev/fb0 -o /share/widgets-profile.bmp
+input tap 950 35
+fbcapture -d /dev/fb0 -o /share/widgets-analytics.bmp
+input tap 1160 35
+fbcapture -d /dev/fb0 -o /share/widgets-shop.bmp
+encfs_test stress 3600 &
+```
+
+本机实际 Guest 帧缓冲为 1280×800 横屏，尽管模拟器配置仍写有 720×1280；验收以真实帧缓冲尺寸为准。widgets 顶部三个 tab 中心分别约为 `(740,35)`、`(950,35)`、`(1160,35)`。不同 demo 使用独立冷启动，不在已初始化 LVGL 后直接重新运行另一个 demo。`fbcapture` 的退出码本身不足以判断保存成功；应同时要求串口出现 `Success`、导出 BMP 实际存在、尺寸为 1280×800 且非近乎均色。切换 tab 前后超过 1000 个像素变化是自动化判据，最终仍应查看保存的画面，不能仅凭任务名断言视觉正确。
+
+当前 `CONFIG_GOLDFISH_GPU_FB_RGB565=y`，但原 `fbcapture` 工具将 16 位 RGB565 像素写入带 `BI_RGB` 标记的 BMP；Pillow 等通用 BMP 读取器可能按 RGB555 解释，造成色彩失真。runner 保留原始 BMP 作为证据，并依据实际配置，用 Pillow 的 `BGR;16` raw 解码、真实行跨度及自底向上的顺序导出 PNG。人工复核应查看 `frames/*.png`；不要将通用读取器错误解释的 BMP 颜色当作 Guest 渲染错误。配置或帧缓冲格式变化后，应重新核对像素格式和尺寸，不能沿用该解码假设。
+
+定时压力使用 `encfs_test stress <seconds>`：两个线程持续进行变长创建/写入、偏移覆盖、fsync、字节校验、重命名、重开、逻辑目录遍历和删除，不以睡眠凑时长。每线程最多保留一个 65537 字节文件，每轮删除自己的文件，限制磁盘占用。预期数据由固定种子生成，完整读回两次；最终同时检查 Guest 单调时钟总时长、每线程时长、宿主实际经过时间、两线程正轮数、写入/验证正字节数、`errors=0 completed=1` 和 `ENCFS_TEST_RESULT mode=stress pass=1 fail=0`。
+
+Guest 每 30 秒报告一个进度窗口；runner 约每 30 秒检查一次 READY、NSH 响应、GUI 任务和 `free` 输出。连续窗口中两个线程的轮数都须递增；宿主连续 95 秒收不到新 I/O 进度且没有最终结果视为停滞。首个检查点、此后每 10 个检查点和结束时，重新点击 Analytics/Shop、截图并验证画面变化。内存数值进入报告，用于比较趋势；不能仅凭单次前后差值宣称没有泄漏。
+
+这组回归不预设通过状态。一小时请求只在实际运行达到时长、全部阶段断言通过且干净卸载后成立；短跑、部分完成或仅图形 demo 运行一小时均不得代替。断电、物理硬件故障恢复和无限期耐久性不属于此步骤证明的范围。
+
 ## Guest 用例覆盖
 
 `encfs_test crypto` 只运行密码与组件名检查。`standalone` 包含算法检查及独立名称层文件测试，会格式化它所在实例的原始数据盘，不能在持久化样本上执行。`corruption` 会在专用新盘反复建盘，禁止在持久化样本或日常数据盘执行。`write`/`all` 需要已 provision 的完整卷；`verify` 只读取已有样本。
@@ -107,6 +163,10 @@ encrypted-reboot-03.serial.log
 corruption.serial.log
 avd/<独立实例>.vvd/vela_data.bin
 ```
+
+GUI/定时回归的独立结果目录还保存 `manual-key.serial.log`、`manual-key-coldboot.serial.log`、`gui-music.serial.log`、`gui-keypad.serial.log`、`gui-stress-demo.serial.log`、`gui-widgets-storage.serial.log`、`gui-persistence-coldboot.serial.log`，以及 `frames/*.png` 和实例 `share/*.bmp`。GUI `report.json` 记录各帧路径、SHA-256、尺寸、像素差、内存检查点、Guest 进度/最终统计、宿主经过时长、所有命令、源代码与构建标识、实际数据盘路径及停机哈希。应保留原始失败尝试，再用全新结果目录复测，不覆盖失败证据。
+
+任一 CLI 状态不符、错误主密钥意外挂载、数据不符、GUI 任务退出、空白/错误尺寸截图、tab/动画无明显变化、工作线程停滞、时长不足、缺失或重复总结行、命令/启动超时、无法干净 stop，均应非零退出并记录失败；已完成的局部阶段不能使整体 `status` 变为 `passed`。停止模拟器与镜像取证同样要求先 STOPPED、等待实例进程结束，不能对运行中的镜像作一致性结论。
 
 失败发生得早时，后续阶段日志可能尚未创建。`report.json` 记录固件与配置哈希、各模块 Git revision 和未提交修改、实际启动参数、Guest 命令及总结、每个阶段状态、镜像绝对路径、大小及 SHA-256、目录解析结果、原始失败及异常追踪。整体 `status` 必须为 `passed`，并全部要求的阶段通过，才可填写本轮完整验收通过。需要强制结束进程等异常时，报告会标记；失败后取得的哈希只作为保留样本记录，不能替代成功断言。
 

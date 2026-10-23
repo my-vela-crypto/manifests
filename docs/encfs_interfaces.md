@@ -36,7 +36,7 @@ blk_key  = HKDF-SHA256(master, salt=ASCII("blkcrypt"),  info=空, L=32)
 path_key = HKDF-SHA256(master, salt=ASCII("encpathfs"), info=空, L=32)
 ```
 
-两个 salt 分别为 8、9 字节，均不含结尾 NUL。没有从短口令直接构造主密钥的接口。`CONFIG_BOARDCTL_UNIQUEKEY_SIZE` 必须为 32。临时 master、派生输出和密码中间缓冲区在相应使用结束后擦除；运行实例只保留操作所需上下文。密钥不进入挂载选项、状态结构或命令输出。
+两个 salt 分别为 8、9 字节，均不含结尾 NUL。没有从短口令直接构造主密钥的接口。`CONFIG_BOARDCTL_UNIQUEKEY_SIZE` 必须为 32。临时 master、派生输出和密码中间缓冲区在相应使用结束后擦除；运行实例只保留操作所需上下文。密钥不进入挂载选项、状态结构或程序主动打印的状态输出。测试 CLI 的参数仍可能被终端回显或保存到历史，详见下文。
 
 QEMU 板级 `vendor/openvela/boards/vela/src/qemu_vela.c` 返回固定的 32 字节伪密钥。它用于课程演示和可复现测试，不是设备硬件秘密或生产密钥管理方案。测试配置还打开了可注入主密钥的 `CONFIG_ENCFS_TESTING`，生产构建应关闭该选项，并另行提供可信密钥来源。
 
@@ -172,6 +172,45 @@ int encfs_test_set_failpoint(enum encfs_test_failpoint_e failpoint);
 ```
 
 `set_master(NULL, 0)` 模拟缺少主密钥；非空密钥长度必须为 32。恢复板级来源或更换测试主密钥都会擦除旧测试材料，运行中及有残留资源时被拒绝。
+
+### NSH 手工输入测试主密钥
+
+内置命令 `encfs` 在 `CONFIG_ENCFS_TESTING=y` 时增加以下入口；关闭该选项后不编译此入口，也不在帮助中列出：
+
+```text
+encfs testkey <64hex>
+encfs testkey board
+encfs testkey none
+```
+
+`<64hex>` 必须是恰好 64 个十六进制字符，大小写均可，不带 `0x`、空格或分隔符，解析为 32 字节 master。长度或字符错误返回 `-EINVAL`，不改变此前选择的来源。`board` 恢复 `board_uniquekey()` 来源；`none` 模拟无主密钥，随后 `encfs start` 应失败。它们都不修改磁盘密钥或重加密已有文件，不能当作在线换钥功能。
+
+执行前先 `encfs stop`，确认 `state=STOPPED` 且没有残留块设备、挂载或待恢复资源；READY 或有残留资源时，三个入口均返回 `-EBUSY`，保持已有卷有效。成功时只打印来源已改变，不打印主密钥；CLI 每条返回路径都会擦除其解析缓冲。测试来源保存在 RAM，冷启动后恢复板级默认来源，手工测试卷需要重新输入原测试主密钥才能挂载。
+
+以下是公开测试夹具 A，任何人均可知道，不提供保密性。首次初始化步骤只可用于独立的新空白测试盘：
+
+```text
+encfs stop
+encfs testkey 000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f
+encfs provision --erase
+encfs start
+```
+
+可用公开夹具 B `202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f` 测试错误密钥：先 stop，选择 B，再 start，应拒绝 A 初始化的卷；随后 stop、重新选择 A、start，应仍可读回原数据。此拒绝路径绝不执行 provision。只有显式 `encfs provision --erase` 才会破坏性重建卷；不要用它消除错误密钥报错。
+
+NSH 通过命令参数接收测试材料，终端、串口日志及命令历史可能保留整条输入。此命令只用于上述公开测试夹具，不能输入生产密钥；擦除 CLI 的局部缓冲不等于删除终端或历史中的副本。
+
+### 定时并发文件系统压力入口
+
+```text
+encfs_test stress <seconds:60..86400>
+```
+
+此入口要求已 provision 的完整三层卷，调用 `encfs_start()` 后在两个线程中持续执行真实文件操作。它不格式化、不更换主密钥、不卸载卷，也不移除任意既有目录树。每个线程独占一个临时文件及两个工作目录，完成创建、分块写入、跨扇区偏移覆盖、fsync、打开句柄完整校验、rename、重开完整校验、逻辑目录遍历和删除。文件长度最大 65537 字节，两个线程合计最多保留 131074 字节文件内容；目录名包含 PID 和单调时钟，防止覆盖无关样本。
+
+测试数据由固定种子 `0x6e637273`、线程编号和轮次生成，可独立复算预期字节。两个工作线程各自使用单调时钟测满请求时长，报告线程每 30 秒输出 `ENCFS_LONG_STRESS_PROGRESS`，包含两线程轮数、写入/校验字节和堆使用量。最终 `ENCFS_LONG_STRESS_RESULT` 只有在两个线程均运行足够时长、均完成操作、无错误且清理成功时给出 `completed=1 errors=0`；还须出现 `ENCFS_TEST_RESULT mode=stress pass=1 fail=0`。堆统计是观测数据，不单独证明不存在内存泄漏。
+
+完整 GUI 回归通过 `fbcapture` 读取真实 Guest 帧缓冲；本机得到 1280×800 横屏，覆盖模拟器配置中的 720×1280 声明。当前 `CONFIG_GOLDFISH_GPU_FB_RGB565=y`，原工具保存的 BMP 使用 `BI_RGB` 标记，通用读取器可能误判为 RGB555。runner 保留原 BMP，并依据实际 RGB565 格式以 Pillow raw `BGR;16` 解码导出 PNG，供画面和色彩复核。widgets 的 Profile、Analytics、Shop 点击坐标分别约为 `(740,35)`、`(950,35)`、`(1160,35)`；复现流程及截图判据见 `encfs_test_plan.md`。
 
 failpoint 为 `NONE`、`REGISTER`、`KEY`、`LOWER`、`UPPER`。到达对应操作之前返回一次 `-EIO`，随后自动解除；未到达该阶段不会提前消费。故障发生在真实操作之前，用来验证管理器回滚和重试，不等于覆盖全部底层 I/O 失败。宿主生命周期测试另以外部依赖替身覆盖清理失败和异常发布路径。
 

@@ -6,3 +6,6 @@ config SYSTEM_ENCFS
 	depends on BUILD_FLAT
 	help
 	  Control the encrypted data volume. Provision requires --erase.
+	  With ENCFS_TESTING, testkey accepts a 32-byte hexadecimal test key,
+	  restores the board key, or simulates a missing key provider. These
+	  test commands require the volume to be stopped with no resources.

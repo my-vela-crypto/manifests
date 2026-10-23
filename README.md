@@ -210,9 +210,19 @@ adb devices
 
 第二层 `encpathfs` 负责透明、可认证的文件名加密，第三层 `encfs` 负责密钥派生、建盘、挂载、状态和失败回滚。完整链路是 `/data → encpathfs → 隐藏的 FatFs/exFAT → /dev/encdata0 → blkcrypt → /dev/virtblk1`。
 
-团队 [nuttx/dev](https://github.com/my-vela-crypto/nuttx/tree/dev) 已包含两层实现与验收修复（`7934920bb876195f2f45fc76b863235d5129c6e3`）。本 manifest 同时保存完整内核补丁、`patches/vendor_openvela/encfs.patch` 板级补丁及 `overlays/apps/` 的 13 个应用文件，以便从记录的原始基线重现。应用器会识别已进入团队内核的相同修改并跳过，仍需安装板级与应用改动。基线和全部文件校验值由 `encfs-sources.json` 记录，发布及验收结果见 `docs/encfs_test_report.md`。
+团队 [nuttx/dev](https://github.com/my-vela-crypto/nuttx/tree/dev) 已包含两层实现与验收修复（`7934920bb876195f2f45fc76b863235d5129c6e3`）。本 manifest 同时保存完整内核补丁、`patches/vendor_openvela/encfs.patch` 板级补丁及 `overlays/apps/` 的 15 个应用文件，以便从记录的原始基线重现。应用器会识别已进入团队内核的相同修改并跳过，仍需安装板级与应用改动。基线和全部文件校验值由 `encfs-sources.json` 记录，发布及验收结果见 `docs/encfs_test_report.md`。
 
 首次同步后，根目录的快捷链接可能尚不存在，**先执行 Python 入口**：
+
+课程验收推荐在新的工作区选择 `encfs-tested.xml`：它固定了本次编译的 232 个项目版本，apps 和 vendor/openvela 使用已验证补丁的官方基线，再由应用器安装本项目改动。日常开发的默认 manifest 仍跟随 dev。新工作区的完整入口为：
+
+```bash
+repo init -u https://github.com/my-vela-crypto/manifests.git -b dev -m encfs-tested.xml
+repo sync -c -j8
+python3 .repo/manifests/tools/apply_encfs.py
+```
+
+已有工作区按当前 manifest 同步并应用：
 
 ```bash
 repo sync -c -j8
@@ -227,7 +237,7 @@ python3 .repo/manifests/tools/apply_encfs.py
 
 脚本遇到基线或本地修改冲突时，先处理冲突，不要强行覆盖成员改动。升级同步后也应重新应用并检查结果。后续若改用已包含这些变化的团队仓库，应同时调整补丁与覆盖文件，避免重复维护。
 
-本地扩展验收已完成：Guest 665 项检查通过，包含两组各 1000 轮文件回归、100 次启停和同盘三次冷启动；两处验收发现的问题及证据见 `docs/encfs_test_report.md`。本地编译和模拟器验收不需要 GitHub 写权限。
+本地扩展存储验收已完成：Guest 665 项检查通过，包含两组各 1000 轮文件回归、100 次启停和同盘三次冷启动；两处验收发现的问题及证据见 `docs/encfs_test_report.md`。本地编译和模拟器验收不需要 GitHub 写权限。
 
 ### 构建加密专用配置
 
@@ -276,6 +286,48 @@ encfs stop
 
 打开文件或目录时 stop 返回忙，运行状态保留；释放句柄后重试。有清理错误时保留资源及错误阶段，先处理或重试 stop，不在线换钥。
 
+### NSH 手工输入测试主密钥
+
+仅 `CONFIG_ENCFS_TESTING=y` 的测试配置提供 `encfs testkey <64hex>|board|none`：恰好 64 个十六进制字符选择 32 字节测试 master，`board` 恢复板级来源，`none` 模拟缺钥。先 stop，确认 STOPPED 且无残留资源；运行时换来源返回 `-EBUSY`，非法输入返回 `-EINVAL` 并保持旧来源。
+
+例如选择公开测试夹具 A：
+
+```text
+encfs stop
+encfs testkey 000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f
+```
+
+新空白专用盘随后按上一节首次 provision；已用 A 初始化的盘直接 `encfs start`，不要再次 provision。错误或缺失密钥应拒绝挂载，恢复原来源后应仍能读回已有数据。测试来源只在 RAM 中保留，冷启动后须重新输入 A。参数可能被终端回显、串口日志或历史保存，仅使用公开测试材料，不输入真实秘密。
+
+### 完整 GUI 配置与手工检查
+
+独立配置保留原 GUI、音频、网络和服务，加入加密及真实截图/触控工具：
+
+```bash
+./build.sh vendor/openvela/boards/vela/configs/goldfish-arm64-v8a-ap-encfs-gui/ --cmake -j4
+ENCFS_GUI_DIR="$PWD/encfs-gui-avd"
+ENCFS_GUI_INSTANCE="encfs-gui-demo-$(date +%Y%m%d-%H%M%S)"
+mkdir -p "$ENCFS_GUI_DIR"
+ANDROID_AVD_HOME="$ENCFS_GUI_DIR" CUSTOM_AVD_SPACE="$ENCFS_GUI_DIR" \
+  ./run-emulator.sh goldfish-arm64-v8a-ap-encfs-gui \
+  -keep "$ENCFS_GUI_INSTANCE" -no-window -no-audio \
+  -gpu swiftshader_indirect -accel off
+```
+
+首次新盘才执行 `encfs provision --erase`。之后在 NSH 中：
+
+```text
+encfs start
+lvgldemo widgets &
+fbcapture -d /dev/fb0 -o /share/profile.bmp
+input tap 950 35
+fbcapture -d /dev/fb0 -o /share/analytics.bmp
+input tap 1160 35
+fbcapture -d /dev/fb0 -o /share/shop.bmp
+```
+
+本机真实帧缓冲为 1280×800 横屏；Profile/Analytics/Shop 点击点约为 `(740,35)`、`(950,35)`、`(1160,35)`。原始 BMP 导出到 `$ENCFS_GUI_DIR/$ENCFS_GUI_INSTANCE.vvd/share/`。本配置使用 RGB565，原截图 BMP 头存在 RGB555 解释歧义，自动 runner 会保存原 BMP 并按实际格式导出 PNG；画面复核使用其 `frames/*.png`。关闭前先 `encfs stop`，同盘重启不再次 provision。
+
 ### 可复现验收
 
 宿主检查：
@@ -296,6 +348,19 @@ python3 .repo/manifests/tools/test_encfs.py \
 ```
 
 Runner 新建专用实例，依次验证独立名称层、完整链路写入、同一加密实例重启读回。只有首次完整链路阶段执行显式 provision。每阶段干净卸载并结束模拟器后，它检查实际 `avd/<实例>.vvd/vela_data.bin`，保留串口日志、镜像路径/哈希与 `report.json`。独立普通 exFAT 解析应显示 `.p` 下为 `E1_` 名称；完整加密盘应检索不到指定完整内容及逻辑文件名。任一断言失败即非零退出。当前预编译模拟器会另外创建 `$HOME/.vela/<唯一实例>.ini` 注册文件，数据镜像仍保存在本次结果目录。
+
+完整 GUI 与定时双线程压力 runner 另需 Pillow：
+
+```bash
+sudo apt install python3-pexpect python3-pil
+python3 .repo/manifests/tools/test_encfs_gui.py \
+  --source-root "$PWD" \
+  --build-dir "$PWD/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-gui" \
+  --results-dir "$PWD/encfs-results/gui-stress-$(date +%Y%m%d-%H%M%S)" \
+  --stress-seconds 3600
+```
+
+该流程验证手工测试钥、四个 LVGL demo、触控与真实截图、GUI 并行存储回归、一小时双线程持续读写和同盘冷启动。每 30 秒检查工作线程进度、NSH、挂载和 GUI，保存统计、内存记录、画面与实际镜像哈希。只有实际运行满请求时长且整体报告为 `passed` 才可记为通过；上面的 665 项是既有存储验收，不代表此 GUI/一小时回归已经完成。更改已有 defconfig 后应先用同一构建入口 `--cmake resetconfig` 再编译。
 
 本文不预填模拟器 PASS；请以实际运行报告为准。详细接口、卷格式和测试判据见 [接口说明](docs/encfs_interfaces.md) 与 [验收计划](docs/encfs_test_plan.md)。
 

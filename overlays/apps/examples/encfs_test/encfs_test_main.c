@@ -497,11 +497,35 @@ static void standalone_tests(void)
 
 int main(int argc, FAR char *argv[])
 {
-  const char *mode = argc == 2 ? argv[1] : "all";
+  const char *mode = argc >= 2 ? argv[1] : "all";
+  char *end;
+  unsigned long seconds;
 
   g_pass = 0;
   g_fail = 0;
-  if (strcmp(mode, "crypto") == 0)
+  if (strcmp(mode, "stress") == 0)
+    {
+      if (argc != 3)
+        {
+          goto usage;
+        }
+
+      errno = 0;
+      seconds = strtoul(argv[2], &end, 10);
+      if (errno != 0 || end == argv[2] || *end != '\0' ||
+          seconds < 60 || seconds > 86400)
+        {
+          goto usage;
+        }
+
+      CHECK("timed concurrent encrypted filesystem stress",
+            encfs_test_stress((unsigned int)seconds) == 0);
+    }
+  else if (argc > 2)
+    {
+      goto usage;
+    }
+  else if (strcmp(mode, "crypto") == 0)
     {
       crypto_tests();
     }
@@ -532,11 +556,15 @@ int main(int argc, FAR char *argv[])
     }
   else
     {
-      fprintf(stderr, "Usage: encfs_test "
-                      "crypto|standalone|corruption|write|verify|all\n");
-      return EXIT_FAILURE;
+      goto usage;
     }
 
   printf("ENCFS_TEST_RESULT mode=%s pass=%u fail=%u\n", mode, g_pass, g_fail);
   return g_fail ? EXIT_FAILURE : EXIT_SUCCESS;
+
+usage:
+  fprintf(stderr, "Usage: encfs_test "
+                  "crypto|standalone|corruption|write|verify|all\n"
+                  "       encfs_test stress <seconds:60..86400>\n");
+  return EXIT_FAILURE;
 }
