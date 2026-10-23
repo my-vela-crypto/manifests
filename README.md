@@ -210,7 +210,7 @@ adb devices
 
 第二层 `encpathfs` 负责透明、可认证的文件名加密，第三层 `encfs` 负责密钥派生、建盘、挂载、状态和失败回滚。完整链路是 `/data → encpathfs → 隐藏的 FatFs/exFAT → /dev/encdata0 → blkcrypt → /dev/virtblk1`。
 
-当前交付包含三部分：`patches/nuttx/encfs.patch` 保存内核实现与构建入口变化，`patches/vendor_openvela/encfs.patch` 保存板级变化，`overlays/apps/` 保存新增应用。即使团队 nuttx 远端暂未包含本次修改，也可在记录的原始基线上从 manifest 补丁重现。补丁基线和全部文件校验值由 `encfs-sources.json` 记录，远端发布状态见 `docs/encfs_test_report.md`。
+团队 [nuttx/dev](https://github.com/my-vela-crypto/nuttx/tree/dev) 已包含两层实现与验收修复（`7934920bb876195f2f45fc76b863235d5129c6e3`）。本 manifest 同时保存完整内核补丁、`patches/vendor_openvela/encfs.patch` 板级补丁及 `overlays/apps/` 的 13 个应用文件，以便从记录的原始基线重现。应用器会识别已进入团队内核的相同修改并跳过，仍需安装板级与应用改动。基线和全部文件校验值由 `encfs-sources.json` 记录，发布及验收结果见 `docs/encfs_test_report.md`。
 
 首次同步后，根目录的快捷链接可能尚不存在，**先执行 Python 入口**：
 

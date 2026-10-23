@@ -1,6 +1,6 @@
 # 第二、三层实现与测试报告
 
-最新验收：2026 年 10 月 23 日，Asia/Shanghai。源码实现、ARM64 编译和下述扩展模拟器验收通过。本轮完全使用本地源码，不依赖远端发布；远端发布和演示视频仍待完成。10 月 22 日的首次验收记录保留为历史证据。
+最新验收：2026 年 10 月 23 日，Asia/Shanghai。源码实现、ARM64 编译和下述扩展模拟器验收通过。该轮验收完全使用本地源码。随后已将内核和可复现集成发布到团队 nuttx/dev、manifests/dev；演示视频仍待完成。10 月 22 日的首次验收记录保留为历史证据。
 
 ## 2026-10-23 扩展验收（当前版本）
 
@@ -91,7 +91,7 @@ Host 对停止后的实际运行镜像检查：完整测试内容、`secret.txt`
 
 ## 复现
 
-首次应用（两个补丁均随 manifest 保存，因此无需依赖尚未推送的内核提交）：
+首次应用（完整补丁随 manifest 保存，可在记录基线上离线重现；团队内核已有的相同修改会被识别并跳过）：
 
 ```sh
 python3 .repo/manifests/tools/apply_encfs.py
@@ -115,7 +115,7 @@ python3 .repo/manifests/tools/test_encfs.py --source-root "$PWD"
 | apps | `9f095e7003a14598af7e7771a6bbf08c215a1534` |
 | vendor/openvela | `a5ebb9c9c0dcb53fb8f23acd007c02abb1b0fa22` |
 
-2026 年 10 月 23 日通过 GitHub CLI 官方网页登录，直接接口确认当前身份为 `AC1Liu`，授权包含 `repo`，目标组织成员状态为 `active`。在这次有效 HTTPS 登录下，`my-vela-crypto/nuttx` 的实际推送及 `my-vela-crypto/manifests` 的无写入推送预检均收到 GitHub 的 `403 Permission denied to AC1Liu`；直接接口对这两个具体仓库返回 `push: false`。用户确认 GitHub Desktop 可以推送，Desktop 的实际远端与此结果之间的差异尚待核对。此前连接器的集成访问错误不能证明用户没有写权限。源码和测试成果均保存在本地提交及交付包，最新诊断随包保存为 `validation/openvela-encfs-https-publish.log`；未向官方上游推送或写入不存在的 fork 引用。
+2026 年 10 月 23 日，组织 Owner 将基础权限调整为 Write 后，两个目标仓库均返回有效的 `push: true`。使用 AC1Liu 的既有 SSH 身份正常快进推送，未强推：内核 [nuttx/dev](https://github.com/my-vela-crypto/nuttx/tree/dev) 包含实现与修复提交 [`7934920bb876195f2f45fc76b863235d5129c6e3`](https://github.com/my-vela-crypto/nuttx/commit/7934920bb876195f2f45fc76b863235d5129c6e3)，本报告及完整补丁、13 个应用文件、板级补丁和验收工具发布于 [manifests/dev](https://github.com/my-vela-crypto/manifests/tree/dev)。apps 与 vendor/openvela 继续通过经过隔离验证的覆盖文件和补丁交付，未向官方上游写入。此前的 403 和 `push: false` 是调整基础权限之前的历史诊断；连接器集成访问错误本身不能证明用户账号权限。成功推送与远端提交核对日志保存在工作区 `encfs-results/publication-20261023/`，并随更新后的交付包保存。
 
 ## 已知边界与尚待交付
 
