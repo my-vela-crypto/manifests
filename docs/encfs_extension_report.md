@@ -30,7 +30,7 @@
 
 apps 原有的未跟踪 NIST 目录保留，没有计入这三种配置的受控交付，也没有把整个工作区误称为干净。运行报告如实记录当时 manifest 为 `b53dd710...` 且有未提交工具变更；该旧提交单独不能标识本轮 runner。在线换钥审计另记录工具实际哈希，其输入快照是在启动后不久采集，**没有冒充启动前收据**。
 
-nuttx 已实际推送至团队 `dev`：日志 `encfs-results/publication-20261025/nuttx-push.log` 记录 `7934920bb8..04264dc9a7 HEAD -> dev`，对应[已发布内核提交](https://github.com/my-vela-crypto/nuttx/commit/04264dc9a71be9dba96c4321bc5d7770e79d2dca)。manifest、文档及新成品包仍待统一发布，不能把“已暂存”写成“已推送”。
+nuttx 已实际推送至团队 `dev`：日志 `encfs-results/publication-20261025/nuttx-push.log` 记录 `7934920bb8..04264dc9a7 HEAD -> dev`，对应[已发布内核提交](https://github.com/my-vela-crypto/nuttx/commit/04264dc9a71be9dba96c4321bc5d7770e79d2dca)。manifest扩展源码、复现工具及已完成测试的轻量证据已正常快进发布至团队dev：[`31aef0eba7953d0185bc94b2f95f9da4fedfe31c`](https://github.com/my-vela-crypto/manifests/commit/31aef0eba7953d0185bc94b2f95f9da4fedfe31c)。证据目录为`validation/encfs-extension-20261025`，不包含临时master、slot或实际盘。两轮24小时仍未完成，新成品包尚未生成，不能把当前源码发布说成全部交付完成。
 
 ## 第二层：中文与严格 UTF-8 文件名
 
@@ -121,6 +121,6 @@ Guest 进度与宿主 NSH 检查采用独立时钟，截图也有开销，不能
 
 `encfs-sources.json` 已刷新两个完整 binary patch：nuttx 覆盖 59 个文件，vendor 覆盖 6 个文件；apps 以官方 `7b36f234...` 为基线，受控新增文件为 25 个。`encfs-tested.xml` 的 232 个项目仅将 nuttx 更新为上述最终提交，apps/vendor 保持官方 patch 基线，其余 231 个项目未改。249 项隔离检查覆盖从基线首次安装、每个文件内容和权限、二次应用的内容/模式/mtime 与 Git 状态不变，以及冲突预检在任何改写前失败。10 月 25 日再次只读复核仍与该报告和 SHA-256 元数据相符。
 
-当前还须补齐两轮 86,400 秒压力及后续恢复分析，再统一提交/推送扩展 manifest、报告和新成品包。首版成品继续保留；不将运行中的测试、新准备的脚本或已暂存文件写成已完成交付。
+当前还须补齐两轮 86,400 秒压力及后续恢复分析，再更新最终报告和公开长期证据，生成、校验新成品包并发布最终状态。首版成品继续保留；不将运行中的测试、新准备的脚本或已暂存文件写成已完成交付。
 
 安全边界保持明确：XTS 不认证任意内容；旧 slot 与旧 master 的历史副本仍可恢复稳定数据密钥；generation 不是可信防回滚计数器。hostfs/9p 测试后端证明模拟器进程中断模型，不证明真实介质失电、恶意宿主防护、跨宿主进程原子 CAS 或硬件 TEE 保护。上述边界不改变本轮已实际取得的模拟器结果。
