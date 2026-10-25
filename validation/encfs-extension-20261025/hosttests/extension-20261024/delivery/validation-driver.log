@@ -1,0 +1,4 @@
+Preparing isolated baseline checkouts
+Applying delivery and comparing all delivered sources
+Checking fresh overlay conflict aborts before any writes
+DELIVERY_VALIDATION_RESULT passed=1 checks=249

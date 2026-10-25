@@ -1,0 +1,2 @@
+production: ENCFS_REKEY_CLI_RESULT checks=28 fail=0
+testing: ENCFS_REKEY_CLI_RESULT checks=34 fail=0

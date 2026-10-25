@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "run": "gui-extension-20261025-01",
+  "report_status": "passed",
+  "report_sha256": "6d5021df261e2ef237f9d5095028b3691e2af9eb06bb78533222a9c824065dba",
+  "outer_tool_session": "55112",
+  "outer_tool_exit_code": 143,
+  "python_program_return_code": null,
+  "source": "Parent agent observed the external exec-tool completion; not a Python waitpid receipt",
+  "interpretation": "The saved guest report and raw checks passed, but the Python return code was not observed independently; do not infer program rc 0 from this outer result. A new direct-parent wrapper run is collected separately.",
+  "first_launch_without_guest": {
+    "source": "Parent agent observation",
+    "reason": "Output redirection failed because its target directory did not yet exist",
+    "guest_executed": false,
+    "log_file": null
+  }
+}

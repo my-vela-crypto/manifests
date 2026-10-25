@@ -1,0 +1,244 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<manifest>
+  <remote name="git" fetch="https://github.com/" />
+  <remote name="my-vela-crypto" fetch="https://github.com/my-vela-crypto/" />
+  <remote name="openvela" fetch="https://gitee.com/open-vela/" />
+  <default remote="openvela" revision="dev" />
+  <project name=".claude" revision="f31773d472bb3bc444f120f5d0d4946ff474a3f1" upstream="dev" dest-branch="dev" />
+  <project name="apps_benchmarks_coremark" path="apps/benchmarks/coremark/coremark" revision="b361705ec7c7d958291c2e8ef9a5cd7e4513d050" upstream="dev" dest-branch="dev" />
+  <project name="apps_benchmarks_test-tlb" path="apps/benchmarks/test-tlb/test-tlb" revision="95b37800cbc3f7c6ac1d34f09871d2718c4d98b8" upstream="dev" dest-branch="dev" />
+  <project name="apps_crypto_libsodium" path="apps/crypto/libsodium/libsodium" revision="139b569303295c35822ccdaec272fd754a578597" upstream="dev" dest-branch="dev" />
+  <project name="apps_crypto_libtomcrypt" path="apps/crypto/libtomcrypt/libtomcrypt" revision="2f542ee56a4ae0a1f268f23f382d1dc353a6573e" upstream="dev" dest-branch="dev" />
+  <project name="apps_crypto_mbedtls" path="apps/crypto/mbedtls/mbedtls" revision="9fdfb2e5a49c5c650ec7ce0b87c4d1b6aed3ad4c" upstream="dev" dest-branch="dev" />
+  <project name="apps_crypto_tinycrypt" path="apps/crypto/tinycrypt/tinycrypt" revision="081f359578e0d18b40f5b6e18b225051db61e276" upstream="dev" dest-branch="dev" />
+  <project name="apps_examples_unpv13e" path="apps/examples/unpv13e/unpv13e" revision="d34109cf2b08ff463f6ae3ae8c6880b68c89cc42" upstream="dev" dest-branch="dev" />
+  <project name="apps_graphics_libyuv" path="apps/graphics/libyuv/libyuv" revision="0535219c02f2c3d417b838b2856d7248a609f8a4" upstream="dev" dest-branch="dev" />
+  <project name="apps_graphics_lvgl" path="apps/graphics/lvgl/lvgl" revision="eb64dd8270a2220be8aa9108caa00373f5053610" upstream="dev" dest-branch="dev" />
+  <project name="apps_interpreters_lua" path="apps/interpreters/lua/lua" revision="951dfb6a89a79961ccf37046c49a23a62f1fd2dd" upstream="dev" dest-branch="dev" />
+  <project name="apps_interpreters_quickjs" path="apps/interpreters/quickjs/quickjs" revision="fc4adfec35ece355626d0d3d3d78d789029922da" upstream="dev" dest-branch="dev" />
+  <project name="apps_interpreters_wamr" path="apps/interpreters/wamr/wamr" revision="1401899b01de5113ef084168b21bb6f1ebf4ce90" upstream="dev" dest-branch="dev" />
+  <project name="apps_math_gemmlowp" path="apps/math/gemmlowp/gemmlowp" revision="621d7d41b23eb0be663de3811404217d7bb3af26" upstream="dev" dest-branch="dev" />
+  <project name="apps_math_kissfft" path="apps/math/kissfft/kissfft" revision="17d64be57808b55c61a00949f37064938a4914d0" upstream="dev" dest-branch="dev" />
+  <project name="apps_math_libtommath" path="apps/math/libtommath/libtommath" revision="1556f2093ee97ad2f864ce197898f2ce6d18e5ec" upstream="dev" dest-branch="dev" />
+  <project name="apps_math_ruy" path="apps/math/ruy/ruy" revision="e5edd9ddb261b5a21805cfe04b7ad998ffd658d6" upstream="dev" dest-branch="dev" />
+  <project name="apps_mlearning_cmsis-nn" path="apps/mlearning/cmsis-nn/cmsis-nn" revision="3d154deb047bd2a83a8f8386cf1fca5d00b892e6" upstream="dev" dest-branch="dev" />
+  <project name="apps_mlearning_cmsis_CMSIS_5" path="apps/mlearning/cmsis/CMSIS_5" revision="e5eb43d2f5dc6bb8bdbbd49993b4220493e3c5f2" upstream="dev" dest-branch="dev" />
+  <project name="apps_mlearning_tflite-micro" path="apps/mlearning/tflite-micro/tflite-micro" revision="c207ee5d089e3fd2175c178866c051f710430609" upstream="dev" dest-branch="dev" />
+  <project name="apps_netutils_cjson_cJSON" path="apps/netutils/cjson/cJSON" revision="24e386e2414e6744db9e4eac1d8816cf74fa110c" upstream="dev" dest-branch="dev" />
+  <project name="apps_netutils_connectedhomeip" path="apps/netutils/connectedhomeip/connectedhomeip" revision="4736bf4ba2853825ebfc9f501eba2ca64e57e343" upstream="dev" dest-branch="dev" />
+  <project name="apps_netutils_connectedhomeip_inipp" path="apps/netutils/connectedhomeip/inipp" revision="5d8507180685f9404465e9706667d56e33d8079b" upstream="dev" dest-branch="dev" />
+  <project name="apps_netutils_connectedhomeip_nlassert" path="apps/netutils/connectedhomeip/nlassert" revision="99b4d8a3752368074db252146c98441b97544bd3" upstream="dev" dest-branch="dev" />
+  <project name="apps_netutils_connectedhomeip_nlio" path="apps/netutils/connectedhomeip/nlio" revision="ca22b1ede17c4afd8e49c9d1a11e86f0e7cc8ae9" upstream="dev" dest-branch="dev" />
+  <project name="apps_netutils_connectedhomeip_nlunit-test" path="apps/netutils/connectedhomeip/nlunit-test" revision="ab47e8667d102ba547687849927880f404f160cb" upstream="dev" dest-branch="dev" />
+  <project name="apps_netutils_connectedhomeip_pigweed" path="apps/netutils/connectedhomeip/pigweed" revision="91603798e7cd3c2d21a45bf6134f46fc539aaf4a" upstream="dev" dest-branch="dev" />
+  <project name="apps_netutils_jsoncpp" path="apps/netutils/jsoncpp/jsoncpp" revision="d364de88c2d6f66bdbacc450e414a7e37fbb55f9" upstream="dev" dest-branch="dev" />
+  <project name="apps_netutils_libwebsockets" path="apps/netutils/libwebsockets/libwebsockets" revision="2e8971e73ae8cd696811b1031a2129cdf3627565" upstream="dev" dest-branch="dev" />
+  <project name="apps_netutils_mqttc_MQTT-C" path="apps/netutils/mqttc/MQTT-C" revision="a0a84e2960a9af9b8be77bfbe77a0b38ff789936" upstream="dev" dest-branch="dev" />
+  <project name="apps_system_adb_microADB" path="apps/system/adb/microADB" revision="0b1b7c4c106a7b23081d1c4adbbeb6d0d5b3b0fc" upstream="dev" dest-branch="dev" />
+  <project name="apps_system_argtable3" path="apps/system/argtable3/argtable3" revision="828d05d93949f8c19ef0bfc0342f544891fc7466" upstream="dev" dest-branch="dev" />
+  <project name="apps_system_flatbuffers" path="apps/system/flatbuffers/flatbuffers" revision="67f3cb49fb4e5926891f8eac4216e25fed80bb7c" upstream="dev" dest-branch="dev" />
+  <project name="apps_system_libuv" path="apps/system/libuv/libuv" revision="2329ab1759b572b394937f15bdf4fe12894118a7" upstream="dev" dest-branch="dev" />
+  <project name="apps_system_zlib" path="apps/system/zlib/zlib" revision="71665eb653a185f1f197a734d3011b6ddd7904ce" upstream="dev" dest-branch="dev" />
+  <project name="apps_testing_cmocka" path="apps/testing/cmocka/cmocka" revision="47a17b693613955c76df722ae17f7e6747e2cff6" upstream="dev" dest-branch="dev" />
+  <project name="apps_testing_drivers_nist-sts" path="apps/testing/drivers/nist-sts" revision="ced725040874d752de7d94414b101a668d861356" upstream="dev" dest-branch="dev" />
+  <project name="apps_testing_fff" path="apps/testing/fff/fff" revision="44b97442ef7d42aa9d9d3f5b5d5a6e51ba0bbe5f" upstream="dev" dest-branch="dev" />
+  <project name="apps_testing_libc-test" path="apps/testing/libc-test/libc-test" revision="96d65193e96fb26096d7add1cd7c3dbbb5c88469" upstream="dev" dest-branch="dev" />
+  <project name="apps_testing_ltp" path="apps/testing/ltp/ltp" revision="abb577c0a03d8ff3b34684801c929ea5efc78ea5" upstream="dev" dest-branch="dev" />
+  <project name="apps_testing_mm_stressapptest" path="apps/testing/mm/stressapptest/stressapptest" revision="5b3cb493aba93d03e6f24cc07e29ec729e8052c2" upstream="dev" dest-branch="dev" />
+  <project name="apps_testing_unity_Unity" path="apps/testing/unity/Unity" revision="e5ae97eec719532233783f4d352e14d7493e4dff" upstream="dev" dest-branch="dev" />
+  <project name="build" revision="9a2bd9cc0228c3a452c07b7dcb08504a1154d861" upstream="dev" dest-branch="dev" />
+  <project name="docs" revision="417dca0f3f95394d10adeef0e1f279929d0cc558" upstream="dev" dest-branch="dev" />
+  <project name="external" revision="ac15b55ed6b6dd9bae820af51901cbb1e3ff0434" upstream="dev" dest-branch="dev" />
+  <project name="external_Ne10" path="external/Ne10/Ne10" revision="30f5d241a85f91febd2b875335616f6d5d2c9181" upstream="dev" dest-branch="dev" />
+  <project name="external_aac" path="external/aac/aac" revision="7aa7b8c370b98fddb12c953535e7419854b4ff99" upstream="dev" dest-branch="dev" />
+  <project name="external_abseil-cpp" path="external/abseil-cpp/abseil-cpp" revision="3e069313185a1b4fb82db49836308d52f3435d5a" upstream="dev" dest-branch="dev" />
+  <project name="external_android_frameworks_native" path="external/android/frameworks/native" revision="f615f5ae396d0c94c5c67d6e68aa9b0788359066" upstream="dev" dest-branch="dev" />
+  <project name="external_android_hardware_interfaces" path="external/android/hardware/interfaces" revision="2b5e92f9be83afbe03d85b5269aab73d1d548479" upstream="dev" dest-branch="dev" />
+  <project name="external_android_hardware_libhardware" path="external/android/hardware/libhardware" revision="254d5c5819eed745a12f30491e43520648388fc6" upstream="dev" dest-branch="dev" />
+  <project name="external_android_system_chre" path="external/android/system/chre/chre" revision="026ff0e68c005bde6ca9356c635c49a40e8d7a72" upstream="dev" dest-branch="dev" />
+  <project name="external_android_system_chre_chre_host_nuttx" path="external/android/system/chre/chre/host/nuttx" revision="3279bc176614aef179943a89c7a06b801b6d5f2e" upstream="dev" dest-branch="dev" />
+  <project name="external_android_system_core" path="external/android/system/core" revision="40d7788743199f6ed1c62c7934d03834675d95e9" upstream="dev" dest-branch="dev" />
+  <project name="external_android_system_keymaster" path="external/android/system/keymaster" revision="95b690b36a647fb04d73102c987d702888f5ed8c" upstream="dev" dest-branch="dev" />
+  <project name="external_android_system_libbase" path="external/android/system/libbase" revision="fb072981b85226382d56aae9e04edb8be3bff955" upstream="dev" dest-branch="dev" />
+  <project name="external_android_system_libcppbor" path="external/android/system/libcppbor" revision="6c23ed536e2f52812443449203aa2760a9901b4f" upstream="dev" dest-branch="dev" />
+  <project name="external_android_system_libfmq" path="external/android/system/libfmq" revision="50a23972d9035445a50092d42ac984bbf0fe6112" upstream="dev" dest-branch="dev" />
+  <project name="external_android_system_libhidl" path="external/android/system/libhidl" revision="3bf93a4662cc4a6e66b9ff95f61c6cb55d1759c1" upstream="dev" dest-branch="dev" />
+  <project name="external_android_system_libhwbinder" path="external/android/system/libhwbinder" revision="6b6ad520884201c4306263927ae040485e5e6158" upstream="dev" dest-branch="dev" />
+  <project name="external_android_system_logging" path="external/android/system/logging" revision="b3f6d36c4b645065210ec017688c8364c3eda491" upstream="dev" dest-branch="dev" />
+  <project name="external_android_system_security" path="external/android/system/security" revision="95d4fd66351935604f96b3163102ac669f47beea" upstream="dev" dest-branch="dev" />
+  <project name="external_android_system_tools_aidl" path="external/android/system/tools/aidl" revision="de39ad4a7934617bb55120b969ec220cecc699b0" upstream="dev" dest-branch="dev" />
+  <project name="external_android_system_tools_hidl" path="external/android/system/tools/hidl" revision="ed58997e71278001c3065493aafbc4d3781183e4" upstream="dev" dest-branch="dev" />
+  <project name="external_atomic_queue" path="external/atomic_queue/atomic_queue" revision="2e6ef9dd0f8180fa2af688aa78a89f7dbbae79c0" upstream="dev" dest-branch="dev" />
+  <project name="external_auto-pts" path="external/auto-pts/auto-pts" revision="caf7e3e54fa1af213d53bc7e949bbf122a5f0b30" upstream="dev" dest-branch="dev" />
+  <project name="external_avb" path="external/avb/avb" revision="ca1fa22258ef618c75b0a6e107e0a019cdf31d1f" upstream="dev" dest-branch="dev" />
+  <project name="external_bailian_sdk" path="external/bailian_sdk" revision="fcfd3fb7f0eef34a101ce5406fbae3040e7ee598" upstream="dev" dest-branch="dev" />
+  <project name="external_bzip2" path="external/bzip2/bzip2" revision="507d08000ae1b8321200d9cefb21d9104da07e9a" upstream="dev" dest-branch="dev" />
+  <project name="external_c-ares" path="external/c-ares/c-ares" revision="313728c191ba26481c471083bff4ac1dff01ba80" upstream="dev" dest-branch="dev" />
+  <project name="external_cAT" path="external/cAT/cAT" revision="4da4d400171857e940539c9cd5822c4852de9377" upstream="dev" dest-branch="dev" />
+  <project name="external_cmark-gfm" path="external/cmark-gfm/cmark-gfm" revision="29fc0dce35df7012e486a5ff8b783a6b2511b398" upstream="dev" dest-branch="dev" />
+  <project name="external_cpuid" path="external/cpuid/cpuid" revision="31ae865360bdb4a6d3eb115b05b0248830c536b2" upstream="dev" dest-branch="dev" />
+  <project name="external_curl" path="external/curl/curl" revision="16f74fc47b1e1317f2fd277d64604c7cc916600c" upstream="dev" dest-branch="dev" />
+  <project name="external_dbus" path="external/dbus/dbus" revision="e8007dcad0762c9045cf0dab3e9e6d37e4c93b48" upstream="dev" dest-branch="dev" />
+  <project name="external_ddelta" path="external/ddelta/ddelta" revision="51809dc78b1bd594cf5555d01aae4a524280688f" upstream="dev" dest-branch="dev" />
+  <project name="external_enet" path="external/enet/enet" revision="07e5d7449bfdd7e14dbb03462f8ab2811eb0fb79" upstream="dev" dest-branch="dev" />
+  <project name="external_erpc" path="external/erpc/erpc" revision="631659c9f694d9442bfa73f590a5963342d4e7fe" upstream="dev" dest-branch="dev" />
+  <project name="external_exfatprogs" path="external/exfatprogs/exfatprogs" revision="3bd20e3cb0c38c2879ff934e370796965fa8bfeb" upstream="dev" dest-branch="dev" />
+  <project name="external_ffmpeg" path="external/ffmpeg/ffmpeg" revision="a839e48267b977b30c2383ff7de7aa4281ec267c" upstream="dev" dest-branch="dev" />
+  <project name="external_fluoride" path="external/fluoride/fluoride" revision="72d488bda142f80914f287c1cb32ebedec94a1fe" upstream="dev" dest-branch="dev" />
+  <project name="external_fmtlib" path="external/fmtlib/fmtlib" revision="5c536c3ccad25cc5f56a8c7b0799653ab8db00c7" upstream="dev" dest-branch="dev" />
+  <project name="external_freetype" path="external/freetype/freetype" revision="05cc31374c6539b7f27e3802d5bd653f47ad828e" upstream="dev" dest-branch="dev" />
+  <project name="external_freetype_freetype_subprojects_dlg" path="external/freetype/freetype/subprojects/dlg" revision="0d64ba06a49ae8e4b3291e1ffaa08af09f3561f0" upstream="dev" dest-branch="dev" />
+  <project name="external_glib" path="external/glib/glib" revision="75c5a38dcd5a43be10c1baf2f1ea3710c081a45e" upstream="dev" dest-branch="dev" />
+  <project name="external_glib_glib_subprojects_gvdb" path="external/glib/glib/subprojects/gvdb" revision="c0b717093cc098b8a829d00ec32c34f3aff72b9b" upstream="dev" dest-branch="dev" />
+  <project name="external_googlebenchmark" path="external/googlebenchmark/googlebenchmark" revision="b833f74e3e66f2f635b81c8b98886b68ecbdadb9" upstream="dev" dest-branch="dev" />
+  <project name="external_googletest" path="external/googletest/googletest" revision="f80b1b1e3a5460982df2385f14074c72979422fb" upstream="dev" dest-branch="dev" />
+  <project name="external_harfbuzz" path="external/harfbuzz/harfbuzz" revision="492c8da45d080942a5b289d3e79f9acb368725e3" upstream="dev" dest-branch="dev" />
+  <project name="external_iperf2" path="external/iperf2/iperf2" revision="45668c24cc90b8b73cd25098f2de8c884dc3f63c" upstream="dev" dest-branch="dev" />
+  <project name="external_iperf3" path="external/iperf3/iperf3" revision="74c3b098ea11c0e52d5010759ad87b3b229a5a2e" upstream="dev" dest-branch="dev" />
+  <project name="external_json-c" path="external/json-c/json-c" revision="275f72ad315b7a3c6ece1bd5f3b8ff390a85bb2e" upstream="dev" dest-branch="dev" />
+  <project name="external_ldns" path="external/ldns/ldns" revision="5c96ba64855d54e9907db294e1a7d9cff64c4126" upstream="dev" dest-branch="dev" />
+  <project name="external_libchrome_modp_b64" path="external/libchrome/modp_b64" revision="0d8f049eb26e163261c6287ca26c22b1810db48b" upstream="dev" dest-branch="dev" />
+  <project name="external_libdivide" path="external/libdivide/libdivide" revision="41139d6b3b5f167ac64319643a561b9325b4cdf6" upstream="dev" dest-branch="dev" />
+  <project name="external_libexpat" path="external/libexpat/libexpat" revision="19036298a8ced4d1720e98e8249e60ceb809bca3" upstream="dev" dest-branch="dev" />
+  <project name="external_libfluoride-sbc" path="external/libfluoride-sbc/libfluoride-sbc" revision="b5ccc0cd97bf4793dd20aeb2f496b21b7c82f80f" upstream="dev" dest-branch="dev" />
+  <project name="external_libhelix-aac" path="external/libhelix-aac/libhelix-aac" revision="7b93b407ed67218aa0ceca5e187c451a0bb717ec" upstream="dev" dest-branch="dev" />
+  <project name="external_libhelix-mp3" path="external/libhelix-mp3/libhelix-mp3" revision="929b65aa763cbcf58e88c2d5be3c05ec3977100f" upstream="dev" dest-branch="dev" />
+  <project name="external_libjpeg-turbo" path="external/libjpeg-turbo/libjpeg-turbo" revision="7c6187aa61fb87fd219746d848503d0d095058e9" upstream="dev" dest-branch="dev" />
+  <project name="external_liblc3" path="external/liblc3/liblc3" revision="b0231722b95ca29458f58bacb1a1bc769a571c9f" upstream="dev" dest-branch="dev" />
+  <project name="external_libldac" path="external/libldac/libldac" revision="43fbb51169c456f34447b1a219aaab0e02b22275" upstream="dev" dest-branch="dev" />
+  <project name="external_libopencore-amr" path="external/libopencore-amr/libopencore-amr" revision="d3d5b3c5c883380f8de3e6b97247e75c825f64e4" upstream="dev" dest-branch="dev" />
+  <project name="external_libpng" path="external/libpng/libpng" revision="28059713caa866da28e9c05983c8e77a3c34da13" upstream="dev" dest-branch="dev" />
+  <project name="external_libssh" path="external/libssh/libssh" revision="464244b7351d40da8fed03e9ffd8bc9dc11ad585" upstream="dev" dest-branch="dev" />
+  <project name="external_libtar" path="external/libtar/libtar" revision="6b622c795828c3fa997b2f3efe9a1d7fb683df65" upstream="dev" dest-branch="dev" />
+  <project name="external_libwebp" path="external/libwebp/libwebp" revision="8490978d303c3111f01494a982388c15442e3a97" upstream="dev" dest-branch="dev" />
+  <project name="external_lz4" path="external/lz4/lz4" revision="4cdd96562742ee3d816f3846c4d5984a6d9f2024" upstream="dev" dest-branch="dev" />
+  <project name="external_mdns" path="external/mdns/mdns" revision="4c1aab6d52b790ae90559f2ab31b0c419ba5d478" upstream="dev" dest-branch="dev" />
+  <project name="external_mmc-utils" path="external/mmc-utils/mmc-utils" revision="6b19bfd77937e2379cfddf6d6769332d4efa04da" upstream="dev" dest-branch="dev" />
+  <project name="external_mtp-responder" path="external/mtp-responder/mtp-responder" revision="103e2dfacc9fb6b1dcf852ff22c1dcb84d7abe3c" upstream="dev" dest-branch="dev" />
+  <project name="external_nanopb" path="external/nanopb/nanopb" revision="456dbc5dc84d5289dd2a5233b835703cdca108d9" upstream="dev" dest-branch="dev" />
+  <project name="external_nghttp2" path="external/nghttp2/nghttp2" revision="841e51d095a58af1121343ae31501bd154467598" upstream="dev" dest-branch="dev" />
+  <project name="external_nng" path="external/nng/nng" revision="2ad0e67b6c4074cb38a5eb0270679ac4e40bd012" upstream="dev" dest-branch="dev" />
+  <project name="external_ofono" path="external/ofono/ofono" revision="8d8544c9c8bd1a87585b3e5b8dcecc27b501627d" upstream="dev" dest-branch="dev" />
+  <project name="external_ofono_ell" path="external/ofono/ell" revision="a580f534e0800ff90a323a608744266e7cdb3692" upstream="dev" dest-branch="dev" />
+  <project name="external_optee_kmgk" path="external/optee/kmgk/kmgk" revision="0fb2eaae03089afa5f37cddda86d9ec200d35ab7" upstream="dev" dest-branch="dev" />
+  <project name="external_optee_optee_client" path="external/optee/optee_client/optee_client" revision="1cc25b7558cdeaf94835c0d2e27c1a20b6f2236d" upstream="dev" dest-branch="dev" />
+  <project name="external_optee_optee_examples" path="external/optee/optee_examples/optee_examples" revision="479f37725a52d9a8ffbd42fe40a357d1846c2c7b" upstream="dev" dest-branch="dev" />
+  <project name="external_optee_optee_os" path="external/optee/optee_os/optee_os" revision="874ba56b29601c89155561d939a4bb33cbe880b0" upstream="dev" dest-branch="dev" />
+  <project name="external_optee_optee_test" path="external/optee/optee_test/optee_test" revision="1eec482e7f17b2067597db188fbe975ff64b98f1" upstream="dev" dest-branch="dev" />
+  <project name="external_opus" path="external/opus/opus" revision="f4976f4025d55df3223fa81fd6d05323159a712e" upstream="dev" dest-branch="dev" />
+  <project name="external_protobuf" path="external/protobuf/protobuf" revision="dfa2490fdec2dd21cc5d694f32b116629e812a45" upstream="dev" dest-branch="dev" />
+  <project name="external_protobuf-c" path="external/protobuf-c/protobuf-c" revision="824527ffeb41ccb4ff95d342ab024a248502ebcb" upstream="dev" dest-branch="dev" />
+  <project name="external_quirc" path="external/quirc/quirc" revision="c9c03da2bb21b752b076906f7a84b4396d8ae0cb" upstream="dev" dest-branch="dev" />
+  <project name="external_rapidjson" path="external/rapidjson/rapidjson" revision="692300c0314ab3406d90c1ec05aeece7a4222033" upstream="dev" dest-branch="dev" />
+  <project name="external_ril" path="external/ril/ril" revision="040e118de03fb7a45ac26c4b84a67a65ddfc96cd" upstream="dev" dest-branch="dev" />
+  <project name="external_rlottie" path="external/rlottie/rlottie" revision="38f13e8920119a81cc098e87268a6f3ab9382223" upstream="dev" dest-branch="dev" />
+  <project name="external_rtos-benchmark" path="external/rtos-benchmark/rtos-benchmark" revision="983d91f35e445e9c5035f6d6daf8d420f2306d5f" upstream="dev" dest-branch="dev" />
+  <project name="external_silk-v3-decoder" path="external/silk-v3-decoder/silk-v3-decoder" revision="d870397fc26c6b10954b08b38fdf147afdef51ef" upstream="dev" dest-branch="dev" />
+  <project name="external_sqlite" path="external/sqlite/sqlite" revision="f27dc62bab34b943fd78d24b9e9952ed07c19a08" upstream="dev" dest-branch="dev" />
+  <project name="external_stress" path="external/stress/stress" revision="86d4eac85be8e944588cb2bf48bbffe3993ee17a" upstream="dev" dest-branch="dev" />
+  <project name="external_sysklogd" path="external/sysklogd/sysklogd" revision="05a9bc0aac86b590f4f3879f37da90d6135f5c70" upstream="dev" dest-branch="dev" />
+  <project name="external_thorvg" path="external/thorvg/thorvg" revision="dc8ceef136980710aaae60cc409c3d9e18300a1a" upstream="dev" dest-branch="dev" />
+  <project name="external_tinyxml2" path="external/tinyxml2/tinyxml2" revision="89e77ce2c38bdbf72210ab4b780368a4ca5f9664" upstream="dev" dest-branch="dev" />
+  <project name="external_unqlite" path="external/unqlite/unqlite" revision="bd930cc60b04babf65bd6d7a1ce0b8204f849fce" upstream="dev" dest-branch="dev" />
+  <project name="external_vector-sil_sil-kit" path="external/vector-sil/sil-kit" revision="f3dbc42baa8c66b955405891f0e9ab3e2e85c42d" upstream="dev" dest-branch="dev" />
+  <project name="external_vector-sil_sil-kit-adapters-qemu" path="external/vector-sil/sil-kit-adapters-qemu" revision="b12a7059fd0620629eb4fc665c6a90f342e9b77f" upstream="dev" dest-branch="dev" />
+  <project name="external_vector-sil_sil-kit-adapters-vcan" path="external/vector-sil/sil-kit-adapters-vcan" revision="657cba40a94c6f618d4cb50c7b9d8ce1ea060e45" upstream="dev" dest-branch="dev" />
+  <project name="external_yoga" path="external/yoga/yoga" revision="5f133d5b209955225d784153109ed78b49941818" upstream="dev" dest-branch="dev" />
+  <project name="external_zblue" path="external/zblue/zblue" revision="b46711a0e0709a88fd070580c41c87b5c23dfc08" upstream="dev" dest-branch="dev" />
+  <project name="external_zint" path="external/zint/zint" revision="65d8b1dc15fdf833c5d4d51a4d3c1fcd50c0bc89" upstream="dev" dest-branch="dev" />
+  <project name="frameworks" revision="1065903c0bad99f24184151d776e444f966cea4c" upstream="dev" dest-branch="dev" />
+  <project name="frameworks_bluetooth" path="frameworks/connectivity/bluetooth" revision="b0ad23406dbccf3d08345bd39920bf94be31bc8c" upstream="dev" dest-branch="dev" />
+  <project name="frameworks_connectivity" path="frameworks/connectivity" revision="f3361cb7cb20671f453cd386854d6c9cad69d7b9" upstream="dev" dest-branch="dev" />
+  <project name="frameworks_connectivity_telephony" path="frameworks/connectivity/telephony" revision="f3c9b30e980092ecd7836c92c152abd45f949bf7" upstream="dev" dest-branch="dev" />
+  <project name="frameworks_graphics" path="frameworks/graphics" revision="1336235c221748b19abc9983169fbd0bfb305b9d" upstream="dev" dest-branch="dev" />
+  <project name="frameworks_graphics_gpu_tools" path="frameworks/graphics/gpu_tools" revision="0e261266100e216ec2dcb0022597a52f3b90aa51" upstream="dev" dest-branch="dev" />
+  <project name="frameworks_graphics_uikit" path="frameworks/graphics/uikit" revision="365573bdb9fdff5ba03f56d83e49c819c2badf17" upstream="dev" dest-branch="dev" />
+  <project name="frameworks_multimedia" path="frameworks/multimedia" revision="fe29983809bd184ea5dda2f6d601c158891b8393" upstream="dev" dest-branch="dev" />
+  <project name="frameworks_multimedia_media" path="frameworks/multimedia/media" revision="ad614c8503b8c904a6be652fd16102b8e47cec4b" upstream="dev" dest-branch="dev" />
+  <project name="frameworks_multimedia_media_pfw" path="frameworks/multimedia/media/pfw" revision="2923d30a955d946ff042723d7ddb7d49cbdf7308" upstream="dev" dest-branch="dev" />
+  <project name="frameworks_runtimes" path="frameworks/runtimes" revision="86b1d372c4b249fae185f28427928cfd86074bdc" upstream="dev" dest-branch="dev" />
+  <project name="frameworks_runtimes_ash" path="frameworks/runtimes/ash" revision="b441eda2ad27004315166df57c74ac04a979368f" upstream="dev" dest-branch="dev" />
+  <project name="frameworks_runtimes_feature" path="frameworks/runtimes/feature" revision="e436fbddb7563fd76e9986a7c3f2cf17b6c757a2" upstream="dev" dest-branch="dev" />
+  <project name="frameworks_runtimes_quickapp" path="frameworks/runtimes/quickapp" revision="3daa01a32a16e869b3618f2448e046331973003f" upstream="dev" dest-branch="dev" />
+  <project name="frameworks_runtimes_services" path="frameworks/runtimes/services" revision="b694850411c2e3c4779c6773e3682caa24585f0d" upstream="dev" dest-branch="dev" />
+  <project name="frameworks_runtimes_services_am" path="frameworks/runtimes/services/am" revision="d0469cd49a9bb16ee58d8716cf695551d7f8f5e3" upstream="dev" dest-branch="dev" />
+  <project name="frameworks_runtimes_services_brightness" path="frameworks/runtimes/services/brightness" revision="55d127f9fc51813e2a63a822c0925d9cc0908448" upstream="dev" dest-branch="dev" />
+  <project name="frameworks_runtimes_services_pm" path="frameworks/runtimes/services/pm" revision="407b8170c296b7ad14434900d1fa1be5e7256e41" upstream="dev" dest-branch="dev" />
+  <project name="frameworks_runtimes_services_system_server" path="frameworks/runtimes/services/system_server" revision="bcdfd448ef116e1f5d372920ee884388453551bf" upstream="dev" dest-branch="dev" />
+  <project name="frameworks_runtimes_services_wm" path="frameworks/runtimes/services/wm" revision="647149abb6598efc70b09e007f63f00077dda600" upstream="dev" dest-branch="dev" />
+  <project name="frameworks_runtimes_services_xmsdemo" path="frameworks/runtimes/services/xmsdemo" revision="c0887aba34ea27d55ae074e9e812cd6ca91c6597" upstream="dev" dest-branch="dev" />
+  <project name="frameworks_runtimes_typescript" path="frameworks/runtimes/typescript" revision="6949e90b5780088450a63f382965bf8f98670ceb" upstream="dev" dest-branch="dev" />
+  <project name="frameworks_runtimes_typescript_ts2native" path="frameworks/runtimes/typescript/ts2native" revision="f2abcedd64408494ddb71de7174a05eadb33723f" upstream="dev" dest-branch="dev" />
+  <project name="frameworks_runtimes_typescript_ts2wasm" path="frameworks/runtimes/typescript/ts2wasm" revision="f6504752c8c3d9c83e551cad3796876ec4607b9b" upstream="dev" dest-branch="dev" />
+  <project name="frameworks_runtimes_wasm" path="frameworks/runtimes/wasm" revision="32b67d5f6cb006348ac49cab68e37ea607de92b8" upstream="dev" dest-branch="dev" />
+  <project name="frameworks_security" path="frameworks/security" revision="ef595d83143cbf1eeb7dda46843b8bac9ef206d7" upstream="dev" dest-branch="dev" />
+  <project name="frameworks_security_optee_vela" path="frameworks/security/optee_vela" revision="dc3e3b782523602acfbdbc68b46a6766a54b77e9" upstream="dev" dest-branch="dev" />
+  <project name="frameworks_system" path="frameworks/system" revision="8b577a35ab69d19fc17a3e11cb0f87ca4f20b3b9" upstream="dev" dest-branch="dev" />
+  <project name="frameworks_system_binder" path="frameworks/system/binder" revision="e28c156138d9281fdea8487f77b4fd71045fce6a" upstream="dev" dest-branch="dev" />
+  <project name="frameworks_system_charger" path="frameworks/system/charger" revision="a7aaeb47a2fa620b6ed617e90544dea90725a9d8" upstream="dev" dest-branch="dev" />
+  <project name="frameworks_system_healthd" path="frameworks/system/healthd" revision="d333dee1b3ea79c4302fca42ff453d9b89033d80" upstream="dev" dest-branch="dev" />
+  <project name="frameworks_system_ota" path="frameworks/system/ota" revision="78e5a2c3ecc88dd394a2c6246553643d7fddcc4e" upstream="dev" dest-branch="dev" />
+  <project name="frameworks_system_topics" path="frameworks/system/topics" revision="f4eb99fdba2e0de60ad96dd0e08541fb05861bfc" upstream="dev" dest-branch="dev" />
+  <project name="frameworks_system_utils" path="frameworks/system/utils" revision="a2f628d04b5630dfb4ca73bdb64512109c0ae045" upstream="dev" dest-branch="dev" />
+  <project name="frameworks_system_utils_uv" path="frameworks/system/utils/uv" revision="806936e1b525043247863c17313875e2fbe7b6d3" upstream="dev" dest-branch="dev" />
+  <project name="frameworks_system_vibrator" path="frameworks/system/vibrator" revision="30cc35939387f09b502ceac481bfaf42ee2e7069" upstream="dev" dest-branch="dev" />
+  <project name="libs_openvela_vela" path="vendor/openvela/boards/vela/libs" revision="08ae84925e1001ab1ccb05bce095f0c7dfdcd334" upstream="dev" dest-branch="dev" />
+  <project name="libs_sifli_sf32lb52" path="vendor/sifli/boards/sf32lb52/libs" revision="1419c8b3ddf23d3669ce17515d89c184068c0099" upstream="dev" dest-branch="dev" />
+  <project name="nuttx" remote="my-vela-crypto" revision="04264dc9a71be9dba96c4321bc5d7770e79d2dca" upstream="dev" dest-branch="dev">
+    <linkfile src="tools/build.sh" dest="build.sh" />
+    <linkfile src="tools/run-emulator.sh" dest="run-emulator.sh" />
+  </project>
+  <project name="nuttx-apps" path="apps" revision="7b36f2344dbe9a5c9526462128545442267d2314" upstream="dev" dest-branch="dev" />
+  <project name="nuttx_drivers_mtd_dhara" path="nuttx/drivers/mtd/dhara" revision="f6a253736a1f6dc43e040c70178891cbbe55b5f7" upstream="dev" dest-branch="dev" />
+  <project name="nuttx_drivers_segger_SystemView" path="nuttx/drivers/segger/SystemView" revision="e2180cb7d6897fa487d8734af1981e0b4c382573" upstream="dev" dest-branch="dev" />
+  <project name="nuttx_fs_fatfs" path="nuttx/fs/fatfs/fatfs" revision="88a3016d604ee79ce47922e3adb303791d012264" upstream="dev" dest-branch="dev" />
+  <project name="nuttx_fs_littlefs_littlefs" path="nuttx/fs/littlefs/littlefs" revision="9d31e6df950d7140ed17502022be91186164c160" upstream="dev" dest-branch="dev" />
+  <project name="nuttx_fs_yaffs" path="nuttx/fs/yaffs/yaffs" revision="ee836ca366289e08a27bfa204dfee002e2b3deab" upstream="dev" dest-branch="dev" />
+  <project name="nuttx_libs_libc_audio_libsrc_libsamplerate" path="nuttx/libs/libc/audio/libsrc/libsamplerate" revision="29bae2a461498dde087cb42ff0c9a8e8f545faf5" upstream="dev" dest-branch="dev" />
+  <project name="nuttx_libs_libc_fdt_dtc" path="nuttx/libs/libc/fdt/dtc" revision="9c3ea390ef1ccdda8d2c4cf9a94cb4918f48b8f1" upstream="dev" dest-branch="dev" />
+  <project name="nuttx_libs_libc_gnssutils_minmea" path="nuttx/libs/libc/gnssutils/minmea" revision="ebed4d497dc26702604e76d0a418260f80b771a5" upstream="dev" dest-branch="dev" />
+  <project name="nuttx_libs_libm_libmcs" path="nuttx/libs/libm/libmcs/libmcs" revision="94eb648866da000072a7ec716cf98c346c6feb49" upstream="dev" dest-branch="dev" />
+  <project name="nuttx_libs_libm_newlib" path="nuttx/libs/libm/newlib/newlib" revision="0523a14706fe1f53fc065dfa9deb5cdf5c5fbe50" upstream="dev" dest-branch="dev" />
+  <project name="nuttx_libs_libm_openlibm" path="nuttx/libs/libm/openlibm/openlibm" revision="d7beb8208ae6e2360b41b427b73ac1c4cfdff06a" upstream="dev" dest-branch="dev" />
+  <project name="nuttx_libs_libxx_libcxx" path="nuttx/libs/libxx/libcxx/libcxx" revision="bb51860462c79db9586b1114fab1b2aba3abbf58" upstream="dev" dest-branch="dev" />
+  <project name="nuttx_libs_libxx_libcxxabi" path="nuttx/libs/libxx/libcxxabi/libcxxabi" revision="bcef5c51c5f2232a6affc37425846575e1c23ee3" upstream="dev" dest-branch="dev" />
+  <project name="nuttx_libs_libxx_libstdcpp" path="nuttx/libs/libxx/libstdc++/libstdc++" revision="9d88a03533969af65014f9fdd36cd7372220dcd6" upstream="dev" dest-branch="dev" />
+  <project name="nuttx_mm_tlsf" path="nuttx/mm/tlsf/tlsf" revision="c84ab404f43cb4c251495799af435876c814b3ef" upstream="dev" dest-branch="dev" />
+  <project name="nuttx_openamp_libmetal" path="nuttx/openamp/libmetal" revision="457dd3413a97b253b0546c1ddb48ccce9460085b" upstream="dev" dest-branch="dev" />
+  <project name="nuttx_openamp_open-amp" path="nuttx/openamp/open-amp" revision="f8510aff8cdfda4d2b15ebfb0d5420efde69fad6" upstream="dev" dest-branch="dev" />
+  <project name="packages" revision="eb93b6489f6e390f545ad370ac3b03f503888a7d" upstream="dev" dest-branch="dev" />
+  <project name="packages_ai_agent" path="packages/ai_agent" revision="e2d64d7c537ff7a5df3d443ab461b90cf17bb77a" upstream="dev" dest-branch="dev" />
+  <project name="packages_apps" path="packages/apps" revision="b6328a1fa3374fc0e7b7a38f6f00beaef8bc41da" upstream="dev" dest-branch="dev" />
+  <project name="packages_demos" path="packages/demos" revision="b5bb9407146f6a2f2afe576c7b0aef0ef80bfd20" upstream="dev" dest-branch="dev" />
+  <project name="packages_fe_examples" path="packages/fe/examples" revision="db6a3b2d76e6dffe3afa880fc5ba474669522ef9" upstream="dev" dest-branch="dev" />
+  <project name="prebuilts_clang_linux_wasm" path="prebuilts/clang-wasm/linux-x86_64" revision="58171066761f0d5b2bb1411f427d54e2a13f309a" upstream="dev" dest-branch="dev" clone-depth="1" />
+  <project name="prebuilts_emulator_skins" path="prebuilts/emulator/skins" revision="1e40cde3c1560cb4c59b4f20165e604432bfb895" upstream="dev" dest-branch="dev" />
+  <project name="prebuilts_emulator_tools" path="prebuilts/emulator/tools" revision="aeb6d1dff8864bd8952fb88583e5e77e4b406df4" upstream="dev" dest-branch="dev" clone-depth="1">
+    <linkfile src="emulator.sh" dest="emulator.sh" />
+  </project>
+  <project name="prebuilts_tools" path="prebuilts/tools" revision="861cef55eafa9f9882c7898f2bcb2633a3415adf" upstream="dev" dest-branch="dev" clone-depth="1" />
+  <project name="tests" revision="264e7219a8d815deaf38a202cba33fa220293dcb" upstream="dev" dest-branch="dev" />
+  <project name="vendor" revision="738394d746ed699f7bae53058fe3f331dfd205ed" upstream="dev" dest-branch="dev" />
+  <project name="vendor_SpacemiT" path="vendor/SpacemiT" revision="11d8af390b4a57ff9cd84b56470152bd6bc084ae" upstream="dev" dest-branch="dev" />
+  <project name="vendor_allwinnertech" path="vendor/allwinnertech" revision="74c753e1bf1c00361719dbc04fa0b25c1adba8f6" upstream="dev" dest-branch="dev" />
+  <project name="vendor_artinchip" path="vendor/artinchip" revision="293b76b0bb227feeadce9e22a278b1bbdd9e5e0b" upstream="dev" dest-branch="dev" />
+  <project name="vendor_beken" path="vendor/beken" revision="f57952b76ff793a67aefe62317adf6c458ce1f78" upstream="dev" dest-branch="dev" />
+  <project name="vendor_bes" path="vendor/bes" revision="7a1ae5b3683d6cfad3ce67968245db4d7772f97d" upstream="dev" dest-branch="dev" />
+  <project name="vendor_espressif" path="vendor/espressif" revision="e0fe98c01f1bde5e483e9495f1c6a6f802d9c2a0" upstream="dev" dest-branch="dev" />
+  <project name="vendor_flagchip" path="vendor/flagchip" revision="d9152a1e39ee0754b1e7e6e830ea48489be33a4c" upstream="dev" dest-branch="dev" />
+  <project name="vendor_gigadevice" path="vendor/gigadevice" revision="d475da8f9dda1ab9226af05aff6280d5fca8fd69" upstream="dev" dest-branch="dev" />
+  <project name="vendor_gravityxr" path="vendor/gravityxr" revision="09ee82d87f5561a8192d9d1141a41546f8387f94" upstream="dev" dest-branch="dev" />
+  <project name="vendor_infineon" path="vendor/infineon" revision="1422d55b2727cf76b6a2e25606c679db94293524" upstream="dev" dest-branch="dev" />
+  <project name="vendor_infineon_chips_aurix_illd" path="vendor/infineon/chips/aurix/illd" revision="6bf71c346af5bfe38ef87040498289b1063a9f2d" upstream="dev" dest-branch="dev" />
+  <project name="vendor_infineon_chips_aurix_illd_tc4x_Libraries" path="vendor/infineon/chips/aurix/illd/tc4x/Libraries" revision="3d5a80293b3c4ce9b7397f4593870f54cd2ba54a" upstream="dev" dest-branch="dev" />
+  <project name="vendor_loongsonpi" path="vendor/loongsonpi" revision="b713589d3a4bca9807338ab55ce058409e5ac0ba" upstream="dev" dest-branch="dev" />
+  <project name="vendor_openvela" path="vendor/openvela" revision="4351221032aa88cb9da86336c53afe0cb6159e3e" upstream="dev" dest-branch="dev" />
+  <project name="vendor_openvela_boards_sil" path="vendor/openvela/boards/sil" revision="038235432cc102417e6aea11e40c56a26234e40e" upstream="dev" dest-branch="dev" />
+  <project name="vendor_rockchip" path="vendor/rockchip" revision="c7a06638076249f6b87b448f346553bd0eb7c88f" upstream="dev" dest-branch="dev" />
+  <project name="vendor_sifli" path="vendor/sifli" revision="9e5d62b24a5bf0585c3f868d7509edbba0681c77" upstream="dev" dest-branch="dev" />
+  <project name="vendor_st" path="vendor/st" revision="517a5e9543882cb05323b3bd9e73ecf2f3143493" upstream="dev" dest-branch="dev" />
+  <project name="vendor_template" path="vendor/template" revision="ffb79020d3e2f1662430fc18e689c99506043072" upstream="dev" dest-branch="dev" />
+  <project name="vendor_xiaomi" path="vendor/xiaomi" revision="9577ef2a0cf4b84050ad0cd43743f22fd100e5e8" upstream="dev" dest-branch="dev" />
+  <project name="vendor_xiaomi_pyxis" path="vendor/xiaomi/vela/pyxis" revision="fcfee78559e4dab82d9386ebe75f97fdcfe1bbec" upstream="dev" dest-branch="dev" />
+  <project name="vendor_xiaomi_vela" path="vendor/xiaomi/vela" revision="05fbbd76aa1d46bb79edc0c30cdbac5f25ed698a" upstream="dev" dest-branch="dev" />
+</manifest>

@@ -1,0 +1,194 @@
+Staged emulator artifacts from cmake_out/vela_goldfish-arm64-v8a-ap-encfs-extended/
+TARGETDIR = /home/tourist/Desktop/openvela/vendor/openvela/boards/vela
+arg=-keep
+arg=-no-window
+arg=-no-audio
+arg=-gpu
+arg=off
+arg=-accel
+arg=off
+Copy modem_simulator
+Create a core file
+记录了1+0 的读入
+记录了1+0 的写出
+209715200字节（210 MB，200 MiB）已复制，0.172702 s，1.2 GB/s
+Copy vela_data.img
+INFO    | Android emulator version 32.1.15.0 (build_id 20251216) (CL:N/A)
+INFO    | Found systemPath /home/tourist/Desktop/openvela/nuttx
+INFO    | Crashreporting disabled, not reporting crashes.
+INFO    | Duplicate loglines will be removed, if you wish to see each indiviudal line launch with the -log-nofilter flag.
+WARNING | encryption is off
+WARNING | Unknown Image type 3
+WARNING | Unknown Image type 5
+WARNING | Unknown Image type 4
+WARNING | Unknown Image type 1
+ERROR   | Unable to connect to adb daemon on port: 5037
+WARNING | Your AVD has been configured with an in-guest renderer, but the system image does not support guest rendering.Falling back to 'swiftshader_indirect' mode.
+WARNING | cannot add library /home/tourist/Desktop/openvela/prebuilts/emulator/linux-x86_64/qemu/linux-x86_64/lib64/vulkan/libvulkan.so: failed
+INFO    | added library /home/tourist/Desktop/openvela/prebuilts/emulator/linux-x86_64/lib64/vulkan/libvulkan.so
+Warning: Allowing host microphone input.
+WARNING | *** No gRPC protection active, consider launching with the -grpc-use-jwt flag.***
+INFO    | Started GRPC server at 127.0.0.1:8556, security: Local, auth: none
+INFO    | Advertising in: /run/user/1000/avd/running/pid_134864.ini
+INFO    | Connecting to bluetooth mesh: localhost:8554
+INFO    | Setting display: 0 configuration to: 1280x800, dpi: 420x420 
+NuttX 0.0.0 7934920bb8-dirty Oct 24 2026 14:19:27 arm64 ap
+encfs: state=STOPPED result=-22 stage=5 error=-22 cleanup=0/0 block=0 keyed=0 lower=0 upper=0
+encfs: Unknown error 22 (-22)
+
+NuttShell (NSH)
+encfs> [Kencfs provision --erase
+encfs: formatting encrypted data volume
+encfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0
+encfs> [Kencfs start
+encfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1
+encfs> [Kcmocka_fs_test
+[==========] nuttx_fs_test_suites: Running 46 test(s).
+[ RUN      ] test_nuttx_fs_creat01
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_creat01
+[ RUN      ] test_nuttx_fs_dup01
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_dup01
+[ RUN      ] test_nuttx_fs_fcntl01
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_fcntl01
+[ RUN      ] test_nuttx_fs_fcntl02
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_fcntl02
+[ RUN      ] test_nuttx_fs_fcntl03
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_fcntl03
+[ RUN      ] test_nuttx_fs_fstat01
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_fstat01
+[ RUN      ] test_nuttx_fs_fstat02
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_fstat02
+[ RUN      ] test_nuttx_fs_fstatfs01
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_fstatfs01
+[ RUN      ] test_nuttx_fs_fsync01
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_fsync01
+[ RUN      ] test_nuttx_fs_fsync02
+INFO: lstat /data/CM_fs_testdir errno 2
+the fbsize = 32768,buffer size=32768
+[       OK ] test_nuttx_fs_fsync02
+[ RUN      ] test_nuttx_fs_file_get01
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_file_get01
+[ RUN      ] test_nuttx_fs_mkdir01
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_mkdir01
+[ RUN      ] test_nuttx_fs_open01
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_open01
+[ RUN      ] test_nuttx_fs_open02
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_open02
+[ RUN      ] test_nuttx_fs_opendir01
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_opendir01
+[ RUN      ] test_nuttx_fs_opendir02
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_opendir02
+[ RUN      ] test_nuttx_fs_pread01
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_pread01
+[ RUN      ] test_nuttx_fs_pwrite01
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_pwrite01
+[ RUN      ] test_nuttx_fs_read01
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_read01
+[ RUN      ] test_nuttx_fs_readdir01
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_readdir01
+[ RUN      ] test_nuttx_fs_readlink01
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_readlink01
+[ RUN      ] test_nuttx_fs_rename01
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_rename01
+[ RUN      ] test_nuttx_fs_rename02
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_rename02
+[ RUN      ] test_nuttx_fs_rewinddir01
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_rewinddir01
+[ RUN      ] test_nuttx_fs_rmdir01
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_rmdir01
+[ RUN      ] test_nuttx_fs_rmdir02
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_rmdir02
+[ RUN      ] test_nuttx_fs_rmdir03
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_rmdir03
+[ RUN      ] test_nuttx_fs_seek01
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_seek01
+[ RUN      ] test_nuttx_fs_seek02
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_seek02
+[ RUN      ] test_nuttx_fs_stat01
+INFO: lstat /data/CM_fs_testdir errno 2
+[  ERROR   ] --- -255594496 is not within the range [-30, 30]
+[   LINE   ] --- /testing/testsuites/kernel/fs/cases/fs_stat_test.c:133: error: Failure!
+[  FAILED  ] test_nuttx_fs_stat01
+[ RUN      ] test_nuttx_fs_statfs01
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_statfs01
+[ RUN      ] test_nuttx_fs_symlink01
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_symlink01
+[ RUN      ] test_nuttx_fs_truncate01
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_truncate01
+[ RUN      ] test_nuttx_fs_unlink01
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_unlink01
+[ RUN      ] test_nuttx_fs_write01
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_write01
+[ RUN      ] test_nuttx_fs_write02
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_write02
+[ RUN      ] test_nuttx_fs_write03
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_write03
+[ RUN      ] test_nuttx_fs_append01
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_append01
+[ RUN      ] test_nuttx_fs_sendfile01
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_sendfile01
+[ RUN      ] test_nuttx_fs_sendfile02
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_sendfile02
+[ RUN      ] test_nuttx_fs_stream01
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_stream01
+[ RUN      ] test_nuttx_fs_stream02
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_stream02
+[ RUN      ] test_nuttx_fs_stream03
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_stream03
+[ RUN      ] test_nuttx_fs_stream04
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_stream04
+[ RUN      ] test_nuttx_fs_eventfd
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_eventfd
+[ RUN      ] test_nuttx_fs_poll01
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_poll01
+[==========] nuttx_fs_test_suites: 46 test(s) run.
+[  PASSED  ] 45 test(s).
+[  FAILED  ] nuttx_fs_test_suites: 1 test(s), listed below:
+[  FAILED  ] test_nuttx_fs_stat01
+
+ 1 FAILED TEST(S)
+encfs> [K

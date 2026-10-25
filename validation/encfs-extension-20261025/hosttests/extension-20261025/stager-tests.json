@@ -1,0 +1,50 @@
+{
+  "status": "passed",
+  "scope": "synthetic /tmp workspace only; no real validation archive or report modified",
+  "checks": [
+    {
+      "check": "path traversal",
+      "status": "passed"
+    },
+    {
+      "check": "wrong declared fingerprint",
+      "status": "passed"
+    },
+    {
+      "check": "temporary master directory",
+      "status": "passed"
+    },
+    {
+      "check": "binary disk suffix",
+      "status": "passed"
+    },
+    {
+      "check": "runtime avd subtree",
+      "status": "passed"
+    },
+    {
+      "check": "symbolic-link input",
+      "status": "passed"
+    },
+    {
+      "check": "incomplete run",
+      "status": "passed"
+    },
+    {
+      "check": "fresh synthetic publish and checksum verification",
+      "status": "passed"
+    },
+    {
+      "check": "preexisting destination",
+      "status": "passed"
+    },
+    {
+      "check": "input changed after preflight",
+      "status": "passed"
+    },
+    {
+      "check": "failed preflight leaves no archive or staging tree",
+      "status": "passed"
+    }
+  ]
+}

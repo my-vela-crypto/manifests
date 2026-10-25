@@ -1,0 +1,417 @@
+{
+  "status": "passed",
+  "analyzed_at": "2026-10-25T03:15:45+00:00",
+  "results_directory": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02",
+  "input_report": {
+    "path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/report.json",
+    "sha256": "d097cd10752ed878a439a1747fa2bf1d816c2075602c6f901507d749fdd7dc71"
+  },
+  "input_serial": {
+    "path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/gui-widgets-storage.serial.log",
+    "sha256": "20cb1756787628079d7fc1b0da8b7e39cb00379b2c2b35a7cfc0fd05b9f9f8d4"
+  },
+  "validation": {
+    "report_and_all_phase_statuses_passed": true,
+    "statistics_match_independently_parsed_serial": true,
+    "each_worker_met_requested_duration": true,
+    "both_worker_counts_advance_in_every_progress_interval": true,
+    "payload_counters_match_deterministic_completed_cycle_pattern": true,
+    "maximum_allowed_progress_gap_seconds": 95.0,
+    "verified_framebuffer_png_count": 28,
+    "verified_stress_header_count": 4,
+    "selected_tab_header_policy": "exact RGB equality at (680,0,1280,70)"
+  },
+  "workload": {
+    "requested_seconds": 60,
+    "guest_elapsed_ms": 60622,
+    "host_elapsed_seconds": 62.977,
+    "completed_iterations": 452,
+    "worker0_iterations": 211,
+    "worker1_iterations": 241,
+    "worker0_elapsed_ms": 60064,
+    "worker1_elapsed_ms": 60341,
+    "logical_written_bytes": 4327670,
+    "logical_verified_read_bytes": 8607824,
+    "errors": 0,
+    "counter_scope": "Logical test payload only; not physical device I/O",
+    "progress_sample_count": 2
+  },
+  "global_heap": {
+    "scope": "Global allocator usage including GUI and other tasks",
+    "unit": "bytes",
+    "steady_after_seconds": 300.0,
+    "all_progress_sample_count": 2,
+    "active_sample_count": 1,
+    "steady_sample_count": 0,
+    "final_cleanup_sample_excluded_from_steady_OLS": {
+      "elapsed_ms": 60622,
+      "iterations": 452,
+      "written_bytes": 4327670,
+      "verified_bytes": 8607824,
+      "worker0_iterations": 211,
+      "worker1_iterations": 241,
+      "errors": 0,
+      "heap_used": 5371584,
+      "heap_free": 117221376
+    },
+    "interpretation": "A bounded run describes observed global heap behavior. It does not establish absence of leaks or attribute changes to EncFS.",
+    "steady_available": false,
+    "reason": "Fewer than two active samples at/after 300s"
+  },
+  "progress_samples": [
+    {
+      "elapsed_ms": 30273,
+      "iterations": 228,
+      "written_bytes": 2134247,
+      "verified_bytes": 4244516,
+      "worker0_iterations": 108,
+      "worker1_iterations": 120,
+      "errors": 0,
+      "heap_used": 5681136,
+      "heap_free": 116911824
+    },
+    {
+      "elapsed_ms": 60622,
+      "iterations": 452,
+      "written_bytes": 4327670,
+      "verified_bytes": 8607824,
+      "worker0_iterations": 211,
+      "worker1_iterations": 241,
+      "errors": 0,
+      "heap_used": 5371584,
+      "heap_free": 117221376
+    }
+  ],
+  "verified_framebuffers": [
+    {
+      "phase": "gui-music",
+      "label": "initial",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-music-initial.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-music-initial.png",
+      "sha256": "8a3f0e0541ff0f2302d5c5fe706fd6676a6a92defd89e0aec5115ed8be46ddd8",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-music",
+      "label": "animated",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-music-animated.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-music-animated.png",
+      "sha256": "f8005b843a8517bd556897c30d84c34060b0a52fcd980ca00720f1e62e2886f7",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-keypad",
+      "label": "initial",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-keypad-initial.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-keypad-initial.png",
+      "sha256": "ab493c9374845f5b362cfc36463f0a6e8d2976220af449daf4b59fa0c7b5727f",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-keypad",
+      "label": "modal-dismissed",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-keypad-modal-dismissed.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-keypad-modal-dismissed.png",
+      "sha256": "2637906742469e4a8a58f3d5bfb54e571d3a31ae543d8e621f6755b00744ebaa",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-keypad",
+      "label": "checkbox",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-keypad-checkbox.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-keypad-checkbox.png",
+      "sha256": "b08a9a186efb0a4ecb6095737cdcede68ce24a5ff81c39f384a1081722ce9cbf",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-keypad",
+      "label": "slider",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-keypad-slider.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-keypad-slider.png",
+      "sha256": "b6fd8724f4ab596b3f5bdec5a3c773e9ab2d8676af75796909d4451a0c402c16",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-keypad",
+      "label": "text-tab",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-keypad-text-tab.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-keypad-text-tab.png",
+      "sha256": "aa3279dd17e7047b64e17c0c47fd40eac2b4e9663c22370ecaff697c19bec777",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-stress-demo",
+      "label": "initial",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-stress-demo-initial.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-stress-demo-initial.png",
+      "sha256": "3f757b8e593f037545c22b563a2110a47c717011a4bb5dbc25da4619cc7e2d21",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-stress-demo",
+      "label": "animated",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-stress-demo-animated.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-stress-demo-animated.png",
+      "sha256": "f046cbe1e9ddb8c1ae3577a0bec1487551da0c2d1834d3c2424c174f22347397",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-widgets-storage",
+      "label": "initial",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-widgets-storage-initial.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-widgets-storage-initial.png",
+      "sha256": "5be7e9964763a238f6e4d27a87bb6d7880207276513b8395c3b39b56836704ee",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-widgets-storage",
+      "label": "profile",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-widgets-storage-profile.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-widgets-storage-profile.png",
+      "sha256": "5be7e9964763a238f6e4d27a87bb6d7880207276513b8395c3b39b56836704ee",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-widgets-storage",
+      "label": "analytics",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-widgets-storage-analytics.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-widgets-storage-analytics.png",
+      "sha256": "e439cb62d8e4b90f0f8514332e776f50a49330a65bacb9518e50d4c4b75236f2",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-widgets-storage",
+      "label": "shop",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-widgets-storage-shop.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-widgets-storage-shop.png",
+      "sha256": "fe59f3b6e9d7a9150edc6604af160333625625a4f70302ab892ba0d0dbb81cd2",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-widgets-storage",
+      "label": "checkbox-toggled",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-widgets-storage-checkbox-toggled.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-widgets-storage-checkbox-toggled.png",
+      "sha256": "70471371685064ed98ec1450b39254077306ab015da545057424cdda05e11aae",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-widgets-storage",
+      "label": "slider-before",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-widgets-storage-slider-before.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-widgets-storage-slider-before.png",
+      "sha256": "5be7e9964763a238f6e4d27a87bb6d7880207276513b8395c3b39b56836704ee",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-widgets-storage",
+      "label": "slider-after",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-widgets-storage-slider-after.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-widgets-storage-slider-after.png",
+      "sha256": "a8f2ea67bc85e3da0eae688e0670943e74c4c9c6b8a997eda29ac970fb1d4993",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-widgets-storage",
+      "label": "after-storage-regression",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-widgets-storage-after-storage-regression.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-widgets-storage-after-storage-regression.png",
+      "sha256": "a8f2ea67bc85e3da0eae688e0670943e74c4c9c6b8a997eda29ac970fb1d4993",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-widgets-storage",
+      "label": "stress-001-analytics",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-widgets-storage-stress-001-analytics.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-widgets-storage-stress-001-analytics.png",
+      "sha256": "e79671f8a5fdd6ce88dc08ae5b967d49c01360080b6597adbb04c32da94c01df",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-widgets-storage",
+      "label": "stress-001-shop",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-widgets-storage-stress-001-shop.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-widgets-storage-stress-001-shop.png",
+      "sha256": "70471371685064ed98ec1450b39254077306ab015da545057424cdda05e11aae",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-widgets-storage",
+      "label": "stress-003-analytics",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-widgets-storage-stress-003-analytics.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-widgets-storage-stress-003-analytics.png",
+      "sha256": "9a7c22c1abe78b4183be0c53447ce43913613b5e2945fd904417096f27276887",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-widgets-storage",
+      "label": "stress-003-shop",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-widgets-storage-stress-003-shop.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-widgets-storage-stress-003-shop.png",
+      "sha256": "70471371685064ed98ec1450b39254077306ab015da545057424cdda05e11aae",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-persistence-coldboot",
+      "label": "initial",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-persistence-coldboot-initial.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-persistence-coldboot-initial.png",
+      "sha256": "5be7e9964763a238f6e4d27a87bb6d7880207276513b8395c3b39b56836704ee",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-persistence-coldboot",
+      "label": "profile",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-persistence-coldboot-profile.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-persistence-coldboot-profile.png",
+      "sha256": "5be7e9964763a238f6e4d27a87bb6d7880207276513b8395c3b39b56836704ee",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-persistence-coldboot",
+      "label": "analytics",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-persistence-coldboot-analytics.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-persistence-coldboot-analytics.png",
+      "sha256": "e439cb62d8e4b90f0f8514332e776f50a49330a65bacb9518e50d4c4b75236f2",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-persistence-coldboot",
+      "label": "shop",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-persistence-coldboot-shop.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-persistence-coldboot-shop.png",
+      "sha256": "fe59f3b6e9d7a9150edc6604af160333625625a4f70302ab892ba0d0dbb81cd2",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-persistence-coldboot",
+      "label": "checkbox-toggled",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-persistence-coldboot-checkbox-toggled.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-persistence-coldboot-checkbox-toggled.png",
+      "sha256": "70471371685064ed98ec1450b39254077306ab015da545057424cdda05e11aae",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-persistence-coldboot",
+      "label": "slider-before",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-persistence-coldboot-slider-before.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-persistence-coldboot-slider-before.png",
+      "sha256": "5be7e9964763a238f6e4d27a87bb6d7880207276513b8395c3b39b56836704ee",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-persistence-coldboot",
+      "label": "slider-after",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-persistence-coldboot-slider-after.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-persistence-coldboot-slider-after.png",
+      "sha256": "a8f2ea67bc85e3da0eae688e0670943e74c4c9c6b8a997eda29ac970fb1d4993",
+      "width": 1280,
+      "height": 800
+    }
+  ],
+  "stress_selected_tab_comparisons": [
+    {
+      "checkpoint_index": 1,
+      "page": "analytics",
+      "frame_path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-widgets-storage-stress-001-analytics.png",
+      "baseline_path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-widgets-storage-analytics.png",
+      "crop": [
+        680,
+        0,
+        1280,
+        70
+      ],
+      "different_pixels": 0,
+      "match_policy": "exact RGB pixel equality"
+    },
+    {
+      "checkpoint_index": 1,
+      "page": "shop",
+      "frame_path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-widgets-storage-stress-001-shop.png",
+      "baseline_path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-widgets-storage-shop.png",
+      "crop": [
+        680,
+        0,
+        1280,
+        70
+      ],
+      "different_pixels": 0,
+      "match_policy": "exact RGB pixel equality"
+    },
+    {
+      "checkpoint_index": 3,
+      "page": "analytics",
+      "frame_path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-widgets-storage-stress-003-analytics.png",
+      "baseline_path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-widgets-storage-analytics.png",
+      "crop": [
+        680,
+        0,
+        1280,
+        70
+      ],
+      "different_pixels": 0,
+      "match_policy": "exact RGB pixel equality"
+    },
+    {
+      "checkpoint_index": 3,
+      "page": "shop",
+      "frame_path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-widgets-storage-stress-003-shop.png",
+      "baseline_path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-widgets-storage-shop.png",
+      "crop": [
+        680,
+        0,
+        1280,
+        70
+      ],
+      "different_pixels": 0,
+      "match_policy": "exact RGB pixel equality"
+    }
+  ],
+  "plot_backend": "stdlib SVG (matplotlib unavailable)",
+  "plots": [
+    {
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/analysis/worker_iterations.svg",
+      "sha256": "c01c9e196087120f6f3de12571489ff9a7ae28ebe61839bb9e035fd089990846",
+      "format": "SVG"
+    },
+    {
+      "path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/analysis/global_heap.svg",
+      "sha256": "dc328ff3aa76fe5d49ff6b250d9eb572ad8df40386604b3c7c0ab9581ed25272",
+      "format": "SVG"
+    }
+  ],
+  "limitations": [
+    "This bounded run is not an endurance guarantee or proof of zero leaks.",
+    "Global heap samples include GUI and other tasks; they do not isolate EncFS.",
+    "Payload byte counters exclude metadata, alignment and other physical I/O.",
+    "Framebuffer hashes establish integrity; header checks specifically verify stress-time page selection, not every possible GUI interaction.",
+    "Power-loss and hardware fault recovery are not tested by this analysis."
+  ]
+}

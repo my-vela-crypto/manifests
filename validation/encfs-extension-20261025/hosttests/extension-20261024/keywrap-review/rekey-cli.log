@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "checks": 60054,
+  "inputs": 30027,
+  "source_sha256": "e02bce3020fdf2deb5f4191f475c0be5cebcef3757f51d920dafc040b66b7fab",
+  "parser_sha256": "0653904bbcb5d25878f0f7d91d4455a3fa359c912cf7d7ccdb576c9097ee029e",
+  "oracle": "Python arbitrary-precision decimal integer comparison",
+  "sanitizer": "undefined behavior; fatal on first diagnostic"
+}

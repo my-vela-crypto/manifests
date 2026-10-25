@@ -17,6 +17,7 @@
 #include <dirent.h>
 #include <errno.h>
 #include <fcntl.h>
+#include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -160,6 +161,7 @@ static void crypto_tests(void)
   CHECK("structural component rejected", encpathfs_encode_name(key, "..",
                                                               encoded,
                                                               sizeof(encoded)) < 0);
+  encfs_test_utf8_crypto();
 }
 
 static void filesystem_tests(void)
@@ -282,6 +284,7 @@ static void filesystem_tests(void)
     }
 
   CHECK("24-cycle file regression", i == 24);
+  encfs_test_utf8_filesystem();
   encfs_test_extended();
 }
 
@@ -495,11 +498,46 @@ static void standalone_tests(void)
   CHECK("unmount standalone path layer", umount(ENCFS_UPPER_PATH) == 0);
 }
 
+#if defined(CONFIG_ENCFS_KEYWRAP) && defined(CONFIG_ENCFS_TESTING)
+static bool parse_master_id(const char *text, uint32_t *master_id)
+{
+  uint32_t value = 0;
+  unsigned int digit;
+
+  if (text == NULL || *text == '\0')
+    {
+      return false;
+    }
+
+  while (*text != '\0')
+    {
+      if (*text < '0' || *text > '9')
+        {
+          return false;
+        }
+
+      digit = *text++ - '0';
+      if (value > (UINT32_MAX - digit) / 10)
+        {
+          return false;
+        }
+
+      value = value * 10 + digit;
+    }
+
+  *master_id = value;
+  return true;
+}
+#endif
+
 int main(int argc, FAR char *argv[])
 {
   const char *mode = argc >= 2 ? argv[1] : "all";
   char *end;
   unsigned long seconds;
+#if defined(CONFIG_ENCFS_KEYWRAP) && defined(CONFIG_ENCFS_TESTING)
+  uint32_t master_id;
+#endif
 
   g_pass = 0;
   g_fail = 0;
@@ -521,6 +559,18 @@ int main(int argc, FAR char *argv[])
       CHECK("timed concurrent encrypted filesystem stress",
             encfs_test_stress((unsigned int)seconds) == 0);
     }
+#if defined(CONFIG_ENCFS_KEYWRAP) && defined(CONFIG_ENCFS_TESTING)
+  else if (strcmp(mode, "rekey") == 0)
+    {
+      if (argc != 3 || !parse_master_id(argv[2], &master_id))
+        {
+          goto usage;
+        }
+
+      CHECK("online master rotation with active file and directory handles",
+            encfs_test_rekey(master_id) == 0);
+    }
+#endif
   else if (argc > 2)
     {
       goto usage;
@@ -552,6 +602,7 @@ int main(int argc, FAR char *argv[])
       CHECK("restart existing encrypted volume", encfs_start() == 0);
       CHECK("persistent content after reboot", read_matches(TEST_FILE, TEST_CONTENT));
       CHECK("persistent logical directory", access("/data/test", F_OK) == 0);
+      encfs_test_utf8_verify();
       CHECK("clean stop after reboot", encfs_stop() == 0);
     }
   else
@@ -565,6 +616,10 @@ int main(int argc, FAR char *argv[])
 usage:
   fprintf(stderr, "Usage: encfs_test "
                   "crypto|standalone|corruption|write|verify|all\n"
-                  "       encfs_test stress <seconds:60..86400>\n");
+                  "       encfs_test stress <seconds:60..86400>\n"
+#if defined(CONFIG_ENCFS_KEYWRAP) && defined(CONFIG_ENCFS_TESTING)
+                  "       encfs_test rekey <master-id:0..4294967295>\n"
+#endif
+                  );
   return EXIT_FAILURE;
 }

@@ -1,0 +1,65 @@
+{
+  "status": "passed",
+  "at": "2026-10-24T14:34:05.791762+08:00",
+  "tests": [
+    {
+      "name": "keywrap",
+      "command": [
+        "python3",
+        "nuttx/fs/encfs/tests/test_keywrap.py"
+      ],
+      "exit_code": 0,
+      "log": "keywrap.log"
+    },
+    {
+      "name": "adversarial",
+      "command": [
+        "python3",
+        "nuttx/fs/encfs/tests/test_keywrap_adversarial.py"
+      ],
+      "exit_code": 0,
+      "log": "adversarial.log"
+    },
+    {
+      "name": "rekey-cli",
+      "command": [
+        "python3",
+        "apps/system/encfs/tests/test_rekey_cli.py"
+      ],
+      "exit_code": 0,
+      "log": "rekey-cli.log"
+    },
+    {
+      "name": "legacy-cli",
+      "command": [
+        "python3",
+        "apps/system/encfs/tests/test_testkey.py"
+      ],
+      "exit_code": 0,
+      "log": "legacy-cli.log"
+    },
+    {
+      "name": "legacy-manager",
+      "command": [
+        "bash",
+        "nuttx/tools/tests/encfs_manager/run_host_tests.sh"
+      ],
+      "exit_code": 0,
+      "log": "legacy-manager.log"
+    }
+  ],
+  "source_sha256": {
+    "nuttx/fs/encfs/encfs_keywrap.c": "6f8c3c41c1c175b8396653136a0ef32cc233052a8dc1f0535a5addbd6765a37b",
+    "nuttx/fs/encfs/encfs_keyfile.c": "7e39bc0efcac3466b46c2bd9dc9fc7789a06319b2f97b6f57102d83a0d193cdd",
+    "nuttx/fs/encfs/encfs_key.c": "da89685fdfe965ac44f9375d5f734b6d35b5b431e49ed1fa143570938ad3aad6",
+    "nuttx/fs/encfs/encfs_manager.c": "39caf1f29e2938a21813eb5591cc5cb2d2060569db8ddbf37bf02bdc24018259",
+    "nuttx/include/nuttx/fs/encfs.h": "ca4b16c3c74a31ad33c87b22aae86147b588ffe696d26f5ed6a02ad15e6e4b9e",
+    "apps/system/encfs/encfs_main.c": "be5cf93f58cf4eff64280dfe6d24477dbf217f4a926bd4df4e10642de135be4a",
+    "apps/examples/encfs_test/encfs_test_rekey.c": "bc3de16e2f0bee6cb9f95b028a98ac3c562229454cd9757a0a6fb36773b17dd1"
+  },
+  "limits": [
+    "host keywrap sources run ASan/UBSan; LSan disabled for ptrace sandbox",
+    "file provider and actual online VFS behavior require separate emulator tests",
+    "no claim of hardware TEE, physical power-loss durability, or trusted anti-rollback"
+  ]
+}

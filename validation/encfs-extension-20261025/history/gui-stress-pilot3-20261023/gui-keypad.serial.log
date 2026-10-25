@@ -1,0 +1,67 @@
+Staged emulator artifacts from cmake_out/vela_goldfish-arm64-v8a-ap-encfs-gui/
+TARGETDIR = /home/tourist/Desktop/openvela/vendor/openvela/boards/vela
+arg=-keep
+arg=-no-window
+arg=-no-audio
+arg=-gpu
+arg=swiftshader_indirect
+arg=-accel
+arg=off
+Copy modem_simulator
+记录了1+0 的读入
+记录了1+0 的写出
+209715200字节（210 MB，200 MiB）已复制，0.138588 s，1.5 GB/s
+A core file already exists. will be backed to 20261023232445.core
+INFO    | Android emulator version 32.1.15.0 (build_id 20251216) (CL:N/A)
+INFO    | Found systemPath /home/tourist/Desktop/openvela/nuttx
+INFO    | Crashreporting disabled, not reporting crashes.
+INFO    | Duplicate loglines will be removed, if you wish to see each indiviudal line launch with the -log-nofilter flag.
+WARNING | encryption is off
+WARNING | Unknown Image type 3
+WARNING | Unknown Image type 5
+WARNING | Unknown Image type 4
+WARNING | Unknown Image type 1
+ERROR   | Unable to connect to adb daemon on port: 5037
+WARNING | cannot add library /home/tourist/Desktop/openvela/prebuilts/emulator/linux-x86_64/qemu/linux-x86_64/lib64/vulkan/libvulkan.so: failed
+INFO    | added library /home/tourist/Desktop/openvela/prebuilts/emulator/linux-x86_64/lib64/vulkan/libvulkan.so
+Warning: Allowing host microphone input.
+WARNING | *** No gRPC protection active, consider launching with the -grpc-use-jwt flag.***
+INFO    | Started GRPC server at 127.0.0.1:8554, security: Local, auth: none
+INFO    | Advertising in: /run/user/1000/avd/running/pid_61970.ini
+INFO    | Setting display: 0 configuration to: 1280x800, dpi: 420x420 
+encfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1
+kvdbd [10:100]
+servicemanager [11:100]
+adbd [12:100]
+telnetd [13:100]
+
+NuttShell (NSH)
+encfs> [Kencfs start
+encfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1
+encfs> [Klvgldemo keypad_encoder &
+lvgldemo [15:100]
+encfs> [Kps
+  PID GROUP PRI POLICY   TYPE    NPX STATE    EVENT     SIGMASK             STACK    USED FILLED COMMAND
+    0     0   0 FIFO     Kthread   - Ready              0000000000000000  0007984 0002120  26.5%  CPU0 IDLE
+    1     0 192 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001152   7.1%  hpwork 0x408e6b00 0x408e6b80
+    2     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001152   7.1%  lpwork 0x408e6a40 0x408e6ac0
+    4     0 100 RR       Kthread   - Ready              0000000000000000  0016112 0001264   7.8%  goldfish_gpu_fb_thread 0x4093cca0
+    5     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001680  10.4%  goldfish_gnss_thread 0x40dc4e30
+    6     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001760  10.9%  goldfish_sensor_thread 0x409cf9d0
+    7     7 100 RR       Task      - Running            0000000000000000  0016144 0004704  29.1%  nsh_main
+   10    10 100 RR       Task      - Waiting  Semaphore 0000000000000000  0007952 0003464  43.5%  kvdbd
+   11    11 100 RR       Task      - Waiting  Semaphore 0000000000000000  0016144 0003208  19.8%  servicemanager
+   12    12 100 RR       Task      - Waiting  Semaphore 0000000000000000  0016144 0002016  12.4%  adbd
+   13    13 100 RR       Task      - Waiting  Semaphore 0000000000020000  0016144 0002256  13.9%  telnetd
+   15    15 100 RR       Task      - Waiting  Semaphore 0000000000000000  0032512 0010568  32.5%  lvgldemo keypad_encoder
+encfs> [Kfbcapture -d /dev/fb0 -o /share/gui-keypad-initial.bmp
+Taking screenshot of '/share/gui-keypad-initial.bmp' ...
+Success
+encfs> [Kinput tap 360 450
+encfs> [Kinput swipe 500 700 500 200 500
+encfs> [Kfbcapture -d /dev/fb0 -o /share/gui-keypad-after-touch.bmp
+Taking screenshot of '/share/gui-keypad-after-touch.bmp' ...
+Success
+encfs> [Kencfs stop
+encfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0
+encfs> [K

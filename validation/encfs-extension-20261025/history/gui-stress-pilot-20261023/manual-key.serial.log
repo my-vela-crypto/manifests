@@ -1,0 +1,122 @@
+Staged emulator artifacts from cmake_out/vela_goldfish-arm64-v8a-ap-encfs-gui/
+TARGETDIR = /home/tourist/Desktop/openvela/vendor/openvela/boards/vela
+arg=-keep
+arg=-no-window
+arg=-no-audio
+arg=-gpu
+arg=swiftshader_indirect
+arg=-accel
+arg=off
+Copy modem_simulator
+Create a core file
+记录了1+0 的读入
+记录了1+0 的写出
+209715200字节（210 MB，200 MiB）已复制，0.11789 s，1.8 GB/s
+Copy vela_data.img
+INFO    | Android emulator version 32.1.15.0 (build_id 20251216) (CL:N/A)
+INFO    | Found systemPath /home/tourist/Desktop/openvela/nuttx
+INFO    | Crashreporting disabled, not reporting crashes.
+INFO    | Duplicate loglines will be removed, if you wish to see each indiviudal line launch with the -log-nofilter flag.
+WARNING | encryption is off
+WARNING | Unknown Image type 3
+WARNING | Unknown Image type 5
+WARNING | Unknown Image type 4
+WARNING | Unknown Image type 1
+ERROR   | Unable to connect to adb daemon on port: 5037
+WARNING | cannot add library /home/tourist/Desktop/openvela/prebuilts/emulator/linux-x86_64/qemu/linux-x86_64/lib64/vulkan/libvulkan.so: failed
+INFO    | added library /home/tourist/Desktop/openvela/prebuilts/emulator/linux-x86_64/lib64/vulkan/libvulkan.so
+Warning: Allowing host microphone input.
+WARNING | *** No gRPC protection active, consider launching with the -grpc-use-jwt flag.***
+INFO    | Started GRPC server at 127.0.0.1:8554, security: Local, auth: none
+INFO    | Advertising in: /run/user/1000/avd/running/pid_60699.ini
+INFO    | Setting display: 0 configuration to: 1280x800, dpi: 420x420 
+encfs: state=STOPPED result=-22 stage=5 error=-22 cleanup=0/0 block=0 keyed=0 lower=0 upper=0
+encfs: Unknown error 22 (-22)
+kvdbd [10:100]
+servicemanager [11:100]
+adbd [12:100]
+telnetd [13:100]
+
+NuttShell (NSH)
+encfs> [Kencfs stop
+encfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0
+encfs> [Kencfs testkey none
+encfs: test key source changed
+encfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0
+encfs> [Kencfs start
+encfs: state=STOPPED result=-126 stage=2 error=-126 cleanup=0/0 block=0 keyed=0 lower=0 upper=0
+encfs: Unknown error 126 (-126)
+encfs> [Kencfs testkey 1234
+encfs: testkey expects exactly 64 hexadecimal digits, board, or none
+encfs: state=STOPPED result=-22 stage=2 error=-126 cleanup=0/0 block=0 keyed=0 lower=0 upper=0
+encfs: Unknown error 22 (-22)
+encfs> [Kencfs testkey zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
+encfs: testkey expects exactly 64 hexadecimal digits, board, or none
+encfs: state=STOPPED result=-22 stage=2 error=-126 cleanup=0/0 block=0 keyed=0 lower=0 upper=0
+encfs: Unknown error 22 (-22)
+encfs> [Kencfs testkey 000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f
+encfs: test key source changed
+encfs: state=STOPPED result=0 stage=2 error=-126 cleanup=0/0 block=0 keyed=0 lower=0 upper=0
+encfs> [Kencfs provision --erase
+encfs: formatting encrypted data volume
+encfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0
+encfs> [Kencfs start
+encfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1
+encfs> [Kecho ENCFS_MANUAL_TEST_KEY_CONTENT_20261023_683d72c1 > /data/manual-key.txt
+encfs> [Kcat /data/manual-key.txt
+ENCFS_MANUAL_TEST_KEY_CONTENT_20261023_683d72c1
+encfs> [Kencfs testkey 202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f
+encfs: stop the volume and release all resources before changing the test key
+encfs: state=READY result=-16 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1
+encfs: Unknown error 16 (-16)
+encfs> [Kencfs testkey board
+encfs: stop the volume and release all resources before changing the test key
+encfs: state=READY result=-16 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1
+encfs: Unknown error 16 (-16)
+encfs> [Kencfs testkey none
+encfs: stop the volume and release all resources before changing the test key
+encfs: state=READY result=-16 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1
+encfs: Unknown error 16 (-16)
+encfs> [Kencfs stop
+encfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0
+encfs> [Kencfs testkey 202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f
+encfs: test key source changed
+encfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0
+encfs> [Kencfs start
+encfs: state=STOPPED result=-22 stage=5 error=-22 cleanup=0/0 block=0 keyed=0 lower=0 upper=0
+encfs: Unknown error 22 (-22)
+encfs> [Kencfs testkey 000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f
+encfs: test key source changed
+encfs: state=STOPPED result=0 stage=5 error=-22 cleanup=0/0 block=0 keyed=0 lower=0 upper=0
+encfs> [Kencfs testkey 000000000000000000000000000000000000000000000000000000000000000
+encfs: testkey expects exactly 64 hexadecimal digits, board, or none
+encfs: state=STOPPED result=-22 stage=5 error=-22 cleanup=0/0 block=0 keyed=0 lower=0 upper=0
+encfs: Unknown error 22 (-22)
+encfs> [Kencfs start
+encfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1
+encfs> [Kcat /data/manual-key.txt
+ENCFS_MANUAL_TEST_KEY_CONTENT_20261023_683d72c1
+encfs> [Kencfs stop
+encfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0
+encfs> [Kencfs testkey board
+encfs: test key source changed
+encfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0
+encfs> [Kencfs start
+encfs: state=STOPPED result=-22 stage=5 error=-22 cleanup=0/0 block=0 keyed=0 lower=0 upper=0
+encfs: Unknown error 22 (-22)
+encfs> [Kencfs testkey none
+encfs: test key source changed
+encfs: state=STOPPED result=0 stage=5 error=-22 cleanup=0/0 block=0 keyed=0 lower=0 upper=0
+encfs> [Kencfs start
+encfs: state=STOPPED result=-126 stage=2 error=-126 cleanup=0/0 block=0 keyed=0 lower=0 upper=0
+encfs: Unknown error 126 (-126)
+encfs> [Kencfs testkey 000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f
+encfs: test key source changed
+encfs: state=STOPPED result=0 stage=2 error=-126 cleanup=0/0 block=0 keyed=0 lower=0 upper=0
+encfs> [Kencfs start
+encfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1
+encfs> [Kcat /data/manual-key.txt
+ENCFS_MANUAL_TEST_KEY_CONTENT_20261023_683d72c1
+encfs> [Kencfs stop
+encfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0
+encfs> [K

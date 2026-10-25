@@ -40,6 +40,8 @@ path_key = HKDF-SHA256(master, salt=ASCII("encpathfs"), info=空, L=32)
 
 QEMU 板级 `vendor/openvela/boards/vela/src/qemu_vela.c` 返回固定的 32 字节伪密钥。它用于课程演示和可复现测试，不是设备硬件秘密或生产密钥管理方案。测试配置还打开了可注入主密钥的 `CONFIG_ENCFS_TESTING`，生产构建应关闭该选项，并另行提供可信密钥来源。
 
+以上是默认兼容的 legacy 直接派生模式。启用 `CONFIG_ENCFS_KEYWRAP` 后，也可在完全 STOPPED 时通过 `encfs_set_key_provider()` 选择独立卷外提供者：新建卷生成64字节独立随机数据密钥，用主密钥的 HKDF 子密钥经 AES-SIV 包装成112字节认证 keyslot。已有 wrapped 卷必须提供原数据盘和其 keyslot；缺失或认证失败直接拒绝，普通 start 不回退、不重建。`encfs_rekey(id)` 在 READY 时仅原子替换包装记录，保留稳定数据密钥和打开句柄；同一 id 返回 `-EALREADY`，legacy 卷返回 NuttX `-ENOTSUP`（138）。完整 provider 契约、手工命令和模拟器边界见[在线换钥说明](encfs_keywrap.md)。
+
 密码接口以以下头文件为准，均返回 `0` 或负 errno：
 
 | 头文件 | 接口与约束 |
@@ -93,7 +95,7 @@ mount(NULL, "/data", "encpathfs", 0,
 
 ## 名称及卷格式 v1
 
-逻辑名称限定为 1–128 字节可打印 ASCII（`0x20..0x7e`），不包含 `/`；普通分量不能为 `.` 或 `..`。不支持中文 UTF-8 名称。路径中的结构性 `.`、`..` 由路径转换器处理，拒绝逃出逻辑根；它还检查缺失/非目录中间项、尾部斜线和编码后完整路径长度。超限返回 `-ENAMETOOLONG`，没有长名称哈希回退。
+逻辑名称为1–128字节严格UTF-8，支持中文及emoji；128是字节数而非字符数。拒绝ASCII控制字符、DEL、`/`、非规范或截断UTF-8、代理区和超过U+10FFFF的值；普通分量不能为`.`或`..`。C/POSIX输入以首个NUL结束，解密后带认证的内嵌NUL也会拒绝。保留原始字节，不做Unicode归一化或大小写折叠，NFC/NFD名称可各自存在。原ASCII名称的`E1_`密文字节格式完全兼容。路径中的结构性`.`、`..`由路径转换器处理，拒绝逃出逻辑根；还检查缺失/非目录中间项、尾部斜线和编码后完整路径长度。超限返回`-ENAMETOOLONG`，没有长名称哈希回退。
 
 ```text
 名称 AD：ASCII("encpathfs:name:v1")，不含 NUL
@@ -218,6 +220,6 @@ failpoint 为 `NONE`、`REGISTER`、`KEY`、`LOWER`、`UPPER`。到达对应操�
 
 支持普通文件读写、定位、同步、truncate、dup、stat/chstat、目录遍历和 rewind、mkdir/rmdir/unlink、同卷移动及目录重命名。目标已存在的 rename 明确返回 `-EEXIST`，不承诺 POSIX 替换语义。只允许 `FIOC_FILEPATH` 查询逻辑路径，其他 ioctl 返回 `-ENOTTY`。软链接、硬链接、mmap、跨卷 rename 和强制撤销打开句柄不在支持范围内。
 
-第一层 XTS 不认证文件内容或任意扇区，卷元数据及文件名的 SIV 认证不能代替数据完整性保护。没有声称抵抗内容篡改、回滚攻击、断电原子性、在线密钥轮换或生产级攻击。干净卸载、错误路径回滚及同盘重启是本版可复现测试目标。
+第一层XTS不认证文件内容或任意扇区，卷元数据及文件名的SIV认证不能代替数据完整性保护。没有声称抵抗内容篡改、回滚攻击、物理断电或生产级攻击。新wrapped卷支持在线包装主密钥轮换；legacy卷迁移需要另盘重加密拷贝，不能仅包裹旧派生密钥就撤销旧主密钥。持有旧slot和旧master副本仍可回滚；真实硬件后端须另行实现可信持久化和单调状态。模拟器文件provider只验证单写者条件下的进程切断与原生rename模型，不等于TEE。
 
 板级加密配置生成新的 256 MiB 空白数据镜像，不预装明文 FAT 或预置文件。格式化不表示逐扇区安全擦除，未写入空白区也不被描述为已加密。需要迁移的数据应在新卷 provision 后通过 `/data` 写入；不要把含明文旧数据的镜像直接当作已安全加密的交付盘。

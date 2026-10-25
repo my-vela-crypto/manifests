@@ -1,0 +1,268 @@
+{
+  "started_at": "2026-10-23T23:36:38+08:00",
+  "status": "failed",
+  "phases": [
+    {
+      "name": "gui-keypad-controls",
+      "status": "failed",
+      "instance": "encfs-gui-20261023-233638-8b5687b0",
+      "command": [
+        "/home/tourist/Desktop/openvela/run-emulator.sh",
+        "goldfish-arm64-v8a-ap-encfs-gui",
+        "-keep",
+        "encfs-gui-20261023-233638-8b5687b0",
+        "-no-window",
+        "-no-audio",
+        "-gpu",
+        "swiftshader_indirect",
+        "-accel",
+        "off"
+      ],
+      "started_at": "2026-10-23T23:36:38+08:00",
+      "commands": [
+        {
+          "command": "encfs provision --erase",
+          "started_at": "2026-10-23T23:36:39+08:00",
+          "finished_at": "2026-10-23T23:36:39+08:00",
+          "output": "\u001b[Kencfs provision --erase\r\r\nencfs: formatting encrypted data volume\r\r\nencfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\n"
+        },
+        {
+          "command": "encfs start",
+          "started_at": "2026-10-23T23:36:39+08:00",
+          "finished_at": "2026-10-23T23:36:39+08:00",
+          "output": "\u001b[Kencfs start\r\r\nencfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\n"
+        },
+        {
+          "command": "lvgldemo keypad_encoder &",
+          "started_at": "2026-10-23T23:36:39+08:00",
+          "finished_at": "2026-10-23T23:36:39+08:00",
+          "output": "\u001b[Klvgldemo keypad_encoder &\r\r\nlvgldemo [19:100]\r\r\n"
+        },
+        {
+          "command": "ps",
+          "started_at": "2026-10-23T23:36:42+08:00",
+          "finished_at": "2026-10-23T23:36:42+08:00",
+          "output": "\u001b[Kps\r\r\n  PID GROUP PRI POLICY   TYPE    NPX STATE    EVENT     SIGMASK             STACK    USED FILLED COMMAND\r\r\n    0     0   0 FIFO     Kthread   - Ready              0000000000000000  0007984 0002120  26.5%  CPU0 IDLE\r\r\n    1     0 192 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001152   7.1%  hpwork 0x408e6b00 0x408e6b80\r\r\n    2     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001152   7.1%  lpwork 0x408e6a40 0x408e6ac0\r\r\n    4     0 100 RR       Kthread   - Ready              0000000000000000  0016112 0001616  10.0%  goldfish_gpu_fb_thread 0x4093cca0\r\r\n    5     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001680  10.4%  goldfish_gnss_thread 0x40dc4e30\r\r\n    6     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001760  10.9%  goldfish_sensor_thread 0x409cf9d0\r\r\n    7     7 100 RR       Task      - Running            0000000000000000  0016144 0004656  28.8%  nsh_main\r\r\n   10    10 100 RR       Task      - Waiting  Semaphore 0000000000000000  0007952 0003464  43.5%  kvdbd\r\r\n   11    11 100 RR       Task      - Waiting  Semaphore 0000000000000000  0016144 0003208  19.8%  servicemanager\r\r\n   12    12 100 RR       Task      - Waiting  Semaphore 0000000000000000  0016144 0002016  12.4%  adbd\r\r\n   13    13 100 RR       Task      - Waiting  Semaphore 0000000000020000  0016144 0002256  13.9%  telnetd\r\r\n   19    19 100 RR       Task      - Waiting  Semaphore 0000000000000000  0032512 0010568  32.5%  lvgldemo keypad_encoder\r\r\n"
+        },
+        {
+          "command": "fbcapture -d /dev/fb0 -o /share/eb065f-initial.bmp",
+          "started_at": "2026-10-23T23:36:42+08:00",
+          "finished_at": "2026-10-23T23:36:43+08:00",
+          "output": "\u001b[Kfbcapture -d /dev/fb0 -o /share/eb065f-initial.bmp\r\r\nTaking screenshot of '/share/eb065f-initial.bmp' ...\r\r\nSuccess\r\r\n"
+        },
+        {
+          "command": "input tap 640 445",
+          "started_at": "2026-10-23T23:36:43+08:00",
+          "finished_at": "2026-10-23T23:36:43+08:00",
+          "output": "\u001b[Kinput tap 640 445\r\r\n"
+        },
+        {
+          "command": "fbcapture -d /dev/fb0 -o /share/eb065f-modal-dismissed.bmp",
+          "started_at": "2026-10-23T23:36:44+08:00",
+          "finished_at": "2026-10-23T23:36:44+08:00",
+          "output": "\u001b[Kfbcapture -d /dev/fb0 -o /share/eb065f-modal-dismissed.bmp\r\r\nTaking screenshot of '/share/eb065f-modal-dismissed.bmp' ...\r\r\nSuccess\r\r\n"
+        },
+        {
+          "command": "input tap 597 707",
+          "started_at": "2026-10-23T23:36:44+08:00",
+          "finished_at": "2026-10-23T23:36:44+08:00",
+          "output": "\u001b[Kinput tap 597 707\r\r\n"
+        },
+        {
+          "command": "fbcapture -d /dev/fb0 -o /share/eb065f-checkbox.bmp",
+          "started_at": "2026-10-23T23:36:45+08:00",
+          "finished_at": "2026-10-23T23:36:45+08:00",
+          "output": "\u001b[Kfbcapture -d /dev/fb0 -o /share/eb065f-checkbox.bmp\r\r\nTaking screenshot of '/share/eb065f-checkbox.bmp' ...\r\r\nSuccess\r\r\n"
+        },
+        {
+          "command": "input swipe 510 743 730 743 400",
+          "started_at": "2026-10-23T23:36:45+08:00",
+          "finished_at": "2026-10-23T23:36:46+08:00",
+          "output": "\u001b[Kinput swipe 510 743 730 743 400\r\r\n"
+        },
+        {
+          "command": "fbcapture -d /dev/fb0 -o /share/eb065f-slider.bmp",
+          "started_at": "2026-10-23T23:36:47+08:00",
+          "finished_at": "2026-10-23T23:36:47+08:00",
+          "output": "\u001b[Kfbcapture -d /dev/fb0 -o /share/eb065f-slider.bmp\r\r\nTaking screenshot of '/share/eb065f-slider.bmp' ...\r\r\nSuccess\r\r\n"
+        },
+        {
+          "command": "input tap 960 32",
+          "started_at": "2026-10-23T23:36:47+08:00",
+          "finished_at": "2026-10-23T23:36:47+08:00",
+          "output": "\u001b[Kinput tap 960 32\r\r\n"
+        },
+        {
+          "command": "fbcapture -d /dev/fb0 -o /share/eb065f-text-tab.bmp",
+          "started_at": "2026-10-23T23:36:48+08:00",
+          "finished_at": "2026-10-23T23:36:48+08:00",
+          "output": "\u001b[Kfbcapture -d /dev/fb0 -o /share/eb065f-text-tab.bmp\r\r\nTaking screenshot of '/share/eb065f-text-tab.bmp' ...\r\r\nSuccess\r\r\n"
+        }
+      ],
+      "serial_log": "/home/tourist/Desktop/openvela/encfs-results/gui-keypad-controls-01/gui-keypad-controls.serial.log",
+      "frames": [
+        {
+          "label": "initial",
+          "path": "/home/tourist/Desktop/openvela/encfs-results/gui-keypad-controls-01/frames/gui-keypad-controls-initial.png",
+          "source_bmp": "/home/tourist/Desktop/openvela/encfs-results/gui-keypad-controls-01/avd/encfs-gui-20261023-233638-8b5687b0.vvd/share/eb065f-initial.bmp",
+          "width": 1280,
+          "height": 800,
+          "sha256": "ab493c9374845f5b362cfc36463f0a6e8d2976220af449daf4b59fa0c7b5727f",
+          "mean_rgb": [
+            180.491482421875,
+            183.7674697265625,
+            181.7203876953125
+          ],
+          "captured_at": "2026-10-23T23:36:43+08:00",
+          "pixel_format": "RGB565 (decoded explicitly from guest capture)"
+        },
+        {
+          "label": "modal-dismissed",
+          "path": "/home/tourist/Desktop/openvela/encfs-results/gui-keypad-controls-01/frames/gui-keypad-controls-modal-dismissed.png",
+          "source_bmp": "/home/tourist/Desktop/openvela/encfs-results/gui-keypad-controls-01/avd/encfs-gui-20261023-233638-8b5687b0.vvd/share/eb065f-modal-dismissed.bmp",
+          "width": 1280,
+          "height": 800,
+          "sha256": "2637906742469e4a8a58f3d5bfb54e571d3a31ae543d8e621f6755b00744ebaa",
+          "mean_rgb": [
+            243.7307890625,
+            245.219994140625,
+            246.1394638671875
+          ],
+          "captured_at": "2026-10-23T23:36:44+08:00",
+          "pixel_format": "RGB565 (decoded explicitly from guest capture)"
+        },
+        {
+          "label": "checkbox",
+          "path": "/home/tourist/Desktop/openvela/encfs-results/gui-keypad-controls-01/frames/gui-keypad-controls-checkbox.png",
+          "source_bmp": "/home/tourist/Desktop/openvela/encfs-results/gui-keypad-controls-01/avd/encfs-gui-20261023-233638-8b5687b0.vvd/share/eb065f-checkbox.bmp",
+          "width": 1280,
+          "height": 800,
+          "sha256": "4f80db17401c7fa287feab264195215ac60effb9e5c96ec5cbd493f39fe43bc3",
+          "mean_rgb": [
+            243.68919140625,
+            245.2009892578125,
+            246.137626953125
+          ],
+          "captured_at": "2026-10-23T23:36:45+08:00",
+          "pixel_format": "RGB565 (decoded explicitly from guest capture)"
+        },
+        {
+          "label": "slider",
+          "path": "/home/tourist/Desktop/openvela/encfs-results/gui-keypad-controls-01/frames/gui-keypad-controls-slider.png",
+          "source_bmp": "/home/tourist/Desktop/openvela/encfs-results/gui-keypad-controls-01/avd/encfs-gui-20261023-233638-8b5687b0.vvd/share/eb065f-slider.bmp",
+          "width": 1280,
+          "height": 800,
+          "sha256": "0be161890e08be7c4e4c2be4cbe3d5348fb7163014fd33d2eb1fb5d9e07b8180",
+          "mean_rgb": [
+            243.252494140625,
+            245.0059951171875,
+            246.137626953125
+          ],
+          "captured_at": "2026-10-23T23:36:47+08:00",
+          "pixel_format": "RGB565 (decoded explicitly from guest capture)"
+        },
+        {
+          "label": "text-tab",
+          "path": "/home/tourist/Desktop/openvela/encfs-results/gui-keypad-controls-01/frames/gui-keypad-controls-text-tab.png",
+          "source_bmp": "/home/tourist/Desktop/openvela/encfs-results/gui-keypad-controls-01/avd/encfs-gui-20261023-233638-8b5687b0.vvd/share/eb065f-text-tab.bmp",
+          "width": 1280,
+          "height": 800,
+          "sha256": "cfdd3f4a1d44dbff1d97d84cdd841ce8526ec1966a5db8aab57a5b5217c9a710",
+          "mean_rgb": [
+            243.26344921875,
+            245.010912109375,
+            246.1359619140625
+          ],
+          "captured_at": "2026-10-23T23:36:48+08:00",
+          "pixel_format": "RGB565 (decoded explicitly from guest capture)"
+        }
+      ],
+      "exit_status": null,
+      "exit_signal": 15,
+      "finished_at": "2026-10-23T23:36:48+08:00"
+    }
+  ],
+  "requested_stress_seconds": null,
+  "scope": "keypad controls only",
+  "config": "goldfish-arm64-v8a-ap-encfs-gui",
+  "build_dir": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-gui",
+  "limitations": [
+    "Test keys are public fixtures, never production secrets.",
+    "One-hour stress is a bounded run, not an endurance guarantee.",
+    "This does not test power-loss or hardware fault recovery."
+  ],
+  "build_artifacts": {
+    "nuttx": {
+      "path": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-gui/nuttx",
+      "size": 61178112,
+      "sha256": "2c1e34a236e2ea1e0659a4a9916ed17ec20faf0b05e65f1c5ecc3fca68ab5e39"
+    },
+    "nuttx.bin": {
+      "path": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-gui/nuttx.bin",
+      "size": 7032832,
+      "sha256": "7fa19e020ddf878aa5cc4c94859bf22960fb357ed932128da2e530f0a6a930e3"
+    },
+    "vela_data.bin": {
+      "path": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-gui/vela_data.bin",
+      "size": 268435456,
+      "sha256": "a6d72ac7690f53be6ae46ba88506bd97302a093f7108472bd9efc3cefda06484"
+    },
+    "vela_system.bin": {
+      "path": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-gui/vela_system.bin",
+      "size": 1024,
+      "sha256": "183bb78ee4cb724f18559fc3325c8b5beda73a2afc8213c55fb032c056b47f3e"
+    },
+    ".config": {
+      "path": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-gui/.config",
+      "size": 106287,
+      "sha256": "ed89b21121bc9790b04e1e7d5e01b4707011c3090cd342231af5c568101ac8ae"
+    }
+  },
+  "source_revisions": {
+    "nuttx": {
+      "revision": "7934920bb876195f2f45fc76b863235d5129c6e3",
+      "dirty": false,
+      "changes": []
+    },
+    "apps": {
+      "revision": "b3b26aab77d67c8e15e626da07f6c9470b0a599f",
+      "dirty": true,
+      "changes": [
+        "?? testing/drivers/nist-sts/.gitee/",
+        "?? testing/drivers/nist-sts/.github/",
+        "?? testing/drivers/nist-sts/sts/"
+      ]
+    },
+    "vendor_openvela": {
+      "revision": "eb539d2fa01e427e1013f839986c6f1025bb373a",
+      "dirty": false,
+      "changes": []
+    },
+    "manifests": {
+      "revision": "bd30cb831a75785d34e246b2d75ef0e0862b725b",
+      "dirty": true,
+      "changes": [
+        " M README.md",
+        " M docs/encfs_interfaces.md",
+        " M docs/encfs_test_plan.md",
+        " M encfs-sources.json",
+        " M overlays/apps/examples/encfs_test/CMakeLists.txt",
+        " M overlays/apps/examples/encfs_test/Kconfig",
+        " M overlays/apps/examples/encfs_test/Makefile",
+        " M overlays/apps/examples/encfs_test/encfs_test_main.c",
+        " M overlays/apps/examples/encfs_test/encfs_test_shared.h",
+        " M overlays/apps/system/encfs/Kconfig",
+        " M overlays/apps/system/encfs/encfs_main.c",
+        " M patches/vendor_openvela/encfs.patch",
+        " M tools/test_encfs.py",
+        "?? overlays/apps/examples/encfs_test/encfs_test_stress.c",
+        "?? overlays/apps/system/encfs/tests/",
+        "?? tools/test_encfs_gui.py"
+      ]
+    }
+  },
+  "updated_at": "2026-10-23T23:36:48+08:00",
+  "error": "Touch did not change the rendered panel: Keypad text-input tab (368)",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/tourist/Desktop/openvela/.repo/manifests/tools/test_encfs_gui.py\", line 390, in main\n    run(args, report)\n  File \"/home/tourist/Desktop/openvela/.repo/manifests/tools/test_encfs_gui.py\", line 312, in run\n    keypad_interactions(args, emulator, phase, initial)\n  File \"/home/tourist/Desktop/openvela/.repo/manifests/tools/test_encfs_gui.py\", line 197, in keypad_interactions\n    checks[\"text_tab\"] = assert_frame_changed(slider, text, \"Keypad text-input tab\")\n  File \"/home/tourist/Desktop/openvela/.repo/manifests/tools/test_encfs_gui.py\", line 137, in assert_frame_changed\n    require(changed > minimum, f\"Touch did not change the rendered panel: {label} ({changed})\")\n  File \"/home/tourist/Desktop/openvela/.repo/manifests/tools/test_encfs.py\", line 69, in require\n    raise TestFailure(message)\ntest_encfs.TestFailure: Touch did not change the rendered panel: Keypad text-input tab (368)\n",
+  "finished_at": "2026-10-23T23:36:48+08:00"
+}

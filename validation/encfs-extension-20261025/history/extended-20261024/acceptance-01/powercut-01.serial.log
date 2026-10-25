@@ -1,0 +1,49 @@
+Staged emulator artifacts from cmake_out/vela_goldfish-arm64-v8a-ap-encfs-extended/
+TARGETDIR = /home/tourist/Desktop/openvela/vendor/openvela/boards/vela
+arg=-keep
+arg=-no-window
+arg=-no-audio
+arg=-gpu
+arg=off
+arg=-accel
+arg=off
+Copy modem_simulator
+记录了1+0 的读入
+记录了1+0 的写出
+209715200字节（210 MB，200 MiB）已复制，0.124922 s，1.7 GB/s
+A core file already exists. will be backed to 20261024142721.core
+INFO    | Android emulator version 32.1.15.0 (build_id 20251216) (CL:N/A)
+INFO    | Found systemPath /home/tourist/Desktop/openvela/nuttx
+INFO    | Crashreporting disabled, not reporting crashes.
+INFO    | Duplicate loglines will be removed, if you wish to see each indiviudal line launch with the -log-nofilter flag.
+WARNING | encryption is off
+WARNING | Unknown Image type 3
+WARNING | Unknown Image type 5
+WARNING | Unknown Image type 4
+WARNING | Unknown Image type 1
+ERROR   | Unable to connect to adb daemon on port: 5037
+WARNING | Your AVD has been configured with an in-guest renderer, but the system image does not support guest rendering.Falling back to 'swiftshader_indirect' mode.
+WARNING | cannot add library /home/tourist/Desktop/openvela/prebuilts/emulator/linux-x86_64/qemu/linux-x86_64/lib64/vulkan/libvulkan.so: failed
+INFO    | added library /home/tourist/Desktop/openvela/prebuilts/emulator/linux-x86_64/lib64/vulkan/libvulkan.so
+Warning: Allowing host microphone input.
+WARNING | *** No gRPC protection active, consider launching with the -grpc-use-jwt flag.***
+INFO    | Started GRPC server at 127.0.0.1:8556, security: Local, auth: none
+INFO    | Advertising in: /run/user/1000/avd/running/pid_144003.ini
+INFO    | Connecting to bluetooth mesh: localhost:8554
+INFO    | Setting display: 0 configuration to: 1280x800, dpi: 420x420 
+NuttX 0.0.0 4253c66347-dirty Oct 24 2026 14:26:14 arm64 ap
+encfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1
+encfs: wrapped=0 master_id=0 generation=0
+
+NuttShell (NSH)
+encfs> [Kdate -u -s "Jan 02 03:04:05 2026"
+encfs> [Kencfs start
+encfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1
+encfs: wrapped=0 master_id=0 generation=0
+encfs> [Kencfs_extended verify 0
+ENCFS_POWER_VERIFIED sentinels=3 committed_generation=0 bytes=131588
+ENCFS_EXTENDED_RESULT action=verify result=0 errno=0
+encfs> [Kencfs_extended churn 1
+ENCFS_POWER_INFLIGHT generation=1 offset=4096
+ENCFS_POWER_COMMITTED generation=1
+ENCFS_POWER_INFLIGHT generation=2 offset=4096

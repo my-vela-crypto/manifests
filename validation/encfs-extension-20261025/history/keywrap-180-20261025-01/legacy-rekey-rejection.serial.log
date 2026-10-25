@@ -1,0 +1,21 @@
+Staged emulator artifacts from cmake_out/vela_goldfish-arm64-v8a-ap-encfs-gui/
+TARGETDIR = /home/tourist/Desktop/openvela/vendor/openvela/boards/vela
+arg=-keep
+arg=-no-window
+arg=-no-audio
+arg=-gpu
+arg=swiftshader_indirect
+arg=-accel
+arg=off
+cp: 无法创建普通文件 '/home/tourist/.vela/encfs-legacy-d7c5d6c7b638.ini': 只读文件系统
+Copy modem_simulator
+Create a core file
+记录了1+0 的读入
+记录了1+0 的写出
+209715200字节（210 MB，200 MiB）已复制，0.467449 s，449 MB/s
+Copy vela_data.img
+INFO    | Android emulator version 32.1.15.0 (build_id 20251216) (CL:N/A)
+ERROR   | Unknown VVD name [encfs-legacy-d7c5d6c7b638], use -list-vvds to see valid list.
+ERROR   | Unknown AVD name [encfs-legacy-d7c5d6c7b638], use -list-avds to see valid list.
+ERROR   | ANDROID_AVD_HOME is defined but there is no file encfs-legacy-d7c5d6c7b638.ini in $ANDROID_AVD_HOME
+ERROR   | (Note: Directories are searched in the order $ANDROID_AVD_HOME, $ANDROID_SDK_HOME/avd and $HOME/.android/avd)

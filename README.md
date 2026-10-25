@@ -8,6 +8,8 @@
 
 ## 环境要求
 
+课程扩展当前进度见[扩展状态](docs/encfs_extension_status.md)：UTF-8文件名、在线包装密钥轮换、789项存储回归和通用文件系统/模拟中断验证已集成；两轮24小时任务仍在运行，不能当作已通过。复现在线换钥见[说明](docs/encfs_keywrap.md)，通用回归见[验收说明](docs/encfs_extended_validation.md)。原10月24日首版报告继续保留历史范围。
+
 - Ubuntu 22.04（**x86_64 / arm64 均可**）
 - 至少 40 GB 磁盘、16 GB 内存
 - 源码路径**仅使用英文字母**（不要用 `桌面` 等中文目录，否则编译/模拟器会异常）
@@ -210,7 +212,7 @@ adb devices
 
 第二层 `encpathfs` 负责透明、可认证的文件名加密，第三层 `encfs` 负责密钥派生、建盘、挂载、状态和失败回滚。完整链路是 `/data → encpathfs → 隐藏的 FatFs/exFAT → /dev/encdata0 → blkcrypt → /dev/virtblk1`。
 
-团队 [nuttx/dev](https://github.com/my-vela-crypto/nuttx/tree/dev) 已包含两层实现与验收修复（`7934920bb876195f2f45fc76b863235d5129c6e3`）。本 manifest 同时保存完整内核补丁、`patches/vendor_openvela/encfs.patch` 板级补丁及 `overlays/apps/` 的 15 个应用文件，以便从记录的原始基线重现。应用器会识别已进入团队内核的相同修改并跳过，仍需安装板级与应用改动。基线和全部文件校验值由 `encfs-sources.json` 记录，发布及验收结果见 `docs/encfs_test_report.md`。
+团队[nuttx/dev](https://github.com/my-vela-crypto/nuttx/tree/dev)保存两层实现与验收修复。当前锁定版本见`encfs-tested.xml`。本manifest同时保存完整内核补丁、`patches/vendor_openvela/encfs.patch`板级补丁及`overlays/apps/`的25个受控文件，从记录的官方基线重现。应用器识别团队内核已有的相同修改并跳过，仍需安装板级与应用改动。基线和全部文件校验值由`encfs-sources.json`记录；首版报告见`docs/encfs_test_report.md`，最新扩展见`docs/encfs_extension_status.md`。
 
 首次同步后，根目录的快捷链接可能尚不存在，**先执行 Python 入口**：
 

@@ -1,0 +1,136 @@
+{
+  "schema": 1,
+  "started_at": "2026-10-24T14:19:54+08:00",
+  "status": "failed",
+  "source_root": "/home/tourist/Desktop/openvela",
+  "build_dir": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-extended",
+  "config": "goldfish-arm64-v8a-ap-encfs-extended",
+  "phases": [
+    {
+      "name": "upstream-fs-regression",
+      "instance": "encfs-regression-ecdc68cb3bac",
+      "command": [
+        "/home/tourist/Desktop/openvela/run-emulator.sh",
+        "goldfish-arm64-v8a-ap-encfs-extended",
+        "-keep",
+        "encfs-regression-ecdc68cb3bac",
+        "-no-window",
+        "-no-audio",
+        "-gpu",
+        "off",
+        "-accel",
+        "off"
+      ],
+      "started_at": "2026-10-24T14:19:54+08:00",
+      "commands": [
+        {
+          "command": "encfs provision --erase",
+          "started_at": "2026-10-24T14:19:54+08:00",
+          "finished_at": "2026-10-24T14:19:54+08:00",
+          "output": "\u001b[Kencfs provision --erase\r\r\nencfs: formatting encrypted data volume\r\r\nencfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\n"
+        },
+        {
+          "command": "encfs start",
+          "started_at": "2026-10-24T14:19:54+08:00",
+          "finished_at": "2026-10-24T14:19:54+08:00",
+          "output": "\u001b[Kencfs start\r\r\nencfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\n"
+        },
+        {
+          "command": "cmocka_fs_test",
+          "started_at": "2026-10-24T14:19:54+08:00",
+          "finished_at": "2026-10-24T14:20:00+08:00",
+          "output": "\u001b[Kcmocka_fs_test\r\r\n[==========] nuttx_fs_test_suites: Running 46 test(s).\r\r\r\n[ RUN      ] test_nuttx_fs_creat01\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_creat01\r\r\r\n[ RUN      ] test_nuttx_fs_dup01\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_dup01\r\r\r\n[ RUN      ] test_nuttx_fs_fcntl01\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_fcntl01\r\r\r\n[ RUN      ] test_nuttx_fs_fcntl02\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_fcntl02\r\r\r\n[ RUN      ] test_nuttx_fs_fcntl03\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_fcntl03\r\r\r\n[ RUN      ] test_nuttx_fs_fstat01\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_fstat01\r\r\r\n[ RUN      ] test_nuttx_fs_fstat02\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_fstat02\r\r\r\n[ RUN      ] test_nuttx_fs_fstatfs01\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_fstatfs01\r\r\r\n[ RUN      ] test_nuttx_fs_fsync01\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_fsync01\r\r\r\n[ RUN      ] test_nuttx_fs_fsync02\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\nthe fbsize = 32768,buffer size=32768\r\r\r\n[       OK ] test_nuttx_fs_fsync02\r\r\r\n[ RUN      ] test_nuttx_fs_file_get01\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_file_get01\r\r\r\n[ RUN      ] test_nuttx_fs_mkdir01\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_mkdir01\r\r\r\n[ RUN      ] test_nuttx_fs_open01\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_open01\r\r\r\n[ RUN      ] test_nuttx_fs_open02\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_open02\r\r\r\n[ RUN      ] test_nuttx_fs_opendir01\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_opendir01\r\r\r\n[ RUN      ] test_nuttx_fs_opendir02\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_opendir02\r\r\r\n[ RUN      ] test_nuttx_fs_pread01\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_pread01\r\r\r\n[ RUN      ] test_nuttx_fs_pwrite01\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_pwrite01\r\r\r\n[ RUN      ] test_nuttx_fs_read01\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_read01\r\r\r\n[ RUN      ] test_nuttx_fs_readdir01\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_readdir01\r\r\r\n[ RUN      ] test_nuttx_fs_readlink01\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_readlink01\r\r\r\n[ RUN      ] test_nuttx_fs_rename01\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_rename01\r\r\r\n[ RUN      ] test_nuttx_fs_rename02\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_rename02\r\r\r\n[ RUN      ] test_nuttx_fs_rewinddir01\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_rewinddir01\r\r\r\n[ RUN      ] test_nuttx_fs_rmdir01\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_rmdir01\r\r\r\n[ RUN      ] test_nuttx_fs_rmdir02\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_rmdir02\r\r\r\n[ RUN      ] test_nuttx_fs_rmdir03\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_rmdir03\r\r\r\n[ RUN      ] test_nuttx_fs_seek01\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_seek01\r\r\r\n[ RUN      ] test_nuttx_fs_seek02\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_seek02\r\r\r\n[ RUN      ] test_nuttx_fs_stat01\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[  ERROR   ] --- -255594496 is not within the range [-30, 30]\r\r\r\n[   LINE   ] --- /testing/testsuites/kernel/fs/cases/fs_stat_test.c:133: error: Failure!\r\r\r\n[  FAILED  ] test_nuttx_fs_stat01\r\r\r\n[ RUN      ] test_nuttx_fs_statfs01\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_statfs01\r\r\r\n[ RUN      ] test_nuttx_fs_symlink01\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_symlink01\r\r\r\n[ RUN      ] test_nuttx_fs_truncate01\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_truncate01\r\r\r\n[ RUN      ] test_nuttx_fs_unlink01\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_unlink01\r\r\r\n[ RUN      ] test_nuttx_fs_write01\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_write01\r\r\r\n[ RUN      ] test_nuttx_fs_write02\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_write02\r\r\r\n[ RUN      ] test_nuttx_fs_write03\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_write03\r\r\r\n[ RUN      ] test_nuttx_fs_append01\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_append01\r\r\r\n[ RUN      ] test_nuttx_fs_sendfile01\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_sendfile01\r\r\r\n[ RUN      ] test_nuttx_fs_sendfile02\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_sendfile02\r\r\r\n[ RUN      ] test_nuttx_fs_stream01\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_stream01\r\r\r\n[ RUN      ] test_nuttx_fs_stream02\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_stream02\r\r\r\n[ RUN      ] test_nuttx_fs_stream03\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_stream03\r\r\r\n[ RUN      ] test_nuttx_fs_stream04\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_stream04\r\r\r\n[ RUN      ] test_nuttx_fs_eventfd\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_eventfd\r\r\r\n[ RUN      ] test_nuttx_fs_poll01\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_poll01\r\r\r\n[==========] nuttx_fs_test_suites: 46 test(s) run.\r\r\r\n[  PASSED  ] 45 test(s).\r\r\r\n[  FAILED  ] nuttx_fs_test_suites: 1 test(s), listed below:\r\r\r\n[  FAILED  ] test_nuttx_fs_stat01\r\r\r\n\r\r\r\n 1 FAILED TEST(S)\r\r\r\n"
+        }
+      ],
+      "serial_log": "/home/tourist/Desktop/openvela/encfs-results/extended-20261024/exploratory-03/upstream-fs-regression.serial.log",
+      "exit_status": null,
+      "exit_signal": 15,
+      "finished_at": "2026-10-24T14:20:00+08:00"
+    }
+  ],
+  "scope": [
+    "Unmodified upstream cmocka filesystem suite on the encrypted /data mount",
+    "Upstream fstest 10 loops with 64 files of up to 8192 bytes",
+    "Original Vela append/read loop, 100 repetitions",
+    "Dedicated encrypted disk, SIGKILL during writes and after commits"
+  ],
+  "artifacts": {
+    "nuttx": {
+      "path": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-extended/nuttx",
+      "size": 8190600,
+      "sha256": "86830f75db49b77ee5efa5f579b36b36fbbb702835bf278830972c4fb739d7f0"
+    },
+    "nuttx.bin": {
+      "path": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-extended/nuttx.bin",
+      "size": 1732608,
+      "sha256": "b5764805f141a904f6c95040c0199e8a4ebf5c3f45e7103cc7a6f6636b53e4a5"
+    },
+    "vela_data.bin": {
+      "path": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-extended/vela_data.bin",
+      "size": 268435456,
+      "sha256": "a6d72ac7690f53be6ae46ba88506bd97302a093f7108472bd9efc3cefda06484"
+    },
+    "vela_system.bin": {
+      "path": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-extended/vela_system.bin",
+      "size": 1024,
+      "sha256": "80c3b767840a6003518e46242b4e8c8db322623722759ee8ab7f76ddca635aa4"
+    },
+    ".config": {
+      "path": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-extended/.config",
+      "size": 54978,
+      "sha256": "c75052d31a63cb0cc959893c9ed8b1f5daf0bc50c82c8883d7861d5da54ec9f5"
+    }
+  },
+  "source_revisions": {
+    "nuttx": {
+      "revision": "42d1d79ba9987b86757d464aacba69da9a252101",
+      "dirty": true,
+      "changes": [
+        " M fs/encfs/CMakeLists.txt",
+        " M fs/encfs/Kconfig",
+        " M fs/encfs/Make.defs",
+        " M fs/encfs/encfs.h",
+        " M fs/encfs/encfs_key.c",
+        " M fs/encfs/encfs_manager.c",
+        " M include/nuttx/fs/encfs.h",
+        "?? fs/encfs/encfs_keyfile.c",
+        "?? fs/encfs/encfs_keywrap.c",
+        "?? fs/encfs/tests/"
+      ]
+    },
+    "apps": {
+      "revision": "09c01bf75f12233d39034a539952fac3f3648601",
+      "dirty": true,
+      "changes": [
+        " M system/encfs/Kconfig",
+        " M system/encfs/encfs_main.c",
+        "?? testing/drivers/nist-sts/.gitee/",
+        "?? testing/drivers/nist-sts/.github/",
+        "?? testing/drivers/nist-sts/sts/",
+        "?? testing/fs/encfs_extended/"
+      ]
+    },
+    "tests": {
+      "revision": "264e7219a8d815deaf38a202cba33fa220293dcb",
+      "dirty": false,
+      "changes": []
+    },
+    "vendor/openvela": {
+      "revision": "eb539d2fa01e427e1013f839986c6f1025bb373a",
+      "dirty": false,
+      "changes": []
+    }
+  },
+  "source_fingerprints": {
+    "apps/testing/fs/encfs_extended/encfs_extended_main.c": "3e9c3e2aef96d4a5ec5e4ff32b92edb93cb8dd2f4416e2c2f3a1b4659332f65b",
+    "apps/testing/testsuites/kernel/fs/cmocka_fs_test.c": "c83a1fa86c1b32be10fed2fbd5bf13a8f7f1ff9f2da22c74401adb89ef03b254",
+    "apps/testing/fs/fstest/fstest_main.c": "db27738efaabb42a7f68c8130d35cf0715b628a12d30cd0ef8ffb5583557444c",
+    "tests/testcases/vela_fs_test/fs/stress/read_and_write_loops_test.c": "6207fe83ebe4868dd6eb2c52184e41305f72b97683125d5716d3d0704911e770",
+    "nuttx/fs/encpathfs/encpathfs_codec.c": "6fb23c014c27ee168cebe4ef307d66e67b3bbdca85e331d4bc066c3512016a2c",
+    "nuttx/fs/encpathfs/encpathfs_mount.c": "fdae6d6c46aa321a1040f31cc7a9f837dea3ce66787723134eff746b0b04679f",
+    "nuttx/fs/encfs/encfs_manager.c": "9f3e8f70ddb63aa4c68005c98fd029f8f3f8c60c992318b3e67e8859307d8162"
+  },
+  "error": "Upstream cmocka did not finish every case",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/tourist/Desktop/openvela/.repo/manifests/tools/test_encfs_extended.py\", line 202, in main\n    regression(args, report, \"encfs-regression-\" + stamp)\n  File \"/home/tourist/Desktop/openvela/.repo/manifests/tools/test_encfs_extended.py\", line 59, in regression\n    report[\"upstream_cmocka\"] = parse_cmocka(output)\n  File \"/home/tourist/Desktop/openvela/.repo/manifests/tools/test_encfs_extended.py\", line 40, in parse_cmocka\n    base.require(set(started) == set(passed) | set(failed) | set(skipped),\n  File \"/home/tourist/Desktop/openvela/.repo/manifests/tools/test_encfs.py\", line 69, in require\n    raise TestFailure(message)\ntest_encfs.TestFailure: Upstream cmocka did not finish every case\n",
+  "finished_at": "2026-10-24T14:20:00+08:00"
+}

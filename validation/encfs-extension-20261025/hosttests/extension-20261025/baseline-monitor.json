@@ -1,0 +1,607 @@
+{
+  "status": "running",
+  "captured_at": "2026-10-25T11:06:11+08:00",
+  "scope": "Previously accepted baseline firmware only; not the new UTF-8/keywrap firmware",
+  "completion_claim": false,
+  "checks": [
+    {
+      "label": "Original isolated delivery report records 249 successful checks",
+      "satisfied": true
+    },
+    {
+      "label": "Current metadata SHA256 still matches the 249-check report",
+      "satisfied": true
+    },
+    {
+      "label": "nuttx patch checksum matches metadata",
+      "satisfied": true
+    },
+    {
+      "label": "nuttx patch equals actual committed delta",
+      "satisfied": true
+    },
+    {
+      "label": "vendor/openvela patch checksum matches metadata",
+      "satisfied": true
+    },
+    {
+      "label": "vendor/openvela patch equals actual committed delta",
+      "satisfied": true
+    },
+    {
+      "label": "All 25 controlled app overlays remain present",
+      "satisfied": true
+    },
+    {
+      "label": "Overlay/source checksum: examples/encfs_test/CMakeLists.txt",
+      "satisfied": true
+    },
+    {
+      "label": "Overlay/source file mode: examples/encfs_test/CMakeLists.txt",
+      "satisfied": true
+    },
+    {
+      "label": "Overlay/source checksum: examples/encfs_test/Kconfig",
+      "satisfied": true
+    },
+    {
+      "label": "Overlay/source file mode: examples/encfs_test/Kconfig",
+      "satisfied": true
+    },
+    {
+      "label": "Overlay/source checksum: examples/encfs_test/Make.defs",
+      "satisfied": true
+    },
+    {
+      "label": "Overlay/source file mode: examples/encfs_test/Make.defs",
+      "satisfied": true
+    },
+    {
+      "label": "Overlay/source checksum: examples/encfs_test/Makefile",
+      "satisfied": true
+    },
+    {
+      "label": "Overlay/source file mode: examples/encfs_test/Makefile",
+      "satisfied": true
+    },
+    {
+      "label": "Overlay/source checksum: examples/encfs_test/encfs_test_corruption.c",
+      "satisfied": true
+    },
+    {
+      "label": "Overlay/source file mode: examples/encfs_test/encfs_test_corruption.c",
+      "satisfied": true
+    },
+    {
+      "label": "Overlay/source checksum: examples/encfs_test/encfs_test_extended.c",
+      "satisfied": true
+    },
+    {
+      "label": "Overlay/source file mode: examples/encfs_test/encfs_test_extended.c",
+      "satisfied": true
+    },
+    {
+      "label": "Overlay/source checksum: examples/encfs_test/encfs_test_main.c",
+      "satisfied": true
+    },
+    {
+      "label": "Overlay/source file mode: examples/encfs_test/encfs_test_main.c",
+      "satisfied": true
+    },
+    {
+      "label": "Overlay/source checksum: examples/encfs_test/encfs_test_rekey.c",
+      "satisfied": true
+    },
+    {
+      "label": "Overlay/source file mode: examples/encfs_test/encfs_test_rekey.c",
+      "satisfied": true
+    },
+    {
+      "label": "Overlay/source checksum: examples/encfs_test/encfs_test_shared.h",
+      "satisfied": true
+    },
+    {
+      "label": "Overlay/source file mode: examples/encfs_test/encfs_test_shared.h",
+      "satisfied": true
+    },
+    {
+      "label": "Overlay/source checksum: examples/encfs_test/encfs_test_stress.c",
+      "satisfied": true
+    },
+    {
+      "label": "Overlay/source file mode: examples/encfs_test/encfs_test_stress.c",
+      "satisfied": true
+    },
+    {
+      "label": "Overlay/source checksum: examples/encfs_test/encfs_test_utf8.c",
+      "satisfied": true
+    },
+    {
+      "label": "Overlay/source file mode: examples/encfs_test/encfs_test_utf8.c",
+      "satisfied": true
+    },
+    {
+      "label": "Overlay/source checksum: examples/encfs_test/tests/test_rekey_cli.py",
+      "satisfied": true
+    },
+    {
+      "label": "Overlay/source file mode: examples/encfs_test/tests/test_rekey_cli.py",
+      "satisfied": true
+    },
+    {
+      "label": "Overlay/source checksum: system/encfs/CMakeLists.txt",
+      "satisfied": true
+    },
+    {
+      "label": "Overlay/source file mode: system/encfs/CMakeLists.txt",
+      "satisfied": true
+    },
+    {
+      "label": "Overlay/source checksum: system/encfs/Kconfig",
+      "satisfied": true
+    },
+    {
+      "label": "Overlay/source file mode: system/encfs/Kconfig",
+      "satisfied": true
+    },
+    {
+      "label": "Overlay/source checksum: system/encfs/Make.defs",
+      "satisfied": true
+    },
+    {
+      "label": "Overlay/source file mode: system/encfs/Make.defs",
+      "satisfied": true
+    },
+    {
+      "label": "Overlay/source checksum: system/encfs/Makefile",
+      "satisfied": true
+    },
+    {
+      "label": "Overlay/source file mode: system/encfs/Makefile",
+      "satisfied": true
+    },
+    {
+      "label": "Overlay/source checksum: system/encfs/encfs_main.c",
+      "satisfied": true
+    },
+    {
+      "label": "Overlay/source file mode: system/encfs/encfs_main.c",
+      "satisfied": true
+    },
+    {
+      "label": "Overlay/source checksum: system/encfs/tests/test_rekey_cli.py",
+      "satisfied": true
+    },
+    {
+      "label": "Overlay/source file mode: system/encfs/tests/test_rekey_cli.py",
+      "satisfied": true
+    },
+    {
+      "label": "Overlay/source checksum: system/encfs/tests/test_testkey.py",
+      "satisfied": true
+    },
+    {
+      "label": "Overlay/source file mode: system/encfs/tests/test_testkey.py",
+      "satisfied": true
+    },
+    {
+      "label": "Overlay/source checksum: testing/fs/encfs_extended/CMakeLists.txt",
+      "satisfied": true
+    },
+    {
+      "label": "Overlay/source file mode: testing/fs/encfs_extended/CMakeLists.txt",
+      "satisfied": true
+    },
+    {
+      "label": "Overlay/source checksum: testing/fs/encfs_extended/Kconfig",
+      "satisfied": true
+    },
+    {
+      "label": "Overlay/source file mode: testing/fs/encfs_extended/Kconfig",
+      "satisfied": true
+    },
+    {
+      "label": "Overlay/source checksum: testing/fs/encfs_extended/Make.defs",
+      "satisfied": true
+    },
+    {
+      "label": "Overlay/source file mode: testing/fs/encfs_extended/Make.defs",
+      "satisfied": true
+    },
+    {
+      "label": "Overlay/source checksum: testing/fs/encfs_extended/Makefile",
+      "satisfied": true
+    },
+    {
+      "label": "Overlay/source file mode: testing/fs/encfs_extended/Makefile",
+      "satisfied": true
+    },
+    {
+      "label": "Overlay/source checksum: testing/fs/encfs_extended/README.md",
+      "satisfied": true
+    },
+    {
+      "label": "Overlay/source file mode: testing/fs/encfs_extended/README.md",
+      "satisfied": true
+    },
+    {
+      "label": "Overlay/source checksum: testing/fs/encfs_extended/encfs_extended_main.c",
+      "satisfied": true
+    },
+    {
+      "label": "Overlay/source file mode: testing/fs/encfs_extended/encfs_extended_main.c",
+      "satisfied": true
+    },
+    {
+      "label": "Staged delivery bytes equal working file: patches/nuttx/encfs.patch",
+      "satisfied": true
+    },
+    {
+      "label": "Staged delivery bytes equal working file: patches/vendor_openvela/encfs.patch",
+      "satisfied": true
+    },
+    {
+      "label": "Staged delivery bytes equal working file: overlays/apps/examples/encfs_test/CMakeLists.txt",
+      "satisfied": true
+    },
+    {
+      "label": "Staged delivery bytes equal working file: overlays/apps/examples/encfs_test/Kconfig",
+      "satisfied": true
+    },
+    {
+      "label": "Staged delivery bytes equal working file: overlays/apps/examples/encfs_test/Make.defs",
+      "satisfied": true
+    },
+    {
+      "label": "Staged delivery bytes equal working file: overlays/apps/examples/encfs_test/Makefile",
+      "satisfied": true
+    },
+    {
+      "label": "Staged delivery bytes equal working file: overlays/apps/examples/encfs_test/encfs_test_corruption.c",
+      "satisfied": true
+    },
+    {
+      "label": "Staged delivery bytes equal working file: overlays/apps/examples/encfs_test/encfs_test_extended.c",
+      "satisfied": true
+    },
+    {
+      "label": "Staged delivery bytes equal working file: overlays/apps/examples/encfs_test/encfs_test_main.c",
+      "satisfied": true
+    },
+    {
+      "label": "Staged delivery bytes equal working file: overlays/apps/examples/encfs_test/encfs_test_rekey.c",
+      "satisfied": true
+    },
+    {
+      "label": "Staged delivery bytes equal working file: overlays/apps/examples/encfs_test/encfs_test_shared.h",
+      "satisfied": true
+    },
+    {
+      "label": "Staged delivery bytes equal working file: overlays/apps/examples/encfs_test/encfs_test_stress.c",
+      "satisfied": true
+    },
+    {
+      "label": "Staged delivery bytes equal working file: overlays/apps/examples/encfs_test/encfs_test_utf8.c",
+      "satisfied": true
+    },
+    {
+      "label": "Staged delivery bytes equal working file: overlays/apps/examples/encfs_test/tests/test_rekey_cli.py",
+      "satisfied": true
+    },
+    {
+      "label": "Staged delivery bytes equal working file: overlays/apps/system/encfs/CMakeLists.txt",
+      "satisfied": true
+    },
+    {
+      "label": "Staged delivery bytes equal working file: overlays/apps/system/encfs/Kconfig",
+      "satisfied": true
+    },
+    {
+      "label": "Staged delivery bytes equal working file: overlays/apps/system/encfs/Make.defs",
+      "satisfied": true
+    },
+    {
+      "label": "Staged delivery bytes equal working file: overlays/apps/system/encfs/Makefile",
+      "satisfied": true
+    },
+    {
+      "label": "Staged delivery bytes equal working file: overlays/apps/system/encfs/encfs_main.c",
+      "satisfied": true
+    },
+    {
+      "label": "Staged delivery bytes equal working file: overlays/apps/system/encfs/tests/test_rekey_cli.py",
+      "satisfied": true
+    },
+    {
+      "label": "Staged delivery bytes equal working file: overlays/apps/system/encfs/tests/test_testkey.py",
+      "satisfied": true
+    },
+    {
+      "label": "Staged delivery bytes equal working file: overlays/apps/testing/fs/encfs_extended/CMakeLists.txt",
+      "satisfied": true
+    },
+    {
+      "label": "Staged delivery bytes equal working file: overlays/apps/testing/fs/encfs_extended/Kconfig",
+      "satisfied": true
+    },
+    {
+      "label": "Staged delivery bytes equal working file: overlays/apps/testing/fs/encfs_extended/Make.defs",
+      "satisfied": true
+    },
+    {
+      "label": "Staged delivery bytes equal working file: overlays/apps/testing/fs/encfs_extended/Makefile",
+      "satisfied": true
+    },
+    {
+      "label": "Staged delivery bytes equal working file: overlays/apps/testing/fs/encfs_extended/README.md",
+      "satisfied": true
+    },
+    {
+      "label": "Staged delivery bytes equal working file: overlays/apps/testing/fs/encfs_extended/encfs_extended_main.c",
+      "satisfied": true
+    },
+    {
+      "label": "Staged delivery bytes equal working file: encfs-sources.json",
+      "satisfied": true
+    },
+    {
+      "label": "Staged delivery bytes equal working file: encfs-tested.xml",
+      "satisfied": true
+    },
+    {
+      "label": "nuttx source commit is unchanged since isolated validation",
+      "satisfied": true
+    },
+    {
+      "label": "apps source commit is unchanged since isolated validation",
+      "satisfied": true
+    },
+    {
+      "label": "vendor/openvela source commit is unchanged since isolated validation",
+      "satisfied": true
+    },
+    {
+      "label": "Locked manifest has 232 unique projects",
+      "satisfied": true
+    },
+    {
+      "label": "Only expected nuttx revision differs; 231 other project entries unchanged",
+      "satisfied": true
+    },
+    {
+      "label": "Frozen input size: frozen-inputs/firmware/.config",
+      "satisfied": true
+    },
+    {
+      "label": "Frozen input SHA256: frozen-inputs/firmware/.config",
+      "satisfied": true
+    },
+    {
+      "label": "Frozen input size: frozen-inputs/firmware/nuttx",
+      "satisfied": true
+    },
+    {
+      "label": "Frozen input SHA256: frozen-inputs/firmware/nuttx",
+      "satisfied": true
+    },
+    {
+      "label": "Frozen input size: frozen-inputs/firmware/nuttx.bin",
+      "satisfied": true
+    },
+    {
+      "label": "Frozen input SHA256: frozen-inputs/firmware/nuttx.bin",
+      "satisfied": true
+    },
+    {
+      "label": "Frozen input size: frozen-inputs/firmware/vela_data.bin",
+      "satisfied": true
+    },
+    {
+      "label": "Frozen input SHA256: frozen-inputs/firmware/vela_data.bin",
+      "satisfied": true
+    },
+    {
+      "label": "Frozen input size: frozen-inputs/firmware/vela_system.bin",
+      "satisfied": true
+    },
+    {
+      "label": "Frozen input SHA256: frozen-inputs/firmware/vela_system.bin",
+      "satisfied": true
+    },
+    {
+      "label": "Frozen input size: frozen-inputs/tools/analyze_encfs_stress.py",
+      "satisfied": true
+    },
+    {
+      "label": "Frozen input SHA256: frozen-inputs/tools/analyze_encfs_stress.py",
+      "satisfied": true
+    },
+    {
+      "label": "Frozen input size: frozen-inputs/tools/test_encfs.py",
+      "satisfied": true
+    },
+    {
+      "label": "Frozen input SHA256: frozen-inputs/tools/test_encfs.py",
+      "satisfied": true
+    },
+    {
+      "label": "Frozen input size: frozen-inputs/tools/test_encfs_gui.py",
+      "satisfied": true
+    },
+    {
+      "label": "Frozen input SHA256: frozen-inputs/tools/test_encfs_gui.py",
+      "satisfied": true
+    },
+    {
+      "label": "Original endurance report remains running",
+      "satisfied": true
+    },
+    {
+      "label": "Requested duration is 24 hours",
+      "satisfied": true
+    },
+    {
+      "label": "Exactly one live GUI/storage stress phase is running",
+      "satisfied": true
+    },
+    {
+      "label": "All preceding baseline phases completed successfully",
+      "satisfied": true
+    },
+    {
+      "label": "Raw serial has one workload start and live progress samples",
+      "satisfied": true
+    },
+    {
+      "label": "No final result, workload error, or failed guest assertion appears so far",
+      "satisfied": true
+    },
+    {
+      "label": "No fatal guest diagnostic appears so far",
+      "satisfied": true
+    },
+    {
+      "label": "Every raw guest sample has correct deterministic byte totals and advancing workers",
+      "satisfied": true
+    },
+    {
+      "label": "Host NSH health checkpoints are present",
+      "satisfied": true
+    },
+    {
+      "label": "Every recorded host health checkpoint advances without a >95s gap",
+      "satisfied": true
+    },
+    {
+      "label": "Most recent host health checkpoint is fresh",
+      "satisfied": true
+    },
+    {
+      "label": "Live saved framebuffer hashes and selected-tab headers match their baselines",
+      "satisfied": true
+    },
+    {
+      "label": "Guest has not yet reached the requested duration",
+      "satisfied": true
+    }
+  ],
+  "limitations": [
+    "Run is unfinished; no final stress result or later cold boot is claimed.",
+    "This snapshot does not certify new wrapped-volume endurance.",
+    "Process survival is inferred only from fresh serial/checkpoint evidence; host PID namespace is not inspected."
+  ],
+  "source_delivery": {
+    "original_validation_report": "/home/tourist/Desktop/openvela/encfs-results/extension-20261024/delivery/delivery-validation.json",
+    "original_validation_report_sha256": "8e5a51d5b5526412a3805baf5716a57ed22cf69d968412754c97dc25c3809150",
+    "check_count": 249,
+    "overlay_count": 25,
+    "metadata_sha256": "082f048d3436a04ef9431f509dbb7b66d6366414b2f6b55ffe1949df956aec92",
+    "source_revisions": {
+      "nuttx": "04264dc9a71be9dba96c4321bc5d7770e79d2dca",
+      "apps": "e198d0a1a032b886dc43c6cf5e7677f5dad4a42e",
+      "vendor/openvela": "f08e648c5b1386c70fd74c637307de70cf255533"
+    }
+  },
+  "frozen_inputs": {
+    "receipt_path": "/home/tourist/Desktop/openvela/encfs-results/endurance-24h-baseline-20261024/input-receipt.json",
+    "receipt_sha256": "e28247c651f27b9864a8547778a6a263f511a15a55e6ba3d7ef4cafc0e6e3f9e",
+    "verified_file_count": 8,
+    "files": [
+      {
+        "path": "/home/tourist/Desktop/openvela/encfs-results/endurance-24h-baseline-20261024/frozen-inputs/firmware/.config",
+        "size": 106287,
+        "sha256": "ed89b21121bc9790b04e1e7d5e01b4707011c3090cd342231af5c568101ac8ae"
+      },
+      {
+        "path": "/home/tourist/Desktop/openvela/encfs-results/endurance-24h-baseline-20261024/frozen-inputs/firmware/nuttx",
+        "size": 61178112,
+        "sha256": "2c1e34a236e2ea1e0659a4a9916ed17ec20faf0b05e65f1c5ecc3fca68ab5e39"
+      },
+      {
+        "path": "/home/tourist/Desktop/openvela/encfs-results/endurance-24h-baseline-20261024/frozen-inputs/firmware/nuttx.bin",
+        "size": 7032832,
+        "sha256": "7fa19e020ddf878aa5cc4c94859bf22960fb357ed932128da2e530f0a6a930e3"
+      },
+      {
+        "path": "/home/tourist/Desktop/openvela/encfs-results/endurance-24h-baseline-20261024/frozen-inputs/firmware/vela_data.bin",
+        "size": 268435456,
+        "sha256": "a6d72ac7690f53be6ae46ba88506bd97302a093f7108472bd9efc3cefda06484"
+      },
+      {
+        "path": "/home/tourist/Desktop/openvela/encfs-results/endurance-24h-baseline-20261024/frozen-inputs/firmware/vela_system.bin",
+        "size": 1024,
+        "sha256": "183bb78ee4cb724f18559fc3325c8b5beda73a2afc8213c55fb032c056b47f3e"
+      },
+      {
+        "path": "/home/tourist/Desktop/openvela/encfs-results/endurance-24h-baseline-20261024/frozen-inputs/tools/analyze_encfs_stress.py",
+        "size": 27672,
+        "sha256": "c380036ec9cb2d60eb7761232cbabde80e02c6ce21fd53e16139a07982a49ef0"
+      },
+      {
+        "path": "/home/tourist/Desktop/openvela/encfs-results/endurance-24h-baseline-20261024/frozen-inputs/tools/test_encfs.py",
+        "size": 24797,
+        "sha256": "dd09c69c8cac4865de2d5e62207eec1388d10ad5949a3e86a6c2281b0b61d2d2"
+      },
+      {
+        "path": "/home/tourist/Desktop/openvela/encfs-results/endurance-24h-baseline-20261024/frozen-inputs/tools/test_encfs_gui.py",
+        "size": 21492,
+        "sha256": "e645542ae0bfcbac6cd28bb6c2b953e833135d5c0bf5412b0bf693379ea98350"
+      }
+    ]
+  },
+  "run": {
+    "directory": "/home/tourist/Desktop/openvela/encfs-results/endurance-24h-baseline-20261024/run",
+    "observed_report_status": "running",
+    "report_sha256": "8197bb37a9742b0caf2b69c8828d69804555324f445099d48a423b19ccf43386",
+    "report_updated_at": "2026-10-25T11:06:08+08:00",
+    "requested_seconds": 86400,
+    "latest_guest_elapsed_seconds": 75038.344,
+    "remaining_guest_seconds_at_latest_sample": 11361.656,
+    "raw_serial": {
+      "path": "/home/tourist/Desktop/openvela/encfs-results/endurance-24h-baseline-20261024/run/gui-widgets-storage.serial.log",
+      "captured_prefix_bytes": 6306281,
+      "captured_prefix_sha256": "3639808693e0b9a0f699cb00598718d1e30609949a6569cb5599b5d78f65978d"
+    },
+    "raw_progress_sample_count": 2498,
+    "host_checkpoint_count": 2451,
+    "latest_progress": {
+      "elapsed_ms": 75038344,
+      "iterations": 525125,
+      "written_bytes": 5038146831,
+      "verified_bytes": 10021171438,
+      "worker0_iterations": 262536,
+      "worker1_iterations": 262589,
+      "errors": 0,
+      "heap_used": 5657264,
+      "heap_free": 116959888
+    },
+    "previous_progress": {
+      "elapsed_ms": 75008321,
+      "iterations": 524891,
+      "written_bytes": 5035901719,
+      "verified_bytes": 10016705730,
+      "worker0_iterations": 262425,
+      "worker1_iterations": 262466,
+      "errors": 0,
+      "heap_used": 5657488,
+      "heap_free": 116959664
+    },
+    "last_host_checkpoint_at": "2026-10-25T11:06:08+08:00",
+    "last_host_checkpoint_age_seconds": 3.163,
+    "maximum_guest_progress_gap_seconds": 30.276,
+    "maximum_host_checkpoint_gap_seconds": 37.051,
+    "verified_png_count": 509,
+    "verified_selected_tab_header_count": 492,
+    "completion_result_count": 0,
+    "checkpoint_count_policy": "Progress and host NSH samples run on independent clocks. About 2880 samples are expected over 24h at 30s cadence, not an exact 2880 host-checkpoint requirement.",
+    "analysis_after_completion": [
+      "/home/tourist/Desktop/openvela/encfs-results/endurance-24h-baseline-20261024/frozen-inputs/tools/analyze_encfs_stress.py",
+      "--results-dir",
+      "/home/tourist/Desktop/openvela/encfs-results/endurance-24h-baseline-20261024/run",
+      "--output-dir",
+      "/home/tourist/Desktop/openvela/encfs-results/endurance-24h-baseline-20261024/run/analysis"
+    ]
+  },
+  "health_so_far": "healthy",
+  "checked_at": "2026-10-25T11:06:15+08:00"
+}

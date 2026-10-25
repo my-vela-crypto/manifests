@@ -1,0 +1,390 @@
+{
+  "started_at": "2026-10-23T23:22:17+08:00",
+  "status": "failed",
+  "phases": [
+    {
+      "name": "manual-key",
+      "status": "passed",
+      "instance": "encfs-manual-20261023-232217-5091de21",
+      "command": [
+        "/home/tourist/Desktop/openvela/run-emulator.sh",
+        "goldfish-arm64-v8a-ap-encfs-gui",
+        "-keep",
+        "encfs-manual-20261023-232217-5091de21",
+        "-no-window",
+        "-no-audio",
+        "-gpu",
+        "swiftshader_indirect",
+        "-accel",
+        "off"
+      ],
+      "started_at": "2026-10-23T23:22:17+08:00",
+      "commands": [
+        {
+          "command": "encfs stop",
+          "started_at": "2026-10-23T23:22:17+08:00",
+          "finished_at": "2026-10-23T23:22:18+08:00",
+          "output": "\u001b[Kencfs stop\r\r\nencfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\n"
+        },
+        {
+          "command": "encfs testkey none",
+          "started_at": "2026-10-23T23:22:18+08:00",
+          "finished_at": "2026-10-23T23:22:18+08:00",
+          "output": "\u001b[Kencfs testkey none\r\r\nencfs: test key source changed\r\r\nencfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\n"
+        },
+        {
+          "command": "encfs start",
+          "started_at": "2026-10-23T23:22:18+08:00",
+          "finished_at": "2026-10-23T23:22:18+08:00",
+          "output": "\u001b[Kencfs start\r\r\nencfs: state=STOPPED result=-126 stage=2 error=-126 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\nencfs: Unknown error 126 (-126)\r\r\n"
+        },
+        {
+          "command": "encfs testkey 1234",
+          "started_at": "2026-10-23T23:22:18+08:00",
+          "finished_at": "2026-10-23T23:22:18+08:00",
+          "output": "\u001b[Kencfs testkey 1234\r\r\nencfs: testkey expects exactly 64 hexadecimal digits, board, or none\r\r\nencfs: state=STOPPED result=-22 stage=2 error=-126 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\nencfs: Unknown error 22 (-22)\r\r\n"
+        },
+        {
+          "command": "encfs testkey zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz",
+          "started_at": "2026-10-23T23:22:18+08:00",
+          "finished_at": "2026-10-23T23:22:18+08:00",
+          "output": "\u001b[Kencfs testkey zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\r\r\nencfs: testkey expects exactly 64 hexadecimal digits, board, or none\r\r\nencfs: state=STOPPED result=-22 stage=2 error=-126 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\nencfs: Unknown error 22 (-22)\r\r\n"
+        },
+        {
+          "command": "encfs testkey 000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f",
+          "started_at": "2026-10-23T23:22:18+08:00",
+          "finished_at": "2026-10-23T23:22:18+08:00",
+          "output": "\u001b[Kencfs testkey 000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f\r\r\nencfs: test key source changed\r\r\nencfs: state=STOPPED result=0 stage=2 error=-126 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\n"
+        },
+        {
+          "command": "encfs provision --erase",
+          "started_at": "2026-10-23T23:22:18+08:00",
+          "finished_at": "2026-10-23T23:22:18+08:00",
+          "output": "\u001b[Kencfs provision --erase\r\r\nencfs: formatting encrypted data volume\r\r\nencfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\n"
+        },
+        {
+          "command": "encfs start",
+          "started_at": "2026-10-23T23:22:18+08:00",
+          "finished_at": "2026-10-23T23:22:18+08:00",
+          "output": "\u001b[Kencfs start\r\r\nencfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\n"
+        },
+        {
+          "command": "echo ENCFS_MANUAL_TEST_KEY_CONTENT_20261023_683d72c1 > /data/manual-key.txt",
+          "started_at": "2026-10-23T23:22:18+08:00",
+          "finished_at": "2026-10-23T23:22:18+08:00",
+          "output": "\u001b[Kecho ENCFS_MANUAL_TEST_KEY_CONTENT_20261023_683d72c1 > /data/manual-key.txt\r\r\n"
+        },
+        {
+          "command": "cat /data/manual-key.txt",
+          "started_at": "2026-10-23T23:22:18+08:00",
+          "finished_at": "2026-10-23T23:22:18+08:00",
+          "output": "\u001b[Kcat /data/manual-key.txt\r\r\nENCFS_MANUAL_TEST_KEY_CONTENT_20261023_683d72c1\r\r\n"
+        },
+        {
+          "command": "encfs testkey 202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f",
+          "started_at": "2026-10-23T23:22:18+08:00",
+          "finished_at": "2026-10-23T23:22:18+08:00",
+          "output": "\u001b[Kencfs testkey 202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f\r\r\nencfs: stop the volume and release all resources before changing the test key\r\r\nencfs: state=READY result=-16 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\nencfs: Unknown error 16 (-16)\r\r\n"
+        },
+        {
+          "command": "encfs testkey board",
+          "started_at": "2026-10-23T23:22:18+08:00",
+          "finished_at": "2026-10-23T23:22:18+08:00",
+          "output": "\u001b[Kencfs testkey board\r\r\nencfs: stop the volume and release all resources before changing the test key\r\r\nencfs: state=READY result=-16 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\nencfs: Unknown error 16 (-16)\r\r\n"
+        },
+        {
+          "command": "encfs testkey none",
+          "started_at": "2026-10-23T23:22:18+08:00",
+          "finished_at": "2026-10-23T23:22:18+08:00",
+          "output": "\u001b[Kencfs testkey none\r\r\nencfs: stop the volume and release all resources before changing the test key\r\r\nencfs: state=READY result=-16 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\nencfs: Unknown error 16 (-16)\r\r\n"
+        },
+        {
+          "command": "encfs stop",
+          "started_at": "2026-10-23T23:22:18+08:00",
+          "finished_at": "2026-10-23T23:22:19+08:00",
+          "output": "\u001b[Kencfs stop\r\r\nencfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\n"
+        },
+        {
+          "command": "encfs testkey 202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f",
+          "started_at": "2026-10-23T23:22:19+08:00",
+          "finished_at": "2026-10-23T23:22:19+08:00",
+          "output": "\u001b[Kencfs testkey 202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f\r\r\nencfs: test key source changed\r\r\nencfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\n"
+        },
+        {
+          "command": "encfs start",
+          "started_at": "2026-10-23T23:22:19+08:00",
+          "finished_at": "2026-10-23T23:22:19+08:00",
+          "output": "\u001b[Kencfs start\r\r\nencfs: state=STOPPED result=-22 stage=5 error=-22 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\nencfs: Unknown error 22 (-22)\r\r\n"
+        },
+        {
+          "command": "encfs testkey 000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f",
+          "started_at": "2026-10-23T23:22:19+08:00",
+          "finished_at": "2026-10-23T23:22:19+08:00",
+          "output": "\u001b[Kencfs testkey 000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f\r\r\nencfs: test key source changed\r\r\nencfs: state=STOPPED result=0 stage=5 error=-22 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\n"
+        },
+        {
+          "command": "encfs testkey 000000000000000000000000000000000000000000000000000000000000000",
+          "started_at": "2026-10-23T23:22:19+08:00",
+          "finished_at": "2026-10-23T23:22:19+08:00",
+          "output": "\u001b[Kencfs testkey 000000000000000000000000000000000000000000000000000000000000000\r\r\nencfs: testkey expects exactly 64 hexadecimal digits, board, or none\r\r\nencfs: state=STOPPED result=-22 stage=5 error=-22 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\nencfs: Unknown error 22 (-22)\r\r\n"
+        },
+        {
+          "command": "encfs start",
+          "started_at": "2026-10-23T23:22:19+08:00",
+          "finished_at": "2026-10-23T23:22:19+08:00",
+          "output": "\u001b[Kencfs start\r\r\nencfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\n"
+        },
+        {
+          "command": "cat /data/manual-key.txt",
+          "started_at": "2026-10-23T23:22:19+08:00",
+          "finished_at": "2026-10-23T23:22:19+08:00",
+          "output": "\u001b[Kcat /data/manual-key.txt\r\r\nENCFS_MANUAL_TEST_KEY_CONTENT_20261023_683d72c1\r\r\n"
+        },
+        {
+          "command": "encfs stop",
+          "started_at": "2026-10-23T23:22:19+08:00",
+          "finished_at": "2026-10-23T23:22:19+08:00",
+          "output": "\u001b[Kencfs stop\r\r\nencfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\n"
+        },
+        {
+          "command": "encfs testkey board",
+          "started_at": "2026-10-23T23:22:19+08:00",
+          "finished_at": "2026-10-23T23:22:19+08:00",
+          "output": "\u001b[Kencfs testkey board\r\r\nencfs: test key source changed\r\r\nencfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\n"
+        },
+        {
+          "command": "encfs start",
+          "started_at": "2026-10-23T23:22:19+08:00",
+          "finished_at": "2026-10-23T23:22:19+08:00",
+          "output": "\u001b[Kencfs start\r\r\nencfs: state=STOPPED result=-22 stage=5 error=-22 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\nencfs: Unknown error 22 (-22)\r\r\n"
+        },
+        {
+          "command": "encfs testkey none",
+          "started_at": "2026-10-23T23:22:19+08:00",
+          "finished_at": "2026-10-23T23:22:19+08:00",
+          "output": "\u001b[Kencfs testkey none\r\r\nencfs: test key source changed\r\r\nencfs: state=STOPPED result=0 stage=5 error=-22 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\n"
+        },
+        {
+          "command": "encfs start",
+          "started_at": "2026-10-23T23:22:19+08:00",
+          "finished_at": "2026-10-23T23:22:19+08:00",
+          "output": "\u001b[Kencfs start\r\r\nencfs: state=STOPPED result=-126 stage=2 error=-126 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\nencfs: Unknown error 126 (-126)\r\r\n"
+        },
+        {
+          "command": "encfs testkey 000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f",
+          "started_at": "2026-10-23T23:22:19+08:00",
+          "finished_at": "2026-10-23T23:22:19+08:00",
+          "output": "\u001b[Kencfs testkey 000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f\r\r\nencfs: test key source changed\r\r\nencfs: state=STOPPED result=0 stage=2 error=-126 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\n"
+        },
+        {
+          "command": "encfs start",
+          "started_at": "2026-10-23T23:22:19+08:00",
+          "finished_at": "2026-10-23T23:22:19+08:00",
+          "output": "\u001b[Kencfs start\r\r\nencfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\n"
+        },
+        {
+          "command": "cat /data/manual-key.txt",
+          "started_at": "2026-10-23T23:22:19+08:00",
+          "finished_at": "2026-10-23T23:22:19+08:00",
+          "output": "\u001b[Kcat /data/manual-key.txt\r\r\nENCFS_MANUAL_TEST_KEY_CONTENT_20261023_683d72c1\r\r\n"
+        },
+        {
+          "command": "encfs stop",
+          "started_at": "2026-10-23T23:22:19+08:00",
+          "finished_at": "2026-10-23T23:22:19+08:00",
+          "output": "\u001b[Kencfs stop\r\r\nencfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\n"
+        }
+      ],
+      "serial_log": "/home/tourist/Desktop/openvela/encfs-results/gui-stress-pilot-20261023/manual-key.serial.log",
+      "exit_status": null,
+      "exit_signal": 15,
+      "finished_at": "2026-10-23T23:22:20+08:00",
+      "image": {
+        "path": "/home/tourist/Desktop/openvela/encfs-results/gui-stress-pilot-20261023/avd/encfs-manual-20261023-232217-5091de21.vvd/vela_data.bin",
+        "sha256": "a66735a13775d00c9970af02e8dfd76d85799377465a7fd52e2b5030092ea34c",
+        "size": 268435456
+      }
+    },
+    {
+      "name": "manual-key-coldboot",
+      "status": "passed",
+      "instance": "encfs-manual-20261023-232217-5091de21",
+      "command": [
+        "/home/tourist/Desktop/openvela/run-emulator.sh",
+        "goldfish-arm64-v8a-ap-encfs-gui",
+        "-keep",
+        "encfs-manual-20261023-232217-5091de21",
+        "-no-window",
+        "-no-audio",
+        "-gpu",
+        "swiftshader_indirect",
+        "-accel",
+        "off"
+      ],
+      "started_at": "2026-10-23T23:22:20+08:00",
+      "commands": [
+        {
+          "command": "encfs stop",
+          "started_at": "2026-10-23T23:22:20+08:00",
+          "finished_at": "2026-10-23T23:22:20+08:00",
+          "output": "\u001b[Kencfs stop\r\r\nencfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\n"
+        },
+        {
+          "command": "encfs testkey 000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f",
+          "started_at": "2026-10-23T23:22:20+08:00",
+          "finished_at": "2026-10-23T23:22:20+08:00",
+          "output": "\u001b[Kencfs testkey 000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f\r\r\nencfs: test key source changed\r\r\nencfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\n"
+        },
+        {
+          "command": "encfs start",
+          "started_at": "2026-10-23T23:22:20+08:00",
+          "finished_at": "2026-10-23T23:22:20+08:00",
+          "output": "\u001b[Kencfs start\r\r\nencfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\n"
+        },
+        {
+          "command": "cat /data/manual-key.txt",
+          "started_at": "2026-10-23T23:22:20+08:00",
+          "finished_at": "2026-10-23T23:22:20+08:00",
+          "output": "\u001b[Kcat /data/manual-key.txt\r\r\nENCFS_MANUAL_TEST_KEY_CONTENT_20261023_683d72c1\r\r\n"
+        },
+        {
+          "command": "encfs stop",
+          "started_at": "2026-10-23T23:22:20+08:00",
+          "finished_at": "2026-10-23T23:22:20+08:00",
+          "output": "\u001b[Kencfs stop\r\r\nencfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\n"
+        }
+      ],
+      "serial_log": "/home/tourist/Desktop/openvela/encfs-results/gui-stress-pilot-20261023/manual-key-coldboot.serial.log",
+      "exit_status": null,
+      "exit_signal": 15,
+      "finished_at": "2026-10-23T23:22:21+08:00",
+      "image": {
+        "path": "/home/tourist/Desktop/openvela/encfs-results/gui-stress-pilot-20261023/avd/encfs-manual-20261023-232217-5091de21.vvd/vela_data.bin",
+        "sha256": "a66735a13775d00c9970af02e8dfd76d85799377465a7fd52e2b5030092ea34c",
+        "size": 268435456
+      }
+    },
+    {
+      "name": "gui-music",
+      "status": "failed",
+      "instance": "encfs-gui-20261023-232217-5091de21",
+      "command": [
+        "/home/tourist/Desktop/openvela/run-emulator.sh",
+        "goldfish-arm64-v8a-ap-encfs-gui",
+        "-keep",
+        "encfs-gui-20261023-232217-5091de21",
+        "-no-window",
+        "-no-audio",
+        "-gpu",
+        "swiftshader_indirect",
+        "-accel",
+        "off"
+      ],
+      "started_at": "2026-10-23T23:22:21+08:00",
+      "commands": [
+        {
+          "command": "encfs provision --erase",
+          "started_at": "2026-10-23T23:22:21+08:00",
+          "finished_at": "2026-10-23T23:22:22+08:00",
+          "output": "\u001b[Kencfs provision --erase\r\r\nencfs: formatting encrypted data volume\r\r\nencfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\n"
+        },
+        {
+          "command": "encfs start",
+          "started_at": "2026-10-23T23:22:22+08:00",
+          "finished_at": "2026-10-23T23:22:22+08:00",
+          "output": "\u001b[Kencfs start\r\r\nencfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\n"
+        },
+        {
+          "command": "lvgldemo music &",
+          "started_at": "2026-10-23T23:22:22+08:00",
+          "finished_at": "2026-10-23T23:22:22+08:00",
+          "output": "\u001b[Klvgldemo music &\r\r\nlvgldemo [19:100]\r\r\n"
+        },
+        {
+          "command": "ps",
+          "started_at": "2026-10-23T23:22:25+08:00",
+          "finished_at": "2026-10-23T23:22:25+08:00",
+          "output": "\u001b[Kps\r\r\n  PID GROUP PRI POLICY   TYPE    NPX STATE    EVENT     SIGMASK             STACK    USED FILLED COMMAND\r\r\n    0     0   0 FIFO     Kthread   - Ready              0000000000000000  0007984 0002120  26.5%  CPU0 IDLE\r\r\n    1     0 192 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001152   7.1%  hpwork 0x408e6b00 0x408e6b80\r\r\n    2     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001152   7.1%  lpwork 0x408e6a40 0x408e6ac0\r\r\n    4     0 100 RR       Kthread   - Ready              0000000000000000  0016112 0001616  10.0%  goldfish_gpu_fb_thread 0x4093cca0\r\r\n    5     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001680  10.4%  goldfish_gnss_thread 0x40dc4e30\r\r\n    6     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001760  10.9%  goldfish_sensor_thread 0x409cf9d0\r\r\n    7     7 100 RR       Task      - Running            0000000000000000  0016144 0004656  28.8%  nsh_main\r\r\n   10    10 100 RR       Task      - Waiting  Semaphore 0000000000000000  0007952 0003464  43.5%  kvdbd\r\r\n   11    11 100 RR       Task      - Waiting  Semaphore 0000000000000000  0016144 0003208  19.8%  servicemanager\r\r\n   12    12 100 RR       Task      - Waiting  Semaphore 0000000000000000  0016144 0002016  12.4%  adbd\r\r\n   13    13 100 RR       Task      - Waiting  Semaphore 0000000000020000  0016144 0002256  13.9%  telnetd\r\r\n   19    19 100 RR       Task      - Ready              0000000000000000  0032512 0007920  24.3%  lvgldemo music\r\r\n"
+        },
+        {
+          "command": "fbcapture -d /dev/fb0 -o /share/initial.bmp",
+          "started_at": "2026-10-23T23:22:25+08:00",
+          "finished_at": "2026-10-23T23:22:27+08:00",
+          "output": "\u001b[Kfbcapture -d /dev/fb0 -o /share/initial.bmp\r\r\nTaking screenshot of '/share/initial.bmp' ...\r\r\nSuccess\r\r\n"
+        }
+      ],
+      "serial_log": "/home/tourist/Desktop/openvela/encfs-results/gui-stress-pilot-20261023/gui-music.serial.log",
+      "exit_status": null,
+      "exit_signal": 15,
+      "finished_at": "2026-10-23T23:22:27+08:00"
+    }
+  ],
+  "requested_stress_seconds": 60,
+  "config": "goldfish-arm64-v8a-ap-encfs-gui",
+  "build_dir": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-gui",
+  "limitations": [
+    "Test keys are public fixtures, never production secrets.",
+    "One-hour stress is a bounded run, not an endurance guarantee.",
+    "This does not test power-loss or hardware fault recovery."
+  ],
+  "build_artifacts": {
+    "nuttx": {
+      "path": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-gui/nuttx",
+      "size": 61178112,
+      "sha256": "2c1e34a236e2ea1e0659a4a9916ed17ec20faf0b05e65f1c5ecc3fca68ab5e39"
+    },
+    "nuttx.bin": {
+      "path": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-gui/nuttx.bin",
+      "size": 7032832,
+      "sha256": "7fa19e020ddf878aa5cc4c94859bf22960fb357ed932128da2e530f0a6a930e3"
+    },
+    "vela_data.bin": {
+      "path": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-gui/vela_data.bin",
+      "size": 268435456,
+      "sha256": "a6d72ac7690f53be6ae46ba88506bd97302a093f7108472bd9efc3cefda06484"
+    },
+    "vela_system.bin": {
+      "path": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-gui/vela_system.bin",
+      "size": 1024,
+      "sha256": "183bb78ee4cb724f18559fc3325c8b5beda73a2afc8213c55fb032c056b47f3e"
+    },
+    ".config": {
+      "path": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-gui/.config",
+      "size": 106287,
+      "sha256": "ed89b21121bc9790b04e1e7d5e01b4707011c3090cd342231af5c568101ac8ae"
+    }
+  },
+  "source_revisions": {
+    "nuttx": {
+      "revision": "7934920bb876195f2f45fc76b863235d5129c6e3",
+      "dirty": false,
+      "changes": []
+    },
+    "apps": {
+      "revision": "b3b26aab77d67c8e15e626da07f6c9470b0a599f",
+      "dirty": true,
+      "changes": [
+        "?? testing/drivers/nist-sts/.gitee/",
+        "?? testing/drivers/nist-sts/.github/",
+        "?? testing/drivers/nist-sts/sts/"
+      ]
+    },
+    "vendor_openvela": {
+      "revision": "eb539d2fa01e427e1013f839986c6f1025bb373a",
+      "dirty": false,
+      "changes": []
+    },
+    "manifests": {
+      "revision": "bd30cb831a75785d34e246b2d75ef0e0862b725b",
+      "dirty": true,
+      "changes": [
+        " M tools/test_encfs.py",
+        "?? tools/test_encfs_gui.py"
+      ]
+    }
+  },
+  "updated_at": "2026-10-23T23:22:27+08:00",
+  "error": "Unexpected framebuffer size: (1280, 800)",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/tourist/Desktop/openvela/.repo/manifests/tools/test_encfs_gui.py\", line 329, in main\n    run(args, report)\n  File \"/home/tourist/Desktop/openvela/.repo/manifests/tools/test_encfs_gui.py\", line 249, in run\n    initial = start_demo(args, emulator, phase, demo)\n  File \"/home/tourist/Desktop/openvela/.repo/manifests/tools/test_encfs_gui.py\", line 126, in start_demo\n    return capture(args, emulator, phase, \"initial\")\n  File \"/home/tourist/Desktop/openvela/.repo/manifests/tools/test_encfs_gui.py\", line 97, in capture\n    require(frame.size == (720, 1280), f\"Unexpected framebuffer size: {frame.size}\")\n  File \"/home/tourist/Desktop/openvela/.repo/manifests/tools/test_encfs.py\", line 69, in require\n    raise TestFailure(message)\ntest_encfs.TestFailure: Unexpected framebuffer size: (1280, 800)\n",
+  "finished_at": "2026-10-23T23:22:27+08:00"
+}

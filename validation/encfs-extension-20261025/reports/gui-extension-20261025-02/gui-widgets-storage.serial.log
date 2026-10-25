@@ -1,0 +1,426 @@
+Staged emulator artifacts from cmake_out/vela_goldfish-arm64-v8a-ap-encfs-gui/
+TARGETDIR = /home/tourist/Desktop/openvela/vendor/openvela/boards/vela
+arg=-keep
+arg=-no-window
+arg=-no-audio
+arg=-gpu
+arg=swiftshader_indirect
+arg=-accel
+arg=off
+Copy modem_simulator
+记录了1+0 的读入
+记录了1+0 的写出
+209715200字节（210 MB，200 MiB）已复制，0.12933 s，1.6 GB/s
+A core file already exists. will be backed to 20261025111243.core
+INFO    | Android emulator version 32.1.15.0 (build_id 20251216) (CL:N/A)
+INFO    | Found systemPath /home/tourist/Desktop/openvela/nuttx
+INFO    | Crashreporting disabled, not reporting crashes.
+INFO    | Duplicate loglines will be removed, if you wish to see each indiviudal line launch with the -log-nofilter flag.
+WARNING | encryption is off
+WARNING | Unknown Image type 3
+WARNING | Unknown Image type 5
+WARNING | Unknown Image type 4
+WARNING | Unknown Image type 1
+ERROR   | Unable to connect to adb daemon on port: 5037
+WARNING | cannot add library /home/tourist/Desktop/openvela/prebuilts/emulator/linux-x86_64/qemu/linux-x86_64/lib64/vulkan/libvulkan.so: failed
+INFO    | added library /home/tourist/Desktop/openvela/prebuilts/emulator/linux-x86_64/lib64/vulkan/libvulkan.so
+Warning: Allowing host microphone input.
+WARNING | *** No gRPC protection active, consider launching with the -grpc-use-jwt flag.***
+INFO    | Started GRPC server at 127.0.0.1:8558, security: Local, auth: none
+INFO    | Advertising in: /run/user/1000/avd/running/pid_211703.ini
+INFO    | Connecting to bluetooth mesh: localhost:8554
+INFO    | Setting display: 0 configuration to: 1280x800, dpi: 420x420 
+encfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1
+encfs: wrapped=0 master_id=0 generation=0
+kvdbd [10:100]
+servicemanager [11:100]
+adbd [12:100]
+telnetd [13:100]
+
+NuttShell (NSH)
+encfs> [Kencfs start
+encfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1
+encfs: wrapped=0 master_id=0 generation=0
+encfs> [Klvgldemo widgets &
+lvgldemo [15:100]
+encfs> [Kps
+  PID GROUP PRI POLICY   TYPE    NPX STATE    EVENT     SIGMASK             STACK    USED FILLED COMMAND
+    0     0   0 FIFO     Kthread   - Ready              0000000000000000  0007984 0002120  26.5%  CPU0 IDLE
+    1     0 192 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001200   7.4%  hpwork 0x408eacc0 0x408ead40
+    2     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001152   7.1%  lpwork 0x408eac00 0x408eac80
+    4     0 100 RR       Kthread   - Ready              0000000000000000  0016112 0001616  10.0%  goldfish_gpu_fb_thread 0x40942ca0
+    5     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001680  10.4%  goldfish_gnss_thread 0x40dcae30
+    6     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001760  10.9%  goldfish_sensor_thread 0x409d59d0
+    7     7 100 RR       Task      - Running            0000000000000000  0016144 0004656  28.8%  nsh_main
+   10    10 100 RR       Task      - Waiting  Semaphore 0000000000000000  0007952 0003464  43.5%  kvdbd
+   11    11 100 RR       Task      - Waiting  Semaphore 0000000000000000  0016144 0003208  19.8%  servicemanager
+   12    12 100 RR       Task      - Waiting  Semaphore 0000000000000000  0016144 0002016  12.4%  adbd
+   13    13 100 RR       Task      - Waiting  Semaphore 0000000000020000  0016144 0002256  13.9%  telnetd
+   15    15 100 RR       Task      - Ready              0000000000000000  0032512 0010664  32.8%  lvgldemo widgets
+encfs> [Kfbcapture -d /dev/fb0 -o /share/0cade8-initial.bmp
+Taking screenshot of '/share/0cade8-initial.bmp' ...
+Success
+encfs> [Kinput tap 740 35
+encfs> [Kfbcapture -d /dev/fb0 -o /share/0cade8-profile.bmp
+Taking screenshot of '/share/0cade8-profile.bmp' ...
+Success
+encfs> [Kinput tap 950 35
+encfs> [Kfbcapture -d /dev/fb0 -o /share/0cade8-analytics.bmp
+Taking screenshot of '/share/0cade8-analytics.bmp' ...
+Success
+encfs> [Kinput tap 1160 35
+encfs> [Kfbcapture -d /dev/fb0 -o /share/0cade8-shop.bmp
+Taking screenshot of '/share/0cade8-shop.bmp' ...
+Success
+encfs> [Kinput tap 683 357
+encfs> [Kfbcapture -d /dev/fb0 -o /share/0cade8-checkbox-toggled.bmp
+Taking screenshot of '/share/0cade8-checkbox-toggled.bmp' ...
+Success
+encfs> [Kinput tap 740 35
+encfs> [Kfbcapture -d /dev/fb0 -o /share/0cade8-slider-before.bmp
+Taking screenshot of '/share/0cade8-slider-before.bmp' ...
+Success
+encfs> [Kinput swipe 685 402 1050 402 400
+encfs> [Kfbcapture -d /dev/fb0 -o /share/0cade8-slider-after.bmp
+Taking screenshot of '/share/0cade8-slider-after.bmp' ...
+Success
+encfs> [Kencfs_test write
+[PASS] RFC5869 test case 1
+[PASS] RFC5297 deterministic vector
+[PASS] AES-SIV decrypt
+[PASS] AES-SIV rejects tampering
+[PASS] name encode
+[PASS] name round trip
+[PASS] deterministic name
+[PASS] name rejects wrong key
+[PASS] name rejects tampering
+[PASS] name rejects invalid Base32
+[PASS] 128-byte name
+[PASS] 129-byte name rejected
+[PASS] structural component rejected
+[PASS] ASCII E1 disk-format compatibility vector
+[PASS] UTF8 valid scalar/name vector 0
+[PASS] UTF8 valid scalar/name vector 1
+[PASS] UTF8 valid scalar/name vector 2
+[PASS] UTF8 valid scalar/name vector 3
+[PASS] UTF8 valid scalar/name vector 4
+[PASS] UTF8 valid scalar/name vector 5
+[PASS] UTF8 valid scalar/name vector 6
+[PASS] UTF8 valid scalar/name vector 7
+[PASS] UTF8 valid scalar/name vector 8
+[PASS] UTF8 valid scalar/name vector 9
+[PASS] UTF8 invalid sequence/name vector 0
+[PASS] UTF8 invalid sequence/name vector 1
+[PASS] UTF8 invalid sequence/name vector 2
+[PASS] UTF8 invalid sequence/name vector 3
+[PASS] UTF8 invalid sequence/name vector 4
+[PASS] UTF8 invalid sequence/name vector 5
+[PASS] UTF8 invalid sequence/name vector 6
+[PASS] UTF8 invalid sequence/name vector 7
+[PASS] UTF8 invalid sequence/name vector 8
+[PASS] UTF8 invalid sequence/name vector 9
+[PASS] UTF8 invalid sequence/name vector 10
+[PASS] UTF8 invalid sequence/name vector 11
+[PASS] UTF8 invalid sequence/name vector 12
+[PASS] UTF8 invalid sequence/name vector 13
+[PASS] UTF8 invalid sequence/name vector 14
+[PASS] UTF8 invalid sequence/name vector 15
+[PASS] UTF8 invalid sequence/name vector 16
+[PASS] UTF8 invalid sequence/name vector 17
+[PASS] UTF8 invalid sequence/name vector 18
+[PASS] UTF8 invalid sequence/name vector 19
+[PASS] UTF8 invalid sequence/name vector 20
+[PASS] UTF8 128-byte supplementary name round trip
+[PASS] UTF8 129-byte component rejected
+[PASS] UTF8 incomplete scalar at byte limit rejected
+[PASS] start encrypted chain
+[PASS] mkdir logical directory
+[PASS] open logical file
+[PASS] write content
+[PASS] fsync file
+[PASS] fstat file
+[PASS] seek file
+[PASS] random read
+[PASS] dup file
+[PASS] dup read
+[PASS] close file
+[PASS] read content
+[PASS] stat logical path
+[PASS] statfs logical limit
+[PASS] missing parent rejected
+[PASS] mkdir move source
+[PASS] unlink rejects directory
+[PASS] mkdir with trailing slash
+[PASS] remove trailing-slash sample
+[PASS] create moved child
+[PASS] rename whole directory
+[PASS] child survives directory rename
+[PASS] cross-directory rename
+[PASS] existing target rename rejected
+[PASS] unlink moved file
+[PASS] rmdir moved directory
+[PASS] open truncate sample
+[PASS] write truncate sample
+[PASS] truncate file
+[PASS] unlink truncate sample
+[PASS] create longest logical name
+[PASS] unlink longest logical name
+[PASS] overlong logical name rejected
+[PASS] opendir
+[PASS] readdir restores logical names
+[PASS] rewinddir
+[PASS] 24-cycle file regression
+[PASS] UTF8 create test directory
+[PASS] UTF8 create Chinese nested directory
+[PASS] UTF8 create, write and sync Chinese/emoji file
+[PASS] UTF8 stat reports original content length
+[PASS] UTF8 open existing file
+[PASS] UTF8 allocate logical FILEPATH buffer
+[PASS] UTF8 FILEPATH preserves exact logical bytes
+[PASS] UTF8 close existing file
+[PASS] UTF8 open Chinese directory
+[PASS] UTF8 readdir restores exact Chinese/emoji bytes
+[PASS] UTF8 close Chinese directory
+[PASS] UTF8 rename whole Chinese directory
+[PASS] UTF8 rename mixed-name file
+[PASS] UTF8 renamed file retains contents
+[PASS] UTF8 create composed accent name
+[PASS] UTF8 create distinct decomposed accent name
+[PASS] UTF8 normalization forms retain separate contents
+[PASS] UTF8 create/read 128-byte logical name
+[PASS] UTF8 unlink 128-byte logical name
+[PASS] UTF8 filesystem rejects 129-byte name
+[PASS] UTF8 filesystem rejects surrogate sequence
+[PASS] create extended acceptance directory
+[PASS] extended create attribute sample
+[PASS] attribute sample write and sync
+[PASS] chmod passes ordinary FatFs mode bits
+[PASS] chmod retains FatFs reported mode
+[PASS] fchmod passes ordinary FatFs mode bits
+[PASS] fchmod retains FatFs reported mode
+[PASS] chmod masks unsupported special mode bits
+[PASS] fchmod masks unsupported special mode bits
+[PASS] chown propagates FatFs unsupported owner
+[PASS] fchown propagates FatFs unsupported owner
+[PASS] utimensat reaches translated lower path
+[PASS] path mtime preserves FAT two-second precision
+[PASS] futimens reaches translated open file
+[PASS] fd mtime reflects FAT timestamp
+[PASS] allocate FILEPATH buffer
+[PASS] FILEPATH returns logical upper path
+[PASS] FILEPATH hides lower mount and encoded components
+[PASS] FILEPATH rejects null output
+[PASS] upper layer blocks device flush ioctl
+[PASS] upper layer rejects unknown ioctl
+[PASS] close attribute sample
+[PASS] create mixed-case logical name
+[PASS] write mixed-case logical name
+[PASS] create distinct lowercase logical name
+[PASS] write lowercase logical name
+[PASS] case-distinct name retains first content
+[PASS] case-distinct name retains second content
+[PASS] open case-sensitive directory
+[PASS] directory lists both case-distinct logical names
+[PASS] close case-sensitive directory
+[PASS] remove mixed-case sample
+[PASS] remove lowercase sample
+[PASS] create normalization directory
+[PASS] normalize repeated separators and dot components
+[PASS] allocate normalized FILEPATH buffer
+[PASS] FILEPATH returns normalized logical path
+[PASS] close normalized sample
+[PASS] missing intermediate cannot be bypassed by dotdot
+[PASS] file intermediate cannot be bypassed by dotdot
+[PASS] dot after regular file requires directory
+[PASS] trailing slash after file requires directory
+[PASS] regular-file parent rejects child creation
+[PASS] normalize parent traversal within mounted volume
+[PASS] remove normalization directory
+[PASS] allocate path-expansion buffer
+[PASS] create expansion boundary root
+[PASS] nested 128-byte names fit until encoded path limit
+[PASS] encoded path expansion rejects before lower limit
+[PASS] remove nested expansion directories
+[PASS] remove expansion boundary root
+[PASS] allocate multi-sector regression buffers
+ENCFS_STRESS_RESULT requested=1000 completed=1000 bytes=2619734 elapsed_ns=83895403360
+[PASS] 1000-cycle create/write/fsync/read/rename/delete
+[PASS] stress monotonic timing available
+[PASS] remove attribute sample
+[PASS] remove extended acceptance directory
+[PASS] start is idempotent
+[PASS] mounted block rejects direct key replacement
+[PASS] mounted block rejects unregister
+[PASS] busy unregister preserves node
+[PASS] open mounted block for ioctl
+[PASS] mounted block rejects DIOC_SETKEY
+[PASS] close mounted block probe
+[PASS] mounted block rejects unlink
+[PASS] busy unlink preserves content
+[PASS] open busy file
+[PASS] open file prevents stop
+[PASS] busy stop keeps READY
+[PASS] busy mount rejects key replacement
+[PASS] open busy directory
+[PASS] open directory prevents stop
+ENCFS_RESTART_RESULT requested=100 completed=100
+[PASS] 100 restart cycles
+[PASS] stop before negative tests
+[PASS] stopped is idempotent
+[PASS] register block without a key
+[PASS] open unkeyed block
+[PASS] query unkeyed block geometry
+[PASS] unkeyed block rejects reads
+[PASS] unkeyed block rejects writes
+[PASS] close unkeyed block
+[PASS] remove unkeyed block
+[PASS] select absent master
+[PASS] absent master rejects start
+[PASS] absent master leaves no block node
+[PASS] select wrong master
+[PASS] wrong master rejects start
+[PASS] wrong master leaves no block node
+[PASS] restore board master
+[PASS] set startup failpoint
+[PASS] injected failure propagates
+[PASS] injected failure rolls back
+[PASS] retry after failure
+[PASS] stop after retry
+[PASS] set startup failpoint
+[PASS] injected failure propagates
+[PASS] injected failure rolls back
+[PASS] retry after failure
+[PASS] stop after retry
+[PASS] set startup failpoint
+[PASS] injected failure propagates
+[PASS] injected failure rolls back
+[PASS] retry after failure
+[PASS] stop after retry
+[PASS] set startup failpoint
+[PASS] injected failure propagates
+[PASS] injected failure rolls back
+[PASS] retry after failure
+[PASS] stop after retry
+[PASS] restart after negative tests
+[PASS] negative tests preserve content
+[PASS] external upper unmount
+[PASS] status reconciles externally removed upper
+[PASS] start never falsely reports externally removed upper ready
+[PASS] stop recovers after external upper unmount
+[PASS] external unmount recovery releases block node
+[PASS] restart after external upper unmount
+[PASS] external unmount before unrelated target
+[PASS] mount unrelated filesystem at former upper
+[PASS] create unrelated mount marker
+[PASS] write unrelated mount marker
+[PASS] stop handles replaced target without unrelated unmount
+[PASS] start refuses unrelated upper mount
+[PASS] remove unrelated filesystem
+[PASS] cleanup after unrelated upper mount
+[PASS] restart after unrelated upper mount
+[PASS] clean stop
+ENCFS_TEST_RESULT mode=write pass=232 fail=0
+encfs> [Kencfs start
+encfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1
+encfs: wrapped=0 master_id=0 generation=0
+encfs> [Kfbcapture -d /dev/fb0 -o /share/0cade8-after-storage-regression.bmp
+Taking screenshot of '/share/0cade8-after-storage-regression.bmp' ...
+Success
+encfs> [Kencfs_test stress 60 &
+encfs_test [83:100]
+encfs> [KENCFS_LONG_STRESS_START requested_seconds=60 workers=2 seed=6e637273 max_live_file_bytes=131074 root=/data/.encfs-stress-83-99527
+encfs status
+encfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1
+encfs: wrapped=0 master_id=0 generation=0
+encfs> [Kps
+  PID GROUP PRI POLICY   TYPE    NPX STATE    EVENT     SIGMASK             STACK    USED FILLED COMMAND
+    0     0   0 FIFO     Kthread   - Ready              0000000000000000  0007984 0002120  26.5%  CPU0 IDLE
+    1     0 192 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001200   7.4%  hpwork 0x408eacc0 0x408ead40
+    2     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001152   7.1%  lpwork 0x408eac00 0x408eac80
+    4     0 100 RR       Kthread   - Waiting  Signal    0000000000000000  0016112 0001616  10.0%  goldfish_gpu_fb_thread 0x40942ca0
+    5     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001680  10.4%  goldfish_gnss_thread 0x40dcae30
+    6     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001760  10.9%  goldfish_sensor_thread 0x409d59d0
+    7     7 100 RR       Task      - Running            0000000000000000  0016144 0004656  28.8%  nsh_main
+   10    10 100 RR       Task      - Waiting  Semaphore 0000000000000000  0007952 0003464  43.5%  kvdbd
+   11    11 100 RR       Task      - Waiting  Semaphore 0000000000000000  0016144 0003208  19.8%  servicemanager
+   12    12 100 RR       Task      - Waiting  Semaphore 0000000000000000  0016144 0002016  12.4%  adbd
+   13    13 100 RR       Task      - Waiting  Semaphore 0000000000020000  0016144 0002256  13.9%  telnetd
+   15    15 100 RR       Task      - Ready              0000000000000000  0032512 0011640  35.8%  lvgldemo widgets
+   83    83 100 RR       Task      - Waiting  Signal    0000000000000000  0016112 0004992  30.9%  encfs_test stress 60
+   88    83 100 RR       pthread   - Waiting  Mutex:89  0000000000000000  0007984 0005136  64.3%  encfs_test 0x40423a20 0x40e63c28
+   89    83 100 RR       pthread   - Ready              0000000000000000  0007984 0005184  64.9%  encfs_test 0x40423a20 0x40e63d18
+encfs> [Kfree
+      total       used       free    maxused    maxfree  nused  nfree name
+      65536       1152      64384       1072      64384      2      1 binder_heap_11
+  122592960    5659008  116933952    5693248  116907648    231     66 Umem
+encfs> [Kinput tap 950 35
+ENCFS_LONG_STRESS_PROGRESS elapsed_ms=30273 iterations=228 written_bytes=2134247 verified_bytes=4244516 worker0_iterations=108 worker1_iterations=120 errors=0 heap_used=5681136 heap_free=116911824
+encfs> [Kfbcapture -d /dev/fb0 -o /share/0cade8-stress-001-analytics.bmp
+Taking screenshot of '/share/0cade8-stress-001-analytics.bmp' ...
+Success
+encfs> [Kinput tap 1160 35
+encfs> [Kfbcapture -d /dev/fb0 -o /share/0cade8-stress-001-shop.bmp
+Taking screenshot of '/share/0cade8-stress-001-shop.bmp' ...
+Success
+encfs> [Kencfs status
+encfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1
+encfs: wrapped=0 master_id=0 generation=0
+encfs> [Kps
+  PID GROUP PRI POLICY   TYPE    NPX STATE    EVENT     SIGMASK             STACK    USED FILLED COMMAND
+    0     0   0 FIFO     Kthread   - Ready              0000000000000000  0007984 0002120  26.5%  CPU0 IDLE
+    1     0 192 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001200   7.4%  hpwork 0x408eacc0 0x408ead40
+    2     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001152   7.1%  lpwork 0x408eac00 0x408eac80
+    4     0 100 RR       Kthread   - Waiting  Signal    0000000000000000  0016112 0001616  10.0%  goldfish_gpu_fb_thread 0x40942ca0
+    5     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001680  10.4%  goldfish_gnss_thread 0x40dcae30
+    6     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001760  10.9%  goldfish_sensor_thread 0x409d59d0
+    7     7 100 RR       Task      - Running            0000000000000000  0016144 0004656  28.8%  nsh_main
+   10    10 100 RR       Task      - Waiting  Semaphore 0000000000000000  0007952 0003464  43.5%  kvdbd
+   11    11 100 RR       Task      - Waiting  Semaphore 0000000000000000  0016144 0003208  19.8%  servicemanager
+   12    12 100 RR       Task      - Waiting  Semaphore 0000000000000000  0016144 0002016  12.4%  adbd
+   13    13 100 RR       Task      - Waiting  Semaphore 0000000000020000  0016144 0002256  13.9%  telnetd
+   15    15 100 RR       Task      - Ready              0000000000000000  0032512 0011640  35.8%  lvgldemo widgets
+   83    83 100 RR       Task      - Waiting  Signal    0000000000000000  0016112 0004992  30.9%  encfs_test stress 60
+   88    83 100 RR       pthread   - Ready              0000000000000000  0007984 0005136  64.3%  encfs_test 0x40423a20 0x40e63c28
+   89    83 100 RR       pthread   - Waiting  Mutex:88  0000000000000000  0007984 0005184  64.9%  encfs_test 0x40423a20 0x40e63d18
+encfs> [Kfree
+      total       used       free    maxused    maxfree  nused  nfree name
+      65536       1152      64384       1072      64384      2      1 binder_heap_11
+  122592960    5660160  116932800    5696000  116907648    232     66 Umem
+encfs> [KENCFS_LONG_STRESS_PROGRESS elapsed_ms=60622 iterations=452 written_bytes=4327670 verified_bytes=8607824 worker0_iterations=211 worker1_iterations=241 errors=0 heap_used=5371584 heap_free=117221376
+ENCFS_LONG_STRESS_RESULT requested_seconds=60 elapsed_ms=60622 workers=2 iterations=452 written_bytes=4327670 verified_bytes=8607824 worker0_iterations=211 worker1_iterations=241 worker0_elapsed_ms=60064 worker1_elapsed_ms=60341 errors=0 completed=1 heap_before=5371584 heap_after=5371584
+[PASS] timed concurrent encrypted filesystem stress
+ENCFS_TEST_RESULT mode=stress pass=1 fail=0
+encfs status
+encfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1
+encfs: wrapped=0 master_id=0 generation=0
+encfs> [Kps
+  PID GROUP PRI POLICY   TYPE    NPX STATE    EVENT     SIGMASK             STACK    USED FILLED COMMAND
+    0     0   0 FIFO     Kthread   - Ready              0000000000000000  0007984 0002120  26.5%  CPU0 IDLE
+    1     0 192 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001200   7.4%  hpwork 0x408eacc0 0x408ead40
+    2     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001152   7.1%  lpwork 0x408eac00 0x408eac80
+    4     0 100 RR       Kthread   - Waiting  Signal    0000000000000000  0016112 0001616  10.0%  goldfish_gpu_fb_thread 0x40942ca0
+    5     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001680  10.4%  goldfish_gnss_thread 0x40dcae30
+    6     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001760  10.9%  goldfish_sensor_thread 0x409d59d0
+    7     7 100 RR       Task      - Running            0000000000000000  0016144 0004656  28.8%  nsh_main
+   10    10 100 RR       Task      - Waiting  Semaphore 0000000000000000  0007952 0003464  43.5%  kvdbd
+   11    11 100 RR       Task      - Waiting  Semaphore 0000000000000000  0016144 0003208  19.8%  servicemanager
+   12    12 100 RR       Task      - Waiting  Semaphore 0000000000000000  0016144 0002016  12.4%  adbd
+   13    13 100 RR       Task      - Waiting  Semaphore 0000000000020000  0016144 0002256  13.9%  telnetd
+   15    15 100 RR       Task      - Ready              0000000000000000  0032512 0011640  35.8%  lvgldemo widgets
+encfs> [Kfree
+      total       used       free    maxused    maxfree  nused  nfree name
+      65536       1152      64384       1072      64384      2      1 binder_heap_11
+  122592960    5351408  117241552    5696000  117178112    218     69 Umem
+encfs> [Kinput tap 950 35
+encfs> [Kfbcapture -d /dev/fb0 -o /share/0cade8-stress-003-analytics.bmp
+Taking screenshot of '/share/0cade8-stress-003-analytics.bmp' ...
+Success
+encfs> [Kinput tap 1160 35
+encfs> [Kfbcapture -d /dev/fb0 -o /share/0cade8-stress-003-shop.bmp
+Taking screenshot of '/share/0cade8-stress-003-shop.bmp' ...
+Success
+encfs> [Kcat /data/test/secret.txt
+ENCFS_COURSE_2026_SECRET_PAYLOAD_7d64f98ac0e34251_persistent-content-and-transparent-path-encryptionencfs> [Kencfs stop
+encfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0
+encfs: wrapped=0 master_id=0 generation=0
+encfs> [K

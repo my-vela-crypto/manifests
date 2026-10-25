@@ -1,0 +1,3 @@
+ifneq ($(CONFIG_TESTING_ENCFS_EXTENDED),)
+CONFIGURED_APPS += $(APPDIR)/testing/fs/encfs_extended
+endif

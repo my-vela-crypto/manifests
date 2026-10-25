@@ -1,0 +1,1565 @@
+{
+  "started_at": "2026-10-25T11:12:04+08:00",
+  "status": "passed",
+  "phases": [
+    {
+      "name": "manual-key",
+      "status": "passed",
+      "instance": "encfs-manual-20261025-111204-e042cc53",
+      "command": [
+        "/home/tourist/Desktop/openvela/run-emulator.sh",
+        "goldfish-arm64-v8a-ap-encfs-gui",
+        "-keep",
+        "encfs-manual-20261025-111204-e042cc53",
+        "-no-window",
+        "-no-audio",
+        "-gpu",
+        "swiftshader_indirect",
+        "-accel",
+        "off"
+      ],
+      "started_at": "2026-10-25T11:12:04+08:00",
+      "commands": [
+        {
+          "command": "encfs stop",
+          "started_at": "2026-10-25T11:12:05+08:00",
+          "finished_at": "2026-10-25T11:12:05+08:00",
+          "output": "\u001b[Kencfs stop\r\r\nencfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        },
+        {
+          "command": "encfs testkey none",
+          "started_at": "2026-10-25T11:12:05+08:00",
+          "finished_at": "2026-10-25T11:12:05+08:00",
+          "output": "\u001b[Kencfs testkey none\r\r\nencfs: test key source changed\r\r\nencfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        },
+        {
+          "command": "encfs start",
+          "started_at": "2026-10-25T11:12:05+08:00",
+          "finished_at": "2026-10-25T11:12:05+08:00",
+          "output": "\u001b[Kencfs start\r\r\nencfs: state=STOPPED result=-126 stage=2 error=-126 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\nencfs: Unknown error 126 (-126)\r\r\n"
+        },
+        {
+          "command": "encfs testkey 1234",
+          "started_at": "2026-10-25T11:12:05+08:00",
+          "finished_at": "2026-10-25T11:12:05+08:00",
+          "output": "\u001b[Kencfs testkey 1234\r\r\nencfs: testkey expects exactly 64 hexadecimal digits, board, or none\r\r\nencfs: state=STOPPED result=-22 stage=2 error=-126 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\nencfs: Unknown error 22 (-22)\r\r\n"
+        },
+        {
+          "command": "encfs testkey zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz",
+          "started_at": "2026-10-25T11:12:05+08:00",
+          "finished_at": "2026-10-25T11:12:05+08:00",
+          "output": "\u001b[Kencfs testkey zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\r\r\nencfs: testkey expects exactly 64 hexadecimal digits, board, or none\r\r\nencfs: state=STOPPED result=-22 stage=2 error=-126 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\nencfs: Unknown error 22 (-22)\r\r\n"
+        },
+        {
+          "command": "encfs testkey 000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f",
+          "started_at": "2026-10-25T11:12:05+08:00",
+          "finished_at": "2026-10-25T11:12:05+08:00",
+          "output": "\u001b[Kencfs testkey 000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f\r\r\nencfs: test key source changed\r\r\nencfs: state=STOPPED result=0 stage=2 error=-126 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        },
+        {
+          "command": "encfs provision --erase",
+          "started_at": "2026-10-25T11:12:05+08:00",
+          "finished_at": "2026-10-25T11:12:05+08:00",
+          "output": "\u001b[Kencfs provision --erase\r\r\nencfs: formatting encrypted data volume\r\r\nencfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        },
+        {
+          "command": "encfs start",
+          "started_at": "2026-10-25T11:12:05+08:00",
+          "finished_at": "2026-10-25T11:12:05+08:00",
+          "output": "\u001b[Kencfs start\r\r\nencfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        },
+        {
+          "command": "echo ENCFS_MANUAL_TEST_KEY_CONTENT_20261023_683d72c1 > /data/manual-key.txt",
+          "started_at": "2026-10-25T11:12:05+08:00",
+          "finished_at": "2026-10-25T11:12:05+08:00",
+          "output": "\u001b[Kecho ENCFS_MANUAL_TEST_KEY_CONTENT_20261023_683d72c1 > /data/manual-key.txt\r\r\n"
+        },
+        {
+          "command": "cat /data/manual-key.txt",
+          "started_at": "2026-10-25T11:12:05+08:00",
+          "finished_at": "2026-10-25T11:12:06+08:00",
+          "output": "\u001b[Kcat /data/manual-key.txt\r\r\nENCFS_MANUAL_TEST_KEY_CONTENT_20261023_683d72c1\r\r\n"
+        },
+        {
+          "command": "encfs testkey 202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f",
+          "started_at": "2026-10-25T11:12:06+08:00",
+          "finished_at": "2026-10-25T11:12:06+08:00",
+          "output": "\u001b[Kencfs testkey 202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f\r\r\nencfs: stop the volume and release all resources before changing the test key\r\r\nencfs: state=READY result=-16 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\nencfs: Unknown error 16 (-16)\r\r\n"
+        },
+        {
+          "command": "encfs testkey board",
+          "started_at": "2026-10-25T11:12:06+08:00",
+          "finished_at": "2026-10-25T11:12:06+08:00",
+          "output": "\u001b[Kencfs testkey board\r\r\nencfs: stop the volume and release all resources before changing the test key\r\r\nencfs: state=READY result=-16 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\nencfs: Unknown error 16 (-16)\r\r\n"
+        },
+        {
+          "command": "encfs testkey none",
+          "started_at": "2026-10-25T11:12:06+08:00",
+          "finished_at": "2026-10-25T11:12:06+08:00",
+          "output": "\u001b[Kencfs testkey none\r\r\nencfs: stop the volume and release all resources before changing the test key\r\r\nencfs: state=READY result=-16 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\nencfs: Unknown error 16 (-16)\r\r\n"
+        },
+        {
+          "command": "encfs stop",
+          "started_at": "2026-10-25T11:12:06+08:00",
+          "finished_at": "2026-10-25T11:12:06+08:00",
+          "output": "\u001b[Kencfs stop\r\r\nencfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        },
+        {
+          "command": "encfs testkey 202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f",
+          "started_at": "2026-10-25T11:12:06+08:00",
+          "finished_at": "2026-10-25T11:12:06+08:00",
+          "output": "\u001b[Kencfs testkey 202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f\r\r\nencfs: test key source changed\r\r\nencfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        },
+        {
+          "command": "encfs start",
+          "started_at": "2026-10-25T11:12:06+08:00",
+          "finished_at": "2026-10-25T11:12:06+08:00",
+          "output": "\u001b[Kencfs start\r\r\nencfs: state=STOPPED result=-22 stage=5 error=-22 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\nencfs: Unknown error 22 (-22)\r\r\n"
+        },
+        {
+          "command": "encfs testkey 000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f",
+          "started_at": "2026-10-25T11:12:06+08:00",
+          "finished_at": "2026-10-25T11:12:06+08:00",
+          "output": "\u001b[Kencfs testkey 000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f\r\r\nencfs: test key source changed\r\r\nencfs: state=STOPPED result=0 stage=5 error=-22 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        },
+        {
+          "command": "encfs testkey 000000000000000000000000000000000000000000000000000000000000000",
+          "started_at": "2026-10-25T11:12:06+08:00",
+          "finished_at": "2026-10-25T11:12:06+08:00",
+          "output": "\u001b[Kencfs testkey 000000000000000000000000000000000000000000000000000000000000000\r\r\nencfs: testkey expects exactly 64 hexadecimal digits, board, or none\r\r\nencfs: state=STOPPED result=-22 stage=5 error=-22 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\nencfs: Unknown error 22 (-22)\r\r\n"
+        },
+        {
+          "command": "encfs start",
+          "started_at": "2026-10-25T11:12:06+08:00",
+          "finished_at": "2026-10-25T11:12:06+08:00",
+          "output": "\u001b[Kencfs start\r\r\nencfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        },
+        {
+          "command": "cat /data/manual-key.txt",
+          "started_at": "2026-10-25T11:12:06+08:00",
+          "finished_at": "2026-10-25T11:12:06+08:00",
+          "output": "\u001b[Kcat /data/manual-key.txt\r\r\nENCFS_MANUAL_TEST_KEY_CONTENT_20261023_683d72c1\r\r\n"
+        },
+        {
+          "command": "encfs stop",
+          "started_at": "2026-10-25T11:12:06+08:00",
+          "finished_at": "2026-10-25T11:12:06+08:00",
+          "output": "\u001b[Kencfs stop\r\r\nencfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        },
+        {
+          "command": "encfs testkey board",
+          "started_at": "2026-10-25T11:12:06+08:00",
+          "finished_at": "2026-10-25T11:12:06+08:00",
+          "output": "\u001b[Kencfs testkey board\r\r\nencfs: test key source changed\r\r\nencfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        },
+        {
+          "command": "encfs start",
+          "started_at": "2026-10-25T11:12:06+08:00",
+          "finished_at": "2026-10-25T11:12:06+08:00",
+          "output": "\u001b[Kencfs start\r\r\nencfs: state=STOPPED result=-22 stage=5 error=-22 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\nencfs: Unknown error 22 (-22)\r\r\n"
+        },
+        {
+          "command": "encfs testkey none",
+          "started_at": "2026-10-25T11:12:06+08:00",
+          "finished_at": "2026-10-25T11:12:06+08:00",
+          "output": "\u001b[Kencfs testkey none\r\r\nencfs: test key source changed\r\r\nencfs: state=STOPPED result=0 stage=5 error=-22 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        },
+        {
+          "command": "encfs start",
+          "started_at": "2026-10-25T11:12:06+08:00",
+          "finished_at": "2026-10-25T11:12:06+08:00",
+          "output": "\u001b[Kencfs start\r\r\nencfs: state=STOPPED result=-126 stage=2 error=-126 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\nencfs: Unknown error 126 (-126)\r\r\n"
+        },
+        {
+          "command": "encfs testkey 000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f",
+          "started_at": "2026-10-25T11:12:06+08:00",
+          "finished_at": "2026-10-25T11:12:06+08:00",
+          "output": "\u001b[Kencfs testkey 000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f\r\r\nencfs: test key source changed\r\r\nencfs: state=STOPPED result=0 stage=2 error=-126 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        },
+        {
+          "command": "encfs start",
+          "started_at": "2026-10-25T11:12:06+08:00",
+          "finished_at": "2026-10-25T11:12:06+08:00",
+          "output": "\u001b[Kencfs start\r\r\nencfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        },
+        {
+          "command": "cat /data/manual-key.txt",
+          "started_at": "2026-10-25T11:12:06+08:00",
+          "finished_at": "2026-10-25T11:12:07+08:00",
+          "output": "\u001b[Kcat /data/manual-key.txt\r\r\nENCFS_MANUAL_TEST_KEY_CONTENT_20261023_683d72c1\r\r\n"
+        },
+        {
+          "command": "encfs stop",
+          "started_at": "2026-10-25T11:12:07+08:00",
+          "finished_at": "2026-10-25T11:12:07+08:00",
+          "output": "\u001b[Kencfs stop\r\r\nencfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        }
+      ],
+      "serial_log": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/manual-key.serial.log",
+      "exit_status": null,
+      "exit_signal": 15,
+      "finished_at": "2026-10-25T11:12:07+08:00",
+      "image": {
+        "path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/avd/encfs-manual-20261025-111204-e042cc53.vvd/vela_data.bin",
+        "sha256": "20122ee152d44a303bffaf7a11d5e52be998a4c2ae9644fc1510c5ef954bab5f",
+        "size": 268435456
+      }
+    },
+    {
+      "name": "manual-key-coldboot",
+      "status": "passed",
+      "instance": "encfs-manual-20261025-111204-e042cc53",
+      "command": [
+        "/home/tourist/Desktop/openvela/run-emulator.sh",
+        "goldfish-arm64-v8a-ap-encfs-gui",
+        "-keep",
+        "encfs-manual-20261025-111204-e042cc53",
+        "-no-window",
+        "-no-audio",
+        "-gpu",
+        "swiftshader_indirect",
+        "-accel",
+        "off"
+      ],
+      "started_at": "2026-10-25T11:12:07+08:00",
+      "commands": [
+        {
+          "command": "encfs stop",
+          "started_at": "2026-10-25T11:12:07+08:00",
+          "finished_at": "2026-10-25T11:12:08+08:00",
+          "output": "\u001b[Kencfs stop\r\r\nencfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        },
+        {
+          "command": "encfs testkey 000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f",
+          "started_at": "2026-10-25T11:12:08+08:00",
+          "finished_at": "2026-10-25T11:12:08+08:00",
+          "output": "\u001b[Kencfs testkey 000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f\r\r\nencfs: test key source changed\r\r\nencfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        },
+        {
+          "command": "encfs start",
+          "started_at": "2026-10-25T11:12:08+08:00",
+          "finished_at": "2026-10-25T11:12:08+08:00",
+          "output": "\u001b[Kencfs start\r\r\nencfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        },
+        {
+          "command": "cat /data/manual-key.txt",
+          "started_at": "2026-10-25T11:12:08+08:00",
+          "finished_at": "2026-10-25T11:12:08+08:00",
+          "output": "\u001b[Kcat /data/manual-key.txt\r\r\nENCFS_MANUAL_TEST_KEY_CONTENT_20261023_683d72c1\r\r\n"
+        },
+        {
+          "command": "encfs stop",
+          "started_at": "2026-10-25T11:12:08+08:00",
+          "finished_at": "2026-10-25T11:12:08+08:00",
+          "output": "\u001b[Kencfs stop\r\r\nencfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        }
+      ],
+      "serial_log": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/manual-key-coldboot.serial.log",
+      "exit_status": null,
+      "exit_signal": 15,
+      "finished_at": "2026-10-25T11:12:08+08:00",
+      "image": {
+        "path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/avd/encfs-manual-20261025-111204-e042cc53.vvd/vela_data.bin",
+        "sha256": "20122ee152d44a303bffaf7a11d5e52be998a4c2ae9644fc1510c5ef954bab5f",
+        "size": 268435456
+      }
+    },
+    {
+      "name": "gui-music",
+      "status": "passed",
+      "instance": "encfs-gui-20261025-111204-e042cc53",
+      "command": [
+        "/home/tourist/Desktop/openvela/run-emulator.sh",
+        "goldfish-arm64-v8a-ap-encfs-gui",
+        "-keep",
+        "encfs-gui-20261025-111204-e042cc53",
+        "-no-window",
+        "-no-audio",
+        "-gpu",
+        "swiftshader_indirect",
+        "-accel",
+        "off"
+      ],
+      "started_at": "2026-10-25T11:12:08+08:00",
+      "commands": [
+        {
+          "command": "encfs provision --erase",
+          "started_at": "2026-10-25T11:12:09+08:00",
+          "finished_at": "2026-10-25T11:12:09+08:00",
+          "output": "\u001b[Kencfs provision --erase\r\r\nencfs: formatting encrypted data volume\r\r\nencfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        },
+        {
+          "command": "encfs start",
+          "started_at": "2026-10-25T11:12:09+08:00",
+          "finished_at": "2026-10-25T11:12:09+08:00",
+          "output": "\u001b[Kencfs start\r\r\nencfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        },
+        {
+          "command": "lvgldemo music &",
+          "started_at": "2026-10-25T11:12:09+08:00",
+          "finished_at": "2026-10-25T11:12:09+08:00",
+          "output": "\u001b[Klvgldemo music &\r\r\nlvgldemo [19:100]\r\r\n"
+        },
+        {
+          "command": "ps",
+          "started_at": "2026-10-25T11:12:12+08:00",
+          "finished_at": "2026-10-25T11:12:12+08:00",
+          "output": "\u001b[Kps\r\r\n  PID GROUP PRI POLICY   TYPE    NPX STATE    EVENT     SIGMASK             STACK    USED FILLED COMMAND\r\r\n    0     0   0 FIFO     Kthread   - Ready              0000000000000000  0007984 0002120  26.5%  CPU0 IDLE\r\r\n    1     0 192 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001152   7.1%  hpwork 0x408eacc0 0x408ead40\r\r\n    2     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001152   7.1%  lpwork 0x408eac00 0x408eac80\r\r\n    4     0 100 RR       Kthread   - Waiting  Signal    0000000000000000  0016112 0001616  10.0%  goldfish_gpu_fb_thread 0x40942ca0\r\r\n    5     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001680  10.4%  goldfish_gnss_thread 0x40dcae30\r\r\n    6     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001760  10.9%  goldfish_sensor_thread 0x409d59d0\r\r\n    7     7 100 RR       Task      - Running            0000000000000000  0016144 0004656  28.8%  nsh_main\r\r\n   10    10 100 RR       Task      - Waiting  Semaphore 0000000000000000  0007952 0003464  43.5%  kvdbd\r\r\n   11    11 100 RR       Task      - Waiting  Semaphore 0000000000000000  0016144 0003208  19.8%  servicemanager\r\r\n   12    12 100 RR       Task      - Waiting  Semaphore 0000000000000000  0016144 0002016  12.4%  adbd\r\r\n   13    13 100 RR       Task      - Waiting  Semaphore 0000000000020000  0016144 0002256  13.9%  telnetd\r\r\n   19    19 100 RR       Task      - Ready              0000000000000000  0032512 0007512  23.1%  lvgldemo music\r\r\n"
+        },
+        {
+          "command": "fbcapture -d /dev/fb0 -o /share/8474b6-initial.bmp",
+          "started_at": "2026-10-25T11:12:12+08:00",
+          "finished_at": "2026-10-25T11:12:14+08:00",
+          "output": "\u001b[Kfbcapture -d /dev/fb0 -o /share/8474b6-initial.bmp\r\r\nTaking screenshot of '/share/8474b6-initial.bmp' ...\r\r\nSuccess\r\r\n"
+        },
+        {
+          "command": "input tap 640 608",
+          "started_at": "2026-10-25T11:12:14+08:00",
+          "finished_at": "2026-10-25T11:12:14+08:00",
+          "output": "\u001b[Kinput tap 640 608\r\r\n"
+        },
+        {
+          "command": "fbcapture -d /dev/fb0 -o /share/8474b6-animated.bmp",
+          "started_at": "2026-10-25T11:12:17+08:00",
+          "finished_at": "2026-10-25T11:12:23+08:00",
+          "output": "\u001b[Kfbcapture -d /dev/fb0 -o /share/8474b6-animated.bmp\r\r\nTaking screenshot of '/share/8474b6-animated.bmp' ...\r\r\nSuccess\r\r\n"
+        },
+        {
+          "command": "encfs stop",
+          "started_at": "2026-10-25T11:12:23+08:00",
+          "finished_at": "2026-10-25T11:12:23+08:00",
+          "output": "\u001b[Kencfs stop\r\r\nencfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        }
+      ],
+      "serial_log": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/gui-music.serial.log",
+      "frames": [
+        {
+          "label": "initial",
+          "path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-music-initial.png",
+          "source_bmp": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/avd/encfs-gui-20261025-111204-e042cc53.vvd/share/8474b6-initial.bmp",
+          "width": 1280,
+          "height": 800,
+          "sha256": "8a3f0e0541ff0f2302d5c5fe706fd6676a6a92defd89e0aec5115ed8be46ddd8",
+          "mean_rgb": [
+            250.663802734375,
+            251.0396884765625,
+            251.7225419921875
+          ],
+          "captured_at": "2026-10-25T11:12:14+08:00",
+          "pixel_format": "RGB565 (decoded explicitly from guest capture)"
+        },
+        {
+          "label": "animated",
+          "path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-music-animated.png",
+          "source_bmp": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/avd/encfs-gui-20261025-111204-e042cc53.vvd/share/8474b6-animated.bmp",
+          "width": 1280,
+          "height": 800,
+          "sha256": "f8005b843a8517bd556897c30d84c34060b0a52fcd980ca00720f1e62e2886f7",
+          "mean_rgb": [
+            235.4160078125,
+            235.7682158203125,
+            239.029435546875
+          ],
+          "captured_at": "2026-10-25T11:12:23+08:00",
+          "pixel_format": "RGB565 (decoded explicitly from guest capture)"
+        }
+      ],
+      "animation_changed_pixels": 112796,
+      "exit_status": null,
+      "exit_signal": 15,
+      "finished_at": "2026-10-25T11:12:24+08:00",
+      "image": {
+        "path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/avd/encfs-gui-20261025-111204-e042cc53.vvd/vela_data.bin",
+        "sha256": "a8e6ea3769b73f4863405b9e73f5159a37705c9803d18812aaf0ae26cf5e1319",
+        "size": 268435456
+      }
+    },
+    {
+      "name": "gui-keypad",
+      "status": "passed",
+      "instance": "encfs-gui-20261025-111204-e042cc53",
+      "command": [
+        "/home/tourist/Desktop/openvela/run-emulator.sh",
+        "goldfish-arm64-v8a-ap-encfs-gui",
+        "-keep",
+        "encfs-gui-20261025-111204-e042cc53",
+        "-no-window",
+        "-no-audio",
+        "-gpu",
+        "swiftshader_indirect",
+        "-accel",
+        "off"
+      ],
+      "started_at": "2026-10-25T11:12:24+08:00",
+      "commands": [
+        {
+          "command": "encfs start",
+          "started_at": "2026-10-25T11:12:24+08:00",
+          "finished_at": "2026-10-25T11:12:24+08:00",
+          "output": "\u001b[Kencfs start\r\r\nencfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        },
+        {
+          "command": "lvgldemo keypad_encoder &",
+          "started_at": "2026-10-25T11:12:24+08:00",
+          "finished_at": "2026-10-25T11:12:24+08:00",
+          "output": "\u001b[Klvgldemo keypad_encoder &\r\r\nlvgldemo [15:100]\r\r\n"
+        },
+        {
+          "command": "ps",
+          "started_at": "2026-10-25T11:12:27+08:00",
+          "finished_at": "2026-10-25T11:12:27+08:00",
+          "output": "\u001b[Kps\r\r\n  PID GROUP PRI POLICY   TYPE    NPX STATE    EVENT     SIGMASK             STACK    USED FILLED COMMAND\r\r\n    0     0   0 FIFO     Kthread   - Ready              0000000000000000  0007984 0002120  26.5%  CPU0 IDLE\r\r\n    1     0 192 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001152   7.1%  hpwork 0x408eacc0 0x408ead40\r\r\n    2     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001152   7.1%  lpwork 0x408eac00 0x408eac80\r\r\n    4     0 100 RR       Kthread   - Ready              0000000000000000  0016112 0001616  10.0%  goldfish_gpu_fb_thread 0x40942ca0\r\r\n    5     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001680  10.4%  goldfish_gnss_thread 0x40dcae30\r\r\n    6     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001760  10.9%  goldfish_sensor_thread 0x409d59d0\r\r\n    7     7 100 RR       Task      - Running            0000000000000000  0016144 0004656  28.8%  nsh_main\r\r\n   10    10 100 RR       Task      - Waiting  Semaphore 0000000000000000  0007952 0003464  43.5%  kvdbd\r\r\n   11    11 100 RR       Task      - Waiting  Semaphore 0000000000000000  0016144 0003208  19.8%  servicemanager\r\r\n   12    12 100 RR       Task      - Waiting  Semaphore 0000000000000000  0016144 0002016  12.4%  adbd\r\r\n   13    13 100 RR       Task      - Waiting  Semaphore 0000000000020000  0016144 0002256  13.9%  telnetd\r\r\n   15    15 100 RR       Task      - Waiting  Semaphore 0000000000000000  0032512 0010568  32.5%  lvgldemo keypad_encoder\r\r\n"
+        },
+        {
+          "command": "fbcapture -d /dev/fb0 -o /share/9b30d0-initial.bmp",
+          "started_at": "2026-10-25T11:12:27+08:00",
+          "finished_at": "2026-10-25T11:12:27+08:00",
+          "output": "\u001b[Kfbcapture -d /dev/fb0 -o /share/9b30d0-initial.bmp\r\r\nTaking screenshot of '/share/9b30d0-initial.bmp' ...\r\r\nSuccess\r\r\n"
+        },
+        {
+          "command": "input tap 640 445",
+          "started_at": "2026-10-25T11:12:27+08:00",
+          "finished_at": "2026-10-25T11:12:28+08:00",
+          "output": "\u001b[Kinput tap 640 445\r\r\n"
+        },
+        {
+          "command": "fbcapture -d /dev/fb0 -o /share/9b30d0-modal-dismissed.bmp",
+          "started_at": "2026-10-25T11:12:29+08:00",
+          "finished_at": "2026-10-25T11:12:29+08:00",
+          "output": "\u001b[Kfbcapture -d /dev/fb0 -o /share/9b30d0-modal-dismissed.bmp\r\r\nTaking screenshot of '/share/9b30d0-modal-dismissed.bmp' ...\r\r\nSuccess\r\r\n"
+        },
+        {
+          "command": "input tap 597 707",
+          "started_at": "2026-10-25T11:12:29+08:00",
+          "finished_at": "2026-10-25T11:12:29+08:00",
+          "output": "\u001b[Kinput tap 597 707\r\r\n"
+        },
+        {
+          "command": "fbcapture -d /dev/fb0 -o /share/9b30d0-checkbox.bmp",
+          "started_at": "2026-10-25T11:12:30+08:00",
+          "finished_at": "2026-10-25T11:12:30+08:00",
+          "output": "\u001b[Kfbcapture -d /dev/fb0 -o /share/9b30d0-checkbox.bmp\r\r\nTaking screenshot of '/share/9b30d0-checkbox.bmp' ...\r\r\nSuccess\r\r\n"
+        },
+        {
+          "command": "input swipe 510 743 730 743 400",
+          "started_at": "2026-10-25T11:12:30+08:00",
+          "finished_at": "2026-10-25T11:12:31+08:00",
+          "output": "\u001b[Kinput swipe 510 743 730 743 400\r\r\n"
+        },
+        {
+          "command": "fbcapture -d /dev/fb0 -o /share/9b30d0-slider.bmp",
+          "started_at": "2026-10-25T11:12:32+08:00",
+          "finished_at": "2026-10-25T11:12:32+08:00",
+          "output": "\u001b[Kfbcapture -d /dev/fb0 -o /share/9b30d0-slider.bmp\r\r\nTaking screenshot of '/share/9b30d0-slider.bmp' ...\r\r\nSuccess\r\r\n"
+        },
+        {
+          "command": "input tap 960 32",
+          "started_at": "2026-10-25T11:12:32+08:00",
+          "finished_at": "2026-10-25T11:12:32+08:00",
+          "output": "\u001b[Kinput tap 960 32\r\r\n"
+        },
+        {
+          "command": "input drag 960 32 960 32 200",
+          "started_at": "2026-10-25T11:12:32+08:00",
+          "finished_at": "2026-10-25T11:12:33+08:00",
+          "output": "\u001b[Kinput drag 960 32 960 32 200\r\r\n"
+        },
+        {
+          "command": "fbcapture -d /dev/fb0 -o /share/9b30d0-text-tab.bmp",
+          "started_at": "2026-10-25T11:12:34+08:00",
+          "finished_at": "2026-10-25T11:12:34+08:00",
+          "output": "\u001b[Kfbcapture -d /dev/fb0 -o /share/9b30d0-text-tab.bmp\r\r\nTaking screenshot of '/share/9b30d0-text-tab.bmp' ...\r\r\nSuccess\r\r\n"
+        },
+        {
+          "command": "encfs stop",
+          "started_at": "2026-10-25T11:12:34+08:00",
+          "finished_at": "2026-10-25T11:12:34+08:00",
+          "output": "\u001b[Kencfs stop\r\r\nencfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        }
+      ],
+      "serial_log": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/gui-keypad.serial.log",
+      "frames": [
+        {
+          "label": "initial",
+          "path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-keypad-initial.png",
+          "source_bmp": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/avd/encfs-gui-20261025-111204-e042cc53.vvd/share/9b30d0-initial.bmp",
+          "width": 1280,
+          "height": 800,
+          "sha256": "ab493c9374845f5b362cfc36463f0a6e8d2976220af449daf4b59fa0c7b5727f",
+          "mean_rgb": [
+            180.491482421875,
+            183.7674697265625,
+            181.7203876953125
+          ],
+          "captured_at": "2026-10-25T11:12:27+08:00",
+          "pixel_format": "RGB565 (decoded explicitly from guest capture)"
+        },
+        {
+          "label": "modal-dismissed",
+          "path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-keypad-modal-dismissed.png",
+          "source_bmp": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/avd/encfs-gui-20261025-111204-e042cc53.vvd/share/9b30d0-modal-dismissed.bmp",
+          "width": 1280,
+          "height": 800,
+          "sha256": "2637906742469e4a8a58f3d5bfb54e571d3a31ae543d8e621f6755b00744ebaa",
+          "mean_rgb": [
+            243.7307890625,
+            245.219994140625,
+            246.1394638671875
+          ],
+          "captured_at": "2026-10-25T11:12:29+08:00",
+          "pixel_format": "RGB565 (decoded explicitly from guest capture)"
+        },
+        {
+          "label": "checkbox",
+          "path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-keypad-checkbox.png",
+          "source_bmp": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/avd/encfs-gui-20261025-111204-e042cc53.vvd/share/9b30d0-checkbox.bmp",
+          "width": 1280,
+          "height": 800,
+          "sha256": "b08a9a186efb0a4ecb6095737cdcede68ce24a5ff81c39f384a1081722ce9cbf",
+          "mean_rgb": [
+            243.6875849609375,
+            245.199421875,
+            246.137626953125
+          ],
+          "captured_at": "2026-10-25T11:12:30+08:00",
+          "pixel_format": "RGB565 (decoded explicitly from guest capture)"
+        },
+        {
+          "label": "slider",
+          "path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-keypad-slider.png",
+          "source_bmp": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/avd/encfs-gui-20261025-111204-e042cc53.vvd/share/9b30d0-slider.bmp",
+          "width": 1280,
+          "height": 800,
+          "sha256": "b6fd8724f4ab596b3f5bdec5a3c773e9ab2d8676af75796909d4451a0c402c16",
+          "mean_rgb": [
+            243.2651142578125,
+            245.011662109375,
+            246.137626953125
+          ],
+          "captured_at": "2026-10-25T11:12:32+08:00",
+          "pixel_format": "RGB565 (decoded explicitly from guest capture)"
+        },
+        {
+          "label": "text-tab",
+          "path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-keypad-text-tab.png",
+          "source_bmp": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/avd/encfs-gui-20261025-111204-e042cc53.vvd/share/9b30d0-text-tab.bmp",
+          "width": 1280,
+          "height": 800,
+          "sha256": "aa3279dd17e7047b64e17c0c47fd40eac2b4e9663c22370ecaff697c19bec777",
+          "mean_rgb": [
+            244.7635380859375,
+            246.1461162109375,
+            246.8989248046875
+          ],
+          "captured_at": "2026-10-25T11:12:34+08:00",
+          "pixel_format": "RGB565 (decoded explicitly from guest capture)"
+        }
+      ],
+      "touch_changed_pixels": {
+        "dismiss_modal": 1012668,
+        "checkbox": 225,
+        "slider": 3170,
+        "text_tab": 283880
+      },
+      "exit_status": null,
+      "exit_signal": 15,
+      "finished_at": "2026-10-25T11:12:34+08:00",
+      "image": {
+        "path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/avd/encfs-gui-20261025-111204-e042cc53.vvd/vela_data.bin",
+        "sha256": "a8e6ea3769b73f4863405b9e73f5159a37705c9803d18812aaf0ae26cf5e1319",
+        "size": 268435456
+      }
+    },
+    {
+      "name": "gui-stress-demo",
+      "status": "passed",
+      "instance": "encfs-gui-20261025-111204-e042cc53",
+      "command": [
+        "/home/tourist/Desktop/openvela/run-emulator.sh",
+        "goldfish-arm64-v8a-ap-encfs-gui",
+        "-keep",
+        "encfs-gui-20261025-111204-e042cc53",
+        "-no-window",
+        "-no-audio",
+        "-gpu",
+        "swiftshader_indirect",
+        "-accel",
+        "off"
+      ],
+      "started_at": "2026-10-25T11:12:34+08:00",
+      "commands": [
+        {
+          "command": "encfs start",
+          "started_at": "2026-10-25T11:12:35+08:00",
+          "finished_at": "2026-10-25T11:12:35+08:00",
+          "output": "\u001b[Kencfs start\r\r\nencfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        },
+        {
+          "command": "lvgldemo stress &",
+          "started_at": "2026-10-25T11:12:35+08:00",
+          "finished_at": "2026-10-25T11:12:35+08:00",
+          "output": "\u001b[Klvgldemo stress &\r\r\nlvgldemo [15:100]\r\r\n"
+        },
+        {
+          "command": "ps",
+          "started_at": "2026-10-25T11:12:38+08:00",
+          "finished_at": "2026-10-25T11:12:38+08:00",
+          "output": "\u001b[Kps\r\r\n  PID GROUP PRI POLICY   TYPE    NPX STATE    EVENT     SIGMASK             STACK    USED FILLED COMMAND\r\r\n    0     0   0 FIFO     Kthread   - Ready              0000000000000000  0007984 0002120  26.5%  CPU0 IDLE\r\r\n    1     0 192 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001152   7.1%  hpwork 0x408eacc0 0x408ead40\r\r\n    2     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001152   7.1%  lpwork 0x408eac00 0x408eac80\r\r\n    4     0 100 RR       Kthread   - Ready              0000000000000000  0016112 0001616  10.0%  goldfish_gpu_fb_thread 0x40942ca0\r\r\n    5     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001680  10.4%  goldfish_gnss_thread 0x40dcae30\r\r\n    6     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001760  10.9%  goldfish_sensor_thread 0x409d59d0\r\r\n    7     7 100 RR       Task      - Running            0000000000000000  0016144 0005008  31.0%  nsh_main\r\r\n   10    10 100 RR       Task      - Waiting  Semaphore 0000000000000000  0007952 0003464  43.5%  kvdbd\r\r\n   11    11 100 RR       Task      - Waiting  Semaphore 0000000000000000  0016144 0003208  19.8%  servicemanager\r\r\n   12    12 100 RR       Task      - Waiting  Semaphore 0000000000000000  0016144 0002016  12.4%  adbd\r\r\n   13    13 100 RR       Task      - Waiting  Semaphore 0000000000020000  0016144 0002256  13.9%  telnetd\r\r\n   15    15 100 RR       Task      - Ready              0000000000000000  0032512 0010648  32.7%  lvgldemo stress\r\r\n"
+        },
+        {
+          "command": "fbcapture -d /dev/fb0 -o /share/134e47-initial.bmp",
+          "started_at": "2026-10-25T11:12:38+08:00",
+          "finished_at": "2026-10-25T11:12:38+08:00",
+          "output": "\u001b[Kfbcapture -d /dev/fb0 -o /share/134e47-initial.bmp\r\r\nTaking screenshot of '/share/134e47-initial.bmp' ...\r\r\nSuccess\r\r\n"
+        },
+        {
+          "command": "fbcapture -d /dev/fb0 -o /share/134e47-animated.bmp",
+          "started_at": "2026-10-25T11:12:41+08:00",
+          "finished_at": "2026-10-25T11:12:42+08:00",
+          "output": "\u001b[Kfbcapture -d /dev/fb0 -o /share/134e47-animated.bmp\r\r\nTaking screenshot of '/share/134e47-animated.bmp' ...\r\r\nSuccess\r\r\n"
+        },
+        {
+          "command": "encfs stop",
+          "started_at": "2026-10-25T11:12:42+08:00",
+          "finished_at": "2026-10-25T11:12:42+08:00",
+          "output": "\u001b[Kencfs stop\r\r\nencfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        }
+      ],
+      "serial_log": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/gui-stress-demo.serial.log",
+      "frames": [
+        {
+          "label": "initial",
+          "path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-stress-demo-initial.png",
+          "source_bmp": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/avd/encfs-gui-20261025-111204-e042cc53.vvd/share/134e47-initial.bmp",
+          "width": 1280,
+          "height": 800,
+          "sha256": "3f757b8e593f037545c22b563a2110a47c717011a4bb5dbc25da4619cc7e2d21",
+          "mean_rgb": [
+            247.751390625,
+            248.7536064453125,
+            249.70833984375
+          ],
+          "captured_at": "2026-10-25T11:12:38+08:00",
+          "pixel_format": "RGB565 (decoded explicitly from guest capture)"
+        },
+        {
+          "label": "animated",
+          "path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-stress-demo-animated.png",
+          "source_bmp": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/avd/encfs-gui-20261025-111204-e042cc53.vvd/share/134e47-animated.bmp",
+          "width": 1280,
+          "height": 800,
+          "sha256": "f046cbe1e9ddb8c1ae3577a0bec1487551da0c2d1834d3c2424c174f22347397",
+          "mean_rgb": [
+            248.2540166015625,
+            249.153822265625,
+            250.0015771484375
+          ],
+          "captured_at": "2026-10-25T11:12:42+08:00",
+          "pixel_format": "RGB565 (decoded explicitly from guest capture)"
+        }
+      ],
+      "animation_changed_pixels": 47778,
+      "exit_status": null,
+      "exit_signal": 15,
+      "finished_at": "2026-10-25T11:12:42+08:00",
+      "image": {
+        "path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/avd/encfs-gui-20261025-111204-e042cc53.vvd/vela_data.bin",
+        "sha256": "a8e6ea3769b73f4863405b9e73f5159a37705c9803d18812aaf0ae26cf5e1319",
+        "size": 268435456
+      }
+    },
+    {
+      "name": "gui-widgets-storage",
+      "status": "passed",
+      "instance": "encfs-gui-20261025-111204-e042cc53",
+      "command": [
+        "/home/tourist/Desktop/openvela/run-emulator.sh",
+        "goldfish-arm64-v8a-ap-encfs-gui",
+        "-keep",
+        "encfs-gui-20261025-111204-e042cc53",
+        "-no-window",
+        "-no-audio",
+        "-gpu",
+        "swiftshader_indirect",
+        "-accel",
+        "off"
+      ],
+      "started_at": "2026-10-25T11:12:43+08:00",
+      "commands": [
+        {
+          "command": "encfs start",
+          "started_at": "2026-10-25T11:12:43+08:00",
+          "finished_at": "2026-10-25T11:12:43+08:00",
+          "output": "\u001b[Kencfs start\r\r\nencfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        },
+        {
+          "command": "lvgldemo widgets &",
+          "started_at": "2026-10-25T11:12:43+08:00",
+          "finished_at": "2026-10-25T11:12:43+08:00",
+          "output": "\u001b[Klvgldemo widgets &\r\r\nlvgldemo [15:100]\r\r\n"
+        },
+        {
+          "command": "ps",
+          "started_at": "2026-10-25T11:12:46+08:00",
+          "finished_at": "2026-10-25T11:12:46+08:00",
+          "output": "\u001b[Kps\r\r\n  PID GROUP PRI POLICY   TYPE    NPX STATE    EVENT     SIGMASK             STACK    USED FILLED COMMAND\r\r\n    0     0   0 FIFO     Kthread   - Ready              0000000000000000  0007984 0002120  26.5%  CPU0 IDLE\r\r\n    1     0 192 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001200   7.4%  hpwork 0x408eacc0 0x408ead40\r\r\n    2     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001152   7.1%  lpwork 0x408eac00 0x408eac80\r\r\n    4     0 100 RR       Kthread   - Ready              0000000000000000  0016112 0001616  10.0%  goldfish_gpu_fb_thread 0x40942ca0\r\r\n    5     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001680  10.4%  goldfish_gnss_thread 0x40dcae30\r\r\n    6     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001760  10.9%  goldfish_sensor_thread 0x409d59d0\r\r\n    7     7 100 RR       Task      - Running            0000000000000000  0016144 0004656  28.8%  nsh_main\r\r\n   10    10 100 RR       Task      - Waiting  Semaphore 0000000000000000  0007952 0003464  43.5%  kvdbd\r\r\n   11    11 100 RR       Task      - Waiting  Semaphore 0000000000000000  0016144 0003208  19.8%  servicemanager\r\r\n   12    12 100 RR       Task      - Waiting  Semaphore 0000000000000000  0016144 0002016  12.4%  adbd\r\r\n   13    13 100 RR       Task      - Waiting  Semaphore 0000000000020000  0016144 0002256  13.9%  telnetd\r\r\n   15    15 100 RR       Task      - Ready              0000000000000000  0032512 0010664  32.8%  lvgldemo widgets\r\r\n"
+        },
+        {
+          "command": "fbcapture -d /dev/fb0 -o /share/0cade8-initial.bmp",
+          "started_at": "2026-10-25T11:12:46+08:00",
+          "finished_at": "2026-10-25T11:12:46+08:00",
+          "output": "\u001b[Kfbcapture -d /dev/fb0 -o /share/0cade8-initial.bmp\r\r\nTaking screenshot of '/share/0cade8-initial.bmp' ...\r\r\nSuccess\r\r\n"
+        },
+        {
+          "command": "input tap 740 35",
+          "started_at": "2026-10-25T11:12:46+08:00",
+          "finished_at": "2026-10-25T11:12:46+08:00",
+          "output": "\u001b[Kinput tap 740 35\r\r\n"
+        },
+        {
+          "command": "fbcapture -d /dev/fb0 -o /share/0cade8-profile.bmp",
+          "started_at": "2026-10-25T11:12:47+08:00",
+          "finished_at": "2026-10-25T11:12:48+08:00",
+          "output": "\u001b[Kfbcapture -d /dev/fb0 -o /share/0cade8-profile.bmp\r\r\nTaking screenshot of '/share/0cade8-profile.bmp' ...\r\r\nSuccess\r\r\n"
+        },
+        {
+          "command": "input tap 950 35",
+          "started_at": "2026-10-25T11:12:48+08:00",
+          "finished_at": "2026-10-25T11:12:48+08:00",
+          "output": "\u001b[Kinput tap 950 35\r\r\n"
+        },
+        {
+          "command": "fbcapture -d /dev/fb0 -o /share/0cade8-analytics.bmp",
+          "started_at": "2026-10-25T11:12:49+08:00",
+          "finished_at": "2026-10-25T11:12:49+08:00",
+          "output": "\u001b[Kfbcapture -d /dev/fb0 -o /share/0cade8-analytics.bmp\r\r\nTaking screenshot of '/share/0cade8-analytics.bmp' ...\r\r\nSuccess\r\r\n"
+        },
+        {
+          "command": "input tap 1160 35",
+          "started_at": "2026-10-25T11:12:49+08:00",
+          "finished_at": "2026-10-25T11:12:49+08:00",
+          "output": "\u001b[Kinput tap 1160 35\r\r\n"
+        },
+        {
+          "command": "fbcapture -d /dev/fb0 -o /share/0cade8-shop.bmp",
+          "started_at": "2026-10-25T11:12:50+08:00",
+          "finished_at": "2026-10-25T11:12:50+08:00",
+          "output": "\u001b[Kfbcapture -d /dev/fb0 -o /share/0cade8-shop.bmp\r\r\nTaking screenshot of '/share/0cade8-shop.bmp' ...\r\r\nSuccess\r\r\n"
+        },
+        {
+          "command": "input tap 683 357",
+          "started_at": "2026-10-25T11:12:50+08:00",
+          "finished_at": "2026-10-25T11:12:51+08:00",
+          "output": "\u001b[Kinput tap 683 357\r\r\n"
+        },
+        {
+          "command": "fbcapture -d /dev/fb0 -o /share/0cade8-checkbox-toggled.bmp",
+          "started_at": "2026-10-25T11:12:52+08:00",
+          "finished_at": "2026-10-25T11:12:52+08:00",
+          "output": "\u001b[Kfbcapture -d /dev/fb0 -o /share/0cade8-checkbox-toggled.bmp\r\r\nTaking screenshot of '/share/0cade8-checkbox-toggled.bmp' ...\r\r\nSuccess\r\r\n"
+        },
+        {
+          "command": "input tap 740 35",
+          "started_at": "2026-10-25T11:12:52+08:00",
+          "finished_at": "2026-10-25T11:12:52+08:00",
+          "output": "\u001b[Kinput tap 740 35\r\r\n"
+        },
+        {
+          "command": "fbcapture -d /dev/fb0 -o /share/0cade8-slider-before.bmp",
+          "started_at": "2026-10-25T11:12:53+08:00",
+          "finished_at": "2026-10-25T11:12:53+08:00",
+          "output": "\u001b[Kfbcapture -d /dev/fb0 -o /share/0cade8-slider-before.bmp\r\r\nTaking screenshot of '/share/0cade8-slider-before.bmp' ...\r\r\nSuccess\r\r\n"
+        },
+        {
+          "command": "input swipe 685 402 1050 402 400",
+          "started_at": "2026-10-25T11:12:53+08:00",
+          "finished_at": "2026-10-25T11:12:54+08:00",
+          "output": "\u001b[Kinput swipe 685 402 1050 402 400\r\r\n"
+        },
+        {
+          "command": "fbcapture -d /dev/fb0 -o /share/0cade8-slider-after.bmp",
+          "started_at": "2026-10-25T11:12:55+08:00",
+          "finished_at": "2026-10-25T11:12:55+08:00",
+          "output": "\u001b[Kfbcapture -d /dev/fb0 -o /share/0cade8-slider-after.bmp\r\r\nTaking screenshot of '/share/0cade8-slider-after.bmp' ...\r\r\nSuccess\r\r\n"
+        },
+        {
+          "command": "encfs_test write",
+          "started_at": "2026-10-25T11:12:55+08:00",
+          "finished_at": "2026-10-25T11:14:22+08:00",
+          "output": "\u001b[Kencfs_test write\r\r\n[PASS] RFC5869 test case 1\r\r\n[PASS] RFC5297 deterministic vector\r\r\n[PASS] AES-SIV decrypt\r\r\n[PASS] AES-SIV rejects tampering\r\r\n[PASS] name encode\r\r\n[PASS] name round trip\r\r\n[PASS] deterministic name\r\r\n[PASS] name rejects wrong key\r\r\n[PASS] name rejects tampering\r\r\n[PASS] name rejects invalid Base32\r\r\n[PASS] 128-byte name\r\r\n[PASS] 129-byte name rejected\r\r\n[PASS] structural component rejected\r\r\n[PASS] ASCII E1 disk-format compatibility vector\r\r\n[PASS] UTF8 valid scalar/name vector 0\r\r\n[PASS] UTF8 valid scalar/name vector 1\r\r\n[PASS] UTF8 valid scalar/name vector 2\r\r\n[PASS] UTF8 valid scalar/name vector 3\r\r\n[PASS] UTF8 valid scalar/name vector 4\r\r\n[PASS] UTF8 valid scalar/name vector 5\r\r\n[PASS] UTF8 valid scalar/name vector 6\r\r\n[PASS] UTF8 valid scalar/name vector 7\r\r\n[PASS] UTF8 valid scalar/name vector 8\r\r\n[PASS] UTF8 valid scalar/name vector 9\r\r\n[PASS] UTF8 invalid sequence/name vector 0\r\r\n[PASS] UTF8 invalid sequence/name vector 1\r\r\n[PASS] UTF8 invalid sequence/name vector 2\r\r\n[PASS] UTF8 invalid sequence/name vector 3\r\r\n[PASS] UTF8 invalid sequence/name vector 4\r\r\n[PASS] UTF8 invalid sequence/name vector 5\r\r\n[PASS] UTF8 invalid sequence/name vector 6\r\r\n[PASS] UTF8 invalid sequence/name vector 7\r\r\n[PASS] UTF8 invalid sequence/name vector 8\r\r\n[PASS] UTF8 invalid sequence/name vector 9\r\r\n[PASS] UTF8 invalid sequence/name vector 10\r\r\n[PASS] UTF8 invalid sequence/name vector 11\r\r\n[PASS] UTF8 invalid sequence/name vector 12\r\r\n[PASS] UTF8 invalid sequence/name vector 13\r\r\n[PASS] UTF8 invalid sequence/name vector 14\r\r\n[PASS] UTF8 invalid sequence/name vector 15\r\r\n[PASS] UTF8 invalid sequence/name vector 16\r\r\n[PASS] UTF8 invalid sequence/name vector 17\r\r\n[PASS] UTF8 invalid sequence/name vector 18\r\r\n[PASS] UTF8 invalid sequence/name vector 19\r\r\n[PASS] UTF8 invalid sequence/name vector 20\r\r\n[PASS] UTF8 128-byte supplementary name round trip\r\r\n[PASS] UTF8 129-byte component rejected\r\r\n[PASS] UTF8 incomplete scalar at byte limit rejected\r\r\n[PASS] start encrypted chain\r\r\n[PASS] mkdir logical directory\r\r\n[PASS] open logical file\r\r\n[PASS] write content\r\r\n[PASS] fsync file\r\r\n[PASS] fstat file\r\r\n[PASS] seek file\r\r\n[PASS] random read\r\r\n[PASS] dup file\r\r\n[PASS] dup read\r\r\n[PASS] close file\r\r\n[PASS] read content\r\r\n[PASS] stat logical path\r\r\n[PASS] statfs logical limit\r\r\n[PASS] missing parent rejected\r\r\n[PASS] mkdir move source\r\r\n[PASS] unlink rejects directory\r\r\n[PASS] mkdir with trailing slash\r\r\n[PASS] remove trailing-slash sample\r\r\n[PASS] create moved child\r\r\n[PASS] rename whole directory\r\r\n[PASS] child survives directory rename\r\r\n[PASS] cross-directory rename\r\r\n[PASS] existing target rename rejected\r\r\n[PASS] unlink moved file\r\r\n[PASS] rmdir moved directory\r\r\n[PASS] open truncate sample\r\r\n[PASS] write truncate sample\r\r\n[PASS] truncate file\r\r\n[PASS] unlink truncate sample\r\r\n[PASS] create longest logical name\r\r\n[PASS] unlink longest logical name\r\r\n[PASS] overlong logical name rejected\r\r\n[PASS] opendir\r\r\n[PASS] readdir restores logical names\r\r\n[PASS] rewinddir\r\r\n[PASS] 24-cycle file regression\r\r\n[PASS] UTF8 create test directory\r\r\n[PASS] UTF8 create Chinese nested directory\r\r\n[PASS] UTF8 create, write and sync Chinese/emoji file\r\r\n[PASS] UTF8 stat reports original content length\r\r\n[PASS] UTF8 open existing file\r\r\n[PASS] UTF8 allocate logical FILEPATH buffer\r\r\n[PASS] UTF8 FILEPATH preserves exact logical bytes\r\r\n[PASS] UTF8 close existing file\r\r\n[PASS] UTF8 open Chinese directory\r\r\n[PASS] UTF8 readdir restores exact Chinese/emoji bytes\r\r\n[PASS] UTF8 close Chinese directory\r\r\n[PASS] UTF8 rename whole Chinese directory\r\r\n[PASS] UTF8 rename mixed-name file\r\r\n[PASS] UTF8 renamed file retains contents\r\r\n[PASS] UTF8 create composed accent name\r\r\n[PASS] UTF8 create distinct decomposed accent name\r\r\n[PASS] UTF8 normalization forms retain separate contents\r\r\n[PASS] UTF8 create/read 128-byte logical name\r\r\n[PASS] UTF8 unlink 128-byte logical name\r\r\n[PASS] UTF8 filesystem rejects 129-byte name\r\r\n[PASS] UTF8 filesystem rejects surrogate sequence\r\r\n[PASS] create extended acceptance directory\r\r\n[PASS] extended create attribute sample\r\r\n[PASS] attribute sample write and sync\r\r\n[PASS] chmod passes ordinary FatFs mode bits\r\r\n[PASS] chmod retains FatFs reported mode\r\r\n[PASS] fchmod passes ordinary FatFs mode bits\r\r\n[PASS] fchmod retains FatFs reported mode\r\r\n[PASS] chmod masks unsupported special mode bits\r\r\n[PASS] fchmod masks unsupported special mode bits\r\r\n[PASS] chown propagates FatFs unsupported owner\r\r\n[PASS] fchown propagates FatFs unsupported owner\r\r\n[PASS] utimensat reaches translated lower path\r\r\n[PASS] path mtime preserves FAT two-second precision\r\r\n[PASS] futimens reaches translated open file\r\r\n[PASS] fd mtime reflects FAT timestamp\r\r\n[PASS] allocate FILEPATH buffer\r\r\n[PASS] FILEPATH returns logical upper path\r\r\n[PASS] FILEPATH hides lower mount and encoded components\r\r\n[PASS] FILEPATH rejects null output\r\r\n[PASS] upper layer blocks device flush ioctl\r\r\n[PASS] upper layer rejects unknown ioctl\r\r\n[PASS] close attribute sample\r\r\n[PASS] create mixed-case logical name\r\r\n[PASS] write mixed-case logical name\r\r\n[PASS] create distinct lowercase logical name\r\r\n[PASS] write lowercase logical name\r\r\n[PASS] case-distinct name retains first content\r\r\n[PASS] case-distinct name retains second content\r\r\n[PASS] open case-sensitive directory\r\r\n[PASS] directory lists both case-distinct logical names\r\r\n[PASS] close case-sensitive directory\r\r\n[PASS] remove mixed-case sample\r\r\n[PASS] remove lowercase sample\r\r\n[PASS] create normalization directory\r\r\n[PASS] normalize repeated separators and dot components\r\r\n[PASS] allocate normalized FILEPATH buffer\r\r\n[PASS] FILEPATH returns normalized logical path\r\r\n[PASS] close normalized sample\r\r\n[PASS] missing intermediate cannot be bypassed by dotdot\r\r\n[PASS] file intermediate cannot be bypassed by dotdot\r\r\n[PASS] dot after regular file requires directory\r\r\n[PASS] trailing slash after file requires directory\r\r\n[PASS] regular-file parent rejects child creation\r\r\n[PASS] normalize parent traversal within mounted volume\r\r\n[PASS] remove normalization directory\r\r\n[PASS] allocate path-expansion buffer\r\r\n[PASS] create expansion boundary root\r\r\n[PASS] nested 128-byte names fit until encoded path limit\r\r\n[PASS] encoded path expansion rejects before lower limit\r\r\n[PASS] remove nested expansion directories\r\r\n[PASS] remove expansion boundary root\r\r\n[PASS] allocate multi-sector regression buffers\r\r\nENCFS_STRESS_RESULT requested=1000 completed=1000 bytes=2619734 elapsed_ns=83895403360\r\r\n[PASS] 1000-cycle create/write/fsync/read/rename/delete\r\r\n[PASS] stress monotonic timing available\r\r\n[PASS] remove attribute sample\r\r\n[PASS] remove extended acceptance directory\r\r\n[PASS] start is idempotent\r\r\n[PASS] mounted block rejects direct key replacement\r\r\n[PASS] mounted block rejects unregister\r\r\n[PASS] busy unregister preserves node\r\r\n[PASS] open mounted block for ioctl\r\r\n[PASS] mounted block rejects DIOC_SETKEY\r\r\n[PASS] close mounted block probe\r\r\n[PASS] mounted block rejects unlink\r\r\n[PASS] busy unlink preserves content\r\r\n[PASS] open busy file\r\r\n[PASS] open file prevents stop\r\r\n[PASS] busy stop keeps READY\r\r\n[PASS] busy mount rejects key replacement\r\r\n[PASS] open busy directory\r\r\n[PASS] open directory prevents stop\r\r\nENCFS_RESTART_RESULT requested=100 completed=100\r\r\n[PASS] 100 restart cycles\r\r\n[PASS] stop before negative tests\r\r\n[PASS] stopped is idempotent\r\r\n[PASS] register block without a key\r\r\n[PASS] open unkeyed block\r\r\n[PASS] query unkeyed block geometry\r\r\n[PASS] unkeyed block rejects reads\r\r\n[PASS] unkeyed block rejects writes\r\r\n[PASS] close unkeyed block\r\r\n[PASS] remove unkeyed block\r\r\n[PASS] select absent master\r\r\n[PASS] absent master rejects start\r\r\n[PASS] absent master leaves no block node\r\r\n[PASS] select wrong master\r\r\n[PASS] wrong master rejects start\r\r\n[PASS] wrong master leaves no block node\r\r\n[PASS] restore board master\r\r\n[PASS] set startup failpoint\r\r\n[PASS] injected failure propagates\r\r\n[PASS] injected failure rolls back\r\r\n[PASS] retry after failure\r\r\n[PASS] stop after retry\r\r\n[PASS] set startup failpoint\r\r\n[PASS] injected failure propagates\r\r\n[PASS] injected failure rolls back\r\r\n[PASS] retry after failure\r\r\n[PASS] stop after retry\r\r\n[PASS] set startup failpoint\r\r\n[PASS] injected failure propagates\r\r\n[PASS] injected failure rolls back\r\r\n[PASS] retry after failure\r\r\n[PASS] stop after retry\r\r\n[PASS] set startup failpoint\r\r\n[PASS] injected failure propagates\r\r\n[PASS] injected failure rolls back\r\r\n[PASS] retry after failure\r\r\n[PASS] stop after retry\r\r\n[PASS] restart after negative tests\r\r\n[PASS] negative tests preserve content\r\r\n[PASS] external upper unmount\r\r\n[PASS] status reconciles externally removed upper\r\r\n[PASS] start never falsely reports externally removed upper ready\r\r\n[PASS] stop recovers after external upper unmount\r\r\n[PASS] external unmount recovery releases block node\r\r\n[PASS] restart after external upper unmount\r\r\n[PASS] external unmount before unrelated target\r\r\n[PASS] mount unrelated filesystem at former upper\r\r\n[PASS] create unrelated mount marker\r\r\n[PASS] write unrelated mount marker\r\r\n[PASS] stop handles replaced target without unrelated unmount\r\r\n[PASS] start refuses unrelated upper mount\r\r\n[PASS] remove unrelated filesystem\r\r\n[PASS] cleanup after unrelated upper mount\r\r\n[PASS] restart after unrelated upper mount\r\r\n[PASS] clean stop\r\r\nENCFS_TEST_RESULT mode=write pass=232 fail=0\r\r\n"
+        },
+        {
+          "command": "encfs start",
+          "started_at": "2026-10-25T11:14:22+08:00",
+          "finished_at": "2026-10-25T11:14:22+08:00",
+          "output": "\u001b[Kencfs start\r\r\nencfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        },
+        {
+          "command": "fbcapture -d /dev/fb0 -o /share/0cade8-after-storage-regression.bmp",
+          "started_at": "2026-10-25T11:14:22+08:00",
+          "finished_at": "2026-10-25T11:14:22+08:00",
+          "output": "\u001b[Kfbcapture -d /dev/fb0 -o /share/0cade8-after-storage-regression.bmp\r\r\nTaking screenshot of '/share/0cade8-after-storage-regression.bmp' ...\r\r\nSuccess\r\r\n"
+        },
+        {
+          "command": "encfs_test stress 60 &",
+          "started_at": "2026-10-25T11:14:22+08:00",
+          "finished_at": "2026-10-25T11:14:22+08:00",
+          "output": "\u001b[Kencfs_test stress 60 &\r\r\nencfs_test [83:100]\r\r\n"
+        },
+        {
+          "command": "encfs status",
+          "started_at": "2026-10-25T11:14:52+08:00",
+          "finished_at": "2026-10-25T11:14:52+08:00",
+          "output": "\u001b[KENCFS_LONG_STRESS_START requested_seconds=60 workers=2 seed=6e637273 max_live_file_bytes=131074 root=/data/.encfs-stress-83-99527\r\r\nencfs status\r\r\nencfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        },
+        {
+          "command": "ps",
+          "started_at": "2026-10-25T11:14:52+08:00",
+          "finished_at": "2026-10-25T11:14:53+08:00",
+          "output": "\u001b[Kps\r\r\n  PID GROUP PRI POLICY   TYPE    NPX STATE    EVENT     SIGMASK             STACK    USED FILLED COMMAND\r\r\n    0     0   0 FIFO     Kthread   - Ready              0000000000000000  0007984 0002120  26.5%  CPU0 IDLE\r\r\n    1     0 192 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001200   7.4%  hpwork 0x408eacc0 0x408ead40\r\r\n    2     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001152   7.1%  lpwork 0x408eac00 0x408eac80\r\r\n    4     0 100 RR       Kthread   - Waiting  Signal    0000000000000000  0016112 0001616  10.0%  goldfish_gpu_fb_thread 0x40942ca0\r\r\n    5     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001680  10.4%  goldfish_gnss_thread 0x40dcae30\r\r\n    6     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001760  10.9%  goldfish_sensor_thread 0x409d59d0\r\r\n    7     7 100 RR       Task      - Running            0000000000000000  0016144 0004656  28.8%  nsh_main\r\r\n   10    10 100 RR       Task      - Waiting  Semaphore 0000000000000000  0007952 0003464  43.5%  kvdbd\r\r\n   11    11 100 RR       Task      - Waiting  Semaphore 0000000000000000  0016144 0003208  19.8%  servicemanager\r\r\n   12    12 100 RR       Task      - Waiting  Semaphore 0000000000000000  0016144 0002016  12.4%  adbd\r\r\n   13    13 100 RR       Task      - Waiting  Semaphore 0000000000020000  0016144 0002256  13.9%  telnetd\r\r\n   15    15 100 RR       Task      - Ready              0000000000000000  0032512 0011640  35.8%  lvgldemo widgets\r\r\n   83    83 100 RR       Task      - Waiting  Signal    0000000000000000  0016112 0004992  30.9%  encfs_test stress 60\r\r\n   88    83 100 RR       pthread   - Waiting  Mutex:89  0000000000000000  0007984 0005136  64.3%  encfs_test 0x40423a20 0x40e63c28\r\r\n   89    83 100 RR       pthread   - Ready              0000000000000000  0007984 0005184  64.9%  encfs_test 0x40423a20 0x40e63d18\r\r\n"
+        },
+        {
+          "command": "free",
+          "started_at": "2026-10-25T11:14:53+08:00",
+          "finished_at": "2026-10-25T11:14:53+08:00",
+          "output": "\u001b[Kfree\r\r\n      total       used       free    maxused    maxfree  nused  nfree name\r\r\n      65536       1152      64384       1072      64384      2      1 binder_heap_11\r\r\n  122592960    5659008  116933952    5693248  116907648    231     66 Umem\r\r\n"
+        },
+        {
+          "command": "input tap 950 35",
+          "started_at": "2026-10-25T11:14:53+08:00",
+          "finished_at": "2026-10-25T11:14:53+08:00",
+          "output": "\u001b[Kinput tap 950 35\r\r\nENCFS_LONG_STRESS_PROGRESS elapsed_ms=30273 iterations=228 written_bytes=2134247 verified_bytes=4244516 worker0_iterations=108 worker1_iterations=120 errors=0 heap_used=5681136 heap_free=116911824\r\r\n"
+        },
+        {
+          "command": "fbcapture -d /dev/fb0 -o /share/0cade8-stress-001-analytics.bmp",
+          "started_at": "2026-10-25T11:14:53+08:00",
+          "finished_at": "2026-10-25T11:14:54+08:00",
+          "output": "\u001b[Kfbcapture -d /dev/fb0 -o /share/0cade8-stress-001-analytics.bmp\r\r\nTaking screenshot of '/share/0cade8-stress-001-analytics.bmp' ...\r\r\nSuccess\r\r\n"
+        },
+        {
+          "command": "input tap 1160 35",
+          "started_at": "2026-10-25T11:14:54+08:00",
+          "finished_at": "2026-10-25T11:14:54+08:00",
+          "output": "\u001b[Kinput tap 1160 35\r\r\n"
+        },
+        {
+          "command": "fbcapture -d /dev/fb0 -o /share/0cade8-stress-001-shop.bmp",
+          "started_at": "2026-10-25T11:14:54+08:00",
+          "finished_at": "2026-10-25T11:14:55+08:00",
+          "output": "\u001b[Kfbcapture -d /dev/fb0 -o /share/0cade8-stress-001-shop.bmp\r\r\nTaking screenshot of '/share/0cade8-stress-001-shop.bmp' ...\r\r\nSuccess\r\r\n"
+        },
+        {
+          "command": "encfs status",
+          "started_at": "2026-10-25T11:15:22+08:00",
+          "finished_at": "2026-10-25T11:15:22+08:00",
+          "output": "\u001b[Kencfs status\r\r\nencfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        },
+        {
+          "command": "ps",
+          "started_at": "2026-10-25T11:15:22+08:00",
+          "finished_at": "2026-10-25T11:15:22+08:00",
+          "output": "\u001b[Kps\r\r\n  PID GROUP PRI POLICY   TYPE    NPX STATE    EVENT     SIGMASK             STACK    USED FILLED COMMAND\r\r\n    0     0   0 FIFO     Kthread   - Ready              0000000000000000  0007984 0002120  26.5%  CPU0 IDLE\r\r\n    1     0 192 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001200   7.4%  hpwork 0x408eacc0 0x408ead40\r\r\n    2     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001152   7.1%  lpwork 0x408eac00 0x408eac80\r\r\n    4     0 100 RR       Kthread   - Waiting  Signal    0000000000000000  0016112 0001616  10.0%  goldfish_gpu_fb_thread 0x40942ca0\r\r\n    5     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001680  10.4%  goldfish_gnss_thread 0x40dcae30\r\r\n    6     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001760  10.9%  goldfish_sensor_thread 0x409d59d0\r\r\n    7     7 100 RR       Task      - Running            0000000000000000  0016144 0004656  28.8%  nsh_main\r\r\n   10    10 100 RR       Task      - Waiting  Semaphore 0000000000000000  0007952 0003464  43.5%  kvdbd\r\r\n   11    11 100 RR       Task      - Waiting  Semaphore 0000000000000000  0016144 0003208  19.8%  servicemanager\r\r\n   12    12 100 RR       Task      - Waiting  Semaphore 0000000000000000  0016144 0002016  12.4%  adbd\r\r\n   13    13 100 RR       Task      - Waiting  Semaphore 0000000000020000  0016144 0002256  13.9%  telnetd\r\r\n   15    15 100 RR       Task      - Ready              0000000000000000  0032512 0011640  35.8%  lvgldemo widgets\r\r\n   83    83 100 RR       Task      - Waiting  Signal    0000000000000000  0016112 0004992  30.9%  encfs_test stress 60\r\r\n   88    83 100 RR       pthread   - Ready              0000000000000000  0007984 0005136  64.3%  encfs_test 0x40423a20 0x40e63c28\r\r\n   89    83 100 RR       pthread   - Waiting  Mutex:88  0000000000000000  0007984 0005184  64.9%  encfs_test 0x40423a20 0x40e63d18\r\r\n"
+        },
+        {
+          "command": "free",
+          "started_at": "2026-10-25T11:15:22+08:00",
+          "finished_at": "2026-10-25T11:15:23+08:00",
+          "output": "\u001b[Kfree\r\r\n      total       used       free    maxused    maxfree  nused  nfree name\r\r\n      65536       1152      64384       1072      64384      2      1 binder_heap_11\r\r\n  122592960    5660160  116932800    5696000  116907648    232     66 Umem\r\r\n"
+        },
+        {
+          "command": "encfs status",
+          "started_at": "2026-10-25T11:15:24+08:00",
+          "finished_at": "2026-10-25T11:15:24+08:00",
+          "output": "\u001b[KENCFS_LONG_STRESS_PROGRESS elapsed_ms=60622 iterations=452 written_bytes=4327670 verified_bytes=8607824 worker0_iterations=211 worker1_iterations=241 errors=0 heap_used=5371584 heap_free=117221376\r\r\nENCFS_LONG_STRESS_RESULT requested_seconds=60 elapsed_ms=60622 workers=2 iterations=452 written_bytes=4327670 verified_bytes=8607824 worker0_iterations=211 worker1_iterations=241 worker0_elapsed_ms=60064 worker1_elapsed_ms=60341 errors=0 completed=1 heap_before=5371584 heap_after=5371584\r\r\n[PASS] timed concurrent encrypted filesystem stress\r\r\nENCFS_TEST_RESULT mode=stress pass=1 fail=0\r\r\nencfs status\r\r\nencfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        },
+        {
+          "command": "ps",
+          "started_at": "2026-10-25T11:15:24+08:00",
+          "finished_at": "2026-10-25T11:15:24+08:00",
+          "output": "\u001b[Kps\r\r\n  PID GROUP PRI POLICY   TYPE    NPX STATE    EVENT     SIGMASK             STACK    USED FILLED COMMAND\r\r\n    0     0   0 FIFO     Kthread   - Ready              0000000000000000  0007984 0002120  26.5%  CPU0 IDLE\r\r\n    1     0 192 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001200   7.4%  hpwork 0x408eacc0 0x408ead40\r\r\n    2     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001152   7.1%  lpwork 0x408eac00 0x408eac80\r\r\n    4     0 100 RR       Kthread   - Waiting  Signal    0000000000000000  0016112 0001616  10.0%  goldfish_gpu_fb_thread 0x40942ca0\r\r\n    5     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001680  10.4%  goldfish_gnss_thread 0x40dcae30\r\r\n    6     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001760  10.9%  goldfish_sensor_thread 0x409d59d0\r\r\n    7     7 100 RR       Task      - Running            0000000000000000  0016144 0004656  28.8%  nsh_main\r\r\n   10    10 100 RR       Task      - Waiting  Semaphore 0000000000000000  0007952 0003464  43.5%  kvdbd\r\r\n   11    11 100 RR       Task      - Waiting  Semaphore 0000000000000000  0016144 0003208  19.8%  servicemanager\r\r\n   12    12 100 RR       Task      - Waiting  Semaphore 0000000000000000  0016144 0002016  12.4%  adbd\r\r\n   13    13 100 RR       Task      - Waiting  Semaphore 0000000000020000  0016144 0002256  13.9%  telnetd\r\r\n   15    15 100 RR       Task      - Ready              0000000000000000  0032512 0011640  35.8%  lvgldemo widgets\r\r\n"
+        },
+        {
+          "command": "free",
+          "started_at": "2026-10-25T11:15:24+08:00",
+          "finished_at": "2026-10-25T11:15:24+08:00",
+          "output": "\u001b[Kfree\r\r\n      total       used       free    maxused    maxfree  nused  nfree name\r\r\n      65536       1152      64384       1072      64384      2      1 binder_heap_11\r\r\n  122592960    5351408  117241552    5696000  117178112    218     69 Umem\r\r\n"
+        },
+        {
+          "command": "input tap 950 35",
+          "started_at": "2026-10-25T11:15:24+08:00",
+          "finished_at": "2026-10-25T11:15:24+08:00",
+          "output": "\u001b[Kinput tap 950 35\r\r\n"
+        },
+        {
+          "command": "fbcapture -d /dev/fb0 -o /share/0cade8-stress-003-analytics.bmp",
+          "started_at": "2026-10-25T11:15:24+08:00",
+          "finished_at": "2026-10-25T11:15:24+08:00",
+          "output": "\u001b[Kfbcapture -d /dev/fb0 -o /share/0cade8-stress-003-analytics.bmp\r\r\nTaking screenshot of '/share/0cade8-stress-003-analytics.bmp' ...\r\r\nSuccess\r\r\n"
+        },
+        {
+          "command": "input tap 1160 35",
+          "started_at": "2026-10-25T11:15:25+08:00",
+          "finished_at": "2026-10-25T11:15:25+08:00",
+          "output": "\u001b[Kinput tap 1160 35\r\r\n"
+        },
+        {
+          "command": "fbcapture -d /dev/fb0 -o /share/0cade8-stress-003-shop.bmp",
+          "started_at": "2026-10-25T11:15:25+08:00",
+          "finished_at": "2026-10-25T11:15:25+08:00",
+          "output": "\u001b[Kfbcapture -d /dev/fb0 -o /share/0cade8-stress-003-shop.bmp\r\r\nTaking screenshot of '/share/0cade8-stress-003-shop.bmp' ...\r\r\nSuccess\r\r\n"
+        },
+        {
+          "command": "cat /data/test/secret.txt",
+          "started_at": "2026-10-25T11:15:25+08:00",
+          "finished_at": "2026-10-25T11:15:25+08:00",
+          "output": "\u001b[Kcat /data/test/secret.txt\r\r\nENCFS_COURSE_2026_SECRET_PAYLOAD_7d64f98ac0e34251_persistent-content-and-transparent-path-encryption"
+        },
+        {
+          "command": "encfs stop",
+          "started_at": "2026-10-25T11:15:25+08:00",
+          "finished_at": "2026-10-25T11:15:25+08:00",
+          "output": "\u001b[Kencfs stop\r\r\nencfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        }
+      ],
+      "serial_log": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/gui-widgets-storage.serial.log",
+      "frames": [
+        {
+          "label": "initial",
+          "path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-widgets-storage-initial.png",
+          "source_bmp": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/avd/encfs-gui-20261025-111204-e042cc53.vvd/share/0cade8-initial.bmp",
+          "width": 1280,
+          "height": 800,
+          "sha256": "5be7e9964763a238f6e4d27a87bb6d7880207276513b8395c3b39b56836704ee",
+          "mean_rgb": [
+            242.8280283203125,
+            245.207611328125,
+            247.20721875
+          ],
+          "captured_at": "2026-10-25T11:12:46+08:00",
+          "pixel_format": "RGB565 (decoded explicitly from guest capture)"
+        },
+        {
+          "label": "profile",
+          "path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-widgets-storage-profile.png",
+          "source_bmp": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/avd/encfs-gui-20261025-111204-e042cc53.vvd/share/0cade8-profile.bmp",
+          "width": 1280,
+          "height": 800,
+          "sha256": "5be7e9964763a238f6e4d27a87bb6d7880207276513b8395c3b39b56836704ee",
+          "mean_rgb": [
+            242.8280283203125,
+            245.207611328125,
+            247.20721875
+          ],
+          "captured_at": "2026-10-25T11:12:48+08:00",
+          "pixel_format": "RGB565 (decoded explicitly from guest capture)"
+        },
+        {
+          "label": "analytics",
+          "path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-widgets-storage-analytics.png",
+          "source_bmp": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/avd/encfs-gui-20261025-111204-e042cc53.vvd/share/0cade8-analytics.bmp",
+          "width": 1280,
+          "height": 800,
+          "sha256": "e439cb62d8e4b90f0f8514332e776f50a49330a65bacb9518e50d4c4b75236f2",
+          "mean_rgb": [
+            223.331248046875,
+            235.8605517578125,
+            244.9602060546875
+          ],
+          "captured_at": "2026-10-25T11:12:49+08:00",
+          "pixel_format": "RGB565 (decoded explicitly from guest capture)"
+        },
+        {
+          "label": "shop",
+          "path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-widgets-storage-shop.png",
+          "source_bmp": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/avd/encfs-gui-20261025-111204-e042cc53.vvd/share/0cade8-shop.bmp",
+          "width": 1280,
+          "height": 800,
+          "sha256": "fe59f3b6e9d7a9150edc6604af160333625625a4f70302ab892ba0d0dbb81cd2",
+          "mean_rgb": [
+            238.2232646484375,
+            243.493328125,
+            247.91252734375
+          ],
+          "captured_at": "2026-10-25T11:12:50+08:00",
+          "pixel_format": "RGB565 (decoded explicitly from guest capture)"
+        },
+        {
+          "label": "checkbox-toggled",
+          "path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-widgets-storage-checkbox-toggled.png",
+          "source_bmp": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/avd/encfs-gui-20261025-111204-e042cc53.vvd/share/0cade8-checkbox-toggled.bmp",
+          "width": 1280,
+          "height": 800,
+          "sha256": "70471371685064ed98ec1450b39254077306ab015da545057424cdda05e11aae",
+          "mean_rgb": [
+            238.1683740234375,
+            243.4672265625,
+            247.91020703125
+          ],
+          "captured_at": "2026-10-25T11:12:52+08:00",
+          "pixel_format": "RGB565 (decoded explicitly from guest capture)"
+        },
+        {
+          "label": "slider-before",
+          "path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-widgets-storage-slider-before.png",
+          "source_bmp": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/avd/encfs-gui-20261025-111204-e042cc53.vvd/share/0cade8-slider-before.bmp",
+          "width": 1280,
+          "height": 800,
+          "sha256": "5be7e9964763a238f6e4d27a87bb6d7880207276513b8395c3b39b56836704ee",
+          "mean_rgb": [
+            242.8280283203125,
+            245.207611328125,
+            247.20721875
+          ],
+          "captured_at": "2026-10-25T11:12:53+08:00",
+          "pixel_format": "RGB565 (decoded explicitly from guest capture)"
+        },
+        {
+          "label": "slider-after",
+          "path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-widgets-storage-slider-after.png",
+          "source_bmp": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/avd/encfs-gui-20261025-111204-e042cc53.vvd/share/0cade8-slider-after.bmp",
+          "width": 1280,
+          "height": 800,
+          "sha256": "a8f2ea67bc85e3da0eae688e0670943e74c4c9c6b8a997eda29ac970fb1d4993",
+          "mean_rgb": [
+            242.075390625,
+            244.8372314453125,
+            247.20866015625
+          ],
+          "captured_at": "2026-10-25T11:12:55+08:00",
+          "pixel_format": "RGB565 (decoded explicitly from guest capture)"
+        },
+        {
+          "label": "after-storage-regression",
+          "path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-widgets-storage-after-storage-regression.png",
+          "source_bmp": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/avd/encfs-gui-20261025-111204-e042cc53.vvd/share/0cade8-after-storage-regression.bmp",
+          "width": 1280,
+          "height": 800,
+          "sha256": "a8f2ea67bc85e3da0eae688e0670943e74c4c9c6b8a997eda29ac970fb1d4993",
+          "mean_rgb": [
+            242.075390625,
+            244.8372314453125,
+            247.20866015625
+          ],
+          "captured_at": "2026-10-25T11:14:22+08:00",
+          "pixel_format": "RGB565 (decoded explicitly from guest capture)"
+        },
+        {
+          "label": "stress-001-analytics",
+          "path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-widgets-storage-stress-001-analytics.png",
+          "source_bmp": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/avd/encfs-gui-20261025-111204-e042cc53.vvd/share/0cade8-stress-001-analytics.bmp",
+          "width": 1280,
+          "height": 800,
+          "sha256": "e79671f8a5fdd6ce88dc08ae5b967d49c01360080b6597adbb04c32da94c01df",
+          "mean_rgb": [
+            223.4792197265625,
+            235.8255439453125,
+            244.994798828125
+          ],
+          "captured_at": "2026-10-25T11:14:54+08:00",
+          "pixel_format": "RGB565 (decoded explicitly from guest capture)"
+        },
+        {
+          "label": "stress-001-shop",
+          "path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-widgets-storage-stress-001-shop.png",
+          "source_bmp": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/avd/encfs-gui-20261025-111204-e042cc53.vvd/share/0cade8-stress-001-shop.bmp",
+          "width": 1280,
+          "height": 800,
+          "sha256": "70471371685064ed98ec1450b39254077306ab015da545057424cdda05e11aae",
+          "mean_rgb": [
+            238.1683740234375,
+            243.4672265625,
+            247.91020703125
+          ],
+          "captured_at": "2026-10-25T11:14:55+08:00",
+          "pixel_format": "RGB565 (decoded explicitly from guest capture)"
+        },
+        {
+          "label": "stress-003-analytics",
+          "path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-widgets-storage-stress-003-analytics.png",
+          "source_bmp": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/avd/encfs-gui-20261025-111204-e042cc53.vvd/share/0cade8-stress-003-analytics.bmp",
+          "width": 1280,
+          "height": 800,
+          "sha256": "9a7c22c1abe78b4183be0c53447ce43913613b5e2945fd904417096f27276887",
+          "mean_rgb": [
+            223.443126953125,
+            235.8407724609375,
+            244.993419921875
+          ],
+          "captured_at": "2026-10-25T11:15:25+08:00",
+          "pixel_format": "RGB565 (decoded explicitly from guest capture)"
+        },
+        {
+          "label": "stress-003-shop",
+          "path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-widgets-storage-stress-003-shop.png",
+          "source_bmp": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/avd/encfs-gui-20261025-111204-e042cc53.vvd/share/0cade8-stress-003-shop.bmp",
+          "width": 1280,
+          "height": 800,
+          "sha256": "70471371685064ed98ec1450b39254077306ab015da545057424cdda05e11aae",
+          "mean_rgb": [
+            238.1683740234375,
+            243.4672265625,
+            247.91020703125
+          ],
+          "captured_at": "2026-10-25T11:15:25+08:00",
+          "pixel_format": "RGB565 (decoded explicitly from guest capture)"
+        }
+      ],
+      "touch_changed_pixels": {
+        "profile_to_analytics": 560013,
+        "analytics_to_shop": 520554,
+        "shop_checkbox": 280,
+        "profile_slider": 5157
+      },
+      "guest_result": {
+        "mode": "write",
+        "pass": 232,
+        "fail": 0
+      },
+      "stress_result": {
+        "requested": 1000,
+        "completed": 1000,
+        "bytes": 2619734,
+        "elapsed_ns": 83895403360
+      },
+      "restart_result": {
+        "requested": 100,
+        "completed": 100
+      },
+      "stress_host_started_at": "2026-10-25T11:14:22+08:00",
+      "checkpoints": [
+        {
+          "elapsed_host_seconds": 30.264,
+          "checked_at": "2026-10-25T11:14:53+08:00",
+          "memory_output": "\u001b[Kfree\r\r\n      total       used       free    maxused    maxfree  nused  nfree name\r\r\n      65536       1152      64384       1072      64384      2      1 binder_heap_11\r\r\n  122592960    5659008  116933952    5693248  116907648    231     66 Umem\r\r\n",
+          "touch_changed_pixels": 520818
+        },
+        {
+          "elapsed_host_seconds": 60.209,
+          "checked_at": "2026-10-25T11:15:23+08:00",
+          "memory_output": "\u001b[Kfree\r\r\n      total       used       free    maxused    maxfree  nused  nfree name\r\r\n      65536       1152      64384       1072      64384      2      1 binder_heap_11\r\r\n  122592960    5660160  116932800    5696000  116907648    232     66 Umem\r\r\n"
+        },
+        {
+          "elapsed_host_seconds": 61.388,
+          "checked_at": "2026-10-25T11:15:24+08:00",
+          "memory_output": "\u001b[Kfree\r\r\n      total       used       free    maxused    maxfree  nused  nfree name\r\r\n      65536       1152      64384       1072      64384      2      1 binder_heap_11\r\r\n  122592960    5351408  117241552    5696000  117178112    218     69 Umem\r\r\n",
+          "touch_changed_pixels": 520817
+        }
+      ],
+      "long_stress_result": {
+        "requested_seconds": 60,
+        "elapsed_ms": 60622,
+        "workers": 2,
+        "iterations": 452,
+        "written_bytes": 4327670,
+        "verified_bytes": 8607824,
+        "worker0_iterations": 211,
+        "worker1_iterations": 241,
+        "worker0_elapsed_ms": 60064,
+        "worker1_elapsed_ms": 60341,
+        "errors": 0,
+        "completed": 1,
+        "heap_before": 5371584,
+        "heap_after": 5371584
+      },
+      "long_stress_progress": [
+        {
+          "elapsed_ms": 30273,
+          "iterations": 228,
+          "written_bytes": 2134247,
+          "verified_bytes": 4244516,
+          "worker0_iterations": 108,
+          "worker1_iterations": 120,
+          "errors": 0,
+          "heap_used": 5681136,
+          "heap_free": 116911824
+        },
+        {
+          "elapsed_ms": 60622,
+          "iterations": 452,
+          "written_bytes": 4327670,
+          "verified_bytes": 8607824,
+          "worker0_iterations": 211,
+          "worker1_iterations": 241,
+          "errors": 0,
+          "heap_used": 5371584,
+          "heap_free": 117221376
+        }
+      ],
+      "stress_host_elapsed_seconds": 62.977,
+      "exit_status": null,
+      "exit_signal": 15,
+      "finished_at": "2026-10-25T11:15:26+08:00",
+      "image": {
+        "path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/avd/encfs-gui-20261025-111204-e042cc53.vvd/vela_data.bin",
+        "sha256": "0f8974a237ba9fd140cbe0ee0420835ba5976f64c77990d4e9eada66ada2d28f",
+        "size": 268435456,
+        "encrypted": true,
+        "observations": {
+          "content_marker": false,
+          "secret_name_ascii": false,
+          "secret_name_utf16le": false,
+          "encoded_prefix_utf16le": false,
+          "plaintext_exfat_header": false
+        }
+      }
+    },
+    {
+      "name": "gui-persistence-coldboot",
+      "status": "passed",
+      "instance": "encfs-gui-20261025-111204-e042cc53",
+      "command": [
+        "/home/tourist/Desktop/openvela/run-emulator.sh",
+        "goldfish-arm64-v8a-ap-encfs-gui",
+        "-keep",
+        "encfs-gui-20261025-111204-e042cc53",
+        "-no-window",
+        "-no-audio",
+        "-gpu",
+        "swiftshader_indirect",
+        "-accel",
+        "off"
+      ],
+      "started_at": "2026-10-25T11:15:26+08:00",
+      "commands": [
+        {
+          "command": "encfs start",
+          "started_at": "2026-10-25T11:15:27+08:00",
+          "finished_at": "2026-10-25T11:15:27+08:00",
+          "output": "\u001b[Kencfs start\r\r\nencfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        },
+        {
+          "command": "lvgldemo widgets &",
+          "started_at": "2026-10-25T11:15:27+08:00",
+          "finished_at": "2026-10-25T11:15:27+08:00",
+          "output": "\u001b[Klvgldemo widgets &\r\r\nlvgldemo [15:100]\r\r\n"
+        },
+        {
+          "command": "ps",
+          "started_at": "2026-10-25T11:15:30+08:00",
+          "finished_at": "2026-10-25T11:15:30+08:00",
+          "output": "\u001b[Kps\r\r\n  PID GROUP PRI POLICY   TYPE    NPX STATE    EVENT     SIGMASK             STACK    USED FILLED COMMAND\r\r\n    0     0   0 FIFO     Kthread   - Ready              0000000000000000  0007984 0002120  26.5%  CPU0 IDLE\r\r\n    1     0 192 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001152   7.1%  hpwork 0x408eacc0 0x408ead40\r\r\n    2     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001152   7.1%  lpwork 0x408eac00 0x408eac80\r\r\n    4     0 100 RR       Kthread   - Ready              0000000000000000  0016112 0001616  10.0%  goldfish_gpu_fb_thread 0x40942ca0\r\r\n    5     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001680  10.4%  goldfish_gnss_thread 0x40dcae30\r\r\n    6     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001760  10.9%  goldfish_sensor_thread 0x409d59d0\r\r\n    7     7 100 RR       Task      - Running            0000000000000000  0016144 0004656  28.8%  nsh_main\r\r\n   10    10 100 RR       Task      - Waiting  Semaphore 0000000000000000  0007952 0003464  43.5%  kvdbd\r\r\n   11    11 100 RR       Task      - Waiting  Semaphore 0000000000000000  0016144 0003208  19.8%  servicemanager\r\r\n   12    12 100 RR       Task      - Waiting  Semaphore 0000000000000000  0016144 0002016  12.4%  adbd\r\r\n   13    13 100 RR       Task      - Waiting  Semaphore 0000000000020000  0016144 0002256  13.9%  telnetd\r\r\n   15    15 100 RR       Task      - Ready              0000000000000000  0032512 0010664  32.8%  lvgldemo widgets\r\r\n"
+        },
+        {
+          "command": "fbcapture -d /dev/fb0 -o /share/9ec44a-initial.bmp",
+          "started_at": "2026-10-25T11:15:30+08:00",
+          "finished_at": "2026-10-25T11:15:30+08:00",
+          "output": "\u001b[Kfbcapture -d /dev/fb0 -o /share/9ec44a-initial.bmp\r\r\nTaking screenshot of '/share/9ec44a-initial.bmp' ...\r\r\nSuccess\r\r\n"
+        },
+        {
+          "command": "input tap 740 35",
+          "started_at": "2026-10-25T11:15:30+08:00",
+          "finished_at": "2026-10-25T11:15:30+08:00",
+          "output": "\u001b[Kinput tap 740 35\r\r\n"
+        },
+        {
+          "command": "fbcapture -d /dev/fb0 -o /share/9ec44a-profile.bmp",
+          "started_at": "2026-10-25T11:15:31+08:00",
+          "finished_at": "2026-10-25T11:15:31+08:00",
+          "output": "\u001b[Kfbcapture -d /dev/fb0 -o /share/9ec44a-profile.bmp\r\r\nTaking screenshot of '/share/9ec44a-profile.bmp' ...\r\r\nSuccess\r\r\n"
+        },
+        {
+          "command": "input tap 950 35",
+          "started_at": "2026-10-25T11:15:31+08:00",
+          "finished_at": "2026-10-25T11:15:31+08:00",
+          "output": "\u001b[Kinput tap 950 35\r\r\n"
+        },
+        {
+          "command": "fbcapture -d /dev/fb0 -o /share/9ec44a-analytics.bmp",
+          "started_at": "2026-10-25T11:15:32+08:00",
+          "finished_at": "2026-10-25T11:15:33+08:00",
+          "output": "\u001b[Kfbcapture -d /dev/fb0 -o /share/9ec44a-analytics.bmp\r\r\nTaking screenshot of '/share/9ec44a-analytics.bmp' ...\r\r\nSuccess\r\r\n"
+        },
+        {
+          "command": "input tap 1160 35",
+          "started_at": "2026-10-25T11:15:33+08:00",
+          "finished_at": "2026-10-25T11:15:33+08:00",
+          "output": "\u001b[Kinput tap 1160 35\r\r\n"
+        },
+        {
+          "command": "fbcapture -d /dev/fb0 -o /share/9ec44a-shop.bmp",
+          "started_at": "2026-10-25T11:15:34+08:00",
+          "finished_at": "2026-10-25T11:15:34+08:00",
+          "output": "\u001b[Kfbcapture -d /dev/fb0 -o /share/9ec44a-shop.bmp\r\r\nTaking screenshot of '/share/9ec44a-shop.bmp' ...\r\r\nSuccess\r\r\n"
+        },
+        {
+          "command": "input tap 683 357",
+          "started_at": "2026-10-25T11:15:34+08:00",
+          "finished_at": "2026-10-25T11:15:34+08:00",
+          "output": "\u001b[Kinput tap 683 357\r\r\n"
+        },
+        {
+          "command": "fbcapture -d /dev/fb0 -o /share/9ec44a-checkbox-toggled.bmp",
+          "started_at": "2026-10-25T11:15:35+08:00",
+          "finished_at": "2026-10-25T11:15:35+08:00",
+          "output": "\u001b[Kfbcapture -d /dev/fb0 -o /share/9ec44a-checkbox-toggled.bmp\r\r\nTaking screenshot of '/share/9ec44a-checkbox-toggled.bmp' ...\r\r\nSuccess\r\r\n"
+        },
+        {
+          "command": "input tap 740 35",
+          "started_at": "2026-10-25T11:15:35+08:00",
+          "finished_at": "2026-10-25T11:15:36+08:00",
+          "output": "\u001b[Kinput tap 740 35\r\r\n"
+        },
+        {
+          "command": "fbcapture -d /dev/fb0 -o /share/9ec44a-slider-before.bmp",
+          "started_at": "2026-10-25T11:15:37+08:00",
+          "finished_at": "2026-10-25T11:15:37+08:00",
+          "output": "\u001b[Kfbcapture -d /dev/fb0 -o /share/9ec44a-slider-before.bmp\r\r\nTaking screenshot of '/share/9ec44a-slider-before.bmp' ...\r\r\nSuccess\r\r\n"
+        },
+        {
+          "command": "input swipe 685 402 1050 402 400",
+          "started_at": "2026-10-25T11:15:37+08:00",
+          "finished_at": "2026-10-25T11:15:37+08:00",
+          "output": "\u001b[Kinput swipe 685 402 1050 402 400\r\r\n"
+        },
+        {
+          "command": "fbcapture -d /dev/fb0 -o /share/9ec44a-slider-after.bmp",
+          "started_at": "2026-10-25T11:15:38+08:00",
+          "finished_at": "2026-10-25T11:15:38+08:00",
+          "output": "\u001b[Kfbcapture -d /dev/fb0 -o /share/9ec44a-slider-after.bmp\r\r\nTaking screenshot of '/share/9ec44a-slider-after.bmp' ...\r\r\nSuccess\r\r\n"
+        },
+        {
+          "command": "encfs_test verify",
+          "started_at": "2026-10-25T11:15:38+08:00",
+          "finished_at": "2026-10-25T11:15:39+08:00",
+          "output": "\u001b[Kencfs_test verify\r\r\n[PASS] restart existing encrypted volume\r\r\n[PASS] persistent content after reboot\r\r\n[PASS] persistent logical directory\r\r\n[PASS] UTF8 persistent Chinese directory after reboot\r\r\n[PASS] UTF8 persistent Chinese/emoji file after reboot\r\r\n[PASS] UTF8 persistent composed name after reboot\r\r\n[PASS] UTF8 persistent decomposed name after reboot\r\r\n[PASS] clean stop after reboot\r\r\nENCFS_TEST_RESULT mode=verify pass=8 fail=0\r\r\n"
+        },
+        {
+          "command": "encfs stop",
+          "started_at": "2026-10-25T11:15:39+08:00",
+          "finished_at": "2026-10-25T11:15:39+08:00",
+          "output": "\u001b[Kencfs stop\r\r\nencfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        }
+      ],
+      "serial_log": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/gui-persistence-coldboot.serial.log",
+      "frames": [
+        {
+          "label": "initial",
+          "path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-persistence-coldboot-initial.png",
+          "source_bmp": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/avd/encfs-gui-20261025-111204-e042cc53.vvd/share/9ec44a-initial.bmp",
+          "width": 1280,
+          "height": 800,
+          "sha256": "5be7e9964763a238f6e4d27a87bb6d7880207276513b8395c3b39b56836704ee",
+          "mean_rgb": [
+            242.8280283203125,
+            245.207611328125,
+            247.20721875
+          ],
+          "captured_at": "2026-10-25T11:15:30+08:00",
+          "pixel_format": "RGB565 (decoded explicitly from guest capture)"
+        },
+        {
+          "label": "profile",
+          "path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-persistence-coldboot-profile.png",
+          "source_bmp": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/avd/encfs-gui-20261025-111204-e042cc53.vvd/share/9ec44a-profile.bmp",
+          "width": 1280,
+          "height": 800,
+          "sha256": "5be7e9964763a238f6e4d27a87bb6d7880207276513b8395c3b39b56836704ee",
+          "mean_rgb": [
+            242.8280283203125,
+            245.207611328125,
+            247.20721875
+          ],
+          "captured_at": "2026-10-25T11:15:31+08:00",
+          "pixel_format": "RGB565 (decoded explicitly from guest capture)"
+        },
+        {
+          "label": "analytics",
+          "path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-persistence-coldboot-analytics.png",
+          "source_bmp": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/avd/encfs-gui-20261025-111204-e042cc53.vvd/share/9ec44a-analytics.bmp",
+          "width": 1280,
+          "height": 800,
+          "sha256": "e439cb62d8e4b90f0f8514332e776f50a49330a65bacb9518e50d4c4b75236f2",
+          "mean_rgb": [
+            223.331248046875,
+            235.8605517578125,
+            244.9602060546875
+          ],
+          "captured_at": "2026-10-25T11:15:33+08:00",
+          "pixel_format": "RGB565 (decoded explicitly from guest capture)"
+        },
+        {
+          "label": "shop",
+          "path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-persistence-coldboot-shop.png",
+          "source_bmp": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/avd/encfs-gui-20261025-111204-e042cc53.vvd/share/9ec44a-shop.bmp",
+          "width": 1280,
+          "height": 800,
+          "sha256": "fe59f3b6e9d7a9150edc6604af160333625625a4f70302ab892ba0d0dbb81cd2",
+          "mean_rgb": [
+            238.2232646484375,
+            243.493328125,
+            247.91252734375
+          ],
+          "captured_at": "2026-10-25T11:15:34+08:00",
+          "pixel_format": "RGB565 (decoded explicitly from guest capture)"
+        },
+        {
+          "label": "checkbox-toggled",
+          "path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-persistence-coldboot-checkbox-toggled.png",
+          "source_bmp": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/avd/encfs-gui-20261025-111204-e042cc53.vvd/share/9ec44a-checkbox-toggled.bmp",
+          "width": 1280,
+          "height": 800,
+          "sha256": "70471371685064ed98ec1450b39254077306ab015da545057424cdda05e11aae",
+          "mean_rgb": [
+            238.1683740234375,
+            243.4672265625,
+            247.91020703125
+          ],
+          "captured_at": "2026-10-25T11:15:35+08:00",
+          "pixel_format": "RGB565 (decoded explicitly from guest capture)"
+        },
+        {
+          "label": "slider-before",
+          "path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-persistence-coldboot-slider-before.png",
+          "source_bmp": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/avd/encfs-gui-20261025-111204-e042cc53.vvd/share/9ec44a-slider-before.bmp",
+          "width": 1280,
+          "height": 800,
+          "sha256": "5be7e9964763a238f6e4d27a87bb6d7880207276513b8395c3b39b56836704ee",
+          "mean_rgb": [
+            242.8280283203125,
+            245.207611328125,
+            247.20721875
+          ],
+          "captured_at": "2026-10-25T11:15:37+08:00",
+          "pixel_format": "RGB565 (decoded explicitly from guest capture)"
+        },
+        {
+          "label": "slider-after",
+          "path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-persistence-coldboot-slider-after.png",
+          "source_bmp": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/avd/encfs-gui-20261025-111204-e042cc53.vvd/share/9ec44a-slider-after.bmp",
+          "width": 1280,
+          "height": 800,
+          "sha256": "a8f2ea67bc85e3da0eae688e0670943e74c4c9c6b8a997eda29ac970fb1d4993",
+          "mean_rgb": [
+            242.075390625,
+            244.8372314453125,
+            247.20866015625
+          ],
+          "captured_at": "2026-10-25T11:15:38+08:00",
+          "pixel_format": "RGB565 (decoded explicitly from guest capture)"
+        }
+      ],
+      "touch_changed_pixels": {
+        "profile_to_analytics": 560013,
+        "analytics_to_shop": 520554,
+        "shop_checkbox": 280,
+        "profile_slider": 5157
+      },
+      "guest_result": {
+        "mode": "verify",
+        "pass": 8,
+        "fail": 0
+      },
+      "exit_status": null,
+      "exit_signal": 15,
+      "finished_at": "2026-10-25T11:15:39+08:00",
+      "image": {
+        "path": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/avd/encfs-gui-20261025-111204-e042cc53.vvd/vela_data.bin",
+        "sha256": "0f8974a237ba9fd140cbe0ee0420835ba5976f64c77990d4e9eada66ada2d28f",
+        "size": 268435456,
+        "encrypted": true,
+        "observations": {
+          "content_marker": false,
+          "secret_name_ascii": false,
+          "secret_name_utf16le": false,
+          "encoded_prefix_utf16le": false,
+          "plaintext_exfat_header": false
+        }
+      }
+    }
+  ],
+  "requested_stress_seconds": 60,
+  "scope": "full GUI and timed stress",
+  "config": "goldfish-arm64-v8a-ap-encfs-gui",
+  "build_dir": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-gui",
+  "limitations": [
+    "Test keys are public fixtures, never production secrets.",
+    "One-hour stress is a bounded run, not an endurance guarantee.",
+    "This does not test power-loss or hardware fault recovery."
+  ],
+  "build_artifacts": {
+    "nuttx": {
+      "path": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-gui/nuttx",
+      "size": 61591200,
+      "sha256": "794119b446b764f4ada8c175467a29b4758001925d63c224273d3e2c1cc10615"
+    },
+    "nuttx.bin": {
+      "path": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-gui/nuttx.bin",
+      "size": 7057408,
+      "sha256": "0728d17af59188f607ed1301ea1e659d43f56205d3f2d6a949837d78bbdd2c4e"
+    },
+    "vela_data.bin": {
+      "path": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-gui/vela_data.bin",
+      "size": 268435456,
+      "sha256": "a6d72ac7690f53be6ae46ba88506bd97302a093f7108472bd9efc3cefda06484"
+    },
+    "vela_system.bin": {
+      "path": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-gui/vela_system.bin",
+      "size": 1024,
+      "sha256": "132c956be1e711a7bde7c0206a663b5ee63804ec3888478b5a1c8092e14b290b"
+    },
+    ".config": {
+      "path": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-gui/.config",
+      "size": 106310,
+      "sha256": "6e4fefba74baa4a02ab99d0c218ae724aa356a940d0f0d1507aa2855283c0c69"
+    }
+  },
+  "source_revisions": {
+    "nuttx": {
+      "revision": "04264dc9a71be9dba96c4321bc5d7770e79d2dca",
+      "dirty": false,
+      "changes": []
+    },
+    "apps": {
+      "revision": "e198d0a1a032b886dc43c6cf5e7677f5dad4a42e",
+      "dirty": true,
+      "changes": [
+        "?? testing/drivers/nist-sts/.gitee/",
+        "?? testing/drivers/nist-sts/.github/",
+        "?? testing/drivers/nist-sts/sts/"
+      ]
+    },
+    "vendor_openvela": {
+      "revision": "f08e648c5b1386c70fd74c637307de70cf255533",
+      "dirty": false,
+      "changes": []
+    },
+    "manifests": {
+      "revision": "b53dd710d5bf58be99c1adb6c42ab2c58064e0df",
+      "dirty": true,
+      "changes": [
+        " M README.md",
+        " M docs/encfs_interfaces.md",
+        "M  encfs-sources.json",
+        "M  encfs-tested.xml",
+        "M  overlays/apps/examples/encfs_test/CMakeLists.txt",
+        "M  overlays/apps/examples/encfs_test/Makefile",
+        "M  overlays/apps/examples/encfs_test/encfs_test_main.c",
+        "A  overlays/apps/examples/encfs_test/encfs_test_rekey.c",
+        "M  overlays/apps/examples/encfs_test/encfs_test_shared.h",
+        "A  overlays/apps/examples/encfs_test/encfs_test_utf8.c",
+        "A  overlays/apps/examples/encfs_test/tests/test_rekey_cli.py",
+        "M  overlays/apps/system/encfs/Kconfig",
+        "M  overlays/apps/system/encfs/encfs_main.c",
+        "A  overlays/apps/system/encfs/tests/test_rekey_cli.py",
+        "A  overlays/apps/testing/fs/encfs_extended/CMakeLists.txt",
+        "A  overlays/apps/testing/fs/encfs_extended/Kconfig",
+        "A  overlays/apps/testing/fs/encfs_extended/Make.defs",
+        "A  overlays/apps/testing/fs/encfs_extended/Makefile",
+        "A  overlays/apps/testing/fs/encfs_extended/README.md",
+        "A  overlays/apps/testing/fs/encfs_extended/encfs_extended_main.c",
+        "M  patches/nuttx/encfs.patch",
+        "M  patches/vendor_openvela/encfs.patch",
+        " M tools/analyze_encfs_stress.py",
+        " M tools/test_encfs.py",
+        " M tools/test_encfs_gui.py",
+        "?? docs/encfs_extended_validation.md",
+        "?? docs/encfs_extension_status.md",
+        "?? docs/encfs_keywrap.md",
+        "?? tools/test_encfs_extended.py",
+        "?? tools/test_encfs_keywrap.py"
+      ]
+    }
+  },
+  "updated_at": "2026-10-25T11:15:39+08:00",
+  "finished_at": "2026-10-25T11:15:39+08:00"
+}

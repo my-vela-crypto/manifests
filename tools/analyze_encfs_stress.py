@@ -465,7 +465,7 @@ def plots(output_dir, progress):
     return "matplotlib Agg", artifacts
 
 
-def analyze(results_dir, output_dir):
+def analyze(results_dir, output_dir, phase_name="gui-widgets-storage"):
     report_path = results_dir / "report.json"
     require(report_path.is_file(), "Report is missing")
     report = json.loads(report_path.read_text())
@@ -474,11 +474,13 @@ def analyze(results_dir, output_dir):
     phases = report.get("phases", [])
     require(phases and all(phase.get("status") == "passed" for phase in phases),
             "Not all reported phases passed")
+    require(isinstance(phase_name, str) and re.fullmatch(r"[a-z0-9-]+", phase_name),
+            "Invalid requested phase name")
     matches = [phase for phase in phases
-               if phase.get("name") == "gui-widgets-storage"]
+               if phase.get("name") == phase_name]
     require(len(matches) == 1, "Missing unique GUI/storage stress phase")
     phase = matches[0]
-    serial_path = results_dir / "gui-widgets-storage.serial.log"
+    serial_path = results_dir / (phase_name + ".serial.log")
     require(Path(phase.get("serial_log", "")).name == serial_path.name and
             serial_path.is_file() and not serial_path.is_symlink(),
             "Original stress serial path is missing or inconsistent")
@@ -550,9 +552,12 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--results-dir", type=Path, required=True)
     parser.add_argument("--output-dir", type=Path, required=True)
+    parser.add_argument("--phase", default="gui-widgets-storage",
+                        help="exact stress phase name (default: gui-widgets-storage)")
     args = parser.parse_args()
     try:
-        path = analyze(args.results_dir.resolve(), args.output_dir.resolve())
+        path = analyze(args.results_dir.resolve(), args.output_dir.resolve(),
+                       args.phase)
     except (EvidenceError, OSError, ValueError, KeyError, TypeError) as exc:
         print(f"Stress evidence analysis refused: {exc}", file=sys.stderr)
         return 1

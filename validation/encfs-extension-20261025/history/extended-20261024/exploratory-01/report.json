@@ -1,0 +1,68 @@
+{
+  "schema": 1,
+  "started_at": "2026-10-24T14:16:10+08:00",
+  "status": "failed",
+  "source_root": "/home/tourist/Desktop/openvela",
+  "build_dir": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-extended",
+  "config": "goldfish-arm64-v8a-ap-encfs-extended",
+  "phases": [
+    {
+      "name": "upstream-fs-regression",
+      "instance": "encfs-regression-8f905fd57eed",
+      "command": [
+        "/home/tourist/Desktop/openvela/run-emulator.sh",
+        "goldfish-arm64-v8a-ap-encfs-extended",
+        "-keep",
+        "encfs-regression-8f905fd57eed",
+        "-no-window",
+        "-no-audio",
+        "-gpu",
+        "off",
+        "-accel",
+        "off"
+      ],
+      "started_at": "2026-10-24T14:16:10+08:00",
+      "commands": [],
+      "serial_log": "/home/tourist/Desktop/openvela/encfs-results/extended-20261024/exploratory-01/upstream-fs-regression.serial.log",
+      "exit_status": 1,
+      "exit_signal": null,
+      "finished_at": "2026-10-24T14:16:10+08:00"
+    }
+  ],
+  "scope": [
+    "Unmodified upstream cmocka filesystem suite on the encrypted /data mount",
+    "Upstream fstest 10 loops with 64 files of up to 8192 bytes",
+    "Original Vela append/read loop, 100 repetitions",
+    "Dedicated encrypted disk, SIGKILL during writes and after commits"
+  ],
+  "artifacts": {
+    "nuttx": {
+      "path": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-extended/nuttx",
+      "size": 8202376,
+      "sha256": "4a02ddd9125a950431a7bac00383087d630bbebfa6d2eed7355dce1a3184ca04"
+    },
+    "nuttx.bin": {
+      "path": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-extended/nuttx.bin",
+      "size": 1736704,
+      "sha256": "292d9997d647c7fb7da9e37d8738e40f32bad7d6103e4dde5bf8fdafec933159"
+    },
+    "vela_data.bin": {
+      "path": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-extended/vela_data.bin",
+      "size": 268435456,
+      "sha256": "a6d72ac7690f53be6ae46ba88506bd97302a093f7108472bd9efc3cefda06484"
+    },
+    "vela_system.bin": {
+      "path": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-extended/vela_system.bin",
+      "size": 1024,
+      "sha256": "3f4b8d082f8927bbf5729c96772bba0588413694c7cef82523c615c896b7a7e9"
+    },
+    ".config": {
+      "path": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-extended/.config",
+      "size": 54989,
+      "sha256": "6e56d651c32ccf71dfcb1893681ca09531988fdebc51e24260e116253aa6e6bf"
+    }
+  },
+  "error": "End Of File (EOF). Exception style platform.\n<pexpect.pty_spawn.spawn object at 0x72101d0fb010>\ncommand: /home/tourist/Desktop/openvela/run-emulator.sh\nargs: [b'/home/tourist/Desktop/openvela/run-emulator.sh', b'goldfish-arm64-v8a-ap-encfs-extended', b'-keep', b'encfs-regression-8f905fd57eed', b'-no-window', b'-no-audio', b'-gpu', b'off', b'-accel', b'off']\nbuffer (last 100 chars): ''\nbefore (last 100 chars): 'ctories are searched in the order $ANDROID_AVD_HOME, $ANDROID_SDK_HOME/avd and $HOME/.android/avd)\\r\\n'\nafter: <class 'pexpect.exceptions.EOF'>\nmatch: None\nmatch_index: None\nexitstatus: 1\nflag_eof: True\npid: 4\nchild_fd: 6\nclosed: False\ntimeout: 300\ndelimiter: <class 'pexpect.exceptions.EOF'>\nlogfile: None\nlogfile_read: <_io.TextIOWrapper name='/home/tourist/Desktop/openvela/encfs-results/extended-20261024/exploratory-01/upstream-fs-regression.serial.log' mode='w' encoding='utf-8'>\nlogfile_send: None\nmaxread: 2000\nignorecase: False\nsearchwindowsize: None\ndelaybeforesend: 0.05\ndelayafterclose: 0.1\ndelayafterterminate: 0.1\nsearcher: searcher_string:\n    0: 'encfs> '",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/tourist/Desktop/openvela/.repo/manifests/tools/test_encfs_extended.py\", line 192, in main\n    regression(args, report, \"encfs-regression-\" + stamp)\n  File \"/home/tourist/Desktop/openvela/.repo/manifests/tools/test_encfs_extended.py\", line 56, in regression\n    with base.Emulator(args, instance, item) as emu:\n  File \"/home/tourist/Desktop/openvela/.repo/manifests/tools/test_encfs.py\", line 275, in __enter__\n    self.child.expect_exact(PROMPT, timeout=args.boot_timeout)\n  File \"/usr/lib/python3/dist-packages/pexpect/spawnbase.py\", line 421, in expect_exact\n    return exp.expect_loop(timeout)\n  File \"/usr/lib/python3/dist-packages/pexpect/expect.py\", line 179, in expect_loop\n    return self.eof(e)\n  File \"/usr/lib/python3/dist-packages/pexpect/expect.py\", line 122, in eof\n    raise exc\npexpect.exceptions.EOF: End Of File (EOF). Exception style platform.\n<pexpect.pty_spawn.spawn object at 0x72101d0fb010>\ncommand: /home/tourist/Desktop/openvela/run-emulator.sh\nargs: [b'/home/tourist/Desktop/openvela/run-emulator.sh', b'goldfish-arm64-v8a-ap-encfs-extended', b'-keep', b'encfs-regression-8f905fd57eed', b'-no-window', b'-no-audio', b'-gpu', b'off', b'-accel', b'off']\nbuffer (last 100 chars): ''\nbefore (last 100 chars): 'ctories are searched in the order $ANDROID_AVD_HOME, $ANDROID_SDK_HOME/avd and $HOME/.android/avd)\\r\\n'\nafter: <class 'pexpect.exceptions.EOF'>\nmatch: None\nmatch_index: None\nexitstatus: 1\nflag_eof: True\npid: 4\nchild_fd: 6\nclosed: False\ntimeout: 300\ndelimiter: <class 'pexpect.exceptions.EOF'>\nlogfile: None\nlogfile_read: <_io.TextIOWrapper name='/home/tourist/Desktop/openvela/encfs-results/extended-20261024/exploratory-01/upstream-fs-regression.serial.log' mode='w' encoding='utf-8'>\nlogfile_send: None\nmaxread: 2000\nignorecase: False\nsearchwindowsize: None\ndelaybeforesend: 0.05\ndelayafterclose: 0.1\ndelayafterterminate: 0.1\nsearcher: searcher_string:\n    0: 'encfs> '\n",
+  "finished_at": "2026-10-24T14:16:10+08:00"
+}

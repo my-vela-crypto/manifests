@@ -3,16 +3,36 @@
  * SPDX-License-Identifier: Apache-2.0
  ****************************************************************************/
 
+/****************************************************************************
+ * Included Files
+ ****************************************************************************/
+
 #include <nuttx/config.h>
 #include <nuttx/fs/encfs.h>
 #include <errno.h>
+#include <inttypes.h>
+#include <limits.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
+/****************************************************************************
+ * Private Functions
+ ****************************************************************************/
+
 static void usage(void)
 {
   fprintf(stderr, "Usage: encfs start|stop|status|provision --erase\n");
+#ifdef CONFIG_ENCFS_KEYWRAP
+  fprintf(stderr, "       encfs rekey <provider-key-id>\n");
+#ifdef CONFIG_ENCFS_TESTING
+  fprintf(stderr, "       encfs keyfiles <independent-host-directory>\n"
+          "       encfs keyslot-failcommit on|off\n"
+          "       encfs keyslot-pausecommit <milliseconds:0..60000>\n"
+          "       keyfiles is a simulator keystore, "
+          "not hardware security.\n");
+#endif
+#endif
 #ifdef CONFIG_ENCFS_TESTING
   fprintf(stderr, "       encfs testkey <64-hex-digits>|board|none\n"
           "       Test keys only; stop the volume before changing keys.\n"
@@ -43,13 +63,14 @@ static int hex_value(char ch)
 
 static int test_key(FAR const char *text)
 {
-  uint8_t key[ENCFS_MASTER_KEY_SIZE] = {0};
+  uint8_t key[ENCFS_MASTER_KEY_SIZE];
   FAR volatile uint8_t *wipe = key;
   unsigned int i;
   int high;
   int low;
   int ret = -EINVAL;
 
+  memset(key, 0, sizeof(key));
   if (strcmp(text, "board") == 0)
     {
       ret = encfs_test_use_board_key();
@@ -76,6 +97,7 @@ static int test_key(FAR const char *text)
     }
 
 out:
+
   /* Keep parsed key material out of the CLI's stack after every outcome. */
 
   for (i = 0; i < sizeof(key); i++)
@@ -85,8 +107,8 @@ out:
 
   if (ret == -EINVAL)
     {
-      fprintf(stderr, "encfs: testkey expects exactly 64 hexadecimal digits, "
-              "board, or none\n");
+      fprintf(stderr, "encfs: testkey expects exactly 64 hexadecimal "
+              "digits, board, or none\n");
     }
   else if (ret == -EBUSY)
     {
@@ -113,6 +135,10 @@ static const char *state_name(enum encfs_state_e state)
          names[state] : "INVALID";
 }
 
+/****************************************************************************
+ * Public Functions
+ ****************************************************************************/
+
 int main(int argc, FAR char *argv[])
 {
   struct encfs_status_s status;
@@ -138,6 +164,56 @@ int main(int argc, FAR char *argv[])
     {
       ret = 0;
     }
+#ifdef CONFIG_ENCFS_KEYWRAP
+  else if (argc == 3 && (strcmp(argv[1], "rekey") == 0
+#ifdef CONFIG_ENCFS_TESTING
+                        || strcmp(argv[1], "keyslot-pausecommit") == 0
+#endif
+                       ))
+    {
+      FAR char *end;
+      unsigned long id;
+
+      errno = 0;
+      id = strtoul(argv[2], &end, 10);
+      if (argv[2][0] < '0' || argv[2][0] > '9' || *end != '\0' ||
+          errno == ERANGE || id > UINT32_MAX)
+        {
+          ret = -EINVAL;
+        }
+      else
+        {
+#ifdef CONFIG_ENCFS_TESTING
+          if (strcmp(argv[1], "keyslot-pausecommit") == 0)
+            {
+              ret = id > 60000 ? -EINVAL :
+                    encfs_test_keyslot_pause_commit((unsigned int)id);
+            }
+          else
+#endif
+            {
+              ret = encfs_rekey((uint32_t)id);
+            }
+        }
+    }
+#ifdef CONFIG_ENCFS_TESTING
+  else if (argc == 3 && strcmp(argv[1], "keyfiles") == 0)
+    {
+      ret = encfs_test_use_keyfiles(argv[2]);
+    }
+  else if (argc == 3 && strcmp(argv[1], "keyslot-failcommit") == 0)
+    {
+      if (strcmp(argv[2], "on") == 0 || strcmp(argv[2], "off") == 0)
+        {
+          ret = encfs_test_keyslot_fail_commit(strcmp(argv[2], "on") == 0);
+        }
+      else
+        {
+          ret = -EINVAL;
+        }
+    }
+#endif
+#endif
 #ifdef CONFIG_ENCFS_TESTING
   else if (argc == 3 && strcmp(argv[1], "testkey") == 0)
     {
@@ -158,6 +234,11 @@ int main(int argc, FAR char *argv[])
              status.cleanup_stage, status.cleanup_error,
              status.block_registered, status.block_keyed,
              status.lower_visible, status.upper_mounted);
+#ifdef CONFIG_ENCFS_KEYWRAP
+      printf("encfs: wrapped=%d master_id=%" PRIu32
+             " generation=%" PRIu64 "\n", status.key_wrapped,
+             status.master_id, status.key_generation);
+#endif
     }
 
   if (ret < 0)

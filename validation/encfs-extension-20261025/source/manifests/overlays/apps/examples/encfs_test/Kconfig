@@ -1,0 +1,11 @@
+# SPDX-License-Identifier: Apache-2.0
+config EXAMPLES_ENCFS_TEST
+	bool "encfs_test: encrypted data volume acceptance tests"
+	default n
+	depends on ENCFSMGR && ENCFS_TESTING
+	depends on BUILD_FLAT
+	depends on !DISABLE_PTHREAD
+	help
+	  Exercise encrypted paths, lifecycle, persistence and failure recovery.
+	  The stress mode runs two concurrent file workloads for a requested
+	  number of seconds (60 through 86400), with deterministic data checks.

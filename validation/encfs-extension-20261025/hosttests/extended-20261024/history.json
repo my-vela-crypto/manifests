@@ -1,0 +1,77 @@
+{
+  "runs": [
+    {
+      "run": "exploratory-01",
+      "status": "failed",
+      "started_at": "2026-10-24T14:16:10+08:00",
+      "finished_at": "2026-10-24T14:16:10+08:00",
+      "reason": "Sandbox blocked the emulator registration in ~/.vela; no guest testcase executed.",
+      "report": "/home/tourist/Desktop/openvela/encfs-results/extended-20261024/exploratory-01/report.json"
+    },
+    {
+      "run": "exploratory-02",
+      "status": "failed",
+      "started_at": "2026-10-24T14:16:41+08:00",
+      "finished_at": "2026-10-24T14:16:48+08:00",
+      "reason": "Guest cmocka finished but the inherited RAMLOG-only syslog configuration did not expose its results; no pass claimed without serial evidence.",
+      "report": "/home/tourist/Desktop/openvela/encfs-results/extended-20261024/exploratory-02/report.json"
+    },
+    {
+      "run": "exploratory-03",
+      "status": "failed",
+      "started_at": "2026-10-24T14:19:54+08:00",
+      "finished_at": "2026-10-24T14:20:00+08:00",
+      "reason": "Raw cmocka completed 45/46, stat timestamp failed because guest time was 1970; initial parser also mistook the final suite summary for a failed case.",
+      "report": "/home/tourist/Desktop/openvela/encfs-results/extended-20261024/exploratory-03/report.json"
+    },
+    {
+      "run": "exploratory-04",
+      "status": "failed",
+      "started_at": "2026-10-24T14:21:57+08:00",
+      "finished_at": "2026-10-24T14:22:46+08:00",
+      "reason": "Raw cmocka 45/46 with time=0; fstest OK20/FAILED0 and original Vela loop passed. First recovery fixture assumed replacement rename, rejected by FatFs EEXIST; fixture was changed to immutable committed-N names.",
+      "report": "/home/tourist/Desktop/openvela/encfs-results/extended-20261024/exploratory-04/report.json"
+    },
+    {
+      "run": "exploratory-05",
+      "status": "failed",
+      "started_at": "2026-10-24T14:23:52+08:00",
+      "finished_at": "2026-10-24T14:23:52+08:00",
+      "reason": "Explicit test clock initialization was unavailable because NSH date defaults disabled without RTC; final isolated config explicitly enables date.",
+      "report": "/home/tourist/Desktop/openvela/encfs-results/extended-20261024/exploratory-05/report.json"
+    },
+    {
+      "run": "acceptance-01",
+      "status": "passed",
+      "started_at": "2026-10-24T14:27:03+08:00",
+      "finished_at": "2026-10-24T14:28:10+08:00",
+      "reason": "Fresh build with explicit date initialization and immutable-generation recovery fixture. 46/46 cmocka, fstest10, original Vela100, 20 SIGKILL boots, and single-byte negative oracle all passed.",
+      "report": "/home/tourist/Desktop/openvela/encfs-results/extended-20261024/acceptance-01/report.json"
+    },
+    {
+      "run": "storage-acceptance-01",
+      "status": "passed",
+      "started_at": "2026-10-24T14:30:16+08:00",
+      "finished_at": "2026-10-24T14:30:57+08:00",
+      "reason": "Historical 789/0 storage run on the earlier candidate extended firmware; not the final-source dedicated storage result.",
+      "report": "/home/tourist/Desktop/openvela/encfs-results/extended-20261024/storage-acceptance-01/report.json"
+    },
+    {
+      "run": "storage-final-01",
+      "status": "passed",
+      "started_at": "2026-10-24T14:33:26+08:00",
+      "finished_at": "2026-10-24T14:33:55+08:00",
+      "reason": "Final tracked source 04264dc9a7/e198d0a1a, dedicated storage configuration: 789/0 across six boots.",
+      "report": "/home/tourist/Desktop/openvela/encfs-results/extended-20261024/storage-final-01/report.json"
+    },
+    {
+      "run": "acceptance-final-01",
+      "status": "passed",
+      "started_at": "2026-10-24T14:38:20+08:00",
+      "finished_at": "2026-10-24T14:39:25+08:00",
+      "reason": "Final tracked source 04264dc9a7/e198d0a1a, fresh extended release firmware: 46/0 cmocka, fstest10, Vela100, 20 SIGKILL recoveries, single-byte oracle all passed.",
+      "report": "/home/tourist/Desktop/openvela/encfs-results/extended-20261024/acceptance-final-01/report.json"
+    }
+  ],
+  "scope": "Historical setup and harness failures remain retained; none were counted as passing acceptance."
+}

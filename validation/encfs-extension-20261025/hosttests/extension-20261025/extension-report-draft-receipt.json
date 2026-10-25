@@ -1,0 +1,35 @@
+{
+  "status": "draft_written",
+  "written_at": "2026-10-25T11:18:05+08:00",
+  "mirrors": [
+    "/home/tourist/Desktop/openvela/.repo/manifests/docs/encfs_extension_report.md",
+    "/home/tourist/Desktop/openvela/高级操作系统/输出/第二、三层扩展实现与测试报告.md"
+  ],
+  "mirror_sha256": "fc9502855901d652aabf1cda3b1f28d013c42ff1caa5ebbbee229b5278b36ac1",
+  "mirror_bytes": 17052,
+  "old_report_notices": [
+    {
+      "path": "/home/tourist/Desktop/openvela/.repo/manifests/docs/encfs_test_report.md",
+      "old_sha256": "969486fbf073427dbb91d8083b83f93b39161ae1fcfee5328f92855421a636d9",
+      "new_sha256": "6150195044ba0bf2be86727286da17822449e2fc768af14fe675a139d8695948",
+      "original_bytes_preserved": true,
+      "only_change": "insert short relative-link history notice after title"
+    },
+    {
+      "path": "/home/tourist/Desktop/openvela/高级操作系统/输出/第二、三层实现与测试报告.md",
+      "old_sha256": "969486fbf073427dbb91d8083b83f93b39161ae1fcfee5328f92855421a636d9",
+      "new_sha256": "bca7906bc0000d463151233709e4e8d46581a0352f04611cb14a72df0d219725",
+      "original_bytes_preserved": true,
+      "only_change": "insert short relative-link history notice after title"
+    }
+  ],
+  "unchanged_first_release_archive": {
+    "path": "/home/tourist/Desktop/openvela/高级操作系统/输出/encfs-layer23-final-20261024.tar.gz",
+    "sha256": "8a9d9624e85b1e66702e11da48e4400068e0686e9ee65e0640087dedb81f7096"
+  },
+  "pending": [
+    "24h baseline completion and cold boot",
+    "24h wrapped completion and strict post-ACK audit",
+    "uniform manifest publication and final extension packaging"
+  ]
+}

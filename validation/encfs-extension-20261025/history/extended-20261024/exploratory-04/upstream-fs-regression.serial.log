@@ -1,0 +1,1848 @@
+Staged emulator artifacts from cmake_out/vela_goldfish-arm64-v8a-ap-encfs-extended/
+TARGETDIR = /home/tourist/Desktop/openvela/vendor/openvela/boards/vela
+arg=-keep
+arg=-no-window
+arg=-no-audio
+arg=-gpu
+arg=off
+arg=-accel
+arg=off
+Copy modem_simulator
+Create a core file
+记录了1+0 的读入
+记录了1+0 的写出
+209715200字节（210 MB，200 MiB）已复制，0.204765 s，1.0 GB/s
+Copy vela_data.img
+INFO    | Android emulator version 32.1.15.0 (build_id 20251216) (CL:N/A)
+INFO    | Found systemPath /home/tourist/Desktop/openvela/nuttx
+INFO    | Crashreporting disabled, not reporting crashes.
+INFO    | Duplicate loglines will be removed, if you wish to see each indiviudal line launch with the -log-nofilter flag.
+WARNING | encryption is off
+WARNING | Unknown Image type 3
+WARNING | Unknown Image type 5
+WARNING | Unknown Image type 4
+WARNING | Unknown Image type 1
+ERROR   | Unable to connect to adb daemon on port: 5037
+WARNING | Your AVD has been configured with an in-guest renderer, but the system image does not support guest rendering.Falling back to 'swiftshader_indirect' mode.
+WARNING | cannot add library /home/tourist/Desktop/openvela/prebuilts/emulator/linux-x86_64/qemu/linux-x86_64/lib64/vulkan/libvulkan.so: failed
+INFO    | added library /home/tourist/Desktop/openvela/prebuilts/emulator/linux-x86_64/lib64/vulkan/libvulkan.so
+Warning: Allowing host microphone input.
+WARNING | *** No gRPC protection active, consider launching with the -grpc-use-jwt flag.***
+INFO    | Started GRPC server at 127.0.0.1:8556, security: Local, auth: none
+INFO    | Advertising in: /run/user/1000/avd/running/pid_135747.ini
+INFO    | Connecting to bluetooth mesh: localhost:8554
+INFO    | Setting display: 0 configuration to: 1280x800, dpi: 420x420 
+NuttX 0.0.0 7934920bb8-dirty Oct 24 2026 14:19:27 arm64 ap
+encfs: state=STOPPED result=-22 stage=5 error=-22 cleanup=0/0 block=0 keyed=0 lower=0 upper=0
+encfs: Unknown error 22 (-22)
+
+NuttShell (NSH)
+encfs> [Kencfs provision --erase
+encfs: formatting encrypted data volume
+encfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0
+encfs> [Kencfs start
+encfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1
+encfs> [Kencfs_extended clock
+ENCFS_TIME_RESULT now=0 mtime=-255594496 delta=-255594496
+ENCFS_EXTENDED_RESULT action=clock result=0 errno=0
+encfs> [Kcmocka_fs_test
+[==========] nuttx_fs_test_suites: Running 46 test(s).
+[ RUN      ] test_nuttx_fs_creat01
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_creat01
+[ RUN      ] test_nuttx_fs_dup01
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_dup01
+[ RUN      ] test_nuttx_fs_fcntl01
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_fcntl01
+[ RUN      ] test_nuttx_fs_fcntl02
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_fcntl02
+[ RUN      ] test_nuttx_fs_fcntl03
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_fcntl03
+[ RUN      ] test_nuttx_fs_fstat01
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_fstat01
+[ RUN      ] test_nuttx_fs_fstat02
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_fstat02
+[ RUN      ] test_nuttx_fs_fstatfs01
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_fstatfs01
+[ RUN      ] test_nuttx_fs_fsync01
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_fsync01
+[ RUN      ] test_nuttx_fs_fsync02
+INFO: lstat /data/CM_fs_testdir errno 2
+the fbsize = 32768,buffer size=32768
+[       OK ] test_nuttx_fs_fsync02
+[ RUN      ] test_nuttx_fs_file_get01
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_file_get01
+[ RUN      ] test_nuttx_fs_mkdir01
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_mkdir01
+[ RUN      ] test_nuttx_fs_open01
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_open01
+[ RUN      ] test_nuttx_fs_open02
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_open02
+[ RUN      ] test_nuttx_fs_opendir01
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_opendir01
+[ RUN      ] test_nuttx_fs_opendir02
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_opendir02
+[ RUN      ] test_nuttx_fs_pread01
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_pread01
+[ RUN      ] test_nuttx_fs_pwrite01
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_pwrite01
+[ RUN      ] test_nuttx_fs_read01
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_read01
+[ RUN      ] test_nuttx_fs_readdir01
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_readdir01
+[ RUN      ] test_nuttx_fs_readlink01
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_readlink01
+[ RUN      ] test_nuttx_fs_rename01
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_rename01
+[ RUN      ] test_nuttx_fs_rename02
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_rename02
+[ RUN      ] test_nuttx_fs_rewinddir01
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_rewinddir01
+[ RUN      ] test_nuttx_fs_rmdir01
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_rmdir01
+[ RUN      ] test_nuttx_fs_rmdir02
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_rmdir02
+[ RUN      ] test_nuttx_fs_rmdir03
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_rmdir03
+[ RUN      ] test_nuttx_fs_seek01
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_seek01
+[ RUN      ] test_nuttx_fs_seek02
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_seek02
+[ RUN      ] test_nuttx_fs_stat01
+INFO: lstat /data/CM_fs_testdir errno 2
+[  ERROR   ] --- -255594496 is not within the range [-30, 30]
+[   LINE   ] --- /testing/testsuites/kernel/fs/cases/fs_stat_test.c:133: error: Failure!
+[  FAILED  ] test_nuttx_fs_stat01
+[ RUN      ] test_nuttx_fs_statfs01
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_statfs01
+[ RUN      ] test_nuttx_fs_symlink01
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_symlink01
+[ RUN      ] test_nuttx_fs_truncate01
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_truncate01
+[ RUN      ] test_nuttx_fs_unlink01
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_unlink01
+[ RUN      ] test_nuttx_fs_write01
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_write01
+[ RUN      ] test_nuttx_fs_write02
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_write02
+[ RUN      ] test_nuttx_fs_write03
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_write03
+[ RUN      ] test_nuttx_fs_append01
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_append01
+[ RUN      ] test_nuttx_fs_sendfile01
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_sendfile01
+[ RUN      ] test_nuttx_fs_sendfile02
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_sendfile02
+[ RUN      ] test_nuttx_fs_stream01
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_stream01
+[ RUN      ] test_nuttx_fs_stream02
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_stream02
+[ RUN      ] test_nuttx_fs_stream03
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_stream03
+[ RUN      ] test_nuttx_fs_stream04
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_stream04
+[ RUN      ] test_nuttx_fs_eventfd
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_eventfd
+[ RUN      ] test_nuttx_fs_poll01
+INFO: lstat /data/CM_fs_testdir errno 2
+[       OK ] test_nuttx_fs_poll01
+[==========] nuttx_fs_test_suites: 46 test(s) run.
+[  PASSED  ] 45 test(s).
+[  FAILED  ] nuttx_fs_test_suites: 1 test(s), listed below:
+[  FAILED  ] test_nuttx_fs_stat01
+
+ 1 FAILED TEST(S)
+encfs> [Kmkdir /data/fstest
+encfs> [Kfstest -m /data/fstest -n 10 -o 64 -s 8192
+
+=== FILLING 1 =============================
+Filled file system
+  Number of files: 64
+  Number deleted:  0
+Directory:
+ 1. Type[8]: File  Name: 0D0n02ab
+ 2. Type[8]: File  Name: LmMxdOyPIU0S0mjPpzN
+ 3. Type[8]: File  Name: gAnTKNPa0O0GKvR8IZ
+ 4. Type[8]: File  Name: ax2MdSFvWpF0baOi
+ 5. Type[8]: File  Name: QqZLOvTfXj5
+ 6. Type[8]: File  Name: YJrRNqQUtw3
+ 7. Type[8]: File  Name: E6PkEWHMd3ajUd
+ 8. Type[8]: File  Name: t5GlPLddqsXnPu8KK
+ 9. Type[8]: File  Name: G6kYBC
+10. Type[8]: File  Name: gyUt
+11. Type[8]: File  Name: WUhfI
+12. Type[8]: File  Name: FDawR
+13. Type[8]: File  Name: 0AmU13XQA1CRkXzphfQ
+14. Type[8]: File  Name: FW8uOlzqcJmVmP
+15. Type[8]: File  Name: icNIClqtCA2bz9U19
+16. Type[8]: File  Name: U5QU
+17. Type[8]: File  Name: PB5CuCihd
+18. Type[8]: File  Name: OlCW9R0bU
+19. Type[8]: File  Name: dIJFyQB8PWvNUP
+20. Type[8]: File  Name: HEKbrK
+21. Type[8]: File  Name: yXHuV6d6fgWii68NP
+22. Type[8]: File  Name: aPHG07S
+23. Type[8]: File  Name: DvbuW1Ko9OuL1S7fc
+24. Type[8]: File  Name: MOV37aHc2C50stiv7WZ
+25. Type[8]: File  Name: iWxK6M5Vw4cZhq1O
+26. Type[8]: File  Name: TAnI00wYsQ6SP6hTq
+27. Type[8]: File  Name: BtDD2ndcd
+28. Type[8]: File  Name: s6lp55OUrDMaWD
+29. Type[8]: File  Name: rwC1W
+30. Type[8]: File  Name: 1Kuos
+31. Type[8]: File  Name: e41xIlNbg8dE8ZO6HF
+32. Type[8]: File  Name: eOTN7
+33. Type[8]: File  Name: l4NetO6mWP4npbMqY9
+34. Type[8]: File  Name: UXZz8c
+35. Type[8]: File  Name: T9n9Wy
+36. Type[8]: File  Name: MLh6AkA0LRWO
+37. Type[8]: File  Name: vnNtHQuwG5S
+38. Type[8]: File  Name: hp0AC
+39. Type[8]: File  Name: 0pw0
+40. Type[8]: File  Name: iVvvGSIwVf6c
+41. Type[8]: File  Name: S630o5Rj9QYZJ
+42. Type[8]: File  Name: wkNdMQk1lx
+43. Type[8]: File  Name: A2A52iHAIJG2gNAddqb
+44. Type[8]: File  Name: Pk6qHw7yrR1qSYc88NH
+45. Type[8]: File  Name: YzsLH0tPgQb
+46. Type[8]: File  Name: hgSI
+47. Type[8]: File  Name: Ke0YC0t
+48. Type[8]: File  Name: hT9jRtLaXJ4FCQ2
+49. Type[8]: File  Name: aVrz1IEJWgP
+50. Type[8]: File  Name: nGIJnjSDuHfFzCQ
+51. Type[8]: File  Name: 2XqH0SPoKlF4TmnrCK
+52. Type[8]: File  Name: HiofenhYWvpa
+53. Type[8]: File  Name: Jjgp
+54. Type[8]: File  Name: YUvqgFvQTeiyL4riPKR
+55. Type[8]: File  Name: jvyEi
+56. Type[8]: File  Name: WICcb
+57. Type[8]: File  Name: FJEG5wxXty
+58. Type[8]: File  Name: ZWZCXUDe
+59. Type[8]: File  Name: oGSJg6HqM8x
+60. Type[8]: File  Name: dwQ7ciH
+61. Type[8]: File  Name: K75OyG
+62. Type[8]: File  Name: BvK58Q6xkqtV5h
+63. Type[8]: File  Name: ZY0kBqJ
+64. Type[8]: File  Name: URi9kJrk1rjJY7vZW
+Total file size: 266362
+
+=== DELETING 1 ============================
+Deleted some files
+  Number of files: 64
+  Number deleted:  33
+Directory:
+ 1. Type[8]: File  Name: 0D0n02ab
+ 2. Type[8]: File  Name: LmMxdOyPIU0S0mjPpzN
+ 3. Type[8]: File  Name: gAnTKNPa0O0GKvR8IZ
+ 4. Type[8]: File  Name: QqZLOvTfXj5
+ 5. Type[8]: File  Name: YJrRNqQUtw3
+ 6. Type[8]: File  Name: E6PkEWHMd3ajUd
+ 7. Type[8]: File  Name: t5GlPLddqsXnPu8KK
+ 8. Type[8]: File  Name: gyUt
+ 9. Type[8]: File  Name: aPHG07S
+10. Type[8]: File  Name: iWxK6M5Vw4cZhq1O
+11. Type[8]: File  Name: TAnI00wYsQ6SP6hTq
+12. Type[8]: File  Name: wkNdMQk1lx
+13. Type[8]: File  Name: A2A52iHAIJG2gNAddqb
+14. Type[8]: File  Name: YzsLH0tPgQb
+15. Type[8]: File  Name: hgSI
+16. Type[8]: File  Name: Ke0YC0t
+17. Type[8]: File  Name: hT9jRtLaXJ4FCQ2
+18. Type[8]: File  Name: nGIJnjSDuHfFzCQ
+19. Type[8]: File  Name: HiofenhYWvpa
+20. Type[8]: File  Name: Jjgp
+21. Type[8]: File  Name: YUvqgFvQTeiyL4riPKR
+22. Type[8]: File  Name: jvyEi
+23. Type[8]: File  Name: WICcb
+24. Type[8]: File  Name: FJEG5wxXty
+25. Type[8]: File  Name: ZWZCXUDe
+26. Type[8]: File  Name: oGSJg6HqM8x
+27. Type[8]: File  Name: dwQ7ciH
+28. Type[8]: File  Name: K75OyG
+29. Type[8]: File  Name: BvK58Q6xkqtV5h
+30. Type[8]: File  Name: ZY0kBqJ
+31. Type[8]: File  Name: URi9kJrk1rjJY7vZW
+Total file size: 123973
+File System:
+  Block Size:      32768
+  No. Blocks:      8189
+  Free Blocks:     8152
+  Avail. Blocks:   8152
+  No. File Nodes:  0
+  Free File Nodes: 0
+
+End of loop memory usage:
+VARIABLE  BEFORE   AFTER    DELTA
+======== ======== ======== ========
+arena     7bd8ff8  7bd8ff8        0
+ordblks         4        9        5
+mxordblk  7ba77c0  7ba75c0 fffffe00
+uordblks    31008    314f8      4f0
+fordblks  7ba7ff0  7ba7b00 fffffb10
+
+=== FILLING 2 =============================
+Filled file system
+  Number of files: 64
+  Number deleted:  0
+Directory:
+ 1. Type[8]: File  Name: 0D0n02ab
+ 2. Type[8]: File  Name: LmMxdOyPIU0S0mjPpzN
+ 3. Type[8]: File  Name: gAnTKNPa0O0GKvR8IZ
+ 4. Type[8]: File  Name: hSLQzh6TQ
+ 5. Type[8]: File  Name: QqZLOvTfXj5
+ 6. Type[8]: File  Name: YJrRNqQUtw3
+ 7. Type[8]: File  Name: E6PkEWHMd3ajUd
+ 8. Type[8]: File  Name: t5GlPLddqsXnPu8KK
+ 9. Type[8]: File  Name: mbLOtlyQXT
+10. Type[8]: File  Name: gyUt
+11. Type[8]: File  Name: 27KIDu800RLTSvVjHHb
+12. Type[8]: File  Name: nX6KKHWKSV1G
+13. Type[8]: File  Name: HgXAzA2z
+14. Type[8]: File  Name: WC03xohSRkd1lBic2d8
+15. Type[8]: File  Name: OX9PeuuC8Kb
+16. Type[8]: File  Name: nxqVjoD
+17. Type[8]: File  Name: yFpNu4Q2ancCt
+18. Type[8]: File  Name: hV2yFAAP
+19. Type[8]: File  Name: pP4yaJ01c
+20. Type[8]: File  Name: PjpGGqrroBEjXVq
+21. Type[8]: File  Name: aPHG07S
+22. Type[8]: File  Name: Biovx9z8gxl
+23. Type[8]: File  Name: 0Iker6UGA5hjtE
+24. Type[8]: File  Name: iWxK6M5Vw4cZhq1O
+25. Type[8]: File  Name: TAnI00wYsQ6SP6hTq
+26. Type[8]: File  Name: I8u7CuZiTd3z
+27. Type[8]: File  Name: nugZn1GSc16F30
+28. Type[8]: File  Name: jYCreRgZoha8P8O
+29. Type[8]: File  Name: B2oxIoMDT
+30. Type[8]: File  Name: xawPItLibRd8Iw
+31. Type[8]: File  Name: 5ptzTmM
+32. Type[8]: File  Name: S9gG2Ol4prA
+33. Type[8]: File  Name: UBOqjlZfwL1i6PMAG
+34. Type[8]: File  Name: JpBlvtvTGXn
+35. Type[8]: File  Name: KYA00CHCRWHX
+36. Type[8]: File  Name: 2WzG5JfuKy
+37. Type[8]: File  Name: j4HzkMP32ULYKHCeY3
+38. Type[8]: File  Name: uYnE
+39. Type[8]: File  Name: uOVlRncf
+40. Type[8]: File  Name: wkNdMQk1lx
+41. Type[8]: File  Name: A2A52iHAIJG2gNAddqb
+42. Type[8]: File  Name: TqDCGE
+43. Type[8]: File  Name: YzsLH0tPgQb
+44. Type[8]: File  Name: hgSI
+45. Type[8]: File  Name: Ke0YC0t
+46. Type[8]: File  Name: hT9jRtLaXJ4FCQ2
+47. Type[8]: File  Name: viSxMxf
+48. Type[8]: File  Name: nGIJnjSDuHfFzCQ
+49. Type[8]: File  Name: ETb2BG
+50. Type[8]: File  Name: HiofenhYWvpa
+51. Type[8]: File  Name: Jjgp
+52. Type[8]: File  Name: YUvqgFvQTeiyL4riPKR
+53. Type[8]: File  Name: jvyEi
+54. Type[8]: File  Name: WICcb
+55. Type[8]: File  Name: FJEG5wxXty
+56. Type[8]: File  Name: ZWZCXUDe
+57. Type[8]: File  Name: oGSJg6HqM8x
+58. Type[8]: File  Name: dwQ7ciH
+59. Type[8]: File  Name: K75OyG
+60. Type[8]: File  Name: BvK58Q6xkqtV5h
+61. Type[8]: File  Name: ZY0kBqJ
+62. Type[8]: File  Name: URi9kJrk1rjJY7vZW
+63. Type[8]: File  Name: MzD3wpNo
+64. Type[8]: File  Name: 8ont2v8ncY0
+Total file size: 242945
+
+=== DELETING 2 ============================
+Deleted some files
+  Number of files: 64
+  Number deleted:  44
+Directory:
+ 1. Type[8]: File  Name: 0D0n02ab
+ 2. Type[8]: File  Name: LmMxdOyPIU0S0mjPpzN
+ 3. Type[8]: File  Name: hSLQzh6TQ
+ 4. Type[8]: File  Name: E6PkEWHMd3ajUd
+ 5. Type[8]: File  Name: nX6KKHWKSV1G
+ 6. Type[8]: File  Name: nxqVjoD
+ 7. Type[8]: File  Name: nGIJnjSDuHfFzCQ
+ 8. Type[8]: File  Name: HiofenhYWvpa
+ 9. Type[8]: File  Name: YUvqgFvQTeiyL4riPKR
+10. Type[8]: File  Name: jvyEi
+11. Type[8]: File  Name: WICcb
+12. Type[8]: File  Name: FJEG5wxXty
+13. Type[8]: File  Name: ZWZCXUDe
+14. Type[8]: File  Name: oGSJg6HqM8x
+15. Type[8]: File  Name: dwQ7ciH
+16. Type[8]: File  Name: BvK58Q6xkqtV5h
+17. Type[8]: File  Name: ZY0kBqJ
+18. Type[8]: File  Name: URi9kJrk1rjJY7vZW
+19. Type[8]: File  Name: MzD3wpNo
+20. Type[8]: File  Name: 8ont2v8ncY0
+Total file size: 73611
+File System:
+  Block Size:      32768
+  No. Blocks:      8189
+  Free Blocks:     8163
+  Avail. Blocks:   8163
+  No. File Nodes:  0
+  Free File Nodes: 0
+
+End of loop memory usage:
+VARIABLE  BEFORE   AFTER    DELTA
+======== ======== ======== ========
+arena     7bd8ff8  7bd8ff8        0
+ordblks         9        9        0
+mxordblk  7ba75c0  7ba7590 ffffffd0
+uordblks    314f8    31338 fffffe40
+fordblks  7ba7b00  7ba7cc0      1c0
+
+=== FILLING 3 =============================
+Filled file system
+  Number of files: 64
+  Number deleted:  0
+Directory:
+ 1. Type[8]: File  Name: 0D0n02ab
+ 2. Type[8]: File  Name: LmMxdOyPIU0S0mjPpzN
+ 3. Type[8]: File  Name: IaVnR3lP
+ 4. Type[8]: File  Name: hSLQzh6TQ
+ 5. Type[8]: File  Name: 6jvomqL
+ 6. Type[8]: File  Name: X6Tv3xjNd66vAHLb
+ 7. Type[8]: File  Name: E6PkEWHMd3ajUd
+ 8. Type[8]: File  Name: PRc9d1QQABQx
+ 9. Type[8]: File  Name: u8seCftj
+10. Type[8]: File  Name: UyNtazhs8v5
+11. Type[8]: File  Name: k4jKW8Z0
+12. Type[8]: File  Name: nX6KKHWKSV1G
+13. Type[8]: File  Name: qQpdK
+14. Type[8]: File  Name: 9Knz2USc
+15. Type[8]: File  Name: BmSZ
+16. Type[8]: File  Name: nxqVjoD
+17. Type[8]: File  Name: yhhbJyKGY0E5zCF0
+18. Type[8]: File  Name: eun71
+19. Type[8]: File  Name: q4PIHJijU3Z
+20. Type[8]: File  Name: iilDjqJc6yOB89cG
+21. Type[8]: File  Name: ZlIYOk0V2MTQ
+22. Type[8]: File  Name: MBB0excON9f7yVjya
+23. Type[8]: File  Name: 8GeW9GhpAQO0
+24. Type[8]: File  Name: foD7fSUErQLs
+25. Type[8]: File  Name: cnP2lU
+26. Type[8]: File  Name: uH0WOK7LxD6nD4BW
+27. Type[8]: File  Name: kRIcaB1b
+28. Type[8]: File  Name: qLGxtj1B
+29. Type[8]: File  Name: gnRn5ujIypIxFJA
+30. Type[8]: File  Name: G0PmmkmqskEaHwiwJp
+31. Type[8]: File  Name: 0MuX7cxYVzX8vgB
+32. Type[8]: File  Name: 1BGPpyxPZHx
+33. Type[8]: File  Name: CxHZj5Jwgs1OH6lIB
+34. Type[8]: File  Name: EeGYGUaukg
+35. Type[8]: File  Name: wFTGxTl
+36. Type[8]: File  Name: Dpul8MC
+37. Type[8]: File  Name: P00r0geXjU
+38. Type[8]: File  Name: g11fD
+39. Type[8]: File  Name: QCdAjwNyYJfStWn
+40. Type[8]: File  Name: C1aguXuXoI0d4zj
+41. Type[8]: File  Name: Mz0NHumQyonjf7C9
+42. Type[8]: File  Name: ETwOgLweB3vLy
+43. Type[8]: File  Name: oMUou7awu0
+44. Type[8]: File  Name: yYCuXxGQ3eBjdMpAc
+45. Type[8]: File  Name: lgNMt
+46. Type[8]: File  Name: 7WGJemwJsiwGS71tlH
+47. Type[8]: File  Name: R8Xu88vd
+48. Type[8]: File  Name: AqyX1
+49. Type[8]: File  Name: nGIJnjSDuHfFzCQ
+50. Type[8]: File  Name: yUz4GR
+51. Type[8]: File  Name: HiofenhYWvpa
+52. Type[8]: File  Name: xl6aWf
+53. Type[8]: File  Name: YUvqgFvQTeiyL4riPKR
+54. Type[8]: File  Name: jvyEi
+55. Type[8]: File  Name: WICcb
+56. Type[8]: File  Name: FJEG5wxXty
+57. Type[8]: File  Name: ZWZCXUDe
+58. Type[8]: File  Name: oGSJg6HqM8x
+59. Type[8]: File  Name: dwQ7ciH
+60. Type[8]: File  Name: BvK58Q6xkqtV5h
+61. Type[8]: File  Name: ZY0kBqJ
+62. Type[8]: File  Name: URi9kJrk1rjJY7vZW
+63. Type[8]: File  Name: MzD3wpNo
+64. Type[8]: File  Name: 8ont2v8ncY0
+Total file size: 223779
+
+=== DELETING 3 ============================
+Deleted some files
+  Number of files: 64
+  Number deleted:  30
+Directory:
+ 1. Type[8]: File  Name: 0D0n02ab
+ 2. Type[8]: File  Name: PRc9d1QQABQx
+ 3. Type[8]: File  Name: u8seCftj
+ 4. Type[8]: File  Name: k4jKW8Z0
+ 5. Type[8]: File  Name: nX6KKHWKSV1G
+ 6. Type[8]: File  Name: qQpdK
+ 7. Type[8]: File  Name: uH0WOK7LxD6nD4BW
+ 8. Type[8]: File  Name: kRIcaB1b
+ 9. Type[8]: File  Name: qLGxtj1B
+10. Type[8]: File  Name: 0MuX7cxYVzX8vgB
+11. Type[8]: File  Name: 1BGPpyxPZHx
+12. Type[8]: File  Name: CxHZj5Jwgs1OH6lIB
+13. Type[8]: File  Name: EeGYGUaukg
+14. Type[8]: File  Name: wFTGxTl
+15. Type[8]: File  Name: QCdAjwNyYJfStWn
+16. Type[8]: File  Name: C1aguXuXoI0d4zj
+17. Type[8]: File  Name: Mz0NHumQyonjf7C9
+18. Type[8]: File  Name: ETwOgLweB3vLy
+19. Type[8]: File  Name: oMUou7awu0
+20. Type[8]: File  Name: 7WGJemwJsiwGS71tlH
+21. Type[8]: File  Name: yUz4GR
+22. Type[8]: File  Name: HiofenhYWvpa
+23. Type[8]: File  Name: xl6aWf
+24. Type[8]: File  Name: YUvqgFvQTeiyL4riPKR
+25. Type[8]: File  Name: jvyEi
+26. Type[8]: File  Name: WICcb
+27. Type[8]: File  Name: FJEG5wxXty
+28. Type[8]: File  Name: ZWZCXUDe
+29. Type[8]: File  Name: oGSJg6HqM8x
+30. Type[8]: File  Name: dwQ7ciH
+31. Type[8]: File  Name: BvK58Q6xkqtV5h
+32. Type[8]: File  Name: ZY0kBqJ
+33. Type[8]: File  Name: URi9kJrk1rjJY7vZW
+34. Type[8]: File  Name: 8ont2v8ncY0
+Total file size: 125143
+File System:
+  Block Size:      32768
+  No. Blocks:      8189
+  Free Blocks:     8149
+  Avail. Blocks:   8149
+  No. File Nodes:  0
+  Free File Nodes: 0
+
+End of loop memory usage:
+VARIABLE  BEFORE   AFTER    DELTA
+======== ======== ======== ========
+arena     7bd8ff8  7bd8ff8        0
+ordblks         9       14        5
+mxordblk  7ba7590  7ba7590        0
+uordblks    31338    31558      220
+fordblks  7ba7cc0  7ba7aa0 fffffde0
+
+=== FILLING 4 =============================
+Filled file system
+  Number of files: 64
+  Number deleted:  0
+Directory:
+ 1. Type[8]: File  Name: 0D0n02ab
+ 2. Type[8]: File  Name: 7STx
+ 3. Type[8]: File  Name: 5Ae8TXJRC
+ 4. Type[8]: File  Name: mJTI5yUr340K0L
+ 5. Type[8]: File  Name: d3Z5ls83k0d40x
+ 6. Type[8]: File  Name: bbox7Ta060jbW
+ 7. Type[8]: File  Name: R40Ax9jQufb
+ 8. Type[8]: File  Name: PRc9d1QQABQx
+ 9. Type[8]: File  Name: u8seCftj
+10. Type[8]: File  Name: 4dQO4EZS0qzNe
+11. Type[8]: File  Name: k4jKW8Z0
+12. Type[8]: File  Name: nX6KKHWKSV1G
+13. Type[8]: File  Name: qQpdK
+14. Type[8]: File  Name: NEKpZLm2heBc
+15. Type[8]: File  Name: xyCcnnxC9S9sHP
+16. Type[8]: File  Name: BkHvUA
+17. Type[8]: File  Name: qfjOu5iiGTuZ
+18. Type[8]: File  Name: QpU3vIkDqZPzear9Ol
+19. Type[8]: File  Name: vBi0y9bN7rUIl0
+20. Type[8]: File  Name: ug799g93lvZx
+21. Type[8]: File  Name: 6gxTI8PBgmhRaAs
+22. Type[8]: File  Name: BbkaDET7Q9N1g
+23. Type[8]: File  Name: ZADHuyQBUzF9Id
+24. Type[8]: File  Name: xc9Nfgxh
+25. Type[8]: File  Name: RydP
+26. Type[8]: File  Name: uH0WOK7LxD6nD4BW
+27. Type[8]: File  Name: kRIcaB1b
+28. Type[8]: File  Name: qLGxtj1B
+29. Type[8]: File  Name: fDaqzAK466V50RvR6uN
+30. Type[8]: File  Name: YVooBvQBxB3bMneIspl
+31. Type[8]: File  Name: 0MuX7cxYVzX8vgB
+32. Type[8]: File  Name: 1BGPpyxPZHx
+33. Type[8]: File  Name: CxHZj5Jwgs1OH6lIB
+34. Type[8]: File  Name: EeGYGUaukg
+35. Type[8]: File  Name: wFTGxTl
+36. Type[8]: File  Name: L0hrvyyjGEbsMwIlQr
+37. Type[8]: File  Name: 5SAmw0H1v2VOaC
+38. Type[8]: File  Name: QCdAjwNyYJfStWn
+39. Type[8]: File  Name: C1aguXuXoI0d4zj
+40. Type[8]: File  Name: Mz0NHumQyonjf7C9
+41. Type[8]: File  Name: ETwOgLweB3vLy
+42. Type[8]: File  Name: oMUou7awu0
+43. Type[8]: File  Name: OwrdSOvNhO1bIIMiL
+44. Type[8]: File  Name: Y83GQp3
+45. Type[8]: File  Name: 7WGJemwJsiwGS71tlH
+46. Type[8]: File  Name: Lh9niVnMm7t880
+47. Type[8]: File  Name: 9s26HuMS60KbfZ
+48. Type[8]: File  Name: 2x34XfPArnqDgrI
+49. Type[8]: File  Name: yUz4GR
+50. Type[8]: File  Name: HiofenhYWvpa
+51. Type[8]: File  Name: xl6aWf
+52. Type[8]: File  Name: YUvqgFvQTeiyL4riPKR
+53. Type[8]: File  Name: jvyEi
+54. Type[8]: File  Name: WICcb
+55. Type[8]: File  Name: FJEG5wxXty
+56. Type[8]: File  Name: ZWZCXUDe
+57. Type[8]: File  Name: oGSJg6HqM8x
+58. Type[8]: File  Name: dwQ7ciH
+59. Type[8]: File  Name: BvK58Q6xkqtV5h
+60. Type[8]: File  Name: ZY0kBqJ
+61. Type[8]: File  Name: URi9kJrk1rjJY7vZW
+62. Type[8]: File  Name: 8ont2v8ncY0
+63. Type[8]: File  Name: XJAEVYMv3PLfsmlT
+64. Type[8]: File  Name: qqQnuycB0A3T
+Total file size: 250703
+
+=== DELETING 4 ============================
+Deleted some files
+  Number of files: 64
+  Number deleted:  46
+Directory:
+ 1. Type[8]: File  Name: 0D0n02ab
+ 2. Type[8]: File  Name: bbox7Ta060jbW
+ 3. Type[8]: File  Name: nX6KKHWKSV1G
+ 4. Type[8]: File  Name: Y83GQp3
+ 5. Type[8]: File  Name: 2x34XfPArnqDgrI
+ 6. Type[8]: File  Name: yUz4GR
+ 7. Type[8]: File  Name: HiofenhYWvpa
+ 8. Type[8]: File  Name: xl6aWf
+ 9. Type[8]: File  Name: jvyEi
+10. Type[8]: File  Name: WICcb
+11. Type[8]: File  Name: FJEG5wxXty
+12. Type[8]: File  Name: ZWZCXUDe
+13. Type[8]: File  Name: oGSJg6HqM8x
+14. Type[8]: File  Name: dwQ7ciH
+15. Type[8]: File  Name: BvK58Q6xkqtV5h
+16. Type[8]: File  Name: ZY0kBqJ
+17. Type[8]: File  Name: URi9kJrk1rjJY7vZW
+18. Type[8]: File  Name: XJAEVYMv3PLfsmlT
+Total file size: 65085
+File System:
+  Block Size:      32768
+  No. Blocks:      8189
+  Free Blocks:     8165
+  Avail. Blocks:   8165
+  No. File Nodes:  0
+  Free File Nodes: 0
+
+End of loop memory usage:
+VARIABLE  BEFORE   AFTER    DELTA
+======== ======== ======== ========
+arena     7bd8ff8  7bd8ff8        0
+ordblks        14        8       -6
+mxordblk  7ba7590  7ba7570 ffffffe0
+uordblks    31558    312c8 fffffd70
+fordblks  7ba7aa0  7ba7d30      290
+
+=== FILLING 5 =============================
+Filled file system
+  Number of files: 64
+  Number deleted:  0
+Directory:
+ 1. Type[8]: File  Name: 0D0n02ab
+ 2. Type[8]: File  Name: g7RE
+ 3. Type[8]: File  Name: XOYyzxSS
+ 4. Type[8]: File  Name: ctb0fvLNjQMMVA
+ 5. Type[8]: File  Name: dZI8B8NIySZj5ZMx
+ 6. Type[8]: File  Name: bbox7Ta060jbW
+ 7. Type[8]: File  Name: 3pEabjAphukcP6RTmf
+ 8. Type[8]: File  Name: ITl7HVcafKghad
+ 9. Type[8]: File  Name: xVIQNsTR
+10. Type[8]: File  Name: ArDXUOeaMI07y9
+11. Type[8]: File  Name: q0pz4kCHsA9
+12. Type[8]: File  Name: nX6KKHWKSV1G
+13. Type[8]: File  Name: Hy4LTgdM1RAj3zxtS
+14. Type[8]: File  Name: 5m0ks8mQeoJXaNH
+15. Type[8]: File  Name: 9y80O3XIlrpz6
+16. Type[8]: File  Name: AlL2inA3mBJmlaaCDU
+17. Type[8]: File  Name: m08dRBiPOlWWPd4v
+18. Type[8]: File  Name: tjEBb5o6PMCqYlPIe
+19. Type[8]: File  Name: KVZwthOFV6v6IZZiiuS
+20. Type[8]: File  Name: XhQlSRV1ersUNAu08F
+21. Type[8]: File  Name: XxslyEdzMA
+22. Type[8]: File  Name: R9puomsxZG2jkyfx
+23. Type[8]: File  Name: BYoBVOUa7lVM
+24. Type[8]: File  Name: Pzk9Ar
+25. Type[8]: File  Name: Un6Ci2ul
+26. Type[8]: File  Name: 3EnUz0WFe0rkMt
+27. Type[8]: File  Name: LCA0HDZVxSHToG
+28. Type[8]: File  Name: cCbyCqD8U6IE
+29. Type[8]: File  Name: hfxYehAhSQzx
+30. Type[8]: File  Name: Am0Ld
+31. Type[8]: File  Name: tXJup
+32. Type[8]: File  Name: GyvPtNgphDk3FgU
+33. Type[8]: File  Name: epFW
+34. Type[8]: File  Name: XdaWd5r
+35. Type[8]: File  Name: FowOEg
+36. Type[8]: File  Name: gca2LqSuVCIPzq
+37. Type[8]: File  Name: pjwAOsQO7l
+38. Type[8]: File  Name: peL8lL0v
+39. Type[8]: File  Name: 7fb98kIMoxXl1K
+40. Type[8]: File  Name: 9uH3o0VnkPCM70snhAT
+41. Type[8]: File  Name: dWxIE
+42. Type[8]: File  Name: ifRosuFIdaxqX
+43. Type[8]: File  Name: qzZdryFHxIxx0u
+44. Type[8]: File  Name: 02uJmo
+45. Type[8]: File  Name: Y83GQp3
+46. Type[8]: File  Name: HcN6EKitWWMfTU
+47. Type[8]: File  Name: ArzFb0ecFm1Pck2P2gp
+48. Type[8]: File  Name: tB1BNx3wWL59
+49. Type[8]: File  Name: 2x34XfPArnqDgrI
+50. Type[8]: File  Name: yUz4GR
+51. Type[8]: File  Name: HiofenhYWvpa
+52. Type[8]: File  Name: xl6aWf
+53. Type[8]: File  Name: pL5kxFOl8qTa
+54. Type[8]: File  Name: jvyEi
+55. Type[8]: File  Name: WICcb
+56. Type[8]: File  Name: FJEG5wxXty
+57. Type[8]: File  Name: ZWZCXUDe
+58. Type[8]: File  Name: oGSJg6HqM8x
+59. Type[8]: File  Name: dwQ7ciH
+60. Type[8]: File  Name: 8vBAef8y
+61. Type[8]: File  Name: BvK58Q6xkqtV5h
+62. Type[8]: File  Name: ZY0kBqJ
+63. Type[8]: File  Name: URi9kJrk1rjJY7vZW
+64. Type[8]: File  Name: XJAEVYMv3PLfsmlT
+Total file size: 285253
+
+=== DELETING 5 ============================
+Deleted some files
+  Number of files: 64
+  Number deleted:  32
+Directory:
+ 1. Type[8]: File  Name: 0D0n02ab
+ 2. Type[8]: File  Name: ArDXUOeaMI07y9
+ 3. Type[8]: File  Name: nX6KKHWKSV1G
+ 4. Type[8]: File  Name: m08dRBiPOlWWPd4v
+ 5. Type[8]: File  Name: tjEBb5o6PMCqYlPIe
+ 6. Type[8]: File  Name: R9puomsxZG2jkyfx
+ 7. Type[8]: File  Name: BYoBVOUa7lVM
+ 8. Type[8]: File  Name: Un6Ci2ul
+ 9. Type[8]: File  Name: LCA0HDZVxSHToG
+10. Type[8]: File  Name: hfxYehAhSQzx
+11. Type[8]: File  Name: GyvPtNgphDk3FgU
+12. Type[8]: File  Name: epFW
+13. Type[8]: File  Name: FowOEg
+14. Type[8]: File  Name: peL8lL0v
+15. Type[8]: File  Name: 7fb98kIMoxXl1K
+16. Type[8]: File  Name: 9uH3o0VnkPCM70snhAT
+17. Type[8]: File  Name: ifRosuFIdaxqX
+18. Type[8]: File  Name: 02uJmo
+19. Type[8]: File  Name: ArzFb0ecFm1Pck2P2gp
+20. Type[8]: File  Name: tB1BNx3wWL59
+21. Type[8]: File  Name: 2x34XfPArnqDgrI
+22. Type[8]: File  Name: yUz4GR
+23. Type[8]: File  Name: xl6aWf
+24. Type[8]: File  Name: pL5kxFOl8qTa
+25. Type[8]: File  Name: jvyEi
+26. Type[8]: File  Name: FJEG5wxXty
+27. Type[8]: File  Name: ZWZCXUDe
+28. Type[8]: File  Name: oGSJg6HqM8x
+29. Type[8]: File  Name: dwQ7ciH
+30. Type[8]: File  Name: ZY0kBqJ
+31. Type[8]: File  Name: URi9kJrk1rjJY7vZW
+32. Type[8]: File  Name: XJAEVYMv3PLfsmlT
+Total file size: 137792
+File System:
+  Block Size:      32768
+  No. Blocks:      8189
+  Free Blocks:     8151
+  Avail. Blocks:   8151
+  No. File Nodes:  0
+  Free File Nodes: 0
+
+End of loop memory usage:
+VARIABLE  BEFORE   AFTER    DELTA
+======== ======== ======== ========
+arena     7bd8ff8  7bd8ff8        0
+ordblks         8       19       11
+mxordblk  7ba7570  7ba75c0       50
+uordblks    312c8    31538      270
+fordblks  7ba7d30  7ba7ac0 fffffd90
+
+=== FILLING 6 =============================
+Filled file system
+  Number of files: 64
+  Number deleted:  0
+Directory:
+ 1. Type[8]: File  Name: 0D0n02ab
+ 2. Type[8]: File  Name: spzAh4BTGI5TalD99
+ 3. Type[8]: File  Name: mSF8c
+ 4. Type[8]: File  Name: 50NdcApjdwE8FPXl
+ 5. Type[8]: File  Name: qZR4WiPmlSmU
+ 6. Type[8]: File  Name: 00RYDb
+ 7. Type[8]: File  Name: PDORbUI
+ 8. Type[8]: File  Name: ttAI
+ 9. Type[8]: File  Name: Km2AF
+10. Type[8]: File  Name: ArDXUOeaMI07y9
+11. Type[8]: File  Name: 8Ear
+12. Type[8]: File  Name: nX6KKHWKSV1G
+13. Type[8]: File  Name: tAElKDLjvlCYp
+14. Type[8]: File  Name: koOY7MWDU0Cekz
+15. Type[8]: File  Name: db7rQWX2uAS20xnsn
+16. Type[8]: File  Name: sOxUZTL82vkS1W
+17. Type[8]: File  Name: m08dRBiPOlWWPd4v
+18. Type[8]: File  Name: tjEBb5o6PMCqYlPIe
+19. Type[8]: File  Name: G4qiBg
+20. Type[8]: File  Name: 7QqhZv
+21. Type[8]: File  Name: jKq70bavhiPGCw0
+22. Type[8]: File  Name: R9puomsxZG2jkyfx
+23. Type[8]: File  Name: BYoBVOUa7lVM
+24. Type[8]: File  Name: 9Zgy
+25. Type[8]: File  Name: Un6Ci2ul
+26. Type[8]: File  Name: Y5SJm7TA0vUK
+27. Type[8]: File  Name: LCA0HDZVxSHToG
+28. Type[8]: File  Name: OHCjbsrM2fP6ZCH
+29. Type[8]: File  Name: hfxYehAhSQzx
+30. Type[8]: File  Name: Aavdgn6DmPnpk
+31. Type[8]: File  Name: GyvPtNgphDk3FgU
+32. Type[8]: File  Name: epFW
+33. Type[8]: File  Name: ZgZu
+34. Type[8]: File  Name: FowOEg
+35. Type[8]: File  Name: UsQiEEhOXVy
+36. Type[8]: File  Name: MS9s
+37. Type[8]: File  Name: peL8lL0v
+38. Type[8]: File  Name: 7fb98kIMoxXl1K
+39. Type[8]: File  Name: 9uH3o0VnkPCM70snhAT
+40. Type[8]: File  Name: 1ixm5DEQ
+41. Type[8]: File  Name: ifRosuFIdaxqX
+42. Type[8]: File  Name: FGwZB
+43. Type[8]: File  Name: 02uJmo
+44. Type[8]: File  Name: rvCgbMybkhny
+45. Type[8]: File  Name: hRTkKXy
+46. Type[8]: File  Name: ArzFb0ecFm1Pck2P2gp
+47. Type[8]: File  Name: tB1BNx3wWL59
+48. Type[8]: File  Name: 2x34XfPArnqDgrI
+49. Type[8]: File  Name: yUz4GR
+50. Type[8]: File  Name: RTnvUXbPIULnKMb9W
+51. Type[8]: File  Name: xl6aWf
+52. Type[8]: File  Name: pL5kxFOl8qTa
+53. Type[8]: File  Name: jvyEi
+54. Type[8]: File  Name: FJEG5wxXty
+55. Type[8]: File  Name: ZWZCXUDe
+56. Type[8]: File  Name: oGSJg6HqM8x
+57. Type[8]: File  Name: dwQ7ciH
+58. Type[8]: File  Name: 9s3CXYQGKLR9NIvC
+59. Type[8]: File  Name: ZY0kBqJ
+60. Type[8]: File  Name: URi9kJrk1rjJY7vZW
+61. Type[8]: File  Name: 3hd0fmUFOlDVqQheUIq
+62. Type[8]: File  Name: XJAEVYMv3PLfsmlT
+63. Type[8]: File  Name: 6NxT0nMAWvZHoRq2q
+64. Type[8]: File  Name: 4nx9sD5SU8W6rhJJXv
+Total file size: 274054
+
+=== DELETING 6 ============================
+Deleted some files
+  Number of files: 64
+  Number deleted:  47
+Directory:
+ 1. Type[8]: File  Name: 0D0n02ab
+ 2. Type[8]: File  Name: hRTkKXy
+ 3. Type[8]: File  Name: ArzFb0ecFm1Pck2P2gp
+ 4. Type[8]: File  Name: tB1BNx3wWL59
+ 5. Type[8]: File  Name: 2x34XfPArnqDgrI
+ 6. Type[8]: File  Name: RTnvUXbPIULnKMb9W
+ 7. Type[8]: File  Name: xl6aWf
+ 8. Type[8]: File  Name: pL5kxFOl8qTa
+ 9. Type[8]: File  Name: jvyEi
+10. Type[8]: File  Name: FJEG5wxXty
+11. Type[8]: File  Name: ZWZCXUDe
+12. Type[8]: File  Name: oGSJg6HqM8x
+13. Type[8]: File  Name: 9s3CXYQGKLR9NIvC
+14. Type[8]: File  Name: ZY0kBqJ
+15. Type[8]: File  Name: URi9kJrk1rjJY7vZW
+16. Type[8]: File  Name: 3hd0fmUFOlDVqQheUIq
+17. Type[8]: File  Name: 4nx9sD5SU8W6rhJJXv
+Total file size: 66871
+File System:
+  Block Size:      32768
+  No. Blocks:      8189
+  Free Blocks:     8166
+  Avail. Blocks:   8166
+  No. File Nodes:  0
+  Free File Nodes: 0
+
+End of loop memory usage:
+VARIABLE  BEFORE   AFTER    DELTA
+======== ======== ======== ========
+arena     7bd8ff8  7bd8ff8        0
+ordblks        19       11       -8
+mxordblk  7ba75c0  7ba7560 ffffffa0
+uordblks    31538    312d8 fffffda0
+fordblks  7ba7ac0  7ba7d20      260
+
+=== FILLING 7 =============================
+Filled file system
+  Number of files: 64
+  Number deleted:  0
+Directory:
+ 1. Type[8]: File  Name: 0D0n02ab
+ 2. Type[8]: File  Name: TpPUghJts
+ 3. Type[8]: File  Name: 06v6Ft1cEdjdz9QMb
+ 4. Type[8]: File  Name: zAw5
+ 5. Type[8]: File  Name: Aldzj38iV2
+ 6. Type[8]: File  Name: Dvq0czwQT
+ 7. Type[8]: File  Name: n7HzW0Io3qlWuldkBkd
+ 8. Type[8]: File  Name: RECvBh0iaUK7LQokP
+ 9. Type[8]: File  Name: 5h3qC9VoEz1TShG3h
+10. Type[8]: File  Name: 8RedU8YmT
+11. Type[8]: File  Name: UmXVhGGw9Borss2f
+12. Type[8]: File  Name: iCE59
+13. Type[8]: File  Name: H2pMH3EwbV6
+14. Type[8]: File  Name: 1zM49h
+15. Type[8]: File  Name: 3FTEhC9lnZ8
+16. Type[8]: File  Name: tcAt6aQ0a91C2N0
+17. Type[8]: File  Name: VXU0uuuUa
+18. Type[8]: File  Name: pJD6TmNb
+19. Type[8]: File  Name: 2H2WyqA
+20. Type[8]: File  Name: kopptqUuVxr
+21. Type[8]: File  Name: WDk0FOfzvfq5TW
+22. Type[8]: File  Name: s8EBcQ9QvIXFA0A
+23. Type[8]: File  Name: 1RD3wXOS
+24. Type[8]: File  Name: fgtx19duA6xv8McQW
+25. Type[8]: File  Name: VTc24lLX
+26. Type[8]: File  Name: v2VMpFWWY
+27. Type[8]: File  Name: SB402wEC
+28. Type[8]: File  Name: ucIbYOhhdHerC
+29. Type[8]: File  Name: mA2o6KNdaNs0Ru9W
+30. Type[8]: File  Name: t9r0R3Vm9B5XZi
+31. Type[8]: File  Name: sO6p
+32. Type[8]: File  Name: Z8q9X
+33. Type[8]: File  Name: pRSM0ikomrwO100puz
+34. Type[8]: File  Name: qoYSVcVgJc
+35. Type[8]: File  Name: 7HWIWIldVjvpSbdEeY
+36. Type[8]: File  Name: lpm6fDtENyFgNEdG0
+37. Type[8]: File  Name: 90Uy5s8hSA8g0leSgc
+38. Type[8]: File  Name: BqvEOJ9yQeE
+39. Type[8]: File  Name: QK3F8qOqgR
+40. Type[8]: File  Name: 6lzC
+41. Type[8]: File  Name: Ldzr2ZdqjY
+42. Type[8]: File  Name: PB25xwF0GUK
+43. Type[8]: File  Name: VKDagOY
+44. Type[8]: File  Name: U5ZFfC
+45. Type[8]: File  Name: dVTtkmBtn51QIOvd
+46. Type[8]: File  Name: Zy6J5ZDer09Mywwa
+47. Type[8]: File  Name: hRTkKXy
+48. Type[8]: File  Name: ArzFb0ecFm1Pck2P2gp
+49. Type[8]: File  Name: tB1BNx3wWL59
+50. Type[8]: File  Name: 2x34XfPArnqDgrI
+51. Type[8]: File  Name: dbJbL4Y3Og0fet
+52. Type[8]: File  Name: RTnvUXbPIULnKMb9W
+53. Type[8]: File  Name: xl6aWf
+54. Type[8]: File  Name: pL5kxFOl8qTa
+55. Type[8]: File  Name: jvyEi
+56. Type[8]: File  Name: HJvk
+57. Type[8]: File  Name: FJEG5wxXty
+58. Type[8]: File  Name: ZWZCXUDe
+59. Type[8]: File  Name: oGSJg6HqM8x
+60. Type[8]: File  Name: 9s3CXYQGKLR9NIvC
+61. Type[8]: File  Name: ZY0kBqJ
+62. Type[8]: File  Name: URi9kJrk1rjJY7vZW
+63. Type[8]: File  Name: 3hd0fmUFOlDVqQheUIq
+64. Type[8]: File  Name: 4nx9sD5SU8W6rhJJXv
+Total file size: 252593
+
+=== DELETING 7 ============================
+Deleted some files
+  Number of files: 64
+  Number deleted:  8
+Directory:
+ 1. Type[8]: File  Name: 0D0n02ab
+ 2. Type[8]: File  Name: TpPUghJts
+ 3. Type[8]: File  Name: 06v6Ft1cEdjdz9QMb
+ 4. Type[8]: File  Name: zAw5
+ 5. Type[8]: File  Name: Aldzj38iV2
+ 6. Type[8]: File  Name: n7HzW0Io3qlWuldkBkd
+ 7. Type[8]: File  Name: RECvBh0iaUK7LQokP
+ 8. Type[8]: File  Name: 8RedU8YmT
+ 9. Type[8]: File  Name: iCE59
+10. Type[8]: File  Name: H2pMH3EwbV6
+11. Type[8]: File  Name: 1zM49h
+12. Type[8]: File  Name: tcAt6aQ0a91C2N0
+13. Type[8]: File  Name: VXU0uuuUa
+14. Type[8]: File  Name: pJD6TmNb
+15. Type[8]: File  Name: 2H2WyqA
+16. Type[8]: File  Name: kopptqUuVxr
+17. Type[8]: File  Name: WDk0FOfzvfq5TW
+18. Type[8]: File  Name: s8EBcQ9QvIXFA0A
+19. Type[8]: File  Name: 1RD3wXOS
+20. Type[8]: File  Name: fgtx19duA6xv8McQW
+21. Type[8]: File  Name: VTc24lLX
+22. Type[8]: File  Name: v2VMpFWWY
+23. Type[8]: File  Name: SB402wEC
+24. Type[8]: File  Name: ucIbYOhhdHerC
+25. Type[8]: File  Name: mA2o6KNdaNs0Ru9W
+26. Type[8]: File  Name: sO6p
+27. Type[8]: File  Name: Z8q9X
+28. Type[8]: File  Name: qoYSVcVgJc
+29. Type[8]: File  Name: 7HWIWIldVjvpSbdEeY
+30. Type[8]: File  Name: lpm6fDtENyFgNEdG0
+31. Type[8]: File  Name: 90Uy5s8hSA8g0leSgc
+32. Type[8]: File  Name: BqvEOJ9yQeE
+33. Type[8]: File  Name: QK3F8qOqgR
+34. Type[8]: File  Name: 6lzC
+35. Type[8]: File  Name: Ldzr2ZdqjY
+36. Type[8]: File  Name: PB25xwF0GUK
+37. Type[8]: File  Name: VKDagOY
+38. Type[8]: File  Name: U5ZFfC
+39. Type[8]: File  Name: dVTtkmBtn51QIOvd
+40. Type[8]: File  Name: Zy6J5ZDer09Mywwa
+41. Type[8]: File  Name: hRTkKXy
+42. Type[8]: File  Name: ArzFb0ecFm1Pck2P2gp
+43. Type[8]: File  Name: tB1BNx3wWL59
+44. Type[8]: File  Name: 2x34XfPArnqDgrI
+45. Type[8]: File  Name: dbJbL4Y3Og0fet
+46. Type[8]: File  Name: RTnvUXbPIULnKMb9W
+47. Type[8]: File  Name: xl6aWf
+48. Type[8]: File  Name: pL5kxFOl8qTa
+49. Type[8]: File  Name: HJvk
+50. Type[8]: File  Name: FJEG5wxXty
+51. Type[8]: File  Name: ZWZCXUDe
+52. Type[8]: File  Name: 9s3CXYQGKLR9NIvC
+53. Type[8]: File  Name: ZY0kBqJ
+54. Type[8]: File  Name: URi9kJrk1rjJY7vZW
+55. Type[8]: File  Name: 3hd0fmUFOlDVqQheUIq
+56. Type[8]: File  Name: 4nx9sD5SU8W6rhJJXv
+Total file size: 225212
+File System:
+  Block Size:      32768
+  No. Blocks:      8189
+  Free Blocks:     8127
+  Avail. Blocks:   8127
+  No. File Nodes:  0
+  Free File Nodes: 0
+
+End of loop memory usage:
+VARIABLE  BEFORE   AFTER    DELTA
+======== ======== ======== ========
+arena     7bd8ff8  7bd8ff8        0
+ordblks        11        9       -2
+mxordblk  7ba7560  7ba7560        0
+uordblks    312d8    318e8      610
+fordblks  7ba7d20  7ba7710 fffff9f0
+
+=== FILLING 8 =============================
+Filled file system
+  Number of files: 64
+  Number deleted:  0
+Directory:
+ 1. Type[8]: File  Name: 0D0n02ab
+ 2. Type[8]: File  Name: TpPUghJts
+ 3. Type[8]: File  Name: 06v6Ft1cEdjdz9QMb
+ 4. Type[8]: File  Name: zAw5
+ 5. Type[8]: File  Name: Aldzj38iV2
+ 6. Type[8]: File  Name: iNjT
+ 7. Type[8]: File  Name: n7HzW0Io3qlWuldkBkd
+ 8. Type[8]: File  Name: RECvBh0iaUK7LQokP
+ 9. Type[8]: File  Name: Z2re8is1
+10. Type[8]: File  Name: 8RedU8YmT
+11. Type[8]: File  Name: Uq0RjPmj6qww
+12. Type[8]: File  Name: iCE59
+13. Type[8]: File  Name: H2pMH3EwbV6
+14. Type[8]: File  Name: 1zM49h
+15. Type[8]: File  Name: oHEdVdGfX76Z2duEp
+16. Type[8]: File  Name: tcAt6aQ0a91C2N0
+17. Type[8]: File  Name: VXU0uuuUa
+18. Type[8]: File  Name: pJD6TmNb
+19. Type[8]: File  Name: 2H2WyqA
+20. Type[8]: File  Name: kopptqUuVxr
+21. Type[8]: File  Name: WDk0FOfzvfq5TW
+22. Type[8]: File  Name: s8EBcQ9QvIXFA0A
+23. Type[8]: File  Name: 1RD3wXOS
+24. Type[8]: File  Name: fgtx19duA6xv8McQW
+25. Type[8]: File  Name: VTc24lLX
+26. Type[8]: File  Name: v2VMpFWWY
+27. Type[8]: File  Name: SB402wEC
+28. Type[8]: File  Name: ucIbYOhhdHerC
+29. Type[8]: File  Name: mA2o6KNdaNs0Ru9W
+30. Type[8]: File  Name: uFhe
+31. Type[8]: File  Name: sO6p
+32. Type[8]: File  Name: Z8q9X
+33. Type[8]: File  Name: dDVL4HSSe1T
+34. Type[8]: File  Name: qoYSVcVgJc
+35. Type[8]: File  Name: 7HWIWIldVjvpSbdEeY
+36. Type[8]: File  Name: lpm6fDtENyFgNEdG0
+37. Type[8]: File  Name: 90Uy5s8hSA8g0leSgc
+38. Type[8]: File  Name: BqvEOJ9yQeE
+39. Type[8]: File  Name: QK3F8qOqgR
+40. Type[8]: File  Name: 6lzC
+41. Type[8]: File  Name: Ldzr2ZdqjY
+42. Type[8]: File  Name: PB25xwF0GUK
+43. Type[8]: File  Name: VKDagOY
+44. Type[8]: File  Name: U5ZFfC
+45. Type[8]: File  Name: dVTtkmBtn51QIOvd
+46. Type[8]: File  Name: Zy6J5ZDer09Mywwa
+47. Type[8]: File  Name: hRTkKXy
+48. Type[8]: File  Name: ArzFb0ecFm1Pck2P2gp
+49. Type[8]: File  Name: tB1BNx3wWL59
+50. Type[8]: File  Name: 2x34XfPArnqDgrI
+51. Type[8]: File  Name: dbJbL4Y3Og0fet
+52. Type[8]: File  Name: RTnvUXbPIULnKMb9W
+53. Type[8]: File  Name: xl6aWf
+54. Type[8]: File  Name: pL5kxFOl8qTa
+55. Type[8]: File  Name: lMqdpk
+56. Type[8]: File  Name: HJvk
+57. Type[8]: File  Name: FJEG5wxXty
+58. Type[8]: File  Name: ZWZCXUDe
+59. Type[8]: File  Name: C8aTa65
+60. Type[8]: File  Name: 9s3CXYQGKLR9NIvC
+61. Type[8]: File  Name: ZY0kBqJ
+62. Type[8]: File  Name: URi9kJrk1rjJY7vZW
+63. Type[8]: File  Name: 3hd0fmUFOlDVqQheUIq
+64. Type[8]: File  Name: 4nx9sD5SU8W6rhJJXv
+Total file size: 264242
+
+=== DELETING 8 ============================
+Deleted some files
+  Number of files: 64
+  Number deleted:  43
+Directory:
+ 1. Type[8]: File  Name: 0D0n02ab
+ 2. Type[8]: File  Name: 6lzC
+ 3. Type[8]: File  Name: Ldzr2ZdqjY
+ 4. Type[8]: File  Name: VKDagOY
+ 5. Type[8]: File  Name: U5ZFfC
+ 6. Type[8]: File  Name: dVTtkmBtn51QIOvd
+ 7. Type[8]: File  Name: Zy6J5ZDer09Mywwa
+ 8. Type[8]: File  Name: hRTkKXy
+ 9. Type[8]: File  Name: ArzFb0ecFm1Pck2P2gp
+10. Type[8]: File  Name: tB1BNx3wWL59
+11. Type[8]: File  Name: dbJbL4Y3Og0fet
+12. Type[8]: File  Name: RTnvUXbPIULnKMb9W
+13. Type[8]: File  Name: xl6aWf
+14. Type[8]: File  Name: lMqdpk
+15. Type[8]: File  Name: HJvk
+16. Type[8]: File  Name: FJEG5wxXty
+17. Type[8]: File  Name: 9s3CXYQGKLR9NIvC
+18. Type[8]: File  Name: ZY0kBqJ
+19. Type[8]: File  Name: URi9kJrk1rjJY7vZW
+20. Type[8]: File  Name: 3hd0fmUFOlDVqQheUIq
+21. Type[8]: File  Name: 4nx9sD5SU8W6rhJJXv
+Total file size: 77030
+File System:
+  Block Size:      32768
+  No. Blocks:      8189
+  Free Blocks:     8162
+  Avail. Blocks:   8162
+  No. File Nodes:  0
+  Free File Nodes: 0
+
+End of loop memory usage:
+VARIABLE  BEFORE   AFTER    DELTA
+======== ======== ======== ========
+arena     7bd8ff8  7bd8ff8        0
+ordblks         9       12        3
+mxordblk  7ba7560  7ba7560        0
+uordblks    318e8    31358 fffffa70
+fordblks  7ba7710  7ba7ca0      590
+
+=== FILLING 9 =============================
+Filled file system
+  Number of files: 64
+  Number deleted:  0
+Directory:
+ 1. Type[8]: File  Name: 0D0n02ab
+ 2. Type[8]: File  Name: 6yRV6ZlssyJUf
+ 3. Type[8]: File  Name: vWgaoO4AWGpJtCg31dx
+ 4. Type[8]: File  Name: bEKArDIpyC
+ 5. Type[8]: File  Name: ZId31Ayy3oSTh
+ 6. Type[8]: File  Name: 0hwXXkIOQYbdUMZLTgg
+ 7. Type[8]: File  Name: QLPaxywcs9g43sd
+ 8. Type[8]: File  Name: 0YLfQoJPcXNdQCO
+ 9. Type[8]: File  Name: 35Edj05QTqMBMu2
+10. Type[8]: File  Name: DJPiaqL
+11. Type[8]: File  Name: D4spzPwl
+12. Type[8]: File  Name: 1phySq
+13. Type[8]: File  Name: PAp80IT37dca9gmx
+14. Type[8]: File  Name: LfyEwiaMJwUXpj
+15. Type[8]: File  Name: NOl0WNMCN0w6
+16. Type[8]: File  Name: sePehI
+17. Type[8]: File  Name: tOVCRBW1aFuzqy0NsZ6
+18. Type[8]: File  Name: ZFf7qFIpdlTxU
+19. Type[8]: File  Name: ey7N4
+20. Type[8]: File  Name: M08R
+21. Type[8]: File  Name: jg75V3kc1EbOgbwibZ
+22. Type[8]: File  Name: aarmkbnDS
+23. Type[8]: File  Name: E3oEHN3
+24. Type[8]: File  Name: qZ4Prag
+25. Type[8]: File  Name: sZ9gojmRManc9KL3qm
+26. Type[8]: File  Name: 70KDZAgI8xaQ
+27. Type[8]: File  Name: DQITcmljFfXFRtzV63l
+28. Type[8]: File  Name: oJ0ZK148PDxOceyah1
+29. Type[8]: File  Name: zgAVHYgPgGe
+30. Type[8]: File  Name: n01efG4B3pv
+31. Type[8]: File  Name: mJcfKpLwBCrr55
+32. Type[8]: File  Name: 05fAtc8fim2RtMUSb
+33. Type[8]: File  Name: UiOXSif
+34. Type[8]: File  Name: c9w33v0j691PzC
+35. Type[8]: File  Name: kNg2hb3vp
+36. Type[8]: File  Name: dknxbpj
+37. Type[8]: File  Name: pMfmPbax3Ze6PKCfji
+38. Type[8]: File  Name: LEHZ0Cgi0dFwZa6mr
+39. Type[8]: File  Name: 6lzC
+40. Type[8]: File  Name: Ldzr2ZdqjY
+41. Type[8]: File  Name: up0I4ZaLP0OGW5
+42. Type[8]: File  Name: VKDagOY
+43. Type[8]: File  Name: U5ZFfC
+44. Type[8]: File  Name: dVTtkmBtn51QIOvd
+45. Type[8]: File  Name: Zy6J5ZDer09Mywwa
+46. Type[8]: File  Name: hRTkKXy
+47. Type[8]: File  Name: ArzFb0ecFm1Pck2P2gp
+48. Type[8]: File  Name: tB1BNx3wWL59
+49. Type[8]: File  Name: ISXp9tePtNYp4Vz6
+50. Type[8]: File  Name: dbJbL4Y3Og0fet
+51. Type[8]: File  Name: RTnvUXbPIULnKMb9W
+52. Type[8]: File  Name: xl6aWf
+53. Type[8]: File  Name: 2BiLNEmGC1
+54. Type[8]: File  Name: lMqdpk
+55. Type[8]: File  Name: HJvk
+56. Type[8]: File  Name: FJEG5wxXty
+57. Type[8]: File  Name: w27Kt8exTjogeDg
+58. Type[8]: File  Name: INEITrmm
+59. Type[8]: File  Name: 9s3CXYQGKLR9NIvC
+60. Type[8]: File  Name: ZY0kBqJ
+61. Type[8]: File  Name: URi9kJrk1rjJY7vZW
+62. Type[8]: File  Name: 3hd0fmUFOlDVqQheUIq
+63. Type[8]: File  Name: 2YnUbgPVUhicTILy03
+64. Type[8]: File  Name: 4nx9sD5SU8W6rhJJXv
+Total file size: 214056
+
+=== DELETING 9 ============================
+Deleted some files
+  Number of files: 64
+  Number deleted:  31
+Directory:
+ 1. Type[8]: File  Name: 0D0n02ab
+ 2. Type[8]: File  Name: 6yRV6ZlssyJUf
+ 3. Type[8]: File  Name: vWgaoO4AWGpJtCg31dx
+ 4. Type[8]: File  Name: bEKArDIpyC
+ 5. Type[8]: File  Name: ZId31Ayy3oSTh
+ 6. Type[8]: File  Name: QLPaxywcs9g43sd
+ 7. Type[8]: File  Name: 35Edj05QTqMBMu2
+ 8. Type[8]: File  Name: DJPiaqL
+ 9. Type[8]: File  Name: 1phySq
+10. Type[8]: File  Name: jg75V3kc1EbOgbwibZ
+11. Type[8]: File  Name: mJcfKpLwBCrr55
+12. Type[8]: File  Name: 05fAtc8fim2RtMUSb
+13. Type[8]: File  Name: UiOXSif
+14. Type[8]: File  Name: c9w33v0j691PzC
+15. Type[8]: File  Name: 6lzC
+16. Type[8]: File  Name: VKDagOY
+17. Type[8]: File  Name: U5ZFfC
+18. Type[8]: File  Name: dVTtkmBtn51QIOvd
+19. Type[8]: File  Name: Zy6J5ZDer09Mywwa
+20. Type[8]: File  Name: hRTkKXy
+21. Type[8]: File  Name: ArzFb0ecFm1Pck2P2gp
+22. Type[8]: File  Name: ISXp9tePtNYp4Vz6
+23. Type[8]: File  Name: dbJbL4Y3Og0fet
+24. Type[8]: File  Name: RTnvUXbPIULnKMb9W
+25. Type[8]: File  Name: xl6aWf
+26. Type[8]: File  Name: 2BiLNEmGC1
+27. Type[8]: File  Name: lMqdpk
+28. Type[8]: File  Name: INEITrmm
+29. Type[8]: File  Name: 9s3CXYQGKLR9NIvC
+30. Type[8]: File  Name: ZY0kBqJ
+31. Type[8]: File  Name: URi9kJrk1rjJY7vZW
+32. Type[8]: File  Name: 2YnUbgPVUhicTILy03
+33. Type[8]: File  Name: 4nx9sD5SU8W6rhJJXv
+Total file size: 113360
+File System:
+  Block Size:      32768
+  No. Blocks:      8189
+  Free Blocks:     8150
+  Avail. Blocks:   8150
+  No. File Nodes:  0
+  Free File Nodes: 0
+
+End of loop memory usage:
+VARIABLE  BEFORE   AFTER    DELTA
+======== ======== ======== ========
+arena     7bd8ff8  7bd8ff8        0
+ordblks        12       12        0
+mxordblk  7ba7560  7ba7560        0
+uordblks    31358    31558      200
+fordblks  7ba7ca0  7ba7aa0 fffffe00
+
+=== FILLING 10 =============================
+Filled file system
+  Number of files: 64
+  Number deleted:  0
+Directory:
+ 1. Type[8]: File  Name: 0D0n02ab
+ 2. Type[8]: File  Name: 6yRV6ZlssyJUf
+ 3. Type[8]: File  Name: vWgaoO4AWGpJtCg31dx
+ 4. Type[8]: File  Name: bEKArDIpyC
+ 5. Type[8]: File  Name: ZId31Ayy3oSTh
+ 6. Type[8]: File  Name: reVN
+ 7. Type[8]: File  Name: QLPaxywcs9g43sd
+ 8. Type[8]: File  Name: c6zjmBL9itxF
+ 9. Type[8]: File  Name: 35Edj05QTqMBMu2
+10. Type[8]: File  Name: DJPiaqL
+11. Type[8]: File  Name: vG284Zy3
+12. Type[8]: File  Name: 1phySq
+13. Type[8]: File  Name: 7nzM69JfluHA00
+14. Type[8]: File  Name: 09uiNB8dsEbQ
+15. Type[8]: File  Name: Ym6ImJF15Dylb
+16. Type[8]: File  Name: 398Uaslz8I16tht7
+17. Type[8]: File  Name: lpcln3mCt64P6XR
+18. Type[8]: File  Name: ZVzoo0LTr
+19. Type[8]: File  Name: 53HXmDMQsZb
+20. Type[8]: File  Name: jg75V3kc1EbOgbwibZ
+21. Type[8]: File  Name: GFyvDtuLWS
+22. Type[8]: File  Name: H2XvVDqk
+23. Type[8]: File  Name: d2n4umiNqS9KI
+24. Type[8]: File  Name: zvATgKNfE4U9U7
+25. Type[8]: File  Name: PHXNQkKkkBeu4
+26. Type[8]: File  Name: fkkGe6od2c4
+27. Type[8]: File  Name: D6WS0h5r
+28. Type[8]: File  Name: a2SHsDSAp
+29. Type[8]: File  Name: dDdg2SdKRRNKO1U
+30. Type[8]: File  Name: mJcfKpLwBCrr55
+31. Type[8]: File  Name: 05fAtc8fim2RtMUSb
+32. Type[8]: File  Name: UiOXSif
+33. Type[8]: File  Name: c9w33v0j691PzC
+34. Type[8]: File  Name: ZNcKAU5Z9J9kjt0oU
+35. Type[8]: File  Name: Ux1W0va0F0lTUW8xf2
+36. Type[8]: File  Name: EKvdfaaF5526r00grb
+37. Type[8]: File  Name: wdf2At
+38. Type[8]: File  Name: 6lzC
+39. Type[8]: File  Name: DiOsQM6p0xBc8CiJZb1
+40. Type[8]: File  Name: 7YdV7cld
+41. Type[8]: File  Name: VKDagOY
+42. Type[8]: File  Name: U5ZFfC
+43. Type[8]: File  Name: dVTtkmBtn51QIOvd
+44. Type[8]: File  Name: Zy6J5ZDer09Mywwa
+45. Type[8]: File  Name: hRTkKXy
+46. Type[8]: File  Name: ArzFb0ecFm1Pck2P2gp
+47. Type[8]: File  Name: hSyBPSf5kqp9SYI
+48. Type[8]: File  Name: ISXp9tePtNYp4Vz6
+49. Type[8]: File  Name: dbJbL4Y3Og0fet
+50. Type[8]: File  Name: RTnvUXbPIULnKMb9W
+51. Type[8]: File  Name: xl6aWf
+52. Type[8]: File  Name: 2BiLNEmGC1
+53. Type[8]: File  Name: lMqdpk
+54. Type[8]: File  Name: x4RrVXzfApcv
+55. Type[8]: File  Name: u7cxGFmWjyzO7ADz0rr
+56. Type[8]: File  Name: INEITrmm
+57. Type[8]: File  Name: 9s3CXYQGKLR9NIvC
+58. Type[8]: File  Name: ZY0kBqJ
+59. Type[8]: File  Name: URi9kJrk1rjJY7vZW
+60. Type[8]: File  Name: 2zcydmKesWnijWAp
+61. Type[8]: File  Name: 2YnUbgPVUhicTILy03
+62. Type[8]: File  Name: 6jZmnHULXMbD
+63. Type[8]: File  Name: 4nx9sD5SU8W6rhJJXv
+64. Type[8]: File  Name: s1nKxIUgBcTl0
+Total file size: 248771
+
+=== DELETING 10 ============================
+Deleted some files
+  Number of files: 64
+  Number deleted:  34
+Directory:
+ 1. Type[8]: File  Name: 0D0n02ab
+ 2. Type[8]: File  Name: 6yRV6ZlssyJUf
+ 3. Type[8]: File  Name: vWgaoO4AWGpJtCg31dx
+ 4. Type[8]: File  Name: reVN
+ 5. Type[8]: File  Name: QLPaxywcs9g43sd
+ 6. Type[8]: File  Name: c6zjmBL9itxF
+ 7. Type[8]: File  Name: DJPiaqL
+ 8. Type[8]: File  Name: vG284Zy3
+ 9. Type[8]: File  Name: 09uiNB8dsEbQ
+10. Type[8]: File  Name: lpcln3mCt64P6XR
+11. Type[8]: File  Name: dDdg2SdKRRNKO1U
+12. Type[8]: File  Name: 05fAtc8fim2RtMUSb
+13. Type[8]: File  Name: UiOXSif
+14. Type[8]: File  Name: ZNcKAU5Z9J9kjt0oU
+15. Type[8]: File  Name: Ux1W0va0F0lTUW8xf2
+16. Type[8]: File  Name: DiOsQM6p0xBc8CiJZb1
+17. Type[8]: File  Name: 7YdV7cld
+18. Type[8]: File  Name: U5ZFfC
+19. Type[8]: File  Name: dVTtkmBtn51QIOvd
+20. Type[8]: File  Name: Zy6J5ZDer09Mywwa
+21. Type[8]: File  Name: hRTkKXy
+22. Type[8]: File  Name: RTnvUXbPIULnKMb9W
+23. Type[8]: File  Name: lMqdpk
+24. Type[8]: File  Name: INEITrmm
+25. Type[8]: File  Name: ZY0kBqJ
+26. Type[8]: File  Name: URi9kJrk1rjJY7vZW
+27. Type[8]: File  Name: 2zcydmKesWnijWAp
+28. Type[8]: File  Name: 6jZmnHULXMbD
+29. Type[8]: File  Name: 4nx9sD5SU8W6rhJJXv
+30. Type[8]: File  Name: s1nKxIUgBcTl0
+Total file size: 113876
+File System:
+  Block Size:      32768
+  No. Blocks:      8189
+  Free Blocks:     8153
+  Avail. Blocks:   8153
+  No. File Nodes:  0
+  Free File Nodes: 0
+
+End of loop memory usage:
+VARIABLE  BEFORE   AFTER    DELTA
+======== ======== ======== ========
+arena     7bd8ff8  7bd8ff8        0
+ordblks        12       18        6
+mxordblk  7ba7560  7ba7530 ffffffd0
+uordblks    31558    31518 ffffffc0
+fordblks  7ba7aa0  7ba7ae0       40
+
+Final memory usage:
+VARIABLE  BEFORE   AFTER    DELTA
+======== ======== ======== ========
+arena     7bd8ff8  7bd8ff8        0
+ordblks         4        4        0
+mxordblk  7ba77c0  7ba77c0        0
+uordblks    31008    31008        0
+fordblks  7ba7ff0  7ba7ff0        0
+File system tests done... OK: 20, FAILED: 0
+encfs> [Kvela_fs_rwloops /data 100
+test dir :/data
+write file no.0
+write to file! content: JL15oOUfyXypbJs4KmW64DBplwjyBoNSwm5eGeE
+read file no.0
+seek 0 from file head, read length: 39, content:JL15oOUfyXypbJs4KmW64DBplwjyBoNSwm5eGeE
+write file no.1
+write to file! content: eodif2Nem4xK8pFoImGEOLkoZthbdTSIliSV6Vo
+read file no.1
+seek 39 from file head, read length: 39, content:eodif2Nem4xK8pFoImGEOLkoZthbdTSIliSV6Vo
+write file no.2
+write to file! content: yGGMWgIdaaxogLcZFkyMiUKoMphE5AY8ZdqMwMO
+read file no.2
+seek 78 from file head, read length: 39, content:yGGMWgIdaaxogLcZFkyMiUKoMphE5AY8ZdqMwMO
+write file no.3
+write to file! content: JjtyOKCbO8xIDrzJCkhU2dtn9kfrXpdyMZEDkCx
+read file no.3
+seek 117 from file head, read length: 39, content:JjtyOKCbO8xIDrzJCkhU2dtn9kfrXpdyMZEDkCx
+write file no.4
+write to file! content: dBWcFz6aDexnkNL5AjPcMlTnxgeTzVioATb3a3X
+read file no.4
+seek 156 from file head, read length: 39, content:dBWcFz6aDexnkNL5AjPcMlTnxgeTzVioATb3a3X
+write file no.5
+write to file! content: ye9E7d0Z1CwHItip7i8kfu2mkcd6QBnfyPzuQu7
+read file no.5
+seek 195 from file head, read length: 39, content:ye9E7d0Z1CwHItip7i8kfu2mkcd6QBnfyPzuQu7
+write file no.6
+write to file! content: I6lszHuYpjxlpP5a4iqsz2cmYYcjtrtUnKNlElg
+read file no.6
+seek 234 from file head, read length: 39, content:I6lszHuYpjxlpP5a4iqsz2cmYYcjtrtUnKNlElg
+write file no.7
+write to file! content: dZPUqvoWdGwGMvSK2ga1IBBlLUbMKWzKbGkc4bG
+read file no.7
+seek 273 from file head, read length: 39, content:dZPUqvoWdGwGMvSK2ga1IBBlLUbMKWzKbGkc4bG
+write file no.8
+write to file! content: x118haiVSnwktSp5zgI9cKlk8QZymD4BPB7TuSq
+read file no.8
+seek 312 from file head, read length: 39, content:x118haiVSnwktSp5zgI9cKlk8QZymD4BPB7TuSq
+write file no.9
+write to file! content: IUekZEcUGJwESyBqwe1HwSKjwMZbEs90D6VKjJQ
+read file no.9
+seek 351 from file head, read length: 39, content:IUekZEcUGJwESyBqwe1HwSKjwMZbEs90D6VKjJQ
+write file no.10
+write to file! content: cwGORtXS4rwjzUYauejPGaujjIXEgYEr11tAYAz
+read file no.10
+seek 390 from file head, read length: 39, content:cwGORtXS4rwjzUYauejPGaujjIXEgYEr11tAYAz
+write file no.11
+write to file! content: xOt1HXQRsNvDW0vMrdSXZjTiXDXr7EJhpxH1O1a
+read file no.11
+seek 429 from file head, read length: 39, content:xOt1HXQRsNvDW0vMrdSXZjTiXDXr7EJhpxH1O1a
+write file no.12
+write to file! content: HqXe9BLPhvwh4WI6pcAfts3hKAVTZuOXesesDr9
+read file no.12
+seek 468 from file head, read length: 39, content:HqXe9BLPhvwh4WI6pcAfts3hKAVTZuOXesesDr9
+write file no.13
+write to file! content: cJ9H1pEPVSvCb2frmbunD0cg76U52ZUNSo1j3ii
+read file no.13
+seek 507 from file head, read length: 39, content:cJ9H1pEPVSvCb2frmbunD0cg76U52ZUNSo1j3ii
+write file no.14
+write to file! content: wlmusT9NJzvg8Y1bjacwW8Cgv1TiTGaDGiPasZJ
+read file no.14
+seek 546 from file head, read length: 39, content:wlmusT9NJzvg8Y1bjacwW8Cgv1TiTGaDGiPasZJ
+write file no.15
+write to file! content: HEOXk73M7WvBf4ONhaL3qIlgixSLvvf44dmRiQs
+read file no.15
+seek 585 from file head, read length: 39, content:HEOXk73M7WvBf4ONhaL3qIlgixSLvvf44dmRiQs
+write file no.16
+write to file! content: bg2AbmxKw3veDbl7eZ3B9QMfWtRxNbkusZAIXHS
+read file no.16
+seek 624 from file head, read length: 39, content:bg2AbmxKw3veDbl7eZ3B9QMfWtRxNbkusZAIXHS
+write file no.17
+write to file! content: w8fnTQrKkau8k78sbYmJTYveJpQapHpjhUY8M81
+read file no.17
+seek 663 from file head, read length: 39, content:w8fnTQrKkau8k78sbYmJTYveJpQapHpjhUY8M81
+write file no.18
+write to file! content: HbHRK4lIY7vdHdVcZXVRngVd7lPDGxuaVQvzCzc
+read file no.18
+seek 702 from file head, read length: 39, content:HbHRK4lIY7vdHdVcZXVRngVd7lPDGxuaVQvzCzc
+write file no.19
+write to file! content: b3u3CifHMeu7p9rNWWEZ7q5duhNpic0QJKIq1qB
+read file no.19
+seek 741 from file head, read length: 39, content:b3u3CifHMeu7p9rNWWEZ7q5duhNpic0QJKIq1qB
+write file no.20
+write to file! content: wWWh3NZFBBubMfE8TVwhRyechdNSAJ5G7Gghrhl
+read file no.20
+seek 780 from file head, read length: 39, content:wWWh3NZFBBubMfE8TVwhRyechdNSAJ5G7Gghrhl
+write file no.21
+write to file! content: GyAJu1UEziu6tBbsRVfpk6EbVZL5cyB6vB4YgXL
+read file no.21
+seek 819 from file head, read length: 39, content:GyAJu1UEziu6tBbsRVfpk6EbVZL5cyB6vB4YgXL
+write file no.22
+write to file! content: bRmxmfODnFuaQhydOTNy3GnaIULi4eGwj7SPVOv
+read file no.22
+seek 858 from file head, read length: 39, content:bRmxmfODnFuaQhydOTNy3GnaIULi4eGwj7SPVOv
+write file no.23
+write to file! content: vtPZeKIBbnt4yDLOLT66NONb6RJKWKLnX2pFLFU
+read file no.23
+seek 897 from file head, read length: 39, content:vtPZeKIBbnt4yDLOLT66NONb6RJKWKLnX2pFLFU
+write file no.24
+write to file! content: GM2DVyCAQJuZVkh9JSpEhWwatNIxy0QcLxC6B64
+read file no.24
+seek 936 from file head, read length: 39, content:GM2DVyCAQJuZVkh9JSpEhWwatNIxy0QcLxC6B64
+write file no.25
+write to file! content: aofpMc68Ert32G4tGRYM1eWZgIHaPfWT9saxzxe
+read file no.25
+seek 975 from file head, read length: 39, content:aofpMc68Ert32G4tGRYM1eWZgIHaPfWT9saxzxe
+write file no.26
+write to file! content: vHITEG082NtXamReERGUKo5YUEGDrMbJxoyopoD
+read file no.26
+seek 1014 from file head, read length: 39, content:vHITEG082NtXamReERGUKo5YUEGDrMbJxoyopoD
+write file no.27
+write to file! content: Fju66uv6qut27IoPBPzcewfXHAFpJ1g8ljLfffn
+read file no.27
+seek 1053 from file head, read length: 39, content:Fju66uv6qut27IoPBPzcewfXHAFpJ1g8ljLfffn
+write file no.28
+write to file! content: aCXjxYo5fStWeoBA8Phky4EX56ERlhmzafjWTWN
+read file no.28
+seek 1092 from file head, read length: 39, content:aCXjxYo5fStWeoBA8Phky4EX56ERlhmzafjWTWN
+write file no.29
+write to file! content: ue9MoDj3Tys1BKXu6NRtHDoWs2D4CNrpOZ7NJMx
+read file no.29
+seek 1131 from file head, read length: 39, content:ue9MoDj3Tys1BKXu6NRtHDoWs2D4CNrpOZ7NJMx
+write file no.30
+write to file! content: F7nzgrc3HWtVjque3N91bMNVgyChf3xfCVUD9CW
+read file no.30
+seek 1170 from file head, read length: 39, content:F7nzgrc3HWtVjque3N91bMNVgyChf3xfCVUD9CW
+write file no.31
+write to file! content: ZZQcXWX152szGMHQ0Ms9vUxUTuBJ7i2V0Qr4y37
+read file no.31
+seek 1209 from file head, read length: 39, content:ZZQcXWX152szGMHQ0Ms9vUxUTuBJ7i2V0Qr4y37
+write file no.32
+write to file! content: u22FPAQ0uasUnteAyLaHEdWUGq9wYP7LoMFvnug
+read file no.32
+seek 1248 from file head, read length: 39, content:u22FPAQ0uasUnteAyLaHEdWUGq9wYP7LoMFvnug
+write file no.33
+write to file! content: EUfsHoLyi7syMP1vvKJPYl6U4l8Z04CCdHdmdlF
+read file no.33
+seek 1287 from file head, read length: 39, content:EUfsHoLyi7syMP1vvKJPYl6U4l8Z04CCdHdmdlF
+write file no.34
+write to file! content: ZxIV7SFxWdsStvNfsJ1XsufTri7CSkH1RC1dScq
+read file no.34
+seek 1326 from file head, read length: 39, content:ZxIV7SFxWdsStvNfsJ1XsufTri7CSkH1RC1dScq
+write file no.35
+write to file! content: uPv8z79wKBrxQRkRqJlfC2FSfe6ouQMrF7NUITP
+read file no.35
+seek 1365 from file head, read length: 39, content:uPv8z79wKBrxQRkRqJlfC2FSfe6ouQMrF7NUITP
+write file no.36
+write to file! content: EsXmrl3u9hsRxx7BnITnWBoSSa5RL6Ti33lK7Kz
+read file no.36
+seek 1404 from file head, read length: 39, content:EsXmrl3u9hsRxx7BnITnWBoSSa5RL6Ti33lK7Kz
+write file no.37
+write to file! content: ZKAOjPxtxFrvVTTwkHCwoJORFV44olYYry9BwBZ
+read file no.37
+seek 1443 from file head, read length: 39, content:ZKAOjPxtxFrvVTTwkHCwoJORFV44olYYry9BwBZ
+write file no.38
+write to file! content: tmn2Z3rsllrQ2zqhiGu48SxQ3R3hFSdOfuX2m29
+read file no.38
+seek 1482 from file head, read length: 39, content:tmn2Z3rsllrQ2zqhiGu48SxQ3R3hFSdOfuX2m29
+write file no.39
+write to file! content: EEQeRhmrZJruZVCSfFdCSbXPqN2Jh7iEUoutbti
+read file no.39
+seek 1521 from file head, read length: 39, content:EEQeRhmrZJruZVCSfFdCSbXPqN2Jh7iEUoutbti
+write file no.40
+write to file! content: Yh3IJLfpOqrO72ZCdELKmj6PeJ1w8nn4IkIkQjI
+read file no.40
+seek 1560 from file head, read length: 39, content:Yh3IJLfpOqrO72ZCdELKmj6PeJ1w8nn4IkIkQjI
+write file no.41
+write to file! content: t9fuAzaoCNqteYwwaE5S6sgORF0ZbTsv5ffbGas
+read file no.41
+seek 1599 from file head, read length: 39, content:t9fuAzaoCNqteYwwaE5S6sgORF0ZbTsv5ffbGas
+write file no.42
+write to file! content: DcIY1eTn0urNB4JiXCnaP0FNEByB39yktb2S6RR
+read file no.42
+seek 1638 from file head, read length: 39, content:DcIY1eTn0urNB4JiXCnaP0FNEByB39yktb2S6RR
+write file no.43
+write to file! content: Y4vAtJOmoQqsiafSVCWij9pN27xnUo4bhWQIvI1
+read file no.43
+seek 1677 from file head, read length: 39, content:Y4vAtJOmoQqsiafSVCWij9pN27xnUo4bhWQIvI1
+write file no.44
+write to file! content: sXYokxHkcyqMG62DSBEr2HOMp2wQwV9RWRo9k9b
+read file no.44
+seek 1716 from file head, read length: 39, content:sXYokxHkcyqMG62DSBEr2HOMp2wQwV9RWRo9k9b
+write file no.45
+write to file! content: DzBRcbCiQVqqncPxPAwyMQyMdzv3OAEGKMC0a0B
+read file no.45
+seek 1755 from file head, read length: 39, content:DzBRcbCiQVqqncPxPAwyMQyMdzv3OAEGKMC0a0B
+write file no.46
+write to file! content: XSn4UF6iE2qLK8mjNAg6gZXLQvugqqJ78HZrQrk
+read file no.46
+seek 1794 from file head, read length: 39, content:XSn4UF6iE2qLK8mjNAg6gZXLQvugqqJ78HZrQrk
+write file no.47
+write to file! content: suQhLt0g2Zpose9TK8OEzh7KErtIHWPxwDwiEiL
+read file no.47
+seek 1833 from file head, read length: 39, content:suQhLt0g2Zpose9TK8OEzh7KErtIHWPxwDwiEiL
+write file no.48
+write to file! content: CM3KCYufr6qIPBVEH87MJphJ1msvkCUnk8KZ4Zu
+read file no.48
+seek 1872 from file head, read length: 39, content:CM3KCYufr6qIPBVEH87MJphJ1msvkCUnk8KZ4Zu
+write file no.49
+write to file! content: Xpgx4CodfdpnwhsyF6pUdzHJoirYBrZdZ3iPuPU
+read file no.49
+seek 1911 from file head, read length: 39, content:Xpgx4CodfdpnwhsyF6pUdzHJoirYBrZdZ3iPuPU
+write file no.50
+write to file! content: rHJawqidTApHTDFkC6Ycx7qIceqBdYfTNy5GiG3
+read file no.50
+seek 1950 from file head, read length: 39, content:rHJawqidTApHTDFkC6Ycx7qIceqBdYfTNy5GiG3
+write file no.51
+write to file! content: CkvDmUdbHhpl1jcU94GkHFQHPapn5DkKBuT7Y6e
+read file no.51
+seek 1989 from file head, read length: 39, content:CkvDmUdbHhpl1jcU94GkHFQHPapn5DkKBuT7Y6e
+write file no.52
+write to file! content: XCYre8Wa6EpGYFzE740taN0HDWoQXtp9zpqyOxD
+read file no.52
+seek 2028 from file head, read length: 39, content:XCYre8Wa6EpGYFzE740taN0HDWoQXtp9zpqyOxD
+write file no.53
+write to file! content: rfBTWmRYulok5lLz43i1tXZH0Sm3zZvznlEpDom
+read file no.53
+seek 2067 from file head, read length: 39, content:rfBTWmRYulok5lLz43i1tXZH0Sm3zZvznlEpDom
+write file no.54
+write to file! content: C7o7NRKYiIpEdHik22R9Df9GnOlfQF0qbfbg2fN
+read file no.54
+seek 2106 from file head, read length: 39, content:C7o7NRKYiIpEdHik22R9Df9GnOlfQF0qbfbg2fN
+write file no.55
+write to file! content: WaQjF6FWWqojAn5Vz29HXniFbJkItu5gQbzXsWw
+read file no.55
+seek 2145 from file head, read length: 39, content:WaQjF6FWWqojAn5Vz29HXniFbJkItu5gQbzXsWw
+write file no.56
+write to file! content: r23N6k9VLMoDhKSFw0sPrwIEOGjvKbAWEWNNhNW
+read file no.56
+seek 2184 from file head, read length: 39, content:r23N6k9VLMoDhKSFw0sPrwIEOGjvKbAWEWNNhNW
+write file no.57
+write to file! content: BVhzxO3T9uoiFqp0u0bXB5rDCCiXmGFM2SlEXE6
+read file no.57
+seek 2223 from file head, read length: 39, content:BVhzxO3T9uoiFqp0u0bXB5rDCCiXmGFM2SlEXE6
+write file no.58
+write to file! content: WxJdp2ySxQoCnMBlrzKfUDRDz8h9DwLCqN75M4g
+read file no.58
+seek 2262 from file head, read length: 39, content:WxJdp2ySxQoCnMBlrzKfUDRDz8h9DwLCqN75M4g
+write file no.59
+write to file! content: qQwFhgrRlxngKsYWoy2onL0Cn3gmgcR2eIVwBvF
+read file no.59
+seek 2301 from file head, read length: 39, content:qQwFhgrRlxngKsYWoy2onL0Cn3gmgcR2eIVwBvF
+write file no.60
+write to file! content: BsYtYKmPaVoBrOvGmxlw7VaBazfP8IWsSDtn1mp
+read file no.60
+seek 2340 from file head, read length: 39, content:BsYtYKmPaVoBrOvGmxlw7VaBazfP8IWsSDtn1mp
+write file no.61
+write to file! content: VLBWPzfOO1nfPuI1jwT4Rd9ANve2ZxbjG9HeqdP
+read file no.61
+seek 2379 from file head, read length: 39, content:VLBWPzfOO1nfPuI1jwT4Rd9ANve2ZxbjG9HeqdP
+write file no.62
+write to file! content: qno9HdaMCZn9wQfmgvCClljBBsce2egZ44eUfUy
+read file no.62
+seek 2418 from file head, read length: 39, content:qno9HdaMCZn9wQfmgvCClljBBsce2egZ44eUfUy
+write file no.63
+write to file! content: AGRm9HUM05neTw1WevvK4uIAyncHTJlOs02LVLY
+read file no.63
+seek 2457 from file head, read length: 39, content:AGRm9HUM05neTw1WevvK4uIAyncHTJlOs02LVLY
+write file no.64
+write to file! content: Vi4P0vOKpdn80TOHbueSO3s9mjauv0qFguPCLC8
+read file no.64
+seek 2496 from file head, read length: 39, content:Vi4P0vOKpdn80TOHbueSO3s9mjauv0qFguPCLC8
+write file no.65
+write to file! content: pAg2rZIJd9mcYzl2YtMaiBR8ZfaXMfx5Uqn393i
+read file no.65
+seek 2535 from file head, read length: 39, content:pAg2rZIJd9mcYzl2YtMaiBR8ZfaXMfx5Uqn393i
+write file no.66
+write to file! content: AcKfjECHRhn75V8nWs5i2J18MaY9pL2wJlAuzuH
+read file no.66
+seek 2574 from file head, read length: 39, content:AcKfjECHRhn75V8nWs5i2J18MaY9pL2wJlAuzuH
+write file no.67
+write to file! content: U5wJat6HFEmbc1VXTrnrLSa7AXXmG17l7hYlpks
+read file no.67
+seek 2613 from file head, read length: 39, content:U5wJat6HFEmbc1VXTrnrLSa7AXXmG17l7hYlpks
+write file no.68
+write to file! content: pXZvSX0F4km5AXrIRrWzebA6xTWPihCbvcwcebR
+read file no.68
+seek 2652 from file head, read length: 39, content:pXZvSX0F4km5AXrIRrWzebA6xTWPihCbvcwcebR
+write file no.69
+write to file! content: A0CZJBuDsImah3E3OpF7yjj5lPV2BMHSjXISTS1
+read file no.69
+seek 2691 from file head, read length: 39, content:A0CZJBuDsImah3E3OpF7yjj5lPV2BMHSjXISTS1
+write file no.70
+write to file! content: USoCBppCgom4EZboLpyFIsJ4YKUec3NHXSgJJJa
+read file no.70
+seek 2730 from file head, read length: 39, content:USoCBppCgom4EZboLpyFIsJ4YKUec3NHXSgJJJa
+write file no.71
+write to file! content: pvSp2TiBUMlZm5yYJngNc0s4LGSG4iS7MO4A9AA
+read file no.71
+seek 2769 from file head, read length: 39, content:pvSp2TiBUMlZm5yYJngNc0s4LGSG4iS7MO4A9AA
+write file no.72
+write to file! content: 9N4Su7dAJtl3JcLJGnPVw9S49CStVOYyAJS1x1k
+read file no.72
+seek 2808 from file head, read length: 39, content:9N4Su7dAJtl3JcLJGnPVw9S49CStVOYyAJS1x1k
+write file no.73
+write to file! content: Vqh5mmW87QlXq8h4Dm7dGI13w9QWy4doyFpsnrJ
+read file no.73
+seek 2847 from file head, read length: 39, content:Vqh5mmW87QlXq8h4Dm7dGI13w9QWy4doyFpsnrJ
+write file no.74
+write to file! content: pIJicQR7vxl2Ne4oBlrmYQb2k4Q8Pkiem9Djdiu
+read file no.74
+seek 2886 from file head, read length: 39, content:pIJicQR7vxl2Ne4oBlrmYQb2k4Q8Pkiem9Djdiu
+write file no.75
+write to file! content: AlxLU4L6jTkWvARZ8lZusZA2X0OlrPnUa5aZSZT
+read file no.75
+seek 2925 from file head, read length: 39, content:AlxLU4L6jTkWvARZ8lZusZA2X0OlrPnUa5aZSZT
+write file no.76
+write to file! content: UDayMiF5Y1l0SgoJ5jI1Chk1LwOOJ6tKP0yQHP3
+read file no.76
+seek 2964 from file head, read length: 39, content:UDayMiF5Y1l0SgoJ5jI1Chk1LwOOJ6tKP0yQHP3
+write file no.77
+write to file! content: pgCbDM93MYkVzCB53j09WqJ08rM1llyADvLH7Gd
+read file no.77
+seek 3003 from file head, read length: 39, content:pgCbDM93MYkVzCB53j09WqJ08rM1llyADvLH7Gd
+write file no.78
+write to file! content: 98pE4132A5kyXiXp0ijHqytzvoLdDR301rj8w7D
+read file no.78
+seek 3042 from file head, read length: 39, content:98pE4132A5kyXiXp0ijHqytzvoLdDR301rj8w7D
+write file no.79
+write to file! content: UaRswfx1yckS4EuaxhRP97SzjkKGe78rol7zmym
+read file no.79
+seek 3081 from file head, read length: 39, content:UaRswfx1yckS4EuaxhRP97SzjkKGe78rol7zmym
+write file no.80
+write to file! content: o35UoKr0n9kxblHKvgBXTG3yWgIt7nEhchVqbpM
+read file no.80
+seek 3120 from file head, read length: 39, content:o35UoKr0n9kxblHKvgBXTG3yWgIt7nEhchVqbpM
+write file no.81
+write to file! content: 9Vh8fylybgjR9He6sftfnOcyKbIWYSJWQcrgQgw
+read file no.81
+seek 3159 from file head, read length: 39, content:9Vh8fylybgjR9He6sftfnOcyKbIWYSJWQcrgQgw
+write file no.82
+write to file! content: TyKkXcgwPEkvhn1qqeco6WCx7XG809PNFYFXGXV
+read file no.82
+seek 3198 from file head, read length: 39, content:TyKkXcgwPEkvhn1qqeco6WCx7XG809PNFYFXGXV
+write file no.83
+write to file! content: oQxOOGZwDkjQEJNbneKwQflwuTGlSoUD3TdO5O5
+read file no.83
+seek 3237 from file head, read length: 39, content:oQxOOGZwDkjQEJNbneKwQflwuTGlSoUD3TdO5O5
+write file no.84
+write to file! content: 8ta0FuUu2HjulpkLkd34joLwiQEOuUZ3rO1FuFf
+read file no.84
+seek 3276 from file head, read length: 39, content:8ta0FuUu2HjulpkLkd34joLwiQEOuUZ3rO1FuFf
+write file no.85
+write to file! content: TLDe7YNtqokPJL76icmC3wvvVLE1LAetfJO6k5F
+read file no.85
+seek 3315 from file head, read length: 39, content:TLDe7YNtqokPJL76icmC3wvvVLE1LAetfJO6k5F
+write file no.86
+write to file! content: oopHzDIreLjtqrUrfbVKN4UuJHCcnqjjTFlxawo
+read file no.86
+seek 3354 from file head, read length: 39, content:oopHzDIreLjtqrUrfbVKN4UuJHCcnqjjTFlxawo
+write file no.87
+write to file! content: 8GSuprCrStjNNNrbcaDShE4t6DCFGVpaIA9oOnP
+read file no.87
+seek 3393 from file head, read length: 39, content:8GSuprCrStjNNNrbcaDShE4t6DCFGVpaIA9oOnP
+write file no.88
+write to file! content: Tj4XhV6pHPjsuuDNaawa1Mdtv9AshCvP66XeEey
+read file no.88
+seek 3432 from file head, read length: 39, content:Tj4XhV6pHPjsuuDNaawa1Mdtv9AshCvP66XeEey
+write file no.89
+write to file! content: nBiAZ90o5xjMSQa7XYejJUDsi59U9r0Fu0uV4VY
+read file no.89
+seek 3471 from file head, read length: 39, content:nBiAZ90o5xjMSQa7XYejJUDsi59U9r0Fu0uV4VY
+write file no.90
+write to file! content: 8eLnRoumtTiqzwwsUYNrddmrV187bX56iwIMtM8
+read file no.90
+seek 3510 from file head, read length: 39, content:8eLnRoumtTiqzwwsUYNrddmrV187bX56iwIMtM8
+write file no.91
+write to file! content: S6xQISpmh0jLWSJcSW6zxmMrJx6k3DAwWrgDiDh
+read file no.91
+seek 3549 from file head, read length: 39, content:S6xQISpmh0jLWSJcSW6zxmMrJx6k3DAwWrgDiDh
+write file no.92
+write to file! content: nYa397ikWXip4ygOPWp7Huvr6s6NUtFmKn34Y4H
+read file no.92
+seek 3588 from file head, read length: 39, content:nYa397ikWXip4ygOPWp7Huvr6s6NUtFmKn34Y4H
+write file no.93
+write to file! content: 70Dg1ldjK4iJbU28MVXFb2Vquo4zwYLc9iQvNvq
+read file no.93
+seek 3627 from file head, read length: 39, content:70Dg1ldjK4iJbU28MVXFb2Vquo4zwYLc9iQvNvq
+write file no.94
+write to file! content: STqJsPXh8cio80PtKUGNvC4phk4cOFRSxdolCmR
+read file no.94
+seek 3666 from file head, read length: 39, content:STqJsPXh8cio80PtKUGNvC4phk4cOFRSxdolCmR
+write file no.95
+write to file! content: mvTxk3Rgw8iIfWmdHUyVEKeoUh2FquWIlYCc2b0
+read file no.95
+seek 3705 from file head, read length: 39, content:mvTxk3Rgw8iIfWmdHUyVEKeoUh2FquWIlYCc2b0
+write file no.96
+write to file! content: 7O5ZbhLflghmD39OFSheYSDoIc2sHab8ZUaTrSa
+read file no.96
+seek 3744 from file head, read length: 39, content:7O5ZbhLflghmD39OFSheYSDoIc2sHab8ZUaTrSa
+write file no.97
+write to file! content: RqiDSLFdZCiHkZV9CSQmrbnn5Y0UkGgzNPxKhJA
+read file no.97
+seek 3783 from file head, read length: 39, content:RqiDSLFdZCiHkZV9CSQmrbnn5Y0UkGgzNPxKhJA
+write file no.98
+write to file! content: mJLpKz9cNkhlH5st9R9uBkMmtU07CwlpBLKBWAk
+read file no.98
+seek 3822 from file head, read length: 39, content:mJLpKz9cNkhlH5st9R9uBkMmtU07CwlpBLKBWAk
+write file no.99
+write to file! content: 6lyTCe3bBHhGpbFe7Qr2VswlgQykdbrezFi2M1J
+read file no.99
+seek 3861 from file head, read length: 39, content:6lyTCe3bBHhGpbFe7Qr2VswlgQykdbrezFi2M1J
+file size: 3 K
+test completed......
+TEST PASSED !
+encfs> [Kencfs stop
+encfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0
+encfs> [K

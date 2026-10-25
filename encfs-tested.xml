@@ -184,7 +184,7 @@
   <project name="frameworks_system_vibrator" path="frameworks/system/vibrator" revision="30cc35939387f09b502ceac481bfaf42ee2e7069" upstream="dev" dest-branch="dev" />
   <project name="libs_openvela_vela" path="vendor/openvela/boards/vela/libs" revision="08ae84925e1001ab1ccb05bce095f0c7dfdcd334" upstream="dev" dest-branch="dev" />
   <project name="libs_sifli_sf32lb52" path="vendor/sifli/boards/sf32lb52/libs" revision="1419c8b3ddf23d3669ce17515d89c184068c0099" upstream="dev" dest-branch="dev" />
-  <project name="nuttx" remote="my-vela-crypto" revision="7934920bb876195f2f45fc76b863235d5129c6e3" upstream="dev" dest-branch="dev">
+  <project name="nuttx" remote="my-vela-crypto" revision="04264dc9a71be9dba96c4321bc5d7770e79d2dca" upstream="dev" dest-branch="dev">
     <linkfile src="tools/build.sh" dest="build.sh" />
     <linkfile src="tools/run-emulator.sh" dest="run-emulator.sh" />
   </project>

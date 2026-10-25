@@ -1,0 +1,69 @@
+Staged emulator artifacts from cmake_out/vela_goldfish-arm64-v8a-ap-encfs-gui/
+TARGETDIR = /home/tourist/Desktop/openvela/vendor/openvela/boards/vela
+arg=-keep
+arg=-no-window
+arg=-no-audio
+arg=-gpu
+arg=swiftshader_indirect
+arg=-accel
+arg=off
+Copy modem_simulator
+记录了1+0 的读入
+记录了1+0 的写出
+209715200字节（210 MB，200 MiB）已复制，0.216508 s，969 MB/s
+A core file already exists. will be backed to 20261025110518.core
+INFO    | Android emulator version 32.1.15.0 (build_id 20251216) (CL:N/A)
+INFO    | Found systemPath /home/tourist/Desktop/openvela/nuttx
+INFO    | Crashreporting disabled, not reporting crashes.
+INFO    | Duplicate loglines will be removed, if you wish to see each indiviudal line launch with the -log-nofilter flag.
+WARNING | encryption is off
+WARNING | Unknown Image type 3
+WARNING | Unknown Image type 5
+WARNING | Unknown Image type 4
+WARNING | Unknown Image type 1
+ERROR   | Unable to connect to adb daemon on port: 5037
+WARNING | cannot add library /home/tourist/Desktop/openvela/prebuilts/emulator/linux-x86_64/qemu/linux-x86_64/lib64/vulkan/libvulkan.so: failed
+INFO    | added library /home/tourist/Desktop/openvela/prebuilts/emulator/linux-x86_64/lib64/vulkan/libvulkan.so
+Warning: Allowing host microphone input.
+WARNING | *** No gRPC protection active, consider launching with the -grpc-use-jwt flag.***
+INFO    | Started GRPC server at 127.0.0.1:8558, security: Local, auth: none
+INFO    | Advertising in: /run/user/1000/avd/running/pid_209739.ini
+INFO    | Connecting to bluetooth mesh: localhost:8554
+INFO    | Setting display: 0 configuration to: 1280x800, dpi: 420x420 
+encfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1
+encfs: wrapped=0 master_id=0 generation=0
+kvdbd [10:100]
+servicemanager [11:100]
+adbd [12:100]
+telnetd [13:100]
+
+NuttShell (NSH)
+encfs> [Kencfs start
+encfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1
+encfs: wrapped=0 master_id=0 generation=0
+encfs> [Klvgldemo stress &
+lvgldemo [15:100]
+encfs> [Kps
+  PID GROUP PRI POLICY   TYPE    NPX STATE    EVENT     SIGMASK             STACK    USED FILLED COMMAND
+    0     0   0 FIFO     Kthread   - Ready              0000000000000000  0007984 0002120  26.5%  CPU0 IDLE
+    1     0 192 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001152   7.1%  hpwork 0x408eacc0 0x408ead40
+    2     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001152   7.1%  lpwork 0x408eac00 0x408eac80
+    4     0 100 RR       Kthread   - Ready              0000000000000000  0016112 0001616  10.0%  goldfish_gpu_fb_thread 0x40942ca0
+    5     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001680  10.4%  goldfish_gnss_thread 0x40dcae30
+    6     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001760  10.9%  goldfish_sensor_thread 0x409d59d0
+    7     7 100 RR       Task      - Running            0000000000000000  0016144 0004656  28.8%  nsh_main
+   10    10 100 RR       Task      - Waiting  Semaphore 0000000000000000  0007952 0003464  43.5%  kvdbd
+   11    11 100 RR       Task      - Waiting  Semaphore 0000000000000000  0016144 0003208  19.8%  servicemanager
+   12    12 100 RR       Task      - Waiting  Semaphore 0000000000000000  0016144 0002016  12.4%  adbd
+   13    13 100 RR       Task      - Waiting  Semaphore 0000000000020000  0016144 0002256  13.9%  telnetd
+   15    15 100 RR       Task      - Ready              0000000000000000  0032512 0010488  32.2%  lvgldemo stress
+encfs> [Kfbcapture -d /dev/fb0 -o /share/134e47-initial.bmp
+Taking screenshot of '/share/134e47-initial.bmp' ...
+Success
+encfs> [Kfbcapture -d /dev/fb0 -o /share/134e47-animated.bmp
+Taking screenshot of '/share/134e47-animated.bmp' ...
+Success
+encfs> [Kencfs stop
+encfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0
+encfs: wrapped=0 master_id=0 generation=0
+encfs> [K

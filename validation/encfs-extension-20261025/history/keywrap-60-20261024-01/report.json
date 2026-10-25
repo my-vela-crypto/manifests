@@ -1,0 +1,125 @@
+{
+  "started_at": "2026-10-24T14:34:47+08:00",
+  "status": "failed",
+  "phases": [
+    {
+      "name": "legacy-rekey-rejection",
+      "status": "failed",
+      "instance": "encfs-legacy-82a77a27e3e8",
+      "command": [
+        "/home/tourist/Desktop/openvela/run-emulator.sh",
+        "goldfish-arm64-v8a-ap-encfs-gui",
+        "-keep",
+        "encfs-legacy-82a77a27e3e8",
+        "-no-window",
+        "-no-audio",
+        "-gpu",
+        "swiftshader_indirect",
+        "-accel",
+        "off"
+      ],
+      "started_at": "2026-10-24T14:34:47+08:00",
+      "commands": [
+        {
+          "command": "encfs provision --erase",
+          "started_at": "2026-10-24T14:34:48+08:00",
+          "finished_at": "2026-10-24T14:34:48+08:00",
+          "output": "\u001b[Kencfs provision --erase\r\r\nencfs: formatting encrypted data volume\r\r\nencfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        },
+        {
+          "command": "encfs start",
+          "started_at": "2026-10-24T14:34:48+08:00",
+          "finished_at": "2026-10-24T14:34:48+08:00",
+          "output": "\u001b[Kencfs start\r\r\nencfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        },
+        {
+          "command": "encfs rekey 1",
+          "started_at": "2026-10-24T14:34:48+08:00",
+          "finished_at": "2026-10-24T14:34:48+08:00",
+          "output": "\u001b[Kencfs rekey 1\r\r\nencfs: state=READY result=-138 stage=15 error=-138 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\nencfs: Unknown error 138 (-138)\r\r\n"
+        }
+      ],
+      "serial_log": "/home/tourist/Desktop/openvela/encfs-results/keywrap-60-20261024-01/legacy-rekey-rejection.serial.log",
+      "exit_status": null,
+      "exit_signal": 15,
+      "finished_at": "2026-10-24T14:34:48+08:00"
+    }
+  ],
+  "requested_stress_seconds": 60,
+  "config": "goldfish-arm64-v8a-ap-encfs-gui",
+  "build_dir": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-gui",
+  "limitations": [
+    "Disposable host-file provider models a keystore, not a TEE.",
+    "No real power-loss or malicious-host rollback guarantee.",
+    "Legacy directly-derived volumes reject online rekey.",
+    "Captured old keyslots together with old masters remain decryptable."
+  ],
+  "build_artifacts": {
+    "nuttx": {
+      "path": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-gui/nuttx",
+      "size": 61591200,
+      "sha256": "794119b446b764f4ada8c175467a29b4758001925d63c224273d3e2c1cc10615"
+    },
+    "nuttx.bin": {
+      "path": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-gui/nuttx.bin",
+      "size": 7057408,
+      "sha256": "0728d17af59188f607ed1301ea1e659d43f56205d3f2d6a949837d78bbdd2c4e"
+    },
+    "vela_data.bin": {
+      "path": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-gui/vela_data.bin",
+      "size": 268435456,
+      "sha256": "a6d72ac7690f53be6ae46ba88506bd97302a093f7108472bd9efc3cefda06484"
+    },
+    "vela_system.bin": {
+      "path": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-gui/vela_system.bin",
+      "size": 1024,
+      "sha256": "132c956be1e711a7bde7c0206a663b5ee63804ec3888478b5a1c8092e14b290b"
+    },
+    ".config": {
+      "path": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-gui/.config",
+      "size": 106310,
+      "sha256": "6e4fefba74baa4a02ab99d0c218ae724aa356a940d0f0d1507aa2855283c0c69"
+    }
+  },
+  "source_revisions": {
+    "nuttx": {
+      "revision": "04264dc9a71be9dba96c4321bc5d7770e79d2dca",
+      "dirty": false,
+      "changes": []
+    },
+    "apps": {
+      "revision": "e198d0a1a032b886dc43c6cf5e7677f5dad4a42e",
+      "dirty": true,
+      "changes": [
+        "?? testing/drivers/nist-sts/.gitee/",
+        "?? testing/drivers/nist-sts/.github/",
+        "?? testing/drivers/nist-sts/sts/"
+      ]
+    },
+    "vendor_openvela": {
+      "revision": "0b0fce509c7b84a84d8b4e7dc13b59a8c6620d99",
+      "dirty": true,
+      "changes": [
+        " M boards/vela/configs/goldfish-arm64-v8a-ap-encfs-gui/defconfig",
+        " M boards/vela/configs/goldfish-arm64-v8a-ap-encfs/defconfig"
+      ]
+    },
+    "manifests": {
+      "revision": "b53dd710d5bf58be99c1adb6c42ab2c58064e0df",
+      "dirty": true,
+      "changes": [
+        " M tools/analyze_encfs_stress.py",
+        " M tools/test_encfs.py",
+        " M tools/test_encfs_gui.py",
+        "?? docs/encfs_extension_status.md",
+        "?? docs/encfs_keywrap.md",
+        "?? tools/test_encfs_extended.py",
+        "?? tools/test_encfs_keywrap.py"
+      ]
+    }
+  },
+  "updated_at": "2026-10-24T14:34:48+08:00",
+  "error": "Wrong result for encfs rekey 1: -138",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/tourist/Desktop/openvela/.repo/manifests/tools/test_encfs_keywrap.py\", line 379, in main\n    run(args, report)\n  File \"/home/tourist/Desktop/openvela/.repo/manifests/tools/test_encfs_keywrap.py\", line 62, in run\n    expect_encfs(emulator, \"rekey 1\", state=\"READY\", result=-95)\n  File \"/home/tourist/Desktop/openvela/.repo/manifests/tools/test_encfs_gui.py\", line 47, in expect_encfs\n    require(actual_result == result, f\"Wrong result for encfs {action}: {actual_result}\")\n  File \"/home/tourist/Desktop/openvela/.repo/manifests/tools/test_encfs.py\", line 69, in require\n    raise TestFailure(message)\ntest_encfs.TestFailure: Wrong result for encfs rekey 1: -138\n",
+  "finished_at": "2026-10-24T14:34:48+08:00"
+}

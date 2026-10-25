@@ -1,5 +1,9 @@
 # 第二、三层实现与测试报告
 
+<!-- encfs-extension-pointer:begin -->
+> 本文件保留 2026-10-24 首版及更早验收历史；最新扩展结果与仍在运行的长期测试见[第二、三层扩展实现与测试报告](encfs_extension_report.md)。首版成品包内部保持原样。
+<!-- encfs-extension-pointer:end -->
+
 <!-- encfs-final-current:begin -->
 最新正式验收：**2026-10-24（Asia/Shanghai）**。NSH 手工测试密钥入口、完整 GUI 配置回归和实际一小时双线程压力已完成。视频按用户要求暂不制作。下方保留 10 月 22 日及 10 月 23 日上午验收/发布历史；这些历史缺项不代表本轮状态。
 

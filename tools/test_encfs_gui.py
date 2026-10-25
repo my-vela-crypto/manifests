@@ -200,7 +200,7 @@ def keypad_interactions(args, emulator, phase, initial):
     phase["touch_changed_pixels"] = checks
 
 
-def long_stress(args, emulator, phase, report):
+def long_stress(args, emulator, phase, report, *, checkpoint_hook=None):
     start = time.monotonic()
     emulator.command(f"encfs_test stress {args.stress_seconds} &")
     phase["stress_host_started_at"] = now()
@@ -240,6 +240,9 @@ def long_stress(args, emulator, phase, report):
                 "No fresh I/O progress for 95 seconds")
         checkpoint = {"elapsed_host_seconds": round(time.monotonic() - start, 3),
                       "checked_at": now(), "memory_output": free}
+        if (checkpoint_hook is not None and previous_workers is not None and
+                not matches):
+            checkpoint_hook(emulator, previous_workers, checkpoint)
         if index == 1 or index % 10 == 0 or matches:
             # Alternate known tabs so each capture also verifies a live input
             # path, rather than merely checking that a GUI task still exists.

@@ -1,0 +1,59 @@
+{
+  "status": "passed",
+  "report_sha256": "46c7b4d1928adbffb3433cb8e5843590a3b5481ccbbe4b5c34ecb765a81b263a",
+  "inputs_rechecked_unchanged": {
+    "nuttx": "de42d2b9044511da72868285a6691b1c7ac533a8c172a318d1369b04449ba763",
+    "nuttx.bin": "c6700820f08ea76f225b0611ce6bf913be5d1832e7fc98ee3fd4f9ccc8ca883e",
+    "vela_data.bin": "a6d72ac7690f53be6ae46ba88506bd97302a093f7108472bd9efc3cefda06484",
+    "vela_system.bin": "e106fdd98f2d55a8c4fa8bad6d77802ecdc14e8179f4ee4beec9d80e299bd456",
+    ".config": "72c93b8165d9c83562aeb80de1446395916aef253a469d55de2a867eda1af7d1"
+  },
+  "total_pass": 789,
+  "total_fail": 0,
+  "phases": [
+    {
+      "phase": "standalone",
+      "mode": "standalone",
+      "pass": 172,
+      "fail": 0,
+      "serial_sha256": "c0d1614e0c1dfd36125380c318ef01ae6b93a65879a0f92ec9fd12e9a98e12b8"
+    },
+    {
+      "phase": "corruption",
+      "mode": "corruption",
+      "pass": 361,
+      "fail": 0,
+      "serial_sha256": "7b2ae1e0db21a5d3f35ce58f092fb303c0c2c849be085c46884c9d36f04fc19e"
+    },
+    {
+      "phase": "encrypted-write",
+      "mode": "write",
+      "pass": 232,
+      "fail": 0,
+      "serial_sha256": "318277198ca1072729faeefb5f9fdc808a753f5c301a7fbc7675f450f6722d83"
+    },
+    {
+      "phase": "encrypted-reboot",
+      "mode": "verify",
+      "pass": 8,
+      "fail": 0,
+      "serial_sha256": "b134afddeafe6307fb2b43c875c8c7a231cce393d79a4f24d5bcf59c0b38920d"
+    },
+    {
+      "phase": "encrypted-reboot-02",
+      "mode": "verify",
+      "pass": 8,
+      "fail": 0,
+      "serial_sha256": "a70cad8ea33160075a0bc92b9fcb4807ab9dff98397f58a182662eece7fe56fd"
+    },
+    {
+      "phase": "encrypted-reboot-03",
+      "mode": "verify",
+      "pass": 8,
+      "fail": 0,
+      "serial_sha256": "b0a59b04764b8b39335f72c826694e05da4609436435d04151c5f1d961a0d9f3"
+    }
+  ],
+  "encrypted_disk_unchanged_across_three_cold_boots": true,
+  "disk_sha256": "ab41e933d3dedd52c1167fb72eabd2c77abdeca30b0e52f02714723f75414f70"
+}

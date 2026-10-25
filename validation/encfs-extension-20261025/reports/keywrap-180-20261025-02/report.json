@@ -1,0 +1,1298 @@
+{
+  "started_at": "2026-10-25T11:05:56+08:00",
+  "status": "passed",
+  "phases": [
+    {
+      "name": "legacy-rekey-rejection",
+      "status": "passed",
+      "instance": "encfs-legacy-dd442f616ad6",
+      "command": [
+        "/home/tourist/Desktop/openvela/run-emulator.sh",
+        "goldfish-arm64-v8a-ap-encfs-gui",
+        "-keep",
+        "encfs-legacy-dd442f616ad6",
+        "-no-window",
+        "-no-audio",
+        "-gpu",
+        "swiftshader_indirect",
+        "-accel",
+        "off"
+      ],
+      "started_at": "2026-10-25T11:05:57+08:00",
+      "commands": [
+        {
+          "command": "encfs provision --erase",
+          "started_at": "2026-10-25T11:05:57+08:00",
+          "finished_at": "2026-10-25T11:05:58+08:00",
+          "output": "\u001b[Kencfs provision --erase\r\r\nencfs: formatting encrypted data volume\r\r\nencfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        },
+        {
+          "command": "encfs start",
+          "started_at": "2026-10-25T11:05:58+08:00",
+          "finished_at": "2026-10-25T11:05:58+08:00",
+          "output": "\u001b[Kencfs start\r\r\nencfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        },
+        {
+          "command": "encfs rekey 1",
+          "started_at": "2026-10-25T11:05:58+08:00",
+          "finished_at": "2026-10-25T11:05:58+08:00",
+          "output": "\u001b[Kencfs rekey 1\r\r\nencfs: state=READY result=-138 stage=15 error=-138 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\nencfs: Unknown error 138 (-138)\r\r\n"
+        },
+        {
+          "command": "encfs stop",
+          "started_at": "2026-10-25T11:05:58+08:00",
+          "finished_at": "2026-10-25T11:05:58+08:00",
+          "output": "\u001b[Kencfs stop\r\r\nencfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        }
+      ],
+      "serial_log": "/home/tourist/Desktop/openvela/encfs-results/keywrap-180-20261025-02/legacy-rekey-rejection.serial.log",
+      "exit_status": null,
+      "exit_signal": 15,
+      "finished_at": "2026-10-25T11:05:58+08:00"
+    },
+    {
+      "name": "gui-wrapped-key-stress",
+      "status": "passed",
+      "instance": "encfs-wrapped-dd442f616ad6",
+      "command": [
+        "/home/tourist/Desktop/openvela/run-emulator.sh",
+        "goldfish-arm64-v8a-ap-encfs-gui",
+        "-keep",
+        "encfs-wrapped-dd442f616ad6",
+        "-no-window",
+        "-no-audio",
+        "-gpu",
+        "swiftshader_indirect",
+        "-accel",
+        "off"
+      ],
+      "started_at": "2026-10-25T11:05:58+08:00",
+      "commands": [
+        {
+          "command": "encfs stop",
+          "started_at": "2026-10-25T11:05:58+08:00",
+          "finished_at": "2026-10-25T11:05:59+08:00",
+          "output": "\u001b[Kencfs stop\r\r\nencfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        },
+        {
+          "command": "encfs keyfiles /share/keys",
+          "started_at": "2026-10-25T11:05:59+08:00",
+          "finished_at": "2026-10-25T11:05:59+08:00",
+          "output": "\u001b[Kencfs keyfiles /share/keys\r\r\nencfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        },
+        {
+          "command": "encfs start",
+          "started_at": "2026-10-25T11:05:59+08:00",
+          "finished_at": "2026-10-25T11:05:59+08:00",
+          "output": "\u001b[Kencfs start\r\r\nencfs: state=STOPPED result=-126 stage=2 error=-126 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\nencfs: Unknown error 126 (-126)\r\r\n"
+        },
+        {
+          "command": "encfs provision --erase",
+          "started_at": "2026-10-25T11:05:59+08:00",
+          "finished_at": "2026-10-25T11:05:59+08:00",
+          "output": "\u001b[Kencfs provision --erase\r\r\nencfs: formatting encrypted data volume\r\r\nencfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        },
+        {
+          "command": "encfs start",
+          "started_at": "2026-10-25T11:05:59+08:00",
+          "finished_at": "2026-10-25T11:05:59+08:00",
+          "output": "\u001b[Kencfs start\r\r\nencfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\nencfs: wrapped=1 master_id=0 generation=1\r\r\n"
+        },
+        {
+          "command": "encfs status",
+          "started_at": "2026-10-25T11:05:59+08:00",
+          "finished_at": "2026-10-25T11:05:59+08:00",
+          "output": "\u001b[Kencfs status\r\r\nencfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\nencfs: wrapped=1 master_id=0 generation=1\r\r\n"
+        },
+        {
+          "command": "mkdir /data/验证",
+          "started_at": "2026-10-25T11:05:59+08:00",
+          "finished_at": "2026-10-25T11:05:59+08:00",
+          "output": "\u001b[Kmkdir /data/验证\r\r\n"
+        },
+        {
+          "command": "echo ENCFS_WRAP_UTF8_20261024_7df925ca > /data/验证/密钥🔐.txt",
+          "started_at": "2026-10-25T11:05:59+08:00",
+          "finished_at": "2026-10-25T11:05:59+08:00",
+          "output": "\u001b[Kecho ENCFS_WRAP_UTF8_20261024_7df925ca > /data/验证/密钥🔐.txt\r\r\n"
+        },
+        {
+          "command": "cat /data/验证/密钥🔐.txt",
+          "started_at": "2026-10-25T11:05:59+08:00",
+          "finished_at": "2026-10-25T11:05:59+08:00",
+          "output": "\u001b[Kcat /data/验证/密钥🔐.txt\r\r\nENCFS_WRAP_UTF8_20261024_7df925ca\r\r\n"
+        },
+        {
+          "command": "encfs rekey 99",
+          "started_at": "2026-10-25T11:05:59+08:00",
+          "finished_at": "2026-10-25T11:05:59+08:00",
+          "output": "\u001b[Kencfs rekey 99\r\r\nencfs: state=READY result=-126 stage=15 error=-126 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\nencfs: wrapped=1 master_id=0 generation=1\r\r\nencfs: Unknown error 126 (-126)\r\r\n"
+        },
+        {
+          "command": "encfs keyslot-failcommit on",
+          "started_at": "2026-10-25T11:05:59+08:00",
+          "finished_at": "2026-10-25T11:05:59+08:00",
+          "output": "\u001b[Kencfs keyslot-failcommit on\r\r\nencfs: state=READY result=0 stage=15 error=-126 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\nencfs: wrapped=1 master_id=0 generation=1\r\r\n"
+        },
+        {
+          "command": "encfs rekey 1",
+          "started_at": "2026-10-25T11:05:59+08:00",
+          "finished_at": "2026-10-25T11:06:00+08:00",
+          "output": "\u001b[Kencfs rekey 1\r\r\nencfs: state=READY result=-5 stage=15 error=-5 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\nencfs: wrapped=1 master_id=0 generation=1\r\r\nencfs: Unknown error 5 (-5)\r\r\n"
+        },
+        {
+          "command": "encfs status",
+          "started_at": "2026-10-25T11:06:00+08:00",
+          "finished_at": "2026-10-25T11:06:00+08:00",
+          "output": "\u001b[Kencfs status\r\r\nencfs: state=READY result=0 stage=15 error=-5 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\nencfs: wrapped=1 master_id=0 generation=1\r\r\n"
+        },
+        {
+          "command": "cat /data/验证/密钥🔐.txt",
+          "started_at": "2026-10-25T11:06:00+08:00",
+          "finished_at": "2026-10-25T11:06:00+08:00",
+          "output": "\u001b[Kcat /data/验证/密钥🔐.txt\r\r\nENCFS_WRAP_UTF8_20261024_7df925ca\r\r\n"
+        },
+        {
+          "command": "encfs rekey 1",
+          "started_at": "2026-10-25T11:06:00+08:00",
+          "finished_at": "2026-10-25T11:06:00+08:00",
+          "output": "\u001b[Kencfs rekey 1\r\r\nencfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\nencfs: wrapped=1 master_id=1 generation=2\r\r\n"
+        },
+        {
+          "command": "encfs status",
+          "started_at": "2026-10-25T11:06:00+08:00",
+          "finished_at": "2026-10-25T11:06:00+08:00",
+          "output": "\u001b[Kencfs status\r\r\nencfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\nencfs: wrapped=1 master_id=1 generation=2\r\r\n"
+        },
+        {
+          "command": "cat /data/验证/密钥🔐.txt",
+          "started_at": "2026-10-25T11:06:00+08:00",
+          "finished_at": "2026-10-25T11:06:00+08:00",
+          "output": "\u001b[Kcat /data/验证/密钥🔐.txt\r\r\nENCFS_WRAP_UTF8_20261024_7df925ca\r\r\n"
+        },
+        {
+          "command": "lvgldemo widgets &",
+          "started_at": "2026-10-25T11:06:00+08:00",
+          "finished_at": "2026-10-25T11:06:00+08:00",
+          "output": "\u001b[Klvgldemo widgets &\r\r\nlvgldemo [51:100]\r\r\n"
+        },
+        {
+          "command": "ps",
+          "started_at": "2026-10-25T11:06:03+08:00",
+          "finished_at": "2026-10-25T11:06:04+08:00",
+          "output": "\u001b[Kps\r\r\n  PID GROUP PRI POLICY   TYPE    NPX STATE    EVENT     SIGMASK             STACK    USED FILLED COMMAND\r\r\n    0     0   0 FIFO     Kthread   - Ready              0000000000000000  0007984 0002120  26.5%  CPU0 IDLE\r\r\n    1     0 192 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001152   7.1%  hpwork 0x408eacc0 0x408ead40\r\r\n    2     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001152   7.1%  lpwork 0x408eac00 0x408eac80\r\r\n    4     0 100 RR       Kthread   - Ready              0000000000000000  0016112 0001616  10.0%  goldfish_gpu_fb_thread 0x40942ca0\r\r\n    5     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001680  10.4%  goldfish_gnss_thread 0x40dcae30\r\r\n    6     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001760  10.9%  goldfish_sensor_thread 0x409d59d0\r\r\n    7     7 100 RR       Task      - Running            0000000000000000  0016144 0005216  32.3%  nsh_main\r\r\n   10    10 100 RR       Task      - Waiting  Semaphore 0000000000000000  0007952 0003464  43.5%  kvdbd\r\r\n   11    11 100 RR       Task      - Ready              0000000000000000  0016144 0003208  19.8%  servicemanager\r\r\n   12    12 100 RR       Task      - Waiting  Semaphore 0000000000000000  0016144 0002016  12.4%  adbd\r\r\n   13    13 100 RR       Task      - Waiting  Semaphore 0000000000020000  0016144 0002256  13.9%  telnetd\r\r\n   51    51 100 RR       Task      - Ready              0000000000000000  0032512 0010664  32.8%  lvgldemo widgets\r\r\n"
+        },
+        {
+          "command": "fbcapture -d /dev/fb0 -o /share/b18d30-initial.bmp",
+          "started_at": "2026-10-25T11:06:04+08:00",
+          "finished_at": "2026-10-25T11:06:04+08:00",
+          "output": "\u001b[Kfbcapture -d /dev/fb0 -o /share/b18d30-initial.bmp\r\r\nTaking screenshot of '/share/b18d30-initial.bmp' ...\r\r\nSuccess\r\r\n"
+        },
+        {
+          "command": "input tap 740 35",
+          "started_at": "2026-10-25T11:06:04+08:00",
+          "finished_at": "2026-10-25T11:06:04+08:00",
+          "output": "\u001b[Kinput tap 740 35\r\r\n"
+        },
+        {
+          "command": "fbcapture -d /dev/fb0 -o /share/b18d30-profile.bmp",
+          "started_at": "2026-10-25T11:06:05+08:00",
+          "finished_at": "2026-10-25T11:06:05+08:00",
+          "output": "\u001b[Kfbcapture -d /dev/fb0 -o /share/b18d30-profile.bmp\r\r\nTaking screenshot of '/share/b18d30-profile.bmp' ...\r\r\nSuccess\r\r\n"
+        },
+        {
+          "command": "input tap 950 35",
+          "started_at": "2026-10-25T11:06:05+08:00",
+          "finished_at": "2026-10-25T11:06:05+08:00",
+          "output": "\u001b[Kinput tap 950 35\r\r\n"
+        },
+        {
+          "command": "fbcapture -d /dev/fb0 -o /share/b18d30-analytics.bmp",
+          "started_at": "2026-10-25T11:06:06+08:00",
+          "finished_at": "2026-10-25T11:06:06+08:00",
+          "output": "\u001b[Kfbcapture -d /dev/fb0 -o /share/b18d30-analytics.bmp\r\r\nTaking screenshot of '/share/b18d30-analytics.bmp' ...\r\r\nSuccess\r\r\n"
+        },
+        {
+          "command": "input tap 1160 35",
+          "started_at": "2026-10-25T11:06:06+08:00",
+          "finished_at": "2026-10-25T11:06:07+08:00",
+          "output": "\u001b[Kinput tap 1160 35\r\r\n"
+        },
+        {
+          "command": "fbcapture -d /dev/fb0 -o /share/b18d30-shop.bmp",
+          "started_at": "2026-10-25T11:06:08+08:00",
+          "finished_at": "2026-10-25T11:06:08+08:00",
+          "output": "\u001b[Kfbcapture -d /dev/fb0 -o /share/b18d30-shop.bmp\r\r\nTaking screenshot of '/share/b18d30-shop.bmp' ...\r\r\nSuccess\r\r\n"
+        },
+        {
+          "command": "input tap 683 357",
+          "started_at": "2026-10-25T11:06:08+08:00",
+          "finished_at": "2026-10-25T11:06:08+08:00",
+          "output": "\u001b[Kinput tap 683 357\r\r\n"
+        },
+        {
+          "command": "fbcapture -d /dev/fb0 -o /share/b18d30-checkbox-toggled.bmp",
+          "started_at": "2026-10-25T11:06:09+08:00",
+          "finished_at": "2026-10-25T11:06:09+08:00",
+          "output": "\u001b[Kfbcapture -d /dev/fb0 -o /share/b18d30-checkbox-toggled.bmp\r\r\nTaking screenshot of '/share/b18d30-checkbox-toggled.bmp' ...\r\r\nSuccess\r\r\n"
+        },
+        {
+          "command": "input tap 740 35",
+          "started_at": "2026-10-25T11:06:09+08:00",
+          "finished_at": "2026-10-25T11:06:10+08:00",
+          "output": "\u001b[Kinput tap 740 35\r\r\n"
+        },
+        {
+          "command": "fbcapture -d /dev/fb0 -o /share/b18d30-slider-before.bmp",
+          "started_at": "2026-10-25T11:06:11+08:00",
+          "finished_at": "2026-10-25T11:06:11+08:00",
+          "output": "\u001b[Kfbcapture -d /dev/fb0 -o /share/b18d30-slider-before.bmp\r\r\nTaking screenshot of '/share/b18d30-slider-before.bmp' ...\r\r\nSuccess\r\r\n"
+        },
+        {
+          "command": "input swipe 685 402 1050 402 400",
+          "started_at": "2026-10-25T11:06:11+08:00",
+          "finished_at": "2026-10-25T11:06:11+08:00",
+          "output": "\u001b[Kinput swipe 685 402 1050 402 400\r\r\n"
+        },
+        {
+          "command": "fbcapture -d /dev/fb0 -o /share/b18d30-slider-after.bmp",
+          "started_at": "2026-10-25T11:06:12+08:00",
+          "finished_at": "2026-10-25T11:06:12+08:00",
+          "output": "\u001b[Kfbcapture -d /dev/fb0 -o /share/b18d30-slider-after.bmp\r\r\nTaking screenshot of '/share/b18d30-slider-after.bmp' ...\r\r\nSuccess\r\r\n"
+        },
+        {
+          "command": "encfs_test stress 180 &",
+          "started_at": "2026-10-25T11:06:12+08:00",
+          "finished_at": "2026-10-25T11:06:12+08:00",
+          "output": "\u001b[Kencfs_test stress 180 &\r\r\nencfs_test [105:100]\r\r\n"
+        },
+        {
+          "command": "encfs status",
+          "started_at": "2026-10-25T11:06:42+08:00",
+          "finished_at": "2026-10-25T11:06:43+08:00",
+          "output": "\u001b[KENCFS_LONG_STRESS_START requested_seconds=180 workers=2 seed=6e637273 max_live_file_bytes=131074 root=/data/.encfs-stress-105-14031\r\r\nencfs status\r\r\nencfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\nencfs: wrapped=1 master_id=1 generation=2\r\r\n"
+        },
+        {
+          "command": "ps",
+          "started_at": "2026-10-25T11:06:43+08:00",
+          "finished_at": "2026-10-25T11:06:43+08:00",
+          "output": "\u001b[Kps\r\r\n  PID GROUP PRI POLICY   TYPE    NPX STATE    EVENT     SIGMASK             STACK    USED FILLED COMMAND\r\r\n    0     0   0 FIFO     Kthread   - Ready              0000000000000000  0007984 0002120  26.5%  CPU0 IDLE\r\r\n    1     0 192 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001152   7.1%  hpwork 0x408eacc0 0x408ead40\r\r\n    2     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001152   7.1%  lpwork 0x408eac00 0x408eac80\r\r\n    4     0 100 RR       Kthread   - Ready              0000000000000000  0016112 0001616  10.0%  goldfish_gpu_fb_thread 0x40942ca0\r\r\n    5     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001680  10.4%  goldfish_gnss_thread 0x40dcae30\r\r\n    6     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001760  10.9%  goldfish_sensor_thread 0x409d59d0\r\r\n    7     7 100 RR       Task      - Running            0000000000000000  0016144 0005216  32.3%  nsh_main\r\r\n   10    10 100 RR       Task      - Waiting  Semaphore 0000000000000000  0007952 0003464  43.5%  kvdbd\r\r\n   11    11 100 RR       Task      - Waiting  Semaphore 0000000000000000  0016144 0003208  19.8%  servicemanager\r\r\n   12    12 100 RR       Task      - Waiting  Semaphore 0000000000000000  0016144 0002016  12.4%  adbd\r\r\n   13    13 100 RR       Task      - Waiting  Semaphore 0000000000020000  0016144 0002256  13.9%  telnetd\r\r\n   51    51 100 RR       Task      - Ready              0000000000000000  0032512 0011640  35.8%  lvgldemo widgets\r\r\n  105   105 100 RR       Task      - Waiting  Signal    0000000000000000  0016112 0004344  26.9%  encfs_test stress 180\r\r\n  110   105 100 RR       pthread   - Ready              0000000000000000  0007984 0005088  63.7%  encfs_test 0x40423a20 0x40e63c28\r\r\n  111   105 100 RR       pthread   - Waiting  Mutex:110 0000000000000000  0007984 0005168  64.7%  encfs_test 0x40423a20 0x40e63d18\r\r\n"
+        },
+        {
+          "command": "free",
+          "started_at": "2026-10-25T11:06:43+08:00",
+          "finished_at": "2026-10-25T11:06:43+08:00",
+          "output": "\u001b[Kfree\r\r\n      total       used       free    maxused    maxfree  nused  nfree name\r\r\n      65536       1152      64384       1072      64384      2      1 binder_heap_11\r\r\n  122592960    5656064  116936896    5690976  116907648    229     66 Umem\r\r\n"
+        },
+        {
+          "command": "input tap 950 35",
+          "started_at": "2026-10-25T11:06:43+08:00",
+          "finished_at": "2026-10-25T11:06:43+08:00",
+          "output": "\u001b[Kinput tap 950 35\r\r\n"
+        },
+        {
+          "command": "fbcapture -d /dev/fb0 -o /share/b18d30-stress-001-analytics.bmp",
+          "started_at": "2026-10-25T11:06:43+08:00",
+          "finished_at": "2026-10-25T11:06:43+08:00",
+          "output": "\u001b[KENCFS_LONG_STRESS_PROGRESS elapsed_ms=30453 iterations=236 written_bytes=2161802 verified_bytes=4298788 worker0_iterations=109 worker1_iterations=127 errors=0 heap_used=5655168 heap_free=116937792\r\r\nfbcapture -d /dev/fb0 -o /share/b18d30-stress-001-analytics.bmp\r\r\nTaking screenshot of '/share/b18d30-stress-001-analytics.bmp' ...\r\r\nSuccess\r\r\n"
+        },
+        {
+          "command": "input tap 1160 35",
+          "started_at": "2026-10-25T11:06:43+08:00",
+          "finished_at": "2026-10-25T11:06:44+08:00",
+          "output": "\u001b[Kinput tap 1160 35\r\r\n"
+        },
+        {
+          "command": "fbcapture -d /dev/fb0 -o /share/b18d30-stress-001-shop.bmp",
+          "started_at": "2026-10-25T11:06:44+08:00",
+          "finished_at": "2026-10-25T11:06:44+08:00",
+          "output": "\u001b[Kfbcapture -d /dev/fb0 -o /share/b18d30-stress-001-shop.bmp\r\r\nTaking screenshot of '/share/b18d30-stress-001-shop.bmp' ...\r\r\nSuccess\r\r\n"
+        },
+        {
+          "command": "encfs status",
+          "started_at": "2026-10-25T11:07:14+08:00",
+          "finished_at": "2026-10-25T11:07:14+08:00",
+          "output": "\u001b[KENCFS_LONG_STRESS_PROGRESS elapsed_ms=60516 iterations=469 written_bytes=4390464 verified_bytes=8731726 worker0_iterations=219 worker1_iterations=250 errors=0 heap_used=5657360 heap_free=116935600\r\r\nencfs status\r\r\nencfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\nencfs: wrapped=1 master_id=1 generation=2\r\r\n"
+        },
+        {
+          "command": "ps",
+          "started_at": "2026-10-25T11:07:14+08:00",
+          "finished_at": "2026-10-25T11:07:15+08:00",
+          "output": "\u001b[Kps\r\r\n  PID GROUP PRI POLICY   TYPE    NPX STATE    EVENT     SIGMASK             STACK    USED FILLED COMMAND\r\r\n    0     0   0 FIFO     Kthread   - Ready              0000000000000000  0007984 0002120  26.5%  CPU0 IDLE\r\r\n    1     0 192 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001152   7.1%  hpwork 0x408eacc0 0x408ead40\r\r\n    2     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001152   7.1%  lpwork 0x408eac00 0x408eac80\r\r\n    4     0 100 RR       Kthread   - Ready              0000000000000000  0016112 0001616  10.0%  goldfish_gpu_fb_thread 0x40942ca0\r\r\n    5     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001680  10.4%  goldfish_gnss_thread 0x40dcae30\r\r\n    6     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001760  10.9%  goldfish_sensor_thread 0x409d59d0\r\r\n    7     7 100 RR       Task      - Running            0000000000000000  0016144 0005216  32.3%  nsh_main\r\r\n   10    10 100 RR       Task      - Waiting  Semaphore 0000000000000000  0007952 0003464  43.5%  kvdbd\r\r\n   11    11 100 RR       Task      - Waiting  Semaphore 0000000000000000  0016144 0003208  19.8%  servicemanager\r\r\n   12    12 100 RR       Task      - Waiting  Semaphore 0000000000000000  0016144 0002016  12.4%  adbd\r\r\n   13    13 100 RR       Task      - Waiting  Semaphore 0000000000020000  0016144 0002256  13.9%  telnetd\r\r\n   51    51 100 RR       Task      - Ready              0000000000000000  0032512 0011640  35.8%  lvgldemo widgets\r\r\n  105   105 100 RR       Task      - Waiting  Signal    0000000000000000  0016112 0004344  26.9%  encfs_test stress 180\r\r\n  110   105 100 RR       pthread   - Waiting  Mutex:111 0000000000000000  0007984 0005120  64.1%  encfs_test 0x40423a20 0x40e63c28\r\r\n  111   105 100 RR       pthread   - Ready              0000000000000000  0007984 0005184  64.9%  encfs_test 0x40423a20 0x40e63d18\r\r\n"
+        },
+        {
+          "command": "free",
+          "started_at": "2026-10-25T11:07:15+08:00",
+          "finished_at": "2026-10-25T11:07:15+08:00",
+          "output": "\u001b[Kfree\r\r\n      total       used       free    maxused    maxfree  nused  nfree name\r\r\n      65536       1152      64384       1072      64384      2      1 binder_heap_11\r\r\n  122592960    5656912  116936048    5695456  116907648    230     64 Umem\r\r\n"
+        },
+        {
+          "command": "encfs rekey 2",
+          "started_at": "2026-10-25T11:07:15+08:00",
+          "finished_at": "2026-10-25T11:07:15+08:00",
+          "output": "\u001b[Kencfs rekey 2\r\r\nencfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\nencfs: wrapped=1 master_id=2 generation=3\r\r\n"
+        },
+        {
+          "command": "encfs status",
+          "started_at": "2026-10-25T11:07:15+08:00",
+          "finished_at": "2026-10-25T11:07:15+08:00",
+          "output": "\u001b[Kencfs status\r\r\nencfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\nencfs: wrapped=1 master_id=2 generation=3\r\r\n"
+        },
+        {
+          "command": "cat /data/验证/密钥🔐.txt",
+          "started_at": "2026-10-25T11:07:15+08:00",
+          "finished_at": "2026-10-25T11:07:15+08:00",
+          "output": "\u001b[Kcat /data/验证/密钥🔐.txt\r\r\nENCFS_WRAP_UTF8_20261024_7df925ca\r\r\n"
+        },
+        {
+          "command": "encfs status",
+          "started_at": "2026-10-25T11:07:45+08:00",
+          "finished_at": "2026-10-25T11:07:45+08:00",
+          "output": "\u001b[KENCFS_LONG_STRESS_PROGRESS elapsed_ms=90623 iterations=700 written_bytes=6606769 verified_bytes=13140088 worker0_iterations=329 worker1_iterations=371 errors=0 heap_used=5657360 heap_free=116935600\r\r\nencfs status\r\r\nencfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\nencfs: wrapped=1 master_id=2 generation=3\r\r\n"
+        },
+        {
+          "command": "ps",
+          "started_at": "2026-10-25T11:07:45+08:00",
+          "finished_at": "2026-10-25T11:07:45+08:00",
+          "output": "\u001b[Kps\r\r\n  PID GROUP PRI POLICY   TYPE    NPX STATE    EVENT     SIGMASK             STACK    USED FILLED COMMAND\r\r\n    0     0   0 FIFO     Kthread   - Ready              0000000000000000  0007984 0002120  26.5%  CPU0 IDLE\r\r\n    1     0 192 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001152   7.1%  hpwork 0x408eacc0 0x408ead40\r\r\n    2     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001152   7.1%  lpwork 0x408eac00 0x408eac80\r\r\n    4     0 100 RR       Kthread   - Ready              0000000000000000  0016112 0001616  10.0%  goldfish_gpu_fb_thread 0x40942ca0\r\r\n    5     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001680  10.4%  goldfish_gnss_thread 0x40dcae30\r\r\n    6     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001760  10.9%  goldfish_sensor_thread 0x409d59d0\r\r\n    7     7 100 RR       Task      - Running            0000000000000000  0016144 0005216  32.3%  nsh_main\r\r\n   10    10 100 RR       Task      - Waiting  Semaphore 0000000000000000  0007952 0003464  43.5%  kvdbd\r\r\n   11    11 100 RR       Task      - Waiting  Semaphore 0000000000000000  0016144 0003208  19.8%  servicemanager\r\r\n   12    12 100 RR       Task      - Waiting  Semaphore 0000000000000000  0016144 0002016  12.4%  adbd\r\r\n   13    13 100 RR       Task      - Waiting  Semaphore 0000000000020000  0016144 0002256  13.9%  telnetd\r\r\n   51    51 100 RR       Task      - Ready              0000000000000000  0032512 0011640  35.8%  lvgldemo widgets\r\r\n  105   105 100 RR       Task      - Waiting  Signal    0000000000000000  0016112 0004344  26.9%  encfs_test stress 180\r\r\n  110   105 100 RR       pthread   - Waiting  Mutex:111 0000000000000000  0007984 0005120  64.1%  encfs_test 0x40423a20 0x40e63c28\r\r\n  111   105 100 RR       pthread   - Ready              0000000000000000  0007984 0005184  64.9%  encfs_test 0x40423a20 0x40e63d18\r\r\n"
+        },
+        {
+          "command": "free",
+          "started_at": "2026-10-25T11:07:45+08:00",
+          "finished_at": "2026-10-25T11:07:45+08:00",
+          "output": "\u001b[Kfree\r\r\n      total       used       free    maxused    maxfree  nused  nfree name\r\r\n      65536       1152      64384       1072      64384      2      1 binder_heap_11\r\r\n  122592960    5658272  116934688    5695456  116907648    231     65 Umem\r\r\n"
+        },
+        {
+          "command": "encfs status",
+          "started_at": "2026-10-25T11:08:15+08:00",
+          "finished_at": "2026-10-25T11:08:15+08:00",
+          "output": "\u001b[KENCFS_LONG_STRESS_PROGRESS elapsed_ms=120684 iterations=930 written_bytes=8814881 verified_bytes=17532068 worker0_iterations=439 worker1_iterations=491 errors=0 heap_used=5654320 heap_free=116938640\r\r\nencfs status\r\r\nencfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\nencfs: wrapped=1 master_id=2 generation=3\r\r\n"
+        },
+        {
+          "command": "ps",
+          "started_at": "2026-10-25T11:08:15+08:00",
+          "finished_at": "2026-10-25T11:08:15+08:00",
+          "output": "\u001b[Kps\r\r\n  PID GROUP PRI POLICY   TYPE    NPX STATE    EVENT     SIGMASK             STACK    USED FILLED COMMAND\r\r\n    0     0   0 FIFO     Kthread   - Ready              0000000000000000  0007984 0002120  26.5%  CPU0 IDLE\r\r\n    1     0 192 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001152   7.1%  hpwork 0x408eacc0 0x408ead40\r\r\n    2     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001152   7.1%  lpwork 0x408eac00 0x408eac80\r\r\n    4     0 100 RR       Kthread   - Ready              0000000000000000  0016112 0001616  10.0%  goldfish_gpu_fb_thread 0x40942ca0\r\r\n    5     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001680  10.4%  goldfish_gnss_thread 0x40dcae30\r\r\n    6     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001760  10.9%  goldfish_sensor_thread 0x409d59d0\r\r\n    7     7 100 RR       Task      - Running            0000000000000000  0016144 0005216  32.3%  nsh_main\r\r\n   10    10 100 RR       Task      - Waiting  Semaphore 0000000000000000  0007952 0003464  43.5%  kvdbd\r\r\n   11    11 100 RR       Task      - Waiting  Semaphore 0000000000000000  0016144 0003208  19.8%  servicemanager\r\r\n   12    12 100 RR       Task      - Waiting  Semaphore 0000000000000000  0016144 0002016  12.4%  adbd\r\r\n   13    13 100 RR       Task      - Waiting  Semaphore 0000000000020000  0016144 0002256  13.9%  telnetd\r\r\n   51    51 100 RR       Task      - Ready              0000000000000000  0032512 0011640  35.8%  lvgldemo widgets\r\r\n  105   105 100 RR       Task      - Waiting  Signal    0000000000000000  0016112 0004344  26.9%  encfs_test stress 180\r\r\n  110   105 100 RR       pthread   - Waiting  Mutex:111 0000000000000000  0007984 0005136  64.3%  encfs_test 0x40423a20 0x40e63c28\r\r\n  111   105 100 RR       pthread   - Ready              0000000000000000  0007984 0005184  64.9%  encfs_test 0x40423a20 0x40e63d18\r\r\n"
+        },
+        {
+          "command": "free",
+          "started_at": "2026-10-25T11:08:15+08:00",
+          "finished_at": "2026-10-25T11:08:15+08:00",
+          "output": "\u001b[Kfree\r\r\n      total       used       free    maxused    maxfree  nused  nfree name\r\r\n      65536       1152      64384       1072      64384      2      1 binder_heap_11\r\r\n  122592960    5656064  116936896    5695456  116907648    229     66 Umem\r\r\n"
+        },
+        {
+          "command": "encfs status",
+          "started_at": "2026-10-25T11:08:45+08:00",
+          "finished_at": "2026-10-25T11:08:45+08:00",
+          "output": "\u001b[KENCFS_LONG_STRESS_PROGRESS elapsed_ms=150732 iterations=1159 written_bytes=11022860 verified_bytes=21924044 worker0_iterations=545 worker1_iterations=614 errors=0 heap_used=5657872 heap_free=116935088\r\r\nencfs status\r\r\nencfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\nencfs: wrapped=1 master_id=2 generation=3\r\r\n"
+        },
+        {
+          "command": "ps",
+          "started_at": "2026-10-25T11:08:45+08:00",
+          "finished_at": "2026-10-25T11:08:45+08:00",
+          "output": "\u001b[Kps\r\r\n  PID GROUP PRI POLICY   TYPE    NPX STATE    EVENT     SIGMASK             STACK    USED FILLED COMMAND\r\r\n    0     0   0 FIFO     Kthread   - Ready              0000000000000000  0007984 0002120  26.5%  CPU0 IDLE\r\r\n    1     0 192 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001152   7.1%  hpwork 0x408eacc0 0x408ead40\r\r\n    2     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001152   7.1%  lpwork 0x408eac00 0x408eac80\r\r\n    4     0 100 RR       Kthread   - Waiting  Signal    0000000000000000  0016112 0001616  10.0%  goldfish_gpu_fb_thread 0x40942ca0\r\r\n    5     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001680  10.4%  goldfish_gnss_thread 0x40dcae30\r\r\n    6     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001760  10.9%  goldfish_sensor_thread 0x409d59d0\r\r\n    7     7 100 RR       Task      - Running            0000000000000000  0016144 0005216  32.3%  nsh_main\r\r\n   10    10 100 RR       Task      - Waiting  Semaphore 0000000000000000  0007952 0003464  43.5%  kvdbd\r\r\n   11    11 100 RR       Task      - Waiting  Semaphore 0000000000000000  0016144 0003208  19.8%  servicemanager\r\r\n   12    12 100 RR       Task      - Waiting  Semaphore 0000000000000000  0016144 0002016  12.4%  adbd\r\r\n   13    13 100 RR       Task      - Waiting  Semaphore 0000000000020000  0016144 0002256  13.9%  telnetd\r\r\n   51    51 100 RR       Task      - Ready              0000000000000000  0032512 0011640  35.8%  lvgldemo widgets\r\r\n  105   105 100 RR       Task      - Waiting  Signal    0000000000000000  0016112 0004344  26.9%  encfs_test stress 180\r\r\n  110   105 100 RR       pthread   - Ready              0000000000000000  0007984 0005136  64.3%  encfs_test 0x40423a20 0x40e63c28\r\r\n  111   105 100 RR       pthread   - Waiting  Mutex:110 0000000000000000  0007984 0005184  64.9%  encfs_test 0x40423a20 0x40e63d18\r\r\n"
+        },
+        {
+          "command": "free",
+          "started_at": "2026-10-25T11:08:45+08:00",
+          "finished_at": "2026-10-25T11:08:45+08:00",
+          "output": "\u001b[Kfree\r\r\n      total       used       free    maxused    maxfree  nused  nfree name\r\r\n      65536       1152      64384       1072      64384      2      1 binder_heap_11\r\r\n  122592960    5659104  116933856    5695456  116907648    231     66 Umem\r\r\n"
+        },
+        {
+          "command": "encfs status",
+          "started_at": "2026-10-25T11:09:12+08:00",
+          "finished_at": "2026-10-25T11:09:12+08:00",
+          "output": "\u001b[Kencfs status\r\r\nencfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\nencfs: wrapped=1 master_id=2 generation=3\r\r\n"
+        },
+        {
+          "command": "ps",
+          "started_at": "2026-10-25T11:09:12+08:00",
+          "finished_at": "2026-10-25T11:09:13+08:00",
+          "output": "\u001b[Kps\r\r\n  PID GROUP PRI POLICY   TYPE    NPX STATE    EVENT     SIGMASK             STACK    USED FILLED COMMAND\r\r\n    0     0   0 FIFO     Kthread   - Ready              0000000000000000  0007984 0002120  26.5%  CPU0 IDLE\r\r\n    1     0 192 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001152   7.1%  hpwork 0x408eacc0 0x408ead40\r\r\n    2     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001152   7.1%  lpwork 0x408eac00 0x408eac80\r\r\n    4     0 100 RR       Kthread   - Waiting  Signal    0000000000000000  0016112 0001616  10.0%  goldfish_gpu_fb_thread 0x40942ca0\r\r\n    5     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001680  10.4%  goldfish_gnss_thread 0x40dcae30\r\r\n    6     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001760  10.9%  goldfish_sensor_thread 0x409d59d0\r\r\n    7     7 100 RR       Task      - Running            0000000000000000  0016144 0005216  32.3%  nsh_main\r\r\n   10    10 100 RR       Task      - Waiting  Semaphore 0000000000000000  0007952 0003464  43.5%  kvdbd\r\r\n   11    11 100 RR       Task      - Waiting  Semaphore 0000000000000000  0016144 0003208  19.8%  servicemanager\r\r\n   12    12 100 RR       Task      - Waiting  Semaphore 0000000000000000  0016144 0002016  12.4%  adbd\r\r\n   13    13 100 RR       Task      - Waiting  Semaphore 0000000000020000  0016144 0002256  13.9%  telnetd\r\r\n   51    51 100 RR       Task      - Ready              0000000000000000  0032512 0011640  35.8%  lvgldemo widgets\r\r\n  105   105 100 RR       Task      - Waiting  Signal    0000000000000000  0016112 0004344  26.9%  encfs_test stress 180\r\r\n  110   105 100 RR       pthread   - Waiting  Mutex:111 0000000000000000  0007984 0005168  64.7%  encfs_test 0x40423a20 0x40e63c28\r\r\n  111   105 100 RR       pthread   - Ready              0000000000000000  0007984 0005184  64.9%  encfs_test 0x40423a20 0x40e63d18\r\r\n"
+        },
+        {
+          "command": "free",
+          "started_at": "2026-10-25T11:09:13+08:00",
+          "finished_at": "2026-10-25T11:09:13+08:00",
+          "output": "\u001b[Kfree\r\r\n      total       used       free    maxused    maxfree  nused  nfree name\r\r\n      65536       1152      64384       1072      64384      2      1 binder_heap_11\r\r\n  122592960    5659008  116933952    5695456  116907648    232     65 Umem\r\r\n"
+        },
+        {
+          "command": "encfs status",
+          "started_at": "2026-10-25T11:09:14+08:00",
+          "finished_at": "2026-10-25T11:09:14+08:00",
+          "output": "\u001b[KENCFS_LONG_STRESS_PROGRESS elapsed_ms=180813 iterations=1396 written_bytes=13403409 verified_bytes=26660092 worker0_iterations=638 worker1_iterations=758 errors=0 heap_used=5371680 heap_free=117221280\r\r\nENCFS_LONG_STRESS_RESULT requested_seconds=180 elapsed_ms=180813 workers=2 iterations=1396 written_bytes=13403409 verified_bytes=26660092 worker0_iterations=638 worker1_iterations=758 worker0_elapsed_ms=180365 worker1_elapsed_ms=180024 errors=0 completed=1 heap_before=5371680 heap_after=5371680\r\r\n[PASS] timed concurrent encrypted filesystem stress\r\r\nENCFS_TEST_RESULT mode=stress pass=1 fail=0\r\r\nencfs status\r\r\nencfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\nencfs: wrapped=1 master_id=2 generation=3\r\r\n"
+        },
+        {
+          "command": "ps",
+          "started_at": "2026-10-25T11:09:14+08:00",
+          "finished_at": "2026-10-25T11:09:14+08:00",
+          "output": "\u001b[Kps\r\r\n  PID GROUP PRI POLICY   TYPE    NPX STATE    EVENT     SIGMASK             STACK    USED FILLED COMMAND\r\r\n    0     0   0 FIFO     Kthread   - Ready              0000000000000000  0007984 0002120  26.5%  CPU0 IDLE\r\r\n    1     0 192 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001152   7.1%  hpwork 0x408eacc0 0x408ead40\r\r\n    2     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001152   7.1%  lpwork 0x408eac00 0x408eac80\r\r\n    4     0 100 RR       Kthread   - Waiting  Signal    0000000000000000  0016112 0001616  10.0%  goldfish_gpu_fb_thread 0x40942ca0\r\r\n    5     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001680  10.4%  goldfish_gnss_thread 0x40dcae30\r\r\n    6     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001760  10.9%  goldfish_sensor_thread 0x409d59d0\r\r\n    7     7 100 RR       Task      - Running            0000000000000000  0016144 0005216  32.3%  nsh_main\r\r\n   10    10 100 RR       Task      - Waiting  Semaphore 0000000000000000  0007952 0003464  43.5%  kvdbd\r\r\n   11    11 100 RR       Task      - Waiting  Semaphore 0000000000000000  0016144 0003208  19.8%  servicemanager\r\r\n   12    12 100 RR       Task      - Waiting  Semaphore 0000000000000000  0016144 0002016  12.4%  adbd\r\r\n   13    13 100 RR       Task      - Waiting  Semaphore 0000000000020000  0016144 0002256  13.9%  telnetd\r\r\n   51    51 100 RR       Task      - Ready              0000000000000000  0032512 0011640  35.8%  lvgldemo widgets\r\r\n"
+        },
+        {
+          "command": "free",
+          "started_at": "2026-10-25T11:09:14+08:00",
+          "finished_at": "2026-10-25T11:09:14+08:00",
+          "output": "\u001b[Kfree\r\r\n      total       used       free    maxused    maxfree  nused  nfree name\r\r\n      65536       1152      64384       1072      64384      2      1 binder_heap_11\r\r\n  122592960    5351504  117241456    5695456  117178112    218     68 Umem\r\r\n"
+        },
+        {
+          "command": "input tap 950 35",
+          "started_at": "2026-10-25T11:09:14+08:00",
+          "finished_at": "2026-10-25T11:09:14+08:00",
+          "output": "\u001b[Kinput tap 950 35\r\r\n"
+        },
+        {
+          "command": "fbcapture -d /dev/fb0 -o /share/b18d30-stress-007-analytics.bmp",
+          "started_at": "2026-10-25T11:09:14+08:00",
+          "finished_at": "2026-10-25T11:09:15+08:00",
+          "output": "\u001b[Kfbcapture -d /dev/fb0 -o /share/b18d30-stress-007-analytics.bmp\r\r\nTaking screenshot of '/share/b18d30-stress-007-analytics.bmp' ...\r\r\nSuccess\r\r\n"
+        },
+        {
+          "command": "input tap 1160 35",
+          "started_at": "2026-10-25T11:09:15+08:00",
+          "finished_at": "2026-10-25T11:09:15+08:00",
+          "output": "\u001b[Kinput tap 1160 35\r\r\n"
+        },
+        {
+          "command": "fbcapture -d /dev/fb0 -o /share/b18d30-stress-007-shop.bmp",
+          "started_at": "2026-10-25T11:09:15+08:00",
+          "finished_at": "2026-10-25T11:09:15+08:00",
+          "output": "\u001b[Kfbcapture -d /dev/fb0 -o /share/b18d30-stress-007-shop.bmp\r\r\nTaking screenshot of '/share/b18d30-stress-007-shop.bmp' ...\r\r\nSuccess\r\r\n"
+        },
+        {
+          "command": "cat /data/验证/密钥🔐.txt",
+          "started_at": "2026-10-25T11:09:15+08:00",
+          "finished_at": "2026-10-25T11:09:15+08:00",
+          "output": "\u001b[Kcat /data/验证/密钥🔐.txt\r\r\nENCFS_WRAP_UTF8_20261024_7df925ca\r\r\n"
+        },
+        {
+          "command": "fbcapture -d /dev/fb0 -o /share/b18d30-after-wrapped-stress.bmp",
+          "started_at": "2026-10-25T11:09:15+08:00",
+          "finished_at": "2026-10-25T11:09:16+08:00",
+          "output": "\u001b[Kfbcapture -d /dev/fb0 -o /share/b18d30-after-wrapped-stress.bmp\r\r\nTaking screenshot of '/share/b18d30-after-wrapped-stress.bmp' ...\r\r\nSuccess\r\r\n"
+        },
+        {
+          "command": "encfs stop",
+          "started_at": "2026-10-25T11:09:16+08:00",
+          "finished_at": "2026-10-25T11:09:16+08:00",
+          "output": "\u001b[Kencfs stop\r\r\nencfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        }
+      ],
+      "serial_log": "/home/tourist/Desktop/openvela/encfs-results/keywrap-180-20261025-02/gui-wrapped-key-stress.serial.log",
+      "initial_slot_sha256": "70d2b659d3dad68ef008ba33d8bc17b8e35324fa5c884d6b495deff4b0e04db4",
+      "idle_rekey_data_disk_unchanged": true,
+      "failed_commit_preserved_slot": true,
+      "frames": [
+        {
+          "label": "initial",
+          "path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-180-20261025-02/frames/gui-wrapped-key-stress-initial.png",
+          "source_bmp": "/home/tourist/Desktop/openvela/encfs-results/keywrap-180-20261025-02/avd/encfs-wrapped-dd442f616ad6.vvd/share/b18d30-initial.bmp",
+          "width": 1280,
+          "height": 800,
+          "sha256": "5be7e9964763a238f6e4d27a87bb6d7880207276513b8395c3b39b56836704ee",
+          "mean_rgb": [
+            242.8280283203125,
+            245.207611328125,
+            247.20721875
+          ],
+          "captured_at": "2026-10-25T11:06:04+08:00",
+          "pixel_format": "RGB565 (decoded explicitly from guest capture)"
+        },
+        {
+          "label": "profile",
+          "path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-180-20261025-02/frames/gui-wrapped-key-stress-profile.png",
+          "source_bmp": "/home/tourist/Desktop/openvela/encfs-results/keywrap-180-20261025-02/avd/encfs-wrapped-dd442f616ad6.vvd/share/b18d30-profile.bmp",
+          "width": 1280,
+          "height": 800,
+          "sha256": "5be7e9964763a238f6e4d27a87bb6d7880207276513b8395c3b39b56836704ee",
+          "mean_rgb": [
+            242.8280283203125,
+            245.207611328125,
+            247.20721875
+          ],
+          "captured_at": "2026-10-25T11:06:05+08:00",
+          "pixel_format": "RGB565 (decoded explicitly from guest capture)"
+        },
+        {
+          "label": "analytics",
+          "path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-180-20261025-02/frames/gui-wrapped-key-stress-analytics.png",
+          "source_bmp": "/home/tourist/Desktop/openvela/encfs-results/keywrap-180-20261025-02/avd/encfs-wrapped-dd442f616ad6.vvd/share/b18d30-analytics.bmp",
+          "width": 1280,
+          "height": 800,
+          "sha256": "e439cb62d8e4b90f0f8514332e776f50a49330a65bacb9518e50d4c4b75236f2",
+          "mean_rgb": [
+            223.331248046875,
+            235.8605517578125,
+            244.9602060546875
+          ],
+          "captured_at": "2026-10-25T11:06:06+08:00",
+          "pixel_format": "RGB565 (decoded explicitly from guest capture)"
+        },
+        {
+          "label": "shop",
+          "path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-180-20261025-02/frames/gui-wrapped-key-stress-shop.png",
+          "source_bmp": "/home/tourist/Desktop/openvela/encfs-results/keywrap-180-20261025-02/avd/encfs-wrapped-dd442f616ad6.vvd/share/b18d30-shop.bmp",
+          "width": 1280,
+          "height": 800,
+          "sha256": "fe59f3b6e9d7a9150edc6604af160333625625a4f70302ab892ba0d0dbb81cd2",
+          "mean_rgb": [
+            238.2232646484375,
+            243.493328125,
+            247.91252734375
+          ],
+          "captured_at": "2026-10-25T11:06:08+08:00",
+          "pixel_format": "RGB565 (decoded explicitly from guest capture)"
+        },
+        {
+          "label": "checkbox-toggled",
+          "path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-180-20261025-02/frames/gui-wrapped-key-stress-checkbox-toggled.png",
+          "source_bmp": "/home/tourist/Desktop/openvela/encfs-results/keywrap-180-20261025-02/avd/encfs-wrapped-dd442f616ad6.vvd/share/b18d30-checkbox-toggled.bmp",
+          "width": 1280,
+          "height": 800,
+          "sha256": "70471371685064ed98ec1450b39254077306ab015da545057424cdda05e11aae",
+          "mean_rgb": [
+            238.1683740234375,
+            243.4672265625,
+            247.91020703125
+          ],
+          "captured_at": "2026-10-25T11:06:09+08:00",
+          "pixel_format": "RGB565 (decoded explicitly from guest capture)"
+        },
+        {
+          "label": "slider-before",
+          "path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-180-20261025-02/frames/gui-wrapped-key-stress-slider-before.png",
+          "source_bmp": "/home/tourist/Desktop/openvela/encfs-results/keywrap-180-20261025-02/avd/encfs-wrapped-dd442f616ad6.vvd/share/b18d30-slider-before.bmp",
+          "width": 1280,
+          "height": 800,
+          "sha256": "5be7e9964763a238f6e4d27a87bb6d7880207276513b8395c3b39b56836704ee",
+          "mean_rgb": [
+            242.8280283203125,
+            245.207611328125,
+            247.20721875
+          ],
+          "captured_at": "2026-10-25T11:06:11+08:00",
+          "pixel_format": "RGB565 (decoded explicitly from guest capture)"
+        },
+        {
+          "label": "slider-after",
+          "path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-180-20261025-02/frames/gui-wrapped-key-stress-slider-after.png",
+          "source_bmp": "/home/tourist/Desktop/openvela/encfs-results/keywrap-180-20261025-02/avd/encfs-wrapped-dd442f616ad6.vvd/share/b18d30-slider-after.bmp",
+          "width": 1280,
+          "height": 800,
+          "sha256": "a13ff6411b93c0d19025d5924f3a0f353580e28b3c361f472df20f3bf2719a9d",
+          "mean_rgb": [
+            242.0863720703125,
+            244.842626953125,
+            247.20866015625
+          ],
+          "captured_at": "2026-10-25T11:06:12+08:00",
+          "pixel_format": "RGB565 (decoded explicitly from guest capture)"
+        },
+        {
+          "label": "stress-001-analytics",
+          "path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-180-20261025-02/frames/gui-wrapped-key-stress-stress-001-analytics.png",
+          "source_bmp": "/home/tourist/Desktop/openvela/encfs-results/keywrap-180-20261025-02/avd/encfs-wrapped-dd442f616ad6.vvd/share/b18d30-stress-001-analytics.bmp",
+          "width": 1280,
+          "height": 800,
+          "sha256": "f1d2c0b03769cee12f16cf9d016d299767d5136fa034d8914741cf5b112746e9",
+          "mean_rgb": [
+            223.331248046875,
+            235.8605556640625,
+            244.9602060546875
+          ],
+          "captured_at": "2026-10-25T11:06:43+08:00",
+          "pixel_format": "RGB565 (decoded explicitly from guest capture)"
+        },
+        {
+          "label": "stress-001-shop",
+          "path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-180-20261025-02/frames/gui-wrapped-key-stress-stress-001-shop.png",
+          "source_bmp": "/home/tourist/Desktop/openvela/encfs-results/keywrap-180-20261025-02/avd/encfs-wrapped-dd442f616ad6.vvd/share/b18d30-stress-001-shop.bmp",
+          "width": 1280,
+          "height": 800,
+          "sha256": "70471371685064ed98ec1450b39254077306ab015da545057424cdda05e11aae",
+          "mean_rgb": [
+            238.1683740234375,
+            243.4672265625,
+            247.91020703125
+          ],
+          "captured_at": "2026-10-25T11:06:44+08:00",
+          "pixel_format": "RGB565 (decoded explicitly from guest capture)"
+        },
+        {
+          "label": "stress-007-analytics",
+          "path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-180-20261025-02/frames/gui-wrapped-key-stress-stress-007-analytics.png",
+          "source_bmp": "/home/tourist/Desktop/openvela/encfs-results/keywrap-180-20261025-02/avd/encfs-wrapped-dd442f616ad6.vvd/share/b18d30-stress-007-analytics.bmp",
+          "width": 1280,
+          "height": 800,
+          "sha256": "e439cb62d8e4b90f0f8514332e776f50a49330a65bacb9518e50d4c4b75236f2",
+          "mean_rgb": [
+            223.331248046875,
+            235.8605517578125,
+            244.9602060546875
+          ],
+          "captured_at": "2026-10-25T11:09:15+08:00",
+          "pixel_format": "RGB565 (decoded explicitly from guest capture)"
+        },
+        {
+          "label": "stress-007-shop",
+          "path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-180-20261025-02/frames/gui-wrapped-key-stress-stress-007-shop.png",
+          "source_bmp": "/home/tourist/Desktop/openvela/encfs-results/keywrap-180-20261025-02/avd/encfs-wrapped-dd442f616ad6.vvd/share/b18d30-stress-007-shop.bmp",
+          "width": 1280,
+          "height": 800,
+          "sha256": "70471371685064ed98ec1450b39254077306ab015da545057424cdda05e11aae",
+          "mean_rgb": [
+            238.1683740234375,
+            243.4672265625,
+            247.91020703125
+          ],
+          "captured_at": "2026-10-25T11:09:15+08:00",
+          "pixel_format": "RGB565 (decoded explicitly from guest capture)"
+        },
+        {
+          "label": "after-wrapped-stress",
+          "path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-180-20261025-02/frames/gui-wrapped-key-stress-after-wrapped-stress.png",
+          "source_bmp": "/home/tourist/Desktop/openvela/encfs-results/keywrap-180-20261025-02/avd/encfs-wrapped-dd442f616ad6.vvd/share/b18d30-after-wrapped-stress.bmp",
+          "width": 1280,
+          "height": 800,
+          "sha256": "70471371685064ed98ec1450b39254077306ab015da545057424cdda05e11aae",
+          "mean_rgb": [
+            238.1683740234375,
+            243.4672265625,
+            247.91020703125
+          ],
+          "captured_at": "2026-10-25T11:09:16+08:00",
+          "pixel_format": "RGB565 (decoded explicitly from guest capture)"
+        }
+      ],
+      "touch_changed_pixels": {
+        "profile_to_analytics": 560013,
+        "analytics_to_shop": 520554,
+        "shop_checkbox": 280,
+        "profile_slider": 5092
+      },
+      "stress_host_started_at": "2026-10-25T11:06:12+08:00",
+      "checkpoints": [
+        {
+          "elapsed_host_seconds": 30.28,
+          "checked_at": "2026-10-25T11:06:43+08:00",
+          "memory_output": "\u001b[Kfree\r\r\n      total       used       free    maxused    maxfree  nused  nfree name\r\r\n      65536       1152      64384       1072      64384      2      1 binder_heap_11\r\r\n  122592960    5656064  116936896    5690976  116907648    229     66 Umem\r\r\n",
+          "touch_changed_pixels": 520818
+        },
+        {
+          "elapsed_host_seconds": 62.226,
+          "checked_at": "2026-10-25T11:07:15+08:00",
+          "memory_output": "\u001b[Kfree\r\r\n      total       used       free    maxused    maxfree  nused  nfree name\r\r\n      65536       1152      64384       1072      64384      2      1 binder_heap_11\r\r\n  122592960    5656912  116936048    5695456  116907648    230     64 Umem\r\r\n",
+          "online_rotation": {
+            "master_id": 2,
+            "generation": 3,
+            "worker_iterations_before_rotation": [
+              219,
+              250
+            ],
+            "old_master_files_removed": true
+          }
+        },
+        {
+          "elapsed_host_seconds": 92.661,
+          "checked_at": "2026-10-25T11:07:45+08:00",
+          "memory_output": "\u001b[Kfree\r\r\n      total       used       free    maxused    maxfree  nused  nfree name\r\r\n      65536       1152      64384       1072      64384      2      1 binder_heap_11\r\r\n  122592960    5658272  116934688    5695456  116907648    231     65 Umem\r\r\n"
+        },
+        {
+          "elapsed_host_seconds": 122.886,
+          "checked_at": "2026-10-25T11:08:15+08:00",
+          "memory_output": "\u001b[Kfree\r\r\n      total       used       free    maxused    maxfree  nused  nfree name\r\r\n      65536       1152      64384       1072      64384      2      1 binder_heap_11\r\r\n  122592960    5656064  116936896    5695456  116907648    229     66 Umem\r\r\n"
+        },
+        {
+          "elapsed_host_seconds": 153.097,
+          "checked_at": "2026-10-25T11:08:45+08:00",
+          "memory_output": "\u001b[Kfree\r\r\n      total       used       free    maxused    maxfree  nused  nfree name\r\r\n      65536       1152      64384       1072      64384      2      1 binder_heap_11\r\r\n  122592960    5659104  116933856    5695456  116907648    231     66 Umem\r\r\n"
+        },
+        {
+          "elapsed_host_seconds": 180.204,
+          "checked_at": "2026-10-25T11:09:13+08:00",
+          "memory_output": "\u001b[Kfree\r\r\n      total       used       free    maxused    maxfree  nused  nfree name\r\r\n      65536       1152      64384       1072      64384      2      1 binder_heap_11\r\r\n  122592960    5659008  116933952    5695456  116907648    232     65 Umem\r\r\n"
+        },
+        {
+          "elapsed_host_seconds": 181.378,
+          "checked_at": "2026-10-25T11:09:14+08:00",
+          "memory_output": "\u001b[Kfree\r\r\n      total       used       free    maxused    maxfree  nused  nfree name\r\r\n      65536       1152      64384       1072      64384      2      1 binder_heap_11\r\r\n  122592960    5351504  117241456    5695456  117178112    218     68 Umem\r\r\n",
+          "touch_changed_pixels": 520818
+        }
+      ],
+      "long_stress_result": {
+        "requested_seconds": 180,
+        "elapsed_ms": 180813,
+        "workers": 2,
+        "iterations": 1396,
+        "written_bytes": 13403409,
+        "verified_bytes": 26660092,
+        "worker0_iterations": 638,
+        "worker1_iterations": 758,
+        "worker0_elapsed_ms": 180365,
+        "worker1_elapsed_ms": 180024,
+        "errors": 0,
+        "completed": 1,
+        "heap_before": 5371680,
+        "heap_after": 5371680
+      },
+      "long_stress_progress": [
+        {
+          "elapsed_ms": 30453,
+          "iterations": 236,
+          "written_bytes": 2161802,
+          "verified_bytes": 4298788,
+          "worker0_iterations": 109,
+          "worker1_iterations": 127,
+          "errors": 0,
+          "heap_used": 5655168,
+          "heap_free": 116937792
+        },
+        {
+          "elapsed_ms": 60516,
+          "iterations": 469,
+          "written_bytes": 4390464,
+          "verified_bytes": 8731726,
+          "worker0_iterations": 219,
+          "worker1_iterations": 250,
+          "errors": 0,
+          "heap_used": 5657360,
+          "heap_free": 116935600
+        },
+        {
+          "elapsed_ms": 90623,
+          "iterations": 700,
+          "written_bytes": 6606769,
+          "verified_bytes": 13140088,
+          "worker0_iterations": 329,
+          "worker1_iterations": 371,
+          "errors": 0,
+          "heap_used": 5657360,
+          "heap_free": 116935600
+        },
+        {
+          "elapsed_ms": 120684,
+          "iterations": 930,
+          "written_bytes": 8814881,
+          "verified_bytes": 17532068,
+          "worker0_iterations": 439,
+          "worker1_iterations": 491,
+          "errors": 0,
+          "heap_used": 5654320,
+          "heap_free": 116938640
+        },
+        {
+          "elapsed_ms": 150732,
+          "iterations": 1159,
+          "written_bytes": 11022860,
+          "verified_bytes": 21924044,
+          "worker0_iterations": 545,
+          "worker1_iterations": 614,
+          "errors": 0,
+          "heap_used": 5657872,
+          "heap_free": 116935088
+        },
+        {
+          "elapsed_ms": 180813,
+          "iterations": 1396,
+          "written_bytes": 13403409,
+          "verified_bytes": 26660092,
+          "worker0_iterations": 638,
+          "worker1_iterations": 758,
+          "errors": 0,
+          "heap_used": 5371680,
+          "heap_free": 117221280
+        }
+      ],
+      "stress_host_elapsed_seconds": 183.025,
+      "online_rotation_proof": {
+        "command_between_workload_start_and_result": true,
+        "both_workers_advanced_between_post_acknowledgment_samples": true,
+        "post_acknowledgment_progress_samples": [
+          {
+            "elapsed_ms": 90623,
+            "iterations": 700,
+            "written_bytes": 6606769,
+            "verified_bytes": 13140088,
+            "worker0_iterations": 329,
+            "worker1_iterations": 371,
+            "errors": 0,
+            "heap_used": 5657360,
+            "heap_free": 116935600
+          },
+          {
+            "elapsed_ms": 120684,
+            "iterations": 930,
+            "written_bytes": 8814881,
+            "verified_bytes": 17532068,
+            "worker0_iterations": 439,
+            "worker1_iterations": 491,
+            "errors": 0,
+            "heap_used": 5654320,
+            "heap_free": 116938640
+          }
+        ],
+        "iterations_before_rotation": [
+          219,
+          250
+        ],
+        "iterations_at_completion": [
+          638,
+          758
+        ]
+      },
+      "exit_status": null,
+      "exit_signal": 15,
+      "finished_at": "2026-10-25T11:09:16+08:00",
+      "image": {
+        "path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-180-20261025-02/avd/encfs-wrapped-dd442f616ad6.vvd/vela_data.bin",
+        "sha256": "0753433c1121f22aad91a2cb36eb5991dad5a9fe479a758675639d6d9198ee0d",
+        "size": 268435456
+      },
+      "final_slot_sha256": "153384914bc38d625dfeaeeb853a678451bca311197c43ea205091f18ea7d3ea"
+    },
+    {
+      "name": "wrapped-coldboot-and-negative-keys",
+      "status": "passed",
+      "instance": "encfs-wrapped-dd442f616ad6",
+      "command": [
+        "/home/tourist/Desktop/openvela/run-emulator.sh",
+        "goldfish-arm64-v8a-ap-encfs-gui",
+        "-keep",
+        "encfs-wrapped-dd442f616ad6",
+        "-no-window",
+        "-no-audio",
+        "-gpu",
+        "swiftshader_indirect",
+        "-accel",
+        "off"
+      ],
+      "started_at": "2026-10-25T11:09:16+08:00",
+      "commands": [
+        {
+          "command": "encfs stop",
+          "started_at": "2026-10-25T11:09:16+08:00",
+          "finished_at": "2026-10-25T11:09:17+08:00",
+          "output": "\u001b[Kencfs stop\r\r\nencfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        },
+        {
+          "command": "encfs keyfiles /share/keys",
+          "started_at": "2026-10-25T11:09:17+08:00",
+          "finished_at": "2026-10-25T11:09:17+08:00",
+          "output": "\u001b[Kencfs keyfiles /share/keys\r\r\nencfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        },
+        {
+          "command": "encfs start",
+          "started_at": "2026-10-25T11:09:17+08:00",
+          "finished_at": "2026-10-25T11:09:17+08:00",
+          "output": "\u001b[Kencfs start\r\r\nencfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\nencfs: wrapped=1 master_id=2 generation=3\r\r\n"
+        },
+        {
+          "command": "encfs status",
+          "started_at": "2026-10-25T11:09:17+08:00",
+          "finished_at": "2026-10-25T11:09:17+08:00",
+          "output": "\u001b[Kencfs status\r\r\nencfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\nencfs: wrapped=1 master_id=2 generation=3\r\r\n"
+        },
+        {
+          "command": "cat /data/验证/密钥🔐.txt",
+          "started_at": "2026-10-25T11:09:17+08:00",
+          "finished_at": "2026-10-25T11:09:17+08:00",
+          "output": "\u001b[Kcat /data/验证/密钥🔐.txt\r\r\nENCFS_WRAP_UTF8_20261024_7df925ca\r\r\n"
+        },
+        {
+          "command": "encfs stop",
+          "started_at": "2026-10-25T11:09:17+08:00",
+          "finished_at": "2026-10-25T11:09:17+08:00",
+          "output": "\u001b[Kencfs stop\r\r\nencfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        },
+        {
+          "command": "encfs start",
+          "started_at": "2026-10-25T11:09:17+08:00",
+          "finished_at": "2026-10-25T11:09:17+08:00",
+          "output": "\u001b[Kencfs start\r\r\nencfs: state=STOPPED result=-126 stage=2 error=-126 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\nencfs: Unknown error 126 (-126)\r\r\n"
+        },
+        {
+          "command": "encfs start",
+          "started_at": "2026-10-25T11:09:17+08:00",
+          "finished_at": "2026-10-25T11:09:17+08:00",
+          "output": "\u001b[Kencfs start\r\r\nencfs: state=STOPPED result=-74 stage=3 error=-74 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\nencfs: Unknown error 74 (-74)\r\r\n"
+        },
+        {
+          "command": "encfs start",
+          "started_at": "2026-10-25T11:09:17+08:00",
+          "finished_at": "2026-10-25T11:09:17+08:00",
+          "output": "\u001b[Kencfs start\r\r\nencfs: state=STOPPED result=-74 stage=3 error=-74 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\nencfs: Unknown error 74 (-74)\r\r\n"
+        },
+        {
+          "command": "encfs start",
+          "started_at": "2026-10-25T11:09:17+08:00",
+          "finished_at": "2026-10-25T11:09:17+08:00",
+          "output": "\u001b[Kencfs start\r\r\nencfs: state=STOPPED result=-126 stage=3 error=-126 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\nencfs: Unknown error 126 (-126)\r\r\n"
+        },
+        {
+          "command": "encfs start",
+          "started_at": "2026-10-25T11:09:17+08:00",
+          "finished_at": "2026-10-25T11:09:17+08:00",
+          "output": "\u001b[Kencfs start\r\r\nencfs: state=STOPPED result=-74 stage=3 error=-74 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\nencfs: Unknown error 74 (-74)\r\r\n"
+        },
+        {
+          "command": "encfs start",
+          "started_at": "2026-10-25T11:09:17+08:00",
+          "finished_at": "2026-10-25T11:09:17+08:00",
+          "output": "\u001b[Kencfs start\r\r\nencfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\nencfs: wrapped=1 master_id=2 generation=3\r\r\n"
+        },
+        {
+          "command": "encfs status",
+          "started_at": "2026-10-25T11:09:17+08:00",
+          "finished_at": "2026-10-25T11:09:17+08:00",
+          "output": "\u001b[Kencfs status\r\r\nencfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\nencfs: wrapped=1 master_id=2 generation=3\r\r\n"
+        },
+        {
+          "command": "cat /data/验证/密钥🔐.txt",
+          "started_at": "2026-10-25T11:09:17+08:00",
+          "finished_at": "2026-10-25T11:09:17+08:00",
+          "output": "\u001b[Kcat /data/验证/密钥🔐.txt\r\r\nENCFS_WRAP_UTF8_20261024_7df925ca\r\r\n"
+        },
+        {
+          "command": "encfs stop",
+          "started_at": "2026-10-25T11:09:17+08:00",
+          "finished_at": "2026-10-25T11:09:17+08:00",
+          "output": "\u001b[Kencfs stop\r\r\nencfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        }
+      ],
+      "serial_log": "/home/tourist/Desktop/openvela/encfs-results/keywrap-180-20261025-02/wrapped-coldboot-and-negative-keys.serial.log",
+      "exit_status": null,
+      "exit_signal": 15,
+      "finished_at": "2026-10-25T11:09:17+08:00",
+      "image": {
+        "path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-180-20261025-02/avd/encfs-wrapped-dd442f616ad6.vvd/vela_data.bin",
+        "encrypted": true,
+        "size": 268435456,
+        "sha256": "0753433c1121f22aad91a2cb36eb5991dad5a9fe479a758675639d6d9198ee0d",
+        "observations": {
+          "content_marker": false,
+          "secret_name_ascii": false,
+          "secret_name_utf16le": false,
+          "encoded_prefix_utf16le": false,
+          "plaintext_exfat_header": false
+        }
+      },
+      "coldboot_data_disk_unchanged": true,
+      "missing_wrong_truncated_master_rejected": true,
+      "missing_damaged_keyslot_rejected": true
+    },
+    {
+      "name": "keyslot-cut-before-commit",
+      "status": "passed",
+      "instance": "encfs-wrapped-dd442f616ad6",
+      "command": [
+        "/home/tourist/Desktop/openvela/run-emulator.sh",
+        "goldfish-arm64-v8a-ap-encfs-gui",
+        "-keep",
+        "encfs-wrapped-dd442f616ad6",
+        "-no-window",
+        "-no-audio",
+        "-gpu",
+        "swiftshader_indirect",
+        "-accel",
+        "off"
+      ],
+      "started_at": "2026-10-25T11:09:18+08:00",
+      "commands": [
+        {
+          "command": "encfs stop",
+          "started_at": "2026-10-25T11:09:19+08:00",
+          "finished_at": "2026-10-25T11:09:19+08:00",
+          "output": "\u001b[Kencfs stop\r\r\nencfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        },
+        {
+          "command": "encfs keyfiles /share/keys",
+          "started_at": "2026-10-25T11:09:19+08:00",
+          "finished_at": "2026-10-25T11:09:19+08:00",
+          "output": "\u001b[Kencfs keyfiles /share/keys\r\r\nencfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        },
+        {
+          "command": "encfs start",
+          "started_at": "2026-10-25T11:09:19+08:00",
+          "finished_at": "2026-10-25T11:09:19+08:00",
+          "output": "\u001b[Kencfs start\r\r\nencfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\nencfs: wrapped=1 master_id=2 generation=3\r\r\n"
+        },
+        {
+          "command": "cat /data/验证/密钥🔐.txt",
+          "started_at": "2026-10-25T11:09:19+08:00",
+          "finished_at": "2026-10-25T11:09:19+08:00",
+          "output": "\u001b[Kcat /data/验证/密钥🔐.txt\r\r\nENCFS_WRAP_UTF8_20261024_7df925ca\r\r\n"
+        },
+        {
+          "command": "encfs keyslot-pausecommit 10000",
+          "started_at": "2026-10-25T11:09:19+08:00",
+          "finished_at": "2026-10-25T11:09:19+08:00",
+          "output": "\u001b[Kencfs keyslot-pausecommit 10000\r\r\nencfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\nencfs: wrapped=1 master_id=2 generation=3\r\r\n"
+        },
+        {
+          "command": "encfs rekey 3 &",
+          "started_at": "2026-10-25T11:09:19+08:00",
+          "finished_at": "2026-10-25T11:09:19+08:00",
+          "output": "\u001b[Kencfs rekey 3 &\r\r\nencfs [25:100]\r\r\n"
+        }
+      ],
+      "serial_log": "/home/tourist/Desktop/openvela/encfs-results/keywrap-180-20261025-02/keyslot-cut-before-commit.serial.log",
+      "observed_pause_marker": "ENCFS_KEYSLOT_PAUSED before_atomic_commit ms=10000",
+      "intentional_interruption": {
+        "signal": "SIGKILL",
+        "clean_shutdown": false,
+        "staged_slot_sha256": "89f9863b5d9840984c481e3eed758a8991f493904aadea730311935484ba430f",
+        "staged_slot_bytes": 112,
+        "committed_slot_unchanged": true
+      }
+    },
+    {
+      "name": "keyslot-cut-recovery",
+      "status": "passed",
+      "instance": "encfs-wrapped-dd442f616ad6",
+      "command": [
+        "/home/tourist/Desktop/openvela/run-emulator.sh",
+        "goldfish-arm64-v8a-ap-encfs-gui",
+        "-keep",
+        "encfs-wrapped-dd442f616ad6",
+        "-no-window",
+        "-no-audio",
+        "-gpu",
+        "swiftshader_indirect",
+        "-accel",
+        "off"
+      ],
+      "started_at": "2026-10-25T11:09:19+08:00",
+      "commands": [
+        {
+          "command": "encfs stop",
+          "started_at": "2026-10-25T11:09:19+08:00",
+          "finished_at": "2026-10-25T11:09:20+08:00",
+          "output": "\u001b[Kencfs stop\r\r\nencfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        },
+        {
+          "command": "encfs keyfiles /share/keys",
+          "started_at": "2026-10-25T11:09:20+08:00",
+          "finished_at": "2026-10-25T11:09:20+08:00",
+          "output": "\u001b[Kencfs keyfiles /share/keys\r\r\nencfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        },
+        {
+          "command": "encfs start",
+          "started_at": "2026-10-25T11:09:20+08:00",
+          "finished_at": "2026-10-25T11:09:20+08:00",
+          "output": "\u001b[Kencfs start\r\r\nencfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\nencfs: wrapped=1 master_id=2 generation=3\r\r\n"
+        },
+        {
+          "command": "encfs status",
+          "started_at": "2026-10-25T11:09:20+08:00",
+          "finished_at": "2026-10-25T11:09:20+08:00",
+          "output": "\u001b[Kencfs status\r\r\nencfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\nencfs: wrapped=1 master_id=2 generation=3\r\r\n"
+        },
+        {
+          "command": "cat /data/验证/密钥🔐.txt",
+          "started_at": "2026-10-25T11:09:20+08:00",
+          "finished_at": "2026-10-25T11:09:20+08:00",
+          "output": "\u001b[Kcat /data/验证/密钥🔐.txt\r\r\nENCFS_WRAP_UTF8_20261024_7df925ca\r\r\n"
+        },
+        {
+          "command": "encfs_test rekey 3",
+          "started_at": "2026-10-25T11:09:20+08:00",
+          "finished_at": "2026-10-25T11:09:20+08:00",
+          "output": "\u001b[Kencfs_test rekey 3\r\r\n[PASS] online rekey requires READY wrapped volume\r\r\n[PASS] create exclusive live rekey file\r\r\n[PASS] write live file before rekey\r\r\n[PASS] hold duplicate and directory across rekey\r\r\n[PASS] open handles prevent unmount\r\r\n[PASS] same master id does not claim rotation\r\r\n[PASS] install one-shot slot commit failure\r\r\n[PASS] failed slot commit is reported\r\r\n[PASS] failed rekey preserves active wrapping version\r\r\n[PASS] same open descriptor survives failed rekey\r\r\n[PASS] rotate master while file and DIR remain open\r\r\n[PASS] new wrapper version is active without unmount\r\r\n[PASS] same descriptor reads unchanged data after rekey\r\r\n[PASS] same open DIR returns logical names after rekey\r\r\n[PASS] same DIR rewinds and reads after rekey\r\r\n[PASS] append through duplicate after rekey\r\r\n[PASS] original descriptor sees post-rekey writes\r\r\n[PASS] post-rekey logical size remains correct\r\r\n[PASS] close post-rekey duplicate\r\r\n[PASS] close post-rekey directory\r\r\n[PASS] close live rekey descriptor\r\r\n[PASS] stop newly wrapped volume\r\r\n[PASS] restart using new provider master\r\r\n[PASS] reopen file using new wrapper\r\r\n[PASS] read all data after wrapper restart\r\r\n[PASS] cleanup rekey file descriptor\r\r\n[PASS] remove owned rekey test file\r\r\nENCFS_REKEY_RESULT pass=27 fail=0 next_master_id=3\r\r\n[PASS] online master rotation with active file and directory handles\r\r\nENCFS_TEST_RESULT mode=rekey pass=28 fail=0\r\r\n"
+        },
+        {
+          "command": "encfs status",
+          "started_at": "2026-10-25T11:09:20+08:00",
+          "finished_at": "2026-10-25T11:09:20+08:00",
+          "output": "\u001b[Kencfs status\r\r\nencfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\nencfs: wrapped=1 master_id=3 generation=4\r\r\n"
+        },
+        {
+          "command": "cat /data/验证/密钥🔐.txt",
+          "started_at": "2026-10-25T11:09:20+08:00",
+          "finished_at": "2026-10-25T11:09:20+08:00",
+          "output": "\u001b[Kcat /data/验证/密钥🔐.txt\r\r\nENCFS_WRAP_UTF8_20261024_7df925ca\r\r\n"
+        },
+        {
+          "command": "encfs stop",
+          "started_at": "2026-10-25T11:09:20+08:00",
+          "finished_at": "2026-10-25T11:09:20+08:00",
+          "output": "\u001b[Kencfs stop\r\r\nencfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        }
+      ],
+      "serial_log": "/home/tourist/Desktop/openvela/encfs-results/keywrap-180-20261025-02/keyslot-cut-recovery.serial.log",
+      "live_handle_guest_result": {
+        "pass": 27,
+        "fail": 0
+      },
+      "exit_status": null,
+      "exit_signal": 15,
+      "finished_at": "2026-10-25T11:09:20+08:00",
+      "image": {
+        "path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-180-20261025-02/avd/encfs-wrapped-dd442f616ad6.vvd/vela_data.bin",
+        "sha256": "c1c672f5b0d1b1a74898e513b10ec59f68f459fa96db40e23377944ff5dc13e2",
+        "size": 268435456
+      },
+      "final_slot_sha256": "89f9863b5d9840984c481e3eed758a8991f493904aadea730311935484ba430f"
+    },
+    {
+      "name": "recovered-wrapper-coldboot",
+      "status": "passed",
+      "instance": "encfs-wrapped-dd442f616ad6",
+      "command": [
+        "/home/tourist/Desktop/openvela/run-emulator.sh",
+        "goldfish-arm64-v8a-ap-encfs-gui",
+        "-keep",
+        "encfs-wrapped-dd442f616ad6",
+        "-no-window",
+        "-no-audio",
+        "-gpu",
+        "swiftshader_indirect",
+        "-accel",
+        "off"
+      ],
+      "started_at": "2026-10-25T11:09:21+08:00",
+      "commands": [
+        {
+          "command": "encfs stop",
+          "started_at": "2026-10-25T11:09:21+08:00",
+          "finished_at": "2026-10-25T11:09:21+08:00",
+          "output": "\u001b[Kencfs stop\r\r\nencfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        },
+        {
+          "command": "encfs keyfiles /share/keys",
+          "started_at": "2026-10-25T11:09:21+08:00",
+          "finished_at": "2026-10-25T11:09:21+08:00",
+          "output": "\u001b[Kencfs keyfiles /share/keys\r\r\nencfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        },
+        {
+          "command": "encfs start",
+          "started_at": "2026-10-25T11:09:21+08:00",
+          "finished_at": "2026-10-25T11:09:21+08:00",
+          "output": "\u001b[Kencfs start\r\r\nencfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\nencfs: wrapped=1 master_id=3 generation=4\r\r\n"
+        },
+        {
+          "command": "encfs status",
+          "started_at": "2026-10-25T11:09:21+08:00",
+          "finished_at": "2026-10-25T11:09:21+08:00",
+          "output": "\u001b[Kencfs status\r\r\nencfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\nencfs: wrapped=1 master_id=3 generation=4\r\r\n"
+        },
+        {
+          "command": "cat /data/验证/密钥🔐.txt",
+          "started_at": "2026-10-25T11:09:21+08:00",
+          "finished_at": "2026-10-25T11:09:21+08:00",
+          "output": "\u001b[Kcat /data/验证/密钥🔐.txt\r\r\nENCFS_WRAP_UTF8_20261024_7df925ca\r\r\n"
+        },
+        {
+          "command": "encfs stop",
+          "started_at": "2026-10-25T11:09:21+08:00",
+          "finished_at": "2026-10-25T11:09:21+08:00",
+          "output": "\u001b[Kencfs stop\r\r\nencfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        }
+      ],
+      "serial_log": "/home/tourist/Desktop/openvela/encfs-results/keywrap-180-20261025-02/recovered-wrapper-coldboot.serial.log",
+      "exit_status": null,
+      "exit_signal": 15,
+      "finished_at": "2026-10-25T11:09:21+08:00",
+      "final_master_id": 3,
+      "final_generation": 4,
+      "only_current_master_available": true,
+      "coldboot_data_disk_unchanged": true,
+      "image": {
+        "path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-180-20261025-02/avd/encfs-wrapped-dd442f616ad6.vvd/vela_data.bin",
+        "sha256": "c1c672f5b0d1b1a74898e513b10ec59f68f459fa96db40e23377944ff5dc13e2",
+        "size": 268435456
+      }
+    }
+  ],
+  "requested_stress_seconds": 180,
+  "config": "goldfish-arm64-v8a-ap-encfs-gui",
+  "build_dir": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-gui",
+  "limitations": [
+    "Disposable host-file provider models a keystore, not a TEE.",
+    "No real power-loss or malicious-host rollback guarantee.",
+    "Legacy directly-derived volumes reject online rekey.",
+    "Captured old keyslots together with old masters remain decryptable."
+  ],
+  "build_artifacts": {
+    "nuttx": {
+      "path": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-gui/nuttx",
+      "size": 61591200,
+      "sha256": "794119b446b764f4ada8c175467a29b4758001925d63c224273d3e2c1cc10615"
+    },
+    "nuttx.bin": {
+      "path": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-gui/nuttx.bin",
+      "size": 7057408,
+      "sha256": "0728d17af59188f607ed1301ea1e659d43f56205d3f2d6a949837d78bbdd2c4e"
+    },
+    "vela_data.bin": {
+      "path": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-gui/vela_data.bin",
+      "size": 268435456,
+      "sha256": "a6d72ac7690f53be6ae46ba88506bd97302a093f7108472bd9efc3cefda06484"
+    },
+    "vela_system.bin": {
+      "path": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-gui/vela_system.bin",
+      "size": 1024,
+      "sha256": "132c956be1e711a7bde7c0206a663b5ee63804ec3888478b5a1c8092e14b290b"
+    },
+    ".config": {
+      "path": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-gui/.config",
+      "size": 106310,
+      "sha256": "6e4fefba74baa4a02ab99d0c218ae724aa356a940d0f0d1507aa2855283c0c69"
+    }
+  },
+  "source_revisions": {
+    "nuttx": {
+      "revision": "04264dc9a71be9dba96c4321bc5d7770e79d2dca",
+      "dirty": false,
+      "changes": []
+    },
+    "apps": {
+      "revision": "e198d0a1a032b886dc43c6cf5e7677f5dad4a42e",
+      "dirty": true,
+      "changes": [
+        "?? testing/drivers/nist-sts/.gitee/",
+        "?? testing/drivers/nist-sts/.github/",
+        "?? testing/drivers/nist-sts/sts/"
+      ]
+    },
+    "vendor_openvela": {
+      "revision": "f08e648c5b1386c70fd74c637307de70cf255533",
+      "dirty": false,
+      "changes": []
+    },
+    "manifests": {
+      "revision": "b53dd710d5bf58be99c1adb6c42ab2c58064e0df",
+      "dirty": true,
+      "changes": [
+        "M  encfs-sources.json",
+        "M  encfs-tested.xml",
+        "M  overlays/apps/examples/encfs_test/CMakeLists.txt",
+        "M  overlays/apps/examples/encfs_test/Makefile",
+        "M  overlays/apps/examples/encfs_test/encfs_test_main.c",
+        "A  overlays/apps/examples/encfs_test/encfs_test_rekey.c",
+        "M  overlays/apps/examples/encfs_test/encfs_test_shared.h",
+        "A  overlays/apps/examples/encfs_test/encfs_test_utf8.c",
+        "A  overlays/apps/examples/encfs_test/tests/test_rekey_cli.py",
+        "M  overlays/apps/system/encfs/Kconfig",
+        "M  overlays/apps/system/encfs/encfs_main.c",
+        "A  overlays/apps/system/encfs/tests/test_rekey_cli.py",
+        "A  overlays/apps/testing/fs/encfs_extended/CMakeLists.txt",
+        "A  overlays/apps/testing/fs/encfs_extended/Kconfig",
+        "A  overlays/apps/testing/fs/encfs_extended/Make.defs",
+        "A  overlays/apps/testing/fs/encfs_extended/Makefile",
+        "A  overlays/apps/testing/fs/encfs_extended/README.md",
+        "A  overlays/apps/testing/fs/encfs_extended/encfs_extended_main.c",
+        "M  patches/nuttx/encfs.patch",
+        "M  patches/vendor_openvela/encfs.patch",
+        " M tools/analyze_encfs_stress.py",
+        " M tools/test_encfs.py",
+        " M tools/test_encfs_gui.py",
+        "?? docs/encfs_extended_validation.md",
+        "?? docs/encfs_extension_status.md",
+        "?? docs/encfs_keywrap.md",
+        "?? tools/test_encfs_extended.py",
+        "?? tools/test_encfs_keywrap.py"
+      ]
+    }
+  },
+  "updated_at": "2026-10-25T11:09:22+08:00",
+  "finished_at": "2026-10-25T11:09:22+08:00"
+}

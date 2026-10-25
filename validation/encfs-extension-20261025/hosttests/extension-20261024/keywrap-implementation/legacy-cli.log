@@ -1,0 +1,2 @@
+testing: ENCFS_CLI_TEST_RESULT checks=405 fail=0
+production: ENCFS_CLI_TEST_RESULT checks=5 fail=0

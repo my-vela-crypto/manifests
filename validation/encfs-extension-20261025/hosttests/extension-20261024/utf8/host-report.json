@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "counts": {
+    "unicode_scalars": 1112064,
+    "two_byte_inputs": 65536,
+    "generated_invalid_and_mixed": 59999,
+    "codec_roundtrips": 102,
+    "authenticated_invalid_plaintexts": 17,
+    "legacy_ascii_ciphertexts": 224
+  },
+  "checks": 1237942,
+  "legacy_ascii_fixture": {
+    "secret.txt": "E1_A1CP2UT8PNK4I9HJ7UQILMT155DE81L20K7VS8F3VO"
+  },
+  "oracle": "Python strict UTF-8 decoder; Unicode scalar enumeration",
+  "sanitizer": "undefined behavior; fatal on first diagnostic",
+  "limits": "128 bytes; no normalization or case folding"
+}

@@ -1,0 +1,198 @@
+{
+  "status": "passed",
+  "report_sha256": "3bfd10c67452e5db60a9ab4a797a1f0a763678165286a37da0a64f2d5b7ef8e5",
+  "inputs_rechecked_unchanged": {
+    "nuttx": "c032811f7323892987c805aabab9bdcfcf3845863b610a781b8561bf9360c278",
+    "nuttx.bin": "a45288f35ec33fd02a37f4f2f7bfb2f25d2fe8afb3c94aa525be1a9ec379f8ac",
+    "vela_data.bin": "a6d72ac7690f53be6ae46ba88506bd97302a093f7108472bd9efc3cefda06484",
+    "vela_system.bin": "c6cc97e19e622a920d00f1b56d94622a595d2c9b687ea3f13415203077b571a8",
+    ".config": "9bbb13e8755386b4c24aee8bad47bbff2d07e447c80b9b16e9dc2b66b7907d25"
+  },
+  "raw_serial_count": 24,
+  "phase_count": 24,
+  "upstream_cmocka": {
+    "run": 46,
+    "pass": 46,
+    "fail": 0,
+    "skip": 0
+  },
+  "fstest": {
+    "loops": 10,
+    "max_open": 64,
+    "max_file_size": 8192,
+    "pass": 20,
+    "fail": 0
+  },
+  "legacy_rwloops": 100,
+  "powercuts": [
+    {
+      "cut": 1,
+      "boundary": "mid-temporary-write",
+      "verified_prior_generation": 0,
+      "committed_generation": 1,
+      "signal": 9
+    },
+    {
+      "cut": 2,
+      "boundary": "after-commit",
+      "verified_prior_generation": 1,
+      "committed_generation": 2,
+      "signal": 9
+    },
+    {
+      "cut": 3,
+      "boundary": "mid-temporary-write",
+      "verified_prior_generation": 2,
+      "committed_generation": 3,
+      "signal": 9
+    },
+    {
+      "cut": 4,
+      "boundary": "after-commit",
+      "verified_prior_generation": 3,
+      "committed_generation": 4,
+      "signal": 9
+    },
+    {
+      "cut": 5,
+      "boundary": "mid-temporary-write",
+      "verified_prior_generation": 4,
+      "committed_generation": 5,
+      "signal": 9
+    },
+    {
+      "cut": 6,
+      "boundary": "after-commit",
+      "verified_prior_generation": 5,
+      "committed_generation": 6,
+      "signal": 9
+    },
+    {
+      "cut": 7,
+      "boundary": "mid-temporary-write",
+      "verified_prior_generation": 6,
+      "committed_generation": 7,
+      "signal": 9
+    },
+    {
+      "cut": 8,
+      "boundary": "after-commit",
+      "verified_prior_generation": 7,
+      "committed_generation": 8,
+      "signal": 9
+    },
+    {
+      "cut": 9,
+      "boundary": "mid-temporary-write",
+      "verified_prior_generation": 8,
+      "committed_generation": 9,
+      "signal": 9
+    },
+    {
+      "cut": 10,
+      "boundary": "after-commit",
+      "verified_prior_generation": 9,
+      "committed_generation": 10,
+      "signal": 9
+    },
+    {
+      "cut": 11,
+      "boundary": "mid-temporary-write",
+      "verified_prior_generation": 10,
+      "committed_generation": 11,
+      "signal": 9
+    },
+    {
+      "cut": 12,
+      "boundary": "after-commit",
+      "verified_prior_generation": 11,
+      "committed_generation": 12,
+      "signal": 9
+    },
+    {
+      "cut": 13,
+      "boundary": "mid-temporary-write",
+      "verified_prior_generation": 12,
+      "committed_generation": 13,
+      "signal": 9
+    },
+    {
+      "cut": 14,
+      "boundary": "after-commit",
+      "verified_prior_generation": 13,
+      "committed_generation": 14,
+      "signal": 9
+    },
+    {
+      "cut": 15,
+      "boundary": "mid-temporary-write",
+      "verified_prior_generation": 14,
+      "committed_generation": 15,
+      "signal": 9
+    },
+    {
+      "cut": 16,
+      "boundary": "after-commit",
+      "verified_prior_generation": 15,
+      "committed_generation": 16,
+      "signal": 9
+    },
+    {
+      "cut": 17,
+      "boundary": "mid-temporary-write",
+      "verified_prior_generation": 16,
+      "committed_generation": 17,
+      "signal": 9
+    },
+    {
+      "cut": 18,
+      "boundary": "after-commit",
+      "verified_prior_generation": 17,
+      "committed_generation": 18,
+      "signal": 9
+    },
+    {
+      "cut": 19,
+      "boundary": "mid-temporary-write",
+      "verified_prior_generation": 18,
+      "committed_generation": 19,
+      "signal": 9
+    },
+    {
+      "cut": 20,
+      "boundary": "after-commit",
+      "verified_prior_generation": 19,
+      "committed_generation": 20,
+      "signal": 9
+    }
+  ],
+  "final_verified_generations": 21,
+  "final_verified_bytes": 1442328,
+  "single_byte_same_length_corruption_rejected": true,
+  "serial_sha256": {
+    "powercut-15.serial.log": "dafde18f529bc72b59058eb81bca12f18daf13202a794829da299c04d3e008ca",
+    "powercut-11.serial.log": "d58f14e2e3ebd77ec3a6563ebf7d7871ffec69d443169feb2ee1100dc5886e22",
+    "powercut-04.serial.log": "a3c3bf31419c687617954db14932e4a20321647d6e1ad865224bd73e34114943",
+    "powercut-05.serial.log": "212bf42018c61ee62b7028342b63fe3fd351425261297e83ea94207d14c33230",
+    "single-byte-corruption-oracle.serial.log": "28b1d6aed144522770513c24301b5e862262110eb2b88b5f0865ac6609acdf92",
+    "power-prepare.serial.log": "613e2255a01d2a20c518002d345a23919e25a2afc5036d31c9848830041ab405",
+    "powercut-13.serial.log": "43d73ca378e1f44bc0a29ef9d706ef594eccbfdd33d641bc6ed8af67f115a5b0",
+    "powercut-16.serial.log": "a62cd795f61d797a5246b45344860f18f39fee98c1c6852b8f6b2fb540c647d4",
+    "power-final-coldboot.serial.log": "b59b08c78e93a921dd40e5f12ceeaa6554685ff232463c1b32ac03ac66ea7eac",
+    "powercut-18.serial.log": "589b3f7238e1d8fca11bdac79955605794ee5171cbe7909efb9017885dc22d4d",
+    "powercut-01.serial.log": "7947c0aba4846e0240bd3501b3183a2529543566c7a0e275d192c422af5345ad",
+    "powercut-06.serial.log": "9e4be571aa4176fc17bf6486fb3ee6b631071b2d20f170a12959769018910cbc",
+    "powercut-14.serial.log": "3d72682b14245ee3885181338e422ce9dc83cf3e998b1fde0ff1f3d4022dd0a8",
+    "powercut-10.serial.log": "57dc07e5348bf524ccaadcb73bfe4ca460e9dde916260dc28abad9f69def404d",
+    "powercut-03.serial.log": "e3e5dc0f143bf9e1cba65b396469754a05a545a8e46cfe7633ac6f1819de119d",
+    "powercut-19.serial.log": "8f9313ae5bb9e3777d6c830c3dc666ca38c2c943a9fef546003811b3bfe971cd",
+    "powercut-17.serial.log": "0baa9553a694686f9e8ba8dc84ca970e02214ad73e033da52e8cce49ea859578",
+    "powercut-07.serial.log": "b185c158f2baec49c7731c3baff1c0936312b418433d66fc24e381774c6f6829",
+    "powercut-08.serial.log": "216100d9ef27e213f294a5d84bad5a6b08050068326ac021b81324a7a40c3cda",
+    "powercut-12.serial.log": "aae1bb0e68cbe68dc1de9457c62774da113c0d874d2b488b0ee42deca5888252",
+    "powercut-09.serial.log": "f80f66dcda442bee2a9a8cd8bb971e52eda5d93d6a9000604ea87167403d086c",
+    "upstream-fs-regression.serial.log": "fc65407838a967c39dbc03883f99f326387cfc9739f577bc4a4e44711395a045",
+    "powercut-02.serial.log": "0779c248187af87e91598fe5aca9f6c5a8c5840f1ba243d4ef4eb55c434faf8e",
+    "powercut-20.serial.log": "81dbd2ff5f74190b972ae8327e507c705f4829a265c5cf92e4a09b97aa6df4cd"
+  }
+}

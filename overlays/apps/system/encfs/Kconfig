@@ -9,3 +9,7 @@ config SYSTEM_ENCFS
 	  With ENCFS_TESTING, testkey accepts a 32-byte hexadecimal test key,
 	  restores the board key, or simulates a missing key provider. These
 	  test commands require the volume to be stopped with no resources.
+	  With ENCFS_KEYWRAP, rekey rotates the provider master identifier on
+	  a mounted wrapped volume without replacing live data cipher keys.
+	  Legacy directly-derived volumes reject rekey. With ENCFS_TESTING,
+	  keyfiles selects the independent host-file simulator provider.

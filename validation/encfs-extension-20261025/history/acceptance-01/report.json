@@ -1,0 +1,137 @@
+{
+  "started_at": "2026-10-22T22:49:21+08:00",
+  "status": "failed",
+  "source_root": "/home/tourist/Desktop/openvela",
+  "build_dir": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs",
+  "results_dir": "/home/tourist/Desktop/openvela/encfs-results/acceptance-01",
+  "phases": [
+    {
+      "name": "standalone",
+      "status": "failed",
+      "image": {
+        "path": "/home/tourist/Desktop/openvela/encfs-results/acceptance-01/avd/encfs-plain-20261022-224922-e4f2d6ee.vvd/vela_data.bin",
+        "size": 268435456,
+        "sha256": "a6d72ac7690f53be6ae46ba88506bd97302a093f7108472bd9efc3cefda06484"
+      },
+      "registry_path": "/home/tourist/.vela/encfs-plain-20261022-224922-e4f2d6ee.ini",
+      "instance": "encfs-plain-20261022-224922-e4f2d6ee",
+      "command": [
+        "/home/tourist/Desktop/openvela/run-emulator.sh",
+        "goldfish-arm64-v8a-ap-encfs",
+        "-keep",
+        "encfs-plain-20261022-224922-e4f2d6ee",
+        "-no-window",
+        "-no-audio",
+        "-gpu",
+        "off",
+        "-accel",
+        "off"
+      ],
+      "started_at": "2026-10-22T22:49:22+08:00",
+      "commands": [
+        {
+          "command": "encfs_test standalone",
+          "started_at": "2026-10-22T22:49:22+08:00",
+          "finished_at": "2026-10-22T22:49:22+08:00",
+          "output": "\u001b[Kencfs: state=STOPPED result=-22 stage=5 error=-22 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\nencfs: Unknown error 22 (-22)\r\r\nencfs_test standalone\r\r\nencfs_test [4:100]\r\r\n"
+        }
+      ],
+      "serial_log": "/home/tourist/Desktop/openvela/encfs-results/acceptance-01/standalone.serial.log",
+      "exit_status": null,
+      "exit_signal": 15,
+      "finished_at": "2026-10-22T22:49:22+08:00"
+    }
+  ],
+  "limitations": [
+    "Raw-image searches check specified complete markers and names only.",
+    "XTS does not authenticate arbitrary sector contents.",
+    "Unused blank sectors are not claimed to have been encrypted.",
+    "The board key in the QEMU demonstration is deterministic test material."
+  ],
+  "build_artifacts": {
+    "nuttx": {
+      "path": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs/nuttx",
+      "size": 6698448,
+      "sha256": "2685387b2316d1fde8bd38ea8557d8db15297bf279f07e8e6a4fd997d7c2b479"
+    },
+    "nuttx.bin": {
+      "path": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs/nuttx.bin",
+      "size": 1572864,
+      "sha256": "04b4dad28dbc1f3a62b4d36f748055d6fc8ec119249e9cec8cc11f50768a50f4"
+    },
+    "vela_data.bin": {
+      "path": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs/vela_data.bin",
+      "size": 268435456,
+      "sha256": "a6d72ac7690f53be6ae46ba88506bd97302a093f7108472bd9efc3cefda06484"
+    },
+    "vela_system.bin": {
+      "path": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs/vela_system.bin",
+      "size": 1024,
+      "sha256": "8126ae28530c2440670a3647cd40a87932cae7422197ed978e69140322e4198b"
+    },
+    ".config": {
+      "path": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs/.config",
+      "size": 52819,
+      "sha256": "4a6a37dbe2ea6265fa503332ba36ef05a08f4def444bddff809c2b3218523d79"
+    }
+  },
+  "source_revisions": {
+    "nuttx": {
+      "revision": "52939a185be4c940c83c843ae1f0b076f3d1d861",
+      "dirty": true,
+      "changes": [
+        " M crypto/CMakeLists.txt",
+        " M crypto/Kconfig",
+        " M crypto/Makefile",
+        " M drivers/crypto/blkcrypt.c",
+        " M fs/Kconfig",
+        " M fs/Makefile",
+        " M fs/fatfs/fatfs_vfs.c",
+        " M fs/mount/fs_mount.c",
+        " M fs/vfs/fs_rename.c",
+        " M include/nuttx/crypto/blkcrypt.h",
+        " M include/nuttx/fs/fs.h",
+        " M tools/run-emulator.sh",
+        "?? crypto/aes_siv.c",
+        "?? crypto/hkdf.c",
+        "?? fs/encfs/",
+        "?? fs/encpathfs/",
+        "?? include/nuttx/crypto/aes_siv.h",
+        "?? include/nuttx/crypto/hkdf.h",
+        "?? include/nuttx/fs/encfs.h",
+        "?? include/nuttx/fs/encpathfs.h",
+        "?? tools/tests/"
+      ]
+    },
+    "apps": {
+      "revision": "7b36f2344dbe9a5c9526462128545442267d2314",
+      "dirty": true,
+      "changes": [
+        "?? examples/encfs_test/",
+        "?? system/encfs/",
+        "?? testing/drivers/nist-sts/.gitee/",
+        "?? testing/drivers/nist-sts/.github/",
+        "?? testing/drivers/nist-sts/sts/"
+      ]
+    },
+    "vendor_openvela": {
+      "revision": "4351221032aa88cb9da86336c53afe0cb6159e3e",
+      "dirty": true,
+      "changes": [
+        " M boards/vela/CMakeLists.txt",
+        " M boards/vela/prebuilts/tools/run_emulator.sh",
+        " M boards/vela/src/etc/init.d/rc.sysinit"
+      ]
+    },
+    "manifests": {
+      "revision": "8817cd523602eaecdfe2c3cfc338b85a608b59b1",
+      "dirty": true,
+      "changes": [
+        "?? tools/"
+      ]
+    }
+  },
+  "error": "Guest did not emit the expected result for standalone",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/tourist/Desktop/openvela/.repo/manifests/tools/test_encfs.py\", line 472, in main\n    run_suite(args, report)\n  File \"/home/tourist/Desktop/openvela/.repo/manifests/tools/test_encfs.py\", line 420, in run_suite\n    emulator.test(mode)\n  File \"/home/tourist/Desktop/openvela/.repo/manifests/tools/test_encfs.py\", line 303, in test\n    require(len(matches) == 1 and matches[0][0] == mode,\n  File \"/home/tourist/Desktop/openvela/.repo/manifests/tools/test_encfs.py\", line 68, in require\n    raise TestFailure(message)\nTestFailure: Guest did not emit the expected result for standalone\n",
+  "finished_at": "2026-10-22T22:49:22+08:00"
+}

@@ -1,0 +1,87 @@
+{
+  "status": "passed",
+  "scope": "Final GUI rerun and independently observed Python return code; does not claim 24-hour completion",
+  "report_sha256": "d097cd10752ed878a439a1747fa2bf1d816c2075602c6f901507d749fdd7dc71",
+  "analysis_sha256": "ed9e5f7ab7edd7ee314694348145919075db90739a81e810fc876329632030a6",
+  "wrapper_receipt_sha256": "e3290e946a53942f0e31dc672ece3f40490de122436e4cc1084166b424c0b790",
+  "program_return_code": 0,
+  "outer_tool_observation": {
+    "session_id": "96654",
+    "exit_code": 0,
+    "source": "Current agent observed tools.write_stdin completion; distinct from the child wait receipt"
+  },
+  "phase_count": 7,
+  "keypad_touch_changed_pixels": {
+    "dismiss_modal": 1012668,
+    "checkbox": 225,
+    "slider": 3170,
+    "text_tab": 283880
+  },
+  "write": {
+    "mode": "write",
+    "pass": 232,
+    "fail": 0
+  },
+  "verify": {
+    "mode": "verify",
+    "pass": 8,
+    "fail": 0
+  },
+  "stress": {
+    "requested_seconds": 60,
+    "elapsed_ms": 60622,
+    "workers": 2,
+    "iterations": 452,
+    "written_bytes": 4327670,
+    "verified_bytes": 8607824,
+    "worker0_iterations": 211,
+    "worker1_iterations": 241,
+    "worker0_elapsed_ms": 60064,
+    "worker1_elapsed_ms": 60341,
+    "errors": 0,
+    "completed": 1,
+    "heap_before": 5371584,
+    "heap_after": 5371584
+  },
+  "verified_png_count": 28,
+  "exact_selected_tab_comparisons": 4,
+  "serial_sha256": {
+    "manual-key.serial.log": "826a744d44d5c8e62138c76c8e719a177e347adc35f65663dc71ca59e54c597e",
+    "manual-key-coldboot.serial.log": "8d6cde8d221390e41bd5d1a311f35890d2d5162c4b9c5c966e2632f04577ae8d",
+    "gui-music.serial.log": "0e7624d7e0971c8948e4e997ce2dcd6ae70e98c9038be7c2bed009c959331f7c",
+    "gui-keypad.serial.log": "458394307db20910fdb1edcb6320bbc2f808d4b6e41568ca5091b6d47c144536",
+    "gui-stress-demo.serial.log": "9023f08bea9c12e07f3d7fd193ab941fffbad32f9d546557bdbe935282bf7082",
+    "gui-widgets-storage.serial.log": "20cb1756787628079d7fc1b0da8b7e39cb00379b2c2b35a7cfc0fd05b9f9f8d4",
+    "gui-persistence-coldboot.serial.log": "b76912fbc7de59f2f422051070234935e7662093f344fbc44028d6d55a1d8c75"
+  },
+  "frame_sha256": {
+    "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-music-initial.png": "8a3f0e0541ff0f2302d5c5fe706fd6676a6a92defd89e0aec5115ed8be46ddd8",
+    "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-music-animated.png": "f8005b843a8517bd556897c30d84c34060b0a52fcd980ca00720f1e62e2886f7",
+    "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-keypad-initial.png": "ab493c9374845f5b362cfc36463f0a6e8d2976220af449daf4b59fa0c7b5727f",
+    "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-keypad-modal-dismissed.png": "2637906742469e4a8a58f3d5bfb54e571d3a31ae543d8e621f6755b00744ebaa",
+    "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-keypad-checkbox.png": "b08a9a186efb0a4ecb6095737cdcede68ce24a5ff81c39f384a1081722ce9cbf",
+    "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-keypad-slider.png": "b6fd8724f4ab596b3f5bdec5a3c773e9ab2d8676af75796909d4451a0c402c16",
+    "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-keypad-text-tab.png": "aa3279dd17e7047b64e17c0c47fd40eac2b4e9663c22370ecaff697c19bec777",
+    "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-stress-demo-initial.png": "3f757b8e593f037545c22b563a2110a47c717011a4bb5dbc25da4619cc7e2d21",
+    "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-stress-demo-animated.png": "f046cbe1e9ddb8c1ae3577a0bec1487551da0c2d1834d3c2424c174f22347397",
+    "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-widgets-storage-initial.png": "5be7e9964763a238f6e4d27a87bb6d7880207276513b8395c3b39b56836704ee",
+    "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-widgets-storage-profile.png": "5be7e9964763a238f6e4d27a87bb6d7880207276513b8395c3b39b56836704ee",
+    "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-widgets-storage-analytics.png": "e439cb62d8e4b90f0f8514332e776f50a49330a65bacb9518e50d4c4b75236f2",
+    "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-widgets-storage-shop.png": "fe59f3b6e9d7a9150edc6604af160333625625a4f70302ab892ba0d0dbb81cd2",
+    "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-widgets-storage-checkbox-toggled.png": "70471371685064ed98ec1450b39254077306ab015da545057424cdda05e11aae",
+    "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-widgets-storage-slider-before.png": "5be7e9964763a238f6e4d27a87bb6d7880207276513b8395c3b39b56836704ee",
+    "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-widgets-storage-slider-after.png": "a8f2ea67bc85e3da0eae688e0670943e74c4c9c6b8a997eda29ac970fb1d4993",
+    "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-widgets-storage-after-storage-regression.png": "a8f2ea67bc85e3da0eae688e0670943e74c4c9c6b8a997eda29ac970fb1d4993",
+    "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-widgets-storage-stress-001-analytics.png": "e79671f8a5fdd6ce88dc08ae5b967d49c01360080b6597adbb04c32da94c01df",
+    "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-widgets-storage-stress-001-shop.png": "70471371685064ed98ec1450b39254077306ab015da545057424cdda05e11aae",
+    "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-widgets-storage-stress-003-analytics.png": "9a7c22c1abe78b4183be0c53447ce43913613b5e2945fd904417096f27276887",
+    "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-widgets-storage-stress-003-shop.png": "70471371685064ed98ec1450b39254077306ab015da545057424cdda05e11aae",
+    "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-persistence-coldboot-initial.png": "5be7e9964763a238f6e4d27a87bb6d7880207276513b8395c3b39b56836704ee",
+    "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-persistence-coldboot-profile.png": "5be7e9964763a238f6e4d27a87bb6d7880207276513b8395c3b39b56836704ee",
+    "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-persistence-coldboot-analytics.png": "e439cb62d8e4b90f0f8514332e776f50a49330a65bacb9518e50d4c4b75236f2",
+    "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-persistence-coldboot-shop.png": "fe59f3b6e9d7a9150edc6604af160333625625a4f70302ab892ba0d0dbb81cd2",
+    "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-persistence-coldboot-checkbox-toggled.png": "70471371685064ed98ec1450b39254077306ab015da545057424cdda05e11aae",
+    "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-persistence-coldboot-slider-before.png": "5be7e9964763a238f6e4d27a87bb6d7880207276513b8395c3b39b56836704ee",
+    "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/frames/gui-persistence-coldboot-slider-after.png": "a8f2ea67bc85e3da0eae688e0670943e74c4c9c6b8a997eda29ac970fb1d4993"
+  }
+}

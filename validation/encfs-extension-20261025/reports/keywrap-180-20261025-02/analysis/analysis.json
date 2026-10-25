@@ -1,0 +1,317 @@
+{
+  "status": "passed",
+  "analyzed_at": "2026-10-25T03:09:50+00:00",
+  "results_directory": "/home/tourist/Desktop/openvela/encfs-results/keywrap-180-20261025-02",
+  "input_report": {
+    "path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-180-20261025-02/report.json",
+    "sha256": "9003f70a5f1b0784202c0e07dc15925d89bec7e5cfb709da3ca44ca342d0405e"
+  },
+  "input_serial": {
+    "path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-180-20261025-02/gui-wrapped-key-stress.serial.log",
+    "sha256": "0fd62b8a7e02384b9e3ac03099352914b0588c7598c44aed71d74cd2113f7b41"
+  },
+  "validation": {
+    "report_and_all_phase_statuses_passed": true,
+    "statistics_match_independently_parsed_serial": true,
+    "each_worker_met_requested_duration": true,
+    "both_worker_counts_advance_in_every_progress_interval": true,
+    "payload_counters_match_deterministic_completed_cycle_pattern": true,
+    "maximum_allowed_progress_gap_seconds": 95.0,
+    "verified_framebuffer_png_count": 12,
+    "verified_stress_header_count": 4,
+    "selected_tab_header_policy": "exact RGB equality at (680,0,1280,70)"
+  },
+  "workload": {
+    "requested_seconds": 180,
+    "guest_elapsed_ms": 180813,
+    "host_elapsed_seconds": 183.025,
+    "completed_iterations": 1396,
+    "worker0_iterations": 638,
+    "worker1_iterations": 758,
+    "worker0_elapsed_ms": 180365,
+    "worker1_elapsed_ms": 180024,
+    "logical_written_bytes": 13403409,
+    "logical_verified_read_bytes": 26660092,
+    "errors": 0,
+    "counter_scope": "Logical test payload only; not physical device I/O",
+    "progress_sample_count": 6
+  },
+  "global_heap": {
+    "scope": "Global allocator usage including GUI and other tasks",
+    "unit": "bytes",
+    "steady_after_seconds": 300.0,
+    "all_progress_sample_count": 6,
+    "active_sample_count": 5,
+    "steady_sample_count": 0,
+    "final_cleanup_sample_excluded_from_steady_OLS": {
+      "elapsed_ms": 180813,
+      "iterations": 1396,
+      "written_bytes": 13403409,
+      "verified_bytes": 26660092,
+      "worker0_iterations": 638,
+      "worker1_iterations": 758,
+      "errors": 0,
+      "heap_used": 5371680,
+      "heap_free": 117221280
+    },
+    "interpretation": "A bounded run describes observed global heap behavior. It does not establish absence of leaks or attribute changes to EncFS.",
+    "steady_available": false,
+    "reason": "Fewer than two active samples at/after 300s"
+  },
+  "progress_samples": [
+    {
+      "elapsed_ms": 30453,
+      "iterations": 236,
+      "written_bytes": 2161802,
+      "verified_bytes": 4298788,
+      "worker0_iterations": 109,
+      "worker1_iterations": 127,
+      "errors": 0,
+      "heap_used": 5655168,
+      "heap_free": 116937792
+    },
+    {
+      "elapsed_ms": 60516,
+      "iterations": 469,
+      "written_bytes": 4390464,
+      "verified_bytes": 8731726,
+      "worker0_iterations": 219,
+      "worker1_iterations": 250,
+      "errors": 0,
+      "heap_used": 5657360,
+      "heap_free": 116935600
+    },
+    {
+      "elapsed_ms": 90623,
+      "iterations": 700,
+      "written_bytes": 6606769,
+      "verified_bytes": 13140088,
+      "worker0_iterations": 329,
+      "worker1_iterations": 371,
+      "errors": 0,
+      "heap_used": 5657360,
+      "heap_free": 116935600
+    },
+    {
+      "elapsed_ms": 120684,
+      "iterations": 930,
+      "written_bytes": 8814881,
+      "verified_bytes": 17532068,
+      "worker0_iterations": 439,
+      "worker1_iterations": 491,
+      "errors": 0,
+      "heap_used": 5654320,
+      "heap_free": 116938640
+    },
+    {
+      "elapsed_ms": 150732,
+      "iterations": 1159,
+      "written_bytes": 11022860,
+      "verified_bytes": 21924044,
+      "worker0_iterations": 545,
+      "worker1_iterations": 614,
+      "errors": 0,
+      "heap_used": 5657872,
+      "heap_free": 116935088
+    },
+    {
+      "elapsed_ms": 180813,
+      "iterations": 1396,
+      "written_bytes": 13403409,
+      "verified_bytes": 26660092,
+      "worker0_iterations": 638,
+      "worker1_iterations": 758,
+      "errors": 0,
+      "heap_used": 5371680,
+      "heap_free": 117221280
+    }
+  ],
+  "verified_framebuffers": [
+    {
+      "phase": "gui-wrapped-key-stress",
+      "label": "initial",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-180-20261025-02/frames/gui-wrapped-key-stress-initial.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-180-20261025-02/frames/gui-wrapped-key-stress-initial.png",
+      "sha256": "5be7e9964763a238f6e4d27a87bb6d7880207276513b8395c3b39b56836704ee",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-wrapped-key-stress",
+      "label": "profile",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-180-20261025-02/frames/gui-wrapped-key-stress-profile.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-180-20261025-02/frames/gui-wrapped-key-stress-profile.png",
+      "sha256": "5be7e9964763a238f6e4d27a87bb6d7880207276513b8395c3b39b56836704ee",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-wrapped-key-stress",
+      "label": "analytics",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-180-20261025-02/frames/gui-wrapped-key-stress-analytics.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-180-20261025-02/frames/gui-wrapped-key-stress-analytics.png",
+      "sha256": "e439cb62d8e4b90f0f8514332e776f50a49330a65bacb9518e50d4c4b75236f2",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-wrapped-key-stress",
+      "label": "shop",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-180-20261025-02/frames/gui-wrapped-key-stress-shop.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-180-20261025-02/frames/gui-wrapped-key-stress-shop.png",
+      "sha256": "fe59f3b6e9d7a9150edc6604af160333625625a4f70302ab892ba0d0dbb81cd2",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-wrapped-key-stress",
+      "label": "checkbox-toggled",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-180-20261025-02/frames/gui-wrapped-key-stress-checkbox-toggled.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-180-20261025-02/frames/gui-wrapped-key-stress-checkbox-toggled.png",
+      "sha256": "70471371685064ed98ec1450b39254077306ab015da545057424cdda05e11aae",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-wrapped-key-stress",
+      "label": "slider-before",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-180-20261025-02/frames/gui-wrapped-key-stress-slider-before.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-180-20261025-02/frames/gui-wrapped-key-stress-slider-before.png",
+      "sha256": "5be7e9964763a238f6e4d27a87bb6d7880207276513b8395c3b39b56836704ee",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-wrapped-key-stress",
+      "label": "slider-after",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-180-20261025-02/frames/gui-wrapped-key-stress-slider-after.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-180-20261025-02/frames/gui-wrapped-key-stress-slider-after.png",
+      "sha256": "a13ff6411b93c0d19025d5924f3a0f353580e28b3c361f472df20f3bf2719a9d",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-wrapped-key-stress",
+      "label": "stress-001-analytics",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-180-20261025-02/frames/gui-wrapped-key-stress-stress-001-analytics.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-180-20261025-02/frames/gui-wrapped-key-stress-stress-001-analytics.png",
+      "sha256": "f1d2c0b03769cee12f16cf9d016d299767d5136fa034d8914741cf5b112746e9",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-wrapped-key-stress",
+      "label": "stress-001-shop",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-180-20261025-02/frames/gui-wrapped-key-stress-stress-001-shop.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-180-20261025-02/frames/gui-wrapped-key-stress-stress-001-shop.png",
+      "sha256": "70471371685064ed98ec1450b39254077306ab015da545057424cdda05e11aae",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-wrapped-key-stress",
+      "label": "stress-007-analytics",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-180-20261025-02/frames/gui-wrapped-key-stress-stress-007-analytics.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-180-20261025-02/frames/gui-wrapped-key-stress-stress-007-analytics.png",
+      "sha256": "e439cb62d8e4b90f0f8514332e776f50a49330a65bacb9518e50d4c4b75236f2",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-wrapped-key-stress",
+      "label": "stress-007-shop",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-180-20261025-02/frames/gui-wrapped-key-stress-stress-007-shop.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-180-20261025-02/frames/gui-wrapped-key-stress-stress-007-shop.png",
+      "sha256": "70471371685064ed98ec1450b39254077306ab015da545057424cdda05e11aae",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "phase": "gui-wrapped-key-stress",
+      "label": "after-wrapped-stress",
+      "path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-180-20261025-02/frames/gui-wrapped-key-stress-after-wrapped-stress.png",
+      "recorded_path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-180-20261025-02/frames/gui-wrapped-key-stress-after-wrapped-stress.png",
+      "sha256": "70471371685064ed98ec1450b39254077306ab015da545057424cdda05e11aae",
+      "width": 1280,
+      "height": 800
+    }
+  ],
+  "stress_selected_tab_comparisons": [
+    {
+      "checkpoint_index": 1,
+      "page": "analytics",
+      "frame_path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-180-20261025-02/frames/gui-wrapped-key-stress-stress-001-analytics.png",
+      "baseline_path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-180-20261025-02/frames/gui-wrapped-key-stress-analytics.png",
+      "crop": [
+        680,
+        0,
+        1280,
+        70
+      ],
+      "different_pixels": 0,
+      "match_policy": "exact RGB pixel equality"
+    },
+    {
+      "checkpoint_index": 1,
+      "page": "shop",
+      "frame_path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-180-20261025-02/frames/gui-wrapped-key-stress-stress-001-shop.png",
+      "baseline_path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-180-20261025-02/frames/gui-wrapped-key-stress-shop.png",
+      "crop": [
+        680,
+        0,
+        1280,
+        70
+      ],
+      "different_pixels": 0,
+      "match_policy": "exact RGB pixel equality"
+    },
+    {
+      "checkpoint_index": 7,
+      "page": "analytics",
+      "frame_path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-180-20261025-02/frames/gui-wrapped-key-stress-stress-007-analytics.png",
+      "baseline_path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-180-20261025-02/frames/gui-wrapped-key-stress-analytics.png",
+      "crop": [
+        680,
+        0,
+        1280,
+        70
+      ],
+      "different_pixels": 0,
+      "match_policy": "exact RGB pixel equality"
+    },
+    {
+      "checkpoint_index": 7,
+      "page": "shop",
+      "frame_path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-180-20261025-02/frames/gui-wrapped-key-stress-stress-007-shop.png",
+      "baseline_path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-180-20261025-02/frames/gui-wrapped-key-stress-shop.png",
+      "crop": [
+        680,
+        0,
+        1280,
+        70
+      ],
+      "different_pixels": 0,
+      "match_policy": "exact RGB pixel equality"
+    }
+  ],
+  "plot_backend": "stdlib SVG (matplotlib unavailable)",
+  "plots": [
+    {
+      "path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-180-20261025-02/analysis/worker_iterations.svg",
+      "sha256": "78ff4f96cf7919cf1825b6d4f79c2e490cadeb1519cf074cbfdb78cd921d49a1",
+      "format": "SVG"
+    },
+    {
+      "path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-180-20261025-02/analysis/global_heap.svg",
+      "sha256": "afc6a7360242dcef7255da9b7335cb5aa93c71f14e262c8574ce36fe4b77be22",
+      "format": "SVG"
+    }
+  ],
+  "limitations": [
+    "This bounded run is not an endurance guarantee or proof of zero leaks.",
+    "Global heap samples include GUI and other tasks; they do not isolate EncFS.",
+    "Payload byte counters exclude metadata, alignment and other physical I/O.",
+    "Framebuffer hashes establish integrity; header checks specifically verify stress-time page selection, not every possible GUI interaction.",
+    "Power-loss and hardware fault recovery are not tested by this analysis."
+  ]
+}

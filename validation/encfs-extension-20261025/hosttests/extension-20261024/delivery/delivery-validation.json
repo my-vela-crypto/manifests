@@ -1,0 +1,2006 @@
+{
+  "started_at": "2026-10-24T14:39:11+0800",
+  "workspace": "/home/tourist/Desktop/openvela",
+  "manifest": "/home/tourist/Desktop/openvela/.repo/manifests",
+  "checks": [
+    {
+      "label": "nuttx: patch checksum matches metadata",
+      "pass": true
+    },
+    {
+      "label": "nuttx: patch has source paths",
+      "pass": true
+    },
+    {
+      "label": "nuttx: safe patch path tools/tests/encfs_manager/shim/nuttx/fs/fs.h",
+      "pass": true
+    },
+    {
+      "label": "nuttx: safe patch path fs/encfs/tests/test_keywrap_adversarial.py",
+      "pass": true
+    },
+    {
+      "label": "nuttx: safe patch path fs/encpathfs/encpathfs_dir.c",
+      "pass": true
+    },
+    {
+      "label": "nuttx: safe patch path tools/tests/encfs_manager/shim/nuttx/board.h",
+      "pass": true
+    },
+    {
+      "label": "nuttx: safe patch path include/nuttx/fs/encpathfs.h",
+      "pass": true
+    },
+    {
+      "label": "nuttx: safe patch path crypto/Kconfig",
+      "pass": true
+    },
+    {
+      "label": "nuttx: safe patch path fs/encpathfs/encpathfs_path.c",
+      "pass": true
+    },
+    {
+      "label": "nuttx: safe patch path tools/tests/encfs_crypto/test_directory_rewind.py",
+      "pass": true
+    },
+    {
+      "label": "nuttx: safe patch path crypto/hkdf.c",
+      "pass": true
+    },
+    {
+      "label": "nuttx: safe patch path fs/encpathfs/Make.defs",
+      "pass": true
+    },
+    {
+      "label": "nuttx: safe patch path tools/tests/encpathfs/test_encpathfs.py",
+      "pass": true
+    },
+    {
+      "label": "nuttx: safe patch path include/nuttx/fs/fs.h",
+      "pass": true
+    },
+    {
+      "label": "nuttx: safe patch path crypto/Makefile",
+      "pass": true
+    },
+    {
+      "label": "nuttx: safe patch path tools/tests/encfs_crypto/test_vfs_lifecycle.py",
+      "pass": true
+    },
+    {
+      "label": "nuttx: safe patch path tools/tests/encfs_crypto/README.md",
+      "pass": true
+    },
+    {
+      "label": "nuttx: safe patch path tools/tests/encfs_crypto/test_crypto.py",
+      "pass": true
+    },
+    {
+      "label": "nuttx: safe patch path include/nuttx/crypto/blkcrypt.h",
+      "pass": true
+    },
+    {
+      "label": "nuttx: safe patch path fs/encpathfs/Kconfig",
+      "pass": true
+    },
+    {
+      "label": "nuttx: safe patch path fs/encfs/Make.defs",
+      "pass": true
+    },
+    {
+      "label": "nuttx: safe patch path tools/run-emulator.sh",
+      "pass": true
+    },
+    {
+      "label": "nuttx: safe patch path fs/encfs/CMakeLists.txt",
+      "pass": true
+    },
+    {
+      "label": "nuttx: safe patch path tools/tests/encpathfs/README.md",
+      "pass": true
+    },
+    {
+      "label": "nuttx: safe patch path fs/Makefile",
+      "pass": true
+    },
+    {
+      "label": "nuttx: safe patch path crypto/aes_siv.c",
+      "pass": true
+    },
+    {
+      "label": "nuttx: safe patch path fs/encpathfs/tests/test_utf8.py",
+      "pass": true
+    },
+    {
+      "label": "nuttx: safe patch path fs/encfs/encfs_key.c",
+      "pass": true
+    },
+    {
+      "label": "nuttx: safe patch path fs/encfs/encfs_block_port.c",
+      "pass": true
+    },
+    {
+      "label": "nuttx: safe patch path fs/vfs/fs_dir.c",
+      "pass": true
+    },
+    {
+      "label": "nuttx: safe patch path include/nuttx/crypto/aes_siv.h",
+      "pass": true
+    },
+    {
+      "label": "nuttx: safe patch path fs/encfs/encfs_keyfile.c",
+      "pass": true
+    },
+    {
+      "label": "nuttx: safe patch path fs/encfs/encfs_keywrap.c",
+      "pass": true
+    },
+    {
+      "label": "nuttx: safe patch path fs/encpathfs/encpathfs.h",
+      "pass": true
+    },
+    {
+      "label": "nuttx: safe patch path fs/fatfs/fatfs_vfs.c",
+      "pass": true
+    },
+    {
+      "label": "nuttx: safe patch path drivers/crypto/blkcrypt.c",
+      "pass": true
+    },
+    {
+      "label": "nuttx: safe patch path fs/mount/fs_mount.c",
+      "pass": true
+    },
+    {
+      "label": "nuttx: safe patch path fs/vfs/fs_rename.c",
+      "pass": true
+    },
+    {
+      "label": "nuttx: safe patch path tools/tests/encfs_manager/README.md",
+      "pass": true
+    },
+    {
+      "label": "nuttx: safe patch path tools/tests/encfs_manager/shim/nuttx/compiler.h",
+      "pass": true
+    },
+    {
+      "label": "nuttx: safe patch path include/nuttx/fs/encfs.h",
+      "pass": true
+    },
+    {
+      "label": "nuttx: safe patch path tools/tests/.gitignore",
+      "pass": true
+    },
+    {
+      "label": "nuttx: safe patch path tools/tests/encfs_manager/shim/inode/inode.h",
+      "pass": true
+    },
+    {
+      "label": "nuttx: safe patch path tools/tests/encfs_manager/shim/nuttx/mutex.h",
+      "pass": true
+    },
+    {
+      "label": "nuttx: safe patch path fs/encpathfs/encpathfs_mount.c",
+      "pass": true
+    },
+    {
+      "label": "nuttx: safe patch path include/nuttx/crypto/hkdf.h",
+      "pass": true
+    },
+    {
+      "label": "nuttx: safe patch path fs/encfs/Kconfig",
+      "pass": true
+    },
+    {
+      "label": "nuttx: safe patch path fs/encfs/README.md",
+      "pass": true
+    },
+    {
+      "label": "nuttx: safe patch path tools/tests/encfs_crypto/test_blkcrypt.c",
+      "pass": true
+    },
+    {
+      "label": "nuttx: safe patch path fs/encpathfs/encpathfs_codec.c",
+      "pass": true
+    },
+    {
+      "label": "nuttx: safe patch path fs/Kconfig",
+      "pass": true
+    },
+    {
+      "label": "nuttx: safe patch path tools/tests/encfs_manager/shim/nuttx/config.h",
+      "pass": true
+    },
+    {
+      "label": "nuttx: safe patch path fs/encpathfs/CMakeLists.txt",
+      "pass": true
+    },
+    {
+      "label": "nuttx: safe patch path fs/encpathfs/encpathfs_file.c",
+      "pass": true
+    },
+    {
+      "label": "nuttx: safe patch path crypto/CMakeLists.txt",
+      "pass": true
+    },
+    {
+      "label": "nuttx: safe patch path tools/tests/encfs_manager/run_host_tests.sh",
+      "pass": true
+    },
+    {
+      "label": "nuttx: safe patch path tools/tests/encfs_manager/test_manager.c",
+      "pass": true
+    },
+    {
+      "label": "nuttx: safe patch path fs/encfs/encfs.h",
+      "pass": true
+    },
+    {
+      "label": "nuttx: safe patch path tools/tests/encfs_crypto/test_blkcrypt.py",
+      "pass": true
+    },
+    {
+      "label": "nuttx: safe patch path fs/encfs/encfs_manager.c",
+      "pass": true
+    },
+    {
+      "label": "nuttx: safe patch path fs/encfs/tests/test_keywrap.py",
+      "pass": true
+    },
+    {
+      "label": "nuttx: patch covers current tracked delta from base",
+      "pass": true,
+      "detail": {
+        "only_in_source": [],
+        "only_in_patch": []
+      }
+    },
+    {
+      "label": "vendor/openvela: patch checksum matches metadata",
+      "pass": true
+    },
+    {
+      "label": "vendor/openvela: patch has source paths",
+      "pass": true
+    },
+    {
+      "label": "vendor/openvela: safe patch path boards/vela/prebuilts/tools/run_emulator.sh",
+      "pass": true
+    },
+    {
+      "label": "vendor/openvela: safe patch path boards/vela/configs/goldfish-arm64-v8a-ap-encfs/defconfig",
+      "pass": true
+    },
+    {
+      "label": "vendor/openvela: safe patch path boards/vela/CMakeLists.txt",
+      "pass": true
+    },
+    {
+      "label": "vendor/openvela: safe patch path boards/vela/configs/goldfish-arm64-v8a-ap-encfs-gui/defconfig",
+      "pass": true
+    },
+    {
+      "label": "vendor/openvela: safe patch path boards/vela/configs/goldfish-arm64-v8a-ap-encfs-extended/defconfig",
+      "pass": true
+    },
+    {
+      "label": "vendor/openvela: safe patch path boards/vela/src/etc/init.d/rc.sysinit",
+      "pass": true
+    },
+    {
+      "label": "vendor/openvela: patch covers current tracked delta from base",
+      "pass": true,
+      "detail": {
+        "only_in_source": [],
+        "only_in_patch": []
+      }
+    },
+    {
+      "label": "apps/examples/encfs_test/CMakeLists.txt: overlay checksum matches metadata",
+      "pass": true
+    },
+    {
+      "label": "apps/examples/encfs_test/CMakeLists.txt: overlay matches current source and mode",
+      "pass": true
+    },
+    {
+      "label": "apps/examples/encfs_test/Kconfig: overlay checksum matches metadata",
+      "pass": true
+    },
+    {
+      "label": "apps/examples/encfs_test/Kconfig: overlay matches current source and mode",
+      "pass": true
+    },
+    {
+      "label": "apps/examples/encfs_test/Make.defs: overlay checksum matches metadata",
+      "pass": true
+    },
+    {
+      "label": "apps/examples/encfs_test/Make.defs: overlay matches current source and mode",
+      "pass": true
+    },
+    {
+      "label": "apps/examples/encfs_test/Makefile: overlay checksum matches metadata",
+      "pass": true
+    },
+    {
+      "label": "apps/examples/encfs_test/Makefile: overlay matches current source and mode",
+      "pass": true
+    },
+    {
+      "label": "apps/examples/encfs_test/encfs_test_corruption.c: overlay checksum matches metadata",
+      "pass": true
+    },
+    {
+      "label": "apps/examples/encfs_test/encfs_test_corruption.c: overlay matches current source and mode",
+      "pass": true
+    },
+    {
+      "label": "apps/examples/encfs_test/encfs_test_extended.c: overlay checksum matches metadata",
+      "pass": true
+    },
+    {
+      "label": "apps/examples/encfs_test/encfs_test_extended.c: overlay matches current source and mode",
+      "pass": true
+    },
+    {
+      "label": "apps/examples/encfs_test/encfs_test_main.c: overlay checksum matches metadata",
+      "pass": true
+    },
+    {
+      "label": "apps/examples/encfs_test/encfs_test_main.c: overlay matches current source and mode",
+      "pass": true
+    },
+    {
+      "label": "apps/examples/encfs_test/encfs_test_rekey.c: overlay checksum matches metadata",
+      "pass": true
+    },
+    {
+      "label": "apps/examples/encfs_test/encfs_test_rekey.c: overlay matches current source and mode",
+      "pass": true
+    },
+    {
+      "label": "apps/examples/encfs_test/encfs_test_shared.h: overlay checksum matches metadata",
+      "pass": true
+    },
+    {
+      "label": "apps/examples/encfs_test/encfs_test_shared.h: overlay matches current source and mode",
+      "pass": true
+    },
+    {
+      "label": "apps/examples/encfs_test/encfs_test_stress.c: overlay checksum matches metadata",
+      "pass": true
+    },
+    {
+      "label": "apps/examples/encfs_test/encfs_test_stress.c: overlay matches current source and mode",
+      "pass": true
+    },
+    {
+      "label": "apps/examples/encfs_test/encfs_test_utf8.c: overlay checksum matches metadata",
+      "pass": true
+    },
+    {
+      "label": "apps/examples/encfs_test/encfs_test_utf8.c: overlay matches current source and mode",
+      "pass": true
+    },
+    {
+      "label": "apps/examples/encfs_test/tests/test_rekey_cli.py: overlay checksum matches metadata",
+      "pass": true
+    },
+    {
+      "label": "apps/examples/encfs_test/tests/test_rekey_cli.py: overlay matches current source and mode",
+      "pass": true
+    },
+    {
+      "label": "apps/system/encfs/CMakeLists.txt: overlay checksum matches metadata",
+      "pass": true
+    },
+    {
+      "label": "apps/system/encfs/CMakeLists.txt: overlay matches current source and mode",
+      "pass": true
+    },
+    {
+      "label": "apps/system/encfs/Kconfig: overlay checksum matches metadata",
+      "pass": true
+    },
+    {
+      "label": "apps/system/encfs/Kconfig: overlay matches current source and mode",
+      "pass": true
+    },
+    {
+      "label": "apps/system/encfs/Make.defs: overlay checksum matches metadata",
+      "pass": true
+    },
+    {
+      "label": "apps/system/encfs/Make.defs: overlay matches current source and mode",
+      "pass": true
+    },
+    {
+      "label": "apps/system/encfs/Makefile: overlay checksum matches metadata",
+      "pass": true
+    },
+    {
+      "label": "apps/system/encfs/Makefile: overlay matches current source and mode",
+      "pass": true
+    },
+    {
+      "label": "apps/system/encfs/encfs_main.c: overlay checksum matches metadata",
+      "pass": true
+    },
+    {
+      "label": "apps/system/encfs/encfs_main.c: overlay matches current source and mode",
+      "pass": true
+    },
+    {
+      "label": "apps/system/encfs/tests/test_rekey_cli.py: overlay checksum matches metadata",
+      "pass": true
+    },
+    {
+      "label": "apps/system/encfs/tests/test_rekey_cli.py: overlay matches current source and mode",
+      "pass": true
+    },
+    {
+      "label": "apps/system/encfs/tests/test_testkey.py: overlay checksum matches metadata",
+      "pass": true
+    },
+    {
+      "label": "apps/system/encfs/tests/test_testkey.py: overlay matches current source and mode",
+      "pass": true
+    },
+    {
+      "label": "apps/testing/fs/encfs_extended/CMakeLists.txt: overlay checksum matches metadata",
+      "pass": true
+    },
+    {
+      "label": "apps/testing/fs/encfs_extended/CMakeLists.txt: overlay matches current source and mode",
+      "pass": true
+    },
+    {
+      "label": "apps/testing/fs/encfs_extended/Kconfig: overlay checksum matches metadata",
+      "pass": true
+    },
+    {
+      "label": "apps/testing/fs/encfs_extended/Kconfig: overlay matches current source and mode",
+      "pass": true
+    },
+    {
+      "label": "apps/testing/fs/encfs_extended/Make.defs: overlay checksum matches metadata",
+      "pass": true
+    },
+    {
+      "label": "apps/testing/fs/encfs_extended/Make.defs: overlay matches current source and mode",
+      "pass": true
+    },
+    {
+      "label": "apps/testing/fs/encfs_extended/Makefile: overlay checksum matches metadata",
+      "pass": true
+    },
+    {
+      "label": "apps/testing/fs/encfs_extended/Makefile: overlay matches current source and mode",
+      "pass": true
+    },
+    {
+      "label": "apps/testing/fs/encfs_extended/README.md: overlay checksum matches metadata",
+      "pass": true
+    },
+    {
+      "label": "apps/testing/fs/encfs_extended/README.md: overlay matches current source and mode",
+      "pass": true
+    },
+    {
+      "label": "apps/testing/fs/encfs_extended/encfs_extended_main.c: overlay checksum matches metadata",
+      "pass": true
+    },
+    {
+      "label": "apps/testing/fs/encfs_extended/encfs_extended_main.c: overlay matches current source and mode",
+      "pass": true
+    },
+    {
+      "label": "fresh/nuttx: expected baseline",
+      "pass": true,
+      "detail": "52939a185be4c940c83c843ae1f0b076f3d1d861"
+    },
+    {
+      "label": "fresh/apps: expected baseline",
+      "pass": true,
+      "detail": "7b36f2344dbe9a5c9526462128545442267d2314"
+    },
+    {
+      "label": "fresh/vendor/openvela: expected baseline",
+      "pass": true,
+      "detail": "4351221032aa88cb9da86336c53afe0cb6159e3e"
+    },
+    {
+      "label": "nuttx/crypto/CMakeLists.txt: patched source and mode match",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "mode": 436,
+          "kind": "file",
+          "size": 2490,
+          "sha256": "5dc2e844bd4b0aae206ed0a02f2731ea83e101139b04dade2d4e67d5b5daa92f"
+        },
+        "actual": {
+          "mode": 436,
+          "kind": "file",
+          "size": 2490,
+          "sha256": "5dc2e844bd4b0aae206ed0a02f2731ea83e101139b04dade2d4e67d5b5daa92f"
+        }
+      }
+    },
+    {
+      "label": "nuttx/crypto/Kconfig: patched source and mode match",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "mode": 436,
+          "kind": "file",
+          "size": 3328,
+          "sha256": "0d3c2eabd5732cb30567438448f8508c7ad4cca18beb1378981fa692d8b67c72"
+        },
+        "actual": {
+          "mode": 436,
+          "kind": "file",
+          "size": 3328,
+          "sha256": "0d3c2eabd5732cb30567438448f8508c7ad4cca18beb1378981fa692d8b67c72"
+        }
+      }
+    },
+    {
+      "label": "nuttx/crypto/Makefile: patched source and mode match",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "mode": 436,
+          "kind": "file",
+          "size": 3104,
+          "sha256": "b6d28f898628ea383621a92ad60229fe44c3760a7d61d466df10ddd765d1da30"
+        },
+        "actual": {
+          "mode": 436,
+          "kind": "file",
+          "size": 3104,
+          "sha256": "b6d28f898628ea383621a92ad60229fe44c3760a7d61d466df10ddd765d1da30"
+        }
+      }
+    },
+    {
+      "label": "nuttx/crypto/aes_siv.c: patched source and mode match",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "mode": 436,
+          "kind": "file",
+          "size": 6444,
+          "sha256": "dec57963f557cd4b2f6c0193e800b135bc0169cad63d3104522b89691adfc056"
+        },
+        "actual": {
+          "mode": 436,
+          "kind": "file",
+          "size": 6444,
+          "sha256": "dec57963f557cd4b2f6c0193e800b135bc0169cad63d3104522b89691adfc056"
+        }
+      }
+    },
+    {
+      "label": "nuttx/crypto/hkdf.c: patched source and mode match",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "mode": 436,
+          "kind": "file",
+          "size": 3352,
+          "sha256": "50feff221045732fbfddf600bf01600cf580d264eea0826921f88b657654ec7f"
+        },
+        "actual": {
+          "mode": 436,
+          "kind": "file",
+          "size": 3352,
+          "sha256": "50feff221045732fbfddf600bf01600cf580d264eea0826921f88b657654ec7f"
+        }
+      }
+    },
+    {
+      "label": "nuttx/drivers/crypto/blkcrypt.c: patched source and mode match",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "mode": 436,
+          "kind": "file",
+          "size": 29216,
+          "sha256": "bd01944dc6b45104c807e45a58104c17eabb471bd8e52686872d5bbb7b354f58"
+        },
+        "actual": {
+          "mode": 436,
+          "kind": "file",
+          "size": 29216,
+          "sha256": "bd01944dc6b45104c807e45a58104c17eabb471bd8e52686872d5bbb7b354f58"
+        }
+      }
+    },
+    {
+      "label": "nuttx/fs/Kconfig: patched source and mode match",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "mode": 436,
+          "kind": "file",
+          "size": 5218,
+          "sha256": "2113a4ffd27c4beee604832259405248f2d4be8edcc6abca9c26b9a0e9392ada"
+        },
+        "actual": {
+          "mode": 436,
+          "kind": "file",
+          "size": 5218,
+          "sha256": "2113a4ffd27c4beee604832259405248f2d4be8edcc6abca9c26b9a0e9392ada"
+        }
+      }
+    },
+    {
+      "label": "nuttx/fs/Makefile: patched source and mode match",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "mode": 436,
+          "kind": "file",
+          "size": 2985,
+          "sha256": "9b0d36ac364be7a788058e382b0cb998a4a8fe9162e5804c77fb46945bd53cbe"
+        },
+        "actual": {
+          "mode": 436,
+          "kind": "file",
+          "size": 2985,
+          "sha256": "9b0d36ac364be7a788058e382b0cb998a4a8fe9162e5804c77fb46945bd53cbe"
+        }
+      }
+    },
+    {
+      "label": "nuttx/fs/encfs/CMakeLists.txt: patched source and mode match",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "mode": 436,
+          "kind": "file",
+          "size": 317,
+          "sha256": "2196febd3267f3d592391d43c49edf1ff64c40e420e68292e5aaa7cba23382d9"
+        },
+        "actual": {
+          "mode": 436,
+          "kind": "file",
+          "size": 317,
+          "sha256": "2196febd3267f3d592391d43c49edf1ff64c40e420e68292e5aaa7cba23382d9"
+        }
+      }
+    },
+    {
+      "label": "nuttx/fs/encfs/Kconfig: patched source and mode match",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "mode": 436,
+          "kind": "file",
+          "size": 1520,
+          "sha256": "68fe266b62083f253f832bc6d925ef7f6fed0e4dcb8232fe4c5a41d864facfcb"
+        },
+        "actual": {
+          "mode": 436,
+          "kind": "file",
+          "size": 1520,
+          "sha256": "68fe266b62083f253f832bc6d925ef7f6fed0e4dcb8232fe4c5a41d864facfcb"
+        }
+      }
+    },
+    {
+      "label": "nuttx/fs/encfs/Make.defs: patched source and mode match",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "mode": 436,
+          "kind": "file",
+          "size": 480,
+          "sha256": "48d5593ef5323624015af467bfa961d8f22cbcbace32df93cf61d667e2f155be"
+        },
+        "actual": {
+          "mode": 436,
+          "kind": "file",
+          "size": 480,
+          "sha256": "48d5593ef5323624015af467bfa961d8f22cbcbace32df93cf61d667e2f155be"
+        }
+      }
+    },
+    {
+      "label": "nuttx/fs/encfs/README.md: patched source and mode match",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "mode": 436,
+          "kind": "file",
+          "size": 8461,
+          "sha256": "6a562c979d39bf3a02ba20be7d436916c30afd7c5dee3275f68bf77b11094f2c"
+        },
+        "actual": {
+          "mode": 436,
+          "kind": "file",
+          "size": 8461,
+          "sha256": "6a562c979d39bf3a02ba20be7d436916c30afd7c5dee3275f68bf77b11094f2c"
+        }
+      }
+    },
+    {
+      "label": "nuttx/fs/encfs/encfs.h: patched source and mode match",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "mode": 436,
+          "kind": "file",
+          "size": 2520,
+          "sha256": "76b3259e15f52c57341f2f17ef7ebc60f4c9e2315c57952e0bce0a7085f4b247"
+        },
+        "actual": {
+          "mode": 436,
+          "kind": "file",
+          "size": 2520,
+          "sha256": "76b3259e15f52c57341f2f17ef7ebc60f4c9e2315c57952e0bce0a7085f4b247"
+        }
+      }
+    },
+    {
+      "label": "nuttx/fs/encfs/encfs_block_port.c: patched source and mode match",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "mode": 436,
+          "kind": "file",
+          "size": 1033,
+          "sha256": "d6242e74da7859dfdad30d114a001959cb0e4828a4f8e4b8abe7a7842d122bd1"
+        },
+        "actual": {
+          "mode": 436,
+          "kind": "file",
+          "size": 1033,
+          "sha256": "d6242e74da7859dfdad30d114a001959cb0e4828a4f8e4b8abe7a7842d122bd1"
+        }
+      }
+    },
+    {
+      "label": "nuttx/fs/encfs/encfs_key.c: patched source and mode match",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "mode": 436,
+          "kind": "file",
+          "size": 3600,
+          "sha256": "da89685fdfe965ac44f9375d5f734b6d35b5b431e49ed1fa143570938ad3aad6"
+        },
+        "actual": {
+          "mode": 436,
+          "kind": "file",
+          "size": 3600,
+          "sha256": "da89685fdfe965ac44f9375d5f734b6d35b5b431e49ed1fa143570938ad3aad6"
+        }
+      }
+    },
+    {
+      "label": "nuttx/fs/encfs/encfs_keyfile.c: patched source and mode match",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "mode": 436,
+          "kind": "file",
+          "size": 11170,
+          "sha256": "7e39bc0efcac3466b46c2bd9dc9fc7789a06319b2f97b6f57102d83a0d193cdd"
+        },
+        "actual": {
+          "mode": 436,
+          "kind": "file",
+          "size": 11170,
+          "sha256": "7e39bc0efcac3466b46c2bd9dc9fc7789a06319b2f97b6f57102d83a0d193cdd"
+        }
+      }
+    },
+    {
+      "label": "nuttx/fs/encfs/encfs_keywrap.c: patched source and mode match",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "mode": 436,
+          "kind": "file",
+          "size": 10033,
+          "sha256": "6f8c3c41c1c175b8396653136a0ef32cc233052a8dc1f0535a5addbd6765a37b"
+        },
+        "actual": {
+          "mode": 436,
+          "kind": "file",
+          "size": 10033,
+          "sha256": "6f8c3c41c1c175b8396653136a0ef32cc233052a8dc1f0535a5addbd6765a37b"
+        }
+      }
+    },
+    {
+      "label": "nuttx/fs/encfs/encfs_manager.c: patched source and mode match",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "mode": 436,
+          "kind": "file",
+          "size": 18594,
+          "sha256": "39caf1f29e2938a21813eb5591cc5cb2d2060569db8ddbf37bf02bdc24018259"
+        },
+        "actual": {
+          "mode": 436,
+          "kind": "file",
+          "size": 18594,
+          "sha256": "39caf1f29e2938a21813eb5591cc5cb2d2060569db8ddbf37bf02bdc24018259"
+        }
+      }
+    },
+    {
+      "label": "nuttx/fs/encfs/tests/test_keywrap.py: patched source and mode match",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "mode": 436,
+          "kind": "file",
+          "size": 11890,
+          "sha256": "f3df196b6065348e9986e3710a8796d5f88bb757083a52eb9bf28882c467d249"
+        },
+        "actual": {
+          "mode": 436,
+          "kind": "file",
+          "size": 11890,
+          "sha256": "f3df196b6065348e9986e3710a8796d5f88bb757083a52eb9bf28882c467d249"
+        }
+      }
+    },
+    {
+      "label": "nuttx/fs/encfs/tests/test_keywrap_adversarial.py: patched source and mode match",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "mode": 436,
+          "kind": "file",
+          "size": 16058,
+          "sha256": "b510661e17f1dd7ea2f89da0c5a7d8ad5b609c4b2ad7e37201b2385707532b6a"
+        },
+        "actual": {
+          "mode": 436,
+          "kind": "file",
+          "size": 16058,
+          "sha256": "b510661e17f1dd7ea2f89da0c5a7d8ad5b609c4b2ad7e37201b2385707532b6a"
+        }
+      }
+    },
+    {
+      "label": "nuttx/fs/encpathfs/CMakeLists.txt: patched source and mode match",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "mode": 436,
+          "kind": "file",
+          "size": 214,
+          "sha256": "363c123024d408eb77fbbc23613b1dbbfb1182c6bdef40f2018aa3a41badf2c0"
+        },
+        "actual": {
+          "mode": 436,
+          "kind": "file",
+          "size": 214,
+          "sha256": "363c123024d408eb77fbbc23613b1dbbfb1182c6bdef40f2018aa3a41badf2c0"
+        }
+      }
+    },
+    {
+      "label": "nuttx/fs/encpathfs/Kconfig: patched source and mode match",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "mode": 436,
+          "kind": "file",
+          "size": 739,
+          "sha256": "4104807048956b3e39185f8f8f4dd62c7b8418d9bd468a008891cf0c0ab847ae"
+        },
+        "actual": {
+          "mode": 436,
+          "kind": "file",
+          "size": 739,
+          "sha256": "4104807048956b3e39185f8f8f4dd62c7b8418d9bd468a008891cf0c0ab847ae"
+        }
+      }
+    },
+    {
+      "label": "nuttx/fs/encpathfs/Make.defs: patched source and mode match",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "mode": 436,
+          "kind": "file",
+          "size": 233,
+          "sha256": "c45e357882c9cf45b155321b1bc73bc7c8d1ea9f8560b55cc51cb1c9dec921d2"
+        },
+        "actual": {
+          "mode": 436,
+          "kind": "file",
+          "size": 233,
+          "sha256": "c45e357882c9cf45b155321b1bc73bc7c8d1ea9f8560b55cc51cb1c9dec921d2"
+        }
+      }
+    },
+    {
+      "label": "nuttx/fs/encpathfs/encpathfs.h: patched source and mode match",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "mode": 436,
+          "kind": "file",
+          "size": 3851,
+          "sha256": "c5e9064b7c9a9f6872c9ba2822f44366474a79103981ca3f0b121055e373db90"
+        },
+        "actual": {
+          "mode": 436,
+          "kind": "file",
+          "size": 3851,
+          "sha256": "c5e9064b7c9a9f6872c9ba2822f44366474a79103981ca3f0b121055e373db90"
+        }
+      }
+    },
+    {
+      "label": "nuttx/fs/encpathfs/encpathfs_codec.c: patched source and mode match",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "mode": 436,
+          "kind": "file",
+          "size": 6591,
+          "sha256": "6fb23c014c27ee168cebe4ef307d66e67b3bbdca85e331d4bc066c3512016a2c"
+        },
+        "actual": {
+          "mode": 436,
+          "kind": "file",
+          "size": 6591,
+          "sha256": "6fb23c014c27ee168cebe4ef307d66e67b3bbdca85e331d4bc066c3512016a2c"
+        }
+      }
+    },
+    {
+      "label": "nuttx/fs/encpathfs/encpathfs_dir.c: patched source and mode match",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "mode": 436,
+          "kind": "file",
+          "size": 8701,
+          "sha256": "46274aa10c9e94eaaa8867b7c3abb8a1d7b3e95647c50a9d4b45da61a7e9c192"
+        },
+        "actual": {
+          "mode": 436,
+          "kind": "file",
+          "size": 8701,
+          "sha256": "46274aa10c9e94eaaa8867b7c3abb8a1d7b3e95647c50a9d4b45da61a7e9c192"
+        }
+      }
+    },
+    {
+      "label": "nuttx/fs/encpathfs/encpathfs_file.c: patched source and mode match",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "mode": 436,
+          "kind": "file",
+          "size": 8061,
+          "sha256": "32077c7bebbc250d537f667e8ae6282d668c0bfa6e9856317ccca083cdc6a30e"
+        },
+        "actual": {
+          "mode": 436,
+          "kind": "file",
+          "size": 8061,
+          "sha256": "32077c7bebbc250d537f667e8ae6282d668c0bfa6e9856317ccca083cdc6a30e"
+        }
+      }
+    },
+    {
+      "label": "nuttx/fs/encpathfs/encpathfs_mount.c: patched source and mode match",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "mode": 436,
+          "kind": "file",
+          "size": 20949,
+          "sha256": "fdae6d6c46aa321a1040f31cc7a9f837dea3ce66787723134eff746b0b04679f"
+        },
+        "actual": {
+          "mode": 436,
+          "kind": "file",
+          "size": 20949,
+          "sha256": "fdae6d6c46aa321a1040f31cc7a9f837dea3ce66787723134eff746b0b04679f"
+        }
+      }
+    },
+    {
+      "label": "nuttx/fs/encpathfs/encpathfs_path.c: patched source and mode match",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "mode": 436,
+          "kind": "file",
+          "size": 3901,
+          "sha256": "9be1b73971aea8719fda31cffe65e0b7b774409d49b1fdc51b940a563bc29dee"
+        },
+        "actual": {
+          "mode": 436,
+          "kind": "file",
+          "size": 3901,
+          "sha256": "9be1b73971aea8719fda31cffe65e0b7b774409d49b1fdc51b940a563bc29dee"
+        }
+      }
+    },
+    {
+      "label": "nuttx/fs/encpathfs/tests/test_utf8.py: patched source and mode match",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "mode": 436,
+          "kind": "file",
+          "size": 9052,
+          "sha256": "12099043b13f7fa1004d371ef5103508df2e20cc71f32c9a925069f5354055dc"
+        },
+        "actual": {
+          "mode": 436,
+          "kind": "file",
+          "size": 9052,
+          "sha256": "12099043b13f7fa1004d371ef5103508df2e20cc71f32c9a925069f5354055dc"
+        }
+      }
+    },
+    {
+      "label": "nuttx/fs/fatfs/fatfs_vfs.c: patched source and mode match",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "mode": 436,
+          "kind": "file",
+          "size": 49819,
+          "sha256": "45a21448f0f46cb207902bf6a39cc51dc147409f88acab2ba783051678bfe3fd"
+        },
+        "actual": {
+          "mode": 436,
+          "kind": "file",
+          "size": 49819,
+          "sha256": "45a21448f0f46cb207902bf6a39cc51dc147409f88acab2ba783051678bfe3fd"
+        }
+      }
+    },
+    {
+      "label": "nuttx/fs/mount/fs_mount.c: patched source and mode match",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "mode": 436,
+          "kind": "file",
+          "size": 19343,
+          "sha256": "229e513aef5dc83c3a8368761c2e401c7767bd5d10b19a1127edc4735ad527c5"
+        },
+        "actual": {
+          "mode": 436,
+          "kind": "file",
+          "size": 19343,
+          "sha256": "229e513aef5dc83c3a8368761c2e401c7767bd5d10b19a1127edc4735ad527c5"
+        }
+      }
+    },
+    {
+      "label": "nuttx/fs/vfs/fs_dir.c: patched source and mode match",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "mode": 436,
+          "kind": "file",
+          "size": 18179,
+          "sha256": "e10eddf4131a8d54f952fc407f91fc79eab997538da4047840fe285b80ab89b5"
+        },
+        "actual": {
+          "mode": 436,
+          "kind": "file",
+          "size": 18179,
+          "sha256": "e10eddf4131a8d54f952fc407f91fc79eab997538da4047840fe285b80ab89b5"
+        }
+      }
+    },
+    {
+      "label": "nuttx/fs/vfs/fs_rename.c: patched source and mode match",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "mode": 436,
+          "kind": "file",
+          "size": 17591,
+          "sha256": "2756c80631dce1b4d1f6b53a1210fe26e67f09c9128f40df1072dc4f5298c102"
+        },
+        "actual": {
+          "mode": 436,
+          "kind": "file",
+          "size": 17591,
+          "sha256": "2756c80631dce1b4d1f6b53a1210fe26e67f09c9128f40df1072dc4f5298c102"
+        }
+      }
+    },
+    {
+      "label": "nuttx/include/nuttx/crypto/aes_siv.h: patched source and mode match",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "mode": 436,
+          "kind": "file",
+          "size": 2180,
+          "sha256": "7cb0761c2aa130e2d470765cc56e88d9bf51b2db640fb230a4217ff0b7aa45b9"
+        },
+        "actual": {
+          "mode": 436,
+          "kind": "file",
+          "size": 2180,
+          "sha256": "7cb0761c2aa130e2d470765cc56e88d9bf51b2db640fb230a4217ff0b7aa45b9"
+        }
+      }
+    },
+    {
+      "label": "nuttx/include/nuttx/crypto/blkcrypt.h: patched source and mode match",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "mode": 436,
+          "kind": "file",
+          "size": 5101,
+          "sha256": "43c41a738bc7a25d712dccc7e5ee2067002895da3e7ce67979b0ca2d5cef007e"
+        },
+        "actual": {
+          "mode": 436,
+          "kind": "file",
+          "size": 5101,
+          "sha256": "43c41a738bc7a25d712dccc7e5ee2067002895da3e7ce67979b0ca2d5cef007e"
+        }
+      }
+    },
+    {
+      "label": "nuttx/include/nuttx/crypto/hkdf.h: patched source and mode match",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "mode": 436,
+          "kind": "file",
+          "size": 1628,
+          "sha256": "e9702c9b966913819a3095b8b48632cfb6282b057432cf3f6b3e300fa283bdfe"
+        },
+        "actual": {
+          "mode": 436,
+          "kind": "file",
+          "size": 1628,
+          "sha256": "e9702c9b966913819a3095b8b48632cfb6282b057432cf3f6b3e300fa283bdfe"
+        }
+      }
+    },
+    {
+      "label": "nuttx/include/nuttx/fs/encfs.h: patched source and mode match",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "mode": 436,
+          "kind": "file",
+          "size": 6607,
+          "sha256": "ca4b16c3c74a31ad33c87b22aae86147b588ffe696d26f5ed6a02ad15e6e4b9e"
+        },
+        "actual": {
+          "mode": 436,
+          "kind": "file",
+          "size": 6607,
+          "sha256": "ca4b16c3c74a31ad33c87b22aae86147b588ffe696d26f5ed6a02ad15e6e4b9e"
+        }
+      }
+    },
+    {
+      "label": "nuttx/include/nuttx/fs/encpathfs.h: patched source and mode match",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "mode": 436,
+          "kind": "file",
+          "size": 2646,
+          "sha256": "28f3893880bcd89fa5502f90478b6ac57f624f8c437924f5de890d3daa657265"
+        },
+        "actual": {
+          "mode": 436,
+          "kind": "file",
+          "size": 2646,
+          "sha256": "28f3893880bcd89fa5502f90478b6ac57f624f8c437924f5de890d3daa657265"
+        }
+      }
+    },
+    {
+      "label": "nuttx/include/nuttx/fs/fs.h: patched source and mode match",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "mode": 436,
+          "kind": "file",
+          "size": 72523,
+          "sha256": "f639bfe7e3eef12419395cbc17eef162f0e94fb7397fc957bf8cd48180928f57"
+        },
+        "actual": {
+          "mode": 436,
+          "kind": "file",
+          "size": 72523,
+          "sha256": "f639bfe7e3eef12419395cbc17eef162f0e94fb7397fc957bf8cd48180928f57"
+        }
+      }
+    },
+    {
+      "label": "nuttx/tools/run-emulator.sh: patched source and mode match",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "mode": 509,
+          "kind": "file",
+          "size": 1818,
+          "sha256": "cb7fcfafe0f96a5ec17ce5ea03b2b6117feeafaa3b8af9b6e9ce1fa2b2f96d08"
+        },
+        "actual": {
+          "mode": 509,
+          "kind": "file",
+          "size": 1818,
+          "sha256": "cb7fcfafe0f96a5ec17ce5ea03b2b6117feeafaa3b8af9b6e9ce1fa2b2f96d08"
+        }
+      }
+    },
+    {
+      "label": "nuttx/tools/tests/.gitignore: patched source and mode match",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "mode": 436,
+          "kind": "file",
+          "size": 19,
+          "sha256": "862263fa1f46c20f0d1e4dac5ffcc75abd55c08211b2c3864c5f8764b9d87793"
+        },
+        "actual": {
+          "mode": 436,
+          "kind": "file",
+          "size": 19,
+          "sha256": "862263fa1f46c20f0d1e4dac5ffcc75abd55c08211b2c3864c5f8764b9d87793"
+        }
+      }
+    },
+    {
+      "label": "nuttx/tools/tests/encfs_crypto/README.md: patched source and mode match",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "mode": 436,
+          "kind": "file",
+          "size": 4555,
+          "sha256": "9ccb72a073c4dd2c3bb94eaab81ba660c3fa77282e62107dfad9c54b925ea673"
+        },
+        "actual": {
+          "mode": 436,
+          "kind": "file",
+          "size": 4555,
+          "sha256": "9ccb72a073c4dd2c3bb94eaab81ba660c3fa77282e62107dfad9c54b925ea673"
+        }
+      }
+    },
+    {
+      "label": "nuttx/tools/tests/encfs_crypto/test_blkcrypt.c: patched source and mode match",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "mode": 436,
+          "kind": "file",
+          "size": 10662,
+          "sha256": "03e6a77206140be1db9f573893f523a8911f82be8585686cd02a5604840f533d"
+        },
+        "actual": {
+          "mode": 436,
+          "kind": "file",
+          "size": 10662,
+          "sha256": "03e6a77206140be1db9f573893f523a8911f82be8585686cd02a5604840f533d"
+        }
+      }
+    },
+    {
+      "label": "nuttx/tools/tests/encfs_crypto/test_blkcrypt.py: patched source and mode match",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "mode": 436,
+          "kind": "file",
+          "size": 4022,
+          "sha256": "3ce275e83284e867f97914d72d04eb753aaf43c0f2120d9827fa6cf2dc404109"
+        },
+        "actual": {
+          "mode": 436,
+          "kind": "file",
+          "size": 4022,
+          "sha256": "3ce275e83284e867f97914d72d04eb753aaf43c0f2120d9827fa6cf2dc404109"
+        }
+      }
+    },
+    {
+      "label": "nuttx/tools/tests/encfs_crypto/test_crypto.py: patched source and mode match",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "mode": 436,
+          "kind": "file",
+          "size": 12739,
+          "sha256": "6743adebd092a652f503c9abb2ca9be43ee6210a21dcaceceff79caa8259ab5d"
+        },
+        "actual": {
+          "mode": 436,
+          "kind": "file",
+          "size": 12739,
+          "sha256": "6743adebd092a652f503c9abb2ca9be43ee6210a21dcaceceff79caa8259ab5d"
+        }
+      }
+    },
+    {
+      "label": "nuttx/tools/tests/encfs_crypto/test_directory_rewind.py: patched source and mode match",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "mode": 436,
+          "kind": "file",
+          "size": 9512,
+          "sha256": "9a4439daa6640c48c1e92fe0775777fb2549080ace25b0299254777f81b1cfe8"
+        },
+        "actual": {
+          "mode": 436,
+          "kind": "file",
+          "size": 9512,
+          "sha256": "9a4439daa6640c48c1e92fe0775777fb2549080ace25b0299254777f81b1cfe8"
+        }
+      }
+    },
+    {
+      "label": "nuttx/tools/tests/encfs_crypto/test_vfs_lifecycle.py: patched source and mode match",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "mode": 436,
+          "kind": "file",
+          "size": 11620,
+          "sha256": "be59be3312c6fbc2c151b4e1860e2c7920b0d19d5a820a3dced1524ebf3effcd"
+        },
+        "actual": {
+          "mode": 436,
+          "kind": "file",
+          "size": 11620,
+          "sha256": "be59be3312c6fbc2c151b4e1860e2c7920b0d19d5a820a3dced1524ebf3effcd"
+        }
+      }
+    },
+    {
+      "label": "nuttx/tools/tests/encfs_manager/README.md: patched source and mode match",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "mode": 436,
+          "kind": "file",
+          "size": 2559,
+          "sha256": "ae5218d1c3b3facf043e0522b41eecf5ba02f80c6b7a6585f649ebdd0bc4d1b0"
+        },
+        "actual": {
+          "mode": 436,
+          "kind": "file",
+          "size": 2559,
+          "sha256": "ae5218d1c3b3facf043e0522b41eecf5ba02f80c6b7a6585f649ebdd0bc4d1b0"
+        }
+      }
+    },
+    {
+      "label": "nuttx/tools/tests/encfs_manager/run_host_tests.sh: patched source and mode match",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "mode": 509,
+          "kind": "file",
+          "size": 1217,
+          "sha256": "417e60f7274de24aa4ccd2fdecdaca7c778e31e12e4c58da116aa7f8acf7f929"
+        },
+        "actual": {
+          "mode": 509,
+          "kind": "file",
+          "size": 1217,
+          "sha256": "417e60f7274de24aa4ccd2fdecdaca7c778e31e12e4c58da116aa7f8acf7f929"
+        }
+      }
+    },
+    {
+      "label": "nuttx/tools/tests/encfs_manager/shim/inode/inode.h: patched source and mode match",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "mode": 436,
+          "kind": "file",
+          "size": 688,
+          "sha256": "ad227794214bd97a1c6006162b34e64e943c26e7dfa21cf0ee3e52357b38f78a"
+        },
+        "actual": {
+          "mode": 436,
+          "kind": "file",
+          "size": 688,
+          "sha256": "ad227794214bd97a1c6006162b34e64e943c26e7dfa21cf0ee3e52357b38f78a"
+        }
+      }
+    },
+    {
+      "label": "nuttx/tools/tests/encfs_manager/shim/nuttx/board.h: patched source and mode match",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "mode": 436,
+          "kind": "file",
+          "size": 162,
+          "sha256": "5fe04bcb82aadb406457e5d6fa33cd538ba7977d2583b0c5ef0f255274d84adc"
+        },
+        "actual": {
+          "mode": 436,
+          "kind": "file",
+          "size": 162,
+          "sha256": "5fe04bcb82aadb406457e5d6fa33cd538ba7977d2583b0c5ef0f255274d84adc"
+        }
+      }
+    },
+    {
+      "label": "nuttx/tools/tests/encfs_manager/shim/nuttx/compiler.h: patched source and mode match",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "mode": 436,
+          "kind": "file",
+          "size": 125,
+          "sha256": "bf9bf43ac65a843791ed49e37e1da9ffbdf4322d313b9d53ad04049305a22c6b"
+        },
+        "actual": {
+          "mode": 436,
+          "kind": "file",
+          "size": 125,
+          "sha256": "bf9bf43ac65a843791ed49e37e1da9ffbdf4322d313b9d53ad04049305a22c6b"
+        }
+      }
+    },
+    {
+      "label": "nuttx/tools/tests/encfs_manager/shim/nuttx/config.h: patched source and mode match",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "mode": 436,
+          "kind": "file",
+          "size": 293,
+          "sha256": "eb5e8b4e4f50c08c6b64a912900b28be038f27bfac888f3728f48e8f9b5254f6"
+        },
+        "actual": {
+          "mode": 436,
+          "kind": "file",
+          "size": 293,
+          "sha256": "eb5e8b4e4f50c08c6b64a912900b28be038f27bfac888f3728f48e8f9b5254f6"
+        }
+      }
+    },
+    {
+      "label": "nuttx/tools/tests/encfs_manager/shim/nuttx/fs/fs.h: patched source and mode match",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "mode": 436,
+          "kind": "file",
+          "size": 709,
+          "sha256": "320aab66b0aa2e8032be91b60b6198d8ebb9ece92018aada9c41a502cb0afe2d"
+        },
+        "actual": {
+          "mode": 436,
+          "kind": "file",
+          "size": 709,
+          "sha256": "320aab66b0aa2e8032be91b60b6198d8ebb9ece92018aada9c41a502cb0afe2d"
+        }
+      }
+    },
+    {
+      "label": "nuttx/tools/tests/encfs_manager/shim/nuttx/mutex.h: patched source and mode match",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "mode": 436,
+          "kind": "file",
+          "size": 395,
+          "sha256": "1969c5fa5d8912eaece268cc13c072fb0eaa64ea767fb1f5f550baff98550b31"
+        },
+        "actual": {
+          "mode": 436,
+          "kind": "file",
+          "size": 395,
+          "sha256": "1969c5fa5d8912eaece268cc13c072fb0eaa64ea767fb1f5f550baff98550b31"
+        }
+      }
+    },
+    {
+      "label": "nuttx/tools/tests/encfs_manager/test_manager.c: patched source and mode match",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "mode": 436,
+          "kind": "file",
+          "size": 14504,
+          "sha256": "21f98b07b2e7494882a06774c73f6c8ffc70410efb413e871f2cf041098655ff"
+        },
+        "actual": {
+          "mode": 436,
+          "kind": "file",
+          "size": 14504,
+          "sha256": "21f98b07b2e7494882a06774c73f6c8ffc70410efb413e871f2cf041098655ff"
+        }
+      }
+    },
+    {
+      "label": "nuttx/tools/tests/encpathfs/README.md: patched source and mode match",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "mode": 436,
+          "kind": "file",
+          "size": 2002,
+          "sha256": "d0e31c3f4dd3effbeb42e0aa7e86f9a12adb1300afe23b736169cbaa047ca055"
+        },
+        "actual": {
+          "mode": 436,
+          "kind": "file",
+          "size": 2002,
+          "sha256": "d0e31c3f4dd3effbeb42e0aa7e86f9a12adb1300afe23b736169cbaa047ca055"
+        }
+      }
+    },
+    {
+      "label": "nuttx/tools/tests/encpathfs/test_encpathfs.py: patched source and mode match",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "mode": 436,
+          "kind": "file",
+          "size": 9938,
+          "sha256": "2c7962c34809346188f35287e63fc6cf692ee7c2069a2bdfd692e5c277cf7cf2"
+        },
+        "actual": {
+          "mode": 436,
+          "kind": "file",
+          "size": 9938,
+          "sha256": "2c7962c34809346188f35287e63fc6cf692ee7c2069a2bdfd692e5c277cf7cf2"
+        }
+      }
+    },
+    {
+      "label": "vendor/openvela/boards/vela/CMakeLists.txt: patched source and mode match",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "mode": 436,
+          "kind": "file",
+          "size": 4666,
+          "sha256": "0e04210183edd360952975f6c274508cc94a3f6a568514088f82aa4d79a8cfd1"
+        },
+        "actual": {
+          "mode": 436,
+          "kind": "file",
+          "size": 4666,
+          "sha256": "0e04210183edd360952975f6c274508cc94a3f6a568514088f82aa4d79a8cfd1"
+        }
+      }
+    },
+    {
+      "label": "vendor/openvela/boards/vela/configs/goldfish-arm64-v8a-ap-encfs-extended/defconfig: patched source and mode match",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "mode": 436,
+          "kind": "file",
+          "size": 2516,
+          "sha256": "89425b19a882c4ca3d2ded3712d582a3c24632e560f6da9db20d5aadc1bff069"
+        },
+        "actual": {
+          "mode": 436,
+          "kind": "file",
+          "size": 2516,
+          "sha256": "89425b19a882c4ca3d2ded3712d582a3c24632e560f6da9db20d5aadc1bff069"
+        }
+      }
+    },
+    {
+      "label": "vendor/openvela/boards/vela/configs/goldfish-arm64-v8a-ap-encfs-gui/defconfig: patched source and mode match",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "mode": 436,
+          "kind": "file",
+          "size": 8841,
+          "sha256": "6dbe07ed6742f562b06277aa18729d94d45478237babcd0b44188126ea5a14f2"
+        },
+        "actual": {
+          "mode": 436,
+          "kind": "file",
+          "size": 8841,
+          "sha256": "6dbe07ed6742f562b06277aa18729d94d45478237babcd0b44188126ea5a14f2"
+        }
+      }
+    },
+    {
+      "label": "vendor/openvela/boards/vela/configs/goldfish-arm64-v8a-ap-encfs/defconfig: patched source and mode match",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "mode": 436,
+          "kind": "file",
+          "size": 2009,
+          "sha256": "66ac5a5cd825088d2af7638ff96ef593227fd9e343b07199170dc1b4780ee163"
+        },
+        "actual": {
+          "mode": 436,
+          "kind": "file",
+          "size": 2009,
+          "sha256": "66ac5a5cd825088d2af7638ff96ef593227fd9e343b07199170dc1b4780ee163"
+        }
+      }
+    },
+    {
+      "label": "vendor/openvela/boards/vela/prebuilts/tools/run_emulator.sh: patched source and mode match",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "mode": 509,
+          "kind": "file",
+          "size": 6309,
+          "sha256": "db9760432b07acb793a486e1229dc27ca96fb7bc1bb3d85aa871b1234dbd20a7"
+        },
+        "actual": {
+          "mode": 509,
+          "kind": "file",
+          "size": 6309,
+          "sha256": "db9760432b07acb793a486e1229dc27ca96fb7bc1bb3d85aa871b1234dbd20a7"
+        }
+      }
+    },
+    {
+      "label": "vendor/openvela/boards/vela/src/etc/init.d/rc.sysinit: patched source and mode match",
+      "pass": true,
+      "detail": {
+        "expected": {
+          "mode": 436,
+          "kind": "file",
+          "size": 2183,
+          "sha256": "786de73bdcb8adc5ddce9e70cc8122b8df4060265c4a570eafd1adcadb24e6cd"
+        },
+        "actual": {
+          "mode": 436,
+          "kind": "file",
+          "size": 2183,
+          "sha256": "786de73bdcb8adc5ddce9e70cc8122b8df4060265c4a570eafd1adcadb24e6cd"
+        }
+      }
+    },
+    {
+      "label": "apps/examples/encfs_test/CMakeLists.txt: installed overlay checksum",
+      "pass": true
+    },
+    {
+      "label": "apps/examples/encfs_test/CMakeLists.txt: installed source and mode match",
+      "pass": true
+    },
+    {
+      "label": "apps/examples/encfs_test/Kconfig: installed overlay checksum",
+      "pass": true
+    },
+    {
+      "label": "apps/examples/encfs_test/Kconfig: installed source and mode match",
+      "pass": true
+    },
+    {
+      "label": "apps/examples/encfs_test/Make.defs: installed overlay checksum",
+      "pass": true
+    },
+    {
+      "label": "apps/examples/encfs_test/Make.defs: installed source and mode match",
+      "pass": true
+    },
+    {
+      "label": "apps/examples/encfs_test/Makefile: installed overlay checksum",
+      "pass": true
+    },
+    {
+      "label": "apps/examples/encfs_test/Makefile: installed source and mode match",
+      "pass": true
+    },
+    {
+      "label": "apps/examples/encfs_test/encfs_test_corruption.c: installed overlay checksum",
+      "pass": true
+    },
+    {
+      "label": "apps/examples/encfs_test/encfs_test_corruption.c: installed source and mode match",
+      "pass": true
+    },
+    {
+      "label": "apps/examples/encfs_test/encfs_test_extended.c: installed overlay checksum",
+      "pass": true
+    },
+    {
+      "label": "apps/examples/encfs_test/encfs_test_extended.c: installed source and mode match",
+      "pass": true
+    },
+    {
+      "label": "apps/examples/encfs_test/encfs_test_main.c: installed overlay checksum",
+      "pass": true
+    },
+    {
+      "label": "apps/examples/encfs_test/encfs_test_main.c: installed source and mode match",
+      "pass": true
+    },
+    {
+      "label": "apps/examples/encfs_test/encfs_test_rekey.c: installed overlay checksum",
+      "pass": true
+    },
+    {
+      "label": "apps/examples/encfs_test/encfs_test_rekey.c: installed source and mode match",
+      "pass": true
+    },
+    {
+      "label": "apps/examples/encfs_test/encfs_test_shared.h: installed overlay checksum",
+      "pass": true
+    },
+    {
+      "label": "apps/examples/encfs_test/encfs_test_shared.h: installed source and mode match",
+      "pass": true
+    },
+    {
+      "label": "apps/examples/encfs_test/encfs_test_stress.c: installed overlay checksum",
+      "pass": true
+    },
+    {
+      "label": "apps/examples/encfs_test/encfs_test_stress.c: installed source and mode match",
+      "pass": true
+    },
+    {
+      "label": "apps/examples/encfs_test/encfs_test_utf8.c: installed overlay checksum",
+      "pass": true
+    },
+    {
+      "label": "apps/examples/encfs_test/encfs_test_utf8.c: installed source and mode match",
+      "pass": true
+    },
+    {
+      "label": "apps/examples/encfs_test/tests/test_rekey_cli.py: installed overlay checksum",
+      "pass": true
+    },
+    {
+      "label": "apps/examples/encfs_test/tests/test_rekey_cli.py: installed source and mode match",
+      "pass": true
+    },
+    {
+      "label": "apps/system/encfs/CMakeLists.txt: installed overlay checksum",
+      "pass": true
+    },
+    {
+      "label": "apps/system/encfs/CMakeLists.txt: installed source and mode match",
+      "pass": true
+    },
+    {
+      "label": "apps/system/encfs/Kconfig: installed overlay checksum",
+      "pass": true
+    },
+    {
+      "label": "apps/system/encfs/Kconfig: installed source and mode match",
+      "pass": true
+    },
+    {
+      "label": "apps/system/encfs/Make.defs: installed overlay checksum",
+      "pass": true
+    },
+    {
+      "label": "apps/system/encfs/Make.defs: installed source and mode match",
+      "pass": true
+    },
+    {
+      "label": "apps/system/encfs/Makefile: installed overlay checksum",
+      "pass": true
+    },
+    {
+      "label": "apps/system/encfs/Makefile: installed source and mode match",
+      "pass": true
+    },
+    {
+      "label": "apps/system/encfs/encfs_main.c: installed overlay checksum",
+      "pass": true
+    },
+    {
+      "label": "apps/system/encfs/encfs_main.c: installed source and mode match",
+      "pass": true
+    },
+    {
+      "label": "apps/system/encfs/tests/test_rekey_cli.py: installed overlay checksum",
+      "pass": true
+    },
+    {
+      "label": "apps/system/encfs/tests/test_rekey_cli.py: installed source and mode match",
+      "pass": true
+    },
+    {
+      "label": "apps/system/encfs/tests/test_testkey.py: installed overlay checksum",
+      "pass": true
+    },
+    {
+      "label": "apps/system/encfs/tests/test_testkey.py: installed source and mode match",
+      "pass": true
+    },
+    {
+      "label": "apps/testing/fs/encfs_extended/CMakeLists.txt: installed overlay checksum",
+      "pass": true
+    },
+    {
+      "label": "apps/testing/fs/encfs_extended/CMakeLists.txt: installed source and mode match",
+      "pass": true
+    },
+    {
+      "label": "apps/testing/fs/encfs_extended/Kconfig: installed overlay checksum",
+      "pass": true
+    },
+    {
+      "label": "apps/testing/fs/encfs_extended/Kconfig: installed source and mode match",
+      "pass": true
+    },
+    {
+      "label": "apps/testing/fs/encfs_extended/Make.defs: installed overlay checksum",
+      "pass": true
+    },
+    {
+      "label": "apps/testing/fs/encfs_extended/Make.defs: installed source and mode match",
+      "pass": true
+    },
+    {
+      "label": "apps/testing/fs/encfs_extended/Makefile: installed overlay checksum",
+      "pass": true
+    },
+    {
+      "label": "apps/testing/fs/encfs_extended/Makefile: installed source and mode match",
+      "pass": true
+    },
+    {
+      "label": "apps/testing/fs/encfs_extended/README.md: installed overlay checksum",
+      "pass": true
+    },
+    {
+      "label": "apps/testing/fs/encfs_extended/README.md: installed source and mode match",
+      "pass": true
+    },
+    {
+      "label": "apps/testing/fs/encfs_extended/encfs_extended_main.c: installed overlay checksum",
+      "pass": true
+    },
+    {
+      "label": "apps/testing/fs/encfs_extended/encfs_extended_main.c: installed source and mode match",
+      "pass": true
+    },
+    {
+      "label": "Fresh apply creates correct shortcut",
+      "pass": true
+    },
+    {
+      "label": "Second apply preserves every entry's content, mode, and mtime",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "label": "Second apply preserves all three Git worktree states",
+      "pass": true
+    },
+    {
+      "label": "conflict/nuttx: expected baseline",
+      "pass": true,
+      "detail": "52939a185be4c940c83c843ae1f0b076f3d1d861"
+    },
+    {
+      "label": "conflict/apps: expected baseline",
+      "pass": true,
+      "detail": "7b36f2344dbe9a5c9526462128545442267d2314"
+    },
+    {
+      "label": "conflict/vendor/openvela: expected baseline",
+      "pass": true,
+      "detail": "4351221032aa88cb9da86336c53afe0cb6159e3e"
+    },
+    {
+      "label": "Fresh conflict fails specifically on existing overlay",
+      "pass": true
+    },
+    {
+      "label": "Conflict preserves all project files, modes, and mtimes",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "label": "Conflict preserves all three Git worktree states",
+      "pass": true
+    },
+    {
+      "label": "Conflict creates no root shortcut",
+      "pass": true
+    }
+  ],
+  "passed": true,
+  "patch_paths": {
+    "nuttx": [
+      "crypto/CMakeLists.txt",
+      "crypto/Kconfig",
+      "crypto/Makefile",
+      "crypto/aes_siv.c",
+      "crypto/hkdf.c",
+      "drivers/crypto/blkcrypt.c",
+      "fs/Kconfig",
+      "fs/Makefile",
+      "fs/encfs/CMakeLists.txt",
+      "fs/encfs/Kconfig",
+      "fs/encfs/Make.defs",
+      "fs/encfs/README.md",
+      "fs/encfs/encfs.h",
+      "fs/encfs/encfs_block_port.c",
+      "fs/encfs/encfs_key.c",
+      "fs/encfs/encfs_keyfile.c",
+      "fs/encfs/encfs_keywrap.c",
+      "fs/encfs/encfs_manager.c",
+      "fs/encfs/tests/test_keywrap.py",
+      "fs/encfs/tests/test_keywrap_adversarial.py",
+      "fs/encpathfs/CMakeLists.txt",
+      "fs/encpathfs/Kconfig",
+      "fs/encpathfs/Make.defs",
+      "fs/encpathfs/encpathfs.h",
+      "fs/encpathfs/encpathfs_codec.c",
+      "fs/encpathfs/encpathfs_dir.c",
+      "fs/encpathfs/encpathfs_file.c",
+      "fs/encpathfs/encpathfs_mount.c",
+      "fs/encpathfs/encpathfs_path.c",
+      "fs/encpathfs/tests/test_utf8.py",
+      "fs/fatfs/fatfs_vfs.c",
+      "fs/mount/fs_mount.c",
+      "fs/vfs/fs_dir.c",
+      "fs/vfs/fs_rename.c",
+      "include/nuttx/crypto/aes_siv.h",
+      "include/nuttx/crypto/blkcrypt.h",
+      "include/nuttx/crypto/hkdf.h",
+      "include/nuttx/fs/encfs.h",
+      "include/nuttx/fs/encpathfs.h",
+      "include/nuttx/fs/fs.h",
+      "tools/run-emulator.sh",
+      "tools/tests/.gitignore",
+      "tools/tests/encfs_crypto/README.md",
+      "tools/tests/encfs_crypto/test_blkcrypt.c",
+      "tools/tests/encfs_crypto/test_blkcrypt.py",
+      "tools/tests/encfs_crypto/test_crypto.py",
+      "tools/tests/encfs_crypto/test_directory_rewind.py",
+      "tools/tests/encfs_crypto/test_vfs_lifecycle.py",
+      "tools/tests/encfs_manager/README.md",
+      "tools/tests/encfs_manager/run_host_tests.sh",
+      "tools/tests/encfs_manager/shim/inode/inode.h",
+      "tools/tests/encfs_manager/shim/nuttx/board.h",
+      "tools/tests/encfs_manager/shim/nuttx/compiler.h",
+      "tools/tests/encfs_manager/shim/nuttx/config.h",
+      "tools/tests/encfs_manager/shim/nuttx/fs/fs.h",
+      "tools/tests/encfs_manager/shim/nuttx/mutex.h",
+      "tools/tests/encfs_manager/test_manager.c",
+      "tools/tests/encpathfs/README.md",
+      "tools/tests/encpathfs/test_encpathfs.py"
+    ],
+    "vendor/openvela": [
+      "boards/vela/CMakeLists.txt",
+      "boards/vela/configs/goldfish-arm64-v8a-ap-encfs-extended/defconfig",
+      "boards/vela/configs/goldfish-arm64-v8a-ap-encfs-gui/defconfig",
+      "boards/vela/configs/goldfish-arm64-v8a-ap-encfs/defconfig",
+      "boards/vela/prebuilts/tools/run_emulator.sh",
+      "boards/vela/src/etc/init.d/rc.sysinit"
+    ]
+  },
+  "overlay_count": 25,
+  "metadata_sha256": "082f048d3436a04ef9431f509dbb7b66d6366414b2f6b55ffe1949df956aec92",
+  "finished_at": "2026-10-24T14:39:12+0800",
+  "check_count": 249,
+  "pass_count": 249
+}

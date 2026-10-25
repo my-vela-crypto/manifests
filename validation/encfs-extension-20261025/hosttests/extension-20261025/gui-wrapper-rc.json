@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "started_at": "2026-10-25T11:12:04+08:00",
+  "command": [
+    "/usr/bin/python3",
+    "/home/tourist/Desktop/openvela/.repo/manifests/tools/test_encfs_gui.py",
+    "--source-root",
+    "/home/tourist/Desktop/openvela",
+    "--results-dir",
+    "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02",
+    "--build-dir",
+    "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-gui",
+    "--stress-seconds",
+    "60"
+  ],
+  "results_dir": "/home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02",
+  "stdout_log": "/home/tourist/Desktop/openvela/encfs-results/extension-20261025/gui-wrapper.stdout.log",
+  "return_code_source": "subprocess.Popen.wait in direct parent",
+  "outer_tool_return_code": null,
+  "program_return_code": 0,
+  "status": "passed",
+  "child_pid": 211228,
+  "report_status": "passed",
+  "finished_at": "2026-10-25T11:15:39+08:00"
+}

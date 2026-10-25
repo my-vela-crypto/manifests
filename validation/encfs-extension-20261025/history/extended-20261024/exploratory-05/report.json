@@ -1,0 +1,129 @@
+{
+  "schema": 1,
+  "started_at": "2026-10-24T14:23:52+08:00",
+  "status": "failed",
+  "source_root": "/home/tourist/Desktop/openvela",
+  "build_dir": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-extended",
+  "config": "goldfish-arm64-v8a-ap-encfs-extended",
+  "phases": [
+    {
+      "name": "upstream-fs-regression",
+      "instance": "encfs-regression-72c7a7839bea",
+      "command": [
+        "/home/tourist/Desktop/openvela/run-emulator.sh",
+        "goldfish-arm64-v8a-ap-encfs-extended",
+        "-keep",
+        "encfs-regression-72c7a7839bea",
+        "-no-window",
+        "-no-audio",
+        "-gpu",
+        "off",
+        "-accel",
+        "off"
+      ],
+      "started_at": "2026-10-24T14:23:52+08:00",
+      "commands": [
+        {
+          "command": "date -s \"Jan 02 03:04:05 2026\"",
+          "started_at": "2026-10-24T14:23:52+08:00",
+          "finished_at": "2026-10-24T14:23:52+08:00",
+          "output": "\u001b[Kdate -s \"Jan 02 03:04:05 2026\"\r\r\nnsh: date: command not found\r\r\n"
+        }
+      ],
+      "serial_log": "/home/tourist/Desktop/openvela/encfs-results/extended-20261024/exploratory-05/upstream-fs-regression.serial.log",
+      "exit_status": null,
+      "exit_signal": 15,
+      "finished_at": "2026-10-24T14:23:52+08:00"
+    }
+  ],
+  "scope": [
+    "Unmodified upstream cmocka filesystem suite on the encrypted /data mount",
+    "Upstream fstest 10 loops with 64 files of up to 8192 bytes",
+    "Original Vela append/read loop, 100 repetitions",
+    "Dedicated encrypted disk, SIGKILL during writes and after commits"
+  ],
+  "artifacts": {
+    "nuttx": {
+      "path": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-extended/nuttx",
+      "size": 8191464,
+      "sha256": "c9fc56bc05cd4e240f2398600dd3ab1d85520d850005d0e39b79b890b6886e7a"
+    },
+    "nuttx.bin": {
+      "path": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-extended/nuttx.bin",
+      "size": 1732608,
+      "sha256": "1db3d5277d2ef5a637d58d34a1015b21898f67732559eab9af438d5f3f819c89"
+    },
+    "vela_data.bin": {
+      "path": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-extended/vela_data.bin",
+      "size": 268435456,
+      "sha256": "a6d72ac7690f53be6ae46ba88506bd97302a093f7108472bd9efc3cefda06484"
+    },
+    "vela_system.bin": {
+      "path": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-extended/vela_system.bin",
+      "size": 1024,
+      "sha256": "23cdae2484b1eeecbbed93b8807b3042782767a1d1f50fa8be7fd00627f0f8b1"
+    },
+    ".config": {
+      "path": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-extended/.config",
+      "size": 54978,
+      "sha256": "c75052d31a63cb0cc959893c9ed8b1f5daf0bc50c82c8883d7861d5da54ec9f5"
+    }
+  },
+  "source_revisions": {
+    "nuttx": {
+      "revision": "4253c6634778f2d0a0ccf3e09781be31d511bf27",
+      "dirty": true,
+      "changes": [
+        " M fs/encfs/CMakeLists.txt",
+        " M fs/encfs/Kconfig",
+        " M fs/encfs/Make.defs",
+        " M fs/encfs/encfs.h",
+        " M fs/encfs/encfs_key.c",
+        " M fs/encfs/encfs_manager.c",
+        " M include/nuttx/fs/encfs.h",
+        "?? fs/encfs/encfs_keyfile.c",
+        "?? fs/encfs/encfs_keywrap.c",
+        "?? fs/encfs/tests/test_keywrap.py"
+      ]
+    },
+    "apps": {
+      "revision": "09c01bf75f12233d39034a539952fac3f3648601",
+      "dirty": true,
+      "changes": [
+        " M system/encfs/Kconfig",
+        " M system/encfs/encfs_main.c",
+        "?? examples/encfs_test/encfs_test_rekey.c",
+        "?? system/encfs/tests/test_rekey_cli.py",
+        "?? testing/drivers/nist-sts/.gitee/",
+        "?? testing/drivers/nist-sts/.github/",
+        "?? testing/drivers/nist-sts/sts/",
+        "?? testing/fs/encfs_extended/"
+      ]
+    },
+    "tests": {
+      "revision": "264e7219a8d815deaf38a202cba33fa220293dcb",
+      "dirty": false,
+      "changes": []
+    },
+    "vendor/openvela": {
+      "revision": "eb539d2fa01e427e1013f839986c6f1025bb373a",
+      "dirty": true,
+      "changes": [
+        " M boards/vela/configs/goldfish-arm64-v8a-ap-encfs-gui/defconfig",
+        " M boards/vela/configs/goldfish-arm64-v8a-ap-encfs/defconfig"
+      ]
+    }
+  },
+  "source_fingerprints": {
+    "apps/testing/fs/encfs_extended/encfs_extended_main.c": "ad8c8d606fb1743a9b880f67ce41b142d7cd5267cdb48631fa229d4c918fd859",
+    "apps/testing/testsuites/kernel/fs/cmocka_fs_test.c": "c83a1fa86c1b32be10fed2fbd5bf13a8f7f1ff9f2da22c74401adb89ef03b254",
+    "apps/testing/fs/fstest/fstest_main.c": "db27738efaabb42a7f68c8130d35cf0715b628a12d30cd0ef8ffb5583557444c",
+    "tests/testcases/vela_fs_test/fs/stress/read_and_write_loops_test.c": "6207fe83ebe4868dd6eb2c52184e41305f72b97683125d5716d3d0704911e770",
+    "nuttx/fs/encpathfs/encpathfs_codec.c": "6fb23c014c27ee168cebe4ef307d66e67b3bbdca85e331d4bc066c3512016a2c",
+    "nuttx/fs/encpathfs/encpathfs_mount.c": "fdae6d6c46aa321a1040f31cc7a9f837dea3ce66787723134eff746b0b04679f",
+    "nuttx/fs/encfs/encfs_manager.c": "29a191e5773ec7ae1a7874fea106774dd88bc4063f0c88620c02bde50e9a59c5"
+  },
+  "error": "Guest clock initialization failed",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/tourist/Desktop/openvela/.repo/manifests/tools/test_encfs_extended.py\", line 223, in main\n    regression(args, report, \"encfs-regression-\" + stamp)\n  File \"/home/tourist/Desktop/openvela/.repo/manifests/tools/test_encfs_extended.py\", line 66, in regression\n    set_clock(emu)\n  File \"/home/tourist/Desktop/openvela/.repo/manifests/tools/test_encfs_extended.py\", line 57, in set_clock\n    base.require(\"failed\" not in output.lower() and \"not found\" not in output.lower(),\n  File \"/home/tourist/Desktop/openvela/.repo/manifests/tools/test_encfs.py\", line 69, in require\n    raise TestFailure(message)\ntest_encfs.TestFailure: Guest clock initialization failed\n",
+  "finished_at": "2026-10-24T14:23:52+08:00"
+}

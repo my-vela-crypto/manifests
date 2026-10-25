@@ -1,0 +1,407 @@
+Staged emulator artifacts from cmake_out/vela_goldfish-arm64-v8a-ap-encfs/
+TARGETDIR = /home/tourist/Desktop/openvela/vendor/openvela/boards/vela
+arg=-keep
+arg=-no-window
+arg=-no-audio
+arg=-gpu
+arg=off
+arg=-accel
+arg=off
+Copy modem_simulator
+Create a core file
+记录了1+0 的读入
+记录了1+0 的写出
+209715200字节（210 MB，200 MiB）已复制，0.116438 s，1.8 GB/s
+Copy vela_data.img
+INFO    | Android emulator version 32.1.15.0 (build_id 20251216) (CL:N/A)
+INFO    | Found systemPath /home/tourist/Desktop/openvela/nuttx
+INFO    | Crashreporting disabled, not reporting crashes.
+INFO    | Duplicate loglines will be removed, if you wish to see each indiviudal line launch with the -log-nofilter flag.
+WARNING | encryption is off
+WARNING | Unknown Image type 3
+WARNING | Unknown Image type 5
+WARNING | Unknown Image type 4
+WARNING | Unknown Image type 1
+ERROR   | Unable to connect to adb daemon on port: 5037
+WARNING | Your AVD has been configured with an in-guest renderer, but the system image does not support guest rendering.Falling back to 'swiftshader_indirect' mode.
+WARNING | cannot add library /home/tourist/Desktop/openvela/prebuilts/emulator/linux-x86_64/qemu/linux-x86_64/lib64/vulkan/libvulkan.so: failed
+INFO    | added library /home/tourist/Desktop/openvela/prebuilts/emulator/linux-x86_64/lib64/vulkan/libvulkan.so
+Warning: Allowing host microphone input.
+WARNING | *** No gRPC protection active, consider launching with the -grpc-use-jwt flag.***
+INFO    | Started GRPC server at 127.0.0.1:8556, security: Local, auth: none
+INFO    | Advertising in: /run/user/1000/avd/running/pid_166569.ini
+INFO    | Connecting to bluetooth mesh: localhost:8554
+INFO    | Setting display: 0 configuration to: 1280x800, dpi: 420x420 
+encfs: state=STOPPED result=-22 stage=5 error=-22 cleanup=0/0 block=0 keyed=0 lower=0 upper=0
+encfs: wrapped=0 master_id=0 generation=0
+encfs: Unknown error 22 (-22)
+
+NuttShell (NSH)
+encfs> [Kencfs_test corruption
+ENCFS_CORRUPTION_FIXTURE dedicated blank raw disk; destructive
+[PASS] corruption setup: refuse any existing live managed chain
+[PASS] corruption setup: stop is idempotent on dedicated blank fixture
+[PASS] corruption missing metadata: format dedicated raw exFAT fixture
+[PASS] corruption missing metadata: initialize authenticated volume
+[PASS] corruption missing metadata: backup exact metadata record
+[PASS] corruption missing metadata: inject physical fixture damage
+[PASS] corruption missing metadata: stage key before rejected bind
+[PASS] corruption missing metadata: reject with specified errno
+[PASS] corruption missing metadata: failed bind consumes staged key
+[PASS] corruption missing metadata: failed bind releases slot lock
+[PASS] corruption missing metadata: clear re-staged slot
+[PASS] corruption missing metadata: rejected bind leaves lower visible
+[PASS] corruption missing metadata: write through lower after rejected bind
+[PASS] corruption missing metadata: read through lower after rejected bind
+[PASS] corruption missing metadata: remove lower recovery probe
+[PASS] corruption missing metadata: restore original authenticated metadata
+[PASS] corruption missing metadata: stage restored key
+[PASS] corruption missing metadata: mount authenticated upper
+[PASS] corruption missing metadata: unmount upper and owned lower
+[PASS] corruption missing metadata: slot is idle after cleanup
+[PASS] corruption wrong metadata magic: format dedicated raw exFAT fixture
+[PASS] corruption wrong metadata magic: initialize authenticated volume
+[PASS] corruption wrong metadata magic: backup exact metadata record
+[PASS] corruption wrong metadata magic: inject physical fixture damage
+[PASS] corruption wrong metadata magic: stage key before rejected bind
+[PASS] corruption wrong metadata magic: reject with specified errno
+[PASS] corruption wrong metadata magic: failed bind consumes staged key
+[PASS] corruption wrong metadata magic: failed bind releases slot lock
+[PASS] corruption wrong metadata magic: clear re-staged slot
+[PASS] corruption wrong metadata magic: rejected bind leaves lower visible
+[PASS] corruption wrong metadata magic: write through lower after rejected bind
+[PASS] corruption wrong metadata magic: read through lower after rejected bind
+[PASS] corruption wrong metadata magic: remove lower recovery probe
+[PASS] corruption wrong metadata magic: restore original authenticated metadata
+[PASS] corruption wrong metadata magic: stage restored key
+[PASS] corruption wrong metadata magic: mount authenticated upper
+[PASS] corruption wrong metadata magic: unmount upper and owned lower
+[PASS] corruption wrong metadata magic: slot is idle after cleanup
+[PASS] corruption unsupported metadata version: format dedicated raw exFAT fixture
+[PASS] corruption unsupported metadata version: initialize authenticated volume
+[PASS] corruption unsupported metadata version: backup exact metadata record
+[PASS] corruption unsupported metadata version: inject physical fixture damage
+[PASS] corruption unsupported metadata version: stage key before rejected bind
+[PASS] corruption unsupported metadata version: reject with specified errno
+[PASS] corruption unsupported metadata version: failed bind consumes staged key
+[PASS] corruption unsupported metadata version: failed bind releases slot lock
+[PASS] corruption unsupported metadata version: clear re-staged slot
+[PASS] corruption unsupported metadata version: rejected bind leaves lower visible
+[PASS] corruption unsupported metadata version: write through lower after rejected bind
+[PASS] corruption unsupported metadata version: read through lower after rejected bind
+[PASS] corruption unsupported metadata version: remove lower recovery probe
+[PASS] corruption unsupported metadata version: restore original authenticated metadata
+[PASS] corruption unsupported metadata version: stage restored key
+[PASS] corruption unsupported metadata version: mount authenticated upper
+[PASS] corruption unsupported metadata version: unmount upper and owned lower
+[PASS] corruption unsupported metadata version: slot is idle after cleanup
+[PASS] corruption truncated metadata: format dedicated raw exFAT fixture
+[PASS] corruption truncated metadata: initialize authenticated volume
+[PASS] corruption truncated metadata: backup exact metadata record
+[PASS] corruption truncated metadata: inject physical fixture damage
+[PASS] corruption truncated metadata: stage key before rejected bind
+[PASS] corruption truncated metadata: reject with specified errno
+[PASS] corruption truncated metadata: failed bind consumes staged key
+[PASS] corruption truncated metadata: failed bind releases slot lock
+[PASS] corruption truncated metadata: clear re-staged slot
+[PASS] corruption truncated metadata: rejected bind leaves lower visible
+[PASS] corruption truncated metadata: write through lower after rejected bind
+[PASS] corruption truncated metadata: read through lower after rejected bind
+[PASS] corruption truncated metadata: remove lower recovery probe
+[PASS] corruption truncated metadata: restore original authenticated metadata
+[PASS] corruption truncated metadata: stage restored key
+[PASS] corruption truncated metadata: mount authenticated upper
+[PASS] corruption truncated metadata: unmount upper and owned lower
+[PASS] corruption truncated metadata: slot is idle after cleanup
+[PASS] corruption overlong metadata: format dedicated raw exFAT fixture
+[PASS] corruption overlong metadata: initialize authenticated volume
+[PASS] corruption overlong metadata: backup exact metadata record
+[PASS] corruption overlong metadata: inject physical fixture damage
+[PASS] corruption overlong metadata: stage key before rejected bind
+[PASS] corruption overlong metadata: reject with specified errno
+[PASS] corruption overlong metadata: failed bind consumes staged key
+[PASS] corruption overlong metadata: failed bind releases slot lock
+[PASS] corruption overlong metadata: clear re-staged slot
+[PASS] corruption overlong metadata: rejected bind leaves lower visible
+[PASS] corruption overlong metadata: write through lower after rejected bind
+[PASS] corruption overlong metadata: read through lower after rejected bind
+[PASS] corruption overlong metadata: remove lower recovery probe
+[PASS] corruption overlong metadata: restore original authenticated metadata
+[PASS] corruption overlong metadata: stage restored key
+[PASS] corruption overlong metadata: mount authenticated upper
+[PASS] corruption overlong metadata: unmount upper and owned lower
+[PASS] corruption overlong metadata: slot is idle after cleanup
+[PASS] corruption tampered metadata tag: format dedicated raw exFAT fixture
+[PASS] corruption tampered metadata tag: initialize authenticated volume
+[PASS] corruption tampered metadata tag: backup exact metadata record
+[PASS] corruption tampered metadata tag: inject physical fixture damage
+[PASS] corruption tampered metadata tag: stage key before rejected bind
+[PASS] corruption tampered metadata tag: reject with specified errno
+[PASS] corruption tampered metadata tag: failed bind consumes staged key
+[PASS] corruption tampered metadata tag: failed bind releases slot lock
+[PASS] corruption tampered metadata tag: clear re-staged slot
+[PASS] corruption tampered metadata tag: rejected bind leaves lower visible
+[PASS] corruption tampered metadata tag: write through lower after rejected bind
+[PASS] corruption tampered metadata tag: read through lower after rejected bind
+[PASS] corruption tampered metadata tag: remove lower recovery probe
+[PASS] corruption tampered metadata tag: restore original authenticated metadata
+[PASS] corruption tampered metadata tag: stage restored key
+[PASS] corruption tampered metadata tag: mount authenticated upper
+[PASS] corruption tampered metadata tag: unmount upper and owned lower
+[PASS] corruption tampered metadata tag: slot is idle after cleanup
+[PASS] corruption tampered metadata ciphertext: format dedicated raw exFAT fixture
+[PASS] corruption tampered metadata ciphertext: initialize authenticated volume
+[PASS] corruption tampered metadata ciphertext: backup exact metadata record
+[PASS] corruption tampered metadata ciphertext: inject physical fixture damage
+[PASS] corruption tampered metadata ciphertext: stage key before rejected bind
+[PASS] corruption tampered metadata ciphertext: reject with specified errno
+[PASS] corruption tampered metadata ciphertext: failed bind consumes staged key
+[PASS] corruption tampered metadata ciphertext: failed bind releases slot lock
+[PASS] corruption tampered metadata ciphertext: clear re-staged slot
+[PASS] corruption tampered metadata ciphertext: rejected bind leaves lower visible
+[PASS] corruption tampered metadata ciphertext: write through lower after rejected bind
+[PASS] corruption tampered metadata ciphertext: read through lower after rejected bind
+[PASS] corruption tampered metadata ciphertext: remove lower recovery probe
+[PASS] corruption tampered metadata ciphertext: restore original authenticated metadata
+[PASS] corruption tampered metadata ciphertext: stage restored key
+[PASS] corruption tampered metadata ciphertext: mount authenticated upper
+[PASS] corruption tampered metadata ciphertext: unmount upper and owned lower
+[PASS] corruption tampered metadata ciphertext: slot is idle after cleanup
+[PASS] corruption metadata is a directory: format dedicated raw exFAT fixture
+[PASS] corruption metadata is a directory: initialize authenticated volume
+[PASS] corruption metadata is a directory: backup exact metadata record
+[PASS] corruption metadata is a directory: inject physical fixture damage
+[PASS] corruption metadata is a directory: stage key before rejected bind
+[PASS] corruption metadata is a directory: reject with specified errno
+[PASS] corruption metadata is a directory: failed bind consumes staged key
+[PASS] corruption metadata is a directory: failed bind releases slot lock
+[PASS] corruption metadata is a directory: clear re-staged slot
+[PASS] corruption metadata is a directory: rejected bind leaves lower visible
+[PASS] corruption metadata is a directory: write through lower after rejected bind
+[PASS] corruption metadata is a directory: read through lower after rejected bind
+[PASS] corruption metadata is a directory: remove lower recovery probe
+[PASS] corruption metadata is a directory: remove metadata directory fixture
+[PASS] corruption metadata is a directory: restore original authenticated metadata
+[PASS] corruption metadata is a directory: stage restored key
+[PASS] corruption metadata is a directory: mount authenticated upper
+[PASS] corruption metadata is a directory: unmount upper and owned lower
+[PASS] corruption metadata is a directory: slot is idle after cleanup
+[PASS] corruption missing physical root: format dedicated raw exFAT fixture
+[PASS] corruption missing physical root: initialize authenticated volume
+[PASS] corruption missing physical root: backup exact metadata record
+[PASS] corruption missing physical root: inject physical fixture damage
+[PASS] corruption missing physical root: stage key before rejected bind
+[PASS] corruption missing physical root: reject with specified errno
+[PASS] corruption missing physical root: failed bind consumes staged key
+[PASS] corruption missing physical root: failed bind releases slot lock
+[PASS] corruption missing physical root: clear re-staged slot
+[PASS] corruption missing physical root: rejected bind leaves lower visible
+[PASS] corruption missing physical root: write through lower after rejected bind
+[PASS] corruption missing physical root: read through lower after rejected bind
+[PASS] corruption missing physical root: remove lower recovery probe
+[PASS] corruption missing physical root: restore physical root directory
+[PASS] corruption missing physical root: restore original authenticated metadata
+[PASS] corruption missing physical root: stage restored key
+[PASS] corruption missing physical root: mount authenticated upper
+[PASS] corruption missing physical root: unmount upper and owned lower
+[PASS] corruption missing physical root: slot is idle after cleanup
+[PASS] corruption physical root is a file: format dedicated raw exFAT fixture
+[PASS] corruption physical root is a file: initialize authenticated volume
+[PASS] corruption physical root is a file: backup exact metadata record
+[PASS] corruption physical root is a file: inject physical fixture damage
+[PASS] corruption physical root is a file: stage key before rejected bind
+[PASS] corruption physical root is a file: reject with specified errno
+[PASS] corruption physical root is a file: failed bind consumes staged key
+[PASS] corruption physical root is a file: failed bind releases slot lock
+[PASS] corruption physical root is a file: clear re-staged slot
+[PASS] corruption physical root is a file: rejected bind leaves lower visible
+[PASS] corruption physical root is a file: write through lower after rejected bind
+[PASS] corruption physical root is a file: read through lower after rejected bind
+[PASS] corruption physical root is a file: remove lower recovery probe
+[PASS] corruption physical root is a file: remove physical root file fixture
+[PASS] corruption physical root is a file: restore physical root directory
+[PASS] corruption physical root is a file: restore original authenticated metadata
+[PASS] corruption physical root is a file: stage restored key
+[PASS] corruption physical root is a file: mount authenticated upper
+[PASS] corruption physical root is a file: unmount upper and owned lower
+[PASS] corruption physical root is a file: slot is idle after cleanup
+[PASS] corruption plaintext directory entry: format dedicated raw exFAT fixture
+[PASS] corruption plaintext directory entry: initialize authenticated volume
+[PASS] corruption plaintext directory entry: create sole injected physical entry
+[PASS] corruption plaintext directory entry: stage restored key
+[PASS] corruption plaintext directory entry: mount authenticated upper
+[PASS] corruption plaintext directory entry: upper hides injected lower namespace
+[PASS] corruption plaintext directory entry: opendir upper with repeated separators
+[PASS] corruption plaintext directory entry: readdir rejects malformed entry with EBADMSG
+[PASS] corruption plaintext directory entry: physical name is never returned
+[PASS] corruption plaintext directory entry: mounted corruption test retains slot lock
+[PASS] corruption plaintext directory entry: rewind rechecks corrupt entry
+[PASS] corruption plaintext directory entry: open corrupt directory still blocks unmount
+[PASS] corruption plaintext directory entry: close corrupt directory
+[PASS] corruption plaintext directory entry: unmount upper and owned lower
+[PASS] corruption plaintext directory entry: slot is idle after cleanup
+[PASS] corruption plaintext directory entry: remount lower after readdir rejection
+[PASS] corruption plaintext directory entry: readdir rejection preserves physical entry
+[PASS] corruption plaintext directory entry: remove only injected entry
+[PASS] corruption plaintext directory entry: stage restored key
+[PASS] corruption plaintext directory entry: mount authenticated upper
+[PASS] corruption plaintext directory entry: reopen repaired logical directory
+[PASS] corruption plaintext directory entry: repaired directory has clean EOF
+[PASS] corruption plaintext directory entry: close repaired directory
+[PASS] corruption plaintext directory entry: unmount upper and owned lower
+[PASS] corruption plaintext directory entry: slot is idle after cleanup
+[PASS] corruption invalid Base32 directory entry: format dedicated raw exFAT fixture
+[PASS] corruption invalid Base32 directory entry: initialize authenticated volume
+[PASS] corruption invalid Base32 directory entry: create sole injected physical entry
+[PASS] corruption invalid Base32 directory entry: stage restored key
+[PASS] corruption invalid Base32 directory entry: mount authenticated upper
+[PASS] corruption invalid Base32 directory entry: upper hides injected lower namespace
+[PASS] corruption invalid Base32 directory entry: opendir upper with repeated separators
+[PASS] corruption invalid Base32 directory entry: readdir rejects malformed entry with EBADMSG
+[PASS] corruption invalid Base32 directory entry: physical name is never returned
+[PASS] corruption invalid Base32 directory entry: mounted corruption test retains slot lock
+[PASS] corruption invalid Base32 directory entry: rewind rechecks corrupt entry
+[PASS] corruption invalid Base32 directory entry: open corrupt directory still blocks unmount
+[PASS] corruption invalid Base32 directory entry: close corrupt directory
+[PASS] corruption invalid Base32 directory entry: unmount upper and owned lower
+[PASS] corruption invalid Base32 directory entry: slot is idle after cleanup
+[PASS] corruption invalid Base32 directory entry: remount lower after readdir rejection
+[PASS] corruption invalid Base32 directory entry: readdir rejection preserves physical entry
+[PASS] corruption invalid Base32 directory entry: remove only injected entry
+[PASS] corruption invalid Base32 directory entry: stage restored key
+[PASS] corruption invalid Base32 directory entry: mount authenticated upper
+[PASS] corruption invalid Base32 directory entry: reopen repaired logical directory
+[PASS] corruption invalid Base32 directory entry: repaired directory has clean EOF
+[PASS] corruption invalid Base32 directory entry: close repaired directory
+[PASS] corruption invalid Base32 directory entry: unmount upper and owned lower
+[PASS] corruption invalid Base32 directory entry: slot is idle after cleanup
+[PASS] corruption canonical authenticated entry: encode reference
+[PASS] corruption canonical tampered directory entry: format dedicated raw exFAT fixture
+[PASS] corruption canonical tampered directory entry: initialize authenticated volume
+[PASS] corruption canonical tampered directory entry: create sole injected physical entry
+[PASS] corruption canonical tampered directory entry: stage restored key
+[PASS] corruption canonical tampered directory entry: mount authenticated upper
+[PASS] corruption canonical tampered directory entry: upper hides injected lower namespace
+[PASS] corruption canonical tampered directory entry: opendir upper with repeated separators
+[PASS] corruption canonical tampered directory entry: readdir rejects malformed entry with EBADMSG
+[PASS] corruption canonical tampered directory entry: physical name is never returned
+[PASS] corruption canonical tampered directory entry: mounted corruption test retains slot lock
+[PASS] corruption canonical tampered directory entry: rewind rechecks corrupt entry
+[PASS] corruption canonical tampered directory entry: open corrupt directory still blocks unmount
+[PASS] corruption canonical tampered directory entry: close corrupt directory
+[PASS] corruption canonical tampered directory entry: unmount upper and owned lower
+[PASS] corruption canonical tampered directory entry: slot is idle after cleanup
+[PASS] corruption canonical tampered directory entry: remount lower after readdir rejection
+[PASS] corruption canonical tampered directory entry: readdir rejection preserves physical entry
+[PASS] corruption canonical tampered directory entry: remove only injected entry
+[PASS] corruption canonical tampered directory entry: stage restored key
+[PASS] corruption canonical tampered directory entry: mount authenticated upper
+[PASS] corruption canonical tampered directory entry: reopen repaired logical directory
+[PASS] corruption canonical tampered directory entry: repaired directory has clean EOF
+[PASS] corruption canonical tampered directory entry: close repaired directory
+[PASS] corruption canonical tampered directory entry: unmount upper and owned lower
+[PASS] corruption canonical tampered directory entry: slot is idle after cleanup
+[PASS] corruption noncanonical padding bits: encode reference
+[PASS] corruption noncanonical unused Base32 bits: format dedicated raw exFAT fixture
+[PASS] corruption noncanonical unused Base32 bits: initialize authenticated volume
+[PASS] corruption noncanonical unused Base32 bits: create sole injected physical entry
+[PASS] corruption noncanonical unused Base32 bits: stage restored key
+[PASS] corruption noncanonical unused Base32 bits: mount authenticated upper
+[PASS] corruption noncanonical unused Base32 bits: upper hides injected lower namespace
+[PASS] corruption noncanonical unused Base32 bits: opendir upper with repeated separators
+[PASS] corruption noncanonical unused Base32 bits: readdir rejects malformed entry with EBADMSG
+[PASS] corruption noncanonical unused Base32 bits: physical name is never returned
+[PASS] corruption noncanonical unused Base32 bits: mounted corruption test retains slot lock
+[PASS] corruption noncanonical unused Base32 bits: rewind rechecks corrupt entry
+[PASS] corruption noncanonical unused Base32 bits: open corrupt directory still blocks unmount
+[PASS] corruption noncanonical unused Base32 bits: close corrupt directory
+[PASS] corruption noncanonical unused Base32 bits: unmount upper and owned lower
+[PASS] corruption noncanonical unused Base32 bits: slot is idle after cleanup
+[PASS] corruption noncanonical unused Base32 bits: remount lower after readdir rejection
+[PASS] corruption noncanonical unused Base32 bits: readdir rejection preserves physical entry
+[PASS] corruption noncanonical unused Base32 bits: remove only injected entry
+[PASS] corruption noncanonical unused Base32 bits: stage restored key
+[PASS] corruption noncanonical unused Base32 bits: mount authenticated upper
+[PASS] corruption noncanonical unused Base32 bits: reopen repaired logical directory
+[PASS] corruption noncanonical unused Base32 bits: repaired directory has clean EOF
+[PASS] corruption noncanonical unused Base32 bits: close repaired directory
+[PASS] corruption noncanonical unused Base32 bits: unmount upper and owned lower
+[PASS] corruption noncanonical unused Base32 bits: slot is idle after cleanup
+[PASS] corruption lowercase Base32 entry: encode reference
+[PASS] corruption lowercase Base32 entry: lowercase an alphabet symbol
+[PASS] corruption noncanonical lowercase Base32: format dedicated raw exFAT fixture
+[PASS] corruption noncanonical lowercase Base32: initialize authenticated volume
+[PASS] corruption noncanonical lowercase Base32: create sole injected physical entry
+[PASS] corruption noncanonical lowercase Base32: stage restored key
+[PASS] corruption noncanonical lowercase Base32: mount authenticated upper
+[PASS] corruption noncanonical lowercase Base32: upper hides injected lower namespace
+[PASS] corruption noncanonical lowercase Base32: opendir upper with repeated separators
+[PASS] corruption noncanonical lowercase Base32: readdir rejects malformed entry with EBADMSG
+[PASS] corruption noncanonical lowercase Base32: physical name is never returned
+[PASS] corruption noncanonical lowercase Base32: mounted corruption test retains slot lock
+[PASS] corruption noncanonical lowercase Base32: rewind rechecks corrupt entry
+[PASS] corruption noncanonical lowercase Base32: open corrupt directory still blocks unmount
+[PASS] corruption noncanonical lowercase Base32: close corrupt directory
+[PASS] corruption noncanonical lowercase Base32: unmount upper and owned lower
+[PASS] corruption noncanonical lowercase Base32: slot is idle after cleanup
+[PASS] corruption noncanonical lowercase Base32: remount lower after readdir rejection
+[PASS] corruption noncanonical lowercase Base32: readdir rejection preserves physical entry
+[PASS] corruption noncanonical lowercase Base32: remove only injected entry
+[PASS] corruption noncanonical lowercase Base32: stage restored key
+[PASS] corruption noncanonical lowercase Base32: mount authenticated upper
+[PASS] corruption noncanonical lowercase Base32: reopen repaired logical directory
+[PASS] corruption noncanonical lowercase Base32: repaired directory has clean EOF
+[PASS] corruption noncanonical lowercase Base32: close repaired directory
+[PASS] corruption noncanonical lowercase Base32: unmount upper and owned lower
+[PASS] corruption noncanonical lowercase Base32: slot is idle after cleanup
+[PASS] corruption padded Base32 entry: encode reference
+[PASS] corruption forbidden Base32 padding: format dedicated raw exFAT fixture
+[PASS] corruption forbidden Base32 padding: initialize authenticated volume
+[PASS] corruption forbidden Base32 padding: create sole injected physical entry
+[PASS] corruption forbidden Base32 padding: stage restored key
+[PASS] corruption forbidden Base32 padding: mount authenticated upper
+[PASS] corruption forbidden Base32 padding: upper hides injected lower namespace
+[PASS] corruption forbidden Base32 padding: opendir upper with repeated separators
+[PASS] corruption forbidden Base32 padding: readdir rejects malformed entry with EBADMSG
+[PASS] corruption forbidden Base32 padding: physical name is never returned
+[PASS] corruption forbidden Base32 padding: mounted corruption test retains slot lock
+[PASS] corruption forbidden Base32 padding: rewind rechecks corrupt entry
+[PASS] corruption forbidden Base32 padding: open corrupt directory still blocks unmount
+[PASS] corruption forbidden Base32 padding: close corrupt directory
+[PASS] corruption forbidden Base32 padding: unmount upper and owned lower
+[PASS] corruption forbidden Base32 padding: slot is idle after cleanup
+[PASS] corruption forbidden Base32 padding: remount lower after readdir rejection
+[PASS] corruption forbidden Base32 padding: readdir rejection preserves physical entry
+[PASS] corruption forbidden Base32 padding: remove only injected entry
+[PASS] corruption forbidden Base32 padding: stage restored key
+[PASS] corruption forbidden Base32 padding: mount authenticated upper
+[PASS] corruption forbidden Base32 padding: reopen repaired logical directory
+[PASS] corruption forbidden Base32 padding: repaired directory has clean EOF
+[PASS] corruption forbidden Base32 padding: close repaired directory
+[PASS] corruption forbidden Base32 padding: unmount upper and owned lower
+[PASS] corruption forbidden Base32 padding: slot is idle after cleanup
+[PASS] corruption repeated path separators: format dedicated raw exFAT fixture
+[PASS] corruption repeated path separators: initialize authenticated volume
+[PASS] corruption repeated path separators: stage restored key
+[PASS] corruption repeated path separators: mount authenticated upper
+[PASS] corruption repeated path separators: mkdir with repeated and trailing separators
+[PASS] corruption repeated path separators: create through repeated separators
+[PASS] corruption repeated path separators: canonical path addresses the same file
+[PASS] corruption repeated path separators: opendir repeated separators
+[PASS] corruption repeated path separators: valid readdir returns logical name
+[PASS] corruption repeated path separators: valid directory ends without error
+[PASS] corruption repeated path separators: close separator directory
+[PASS] corruption repeated path separators: unlink through repeated separators
+[PASS] corruption repeated path separators: rmdir through repeated separators
+[PASS] corruption repeated path separators: unmount upper and owned lower
+[PASS] corruption repeated path separators: slot is idle after cleanup
+[PASS] corruption final cleanup: slot is idle after cleanup
+[PASS] corruption final cleanup: manager stays stopped
+[PASS] corruption final cleanup: no managed resource remains
+[PASS] corruption final cleanup: no fixture mount remains
+[PASS] corruption final cleanup: no encrypted block node remains
+ENCFS_TEST_RESULT mode=corruption pass=361 fail=0
+encfs> [Kencfs stop
+encfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0
+encfs: wrapped=0 master_id=0 generation=0
+encfs> [K

@@ -1,0 +1,9 @@
+config TESTING_ENCFS_EXTENDED
+	bool "EncFS interrupted-write recovery fixture and Vela FS regression"
+	default n
+	depends on ENCFSMGR
+	---help---
+		Enable deterministic prepare/verify/churn commands on a dedicated
+		EncFS test volume. The host may deliberately kill its emulator while
+		churn runs; this simulates a process interruption, not hardware power loss.
+		Also build the bounded Vela append/read loop from tests/testcases.

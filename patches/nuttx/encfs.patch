@@ -1,5 +1,5 @@
 diff --git a/crypto/CMakeLists.txt b/crypto/CMakeLists.txt
-index 84ca74307a..dc1874f5b6 100644
+index 84ca74307a548e6710c3403e63a66e42f1db139d..dc1874f5b6a669ee827c9de5469663371ecdd149 100644
 --- a/crypto/CMakeLists.txt
 +++ b/crypto/CMakeLists.txt
 @@ -40,6 +40,12 @@ if(CONFIG_CRYPTO)
@@ -16,7 +16,7 @@ index 84ca74307a..dc1874f5b6 100644
    list(APPEND SRCS blf.c)
    list(APPEND SRCS cast.c)
 diff --git a/crypto/Kconfig b/crypto/Kconfig
-index 6bf77de080..323cd2ccac 100644
+index 6bf77de0800900b15a681b03622d3e9b091304b8..323cd2ccac0ee39efed166e283ca23f08510c766 100644
 --- a/crypto/Kconfig
 +++ b/crypto/Kconfig
 @@ -15,6 +15,23 @@ config CRYPTO_AES
@@ -44,7 +44,7 @@ index 6bf77de080..323cd2ccac 100644
  	bool "Perform automatic crypto algorithms test on startup"
  	default n
 diff --git a/crypto/Makefile b/crypto/Makefile
-index be3812ba8d..1d6756eec4 100644
+index be3812ba8dfaf8705c57cdb4d1e6785d27839082..1d6756eec45a9fef208c25a990d76536c0dd07b5 100644
 --- a/crypto/Makefile
 +++ b/crypto/Makefile
 @@ -43,6 +43,12 @@ endif
@@ -62,7 +62,7 @@ index be3812ba8d..1d6756eec4 100644
  CRYPTO_CSRCS += cast.c
 diff --git a/crypto/aes_siv.c b/crypto/aes_siv.c
 new file mode 100644
-index 0000000000..d5c434894b
+index 0000000000000000000000000000000000000000..d5c434894be6e8cf4c3b524ddeccc6e785322af1
 --- /dev/null
 +++ b/crypto/aes_siv.c
 @@ -0,0 +1,255 @@
@@ -323,7 +323,7 @@ index 0000000000..d5c434894b
 +}
 diff --git a/crypto/hkdf.c b/crypto/hkdf.c
 new file mode 100644
-index 0000000000..093207a89c
+index 0000000000000000000000000000000000000000..093207a89c714dec0f851186deb96f55662dd0a2
 --- /dev/null
 +++ b/crypto/hkdf.c
 @@ -0,0 +1,119 @@
@@ -447,7 +447,7 @@ index 0000000000..093207a89c
 +  return 0;
 +}
 diff --git a/drivers/crypto/blkcrypt.c b/drivers/crypto/blkcrypt.c
-index 5a0a79b5f0..90fbea9ecf 100644
+index 5a0a79b5f092f648e3d714e1cbd42cc4be0b9fc1..90fbea9ecfabbfd54c1ed516a34c592007fb3960 100644
 --- a/drivers/crypto/blkcrypt.c
 +++ b/drivers/crypto/blkcrypt.c
 @@ -43,6 +43,7 @@
@@ -710,7 +710,7 @@ index 5a0a79b5f0..90fbea9ecf 100644
    return OK;
  }
 diff --git a/fs/Kconfig b/fs/Kconfig
-index ed0c0819c6..862d68ebac 100644
+index ed0c0819c6afe712b95848418eab73da98942017..862d68ebac0200deb3cec63f4b42abb1e83be5e9 100644
 --- a/fs/Kconfig
 +++ b/fs/Kconfig
 @@ -160,6 +160,8 @@ source "fs/procfs/Kconfig"
@@ -723,7 +723,7 @@ index ed0c0819c6..862d68ebac 100644
  source "fs/hostfs/Kconfig"
  source "fs/rpmsgfs/Kconfig"
 diff --git a/fs/Makefile b/fs/Makefile
-index a3421705cf..dd1c5eeb9e 100644
+index a3421705cfdedf11d0675d677d02f2dd9934a93c..dd1c5eeb9e81d31a2ba0a887ff3e60b00208dc4b 100644
 --- a/fs/Makefile
 +++ b/fs/Makefile
 @@ -60,6 +60,8 @@ include binfs/Make.defs
@@ -737,21 +737,27 @@ index a3421705cf..dd1c5eeb9e 100644
  include littlefs/Make.defs
 diff --git a/fs/encfs/CMakeLists.txt b/fs/encfs/CMakeLists.txt
 new file mode 100644
-index 0000000000..4edab891ce
+index 0000000000000000000000000000000000000000..4058a6370a6ab1bba34fd2f98ddfe3f0611403fc
 --- /dev/null
 +++ b/fs/encfs/CMakeLists.txt
-@@ -0,0 +1,5 @@
+@@ -0,0 +1,11 @@
 +# SPDX-License-Identifier: Apache-2.0
 +
 +if(CONFIG_ENCFSMGR)
 +  target_sources(fs PRIVATE encfs_manager.c encfs_key.c encfs_block_port.c)
++  if(CONFIG_ENCFS_KEYWRAP)
++    target_sources(fs PRIVATE encfs_keywrap.c)
++    if(CONFIG_ENCFS_TESTING)
++      target_sources(fs PRIVATE encfs_keyfile.c)
++    endif()
++  endif()
 +endif()
 diff --git a/fs/encfs/Kconfig b/fs/encfs/Kconfig
 new file mode 100644
-index 0000000000..af413a7a72
+index 0000000000000000000000000000000000000000..6c7eb6e1875b13ebec724e14ca684b1b7334469f
 --- /dev/null
 +++ b/fs/encfs/Kconfig
-@@ -0,0 +1,27 @@
+@@ -0,0 +1,38 @@
 +# SPDX-License-Identifier: Apache-2.0
 +
 +menuconfig ENCFSMGR
@@ -770,6 +776,17 @@ index 0000000000..af413a7a72
 +
 +if ENCFSMGR
 +
++config ENCFS_KEYWRAP
++	bool "Authenticated external keyslots and online master rotation"
++	default n
++	---help---
++		Allow a board/provider to atomically persist an authenticated AES-SIV
++		keyslot outside the encrypted volume. New wrapped volumes use fresh
++		independent data keys. Online rotation rewraps those unchanged keys;
++		legacy directly-derived volumes explicitly reject rotation. A real
++		backend must provide power-fail atomic durable compare-and-replace.
++		The optional test file provider is only a simulator model.
++
 +config ENCFS_TESTING
 +	bool "Enable encrypted volume fault injection and test keys"
 +	default n
@@ -781,10 +798,10 @@ index 0000000000..af413a7a72
 +endif
 diff --git a/fs/encfs/Make.defs b/fs/encfs/Make.defs
 new file mode 100644
-index 0000000000..d1881f71c6
+index 0000000000000000000000000000000000000000..a95c6db358233f58f1043e0d1891e7762504970c
 --- /dev/null
 +++ b/fs/encfs/Make.defs
-@@ -0,0 +1,12 @@
+@@ -0,0 +1,18 @@
 +############################################################################
 +# fs/encfs/Make.defs
 +#
@@ -794,15 +811,194 @@ index 0000000000..d1881f71c6
 +
 +ifeq ($(CONFIG_ENCFSMGR),y)
 +CSRCS += encfs_manager.c encfs_key.c encfs_block_port.c
++ifeq ($(CONFIG_ENCFS_KEYWRAP),y)
++CSRCS += encfs_keywrap.c
++ifeq ($(CONFIG_ENCFS_TESTING),y)
++CSRCS += encfs_keyfile.c
++endif
++endif
 +DEPPATH += --dep-path encfs
 +VPATH += :encfs
 +endif
+diff --git a/fs/encfs/README.md b/fs/encfs/README.md
+new file mode 100644
+index 0000000000000000000000000000000000000000..76ccd72317c911009a3e66fdc3781b3e26cd81a0
+--- /dev/null
++++ b/fs/encfs/README.md
+@@ -0,0 +1,167 @@
++# EncFS master rotation and external key providers
++
++`CONFIG_ENCFS_KEYWRAP` adds authenticated external keyslots. It is optional:
++the existing board unique-key and directly derived legacy-volume path keeps
++the same on-disk format and derivation. Legacy volumes explicitly return
++`-ENOTSUP` from `encfs_rekey()`. Wrapping a key derived from an old master
++would not revoke that master's ability to derive the data key, so this
++implementation does not pretend that operation is a secure migration.
++
++For a new wrapped volume, explicit `encfs_provision()` obtains 64 fresh,
++independent random bytes from the selected provider. The first 32 bytes are
++the stable block key; the second 32 bytes are the stable path key. They are
++never derived from a master version. The provider wraps those data keys in
++a separate authenticated keyslot. `encfs_rekey(new_master_id)` can replace
++that wrapper while the volume is READY and files/directories remain open.
++It never changes an active XTS key, filename key, filesystem mount, or user
++data. The same provider key identifier returns `-EALREADY`.
++
++## Provider contract
++
++Install `struct encfs_key_provider_s` using `encfs_set_key_provider()` while
++fully STOPPED. A board can implement the callbacks with a trusted keystore
++or service. The callbacks execute under the manager lock and must not
++re-enter it. Their context must outlive registration.
++
++* `get_master(id)` supplies exactly 32 bytes for an immutable master version.
++  Different identifiers must denote distinct strong master keys. A missing
++  key returns `-ENOKEY`; returning a positive value is treated as `-EIO`.
++* `random()` supplies fresh cryptographic randomness for each new wrapped
++  volume. Failure aborts provision instead of using an unseeded fallback.
++* `read_slot()` returns exactly the 112-byte record, or `-ENOENT`.
++* `compare_exchange(expected, next)` must atomically and durably replace
++  the record only if it matches `expected`; NULL means an absent record.
++  It returns `-ESTALE` on mismatch and must preserve the prior committed
++  record on failure. Real hardware must implement that contract including
++  power loss. A backend with ambiguous commit outcomes needs its own
++  transaction resolution before returning to this interface.
++
++Provider bootstrap, master storage, and slot storage must be independent
++of the encrypted `/data` chain. Selecting a wrapped provider makes a
++missing, truncated, invalid, or unauthenticatable slot fail closed. Normal
++start never creates a slot, formats a disk, or falls back to the legacy
++board derivation. Passing NULL selects legacy mode explicitly.
++
++Data keys are retained only while manager-owned volume resources remain
++active and are erased immediately when the last resource is released.
++Temporary master, wrapping key, and rejected plaintext buffers are erased.
++Status exposes only the active wrapping flag, provider key identifier, and
++generation; it exposes no secret key bytes.
++
++## Record format
++
++All integers are little-endian and the layout is serialized explicitly.
++
++| Bytes | Meaning |
++| --- | --- |
++| 0–7 | ASCII `ENCKEY01` |
++| 8–11 | Version 1 |
++| 12–15 | Provider master identifier |
++| 16–23 | Nonzero generation, incremented on rotation |
++| 24–31 | Reserved, must be zero |
++| 32–47 | RFC 5297 AES-SIV authentication tag |
++| 48–111 | Sealed 64-byte stable data keys |
++
++The wrapping key is `HKDF-SHA256(master, salt="encfs-keyslot-v1",
++info=header[0:32], length=32)`. AES-SIV-CMAC-256 uses the full 32-byte header
++as its associated-data string. Existing RFC-vector-tested NuttX crypto
++primitives implement both operations. Generation overflow is rejected.
++
++Generation is authenticated but does not itself prevent rollback. Retaining
++an old valid slot together with its old master still permits recovery of
++the unchanged data keys. Defending against malicious rollback requires
++trusted monotonic state and protection/removal of historical keyslots.
++This implementation promises that the old master cannot authenticate the
++current slot; it does not promise revocation of copies already possessed
++by an attacker or replacement of data keys compromised before rotation.
++
++## Simulator file backend
++
++Only `CONFIG_ENCFS_TESTING` exposes `encfs keyfiles <directory>`. The
++directory must be a dedicated private directory on an independent hostfs
++or 9p mount, such as `/share/keys`, and already exist. This backend is a
++simulator model, **not a TEE or hardware-protected keystore**. The host must
++not concurrently edit the slot or its reserved temporary name. Host master
++files are raw secret bytes, so do not use real production secrets here.
++
++The host fixture generator creates:
++
++* `master-00000000.bin`: 32 random bytes for the initial master;
++* `master-00000001.bin`: 32 different random bytes for its replacement;
++* `volume-random.bin`: 64 fresh random bytes for one provision only.
++
++Use a host cryptographic random source such as Python `os.urandom`, with a
++private directory and restrictive file modes. The backend reads exact
++lengths, rejects malformed files, and consumes `volume-random.bin` once.
++No guest PRNG fallback is used. A repeated destructive provision therefore
++requires a new random fixture. The committed wrapper is `encfs.keyslot`.
++
++On a new, disposable data image:
++
++```text
++encfs keyfiles /share/keys
++encfs provision --erase
++encfs start
++encfs_test rekey 1
++encfs status
++```
++
++The guest rekey test holds an open file, a duplicated descriptor, and a
++directory handle while checking failed and successful rotation, then
++performs a stop/start readback. On later cold boots select the same
++directory and use `encfs start`; do not provision the existing image.
++`encfs testkey board|none|<hex>` explicitly leaves file-provider mode and
++returns to the legacy test/board source, and still requires fully STOPPED.
++
++The backend writes and fsyncs `encfs.keyslot.tmp`, closes it, reads it back,
++and uses the host/9p filesystem's native rename to replace the slot. It
++intentionally bypasses the generic VFS rename path that first removes an
++existing destination. It does not change global hostfs behavior. This
++models atomic replacement under emulator process interruption; it does
++not establish physical host power-loss durability or trusted anti-rollback.
++
++The `.tmp` name is reserved exclusively for this provider. If an emulator
++process is killed before rename, normal start reads the old committed slot.
++A later rotation first compares the committed slot with its expected
++bytes, then automatically removes a recognizable bounded regular staging
++file and retries. A full 112-byte staging record must authenticate and
++contain the current volume's stable data keys. A short 0–111-byte write
++prefix is not authenticated: only a matching magic/version prefix is
++accepted under the dedicated-directory and single-writer contract. A
++bad prefix, oversized file, wrong-volume authenticated slot, or failed
++authentication is retained and reported instead of silently erased. The
++committed slot is never deleted during this recovery.
++
++Test hooks:
++
++```text
++encfs keyslot-failcommit on
++encfs rekey 1
++encfs keyslot-pausecommit 10000
++encfs rekey 1
++```
++
++`failcommit` returns `-EIO` once after staging/readback, preserves the old
++slot, and removes its own temporary file. `pausecommit` pauses once after
++staging/readback and before rename for up to 60,000 milliseconds. A host
++test waits for the serial marker `ENCFS_KEYSLOT_PAUSED
++before_atomic_commit ms=10000` (printed and flushed only after fsync and
++readback), checks the `.tmp` file, kills the emulator process, then verifies
++old-slot cold start and automatic staging recovery. Neither hook simulates
++an actual physical power failure.
++
++## Verification
++
++`tests/test_keywrap.py` compiles the actual manager key/crypto sources under
++ASan and UBSan, exercises normal/failed rotation and legacy compatibility,
++and compares two serialized slots against independent OpenSSL AES-SIV plus
++Python HMAC/HKDF. LeakSanitizer is disabled because the sandbox uses ptrace;
++address and undefined-behavior instrumentation remain enabled.
++
++`tests/test_keywrap_adversarial.py` independently checks every bit of the
++112-byte record, missing/corrupt providers, CAS mismatch, generation
++overflow, staging validation, and data-key output/cache erasure.
++
++`apps/system/encfs/tests/test_rekey_cli.py` compiles the actual CLI with
++production and test configurations and checks strict identifier parsing
++and exclusion of test-provider controls from production builds.
 diff --git a/fs/encfs/encfs.h b/fs/encfs/encfs.h
 new file mode 100644
-index 0000000000..d2823c5c21
+index 0000000000000000000000000000000000000000..92143a04c9238bae4f864a2bebb355b0aef9a202
 --- /dev/null
 +++ b/fs/encfs/encfs.h
-@@ -0,0 +1,57 @@
+@@ -0,0 +1,73 @@
 +/****************************************************************************
 + * fs/encfs/encfs.h
 + *
@@ -848,6 +1044,22 @@ index 0000000000..d2823c5c21
 +void encfs_erase(FAR void *memory, size_t length);
 +int encfs_derive_keys(FAR struct encfs_keys_s *keys,
 +                      FAR enum encfs_stage_e *stage);
++int encfs_keys_acquire(bool provision, FAR struct encfs_keys_s *keys,
++                       FAR enum encfs_stage_e *stage);
++int encfs_keys_commit(void);
++void encfs_keys_forget(void);
++void encfs_keys_status(FAR struct encfs_status_s *status);
++#ifdef CONFIG_ENCFS_KEYWRAP
++int encfs_key_set_provider(FAR const struct encfs_key_provider_s *provider);
++int encfs_keys_rekey(uint32_t master_id);
++#ifdef CONFIG_ENCFS_TESTING
++int encfs_keyfile_configure(FAR const char *directory,
++                           FAR struct encfs_key_provider_s *provider);
++void encfs_keyfile_fail_commit(bool enabled);
++void encfs_keyfile_pause_commit(unsigned int milliseconds);
++int encfs_keys_staging_valid(FAR const uint8_t *record, size_t length);
++#endif
++#endif
 +int encfs_block_register(void);
 +int encfs_block_set_key(FAR const uint8_t *key);
 +int encfs_block_unregister(void);
@@ -862,7 +1074,7 @@ index 0000000000..d2823c5c21
 +#endif /* __FS_ENCFS_ENCFS_H */
 diff --git a/fs/encfs/encfs_block_port.c b/fs/encfs/encfs_block_port.c
 new file mode 100644
-index 0000000000..8e80c601b3
+index 0000000000000000000000000000000000000000..8e80c601b316b8c72348268b0b1531d50a4fa99c
 --- /dev/null
 +++ b/fs/encfs/encfs_block_port.c
 @@ -0,0 +1,38 @@
@@ -906,10 +1118,10 @@ index 0000000000..8e80c601b3
 +}
 diff --git a/fs/encfs/encfs_key.c b/fs/encfs/encfs_key.c
 new file mode 100644
-index 0000000000..1aacaca00a
+index 0000000000000000000000000000000000000000..ba7582c2dcba64c18a4c40ebc60185b5ce14d17e
 --- /dev/null
 +++ b/fs/encfs/encfs_key.c
-@@ -0,0 +1,134 @@
+@@ -0,0 +1,157 @@
 +/****************************************************************************
 + * fs/encfs/encfs_key.c
 + *
@@ -933,6 +1145,29 @@ index 0000000000..1aacaca00a
 +
 +#if CONFIG_BOARDCTL_UNIQUEKEY_SIZE != ENCFS_MASTER_KEY_SIZE
 +#  error "ENCFSMGR requires a 32-byte board unique key"
++#endif
++
++#ifndef CONFIG_ENCFS_KEYWRAP
++int encfs_keys_acquire(bool provision, FAR struct encfs_keys_s *keys,
++                       FAR enum encfs_stage_e *stage)
++{
++  (void)provision;
++  return encfs_derive_keys(keys, stage);
++}
++
++int encfs_keys_commit(void)
++{
++  return 0;
++}
++
++void encfs_keys_forget(void)
++{
++}
++
++void encfs_keys_status(FAR struct encfs_status_s *status)
++{
++  (void)status;
++}
 +#endif
 +
 +/****************************************************************************
@@ -1044,12 +1279,923 @@ index 0000000000..1aacaca00a
 +  g_test_missing = false;
 +}
 +#endif
+diff --git a/fs/encfs/encfs_keyfile.c b/fs/encfs/encfs_keyfile.c
+new file mode 100644
+index 0000000000000000000000000000000000000000..20a2b39049d21fa8bdd14e3f3a97b5238259d494
+--- /dev/null
++++ b/fs/encfs/encfs_keyfile.c
+@@ -0,0 +1,493 @@
++/****************************************************************************
++ * fs/encfs/encfs_keyfile.c
++ *
++ * SPDX-License-Identifier: Apache-2.0
++ *
++ * TESTING ONLY. Host secret files model provider key identifiers; they are
++ * not a hardware keystore. The host must not concurrently edit the slot.
++ * fsync + native host/9p rename models process interruption, not real power
++ * loss or malicious-host rollback. No mount-wide VFS behavior is changed.
++ ****************************************************************************/
++
++/****************************************************************************
++ * Included Files
++ ****************************************************************************/
++
++#include <nuttx/config.h>
++
++#include <sys/stat.h>
++#include <errno.h>
++#include <fcntl.h>
++#include <inttypes.h>
++#include <limits.h>
++#include <stdio.h>
++#include <string.h>
++
++#include <nuttx/fs/fs.h>
++#include <nuttx/signal.h>
++
++#include "inode/inode.h"
++#include "encfs.h"
++
++/****************************************************************************
++ * Public Data
++ ****************************************************************************/
++
++#ifdef CONFIG_FS_HOSTFS
++extern const struct mountpt_operations g_hostfs_operations;
++#endif
++#ifdef CONFIG_FS_V9FS
++extern const struct mountpt_operations g_v9fs_operations;
++#endif
++
++/****************************************************************************
++ * Private Data
++ ****************************************************************************/
++
++static char g_directory[PATH_MAX];
++static bool g_fail_commit;
++static unsigned int g_pause_commit;
++
++/****************************************************************************
++ * Private Functions
++ ****************************************************************************/
++
++static bool test_mount(FAR const struct mountpt_operations *ops)
++{
++#ifdef CONFIG_FS_HOSTFS
++  if (ops == &g_hostfs_operations)
++    {
++      return true;
++    }
++
++#endif
++#ifdef CONFIG_FS_V9FS
++  if (ops == &g_v9fs_operations)
++    {
++      return true;
++    }
++#endif
++
++  (void)ops;
++  return false;
++}
++
++/* Called under inode_lock; the selected path must still reside in an
++ * independent host mount rather than the managed encrypted chain.
++ */
++
++static int keyfile_mount(FAR const char *path,
++                         FAR struct inode_search_s *desc)
++{
++  int ret;
++
++  SETUP_SEARCH(desc, path, true);
++  ret = inode_find(desc);
++  if (ret >= 0 &&
++      (!INODE_IS_MOUNTPT(desc->node) ||
++       !test_mount(desc->node->u.i_mops)))
++    {
++      inode_release(desc->node);
++      ret = -ENOTSUP;
++    }
++
++  return ret;
++}
++
++static int keyfile_path(FAR char *path, FAR const char *name)
++{
++  int count = snprintf(path, PATH_MAX, "%s/%s", g_directory, name);
++
++  return count < 0 || count >= PATH_MAX ? -ENAMETOOLONG : 0;
++}
++
++static int read_exact(FAR const char *path, FAR uint8_t *bytes, size_t size)
++{
++  struct inode_search_s desc;
++  struct file file;
++  struct stat statbuf;
++  size_t done = 0;
++  ssize_t count;
++  int close_ret;
++  int ret;
++
++  inode_lock();
++  ret = keyfile_mount(path, &desc);
++  if (ret < 0)
++    {
++      RELEASE_SEARCH(&desc);
++      inode_unlock();
++      return ret;
++    }
++
++  ret = file_open(&file, path, O_RDONLY | O_NOFOLLOW);
++  if (ret >= 0)
++    {
++      ret = file_fstat(&file, &statbuf);
++      if (ret >= 0 && (!S_ISREG(statbuf.st_mode) || statbuf.st_size < 0 ||
++                      (uint64_t)statbuf.st_size != size))
++        {
++          ret = -EBADMSG;
++        }
++
++      while (ret >= 0 && done < size)
++        {
++          count = file_read(&file, bytes + done, size - done);
++          if (count <= 0)
++            {
++              ret = count < 0 ? count : -EIO;
++              break;
++            }
++
++          done += count;
++        }
++
++      close_ret = file_close(&file);
++      if (ret >= 0)
++        {
++          ret = close_ret;
++        }
++    }
++
++  inode_release(desc.node);
++  RELEASE_SEARCH(&desc);
++  inode_unlock();
++  if (ret < 0)
++    {
++      encfs_erase(bytes, size);
++    }
++
++  return ret;
++}
++
++static int keyfile_master(FAR void *context, uint32_t id, FAR uint8_t *key)
++{
++  char path[PATH_MAX];
++  char name[32];
++  int ret;
++
++  (void)context;
++  snprintf(name, sizeof(name), "master-%08" PRIx32 ".bin", id);
++  ret = keyfile_path(path, name);
++  if (ret >= 0)
++    {
++      ret = read_exact(path, key, ENCFS_MASTER_KEY_SIZE);
++    }
++
++  return ret == -ENOENT ? -ENOKEY : ret;
++}
++
++static int keyfile_random(FAR void *context, FAR uint8_t *bytes, size_t size)
++{
++  char path[PATH_MAX];
++  int ret;
++
++  (void)context;
++  ret = keyfile_path(path, "volume-random.bin");
++  if (ret >= 0)
++    {
++      /* The harness generates this one-use fixture using host os.urandom.
++       * Never silently use the guest's potentially unseeded PRNG.
++       */
++
++      inode_lock();
++      ret = read_exact(path, bytes, size);
++      if (ret >= 0)
++        {
++          ret = nx_unlink(path);
++        }
++
++      inode_unlock();
++    }
++
++  if (ret < 0)
++    {
++      encfs_erase(bytes, size);
++    }
++
++  return ret;
++}
++
++static int keyfile_read(FAR void *context, FAR uint8_t *slot)
++{
++  char path[PATH_MAX];
++  int ret = keyfile_path(path, "encfs.keyslot");
++
++  (void)context;
++  return ret < 0 ? ret : read_exact(path, slot, ENCFS_KEYSLOT_SIZE);
++}
++
++/* The .tmp name is reserved exclusively for this provider in a dedicated
++ * private directory. Its old committed slot is checked before this helper.
++ */
++
++static int keyfile_recover(FAR const char *path)
++{
++  struct file file;
++  struct stat statbuf;
++  uint8_t record[ENCFS_KEYSLOT_SIZE];
++  size_t done = 0;
++  ssize_t count;
++  int close_ret;
++  int ret;
++
++  memset(record, 0, sizeof(record));
++  ret = file_open(&file, path, O_RDONLY | O_NOFOLLOW);
++  if (ret < 0)
++    {
++      return ret == -ENOENT ? 0 : ret;
++    }
++
++  ret = file_fstat(&file, &statbuf);
++  if (ret >= 0 && (!S_ISREG(statbuf.st_mode) || statbuf.st_size < 0 ||
++                  statbuf.st_size > ENCFS_KEYSLOT_SIZE))
++    {
++      ret = -EBADMSG;
++    }
++
++  while (ret >= 0 && done < (size_t)statbuf.st_size)
++    {
++      count = file_read(&file, record + done, statbuf.st_size - done);
++      if (count <= 0)
++        {
++          ret = count < 0 ? count : -EIO;
++          break;
++        }
++
++      done += count;
++    }
++
++  close_ret = file_close(&file);
++  if (ret >= 0)
++    {
++      ret = close_ret;
++    }
++
++  if (ret >= 0)
++    {
++      ret = encfs_keys_staging_valid(record, done);
++    }
++
++  if (ret >= 0)
++    {
++      ret = nx_unlink(path);
++    }
++
++  encfs_erase(record, sizeof(record));
++  return ret;
++}
++
++static int keyfile_exchange(FAR void *context, FAR const uint8_t *expected,
++                             FAR const uint8_t *next)
++{
++  struct inode_search_s olddesc;
++  struct inode_search_s newdesc;
++  struct file file;
++  uint8_t current[ENCFS_KEYSLOT_SIZE];
++  char oldpath[PATH_MAX];
++  char newpath[PATH_MAX];
++  size_t done = 0;
++  ssize_t count;
++  bool staged = false;
++  int close_ret;
++  int ret;
++
++  ret = keyfile_path(newpath, "encfs.keyslot");
++  if (ret >= 0)
++    {
++      ret = keyfile_path(oldpath, "encfs.keyslot.tmp");
++    }
++
++  if (ret < 0)
++    {
++      return ret;
++    }
++
++  inode_lock();
++  ret = keyfile_read(context, current);
++  if ((expected == NULL && ret != -ENOENT) ||
++      (expected != NULL &&
++       (ret != 0 || memcmp(expected, current, sizeof(current)) != 0)))
++    {
++      ret = ret < 0 && ret != -ENOENT ? ret : -ESTALE;
++      goto out;
++    }
++
++  ret = keyfile_recover(oldpath);
++  if (ret < 0)
++    {
++      goto out;
++    }
++
++  ret = file_open(&file, oldpath,
++                  O_WRONLY | O_CREAT | O_EXCL | O_NOFOLLOW, 0600);
++  if (ret < 0)
++    {
++      goto out;
++    }
++
++  staged = true;
++  while (done < ENCFS_KEYSLOT_SIZE)
++    {
++      count = file_write(&file, next + done, ENCFS_KEYSLOT_SIZE - done);
++      if (count <= 0)
++        {
++          ret = count < 0 ? count : -EIO;
++          break;
++        }
++
++      done += count;
++    }
++
++  if (ret >= 0)
++    {
++      ret = file_fsync(&file);
++    }
++
++  close_ret = file_close(&file);
++  if (ret >= 0)
++    {
++      ret = close_ret;
++    }
++
++  if (ret < 0)
++    {
++      goto out;
++    }
++
++  ret = read_exact(oldpath, current, sizeof(current));
++  if (ret >= 0 && memcmp(next, current, sizeof(current)) != 0)
++    {
++      ret = -EIO;
++    }
++
++  if (ret < 0)
++    {
++      goto out;
++    }
++
++  if (g_fail_commit)
++    {
++      g_fail_commit = false;
++      ret = -EIO;
++      goto out;
++    }
++
++  if (g_pause_commit != 0)
++    {
++      unsigned int milliseconds = g_pause_commit;
++
++      g_pause_commit = 0;
++      printf("ENCFS_KEYSLOT_PAUSED before_atomic_commit ms=%u\n",
++             milliseconds);
++      fflush(stdout);
++      nxsig_usleep(milliseconds * 1000);
++    }
++
++  ret = keyfile_mount(oldpath, &olddesc);
++  if (ret >= 0)
++    {
++      ret = keyfile_mount(newpath, &newdesc);
++      if (ret >= 0)
++        {
++          if (olddesc.node != newdesc.node ||
++              olddesc.node->u.i_mops->rename == NULL)
++            {
++              ret = -EXDEV;
++            }
++          else
++            {
++              /* Use the host/9p atomic replace directly. The generic VFS
++               * rename otherwise unlinks an existing destination first.
++               */
++
++              ret = olddesc.node->u.i_mops->rename(olddesc.node,
++                                                   olddesc.relpath,
++                                                   newdesc.relpath);
++              staged = ret < 0;
++            }
++
++          inode_release(newdesc.node);
++        }
++
++      RELEASE_SEARCH(&newdesc);
++      inode_release(olddesc.node);
++    }
++
++  RELEASE_SEARCH(&olddesc);
++out:
++  if (staged)
++    {
++      nx_unlink(oldpath);
++    }
++
++  encfs_erase(current, sizeof(current));
++  inode_unlock();
++  return ret;
++}
++
++/****************************************************************************
++ * Public Functions
++ ****************************************************************************/
++
++int encfs_keyfile_configure(FAR const char *directory,
++                           FAR struct encfs_key_provider_s *provider)
++{
++  struct inode_search_s desc;
++  struct stat statbuf;
++  size_t size;
++  int ret;
++
++  if (directory == NULL || directory[0] != '/' ||
++      strstr(directory, "//") != NULL ||
++      strstr(directory, "/.") != NULL)
++    {
++      return -EINVAL;
++    }
++
++  size = strlen(directory);
++  if (size == 0 || size > PATH_MAX - 32 || directory[size - 1] == '/')
++    {
++      return -ENAMETOOLONG;
++    }
++
++  inode_lock();
++  ret = keyfile_mount(directory, &desc);
++  if (ret >= 0)
++    {
++      ret = desc.node->u.i_mops->stat == NULL ? -ENOSYS :
++            desc.node->u.i_mops->stat(desc.node, desc.relpath, &statbuf);
++      if (ret >= 0 && !S_ISDIR(statbuf.st_mode))
++        {
++          ret = -ENOTDIR;
++        }
++
++      inode_release(desc.node);
++    }
++
++  if (ret >= 0)
++    {
++      memcpy(g_directory, directory, size + 1);
++      memset(provider, 0, sizeof(*provider));
++      provider->get_master = keyfile_master;
++      provider->random = keyfile_random;
++      provider->read_slot = keyfile_read;
++      provider->compare_exchange = keyfile_exchange;
++      g_fail_commit = false;
++      g_pause_commit = 0;
++    }
++
++  RELEASE_SEARCH(&desc);
++  inode_unlock();
++  return ret;
++}
++
++void encfs_keyfile_fail_commit(bool enabled)
++{
++  g_fail_commit = enabled;
++}
++
++void encfs_keyfile_pause_commit(unsigned int milliseconds)
++{
++  g_pause_commit = milliseconds;
++}
+diff --git a/fs/encfs/encfs_keywrap.c b/fs/encfs/encfs_keywrap.c
+new file mode 100644
+index 0000000000000000000000000000000000000000..07eba2e5fa8332f10a2895642cb3a845b5abfcd0
+--- /dev/null
++++ b/fs/encfs/encfs_keywrap.c
+@@ -0,0 +1,406 @@
++/****************************************************************************
++ * fs/encfs/encfs_keywrap.c
++ *
++ * SPDX-License-Identifier: Apache-2.0
++ ****************************************************************************/
++
++/****************************************************************************
++ * Included Files
++ ****************************************************************************/
++
++#include <nuttx/config.h>
++
++#include <errno.h>
++#include <string.h>
++
++#include <nuttx/crypto/aes_siv.h>
++#include <nuttx/crypto/hkdf.h>
++
++#include "encfs.h"
++
++/****************************************************************************
++ * Pre-processor Definitions
++ ****************************************************************************/
++
++/* Serialized format (no native structs): magic[8], version LE32, provider
++ * key id LE32, generation LE64, reserved[8], SIV[16], sealed data keys[64].
++ * The complete header is both HKDF context and authenticated associated
++ * data. Data keys are independent of all master versions, so rewrap does
++ * not alter a live block/path cipher context or require an unmount.
++ */
++
++#define SLOT_HEADER 32
++#define SLOT_VERSION 1
++
++/****************************************************************************
++ * Private Data
++ ****************************************************************************/
++
++static const uint8_t g_magic[8] = "ENCKEY01";
++static struct encfs_key_provider_s g_provider;
++static struct encfs_keys_s g_active_keys;
++static uint8_t g_record[ENCFS_KEYSLOT_SIZE];
++static uint8_t g_pending_record[ENCFS_KEYSLOT_SIZE];
++static bool g_selected;
++static bool g_record_present;
++static bool g_valid;
++static bool g_pending;
++
++/****************************************************************************
++ * Private Functions
++ ****************************************************************************/
++
++static uint64_t read_le(FAR const uint8_t *p, unsigned int length)
++{
++  uint64_t value = 0;
++  unsigned int i;
++
++  for (i = 0; i < length; i++)
++    {
++      value |= (uint64_t)p[i] << (i * 8);
++    }
++
++  return value;
++}
++
++static void write_le(FAR uint8_t *p, uint64_t value, unsigned int length)
++{
++  unsigned int i;
++
++  for (i = 0; i < length; i++)
++    {
++      p[i] = (uint8_t)(value >> (i * 8));
++    }
++}
++
++static int slot_header(FAR const uint8_t *slot)
++{
++  unsigned int i;
++
++  if (memcmp(slot, g_magic, sizeof(g_magic)) != 0 ||
++      read_le(slot + 8, 4) != SLOT_VERSION || read_le(slot + 16, 8) == 0)
++    {
++      return -EBADMSG;
++    }
++
++  for (i = 24; i < SLOT_HEADER; i++)
++    {
++      if (slot[i] != 0)
++        {
++          return -EBADMSG;
++        }
++    }
++
++  return 0;
++}
++
++static int slot_key(FAR const uint8_t *header, FAR uint8_t *wrapping)
++{
++  static const uint8_t salt[] = "encfs-keyslot-v1";
++  uint8_t master[ENCFS_MASTER_KEY_SIZE];
++  uint32_t id = (uint32_t)read_le(header + 12, 4);
++  int ret;
++
++  memset(master, 0, sizeof(master));
++  ret = g_provider.get_master(g_provider.context, id, master);
++  if (ret == 0)
++    {
++      ret = hkdf_sha256(master, sizeof(master), salt, sizeof(salt) - 1,
++                         header, SLOT_HEADER, wrapping, AES_SIV_KEY_SIZE);
++    }
++
++  encfs_erase(master, sizeof(master));
++  return ret > 0 ? -EIO : ret;
++}
++
++static int slot_seal(uint32_t id, uint64_t generation,
++                      FAR const struct encfs_keys_s *keys,
++                      FAR uint8_t *slot)
++{
++  uint8_t wrapping[AES_SIV_KEY_SIZE];
++  int ret;
++
++  memset(wrapping, 0, sizeof(wrapping));
++  memset(slot, 0, ENCFS_KEYSLOT_SIZE);
++  memcpy(slot, g_magic, sizeof(g_magic));
++  write_le(slot + 8, SLOT_VERSION, 4);
++  write_le(slot + 12, id, 4);
++  write_le(slot + 16, generation, 8);
++  ret = slot_key(slot, wrapping);
++  if (ret == 0)
++    {
++      ret = aes_siv_encrypt(wrapping, slot, SLOT_HEADER,
++                            (FAR const uint8_t *)keys, sizeof(*keys),
++                            slot + SLOT_HEADER);
++    }
++
++  encfs_erase(wrapping, sizeof(wrapping));
++  if (ret < 0)
++    {
++      encfs_erase(slot, ENCFS_KEYSLOT_SIZE);
++    }
++
++  return ret;
++}
++
++static int slot_open(FAR const uint8_t *slot, FAR struct encfs_keys_s *keys)
++{
++  uint8_t wrapping[AES_SIV_KEY_SIZE];
++  int ret = slot_header(slot);
++
++  memset(wrapping, 0, sizeof(wrapping));
++  if (ret == 0)
++    {
++      ret = slot_key(slot, wrapping);
++    }
++
++  if (ret == 0)
++    {
++      ret = aes_siv_decrypt(wrapping, slot, SLOT_HEADER,
++                            slot + SLOT_HEADER,
++                            ENCFS_KEYSLOT_SIZE - SLOT_HEADER,
++                            (FAR uint8_t *)keys);
++    }
++
++  encfs_erase(wrapping, sizeof(wrapping));
++  if (ret < 0)
++    {
++      encfs_erase(keys, sizeof(*keys));
++    }
++
++  return ret;
++}
++
++/****************************************************************************
++ * Public Functions
++ ****************************************************************************/
++
++void encfs_keys_forget(void)
++{
++  encfs_erase(&g_active_keys, sizeof(g_active_keys));
++  encfs_erase(g_record, sizeof(g_record));
++  encfs_erase(g_pending_record, sizeof(g_pending_record));
++  g_valid = false;
++  g_record_present = false;
++  g_pending = false;
++}
++
++int encfs_key_set_provider(FAR const struct encfs_key_provider_s *provider)
++{
++  if (provider != NULL &&
++      (provider->get_master == NULL || provider->random == NULL ||
++       provider->read_slot == NULL || provider->compare_exchange == NULL))
++    {
++      return -EINVAL;
++    }
++
++  encfs_keys_forget();
++  memset(&g_provider, 0, sizeof(g_provider));
++  g_selected = provider != NULL;
++  if (provider != NULL)
++    {
++      g_provider = *provider;
++    }
++
++  return 0;
++}
++
++int encfs_keys_acquire(bool provision, FAR struct encfs_keys_s *keys,
++                       FAR enum encfs_stage_e *stage)
++{
++  uint64_t generation = 1;
++  int ret;
++
++  encfs_keys_forget();
++  memset(keys, 0, sizeof(*keys));
++  if (!g_selected)
++    {
++      return encfs_derive_keys(keys, stage);
++    }
++
++  *stage = ENCFS_STAGE_MASTER;
++  ret = g_provider.read_slot(g_provider.context, g_record);
++  if (ret == 0)
++    {
++      g_record_present = true;
++      if (slot_header(g_record) == 0)
++        {
++          generation = read_le(g_record + 16, 8);
++          if (provision && generation == UINT64_MAX)
++            {
++              ret = -EOVERFLOW;
++              goto fail;
++            }
++
++          generation += provision;
++        }
++    }
++  else if (ret != -ENOENT)
++    {
++      ret = ret > 0 ? -EIO : ret;
++      goto fail;
++    }
++  else if (!provision)
++    {
++      ret = -ENOKEY;
++      goto fail;
++    }
++
++  if (provision)
++    {
++      ret = g_provider.random(g_provider.context,
++                               (FAR uint8_t *)&g_active_keys,
++                               sizeof(g_active_keys));
++      if (ret != 0)
++        {
++          ret = ret > 0 ? -EIO : ret;
++          goto fail;
++        }
++
++      *stage = ENCFS_STAGE_DERIVE;
++      ret = slot_seal(0, generation, &g_active_keys, g_pending_record);
++      g_pending = ret == 0;
++    }
++  else
++    {
++      *stage = ENCFS_STAGE_DERIVE;
++      ret = slot_open(g_record, &g_active_keys);
++    }
++
++  if (ret < 0)
++    {
++      goto fail;
++    }
++
++  g_valid = true;
++  *keys = g_active_keys;
++  return 0;
++
++fail:
++  encfs_keys_forget();
++  return ret;
++}
++
++int encfs_keys_commit(void)
++{
++  int ret;
++
++  if (!g_pending)
++    {
++      return 0;
++    }
++
++  ret = g_provider.compare_exchange(g_provider.context,
++                                     g_record_present ? g_record : NULL,
++                                     g_pending_record);
++  if (ret != 0)
++    {
++      return ret > 0 ? -EIO : ret;
++    }
++
++  memcpy(g_record, g_pending_record, sizeof(g_record));
++  encfs_erase(g_pending_record, sizeof(g_pending_record));
++  g_record_present = true;
++  g_pending = false;
++  return 0;
++}
++
++int encfs_keys_rekey(uint32_t master_id)
++{
++  uint8_t next[ENCFS_KEYSLOT_SIZE];
++  uint64_t generation;
++  int ret;
++
++  /* Never launder a legacy directly-derived key into a wrapped volume:
++   * its old master would still compute the same live data keys forever.
++   */
++
++  if (!g_selected)
++    {
++      return -ENOTSUP;
++    }
++
++  if (!g_valid || !g_record_present || g_pending)
++    {
++      return -EINVAL;
++    }
++
++  if (master_id == (uint32_t)read_le(g_record + 12, 4))
++    {
++      return -EALREADY;
++    }
++
++  generation = read_le(g_record + 16, 8);
++  if (generation == UINT64_MAX)
++    {
++      return -EOVERFLOW;
++    }
++
++  ret = slot_seal(master_id, generation + 1, &g_active_keys, next);
++  if (ret == 0)
++    {
++      ret = g_provider.compare_exchange(g_provider.context, g_record, next);
++      if (ret == 0)
++        {
++          memcpy(g_record, next, sizeof(g_record));
++        }
++    }
++
++  encfs_erase(next, sizeof(next));
++  return ret > 0 ? -EIO : ret;
++}
++
++void encfs_keys_status(FAR struct encfs_status_s *status)
++{
++  status->key_wrapped = g_selected && g_valid && g_record_present &&
++                        !g_pending;
++  status->master_id = status->key_wrapped ?
++                      (uint32_t)read_le(g_record + 12, 4) : 0;
++  status->key_generation = status->key_wrapped ?
++                           read_le(g_record + 16, 8) : 0;
++}
++
++#ifdef CONFIG_ENCFS_TESTING
++int encfs_keys_staging_valid(FAR const uint8_t *record, size_t length)
++{
++  struct encfs_keys_s keys;
++  size_t prefix = length < sizeof(g_magic) ? length : sizeof(g_magic);
++  unsigned int i;
++  int ret;
++
++  if (length > ENCFS_KEYSLOT_SIZE ||
++      memcmp(record, g_magic, prefix) != 0)
++    {
++      return -EBADMSG;
++    }
++
++  /* A process interrupted during the write can leave an empty or prefix
++   * file. It is not authenticated; the reserved private staging name and
++   * single-writer contract authorize discarding only this bounded prefix.
++   * The committed slot has already been compared and is never removed.
++   */
++
++  for (i = 8; i < 12 && i < length; i++)
++    {
++      if (record[i] != (i == 8 ? SLOT_VERSION : 0))
++        {
++          return -EBADMSG;
++        }
++    }
++
++  if (length < ENCFS_KEYSLOT_SIZE)
++    {
++      return 0;
++    }
++
++  ret = slot_open(record, &keys);
++  if (ret == 0 &&
++      (!g_valid || memcmp(&keys, &g_active_keys, sizeof(keys)) != 0))
++    {
++      ret = -ESTALE;
++    }
++
++  encfs_erase(&keys, sizeof(keys));
++  return ret;
++}
++#endif
 diff --git a/fs/encfs/encfs_manager.c b/fs/encfs/encfs_manager.c
 new file mode 100644
-index 0000000000..b5e4167bcc
+index 0000000000000000000000000000000000000000..3121d7f7d126e768c05c588557a53606fadcf6b8
 --- /dev/null
 +++ b/fs/encfs/encfs_manager.c
-@@ -0,0 +1,735 @@
+@@ -0,0 +1,874 @@
 +/****************************************************************************
 + * fs/encfs/encfs_manager.c
 + *
@@ -1217,6 +2363,11 @@ index 0000000000..b5e4167bcc
 +    }
 +
 +  encfs_update_state();
++  if (!encfs_has_resources())
++    {
++      encfs_keys_forget();
++    }
++
 +  return 0;
 +}
 +
@@ -1439,6 +2590,11 @@ index 0000000000..b5e4167bcc
 +    }
 +
 +  encfs_update_state();
++  if (!encfs_has_resources())
++    {
++      encfs_keys_forget();
++    }
++
 +  return 0;
 +}
 +
@@ -1491,7 +2647,7 @@ index 0000000000..b5e4167bcc
 +    }
 +
 +  g_status.block_registered = true;
-+  ret = encfs_derive_keys(&keys, &g_status.stage);
++  ret = encfs_keys_acquire(provision, &keys, &g_status.stage);
 +  if (ret < 0)
 +    {
 +      goto fail;
@@ -1533,6 +2689,13 @@ index 0000000000..b5e4167bcc
 +      ret = encpathfs_initialize(ENCFS_LOWER_PATH, keys.path,
 +                                sizeof(keys.path));
 +      encfs_erase(&keys, sizeof(keys));
++      if (ret < 0)
++        {
++          goto fail;
++        }
++
++      g_status.stage = ENCFS_STAGE_KEYSLOT;
++      ret = encfs_keys_commit();
 +      if (ret < 0)
 +        {
 +          goto fail;
@@ -1710,12 +2873,124 @@ index 0000000000..b5e4167bcc
 +  if (ret >= 0)
 +    {
 +      *status = g_status;
++      encfs_keys_status(status);
 +    }
 +
 +  inode_unlock();
 +  nxmutex_unlock(&g_lock);
 +  return ret;
 +}
++
++#ifdef CONFIG_ENCFS_KEYWRAP
++int encfs_set_key_provider(FAR const struct encfs_key_provider_s *provider)
++{
++  int ret = nxmutex_lock(&g_lock);
++
++  if (ret < 0)
++    {
++      return ret;
++    }
++
++  ret = encfs_has_resources() ? -EBUSY : encfs_key_set_provider(provider);
++  nxmutex_unlock(&g_lock);
++  return ret;
++}
++
++int encfs_rekey(uint32_t master_id)
++{
++  int ret = nxmutex_lock(&g_lock);
++
++  if (ret < 0)
++    {
++      return ret;
++    }
++
++  inode_lock();
++  ret = encfs_refresh_mounts();
++  inode_unlock();
++  if (ret >= 0)
++    {
++      encfs_clear_error();
++      g_status.stage = ENCFS_STAGE_REKEY;
++      ret = g_status.state == ENCFS_READY ?
++            encfs_keys_rekey(master_id) : -ENODEV;
++      if (ret < 0)
++        {
++          g_status.error = ret;
++        }
++      else
++        {
++          encfs_clear_error();
++        }
++    }
++
++  nxmutex_unlock(&g_lock);
++  return ret;
++}
++
++#ifdef CONFIG_ENCFS_TESTING
++int encfs_test_use_keyfiles(FAR const char *directory)
++{
++  struct encfs_key_provider_s provider;
++  int ret = nxmutex_lock(&g_lock);
++
++  if (ret < 0)
++    {
++      return ret;
++    }
++
++  if (encfs_has_resources())
++    {
++      ret = -EBUSY;
++    }
++  else
++    {
++      ret = encfs_keyfile_configure(directory, &provider);
++      if (ret >= 0)
++        {
++          ret = encfs_key_set_provider(&provider);
++        }
++    }
++
++  nxmutex_unlock(&g_lock);
++  return ret;
++}
++
++int encfs_test_keyslot_fail_commit(bool enabled)
++{
++  int ret = nxmutex_lock(&g_lock);
++
++  if (ret < 0)
++    {
++      return ret;
++    }
++
++  encfs_keyfile_fail_commit(enabled);
++  nxmutex_unlock(&g_lock);
++  return 0;
++}
++
++int encfs_test_keyslot_pause_commit(unsigned int milliseconds)
++{
++  int ret;
++
++  if (milliseconds > 60000)
++    {
++      return -EINVAL;
++    }
++
++  ret = nxmutex_lock(&g_lock);
++  if (ret < 0)
++    {
++      return ret;
++    }
++
++  encfs_keyfile_pause_commit(milliseconds);
++  nxmutex_unlock(&g_lock);
++  return 0;
++}
++#endif
++#endif
 +
 +#ifdef CONFIG_ENCFS_TESTING
 +int encfs_test_set_master(FAR const uint8_t *key, size_t keylen)
@@ -1729,6 +3004,13 @@ index 0000000000..b5e4167bcc
 +
 +  ret = encfs_has_resources() ? -EBUSY :
 +        encfs_key_set_test_master(key, keylen);
++#ifdef CONFIG_ENCFS_KEYWRAP
++  if (ret >= 0)
++    {
++      encfs_key_set_provider(NULL);
++    }
++
++#endif
 +  nxmutex_unlock(&g_lock);
 +  return ret;
 +}
@@ -1749,6 +3031,9 @@ index 0000000000..b5e4167bcc
 +  else
 +    {
 +      encfs_key_use_board();
++#ifdef CONFIG_ENCFS_KEYWRAP
++      encfs_key_set_provider(NULL);
++#endif
 +      ret = 0;
 +    }
 +
@@ -1785,9 +3070,681 @@ index 0000000000..b5e4167bcc
 +  return ret;
 +}
 +#endif
+diff --git a/fs/encfs/tests/test_keywrap.py b/fs/encfs/tests/test_keywrap.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..ed208a23c6d612149ff4bdd8f357369923e931c2
+--- /dev/null
++++ b/fs/encfs/tests/test_keywrap.py
+@@ -0,0 +1,334 @@
++#!/usr/bin/env python3
++# SPDX-License-Identifier: Apache-2.0
++"""Exercise actual keyslot, derivation and crypto C under ASan/UBSan.
++
++Only the external provider is replaced.  The live C paths perform key
++generation, AES-SIV sealing/opening, fail-closed parsing, CAS rotation and
++legacy-key rejection.  OpenSSL independently checks the serialized slots.
++The public byte-pattern keys in this test are fixtures, not real secrets.
++"""
++
++import importlib.util
++import os
++from pathlib import Path
++import subprocess
++import tempfile
++
++
++NUTTX = Path(__file__).resolve().parents[3]
++
++HARNESS = r'''
++#include <assert.h>
++#include <errno.h>
++#include <stdbool.h>
++#include <stdint.h>
++#include <stdio.h>
++#include <stdlib.h>
++#include <string.h>
++#include <nuttx/fs/encfs.h>
++#include "encfs.h"
++
++static uint8_t stored[ENCFS_KEYSLOT_SIZE];
++static uint8_t masters[3][ENCFS_MASTER_KEY_SIZE];
++static bool present;
++static bool available[3] = {true, true, true};
++static int read_error;
++static int random_error;
++static int commit_error;
++static unsigned int reads;
++static unsigned int commits;
++static unsigned int randoms;
++static unsigned int checks;
++
++#define CHECK(x) do { if (!(x)) {fprintf(stderr, "line %d\n", __LINE__); \
++                                  abort();} checks++; } while (0)
++
++int board_uniquekey(void *key)
++{
++  memset(key, 0x42, ENCFS_MASTER_KEY_SIZE);
++  return 0;
++}
++
++static int master(void *context, uint32_t id, uint8_t *key)
++{
++  (void)context;
++  if (id >= 3 || !available[id]) return -ENOKEY;
++  memcpy(key, masters[id], ENCFS_MASTER_KEY_SIZE);
++  return 0;
++}
++
++static int random_bytes(void *context, uint8_t *bytes, size_t length)
++{
++  size_t i;
++  (void)context;
++  randoms++;
++  if (random_error) return random_error;
++  for (i = 0; i < length; i++) bytes[i] = (uint8_t)(i ^ (randoms * 0x5b));
++  return 0;
++}
++
++static int read_slot(void *context, uint8_t *slot)
++{
++  (void)context;
++  reads++;
++  if (read_error) return read_error;
++  if (!present) return -ENOENT;
++  memcpy(slot, stored, sizeof(stored));
++  return 0;
++}
++
++static int exchange(void *context, const uint8_t *expected,
++                     const uint8_t *next)
++{
++  (void)context;
++  commits++;
++  if (commit_error) return commit_error;
++  if ((expected == NULL && present) ||
++      (expected != NULL && (!present ||
++       memcmp(expected, stored, sizeof(stored)) != 0))) return -ESTALE;
++  memcpy(stored, next, sizeof(stored));
++  present = true;
++  return 0;
++}
++
++static struct encfs_key_provider_s provider =
++{
++  .get_master = master,
++  .random = random_bytes,
++  .read_slot = read_slot,
++  .compare_exchange = exchange
++};
++
++static bool zeros(const void *p, size_t length)
++{
++  const uint8_t *b = p;
++  while (length--) if (*b++ != 0) return false;
++  return true;
++}
++
++static void save(const char *directory, const char *name,
++                  const void *bytes, size_t size)
++{
++  char path[1024];
++  FILE *file;
++  CHECK(snprintf(path, sizeof(path), "%s/%s", directory, name) > 0);
++  file = fopen(path, "wb");
++  CHECK(file != NULL);
++  CHECK(fwrite(bytes, 1, size, file) == size);
++  CHECK(fclose(file) == 0);
++}
++
++int main(int argc, char **argv)
++{
++  struct encfs_keys_s keys;
++  struct encfs_keys_s stable;
++  struct encfs_keys_s legacy;
++  struct encfs_status_s status = {0};
++  struct encfs_key_provider_s invalid;
++  enum encfs_stage_e stage;
++  uint8_t initial[ENCFS_KEYSLOT_SIZE];
++  uint8_t rotated[ENCFS_KEYSLOT_SIZE];
++  uint8_t saved_master[ENCFS_MASTER_KEY_SIZE];
++  unsigned int before;
++  unsigned int i;
++
++  CHECK(argc == 2);
++  for (i = 0; i < sizeof(masters); i++)
++    ((uint8_t *)masters)[i] = (uint8_t)(0x10 + i);
++
++  CHECK(encfs_key_set_provider(NULL) == 0);
++  CHECK(encfs_keys_acquire(false, &legacy, &stage) == 0);
++  CHECK(encfs_keys_rekey(1) == -ENOTSUP);
++  encfs_keys_status(&status);
++  CHECK(!status.key_wrapped && status.key_generation == 0);
++  CHECK(encfs_key_set_provider(&provider) == 0);
++
++  /* Selecting a wrapped provider makes missing slot fail closed. */
++  memset(&keys, 0xa5, sizeof(keys));
++  before = commits;
++  CHECK(encfs_keys_acquire(false, &keys, &stage) == -ENOKEY);
++  CHECK(zeros(&keys, sizeof(keys)) && commits == before && randoms == 0);
++  CHECK(encfs_keys_rekey(1) == -EINVAL);
++
++  /* Fresh wrapped volume: prepare does not publish before initialization. */
++  CHECK(encfs_keys_acquire(true, &stable, &stage) == 0);
++  CHECK(!present && randoms == 1);
++  CHECK(memcmp(&legacy, &stable, sizeof(stable)) != 0);
++  encfs_keys_status(&status);
++  CHECK(!status.key_wrapped);
++  CHECK(encfs_keys_commit() == 0 && present);
++  CHECK(encfs_keys_commit() == 0);
++  encfs_keys_status(&status);
++  CHECK(status.key_wrapped && status.master_id == 0 &&
++        status.key_generation == 1);
++  memcpy(initial, stored, sizeof(initial));
++  save(argv[1], "initial.slot", stored, sizeof(stored));
++  save(argv[1], "stable.keys", &stable, sizeof(stable));
++  save(argv[1], "masters.keys", masters, sizeof(masters));
++  CHECK(memcmp(stored, &stable, sizeof(stable)) != 0);
++
++  /* Missing next key and failed persistence leave current keyslot intact. */
++  CHECK(encfs_keys_rekey(999) == -ENOKEY);
++  CHECK(memcmp(stored, initial, sizeof(stored)) == 0);
++  commit_error = -EIO;
++  CHECK(encfs_keys_rekey(1) == -EIO);
++  CHECK(memcmp(stored, initial, sizeof(stored)) == 0);
++  encfs_keys_status(&status);
++  CHECK(status.master_id == 0 && status.key_generation == 1);
++  commit_error = 0;
++
++  /* Rotate with data keys unchanged, then simulate a cold start. */
++  CHECK(encfs_keys_rekey(1) == 0);
++  memcpy(rotated, stored, sizeof(rotated));
++  save(argv[1], "rotated.slot", stored, sizeof(stored));
++  CHECK(memcmp(initial, rotated, sizeof(rotated)) != 0 && randoms == 1);
++  encfs_keys_status(&status);
++  CHECK(status.master_id == 1 && status.key_generation == 2);
++  encfs_keys_forget();
++  CHECK(encfs_keys_acquire(false, &keys, &stage) == 0);
++  CHECK(memcmp(&keys, &stable, sizeof(keys)) == 0 && randoms == 1);
++
++  /* The old master cannot open the current keyslot by supplying its key
++   * for id 1. Decrypt must erase the complete output on every rejection.
++   */
++  memcpy(saved_master, masters[1], sizeof(saved_master));
++  memcpy(masters[1], masters[0], sizeof(saved_master));
++  CHECK(encfs_keys_acquire(false, &keys, &stage) == -EBADMSG);
++  CHECK(zeros(&keys, sizeof(keys)));
++  memcpy(masters[1], saved_master, sizeof(saved_master));
++  available[1] = false;
++  CHECK(encfs_keys_acquire(false, &keys, &stage) == -ENOKEY);
++  CHECK(zeros(&keys, sizeof(keys)));
++  available[1] = true;
++
++  /* Every serialized byte is either strictly parsed or authenticated. */
++  before = commits;
++  for (i = 0; i < sizeof(stored); i++)
++    {
++      memcpy(stored, rotated, sizeof(stored));
++      stored[i] ^= 0x80;
++      memset(&keys, 0xa5, sizeof(keys));
++      CHECK(encfs_keys_acquire(false, &keys, &stage) < 0);
++      CHECK(zeros(&keys, sizeof(keys)));
++      CHECK(commits == before && randoms == 1);
++    }
++
++  memcpy(stored, rotated, sizeof(stored));
++  CHECK(encfs_keys_acquire(false, &keys, &stage) == 0);
++  stored[100] ^= 1;
++  CHECK(encfs_keys_rekey(2) == -ESTALE);
++  CHECK(stored[100] == (uint8_t)(rotated[100] ^ 1));
++  encfs_keys_status(&status);
++  CHECK(status.master_id == 1 && status.key_generation == 2);
++  memcpy(stored, rotated, sizeof(stored));
++
++  /* Repeated live wrapping rotations never request fresh data keys. */
++  for (i = 0; i < 100; i++)
++    {
++      CHECK(encfs_keys_rekey(i % 3) == 0);
++      encfs_keys_status(&status);
++      CHECK(status.master_id == i % 3 && status.key_generation == i + 3);
++      encfs_keys_forget();
++      CHECK(encfs_keys_acquire(false, &keys, &stage) == 0);
++      CHECK(memcmp(&keys, &stable, sizeof(keys)) == 0 && randoms == 1);
++    }
++
++  invalid = provider;
++  invalid.compare_exchange = NULL;
++  CHECK(encfs_key_set_provider(&invalid) == -EINVAL);
++  CHECK(encfs_keys_rekey(1) == 0);
++  read_error = -EIO;
++  CHECK(encfs_keys_acquire(false, &keys, &stage) == -EIO);
++  CHECK(zeros(&keys, sizeof(keys)));
++  read_error = 0;
++
++  /* Provision failure paths do not publish metadata. */
++  before = commits;
++  random_error = -EIO;
++  CHECK(encfs_keys_acquire(true, &keys, &stage) == -EIO);
++  CHECK(zeros(&keys, sizeof(keys)) && commits == before);
++  random_error = 0;
++  CHECK(encfs_keys_acquire(true, &keys, &stage) == 0);
++  CHECK(memcmp(&keys, &stable, sizeof(keys)) != 0);
++  commit_error = -ENOSPC;
++  CHECK(encfs_keys_commit() == -ENOSPC);
++  encfs_keys_status(&status);
++  CHECK(!status.key_wrapped);
++  commit_error = 0;
++  encfs_keys_forget();
++
++  /* Provider removal restores the unchanged legacy derivation. */
++  CHECK(encfs_key_set_provider(NULL) == 0);
++  CHECK(encfs_keys_acquire(false, &keys, &stage) == 0);
++  CHECK(memcmp(&keys, &legacy, sizeof(keys)) == 0);
++  CHECK(encfs_keys_rekey(1) == -ENOTSUP);
++  printf("ENCFS_KEYWRAP_TEST_RESULT checks=%u fail=0 reads=%u commits=%u\n",
++         checks, reads, commits);
++  return 0;
++}
++'''
++
++
++def main():
++    with tempfile.TemporaryDirectory(prefix="encfs-keywrap-") as name:
++        root = Path(name)
++        inc = root / "include"
++        (inc / "nuttx/fs").mkdir(parents=True)
++        (inc / "nuttx/config.h").write_text(
++            "#define CONFIG_ENCFS_KEYWRAP 1\n"
++            "#define CONFIG_BOARDCTL_UNIQUEKEY_SIZE 32\n")
++        (inc / "nuttx/compiler.h").write_text("#define FAR\n#define CODE\n")
++        (inc / "nuttx/board.h").write_text("int board_uniquekey(void *);\n")
++        (inc / "nuttx/fs/encfs.h").symlink_to(
++            NUTTX / "include/nuttx/fs/encfs.h")
++        (inc / "nuttx/crypto").symlink_to(NUTTX / "include/nuttx/crypto")
++        (inc / "crypto").symlink_to(NUTTX / "include/crypto")
++        prelude = root / "host.h"
++        prelude.write_text("#include <stdint.h>\n#define FAR\n#define CODE\n"
++                           "#define swap32 __builtin_bswap32\n"
++                           "#define swap64 __builtin_bswap64\n")
++        (root / "test.c").write_text(HARNESS)
++        executable = root / "test"
++        sources = [NUTTX / "crypto" / (s + ".c") for s in
++                   ("aes_siv", "hkdf", "aes", "cmac", "hmac", "sha2",
++                    "sha1", "md5")]
++        sources += [NUTTX / "fs/encfs" / (s + ".c") for s in
++                    ("encfs_key", "encfs_keywrap")]
++        subprocess.run([
++            os.environ.get("CC", "cc"), "-std=gnu11", "-O1", "-g",
++            "-Wall", "-Wextra", "-Werror", "-Wno-old-style-declaration",
++            "-fsanitize=address,undefined", "-fno-sanitize-recover=all",
++            "-include", str(prelude), "-I", str(inc),
++            "-I", str(NUTTX / "fs/encfs"), str(root / "test.c"),
++            *map(str, sources), "-o", str(executable),
++        ], check=True)
++        env = os.environ.copy()
++        # The Codex sandbox uses ptrace; LSan cannot inspect its threads.
++        # Address and undefined-behavior instrumentation remain active.
++        env["ASAN_OPTIONS"] = "detect_leaks=0"
++        subprocess.run([str(executable), str(root)], check=True, env=env)
++
++        # This independent implementation does not call the NuttX cipher.
++        spec = importlib.util.spec_from_file_location(
++            "encfs_crypto_reference",
++            NUTTX / "tools/tests/encfs_crypto/test_crypto.py")
++        module = importlib.util.module_from_spec(spec)
++        spec.loader.exec_module(module)
++        reference = module.OpenSSLSIV()
++        try:
++            stable = (root / "stable.keys").read_bytes()
++            masters = (root / "masters.keys").read_bytes()
++            for filename in ("initial.slot", "rotated.slot"):
++                slot = (root / filename).read_bytes()
++                keyid = int.from_bytes(slot[12:16], "little")
++                key = masters[keyid * 32:(keyid + 1) * 32]
++                wrapping = module.reference_hkdf(
++                    key, b"encfs-keyslot-v1", slot[:32], 32)
++                assert reference.seal(wrapping, [slot[:32]], stable) == slot[32:]
++            print("OPENSSL_KEYSLOT_REFERENCE_RESULT slots=2 fail=0")
++        finally:
++            reference.close()
++
++
++if __name__ == "__main__":
++    main()
+diff --git a/fs/encfs/tests/test_keywrap_adversarial.py b/fs/encfs/tests/test_keywrap_adversarial.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..bdb1ad5cbc7b046b976d71a9c1f2a754c10f32b2
+--- /dev/null
++++ b/fs/encfs/tests/test_keywrap_adversarial.py
+@@ -0,0 +1,326 @@
++#!/usr/bin/env python3
++"""Adversarial tests for the actual EncFS keyslot and crypto implementations.
++
++The in-memory provider implements the documented atomic compare/exchange
++contract.  These tests do not model a physical keystore or power-loss media.
++"""
++
++import argparse
++import ctypes as c
++import errno
++import hashlib
++import json
++import os
++import pathlib
++import shutil
++import subprocess
++import tempfile
++
++
++def main():
++    parser = argparse.ArgumentParser(description=__doc__)
++    parser.add_argument("--report", type=pathlib.Path)
++    args = parser.parse_args()
++    root = pathlib.Path(__file__).resolve().parents[3]
++    checks = 0
++
++    def check(condition, message):
++        nonlocal checks
++        assert condition, message
++        checks += 1
++
++    with tempfile.TemporaryDirectory(prefix="encfs-keywrap-review-") as folder:
++        tmp = pathlib.Path(folder)
++        include = tmp / "include"
++        headers = ["crypto/aes.h", "crypto/cmac.h", "crypto/md5.h",
++                   "crypto/sha1.h", "crypto/sha2.h", "crypto/hmac.h",
++                   "nuttx/crypto/aes_siv.h", "nuttx/crypto/hkdf.h",
++                   "nuttx/fs/encfs.h"]
++        for header in headers:
++            target = include / header
++            target.parent.mkdir(parents=True, exist_ok=True)
++            shutil.copyfile(root / "include" / header, target)
++        (include / "nuttx/config.h").write_text(
++            "#define CONFIG_ENCFS_KEYWRAP 1\n"
++            "#define CONFIG_ENCFS_TESTING 1\n"
++            "#define CONFIG_BOARDCTL_UNIQUEKEY_SIZE 32\n")
++        (include / "nuttx/compiler.h").write_text(
++            "#define FAR\n#define CODE\n"
++            "#define swap32(value) __builtin_bswap32(value)\n"
++            "#define swap64(value) __builtin_bswap64(value)\n")
++        (include / "nuttx/board.h").write_text(
++            "int board_uniquekey(unsigned char *key);\n")
++        wrapper = tmp / "wrapper.c"
++        wrapper.write_text(
++            '#include "' + str(root / "fs/encfs/encfs_keywrap.c") + '"\n'
++            'static int board_calls;\n'
++            'int board_uniquekey(unsigned char *key)\n'
++            '{ board_calls++; memset(key, 0x41, 32); return 0; }\n'
++            'int test_board_calls(void) { return board_calls; }\n'
++            'int test_cache_clean(void)\n'
++            '{ size_t i; unsigned char all = 0;\n'
++            '  for (i=0; i<sizeof(g_active_keys); i++)\n'
++            '    all |= ((unsigned char *)&g_active_keys)[i];\n'
++            '  for (i=0; i<sizeof(g_record); i++) all |= g_record[i];\n'
++            '  for (i=0; i<sizeof(g_pending_record); i++)\n'
++            '    all |= g_pending_record[i];\n'
++            '  return all==0 && !g_valid && !g_pending && !g_record_present; }\n'
++            'int test_generation_slot(unsigned char *out)\n'
++            '{ return slot_seal(0, UINT64_MAX, &g_active_keys, out); }\n'
++            'int test_foreign_slot(unsigned char *out)\n'
++            '{ struct encfs_keys_s other = g_active_keys; int ret;\n'
++            '  other.block[0] ^= 1;\n'
++            '  ret = slot_seal(0, 1, &other, out);\n'
++            '  encfs_erase(&other, sizeof(other)); return ret; }\n')
++        sources = [wrapper, root / "fs/encfs/encfs_key.c"]
++        sources += [root / "crypto" / (name + ".c")
++                    for name in ("aes", "cmac", "aes_siv", "hkdf", "hmac",
++                                 "md5", "sha1", "sha2")]
++        inputs = [root / "fs/encfs/encfs_keywrap.c", root / "fs/encfs/encfs.h",
++                  *sources[1:], *[root / "include" / header for header in headers]]
++        hashes = {str(path.relative_to(root)): hashlib.sha256(
++            path.read_bytes()).hexdigest() for path in inputs}
++        library = tmp / "keywrap.so"
++        subprocess.run([
++            "cc", "-shared", "-fPIC", "-O1", "-g", "-Wall", "-Wextra",
++            "-Werror", "-Wno-old-style-declaration", "-fsanitize=undefined",
++            "-fno-sanitize-recover=all",
++            "-include", "stdint.h", "-include", str(include / "nuttx/compiler.h"),
++            "-I", str(include), *map(str, sources), "-o", str(library)], check=True)
++        lib = c.CDLL(str(library))
++        bytep = c.POINTER(c.c_ubyte)
++        master_cb = c.CFUNCTYPE(c.c_int, c.c_void_p, c.c_uint32, bytep)
++        random_cb = c.CFUNCTYPE(c.c_int, c.c_void_p, bytep, c.c_size_t)
++        read_cb = c.CFUNCTYPE(c.c_int, c.c_void_p, bytep)
++        exchange_cb = c.CFUNCTYPE(c.c_int, c.c_void_p, bytep, bytep)
++
++        class Provider(c.Structure):
++            _fields_ = [("context", c.c_void_p), ("master", master_cb),
++                        ("random", random_cb), ("read", read_cb),
++                        ("exchange", exchange_cb)]
++
++        masters = {0: os.urandom(32), 1: os.urandom(32)}
++        fixture = os.urandom(64)
++        store = {"slot": None, "master_error": 0, "random_error": 0,
++                 "read_error": 0, "exchange_error": 0, "random_calls": 0}
++
++        @master_cb
++        def get_master(context, ident, out):
++            if store["master_error"]:
++                c.memset(out, 0x55, 32)
++                return store["master_error"]
++            key = masters.get(ident)
++            if key is None:
++                return -errno.ENOKEY
++            c.memmove(out, key, len(key))
++            return 0
++
++        @random_cb
++        def random(context, out, size):
++            store["random_calls"] += 1
++            c.memmove(out, fixture, min(size, len(fixture)))
++            return store["random_error"]
++
++        @read_cb
++        def read(context, out):
++            if store["read_error"]:
++                c.memset(out, 0x55, 112)
++                return store["read_error"]
++            if store["slot"] is None:
++                return -errno.ENOENT
++            if len(store["slot"]) != 112:
++                return -errno.EBADMSG
++            c.memmove(out, store["slot"], 112)
++            return 0
++
++        @exchange_cb
++        def exchange(context, expected, next_slot):
++            if store["exchange_error"]:
++                return store["exchange_error"]
++            wanted = c.string_at(expected, 112) if expected else None
++            if wanted != store["slot"]:
++                return -errno.ESTALE
++            store["slot"] = c.string_at(next_slot, 112)
++            return 0
++
++        provider = Provider(None, get_master, random, read, exchange)
++        lib.encfs_key_set_provider.argtypes = (c.POINTER(Provider),)
++        lib.encfs_keys_acquire.argtypes = (c.c_bool, bytep, c.POINTER(c.c_int))
++        lib.encfs_keys_rekey.argtypes = (c.c_uint32,)
++        lib.test_generation_slot.argtypes = (bytep,)
++        lib.test_foreign_slot.argtypes = (bytep,)
++        lib.encfs_keys_staging_valid.argtypes = (bytep, c.c_size_t)
++        keys = (c.c_ubyte * 64)()
++        stage = c.c_int()
++
++        def acquire(provision=False):
++            c.memset(keys, 0x55, 64)
++            return lib.encfs_keys_acquire(provision, keys, c.byref(stage))
++
++        check(lib.encfs_key_set_provider(c.byref(provider)) == 0, "select provider")
++        check(acquire() == -errno.ENOKEY, "selected missing slot fails closed")
++        check(bytes(keys) == bytes(64), "missing slot clears output")
++        check(lib.test_board_calls() == 0, "missing slot never uses board fallback")
++        check(acquire(True) == 0, "provision prepares random DEKs")
++        check(bytes(keys) == fixture, "DEKs originate in provider entropy")
++        lib.hkdf_sha256.argtypes = (c.c_char_p, c.c_size_t, c.c_char_p,
++                                    c.c_size_t, c.c_void_p, c.c_size_t,
++                                    bytep, c.c_size_t)
++        directly_derived = bytearray()
++        for salt in (b"blkcrypt", b"encpathfs"):
++            part = (c.c_ubyte * 32)()
++            check(lib.hkdf_sha256(masters[0], 32, salt, len(salt), None, 0,
++                                  part, 32) == 0, "derive legacy comparison")
++            directly_derived.extend(part)
++        check(bytes(directly_derived) != fixture,
++              "old master cannot compute random DEKs using legacy KDF")
++        check(store["slot"] is None, "provision does not prematurely commit")
++        check(lib.encfs_keys_commit() == 0, "commit new slot")
++        initial = store["slot"]
++        check(initial[:8] == b"ENCKEY01" and len(initial) == 112, "slot format")
++        lib.encfs_keys_forget()
++        check(lib.test_cache_clean(), "forget erases all key and slot caches")
++        check(acquire() == 0 and bytes(keys) == fixture, "actual SIV unwrap")
++        check(store["random_calls"] == 1, "restart never regenerates keys")
++        check(lib.encfs_keys_rekey(0) == -errno.EALREADY,
++              "same master ID cannot falsely report rotation")
++
++        def staging(raw):
++            buffer = (c.c_ubyte * len(raw)).from_buffer_copy(raw)
++            return lib.encfs_keys_staging_valid(buffer, len(raw))
++
++        for length in range(113):
++            check(staging(initial[:length]) == 0,
++                  "recover own interrupted staging prefix length %d" % length)
++        check(staging(initial + b"x") == -errno.EBADMSG,
++              "reject oversized staging file")
++        for index in range(12):
++            for length in range(index + 1, 113):
++                corrupt = bytearray(initial[:length])
++                corrupt[index] ^= 0x80
++                check(staging(bytes(corrupt)) == -errno.EBADMSG,
++                      "reject corrupt staging magic/version %d:%d" % (index, length))
++        foreign = (c.c_ubyte * 112)()
++        check(lib.test_foreign_slot(foreign) == 0, "seal foreign-volume staging")
++        check(staging(bytes(foreign)) == -errno.ESTALE,
++              "never discard authenticated foreign-volume complete staging")
++        corrupt = bytearray(initial)
++        corrupt[-1] ^= 1
++        check(staging(bytes(corrupt)) == -errno.EBADMSG,
++              "complete staging requires SIV authentication")
++
++        # Every single-bit corruption, including header/master ID/generation,
++        # must be rejected, without board fallback or plaintext output.
++        for index in range(112):
++            for bit in range(8):
++                corrupt = bytearray(initial)
++                corrupt[index] ^= 1 << bit
++                store["slot"] = bytes(corrupt)
++                check(acquire() < 0, "reject mutated slot %d:%d" % (index, bit))
++                check(bytes(keys) == bytes(64) and lib.test_cache_clean(),
++                      "mutation clears output/cache %d:%d" % (index, bit))
++        check(lib.test_board_calls() == 0, "all mutations avoid legacy fallback")
++        store["slot"] = initial
++        old_key = masters.pop(0)
++        check(acquire() == -errno.ENOKEY and lib.test_cache_clean(),
++              "retired old master cannot open initial slot")
++        masters[0] = old_key
++
++        for field in ("master_error", "read_error"):
++            for error in (-errno.EIO, 1):
++                store[field] = error
++                check(acquire() == -errno.EIO, "normalize provider %s" % field)
++                check(bytes(keys) == bytes(64) and lib.test_cache_clean(),
++                      "erase partial provider %s result" % field)
++            store[field] = 0
++        for error in (-errno.EIO, 1):
++            store["random_error"] = error
++            check(acquire(True) == -errno.EIO, "random failure aborts provision")
++            check(bytes(keys) == bytes(64) and lib.test_cache_clean(),
++                  "erase partial random DEKs")
++            check(store["slot"] == initial, "random failure preserves slot")
++        store["random_error"] = 0
++        check(acquire() == 0, "reacquire before rekey failures")
++
++        stale = bytearray(initial)
++        stale[-1] ^= 1
++        store["slot"] = bytes(stale)
++        check(lib.encfs_keys_rekey(1) == -errno.ESTALE,
++              "CAS detects actual external slot modification")
++        check(store["slot"] == bytes(stale), "stale rekey never overwrites slot")
++        store["slot"] = initial
++
++        for error in (-errno.EIO, -errno.ESTALE, 1):
++            store["exchange_error"] = error
++            check(lib.encfs_keys_rekey(1) == (-errno.EIO if error > 0 else error),
++                  "surface CAS failure")
++            check(store["slot"] == initial, "failed rekey leaves old slot intact")
++        store["exchange_error"] = 0
++        newer_master = masters.pop(1)
++        check(lib.encfs_keys_rekey(1) == -errno.ENOKEY, "missing target master")
++        check(store["slot"] == initial, "missing target leaves old slot intact")
++        masters[1] = newer_master
++        check(lib.encfs_keys_rekey(1) == 0, "online rewrap succeeds")
++        rotated = store["slot"]
++        check(rotated != initial and int.from_bytes(rotated[12:16], "little") == 1
++              and int.from_bytes(rotated[16:24], "little") == 2,
++              "rewrap authenticates new ID and generation")
++        masters.pop(0)
++        check(acquire() == 0 and bytes(keys) == fixture,
++              "new master reopens identical DEKs after old-master removal")
++        masters[1] = old_key
++        check(acquire() == -errno.EBADMSG, "old master bytes cannot unwrap new slot")
++        check(bytes(keys) == bytes(64) and lib.test_cache_clean(),
++              "wrong master erases every temporary/cached key")
++        masters[1] = newer_master
++        check(acquire() == 0 and bytes(keys) == fixture, "restore current master")
++
++        # Actual authenticated UINT64_MAX record checks overflow, rather than
++        # relying on an unauthenticated generation edit rejected by SIV first.
++        masters[0] = old_key
++        overflow = (c.c_ubyte * 112)()
++        check(lib.test_generation_slot(overflow) == 0, "seal maximum generation")
++        store["slot"] = bytes(overflow)
++        check(acquire() == 0 and bytes(keys) == fixture, "open maximum generation")
++        check(lib.encfs_keys_rekey(1) == -errno.EOVERFLOW, "rekey rejects wraparound")
++        random_calls = store["random_calls"]
++        check(acquire(True) == -errno.EOVERFLOW, "provision rejects wraparound")
++        check(store["random_calls"] == random_calls, "overflow consumes no entropy")
++
++        # A saved old slot remains decryptable by its saved old master.  This
++        # intentionally records the documented lack of monotonic anti-rollback.
++        store["slot"] = initial
++        check(acquire() == 0 and bytes(keys) == fixture,
++              "saved old slot remains a documented rollback boundary")
++        lib.encfs_keys_forget()
++        check(lib.test_cache_clean(), "final cache erasure")
++        check(lib.encfs_key_set_provider(None) == 0, "select legacy mode")
++        check(acquire() == 0, "legacy acquisition remains supported")
++        check(bytes(keys) != fixture, "fresh DEKs differ from legacy-derived DEKs")
++        check(lib.encfs_keys_rekey(1) == -errno.ENOTSUP,
++              "legacy keys cannot claim revocation by rewrap")
++
++        check(all(hashlib.sha256((root / name).read_bytes()).hexdigest() == value
++                  for name, value in hashes.items()),
++              "all tested source/header bytes remain unchanged during run")
++
++        report = {"status": "passed", "checks": checks,
++                  "single_bit_slot_mutations": 112 * 8,
++                  "actual_sources": [str(path.relative_to(root))
++                                     for path in [root / "fs/encfs/encfs_keywrap.c",
++                                                  *sources[1:]]],
++                  "keywrap_sha256": hashlib.sha256(
++                      (root / "fs/encfs/encfs_keywrap.c").read_bytes()).hexdigest(),
++                  "source_sha256": hashes,
++                  "sanitizer": "undefined behavior; fatal on first diagnostic",
++                  "limits": ["provider atomicity is modeled, not physical media",
++                             "saved old slot and old master allow rollback",
++                             "manager concurrency requires separate guest tests"]}
++        if args.report:
++            args.report.parent.mkdir(parents=True, exist_ok=True)
++            args.report.write_text(json.dumps(report, indent=2) + "\n")
++        print(json.dumps(report, indent=2))
++
++
++if __name__ == "__main__":
++    main()
 diff --git a/fs/encpathfs/CMakeLists.txt b/fs/encpathfs/CMakeLists.txt
 new file mode 100644
-index 0000000000..53470fc4aa
+index 0000000000000000000000000000000000000000..53470fc4aa16bafd3df2dfc0b00bcc47edbb95e0
 --- /dev/null
 +++ b/fs/encpathfs/CMakeLists.txt
 @@ -0,0 +1,6 @@
@@ -1799,10 +3756,10 @@ index 0000000000..53470fc4aa
 +endif()
 diff --git a/fs/encpathfs/Kconfig b/fs/encpathfs/Kconfig
 new file mode 100644
-index 0000000000..544825a9ca
+index 0000000000000000000000000000000000000000..459e6ddb853071db306dd96cae37c618b3108008
 --- /dev/null
 +++ b/fs/encpathfs/Kconfig
-@@ -0,0 +1,18 @@
+@@ -0,0 +1,19 @@
 +# SPDX-License-Identifier: Apache-2.0
 +
 +config FS_ENCPATHFS
@@ -1818,12 +3775,13 @@ index 0000000000..544825a9ca
 +		A single-volume filesystem proxy using AES-SIV authenticated
 +		component names and canonical uppercase Base32hex encoding.
 +		The lower mounted filesystem must support syncfs and 234-byte
-+		names.  Logical names are printable ASCII, at most 128 bytes.
++		names.  Logical names are strict UTF-8, at most 128 bytes, with
++		no ASCII controls, slash, or Unicode normalization/case folding.
 +		Provision the lower volume explicitly before mounting; normal
 +		mounts only validate existing metadata and never format data.
 diff --git a/fs/encpathfs/Make.defs b/fs/encpathfs/Make.defs
 new file mode 100644
-index 0000000000..be1f14d519
+index 0000000000000000000000000000000000000000..be1f14d5194e8195048f67cc3a41d6b3a03a5cf9
 --- /dev/null
 +++ b/fs/encpathfs/Make.defs
 @@ -0,0 +1,8 @@
@@ -1837,7 +3795,7 @@ index 0000000000..be1f14d519
 +endif
 diff --git a/fs/encpathfs/encpathfs.h b/fs/encpathfs/encpathfs.h
 new file mode 100644
-index 0000000000..c68a31303e
+index 0000000000000000000000000000000000000000..c68a31303ed47cd23aa97b09f4d5c9b899a3d71f
 --- /dev/null
 +++ b/fs/encpathfs/encpathfs.h
 @@ -0,0 +1,104 @@
@@ -1947,14 +3905,18 @@ index 0000000000..c68a31303e
 +#endif /* __FS_ENCPATHFS_ENCPATHFS_H */
 diff --git a/fs/encpathfs/encpathfs_codec.c b/fs/encpathfs/encpathfs_codec.c
 new file mode 100644
-index 0000000000..cd9ceb1cb1
+index 0000000000000000000000000000000000000000..038e155911f5b9cc69fa3a8a76ea653e8318432e
 --- /dev/null
 +++ b/fs/encpathfs/encpathfs_codec.c
-@@ -0,0 +1,204 @@
+@@ -0,0 +1,281 @@
 +/****************************************************************************
 + * fs/encpathfs/encpathfs_codec.c
 + *
 + * SPDX-License-Identifier: Apache-2.0
++ ****************************************************************************/
++
++/****************************************************************************
++ * Included Files
 + ****************************************************************************/
 +
 +#include <nuttx/config.h>
@@ -1964,21 +3926,24 @@ index 0000000000..cd9ceb1cb1
 +#include <stdbool.h>
 +#include <string.h>
 +
++/****************************************************************************
++ * Private Data
++ ****************************************************************************/
++
 +static const uint8_t g_name_ad[] = "encpathfs:name:v1";
 +static const char g_alphabet[] = "0123456789ABCDEFGHIJKLMNOPQRSTUV";
 +
-+void encpathfs_erase(FAR void *memory, size_t length)
-+{
-+  FAR volatile uint8_t *p = memory;
-+  while (length-- > 0)
-+    {
-+      *p++ = 0;
-+    }
-+}
++/****************************************************************************
++ * Private Functions
++ ****************************************************************************/
 +
 +static bool encpathfs_valid_name(FAR const char *name, size_t length)
 +{
-+  size_t i;
++  uint32_t scalar;
++  uint32_t minimum;
++  unsigned int continuation;
++  uint8_t byte;
++  size_t i = 0;
 +
 +  if (length == 0 || length > ENCPATHFS_NAME_MAX ||
 +      (length == 1 && name[0] == '.') ||
@@ -1987,16 +3952,86 @@ index 0000000000..cd9ceb1cb1
 +      return false;
 +    }
 +
-+  for (i = 0; i < length; i++)
++  /* RFC 3629 UTF-8, independent of the current locale.  Decode the scalar
++   * to exclude overlong sequences, UTF-16 surrogates and values beyond
++   * U+10FFFF.  In particular an overlong '/' or NUL cannot bypass the
++   * component restrictions.  Keep the original printable ASCII policy.
++   */
++
++  while (i < length)
 +    {
-+      if ((uint8_t)name[i] < 0x20 || (uint8_t)name[i] > 0x7e ||
-+          name[i] == '/')
++      byte = (uint8_t)name[i++];
++      if (byte <= 0x7f)
++        {
++          if (byte < 0x20 || byte == 0x7f || byte == '/')
++            {
++              return false;
++            }
++
++          continue;
++        }
++
++      if (byte >= 0xc2 && byte <= 0xdf)
++        {
++          scalar = byte & 0x1f;
++          minimum = 0x80;
++          continuation = 1;
++        }
++      else if (byte >= 0xe0 && byte <= 0xef)
++        {
++          scalar = byte & 0x0f;
++          minimum = 0x800;
++          continuation = 2;
++        }
++      else if (byte >= 0xf0 && byte <= 0xf4)
++        {
++          scalar = byte & 0x07;
++          minimum = 0x10000;
++          continuation = 3;
++        }
++      else
++        {
++          return false;
++        }
++
++      if (length - i < continuation)
++        {
++          return false;
++        }
++
++      while (continuation-- > 0)
++        {
++          byte = (uint8_t)name[i++];
++          if ((byte & 0xc0) != 0x80)
++            {
++              return false;
++            }
++
++          scalar = (scalar << 6) | (byte & 0x3f);
++        }
++
++      if (scalar < minimum || scalar > 0x10ffff ||
++          (scalar >= 0xd800 && scalar <= 0xdfff))
 +        {
 +          return false;
 +        }
 +    }
 +
 +  return true;
++}
++
++/****************************************************************************
++ * Public Functions
++ ****************************************************************************/
++
++void encpathfs_erase(FAR void *memory, size_t length)
++{
++  FAR volatile uint8_t *p = memory;
++
++  while (length-- > 0)
++    {
++      *p++ = 0;
++    }
 +}
 +
 +int encpathfs_encode_name(FAR const uint8_t *key, FAR const char *name,
@@ -2157,7 +4192,7 @@ index 0000000000..cd9ceb1cb1
 +}
 diff --git a/fs/encpathfs/encpathfs_dir.c b/fs/encpathfs/encpathfs_dir.c
 new file mode 100644
-index 0000000000..321173c088
+index 0000000000000000000000000000000000000000..321173c08843f21ffb6a6ea9229c4801c35d0bab
 --- /dev/null
 +++ b/fs/encpathfs/encpathfs_dir.c
 @@ -0,0 +1,354 @@
@@ -2517,7 +4552,7 @@ index 0000000000..321173c088
 +}
 diff --git a/fs/encpathfs/encpathfs_file.c b/fs/encpathfs/encpathfs_file.c
 new file mode 100644
-index 0000000000..c75552f8f8
+index 0000000000000000000000000000000000000000..c75552f8f8473171b8e06b1ae57b9edaa5e3b6d6
 --- /dev/null
 +++ b/fs/encpathfs/encpathfs_file.c
 @@ -0,0 +1,346 @@
@@ -2869,7 +4904,7 @@ index 0000000000..c75552f8f8
 +}
 diff --git a/fs/encpathfs/encpathfs_mount.c b/fs/encpathfs/encpathfs_mount.c
 new file mode 100644
-index 0000000000..9fa3e804a0
+index 0000000000000000000000000000000000000000..9fa3e804a0be5e31b04e2e3a140e3e10d6ba811e
 --- /dev/null
 +++ b/fs/encpathfs/encpathfs_mount.c
 @@ -0,0 +1,950 @@
@@ -3825,7 +5860,7 @@ index 0000000000..9fa3e804a0
 +}
 diff --git a/fs/encpathfs/encpathfs_path.c b/fs/encpathfs/encpathfs_path.c
 new file mode 100644
-index 0000000000..d25bc60dcb
+index 0000000000000000000000000000000000000000..d25bc60dcbb3e53055e17ab9fe46525144cdb557
 --- /dev/null
 +++ b/fs/encpathfs/encpathfs_path.c
 @@ -0,0 +1,170 @@
@@ -3999,8 +6034,202 @@ index 0000000000..d25bc60dcb
 +  fs_heap_free(normal);
 +  return ret;
 +}
+diff --git a/fs/encpathfs/tests/test_utf8.py b/fs/encpathfs/tests/test_utf8.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..979adea062959347e0c200d26ff13f4975c1934f
+--- /dev/null
++++ b/fs/encpathfs/tests/test_utf8.py
+@@ -0,0 +1,188 @@
++#!/usr/bin/env python3
++"""Compile the real component codec and check it against Python's UTF-8 codec.
++
++Only platform declarations are stubbed; AES, CMAC, AES-SIV, Base32 and name
++validation are the repository implementations.  No emulator is required.
++"""
++
++import argparse
++import base64
++import ctypes
++import errno
++import json
++import pathlib
++import random
++import shutil
++import subprocess
++import tempfile
++
++
++def expected(raw):
++    try:
++        raw.decode("utf-8", errors="strict")
++    except UnicodeDecodeError:
++        return False
++    return (0 < len(raw) <= 128 and raw not in (b".", b"..") and
++            all(byte >= 0x20 and byte not in (0x2f, 0x7f) for byte in raw))
++
++
++def main():
++    parser = argparse.ArgumentParser(description=__doc__)
++    parser.add_argument("--report", type=pathlib.Path)
++    parser.add_argument("--legacy-codec", type=pathlib.Path,
++                        help="optionally compare actual previous ASCII codec source")
++    args = parser.parse_args()
++    root = pathlib.Path(__file__).resolve().parents[3]
++    counts = {"unicode_scalars": 0, "two_byte_inputs": 0,
++              "generated_invalid_and_mixed": 0, "codec_roundtrips": 0,
++              "authenticated_invalid_plaintexts": 0,
++              "legacy_ascii_ciphertexts": 0}
++
++    with tempfile.TemporaryDirectory(prefix="encpathfs-utf8-") as tmp:
++        tmp = pathlib.Path(tmp)
++        include = tmp / "include"
++        for relative in ("nuttx/crypto/aes_siv.h", "nuttx/fs/encpathfs.h",
++                         "crypto/aes.h", "crypto/cmac.h"):
++            target = include / relative
++            target.parent.mkdir(parents=True, exist_ok=True)
++            shutil.copyfile(root / "include" / relative, target)
++        (include / "nuttx/config.h").write_text("")
++        (include / "nuttx/compiler.h").write_text("#define FAR\n")
++        source = tmp / "wrapper.c"
++        source.write_text(
++            '#include "' + str(root / "fs/encpathfs/encpathfs_codec.c") +
++            '"\nint test_valid_name(const char *p, size_t n)\n'
++            '{ return encpathfs_valid_name(p, n); }\n')
++        library = tmp / "codec.so"
++        subprocess.run([
++            "cc", "-shared", "-fPIC", "-O2", "-g", "-Wall", "-Wextra",
++            "-Werror", "-fsanitize=undefined", "-fno-sanitize-recover=all",
++            "-include", "stdint.h", "-include", str(include / "nuttx/compiler.h"),
++            "-I", str(include), str(source), str(root / "crypto/aes.c"),
++            str(root / "crypto/cmac.c"), str(root / "crypto/aes_siv.c"),
++            "-o", str(library)], check=True)
++        lib = ctypes.CDLL(str(library))
++        valid = lib.test_valid_name
++        valid.argtypes = (ctypes.c_char_p, ctypes.c_size_t)
++        valid.restype = ctypes.c_int
++
++        def check(raw, group):
++            assert bool(valid(raw, len(raw))) == expected(raw), raw.hex()
++            counts[group] += 1
++
++        # Exhaust every Unicode scalar and every possible two-byte buffer.
++        # Python's strict decoder is independent of the C validator.
++        for scalar in range(0x110000):
++            if not 0xd800 <= scalar <= 0xdfff:
++                check(chr(scalar).encode("utf-8"), "unicode_scalars")
++        for first in range(256):
++            for second in range(256):
++                check(bytes((first, second)), "two_byte_inputs")
++
++        invalid = [b"", b".", b"..", b"a/b", b"a\x00b", b"\xc0\x80",
++                   b"\xc0\xaf", b"\xe0\x80\xaf", b"\xf0\x80\x80\xaf",
++                   b"\xed\xa0\x80", b"\xed\xbf\xbf", b"\xf4\x90\x80\x80",
++                   b"\xf8\x88\x80\x80\x80", b"\xfc\x84\x80\x80\x80\x80",
++                   b"\xef\xbb", b"\xf0\x9f\x94", b"a" * 129]
++        rng = random.Random(3629)
++        for raw in invalid:
++            check(raw, "generated_invalid_and_mixed")
++        for unused in range(50000):
++            raw = bytes(rng.randrange(256) for item in range(rng.randrange(140)))
++            check(raw, "generated_invalid_and_mixed")
++        for unused in range(10000):
++            scalar = rng.randrange(0x110000)
++            if 0xd800 <= scalar <= 0xdfff:
++                continue
++            sample = bytearray(("中" + chr(scalar) + "文").encode("utf-8"))
++            sample[rng.randrange(len(sample))] = rng.randrange(256)
++            check(bytes(sample), "generated_invalid_and_mixed")
++
++        key = bytes(range(32))
++        encode = lib.encpathfs_encode_name
++        decode = lib.encpathfs_decode_name
++        seal = lib.aes_siv_encrypt
++        encode.argtypes = (ctypes.c_char_p, ctypes.c_char_p, ctypes.c_void_p,
++                           ctypes.c_size_t)
++        decode.argtypes = encode.argtypes
++        seal.argtypes = (ctypes.c_char_p, ctypes.c_char_p, ctypes.c_size_t,
++                         ctypes.c_char_p, ctypes.c_size_t, ctypes.c_void_p)
++        names = [b"secret.txt", b"ASCII 0123456789 !#$%&'()+,-.;=@[]^_`{}~",
++                 b"a" * 128, "中文文件.txt".encode(), "🔐-café".encode(),
++                 "é".encode(), "e\u0301".encode(), "中".encode() * 42 + b"ab",
++                 "🔐".encode() * 32]
++        names += [bytes((value,)) for value in range(0x20, 0x7f)
++                  if value not in (ord("/"), ord("."))]
++        fixtures = {}
++        for raw in names:
++            out = ctypes.create_string_buffer(235)
++            plain = ctypes.create_string_buffer(129)
++            assert encode(key, raw, out, len(out)) == 0, raw
++            assert out.value.startswith(b"E1_")
++            assert decode(key, out.value, plain, len(plain)) == 0
++            assert plain.value == raw
++            # Capacity includes the NUL, even for multi-byte names.
++            small = ctypes.create_string_buffer(len(raw))
++            assert decode(key, out.value, small, len(small)) == -errno.ENAMETOOLONG
++            assert small.raw[0] == 0
++            if raw == b"secret.txt":
++                assert out.value == b"E1_A1CP2UT8PNK4I9HJ7UQILMT155DE81L20K7VS8F3VO"
++                fixtures[raw.decode()] = out.value.decode()
++            counts["codec_roundtrips"] += 1
++
++        if args.legacy_codec:
++            legacy_library = tmp / "legacy.so"
++            subprocess.run([
++                "cc", "-shared", "-fPIC", "-O2", "-Wall", "-Wextra", "-Werror",
++                "-include", "stdint.h", "-include", str(include / "nuttx/compiler.h"),
++                "-I", str(include), str(args.legacy_codec.resolve()),
++                str(root / "crypto/aes.c"), str(root / "crypto/cmac.c"),
++                str(root / "crypto/aes_siv.c"), "-o", str(legacy_library)], check=True)
++            legacy = ctypes.CDLL(str(legacy_library))
++            legacy_encode = legacy.encpathfs_encode_name
++            legacy_encode.argtypes = encode.argtypes
++            samples = [raw for raw in names if raw.isascii()]
++            for length in range(1, 129):
++                sample = bytes(rng.choice([byte for byte in range(0x20, 0x7f)
++                                           if byte != ord("/")])
++                               for unused in range(length))
++                if sample in (b".", b".."):
++                    sample = b"a" * length
++                samples.append(sample)
++            for raw in samples:
++                previous = ctypes.create_string_buffer(235)
++                current = ctypes.create_string_buffer(235)
++                assert legacy_encode(key, raw, previous, len(previous)) == 0
++                assert encode(key, raw, current, len(current)) == 0
++                assert previous.value == current.value, raw
++                counts["legacy_ascii_ciphertexts"] += 1
++
++        # These inputs have valid SIV tags, so failure must arise from the
++        # plaintext component policy, rather than authentication rejection.
++        ad = b"encpathfs:name:v1"
++        for raw in invalid + [b"a\x1fb", b"a\x7fb"]:
++            if len(raw) > 128 or not raw:
++                continue
++            sealed = ctypes.create_string_buffer(len(raw) + 16)
++            assert seal(key, ad, len(ad), raw, len(raw), sealed) == 0
++            physical = b"E1_" + base64.b32hexencode(sealed.raw).rstrip(b"=")
++            out = ctypes.create_string_buffer(b"do-not-expose", 129)
++            assert decode(key, physical, out, len(out)) == -errno.EBADMSG, raw.hex()
++            assert out.value == b""
++            counts["authenticated_invalid_plaintexts"] += 1
++
++        # An authenticated NUL is invalid; a public C-string parameter ends
++        # at its first NUL, as for every POSIX pathname interface.
++        report = {"status": "passed", "counts": counts,
++                  "checks": sum(counts.values()), "legacy_ascii_fixture": fixtures,
++                  "oracle": "Python strict UTF-8 decoder; Unicode scalar enumeration",
++                  "sanitizer": "undefined behavior; fatal on first diagnostic",
++                  "limits": "128 bytes; no normalization or case folding"}
++        if args.report:
++            args.report.parent.mkdir(parents=True, exist_ok=True)
++            args.report.write_text(json.dumps(report, indent=2) + "\n")
++        print(json.dumps(report, indent=2))
++
++
++if __name__ == "__main__":
++    main()
 diff --git a/fs/fatfs/fatfs_vfs.c b/fs/fatfs/fatfs_vfs.c
-index de175f1bb6..f1ac5e383f 100644
+index de175f1bb69289400a40778c84c0951169840678..f1ac5e383fee969c800346579440f07e2e8178e3 100644
 --- a/fs/fatfs/fatfs_vfs.c
 +++ b/fs/fatfs/fatfs_vfs.c
 @@ -32,6 +32,7 @@
@@ -4255,7 +6484,7 @@ index de175f1bb6..f1ac5e383f 100644
    nxmutex_destroy(&fs->lock);
    fs_heap_free(fs);
 diff --git a/fs/mount/fs_mount.c b/fs/mount/fs_mount.c
-index ea661513e3..aa60102983 100644
+index ea661513e3446ce46ec8e3e2611c4fae71e3c471..aa601029839fffc68affb4d80306ab0caab22476 100644
 --- a/fs/mount/fs_mount.c
 +++ b/fs/mount/fs_mount.c
 @@ -76,7 +76,7 @@
@@ -4389,7 +6618,7 @@ index ea661513e3..aa60102983 100644
  #ifndef CONFIG_DISABLE_PSEUDOFS_OPERATIONS
    RELEASE_SEARCH(&desc);
 diff --git a/fs/vfs/fs_dir.c b/fs/vfs/fs_dir.c
-index 6e094de7b7..6a1be898eb 100644
+index 6e094de7b7b5638a244fb76790658ae76bd3e962..6a1be898eb0a9ca079a7a15bb9cb5fec50257886 100644
 --- a/fs/vfs/fs_dir.c
 +++ b/fs/vfs/fs_dir.c
 @@ -306,11 +306,21 @@ static off_t seek_mountptdir(FAR struct file *filep, off_t offset)
@@ -4417,7 +6646,7 @@ index 6e094de7b7..6a1be898eb 100644
          }
        else
 diff --git a/fs/vfs/fs_rename.c b/fs/vfs/fs_rename.c
-index 0f7dae6a7e..b75229be42 100644
+index 0f7dae6a7e561db5df3fd23f8e3db953e07e7544..b75229be42dc2aa54970ebb7b2d9da5a65386d19 100644
 --- a/fs/vfs/fs_rename.c
 +++ b/fs/vfs/fs_rename.c
 @@ -468,7 +468,8 @@ static int mountptrename(FAR const char *oldpath, FAR struct inode *oldinode,
@@ -4442,7 +6671,7 @@ index 0f7dae6a7e..b75229be42 100644
                     *
 diff --git a/include/nuttx/crypto/aes_siv.h b/include/nuttx/crypto/aes_siv.h
 new file mode 100644
-index 0000000000..645665a093
+index 0000000000000000000000000000000000000000..645665a093009c4f50857dae4a0db891b2fc814a
 --- /dev/null
 +++ b/include/nuttx/crypto/aes_siv.h
 @@ -0,0 +1,60 @@
@@ -4507,7 +6736,7 @@ index 0000000000..645665a093
 +
 +#endif /* __INCLUDE_NUTTX_CRYPTO_AES_SIV_H */
 diff --git a/include/nuttx/crypto/blkcrypt.h b/include/nuttx/crypto/blkcrypt.h
-index 1cc32cbe9e..29c8614c06 100644
+index 1cc32cbe9e56bea27d7f121ca47727a1d3516298..29c8614c06b16806192a977c6985d98ee5a41780 100644
 --- a/include/nuttx/crypto/blkcrypt.h
 +++ b/include/nuttx/crypto/blkcrypt.h
 @@ -26,6 +26,7 @@
@@ -4538,7 +6767,7 @@ index 1cc32cbe9e..29c8614c06 100644
  
 diff --git a/include/nuttx/crypto/hkdf.h b/include/nuttx/crypto/hkdf.h
 new file mode 100644
-index 0000000000..fb9ca2680c
+index 0000000000000000000000000000000000000000..fb9ca2680ce46927279a7c734aaf611f4f330c91
 --- /dev/null
 +++ b/include/nuttx/crypto/hkdf.h
 @@ -0,0 +1,50 @@
@@ -4594,10 +6823,10 @@ index 0000000000..fb9ca2680c
 +#endif /* __INCLUDE_NUTTX_CRYPTO_HKDF_H */
 diff --git a/include/nuttx/fs/encfs.h b/include/nuttx/fs/encfs.h
 new file mode 100644
-index 0000000000..21641059dc
+index 0000000000000000000000000000000000000000..1ba0a69af50acc5ba6da7ebbd47b9aa509180c7f
 --- /dev/null
 +++ b/include/nuttx/fs/encfs.h
-@@ -0,0 +1,138 @@
+@@ -0,0 +1,198 @@
 +/****************************************************************************
 + * include/nuttx/fs/encfs.h
 + *
@@ -4657,7 +6886,9 @@ index 0000000000..21641059dc
 +  ENCFS_STAGE_UPPER_UMOUNT,
 +  ENCFS_STAGE_LOWER_UMOUNT,
 +  ENCFS_STAGE_UNREGISTER,
-+  ENCFS_STAGE_PREPARE_UPPER
++  ENCFS_STAGE_PREPARE_UPPER,
++  ENCFS_STAGE_KEYSLOT,
++  ENCFS_STAGE_REKEY
 +};
 +
 +/* The resource fields describe what is still owned after an error.  error
@@ -4677,6 +6908,11 @@ index 0000000000..21641059dc
 +  bool lower_visible;
 +  bool upper_mounted;
 +  bool path_key_staged;
++#ifdef CONFIG_ENCFS_KEYWRAP
++  bool key_wrapped;
++  uint32_t master_id;
++  uint64_t key_generation;
++#endif
 +};
 +
 +/****************************************************************************
@@ -4702,6 +6938,59 @@ index 0000000000..21641059dc
 +int encfs_stop(void);
 +int encfs_provision(void);
 +int encfs_get_status(FAR struct encfs_status_s *status);
++
++#ifdef CONFIG_ENCFS_KEYWRAP
++/* A wrapping provider is independent of /data and /datap.  Its context and
++ * callbacks must remain alive until it is replaced while fully STOPPED.
++ * Callbacks run with the manager mutex held and must not call back into it.
++ * get_master supplies a 32-byte key for an opaque provider key identifier;
++ * identifiers denote immutable, distinct master versions. Reusing the same
++ * current identifier returns -EALREADY instead of claiming a key rotation.
++ * random supplies fresh cryptographic random bytes for a new volume.
++ * read_slot returns 0 with exactly ENCFS_KEYSLOT_SIZE bytes, or -ENOENT.
++ * compare_exchange atomically and durably replaces the slot iff its bytes
++ * match expected (NULL means absent), otherwise returns -ESTALE.  On any
++ * negative return the old slot MUST remain intact.  A real backend must
++ * implement that guarantee across power loss; the test file provider only
++ * models process interruption and host atomic rename, not physical power
++ * loss.  A trusted monotonic store is needed for rollback resistance.
++ *
++ * With a provider selected, missing/corrupt slots fail closed: normal start
++ * never falls back to a legacy key.  New provision generates independent
++ * data keys.  Legacy directly-derived volumes remain supported with NULL
++ * provider but cannot be rekeyed: their original master could still derive
++ * the data keys.  Migrating those volumes requires a separate data copy.
++ */
++
++#define ENCFS_KEYSLOT_SIZE 112
++
++struct encfs_key_provider_s
++{
++  FAR void *context;
++  CODE int (*get_master)(FAR void *context, uint32_t id,
++                         FAR uint8_t key[ENCFS_MASTER_KEY_SIZE]);
++  CODE int (*random)(FAR void *context, FAR uint8_t *bytes, size_t length);
++  CODE int (*read_slot)(FAR void *context,
++                        FAR uint8_t slot[ENCFS_KEYSLOT_SIZE]);
++  CODE int (*compare_exchange)(FAR void *context,
++                               FAR const uint8_t *expected,
++                               FAR const uint8_t next[ENCFS_KEYSLOT_SIZE]);
++};
++
++int encfs_set_key_provider(FAR const struct encfs_key_provider_s *provider);
++int encfs_rekey(uint32_t master_id);
++
++#ifdef CONFIG_ENCFS_TESTING
++/* Simulator ONLY: 32-byte master-%08x.bin files, a one-use 64-byte
++ * volume-random.bin, and an authenticated encfs.keyslot in an independent
++ * hostfs directory.  Secret files on the host are NOT a hardware keystore.
++ */
++
++int encfs_test_use_keyfiles(FAR const char *directory);
++int encfs_test_keyslot_fail_commit(bool enabled);
++int encfs_test_keyslot_pause_commit(unsigned int milliseconds);
++#endif
++#endif
 +
 +#ifdef CONFIG_ENCFS_TESTING
 +/* Test interfaces are excluded from production builds.  Key changes require
@@ -4738,10 +7027,10 @@ index 0000000000..21641059dc
 +#endif /* __INCLUDE_NUTTX_FS_ENCFS_H */
 diff --git a/include/nuttx/fs/encpathfs.h b/include/nuttx/fs/encpathfs.h
 new file mode 100644
-index 0000000000..72cb2be53a
+index 0000000000000000000000000000000000000000..78c9f0b9d52bdc0ee09482c35f6f9c39909be5a3
 --- /dev/null
 +++ b/include/nuttx/fs/encpathfs.h
-@@ -0,0 +1,55 @@
+@@ -0,0 +1,70 @@
 +/****************************************************************************
 + * include/nuttx/fs/encpathfs.h
 + *
@@ -4751,14 +7040,26 @@ index 0000000000..72cb2be53a
 +#ifndef __INCLUDE_NUTTX_FS_ENCPATHFS_H
 +#define __INCLUDE_NUTTX_FS_ENCPATHFS_H
 +
++/****************************************************************************
++ * Included Files
++ ****************************************************************************/
++
 +#include <nuttx/config.h>
 +#include <nuttx/compiler.h>
 +#include <stddef.h>
 +#include <stdint.h>
 +
++/****************************************************************************
++ * Pre-processor Definitions
++ ****************************************************************************/
++
 +#define ENCPATHFS_KEY_SIZE       32
 +#define ENCPATHFS_NAME_MAX       128
 +#define ENCPATHFS_ENCODED_MAX    234
++
++/****************************************************************************
++ * Public Function Prototypes
++ ****************************************************************************/
 +
 +#ifdef __cplusplus
 +extern "C"
@@ -4784,7 +7085,10 @@ index 0000000000..72cb2be53a
 +int encpathfs_recover(void);
 +
 +/* Authenticated component codec.  Capacities include a terminating NUL.
-+ * Names are printable ASCII excluding '/' and the structural . and .. .
++ * Names are strict RFC 3629 UTF-8 with at most 128 bytes, excluding ASCII
++ * controls, '/', NUL and the structural . and .. .  No Unicode normalization
++ * or case folding occurs: distinct byte strings denote distinct names.
++ * The E1_ format and existing ASCII ciphertext names remain unchanged.
 + * Success returns zero; invalid/corrupt encodings return a negative errno.
 + */
 +
@@ -4798,7 +7102,7 @@ index 0000000000..72cb2be53a
 +#endif
 +#endif /* __INCLUDE_NUTTX_FS_ENCPATHFS_H */
 diff --git a/include/nuttx/fs/fs.h b/include/nuttx/fs/fs.h
-index 0ad0c2f795..a6e7ce2e59 100644
+index 0ad0c2f7959f63ae479fbe19b2c49c08cf7cea00..a6e7ce2e595c2ecf3c3d7d2c1244ee6b6649dff3 100644
 --- a/include/nuttx/fs/fs.h
 +++ b/include/nuttx/fs/fs.h
 @@ -293,6 +293,8 @@ struct block_operations
@@ -4824,7 +7128,7 @@ index 0ad0c2f795..a6e7ce2e59 100644
  #endif /* CONFIG_DISABLE_MOUNTPOINT */
  
 diff --git a/tools/run-emulator.sh b/tools/run-emulator.sh
-index 6810f838e4..e2ca0434d0 100755
+index 6810f838e4d6803d0df7941fa4d967466cb348c3..e2ca0434d0874504e0247b51732a2f4aa9ac5180 100755
 --- a/tools/run-emulator.sh
 +++ b/tools/run-emulator.sh
 @@ -40,7 +40,7 @@ if [[ $# -gt 0 && "${1}" != -* ]]; then
@@ -4847,7 +7151,7 @@ index 6810f838e4..e2ca0434d0 100755
  echo "Staged emulator artifacts from cmake_out/vela_${CONFIG}/"
 diff --git a/tools/tests/.gitignore b/tools/tests/.gitignore
 new file mode 100644
-index 0000000000..7a60b85e14
+index 0000000000000000000000000000000000000000..7a60b85e148f80966a550e5ab6a762a907c69ca6
 --- /dev/null
 +++ b/tools/tests/.gitignore
 @@ -0,0 +1,2 @@
@@ -4855,7 +7159,7 @@ index 0000000000..7a60b85e14
 +*.pyc
 diff --git a/tools/tests/encfs_crypto/README.md b/tools/tests/encfs_crypto/README.md
 new file mode 100644
-index 0000000000..3f90ec09c2
+index 0000000000000000000000000000000000000000..3f90ec09c2b0e553a548e98ce03c8458da457b8b
 --- /dev/null
 +++ b/tools/tests/encfs_crypto/README.md
 @@ -0,0 +1,90 @@
@@ -4951,7 +7255,7 @@ index 0000000000..3f90ec09c2
 +are changed by this behavior.
 diff --git a/tools/tests/encfs_crypto/test_blkcrypt.c b/tools/tests/encfs_crypto/test_blkcrypt.c
 new file mode 100644
-index 0000000000..0e19df0c89
+index 0000000000000000000000000000000000000000..0e19df0c8913ae13e68954a7410450f2d82a3ec6
 --- /dev/null
 +++ b/tools/tests/encfs_crypto/test_blkcrypt.c
 @@ -0,0 +1,377 @@
@@ -5334,7 +7638,7 @@ index 0000000000..0e19df0c89
 +}
 diff --git a/tools/tests/encfs_crypto/test_blkcrypt.py b/tools/tests/encfs_crypto/test_blkcrypt.py
 new file mode 100644
-index 0000000000..16c6a352cf
+index 0000000000000000000000000000000000000000..16c6a352cf8b5f8419cd03028c5c4ed80e01cf2d
 --- /dev/null
 +++ b/tools/tests/encfs_crypto/test_blkcrypt.py
 @@ -0,0 +1,101 @@
@@ -5441,7 +7745,7 @@ index 0000000000..16c6a352cf
 +    main()
 diff --git a/tools/tests/encfs_crypto/test_crypto.py b/tools/tests/encfs_crypto/test_crypto.py
 new file mode 100644
-index 0000000000..1e949e22e4
+index 0000000000000000000000000000000000000000..1e949e22e48636f2da9b76ba7956b75ecb77e4ca
 --- /dev/null
 +++ b/tools/tests/encfs_crypto/test_crypto.py
 @@ -0,0 +1,288 @@
@@ -5735,7 +8039,7 @@ index 0000000000..1e949e22e4
 +    main()
 diff --git a/tools/tests/encfs_crypto/test_directory_rewind.py b/tools/tests/encfs_crypto/test_directory_rewind.py
 new file mode 100644
-index 0000000000..fd90b02302
+index 0000000000000000000000000000000000000000..fd90b023023a9d7fa03b4c913547cb2e3a9c08e5
 --- /dev/null
 +++ b/tools/tests/encfs_crypto/test_directory_rewind.py
 @@ -0,0 +1,292 @@
@@ -6033,7 +8337,7 @@ index 0000000000..fd90b02302
 +    main()
 diff --git a/tools/tests/encfs_crypto/test_vfs_lifecycle.py b/tools/tests/encfs_crypto/test_vfs_lifecycle.py
 new file mode 100644
-index 0000000000..f484ea0a40
+index 0000000000000000000000000000000000000000..f484ea0a4071aa731e042fb2d856584f86350151
 --- /dev/null
 +++ b/tools/tests/encfs_crypto/test_vfs_lifecycle.py
 @@ -0,0 +1,333 @@
@@ -6372,7 +8676,7 @@ index 0000000000..f484ea0a40
 +    main()
 diff --git a/tools/tests/encfs_manager/README.md b/tools/tests/encfs_manager/README.md
 new file mode 100644
-index 0000000000..65614b283f
+index 0000000000000000000000000000000000000000..65614b283ff83275910399cac550a22f3bc7a2e2
 --- /dev/null
 +++ b/tools/tests/encfs_manager/README.md
 @@ -0,0 +1,43 @@
@@ -6421,7 +8725,7 @@ index 0000000000..65614b283f
 +that default outside such a sandbox.
 diff --git a/tools/tests/encfs_manager/run_host_tests.sh b/tools/tests/encfs_manager/run_host_tests.sh
 new file mode 100755
-index 0000000000..93ce939dcc
+index 0000000000000000000000000000000000000000..93ce939dcc9bac19df24c5947c877046d9f60caf
 --- /dev/null
 +++ b/tools/tests/encfs_manager/run_host_tests.sh
 @@ -0,0 +1,29 @@
@@ -6456,7 +8760,7 @@ index 0000000000..93ce939dcc
 +  "$build_dir/test_manager"
 diff --git a/tools/tests/encfs_manager/shim/inode/inode.h b/tools/tests/encfs_manager/shim/inode/inode.h
 new file mode 100644
-index 0000000000..b19a1d39cb
+index 0000000000000000000000000000000000000000..b19a1d39cb37ca2938edbdb443918de6e75fa90f
 --- /dev/null
 +++ b/tools/tests/encfs_manager/shim/inode/inode.h
 @@ -0,0 +1,26 @@
@@ -6488,7 +8792,7 @@ index 0000000000..b19a1d39cb
 +#endif
 diff --git a/tools/tests/encfs_manager/shim/nuttx/board.h b/tools/tests/encfs_manager/shim/nuttx/board.h
 new file mode 100644
-index 0000000000..8854b9bd58
+index 0000000000000000000000000000000000000000..8854b9bd58ed15eba44113b064adc72bae7cf5d2
 --- /dev/null
 +++ b/tools/tests/encfs_manager/shim/nuttx/board.h
 @@ -0,0 +1,6 @@
@@ -6500,7 +8804,7 @@ index 0000000000..8854b9bd58
 +#endif
 diff --git a/tools/tests/encfs_manager/shim/nuttx/compiler.h b/tools/tests/encfs_manager/shim/nuttx/compiler.h
 new file mode 100644
-index 0000000000..f3dcd864f4
+index 0000000000000000000000000000000000000000..f3dcd864f492fe798048374351fba8071bac1874
 --- /dev/null
 +++ b/tools/tests/encfs_manager/shim/nuttx/compiler.h
 @@ -0,0 +1,5 @@
@@ -6511,7 +8815,7 @@ index 0000000000..f3dcd864f4
 +#endif
 diff --git a/tools/tests/encfs_manager/shim/nuttx/config.h b/tools/tests/encfs_manager/shim/nuttx/config.h
 new file mode 100644
-index 0000000000..4eb54993c3
+index 0000000000000000000000000000000000000000..4eb54993c3ff165881486673533f035fc1cc11e5
 --- /dev/null
 +++ b/tools/tests/encfs_manager/shim/nuttx/config.h
 @@ -0,0 +1,9 @@
@@ -6526,7 +8830,7 @@ index 0000000000..4eb54993c3
 +#endif
 diff --git a/tools/tests/encfs_manager/shim/nuttx/fs/fs.h b/tools/tests/encfs_manager/shim/nuttx/fs/fs.h
 new file mode 100644
-index 0000000000..b7c0ee0fd0
+index 0000000000000000000000000000000000000000..b7c0ee0fd07d63930200bdae8099eab604961e77
 --- /dev/null
 +++ b/tools/tests/encfs_manager/shim/nuttx/fs/fs.h
 @@ -0,0 +1,28 @@
@@ -6560,7 +8864,7 @@ index 0000000000..b7c0ee0fd0
 +#endif
 diff --git a/tools/tests/encfs_manager/shim/nuttx/mutex.h b/tools/tests/encfs_manager/shim/nuttx/mutex.h
 new file mode 100644
-index 0000000000..e75ee123e6
+index 0000000000000000000000000000000000000000..e75ee123e6f0b3797cf435775649840f5ca0947a
 --- /dev/null
 +++ b/tools/tests/encfs_manager/shim/nuttx/mutex.h
 @@ -0,0 +1,15 @@
@@ -6581,7 +8885,7 @@ index 0000000000..e75ee123e6
 +#endif
 diff --git a/tools/tests/encfs_manager/test_manager.c b/tools/tests/encfs_manager/test_manager.c
 new file mode 100644
-index 0000000000..44838745e5
+index 0000000000000000000000000000000000000000..44838745e5a4118d6e52b36104116465e923b266
 --- /dev/null
 +++ b/tools/tests/encfs_manager/test_manager.c
 @@ -0,0 +1,557 @@
@@ -7144,7 +9448,7 @@ index 0000000000..44838745e5
 +}
 diff --git a/tools/tests/encpathfs/README.md b/tools/tests/encpathfs/README.md
 new file mode 100644
-index 0000000000..f36c928aae
+index 0000000000000000000000000000000000000000..f36c928aaee7d46be021352107189b5ab24af7d2
 --- /dev/null
 +++ b/tools/tests/encpathfs/README.md
 @@ -0,0 +1,43 @@
@@ -7193,7 +9497,7 @@ index 0000000000..f36c928aae
 +```
 diff --git a/tools/tests/encpathfs/test_encpathfs.py b/tools/tests/encpathfs/test_encpathfs.py
 new file mode 100644
-index 0000000000..52f000fa4a
+index 0000000000000000000000000000000000000000..52f000fa4a0440724323aa3baeca398a4e39cf94
 --- /dev/null
 +++ b/tools/tests/encpathfs/test_encpathfs.py
 @@ -0,0 +1,287 @@

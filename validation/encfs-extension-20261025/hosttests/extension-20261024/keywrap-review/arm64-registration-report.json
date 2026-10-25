@@ -1,0 +1,34 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "source": "encfs_test_main.c",
+      "keywrap": false,
+      "testing": true,
+      "result": "passed"
+    },
+    {
+      "source": "encfs_test_rekey.c",
+      "keywrap": false,
+      "testing": true,
+      "result": "passed"
+    },
+    {
+      "source": "encfs_test_main.c",
+      "keywrap": true,
+      "testing": true,
+      "result": "passed"
+    },
+    {
+      "source": "encfs_test_rekey.c",
+      "keywrap": true,
+      "testing": true,
+      "result": "passed"
+    }
+  ],
+  "source_sha256": {
+    "apps/examples/encfs_test/encfs_test_main.c": "e02bce3020fdf2deb5f4191f475c0be5cebcef3757f51d920dafc040b66b7fab",
+    "apps/examples/encfs_test/encfs_test_rekey.c": "06d0b400916555e482e8cdf5919ff0e4c1d06283f56f46198f5db6751b673e9c"
+  },
+  "compiler": "/home/tourist/Desktop/openvela/prebuilts/gcc/linux-x86_64/aarch64-none-elf/bin/aarch64-none-elf-gcc"
+}

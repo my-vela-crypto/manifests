@@ -1,0 +1,31 @@
+{
+  "scope": "read-only Python/static review; no guest execution",
+  "command_lengths": [
+    {
+      "command": "echo ENCFS_WRAP_UTF8_20261024_7df925ca > /data/验证/密钥🔐.txt",
+      "utf8_bytes": 68
+    },
+    {
+      "command": "cat /data/验证/密钥🔐.txt",
+      "utf8_bytes": 31
+    },
+    {
+      "command": "fbcapture -d /dev/fb0 -o /share/abcdef-stress-2880-analytics.bmp",
+      "utf8_bytes": 64
+    },
+    {
+      "command": "encfs_test rekey 4294967295",
+      "utf8_bytes": 27
+    },
+    {
+      "command": "encfs keyslot-pausecommit 10000",
+      "utf8_bytes": 31
+    }
+  ],
+  "late_poll_mock": {
+    "status": "passed",
+    "hook_invocations": 0,
+    "host_seconds": 210.0,
+    "guest_execution": false
+  }
+}

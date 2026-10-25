@@ -1,0 +1,43 @@
+{
+  "format": 1,
+  "patches": {
+    "nuttx": {
+      "file": "patches/nuttx/encfs.patch",
+      "sha256": "7249672a8f6912bc802fcb9a1f145b635f3dd1188c06df1155c4a33561cb9d95",
+      "base": "52939a185be4c940c83c843ae1f0b076f3d1d861"
+    },
+    "vendor/openvela": {
+      "file": "patches/vendor_openvela/encfs.patch",
+      "sha256": "1036132fa37edda1fc6be643cb154cdd1c85f22a336372e9ee6956bfb6d26a45",
+      "base": "4351221032aa88cb9da86336c53afe0cb6159e3e"
+    }
+  },
+  "overlays": {
+    "examples/encfs_test/CMakeLists.txt": "937902b415b05725c05002706afee64be25efc0ecdf66622ec1935677cadb61d",
+    "examples/encfs_test/Kconfig": "b69b633445b83de88f86718abc37ed8d60479205d0071389761c9efa4c7dcbf5",
+    "examples/encfs_test/Make.defs": "b280451d46f95c3856ab392aa9e5154bac0d81d59e7e77501857c7897b5bc800",
+    "examples/encfs_test/Makefile": "403ad31aa435661cd6123bad5fcd57416c120eb21b089320996461f35643db25",
+    "examples/encfs_test/encfs_test_corruption.c": "46b394c0e475fd8aec42c2669886cdcde074feb870f54421b315dd536fca2593",
+    "examples/encfs_test/encfs_test_extended.c": "5ff5664d07f082deeba2767e50386db7719d480f6319d8ab4e42bf315c294bbe",
+    "examples/encfs_test/encfs_test_main.c": "e02bce3020fdf2deb5f4191f475c0be5cebcef3757f51d920dafc040b66b7fab",
+    "examples/encfs_test/encfs_test_rekey.c": "bc3de16e2f0bee6cb9f95b028a98ac3c562229454cd9757a0a6fb36773b17dd1",
+    "examples/encfs_test/encfs_test_shared.h": "7c890a40cf66e691472ea1129cb25c878eb494320f48ba85c20449b4a43c1492",
+    "examples/encfs_test/encfs_test_stress.c": "355bf4094db3f46943a6f789112085b2b5baefce7bbe990e720ce5bdce2f8f1f",
+    "examples/encfs_test/encfs_test_utf8.c": "2260fe9beb3681a2d7a767fc94d1f181c6d633ba86204a756acefd8ed1072124",
+    "examples/encfs_test/tests/test_rekey_cli.py": "63b25fe78ee553ba686722263b4fc18b77be707cfba46838f9aef45edd551b5c",
+    "system/encfs/CMakeLists.txt": "c955f3bc5dec502ecb045104e35cdbcb5e91650e237b7b5b0ec1195bdf917db5",
+    "system/encfs/Kconfig": "0889a43897452324d644feccb65748832918a59481e6913aad39a9e6dadb5610",
+    "system/encfs/Make.defs": "4510a4826de8cef9f6256d3b574ddfc6d2b59d2d168d5f84476eaba4db677e56",
+    "system/encfs/Makefile": "94d37d86a056281599094abccbb7d0470bd5665c9c5414daea412901092bf17e",
+    "system/encfs/encfs_main.c": "be5cf93f58cf4eff64280dfe6d24477dbf217f4a926bd4df4e10642de135be4a",
+    "system/encfs/tests/test_rekey_cli.py": "3a745500a89b07c7cf54150a02f2c84d6eb2af8073a29231c76846803cbf058e",
+    "system/encfs/tests/test_testkey.py": "2e2a2cca647b977a13921e6388169f76e95de6b6a5770fda914a1499c76ca13e",
+    "testing/fs/encfs_extended/CMakeLists.txt": "c3b59ee31d1334d451e1a8df1356b2f0086ea58d85d2dc1390367ffae491c206",
+    "testing/fs/encfs_extended/Kconfig": "c3c7d05e78f1109f6baa22f14457867e820f426450760c23d0323c1fa55c472d",
+    "testing/fs/encfs_extended/Make.defs": "3b5b92cbac8de4b0fd6d8ee1c5d8007bcb81131cb92ce52769991c9c3d8a9f7a",
+    "testing/fs/encfs_extended/Makefile": "25e1b80cbdcf8e8b3dda9f590e208e99c67ab2b6afedbaf8252f4bbd3536a6ff",
+    "testing/fs/encfs_extended/README.md": "73b49be2b7cd6cbc4574d3878c2840ed188cfb0c0aebb174be56c3e6c457712e",
+    "testing/fs/encfs_extended/encfs_extended_main.c": "ad8c8d606fb1743a9b880f67ce41b142d7cd5267cdb48631fa229d4c918fd859"
+  },
+  "apps_base": "7b36f2344dbe9a5c9526462128545442267d2314"
+}

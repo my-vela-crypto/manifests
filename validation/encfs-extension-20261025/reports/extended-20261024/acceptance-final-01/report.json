@@ -1,0 +1,1792 @@
+{
+  "schema": 1,
+  "started_at": "2026-10-24T14:38:20+08:00",
+  "status": "passed",
+  "source_root": "/home/tourist/Desktop/openvela",
+  "build_dir": "/home/tourist/Desktop/openvela/cmake_out/vela_encfs_extended_release",
+  "config": "goldfish-arm64-v8a-ap-encfs-extended",
+  "phases": [
+    {
+      "name": "upstream-fs-regression",
+      "instance": "encfs-regression-9dcb698aab5d",
+      "command": [
+        "/home/tourist/Desktop/openvela/run-emulator.sh",
+        "goldfish-arm64-v8a-ap-encfs-extended",
+        "-keep",
+        "encfs-regression-9dcb698aab5d",
+        "-no-window",
+        "-no-audio",
+        "-gpu",
+        "off",
+        "-accel",
+        "off"
+      ],
+      "started_at": "2026-10-24T14:38:20+08:00",
+      "commands": [
+        {
+          "command": "date -u -s \"Jan 02 03:04:05 2026\"",
+          "started_at": "2026-10-24T14:38:21+08:00",
+          "finished_at": "2026-10-24T14:38:21+08:00",
+          "output": "\u001b[Kdate -u -s \"Jan 02 03:04:05 2026\"\r\r\n"
+        },
+        {
+          "command": "encfs provision --erase",
+          "started_at": "2026-10-24T14:38:21+08:00",
+          "finished_at": "2026-10-24T14:38:21+08:00",
+          "output": "\u001b[Kencfs provision --erase\r\r\nencfs: formatting encrypted data volume\r\r\nencfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        },
+        {
+          "command": "encfs start",
+          "started_at": "2026-10-24T14:38:21+08:00",
+          "finished_at": "2026-10-24T14:38:21+08:00",
+          "output": "\u001b[Kencfs start\r\r\nencfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        },
+        {
+          "command": "encfs_extended clock",
+          "started_at": "2026-10-24T14:38:21+08:00",
+          "finished_at": "2026-10-24T14:38:21+08:00",
+          "output": "\u001b[Kencfs_extended clock\r\r\nENCFS_TIME_RESULT now=1767323045 mtime=1767323044 delta=-1\r\r\nENCFS_EXTENDED_RESULT action=clock result=0 errno=0\r\r\n"
+        },
+        {
+          "command": "cmocka_fs_test",
+          "started_at": "2026-10-24T14:38:21+08:00",
+          "finished_at": "2026-10-24T14:38:26+08:00",
+          "output": "\u001b[Kcmocka_fs_test\r\r\n[==========] nuttx_fs_test_suites: Running 46 test(s).\r\r\r\n[ RUN      ] test_nuttx_fs_creat01\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_creat01\r\r\r\n[ RUN      ] test_nuttx_fs_dup01\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_dup01\r\r\r\n[ RUN      ] test_nuttx_fs_fcntl01\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_fcntl01\r\r\r\n[ RUN      ] test_nuttx_fs_fcntl02\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_fcntl02\r\r\r\n[ RUN      ] test_nuttx_fs_fcntl03\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_fcntl03\r\r\r\n[ RUN      ] test_nuttx_fs_fstat01\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_fstat01\r\r\r\n[ RUN      ] test_nuttx_fs_fstat02\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_fstat02\r\r\r\n[ RUN      ] test_nuttx_fs_fstatfs01\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_fstatfs01\r\r\r\n[ RUN      ] test_nuttx_fs_fsync01\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_fsync01\r\r\r\n[ RUN      ] test_nuttx_fs_fsync02\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\nthe fbsize = 32768,buffer size=32768\r\r\r\n[       OK ] test_nuttx_fs_fsync02\r\r\r\n[ RUN      ] test_nuttx_fs_file_get01\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_file_get01\r\r\r\n[ RUN      ] test_nuttx_fs_mkdir01\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_mkdir01\r\r\r\n[ RUN      ] test_nuttx_fs_open01\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_open01\r\r\r\n[ RUN      ] test_nuttx_fs_open02\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_open02\r\r\r\n[ RUN      ] test_nuttx_fs_opendir01\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_opendir01\r\r\r\n[ RUN      ] test_nuttx_fs_opendir02\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_opendir02\r\r\r\n[ RUN      ] test_nuttx_fs_pread01\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_pread01\r\r\r\n[ RUN      ] test_nuttx_fs_pwrite01\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_pwrite01\r\r\r\n[ RUN      ] test_nuttx_fs_read01\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_read01\r\r\r\n[ RUN      ] test_nuttx_fs_readdir01\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_readdir01\r\r\r\n[ RUN      ] test_nuttx_fs_readlink01\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_readlink01\r\r\r\n[ RUN      ] test_nuttx_fs_rename01\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_rename01\r\r\r\n[ RUN      ] test_nuttx_fs_rename02\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_rename02\r\r\r\n[ RUN      ] test_nuttx_fs_rewinddir01\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_rewinddir01\r\r\r\n[ RUN      ] test_nuttx_fs_rmdir01\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_rmdir01\r\r\r\n[ RUN      ] test_nuttx_fs_rmdir02\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_rmdir02\r\r\r\n[ RUN      ] test_nuttx_fs_rmdir03\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_rmdir03\r\r\r\n[ RUN      ] test_nuttx_fs_seek01\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_seek01\r\r\r\n[ RUN      ] test_nuttx_fs_seek02\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_seek02\r\r\r\n[ RUN      ] test_nuttx_fs_stat01\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_stat01\r\r\r\n[ RUN      ] test_nuttx_fs_statfs01\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_statfs01\r\r\r\n[ RUN      ] test_nuttx_fs_symlink01\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_symlink01\r\r\r\n[ RUN      ] test_nuttx_fs_truncate01\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_truncate01\r\r\r\n[ RUN      ] test_nuttx_fs_unlink01\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_unlink01\r\r\r\n[ RUN      ] test_nuttx_fs_write01\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_write01\r\r\r\n[ RUN      ] test_nuttx_fs_write02\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_write02\r\r\r\n[ RUN      ] test_nuttx_fs_write03\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_write03\r\r\r\n[ RUN      ] test_nuttx_fs_append01\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_append01\r\r\r\n[ RUN      ] test_nuttx_fs_sendfile01\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_sendfile01\r\r\r\n[ RUN      ] test_nuttx_fs_sendfile02\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_sendfile02\r\r\r\n[ RUN      ] test_nuttx_fs_stream01\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_stream01\r\r\r\n[ RUN      ] test_nuttx_fs_stream02\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_stream02\r\r\r\n[ RUN      ] test_nuttx_fs_stream03\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_stream03\r\r\r\n[ RUN      ] test_nuttx_fs_stream04\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_stream04\r\r\r\n[ RUN      ] test_nuttx_fs_eventfd\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_eventfd\r\r\r\n[ RUN      ] test_nuttx_fs_poll01\r\r\r\nINFO: lstat /data/CM_fs_testdir errno 2\r\r\r\n[       OK ] test_nuttx_fs_poll01\r\r\r\n[==========] nuttx_fs_test_suites: 46 test(s) run.\r\r\r\n[  PASSED  ] 46 test(s).\r\r\r\n"
+        },
+        {
+          "command": "mkdir /data/fstest",
+          "started_at": "2026-10-24T14:38:26+08:00",
+          "finished_at": "2026-10-24T14:38:26+08:00",
+          "output": "\u001b[Kmkdir /data/fstest\r\r\n"
+        },
+        {
+          "command": "fstest -m /data/fstest -n 10 -o 64 -s 8192",
+          "started_at": "2026-10-24T14:38:26+08:00",
+          "finished_at": "2026-10-24T14:38:37+08:00",
+          "output": "\u001b[Kfstest -m /data/fstest -n 10 -o 64 -s 8192\r\r\n\r\r\n=== FILLING 1 =============================\r\r\nFilled file system\r\r\n  Number of files: 64\r\r\n  Number deleted:  0\r\r\nDirectory:\r\r\n 1. Type[8]: File  Name: 0D0n02ab\r\r\n 2. Type[8]: File  Name: LmMxdOyPIU0S0mjPpzN\r\r\n 3. Type[8]: File  Name: gAnTKNPa0O0GKvR8IZ\r\r\n 4. Type[8]: File  Name: ax2MdSFvWpF0baOi\r\r\n 5. Type[8]: File  Name: QqZLOvTfXj5\r\r\n 6. Type[8]: File  Name: YJrRNqQUtw3\r\r\n 7. Type[8]: File  Name: E6PkEWHMd3ajUd\r\r\n 8. Type[8]: File  Name: t5GlPLddqsXnPu8KK\r\r\n 9. Type[8]: File  Name: G6kYBC\r\r\n10. Type[8]: File  Name: gyUt\r\r\n11. Type[8]: File  Name: WUhfI\r\r\n12. Type[8]: File  Name: FDawR\r\r\n13. Type[8]: File  Name: 0AmU13XQA1CRkXzphfQ\r\r\n14. Type[8]: File  Name: FW8uOlzqcJmVmP\r\r\n15. Type[8]: File  Name: icNIClqtCA2bz9U19\r\r\n16. Type[8]: File  Name: U5QU\r\r\n17. Type[8]: File  Name: PB5CuCihd\r\r\n18. Type[8]: File  Name: OlCW9R0bU\r\r\n19. Type[8]: File  Name: dIJFyQB8PWvNUP\r\r\n20. Type[8]: File  Name: HEKbrK\r\r\n21. Type[8]: File  Name: yXHuV6d6fgWii68NP\r\r\n22. Type[8]: File  Name: aPHG07S\r\r\n23. Type[8]: File  Name: DvbuW1Ko9OuL1S7fc\r\r\n24. Type[8]: File  Name: MOV37aHc2C50stiv7WZ\r\r\n25. Type[8]: File  Name: iWxK6M5Vw4cZhq1O\r\r\n26. Type[8]: File  Name: TAnI00wYsQ6SP6hTq\r\r\n27. Type[8]: File  Name: BtDD2ndcd\r\r\n28. Type[8]: File  Name: s6lp55OUrDMaWD\r\r\n29. Type[8]: File  Name: rwC1W\r\r\n30. Type[8]: File  Name: 1Kuos\r\r\n31. Type[8]: File  Name: e41xIlNbg8dE8ZO6HF\r\r\n32. Type[8]: File  Name: eOTN7\r\r\n33. Type[8]: File  Name: l4NetO6mWP4npbMqY9\r\r\n34. Type[8]: File  Name: UXZz8c\r\r\n35. Type[8]: File  Name: T9n9Wy\r\r\n36. Type[8]: File  Name: MLh6AkA0LRWO\r\r\n37. Type[8]: File  Name: vnNtHQuwG5S\r\r\n38. Type[8]: File  Name: hp0AC\r\r\n39. Type[8]: File  Name: 0pw0\r\r\n40. Type[8]: File  Name: iVvvGSIwVf6c\r\r\n41. Type[8]: File  Name: S630o5Rj9QYZJ\r\r\n42. Type[8]: File  Name: wkNdMQk1lx\r\r\n43. Type[8]: File  Name: A2A52iHAIJG2gNAddqb\r\r\n44. Type[8]: File  Name: Pk6qHw7yrR1qSYc88NH\r\r\n45. Type[8]: File  Name: YzsLH0tPgQb\r\r\n46. Type[8]: File  Name: hgSI\r\r\n47. Type[8]: File  Name: Ke0YC0t\r\r\n48. Type[8]: File  Name: hT9jRtLaXJ4FCQ2\r\r\n49. Type[8]: File  Name: aVrz1IEJWgP\r\r\n50. Type[8]: File  Name: nGIJnjSDuHfFzCQ\r\r\n51. Type[8]: File  Name: 2XqH0SPoKlF4TmnrCK\r\r\n52. Type[8]: File  Name: HiofenhYWvpa\r\r\n53. Type[8]: File  Name: Jjgp\r\r\n54. Type[8]: File  Name: YUvqgFvQTeiyL4riPKR\r\r\n55. Type[8]: File  Name: jvyEi\r\r\n56. Type[8]: File  Name: WICcb\r\r\n57. Type[8]: File  Name: FJEG5wxXty\r\r\n58. Type[8]: File  Name: ZWZCXUDe\r\r\n59. Type[8]: File  Name: oGSJg6HqM8x\r\r\n60. Type[8]: File  Name: dwQ7ciH\r\r\n61. Type[8]: File  Name: K75OyG\r\r\n62. Type[8]: File  Name: BvK58Q6xkqtV5h\r\r\n63. Type[8]: File  Name: ZY0kBqJ\r\r\n64. Type[8]: File  Name: URi9kJrk1rjJY7vZW\r\r\nTotal file size: 266362\r\r\n\r\r\n=== DELETING 1 ============================\r\r\nDeleted some files\r\r\n  Number of files: 64\r\r\n  Number deleted:  33\r\r\nDirectory:\r\r\n 1. Type[8]: File  Name: 0D0n02ab\r\r\n 2. Type[8]: File  Name: LmMxdOyPIU0S0mjPpzN\r\r\n 3. Type[8]: File  Name: gAnTKNPa0O0GKvR8IZ\r\r\n 4. Type[8]: File  Name: QqZLOvTfXj5\r\r\n 5. Type[8]: File  Name: YJrRNqQUtw3\r\r\n 6. Type[8]: File  Name: E6PkEWHMd3ajUd\r\r\n 7. Type[8]: File  Name: t5GlPLddqsXnPu8KK\r\r\n 8. Type[8]: File  Name: gyUt\r\r\n 9. Type[8]: File  Name: aPHG07S\r\r\n10. Type[8]: File  Name: iWxK6M5Vw4cZhq1O\r\r\n11. Type[8]: File  Name: TAnI00wYsQ6SP6hTq\r\r\n12. Type[8]: File  Name: wkNdMQk1lx\r\r\n13. Type[8]: File  Name: A2A52iHAIJG2gNAddqb\r\r\n14. Type[8]: File  Name: YzsLH0tPgQb\r\r\n15. Type[8]: File  Name: hgSI\r\r\n16. Type[8]: File  Name: Ke0YC0t\r\r\n17. Type[8]: File  Name: hT9jRtLaXJ4FCQ2\r\r\n18. Type[8]: File  Name: nGIJnjSDuHfFzCQ\r\r\n19. Type[8]: File  Name: HiofenhYWvpa\r\r\n20. Type[8]: File  Name: Jjgp\r\r\n21. Type[8]: File  Name: YUvqgFvQTeiyL4riPKR\r\r\n22. Type[8]: File  Name: jvyEi\r\r\n23. Type[8]: File  Name: WICcb\r\r\n24. Type[8]: File  Name: FJEG5wxXty\r\r\n25. Type[8]: File  Name: ZWZCXUDe\r\r\n26. Type[8]: File  Name: oGSJg6HqM8x\r\r\n27. Type[8]: File  Name: dwQ7ciH\r\r\n28. Type[8]: File  Name: K75OyG\r\r\n29. Type[8]: File  Name: BvK58Q6xkqtV5h\r\r\n30. Type[8]: File  Name: ZY0kBqJ\r\r\n31. Type[8]: File  Name: URi9kJrk1rjJY7vZW\r\r\nTotal file size: 123973\r\r\nFile System:\r\r\n  Block Size:      32768\r\r\n  No. Blocks:      8189\r\r\n  Free Blocks:     8152\r\r\n  Avail. Blocks:   8152\r\r\n  No. File Nodes:  0\r\r\n  Free File Nodes: 0\r\r\n\r\r\nEnd of loop memory usage:\r\r\nVARIABLE  BEFORE   AFTER    DELTA\r\r\n======== ======== ======== ========\r\r\narena     7bd5ff8  7bd5ff8        0\r\r\nordblks         4        9        5\r\r\nmxordblk  7ba47c0  7ba45c0 fffffe00\r\r\nuordblks    31008    314f8      4f0\r\r\nfordblks  7ba4ff0  7ba4b00 fffffb10\r\r\n\r\r\n=== FILLING 2 =============================\r\r\nFilled file system\r\r\n  Number of files: 64\r\r\n  Number deleted:  0\r\r\nDirectory:\r\r\n 1. Type[8]: File  Name: 0D0n02ab\r\r\n 2. Type[8]: File  Name: LmMxdOyPIU0S0mjPpzN\r\r\n 3. Type[8]: File  Name: gAnTKNPa0O0GKvR8IZ\r\r\n 4. Type[8]: File  Name: hSLQzh6TQ\r\r\n 5. Type[8]: File  Name: QqZLOvTfXj5\r\r\n 6. Type[8]: File  Name: YJrRNqQUtw3\r\r\n 7. Type[8]: File  Name: E6PkEWHMd3ajUd\r\r\n 8. Type[8]: File  Name: t5GlPLddqsXnPu8KK\r\r\n 9. Type[8]: File  Name: mbLOtlyQXT\r\r\n10. Type[8]: File  Name: gyUt\r\r\n11. Type[8]: File  Name: 27KIDu800RLTSvVjHHb\r\r\n12. Type[8]: File  Name: nX6KKHWKSV1G\r\r\n13. Type[8]: File  Name: HgXAzA2z\r\r\n14. Type[8]: File  Name: WC03xohSRkd1lBic2d8\r\r\n15. Type[8]: File  Name: OX9PeuuC8Kb\r\r\n16. Type[8]: File  Name: nxqVjoD\r\r\n17. Type[8]: File  Name: yFpNu4Q2ancCt\r\r\n18. Type[8]: File  Name: hV2yFAAP\r\r\n19. Type[8]: File  Name: pP4yaJ01c\r\r\n20. Type[8]: File  Name: PjpGGqrroBEjXVq\r\r\n21. Type[8]: File  Name: aPHG07S\r\r\n22. Type[8]: File  Name: Biovx9z8gxl\r\r\n23. Type[8]: File  Name: 0Iker6UGA5hjtE\r\r\n24. Type[8]: File  Name: iWxK6M5Vw4cZhq1O\r\r\n25. Type[8]: File  Name: TAnI00wYsQ6SP6hTq\r\r\n26. Type[8]: File  Name: I8u7CuZiTd3z\r\r\n27. Type[8]: File  Name: nugZn1GSc16F30\r\r\n28. Type[8]: File  Name: jYCreRgZoha8P8O\r\r\n29. Type[8]: File  Name: B2oxIoMDT\r\r\n30. Type[8]: File  Name: xawPItLibRd8Iw\r\r\n31. Type[8]: File  Name: 5ptzTmM\r\r\n32. Type[8]: File  Name: S9gG2Ol4prA\r\r\n33. Type[8]: File  Name: UBOqjlZfwL1i6PMAG\r\r\n34. Type[8]: File  Name: JpBlvtvTGXn\r\r\n35. Type[8]: File  Name: KYA00CHCRWHX\r\r\n36. Type[8]: File  Name: 2WzG5JfuKy\r\r\n37. Type[8]: File  Name: j4HzkMP32ULYKHCeY3\r\r\n38. Type[8]: File  Name: uYnE\r\r\n39. Type[8]: File  Name: uOVlRncf\r\r\n40. Type[8]: File  Name: wkNdMQk1lx\r\r\n41. Type[8]: File  Name: A2A52iHAIJG2gNAddqb\r\r\n42. Type[8]: File  Name: TqDCGE\r\r\n43. Type[8]: File  Name: YzsLH0tPgQb\r\r\n44. Type[8]: File  Name: hgSI\r\r\n45. Type[8]: File  Name: Ke0YC0t\r\r\n46. Type[8]: File  Name: hT9jRtLaXJ4FCQ2\r\r\n47. Type[8]: File  Name: viSxMxf\r\r\n48. Type[8]: File  Name: nGIJnjSDuHfFzCQ\r\r\n49. Type[8]: File  Name: ETb2BG\r\r\n50. Type[8]: File  Name: HiofenhYWvpa\r\r\n51. Type[8]: File  Name: Jjgp\r\r\n52. Type[8]: File  Name: YUvqgFvQTeiyL4riPKR\r\r\n53. Type[8]: File  Name: jvyEi\r\r\n54. Type[8]: File  Name: WICcb\r\r\n55. Type[8]: File  Name: FJEG5wxXty\r\r\n56. Type[8]: File  Name: ZWZCXUDe\r\r\n57. Type[8]: File  Name: oGSJg6HqM8x\r\r\n58. Type[8]: File  Name: dwQ7ciH\r\r\n59. Type[8]: File  Name: K75OyG\r\r\n60. Type[8]: File  Name: BvK58Q6xkqtV5h\r\r\n61. Type[8]: File  Name: ZY0kBqJ\r\r\n62. Type[8]: File  Name: URi9kJrk1rjJY7vZW\r\r\n63. Type[8]: File  Name: MzD3wpNo\r\r\n64. Type[8]: File  Name: 8ont2v8ncY0\r\r\nTotal file size: 242945\r\r\n\r\r\n=== DELETING 2 ============================\r\r\nDeleted some files\r\r\n  Number of files: 64\r\r\n  Number deleted:  44\r\r\nDirectory:\r\r\n 1. Type[8]: File  Name: 0D0n02ab\r\r\n 2. Type[8]: File  Name: LmMxdOyPIU0S0mjPpzN\r\r\n 3. Type[8]: File  Name: hSLQzh6TQ\r\r\n 4. Type[8]: File  Name: E6PkEWHMd3ajUd\r\r\n 5. Type[8]: File  Name: nX6KKHWKSV1G\r\r\n 6. Type[8]: File  Name: nxqVjoD\r\r\n 7. Type[8]: File  Name: nGIJnjSDuHfFzCQ\r\r\n 8. Type[8]: File  Name: HiofenhYWvpa\r\r\n 9. Type[8]: File  Name: YUvqgFvQTeiyL4riPKR\r\r\n10. Type[8]: File  Name: jvyEi\r\r\n11. Type[8]: File  Name: WICcb\r\r\n12. Type[8]: File  Name: FJEG5wxXty\r\r\n13. Type[8]: File  Name: ZWZCXUDe\r\r\n14. Type[8]: File  Name: oGSJg6HqM8x\r\r\n15. Type[8]: File  Name: dwQ7ciH\r\r\n16. Type[8]: File  Name: BvK58Q6xkqtV5h\r\r\n17. Type[8]: File  Name: ZY0kBqJ\r\r\n18. Type[8]: File  Name: URi9kJrk1rjJY7vZW\r\r\n19. Type[8]: File  Name: MzD3wpNo\r\r\n20. Type[8]: File  Name: 8ont2v8ncY0\r\r\nTotal file size: 73611\r\r\nFile System:\r\r\n  Block Size:      32768\r\r\n  No. Blocks:      8189\r\r\n  Free Blocks:     8163\r\r\n  Avail. Blocks:   8163\r\r\n  No. File Nodes:  0\r\r\n  Free File Nodes: 0\r\r\n\r\r\nEnd of loop memory usage:\r\r\nVARIABLE  BEFORE   AFTER    DELTA\r\r\n======== ======== ======== ========\r\r\narena     7bd5ff8  7bd5ff8        0\r\r\nordblks         9        9        0\r\r\nmxordblk  7ba45c0  7ba4590 ffffffd0\r\r\nuordblks    314f8    31338 fffffe40\r\r\nfordblks  7ba4b00  7ba4cc0      1c0\r\r\n\r\r\n=== FILLING 3 =============================\r\r\nFilled file system\r\r\n  Number of files: 64\r\r\n  Number deleted:  0\r\r\nDirectory:\r\r\n 1. Type[8]: File  Name: 0D0n02ab\r\r\n 2. Type[8]: File  Name: LmMxdOyPIU0S0mjPpzN\r\r\n 3. Type[8]: File  Name: IaVnR3lP\r\r\n 4. Type[8]: File  Name: hSLQzh6TQ\r\r\n 5. Type[8]: File  Name: 6jvomqL\r\r\n 6. Type[8]: File  Name: X6Tv3xjNd66vAHLb\r\r\n 7. Type[8]: File  Name: E6PkEWHMd3ajUd\r\r\n 8. Type[8]: File  Name: PRc9d1QQABQx\r\r\n 9. Type[8]: File  Name: u8seCftj\r\r\n10. Type[8]: File  Name: UyNtazhs8v5\r\r\n11. Type[8]: File  Name: k4jKW8Z0\r\r\n12. Type[8]: File  Name: nX6KKHWKSV1G\r\r\n13. Type[8]: File  Name: qQpdK\r\r\n14. Type[8]: File  Name: 9Knz2USc\r\r\n15. Type[8]: File  Name: BmSZ\r\r\n16. Type[8]: File  Name: nxqVjoD\r\r\n17. Type[8]: File  Name: yhhbJyKGY0E5zCF0\r\r\n18. Type[8]: File  Name: eun71\r\r\n19. Type[8]: File  Name: q4PIHJijU3Z\r\r\n20. Type[8]: File  Name: iilDjqJc6yOB89cG\r\r\n21. Type[8]: File  Name: ZlIYOk0V2MTQ\r\r\n22. Type[8]: File  Name: MBB0excON9f7yVjya\r\r\n23. Type[8]: File  Name: 8GeW9GhpAQO0\r\r\n24. Type[8]: File  Name: foD7fSUErQLs\r\r\n25. Type[8]: File  Name: cnP2lU\r\r\n26. Type[8]: File  Name: uH0WOK7LxD6nD4BW\r\r\n27. Type[8]: File  Name: kRIcaB1b\r\r\n28. Type[8]: File  Name: qLGxtj1B\r\r\n29. Type[8]: File  Name: gnRn5ujIypIxFJA\r\r\n30. Type[8]: File  Name: G0PmmkmqskEaHwiwJp\r\r\n31. Type[8]: File  Name: 0MuX7cxYVzX8vgB\r\r\n32. Type[8]: File  Name: 1BGPpyxPZHx\r\r\n33. Type[8]: File  Name: CxHZj5Jwgs1OH6lIB\r\r\n34. Type[8]: File  Name: EeGYGUaukg\r\r\n35. Type[8]: File  Name: wFTGxTl\r\r\n36. Type[8]: File  Name: Dpul8MC\r\r\n37. Type[8]: File  Name: P00r0geXjU\r\r\n38. Type[8]: File  Name: g11fD\r\r\n39. Type[8]: File  Name: QCdAjwNyYJfStWn\r\r\n40. Type[8]: File  Name: C1aguXuXoI0d4zj\r\r\n41. Type[8]: File  Name: Mz0NHumQyonjf7C9\r\r\n42. Type[8]: File  Name: ETwOgLweB3vLy\r\r\n43. Type[8]: File  Name: oMUou7awu0\r\r\n44. Type[8]: File  Name: yYCuXxGQ3eBjdMpAc\r\r\n45. Type[8]: File  Name: lgNMt\r\r\n46. Type[8]: File  Name: 7WGJemwJsiwGS71tlH\r\r\n47. Type[8]: File  Name: R8Xu88vd\r\r\n48. Type[8]: File  Name: AqyX1\r\r\n49. Type[8]: File  Name: nGIJnjSDuHfFzCQ\r\r\n50. Type[8]: File  Name: yUz4GR\r\r\n51. Type[8]: File  Name: HiofenhYWvpa\r\r\n52. Type[8]: File  Name: xl6aWf\r\r\n53. Type[8]: File  Name: YUvqgFvQTeiyL4riPKR\r\r\n54. Type[8]: File  Name: jvyEi\r\r\n55. Type[8]: File  Name: WICcb\r\r\n56. Type[8]: File  Name: FJEG5wxXty\r\r\n57. Type[8]: File  Name: ZWZCXUDe\r\r\n58. Type[8]: File  Name: oGSJg6HqM8x\r\r\n59. Type[8]: File  Name: dwQ7ciH\r\r\n60. Type[8]: File  Name: BvK58Q6xkqtV5h\r\r\n61. Type[8]: File  Name: ZY0kBqJ\r\r\n62. Type[8]: File  Name: URi9kJrk1rjJY7vZW\r\r\n63. Type[8]: File  Name: MzD3wpNo\r\r\n64. Type[8]: File  Name: 8ont2v8ncY0\r\r\nTotal file size: 223779\r\r\n\r\r\n=== DELETING 3 ============================\r\r\nDeleted some files\r\r\n  Number of files: 64\r\r\n  Number deleted:  30\r\r\nDirectory:\r\r\n 1. Type[8]: File  Name: 0D0n02ab\r\r\n 2. Type[8]: File  Name: PRc9d1QQABQx\r\r\n 3. Type[8]: File  Name: u8seCftj\r\r\n 4. Type[8]: File  Name: k4jKW8Z0\r\r\n 5. Type[8]: File  Name: nX6KKHWKSV1G\r\r\n 6. Type[8]: File  Name: qQpdK\r\r\n 7. Type[8]: File  Name: uH0WOK7LxD6nD4BW\r\r\n 8. Type[8]: File  Name: kRIcaB1b\r\r\n 9. Type[8]: File  Name: qLGxtj1B\r\r\n10. Type[8]: File  Name: 0MuX7cxYVzX8vgB\r\r\n11. Type[8]: File  Name: 1BGPpyxPZHx\r\r\n12. Type[8]: File  Name: CxHZj5Jwgs1OH6lIB\r\r\n13. Type[8]: File  Name: EeGYGUaukg\r\r\n14. Type[8]: File  Name: wFTGxTl\r\r\n15. Type[8]: File  Name: QCdAjwNyYJfStWn\r\r\n16. Type[8]: File  Name: C1aguXuXoI0d4zj\r\r\n17. Type[8]: File  Name: Mz0NHumQyonjf7C9\r\r\n18. Type[8]: File  Name: ETwOgLweB3vLy\r\r\n19. Type[8]: File  Name: oMUou7awu0\r\r\n20. Type[8]: File  Name: 7WGJemwJsiwGS71tlH\r\r\n21. Type[8]: File  Name: yUz4GR\r\r\n22. Type[8]: File  Name: HiofenhYWvpa\r\r\n23. Type[8]: File  Name: xl6aWf\r\r\n24. Type[8]: File  Name: YUvqgFvQTeiyL4riPKR\r\r\n25. Type[8]: File  Name: jvyEi\r\r\n26. Type[8]: File  Name: WICcb\r\r\n27. Type[8]: File  Name: FJEG5wxXty\r\r\n28. Type[8]: File  Name: ZWZCXUDe\r\r\n29. Type[8]: File  Name: oGSJg6HqM8x\r\r\n30. Type[8]: File  Name: dwQ7ciH\r\r\n31. Type[8]: File  Name: BvK58Q6xkqtV5h\r\r\n32. Type[8]: File  Name: ZY0kBqJ\r\r\n33. Type[8]: File  Name: URi9kJrk1rjJY7vZW\r\r\n34. Type[8]: File  Name: 8ont2v8ncY0\r\r\nTotal file size: 125143\r\r\nFile System:\r\r\n  Block Size:      32768\r\r\n  No. Blocks:      8189\r\r\n  Free Blocks:     8149\r\r\n  Avail. Blocks:   8149\r\r\n  No. File Nodes:  0\r\r\n  Free File Nodes: 0\r\r\n\r\r\nEnd of loop memory usage:\r\r\nVARIABLE  BEFORE   AFTER    DELTA\r\r\n======== ======== ======== ========\r\r\narena     7bd5ff8  7bd5ff8        0\r\r\nordblks         9       14        5\r\r\nmxordblk  7ba4590  7ba4590        0\r\r\nuordblks    31338    31558      220\r\r\nfordblks  7ba4cc0  7ba4aa0 fffffde0\r\r\n\r\r\n=== FILLING 4 =============================\r\r\nFilled file system\r\r\n  Number of files: 64\r\r\n  Number deleted:  0\r\r\nDirectory:\r\r\n 1. Type[8]: File  Name: 0D0n02ab\r\r\n 2. Type[8]: File  Name: 7STx\r\r\n 3. Type[8]: File  Name: 5Ae8TXJRC\r\r\n 4. Type[8]: File  Name: mJTI5yUr340K0L\r\r\n 5. Type[8]: File  Name: d3Z5ls83k0d40x\r\r\n 6. Type[8]: File  Name: bbox7Ta060jbW\r\r\n 7. Type[8]: File  Name: R40Ax9jQufb\r\r\n 8. Type[8]: File  Name: PRc9d1QQABQx\r\r\n 9. Type[8]: File  Name: u8seCftj\r\r\n10. Type[8]: File  Name: 4dQO4EZS0qzNe\r\r\n11. Type[8]: File  Name: k4jKW8Z0\r\r\n12. Type[8]: File  Name: nX6KKHWKSV1G\r\r\n13. Type[8]: File  Name: qQpdK\r\r\n14. Type[8]: File  Name: NEKpZLm2heBc\r\r\n15. Type[8]: File  Name: xyCcnnxC9S9sHP\r\r\n16. Type[8]: File  Name: BkHvUA\r\r\n17. Type[8]: File  Name: qfjOu5iiGTuZ\r\r\n18. Type[8]: File  Name: QpU3vIkDqZPzear9Ol\r\r\n19. Type[8]: File  Name: vBi0y9bN7rUIl0\r\r\n20. Type[8]: File  Name: ug799g93lvZx\r\r\n21. Type[8]: File  Name: 6gxTI8PBgmhRaAs\r\r\n22. Type[8]: File  Name: BbkaDET7Q9N1g\r\r\n23. Type[8]: File  Name: ZADHuyQBUzF9Id\r\r\n24. Type[8]: File  Name: xc9Nfgxh\r\r\n25. Type[8]: File  Name: RydP\r\r\n26. Type[8]: File  Name: uH0WOK7LxD6nD4BW\r\r\n27. Type[8]: File  Name: kRIcaB1b\r\r\n28. Type[8]: File  Name: qLGxtj1B\r\r\n29. Type[8]: File  Name: fDaqzAK466V50RvR6uN\r\r\n30. Type[8]: File  Name: YVooBvQBxB3bMneIspl\r\r\n31. Type[8]: File  Name: 0MuX7cxYVzX8vgB\r\r\n32. Type[8]: File  Name: 1BGPpyxPZHx\r\r\n33. Type[8]: File  Name: CxHZj5Jwgs1OH6lIB\r\r\n34. Type[8]: File  Name: EeGYGUaukg\r\r\n35. Type[8]: File  Name: wFTGxTl\r\r\n36. Type[8]: File  Name: L0hrvyyjGEbsMwIlQr\r\r\n37. Type[8]: File  Name: 5SAmw0H1v2VOaC\r\r\n38. Type[8]: File  Name: QCdAjwNyYJfStWn\r\r\n39. Type[8]: File  Name: C1aguXuXoI0d4zj\r\r\n40. Type[8]: File  Name: Mz0NHumQyonjf7C9\r\r\n41. Type[8]: File  Name: ETwOgLweB3vLy\r\r\n42. Type[8]: File  Name: oMUou7awu0\r\r\n43. Type[8]: File  Name: OwrdSOvNhO1bIIMiL\r\r\n44. Type[8]: File  Name: Y83GQp3\r\r\n45. Type[8]: File  Name: 7WGJemwJsiwGS71tlH\r\r\n46. Type[8]: File  Name: Lh9niVnMm7t880\r\r\n47. Type[8]: File  Name: 9s26HuMS60KbfZ\r\r\n48. Type[8]: File  Name: 2x34XfPArnqDgrI\r\r\n49. Type[8]: File  Name: yUz4GR\r\r\n50. Type[8]: File  Name: HiofenhYWvpa\r\r\n51. Type[8]: File  Name: xl6aWf\r\r\n52. Type[8]: File  Name: YUvqgFvQTeiyL4riPKR\r\r\n53. Type[8]: File  Name: jvyEi\r\r\n54. Type[8]: File  Name: WICcb\r\r\n55. Type[8]: File  Name: FJEG5wxXty\r\r\n56. Type[8]: File  Name: ZWZCXUDe\r\r\n57. Type[8]: File  Name: oGSJg6HqM8x\r\r\n58. Type[8]: File  Name: dwQ7ciH\r\r\n59. Type[8]: File  Name: BvK58Q6xkqtV5h\r\r\n60. Type[8]: File  Name: ZY0kBqJ\r\r\n61. Type[8]: File  Name: URi9kJrk1rjJY7vZW\r\r\n62. Type[8]: File  Name: 8ont2v8ncY0\r\r\n63. Type[8]: File  Name: XJAEVYMv3PLfsmlT\r\r\n64. Type[8]: File  Name: qqQnuycB0A3T\r\r\nTotal file size: 250703\r\r\n\r\r\n=== DELETING 4 ============================\r\r\nDeleted some files\r\r\n  Number of files: 64\r\r\n  Number deleted:  46\r\r\nDirectory:\r\r\n 1. Type[8]: File  Name: 0D0n02ab\r\r\n 2. Type[8]: File  Name: bbox7Ta060jbW\r\r\n 3. Type[8]: File  Name: nX6KKHWKSV1G\r\r\n 4. Type[8]: File  Name: Y83GQp3\r\r\n 5. Type[8]: File  Name: 2x34XfPArnqDgrI\r\r\n 6. Type[8]: File  Name: yUz4GR\r\r\n 7. Type[8]: File  Name: HiofenhYWvpa\r\r\n 8. Type[8]: File  Name: xl6aWf\r\r\n 9. Type[8]: File  Name: jvyEi\r\r\n10. Type[8]: File  Name: WICcb\r\r\n11. Type[8]: File  Name: FJEG5wxXty\r\r\n12. Type[8]: File  Name: ZWZCXUDe\r\r\n13. Type[8]: File  Name: oGSJg6HqM8x\r\r\n14. Type[8]: File  Name: dwQ7ciH\r\r\n15. Type[8]: File  Name: BvK58Q6xkqtV5h\r\r\n16. Type[8]: File  Name: ZY0kBqJ\r\r\n17. Type[8]: File  Name: URi9kJrk1rjJY7vZW\r\r\n18. Type[8]: File  Name: XJAEVYMv3PLfsmlT\r\r\nTotal file size: 65085\r\r\nFile System:\r\r\n  Block Size:      32768\r\r\n  No. Blocks:      8189\r\r\n  Free Blocks:     8165\r\r\n  Avail. Blocks:   8165\r\r\n  No. File Nodes:  0\r\r\n  Free File Nodes: 0\r\r\n\r\r\nEnd of loop memory usage:\r\r\nVARIABLE  BEFORE   AFTER    DELTA\r\r\n======== ======== ======== ========\r\r\narena     7bd5ff8  7bd5ff8        0\r\r\nordblks        14        8       -6\r\r\nmxordblk  7ba4590  7ba4570 ffffffe0\r\r\nuordblks    31558    312c8 fffffd70\r\r\nfordblks  7ba4aa0  7ba4d30      290\r\r\n\r\r\n=== FILLING 5 =============================\r\r\nFilled file system\r\r\n  Number of files: 64\r\r\n  Number deleted:  0\r\r\nDirectory:\r\r\n 1. Type[8]: File  Name: 0D0n02ab\r\r\n 2. Type[8]: File  Name: g7RE\r\r\n 3. Type[8]: File  Name: XOYyzxSS\r\r\n 4. Type[8]: File  Name: ctb0fvLNjQMMVA\r\r\n 5. Type[8]: File  Name: dZI8B8NIySZj5ZMx\r\r\n 6. Type[8]: File  Name: bbox7Ta060jbW\r\r\n 7. Type[8]: File  Name: 3pEabjAphukcP6RTmf\r\r\n 8. Type[8]: File  Name: ITl7HVcafKghad\r\r\n 9. Type[8]: File  Name: xVIQNsTR\r\r\n10. Type[8]: File  Name: ArDXUOeaMI07y9\r\r\n11. Type[8]: File  Name: q0pz4kCHsA9\r\r\n12. Type[8]: File  Name: nX6KKHWKSV1G\r\r\n13. Type[8]: File  Name: Hy4LTgdM1RAj3zxtS\r\r\n14. Type[8]: File  Name: 5m0ks8mQeoJXaNH\r\r\n15. Type[8]: File  Name: 9y80O3XIlrpz6\r\r\n16. Type[8]: File  Name: AlL2inA3mBJmlaaCDU\r\r\n17. Type[8]: File  Name: m08dRBiPOlWWPd4v\r\r\n18. Type[8]: File  Name: tjEBb5o6PMCqYlPIe\r\r\n19. Type[8]: File  Name: KVZwthOFV6v6IZZiiuS\r\r\n20. Type[8]: File  Name: XhQlSRV1ersUNAu08F\r\r\n21. Type[8]: File  Name: XxslyEdzMA\r\r\n22. Type[8]: File  Name: R9puomsxZG2jkyfx\r\r\n23. Type[8]: File  Name: BYoBVOUa7lVM\r\r\n24. Type[8]: File  Name: Pzk9Ar\r\r\n25. Type[8]: File  Name: Un6Ci2ul\r\r\n26. Type[8]: File  Name: 3EnUz0WFe0rkMt\r\r\n27. Type[8]: File  Name: LCA0HDZVxSHToG\r\r\n28. Type[8]: File  Name: cCbyCqD8U6IE\r\r\n29. Type[8]: File  Name: hfxYehAhSQzx\r\r\n30. Type[8]: File  Name: Am0Ld\r\r\n31. Type[8]: File  Name: tXJup\r\r\n32. Type[8]: File  Name: GyvPtNgphDk3FgU\r\r\n33. Type[8]: File  Name: epFW\r\r\n34. Type[8]: File  Name: XdaWd5r\r\r\n35. Type[8]: File  Name: FowOEg\r\r\n36. Type[8]: File  Name: gca2LqSuVCIPzq\r\r\n37. Type[8]: File  Name: pjwAOsQO7l\r\r\n38. Type[8]: File  Name: peL8lL0v\r\r\n39. Type[8]: File  Name: 7fb98kIMoxXl1K\r\r\n40. Type[8]: File  Name: 9uH3o0VnkPCM70snhAT\r\r\n41. Type[8]: File  Name: dWxIE\r\r\n42. Type[8]: File  Name: ifRosuFIdaxqX\r\r\n43. Type[8]: File  Name: qzZdryFHxIxx0u\r\r\n44. Type[8]: File  Name: 02uJmo\r\r\n45. Type[8]: File  Name: Y83GQp3\r\r\n46. Type[8]: File  Name: HcN6EKitWWMfTU\r\r\n47. Type[8]: File  Name: ArzFb0ecFm1Pck2P2gp\r\r\n48. Type[8]: File  Name: tB1BNx3wWL59\r\r\n49. Type[8]: File  Name: 2x34XfPArnqDgrI\r\r\n50. Type[8]: File  Name: yUz4GR\r\r\n51. Type[8]: File  Name: HiofenhYWvpa\r\r\n52. Type[8]: File  Name: xl6aWf\r\r\n53. Type[8]: File  Name: pL5kxFOl8qTa\r\r\n54. Type[8]: File  Name: jvyEi\r\r\n55. Type[8]: File  Name: WICcb\r\r\n56. Type[8]: File  Name: FJEG5wxXty\r\r\n57. Type[8]: File  Name: ZWZCXUDe\r\r\n58. Type[8]: File  Name: oGSJg6HqM8x\r\r\n59. Type[8]: File  Name: dwQ7ciH\r\r\n60. Type[8]: File  Name: 8vBAef8y\r\r\n61. Type[8]: File  Name: BvK58Q6xkqtV5h\r\r\n62. Type[8]: File  Name: ZY0kBqJ\r\r\n63. Type[8]: File  Name: URi9kJrk1rjJY7vZW\r\r\n64. Type[8]: File  Name: XJAEVYMv3PLfsmlT\r\r\nTotal file size: 285253\r\r\n\r\r\n=== DELETING 5 ============================\r\r\nDeleted some files\r\r\n  Number of files: 64\r\r\n  Number deleted:  32\r\r\nDirectory:\r\r\n 1. Type[8]: File  Name: 0D0n02ab\r\r\n 2. Type[8]: File  Name: ArDXUOeaMI07y9\r\r\n 3. Type[8]: File  Name: nX6KKHWKSV1G\r\r\n 4. Type[8]: File  Name: m08dRBiPOlWWPd4v\r\r\n 5. Type[8]: File  Name: tjEBb5o6PMCqYlPIe\r\r\n 6. Type[8]: File  Name: R9puomsxZG2jkyfx\r\r\n 7. Type[8]: File  Name: BYoBVOUa7lVM\r\r\n 8. Type[8]: File  Name: Un6Ci2ul\r\r\n 9. Type[8]: File  Name: LCA0HDZVxSHToG\r\r\n10. Type[8]: File  Name: hfxYehAhSQzx\r\r\n11. Type[8]: File  Name: GyvPtNgphDk3FgU\r\r\n12. Type[8]: File  Name: epFW\r\r\n13. Type[8]: File  Name: FowOEg\r\r\n14. Type[8]: File  Name: peL8lL0v\r\r\n15. Type[8]: File  Name: 7fb98kIMoxXl1K\r\r\n16. Type[8]: File  Name: 9uH3o0VnkPCM70snhAT\r\r\n17. Type[8]: File  Name: ifRosuFIdaxqX\r\r\n18. Type[8]: File  Name: 02uJmo\r\r\n19. Type[8]: File  Name: ArzFb0ecFm1Pck2P2gp\r\r\n20. Type[8]: File  Name: tB1BNx3wWL59\r\r\n21. Type[8]: File  Name: 2x34XfPArnqDgrI\r\r\n22. Type[8]: File  Name: yUz4GR\r\r\n23. Type[8]: File  Name: xl6aWf\r\r\n24. Type[8]: File  Name: pL5kxFOl8qTa\r\r\n25. Type[8]: File  Name: jvyEi\r\r\n26. Type[8]: File  Name: FJEG5wxXty\r\r\n27. Type[8]: File  Name: ZWZCXUDe\r\r\n28. Type[8]: File  Name: oGSJg6HqM8x\r\r\n29. Type[8]: File  Name: dwQ7ciH\r\r\n30. Type[8]: File  Name: ZY0kBqJ\r\r\n31. Type[8]: File  Name: URi9kJrk1rjJY7vZW\r\r\n32. Type[8]: File  Name: XJAEVYMv3PLfsmlT\r\r\nTotal file size: 137792\r\r\nFile System:\r\r\n  Block Size:      32768\r\r\n  No. Blocks:      8189\r\r\n  Free Blocks:     8151\r\r\n  Avail. Blocks:   8151\r\r\n  No. File Nodes:  0\r\r\n  Free File Nodes: 0\r\r\n\r\r\nEnd of loop memory usage:\r\r\nVARIABLE  BEFORE   AFTER    DELTA\r\r\n======== ======== ======== ========\r\r\narena     7bd5ff8  7bd5ff8        0\r\r\nordblks         8       19       11\r\r\nmxordblk  7ba4570  7ba45c0       50\r\r\nuordblks    312c8    31538      270\r\r\nfordblks  7ba4d30  7ba4ac0 fffffd90\r\r\n\r\r\n=== FILLING 6 =============================\r\r\nFilled file system\r\r\n  Number of files: 64\r\r\n  Number deleted:  0\r\r\nDirectory:\r\r\n 1. Type[8]: File  Name: 0D0n02ab\r\r\n 2. Type[8]: File  Name: spzAh4BTGI5TalD99\r\r\n 3. Type[8]: File  Name: mSF8c\r\r\n 4. Type[8]: File  Name: 50NdcApjdwE8FPXl\r\r\n 5. Type[8]: File  Name: qZR4WiPmlSmU\r\r\n 6. Type[8]: File  Name: 00RYDb\r\r\n 7. Type[8]: File  Name: PDORbUI\r\r\n 8. Type[8]: File  Name: ttAI\r\r\n 9. Type[8]: File  Name: Km2AF\r\r\n10. Type[8]: File  Name: ArDXUOeaMI07y9\r\r\n11. Type[8]: File  Name: 8Ear\r\r\n12. Type[8]: File  Name: nX6KKHWKSV1G\r\r\n13. Type[8]: File  Name: tAElKDLjvlCYp\r\r\n14. Type[8]: File  Name: koOY7MWDU0Cekz\r\r\n15. Type[8]: File  Name: db7rQWX2uAS20xnsn\r\r\n16. Type[8]: File  Name: sOxUZTL82vkS1W\r\r\n17. Type[8]: File  Name: m08dRBiPOlWWPd4v\r\r\n18. Type[8]: File  Name: tjEBb5o6PMCqYlPIe\r\r\n19. Type[8]: File  Name: G4qiBg\r\r\n20. Type[8]: File  Name: 7QqhZv\r\r\n21. Type[8]: File  Name: jKq70bavhiPGCw0\r\r\n22. Type[8]: File  Name: R9puomsxZG2jkyfx\r\r\n23. Type[8]: File  Name: BYoBVOUa7lVM\r\r\n24. Type[8]: File  Name: 9Zgy\r\r\n25. Type[8]: File  Name: Un6Ci2ul\r\r\n26. Type[8]: File  Name: Y5SJm7TA0vUK\r\r\n27. Type[8]: File  Name: LCA0HDZVxSHToG\r\r\n28. Type[8]: File  Name: OHCjbsrM2fP6ZCH\r\r\n29. Type[8]: File  Name: hfxYehAhSQzx\r\r\n30. Type[8]: File  Name: Aavdgn6DmPnpk\r\r\n31. Type[8]: File  Name: GyvPtNgphDk3FgU\r\r\n32. Type[8]: File  Name: epFW\r\r\n33. Type[8]: File  Name: ZgZu\r\r\n34. Type[8]: File  Name: FowOEg\r\r\n35. Type[8]: File  Name: UsQiEEhOXVy\r\r\n36. Type[8]: File  Name: MS9s\r\r\n37. Type[8]: File  Name: peL8lL0v\r\r\n38. Type[8]: File  Name: 7fb98kIMoxXl1K\r\r\n39. Type[8]: File  Name: 9uH3o0VnkPCM70snhAT\r\r\n40. Type[8]: File  Name: 1ixm5DEQ\r\r\n41. Type[8]: File  Name: ifRosuFIdaxqX\r\r\n42. Type[8]: File  Name: FGwZB\r\r\n43. Type[8]: File  Name: 02uJmo\r\r\n44. Type[8]: File  Name: rvCgbMybkhny\r\r\n45. Type[8]: File  Name: hRTkKXy\r\r\n46. Type[8]: File  Name: ArzFb0ecFm1Pck2P2gp\r\r\n47. Type[8]: File  Name: tB1BNx3wWL59\r\r\n48. Type[8]: File  Name: 2x34XfPArnqDgrI\r\r\n49. Type[8]: File  Name: yUz4GR\r\r\n50. Type[8]: File  Name: RTnvUXbPIULnKMb9W\r\r\n51. Type[8]: File  Name: xl6aWf\r\r\n52. Type[8]: File  Name: pL5kxFOl8qTa\r\r\n53. Type[8]: File  Name: jvyEi\r\r\n54. Type[8]: File  Name: FJEG5wxXty\r\r\n55. Type[8]: File  Name: ZWZCXUDe\r\r\n56. Type[8]: File  Name: oGSJg6HqM8x\r\r\n57. Type[8]: File  Name: dwQ7ciH\r\r\n58. Type[8]: File  Name: 9s3CXYQGKLR9NIvC\r\r\n59. Type[8]: File  Name: ZY0kBqJ\r\r\n60. Type[8]: File  Name: URi9kJrk1rjJY7vZW\r\r\n61. Type[8]: File  Name: 3hd0fmUFOlDVqQheUIq\r\r\n62. Type[8]: File  Name: XJAEVYMv3PLfsmlT\r\r\n63. Type[8]: File  Name: 6NxT0nMAWvZHoRq2q\r\r\n64. Type[8]: File  Name: 4nx9sD5SU8W6rhJJXv\r\r\nTotal file size: 274054\r\r\n\r\r\n=== DELETING 6 ============================\r\r\nDeleted some files\r\r\n  Number of files: 64\r\r\n  Number deleted:  47\r\r\nDirectory:\r\r\n 1. Type[8]: File  Name: 0D0n02ab\r\r\n 2. Type[8]: File  Name: hRTkKXy\r\r\n 3. Type[8]: File  Name: ArzFb0ecFm1Pck2P2gp\r\r\n 4. Type[8]: File  Name: tB1BNx3wWL59\r\r\n 5. Type[8]: File  Name: 2x34XfPArnqDgrI\r\r\n 6. Type[8]: File  Name: RTnvUXbPIULnKMb9W\r\r\n 7. Type[8]: File  Name: xl6aWf\r\r\n 8. Type[8]: File  Name: pL5kxFOl8qTa\r\r\n 9. Type[8]: File  Name: jvyEi\r\r\n10. Type[8]: File  Name: FJEG5wxXty\r\r\n11. Type[8]: File  Name: ZWZCXUDe\r\r\n12. Type[8]: File  Name: oGSJg6HqM8x\r\r\n13. Type[8]: File  Name: 9s3CXYQGKLR9NIvC\r\r\n14. Type[8]: File  Name: ZY0kBqJ\r\r\n15. Type[8]: File  Name: URi9kJrk1rjJY7vZW\r\r\n16. Type[8]: File  Name: 3hd0fmUFOlDVqQheUIq\r\r\n17. Type[8]: File  Name: 4nx9sD5SU8W6rhJJXv\r\r\nTotal file size: 66871\r\r\nFile System:\r\r\n  Block Size:      32768\r\r\n  No. Blocks:      8189\r\r\n  Free Blocks:     8166\r\r\n  Avail. Blocks:   8166\r\r\n  No. File Nodes:  0\r\r\n  Free File Nodes: 0\r\r\n\r\r\nEnd of loop memory usage:\r\r\nVARIABLE  BEFORE   AFTER    DELTA\r\r\n======== ======== ======== ========\r\r\narena     7bd5ff8  7bd5ff8        0\r\r\nordblks        19       11       -8\r\r\nmxordblk  7ba45c0  7ba4560 ffffffa0\r\r\nuordblks    31538    312d8 fffffda0\r\r\nfordblks  7ba4ac0  7ba4d20      260\r\r\n\r\r\n=== FILLING 7 =============================\r\r\nFilled file system\r\r\n  Number of files: 64\r\r\n  Number deleted:  0\r\r\nDirectory:\r\r\n 1. Type[8]: File  Name: 0D0n02ab\r\r\n 2. Type[8]: File  Name: TpPUghJts\r\r\n 3. Type[8]: File  Name: 06v6Ft1cEdjdz9QMb\r\r\n 4. Type[8]: File  Name: zAw5\r\r\n 5. Type[8]: File  Name: Aldzj38iV2\r\r\n 6. Type[8]: File  Name: Dvq0czwQT\r\r\n 7. Type[8]: File  Name: n7HzW0Io3qlWuldkBkd\r\r\n 8. Type[8]: File  Name: RECvBh0iaUK7LQokP\r\r\n 9. Type[8]: File  Name: 5h3qC9VoEz1TShG3h\r\r\n10. Type[8]: File  Name: 8RedU8YmT\r\r\n11. Type[8]: File  Name: UmXVhGGw9Borss2f\r\r\n12. Type[8]: File  Name: iCE59\r\r\n13. Type[8]: File  Name: H2pMH3EwbV6\r\r\n14. Type[8]: File  Name: 1zM49h\r\r\n15. Type[8]: File  Name: 3FTEhC9lnZ8\r\r\n16. Type[8]: File  Name: tcAt6aQ0a91C2N0\r\r\n17. Type[8]: File  Name: VXU0uuuUa\r\r\n18. Type[8]: File  Name: pJD6TmNb\r\r\n19. Type[8]: File  Name: 2H2WyqA\r\r\n20. Type[8]: File  Name: kopptqUuVxr\r\r\n21. Type[8]: File  Name: WDk0FOfzvfq5TW\r\r\n22. Type[8]: File  Name: s8EBcQ9QvIXFA0A\r\r\n23. Type[8]: File  Name: 1RD3wXOS\r\r\n24. Type[8]: File  Name: fgtx19duA6xv8McQW\r\r\n25. Type[8]: File  Name: VTc24lLX\r\r\n26. Type[8]: File  Name: v2VMpFWWY\r\r\n27. Type[8]: File  Name: SB402wEC\r\r\n28. Type[8]: File  Name: ucIbYOhhdHerC\r\r\n29. Type[8]: File  Name: mA2o6KNdaNs0Ru9W\r\r\n30. Type[8]: File  Name: t9r0R3Vm9B5XZi\r\r\n31. Type[8]: File  Name: sO6p\r\r\n32. Type[8]: File  Name: Z8q9X\r\r\n33. Type[8]: File  Name: pRSM0ikomrwO100puz\r\r\n34. Type[8]: File  Name: qoYSVcVgJc\r\r\n35. Type[8]: File  Name: 7HWIWIldVjvpSbdEeY\r\r\n36. Type[8]: File  Name: lpm6fDtENyFgNEdG0\r\r\n37. Type[8]: File  Name: 90Uy5s8hSA8g0leSgc\r\r\n38. Type[8]: File  Name: BqvEOJ9yQeE\r\r\n39. Type[8]: File  Name: QK3F8qOqgR\r\r\n40. Type[8]: File  Name: 6lzC\r\r\n41. Type[8]: File  Name: Ldzr2ZdqjY\r\r\n42. Type[8]: File  Name: PB25xwF0GUK\r\r\n43. Type[8]: File  Name: VKDagOY\r\r\n44. Type[8]: File  Name: U5ZFfC\r\r\n45. Type[8]: File  Name: dVTtkmBtn51QIOvd\r\r\n46. Type[8]: File  Name: Zy6J5ZDer09Mywwa\r\r\n47. Type[8]: File  Name: hRTkKXy\r\r\n48. Type[8]: File  Name: ArzFb0ecFm1Pck2P2gp\r\r\n49. Type[8]: File  Name: tB1BNx3wWL59\r\r\n50. Type[8]: File  Name: 2x34XfPArnqDgrI\r\r\n51. Type[8]: File  Name: dbJbL4Y3Og0fet\r\r\n52. Type[8]: File  Name: RTnvUXbPIULnKMb9W\r\r\n53. Type[8]: File  Name: xl6aWf\r\r\n54. Type[8]: File  Name: pL5kxFOl8qTa\r\r\n55. Type[8]: File  Name: jvyEi\r\r\n56. Type[8]: File  Name: HJvk\r\r\n57. Type[8]: File  Name: FJEG5wxXty\r\r\n58. Type[8]: File  Name: ZWZCXUDe\r\r\n59. Type[8]: File  Name: oGSJg6HqM8x\r\r\n60. Type[8]: File  Name: 9s3CXYQGKLR9NIvC\r\r\n61. Type[8]: File  Name: ZY0kBqJ\r\r\n62. Type[8]: File  Name: URi9kJrk1rjJY7vZW\r\r\n63. Type[8]: File  Name: 3hd0fmUFOlDVqQheUIq\r\r\n64. Type[8]: File  Name: 4nx9sD5SU8W6rhJJXv\r\r\nTotal file size: 252593\r\r\n\r\r\n=== DELETING 7 ============================\r\r\nDeleted some files\r\r\n  Number of files: 64\r\r\n  Number deleted:  8\r\r\nDirectory:\r\r\n 1. Type[8]: File  Name: 0D0n02ab\r\r\n 2. Type[8]: File  Name: TpPUghJts\r\r\n 3. Type[8]: File  Name: 06v6Ft1cEdjdz9QMb\r\r\n 4. Type[8]: File  Name: zAw5\r\r\n 5. Type[8]: File  Name: Aldzj38iV2\r\r\n 6. Type[8]: File  Name: n7HzW0Io3qlWuldkBkd\r\r\n 7. Type[8]: File  Name: RECvBh0iaUK7LQokP\r\r\n 8. Type[8]: File  Name: 8RedU8YmT\r\r\n 9. Type[8]: File  Name: iCE59\r\r\n10. Type[8]: File  Name: H2pMH3EwbV6\r\r\n11. Type[8]: File  Name: 1zM49h\r\r\n12. Type[8]: File  Name: tcAt6aQ0a91C2N0\r\r\n13. Type[8]: File  Name: VXU0uuuUa\r\r\n14. Type[8]: File  Name: pJD6TmNb\r\r\n15. Type[8]: File  Name: 2H2WyqA\r\r\n16. Type[8]: File  Name: kopptqUuVxr\r\r\n17. Type[8]: File  Name: WDk0FOfzvfq5TW\r\r\n18. Type[8]: File  Name: s8EBcQ9QvIXFA0A\r\r\n19. Type[8]: File  Name: 1RD3wXOS\r\r\n20. Type[8]: File  Name: fgtx19duA6xv8McQW\r\r\n21. Type[8]: File  Name: VTc24lLX\r\r\n22. Type[8]: File  Name: v2VMpFWWY\r\r\n23. Type[8]: File  Name: SB402wEC\r\r\n24. Type[8]: File  Name: ucIbYOhhdHerC\r\r\n25. Type[8]: File  Name: mA2o6KNdaNs0Ru9W\r\r\n26. Type[8]: File  Name: sO6p\r\r\n27. Type[8]: File  Name: Z8q9X\r\r\n28. Type[8]: File  Name: qoYSVcVgJc\r\r\n29. Type[8]: File  Name: 7HWIWIldVjvpSbdEeY\r\r\n30. Type[8]: File  Name: lpm6fDtENyFgNEdG0\r\r\n31. Type[8]: File  Name: 90Uy5s8hSA8g0leSgc\r\r\n32. Type[8]: File  Name: BqvEOJ9yQeE\r\r\n33. Type[8]: File  Name: QK3F8qOqgR\r\r\n34. Type[8]: File  Name: 6lzC\r\r\n35. Type[8]: File  Name: Ldzr2ZdqjY\r\r\n36. Type[8]: File  Name: PB25xwF0GUK\r\r\n37. Type[8]: File  Name: VKDagOY\r\r\n38. Type[8]: File  Name: U5ZFfC\r\r\n39. Type[8]: File  Name: dVTtkmBtn51QIOvd\r\r\n40. Type[8]: File  Name: Zy6J5ZDer09Mywwa\r\r\n41. Type[8]: File  Name: hRTkKXy\r\r\n42. Type[8]: File  Name: ArzFb0ecFm1Pck2P2gp\r\r\n43. Type[8]: File  Name: tB1BNx3wWL59\r\r\n44. Type[8]: File  Name: 2x34XfPArnqDgrI\r\r\n45. Type[8]: File  Name: dbJbL4Y3Og0fet\r\r\n46. Type[8]: File  Name: RTnvUXbPIULnKMb9W\r\r\n47. Type[8]: File  Name: xl6aWf\r\r\n48. Type[8]: File  Name: pL5kxFOl8qTa\r\r\n49. Type[8]: File  Name: HJvk\r\r\n50. Type[8]: File  Name: FJEG5wxXty\r\r\n51. Type[8]: File  Name: ZWZCXUDe\r\r\n52. Type[8]: File  Name: 9s3CXYQGKLR9NIvC\r\r\n53. Type[8]: File  Name: ZY0kBqJ\r\r\n54. Type[8]: File  Name: URi9kJrk1rjJY7vZW\r\r\n55. Type[8]: File  Name: 3hd0fmUFOlDVqQheUIq\r\r\n56. Type[8]: File  Name: 4nx9sD5SU8W6rhJJXv\r\r\nTotal file size: 225212\r\r\nFile System:\r\r\n  Block Size:      32768\r\r\n  No. Blocks:      8189\r\r\n  Free Blocks:     8127\r\r\n  Avail. Blocks:   8127\r\r\n  No. File Nodes:  0\r\r\n  Free File Nodes: 0\r\r\n\r\r\nEnd of loop memory usage:\r\r\nVARIABLE  BEFORE   AFTER    DELTA\r\r\n======== ======== ======== ========\r\r\narena     7bd5ff8  7bd5ff8        0\r\r\nordblks        11        9       -2\r\r\nmxordblk  7ba4560  7ba4560        0\r\r\nuordblks    312d8    318e8      610\r\r\nfordblks  7ba4d20  7ba4710 fffff9f0\r\r\n\r\r\n=== FILLING 8 =============================\r\r\nFilled file system\r\r\n  Number of files: 64\r\r\n  Number deleted:  0\r\r\nDirectory:\r\r\n 1. Type[8]: File  Name: 0D0n02ab\r\r\n 2. Type[8]: File  Name: TpPUghJts\r\r\n 3. Type[8]: File  Name: 06v6Ft1cEdjdz9QMb\r\r\n 4. Type[8]: File  Name: zAw5\r\r\n 5. Type[8]: File  Name: Aldzj38iV2\r\r\n 6. Type[8]: File  Name: iNjT\r\r\n 7. Type[8]: File  Name: n7HzW0Io3qlWuldkBkd\r\r\n 8. Type[8]: File  Name: RECvBh0iaUK7LQokP\r\r\n 9. Type[8]: File  Name: Z2re8is1\r\r\n10. Type[8]: File  Name: 8RedU8YmT\r\r\n11. Type[8]: File  Name: Uq0RjPmj6qww\r\r\n12. Type[8]: File  Name: iCE59\r\r\n13. Type[8]: File  Name: H2pMH3EwbV6\r\r\n14. Type[8]: File  Name: 1zM49h\r\r\n15. Type[8]: File  Name: oHEdVdGfX76Z2duEp\r\r\n16. Type[8]: File  Name: tcAt6aQ0a91C2N0\r\r\n17. Type[8]: File  Name: VXU0uuuUa\r\r\n18. Type[8]: File  Name: pJD6TmNb\r\r\n19. Type[8]: File  Name: 2H2WyqA\r\r\n20. Type[8]: File  Name: kopptqUuVxr\r\r\n21. Type[8]: File  Name: WDk0FOfzvfq5TW\r\r\n22. Type[8]: File  Name: s8EBcQ9QvIXFA0A\r\r\n23. Type[8]: File  Name: 1RD3wXOS\r\r\n24. Type[8]: File  Name: fgtx19duA6xv8McQW\r\r\n25. Type[8]: File  Name: VTc24lLX\r\r\n26. Type[8]: File  Name: v2VMpFWWY\r\r\n27. Type[8]: File  Name: SB402wEC\r\r\n28. Type[8]: File  Name: ucIbYOhhdHerC\r\r\n29. Type[8]: File  Name: mA2o6KNdaNs0Ru9W\r\r\n30. Type[8]: File  Name: uFhe\r\r\n31. Type[8]: File  Name: sO6p\r\r\n32. Type[8]: File  Name: Z8q9X\r\r\n33. Type[8]: File  Name: dDVL4HSSe1T\r\r\n34. Type[8]: File  Name: qoYSVcVgJc\r\r\n35. Type[8]: File  Name: 7HWIWIldVjvpSbdEeY\r\r\n36. Type[8]: File  Name: lpm6fDtENyFgNEdG0\r\r\n37. Type[8]: File  Name: 90Uy5s8hSA8g0leSgc\r\r\n38. Type[8]: File  Name: BqvEOJ9yQeE\r\r\n39. Type[8]: File  Name: QK3F8qOqgR\r\r\n40. Type[8]: File  Name: 6lzC\r\r\n41. Type[8]: File  Name: Ldzr2ZdqjY\r\r\n42. Type[8]: File  Name: PB25xwF0GUK\r\r\n43. Type[8]: File  Name: VKDagOY\r\r\n44. Type[8]: File  Name: U5ZFfC\r\r\n45. Type[8]: File  Name: dVTtkmBtn51QIOvd\r\r\n46. Type[8]: File  Name: Zy6J5ZDer09Mywwa\r\r\n47. Type[8]: File  Name: hRTkKXy\r\r\n48. Type[8]: File  Name: ArzFb0ecFm1Pck2P2gp\r\r\n49. Type[8]: File  Name: tB1BNx3wWL59\r\r\n50. Type[8]: File  Name: 2x34XfPArnqDgrI\r\r\n51. Type[8]: File  Name: dbJbL4Y3Og0fet\r\r\n52. Type[8]: File  Name: RTnvUXbPIULnKMb9W\r\r\n53. Type[8]: File  Name: xl6aWf\r\r\n54. Type[8]: File  Name: pL5kxFOl8qTa\r\r\n55. Type[8]: File  Name: lMqdpk\r\r\n56. Type[8]: File  Name: HJvk\r\r\n57. Type[8]: File  Name: FJEG5wxXty\r\r\n58. Type[8]: File  Name: ZWZCXUDe\r\r\n59. Type[8]: File  Name: C8aTa65\r\r\n60. Type[8]: File  Name: 9s3CXYQGKLR9NIvC\r\r\n61. Type[8]: File  Name: ZY0kBqJ\r\r\n62. Type[8]: File  Name: URi9kJrk1rjJY7vZW\r\r\n63. Type[8]: File  Name: 3hd0fmUFOlDVqQheUIq\r\r\n64. Type[8]: File  Name: 4nx9sD5SU8W6rhJJXv\r\r\nTotal file size: 264242\r\r\n\r\r\n=== DELETING 8 ============================\r\r\nDeleted some files\r\r\n  Number of files: 64\r\r\n  Number deleted:  43\r\r\nDirectory:\r\r\n 1. Type[8]: File  Name: 0D0n02ab\r\r\n 2. Type[8]: File  Name: 6lzC\r\r\n 3. Type[8]: File  Name: Ldzr2ZdqjY\r\r\n 4. Type[8]: File  Name: VKDagOY\r\r\n 5. Type[8]: File  Name: U5ZFfC\r\r\n 6. Type[8]: File  Name: dVTtkmBtn51QIOvd\r\r\n 7. Type[8]: File  Name: Zy6J5ZDer09Mywwa\r\r\n 8. Type[8]: File  Name: hRTkKXy\r\r\n 9. Type[8]: File  Name: ArzFb0ecFm1Pck2P2gp\r\r\n10. Type[8]: File  Name: tB1BNx3wWL59\r\r\n11. Type[8]: File  Name: dbJbL4Y3Og0fet\r\r\n12. Type[8]: File  Name: RTnvUXbPIULnKMb9W\r\r\n13. Type[8]: File  Name: xl6aWf\r\r\n14. Type[8]: File  Name: lMqdpk\r\r\n15. Type[8]: File  Name: HJvk\r\r\n16. Type[8]: File  Name: FJEG5wxXty\r\r\n17. Type[8]: File  Name: 9s3CXYQGKLR9NIvC\r\r\n18. Type[8]: File  Name: ZY0kBqJ\r\r\n19. Type[8]: File  Name: URi9kJrk1rjJY7vZW\r\r\n20. Type[8]: File  Name: 3hd0fmUFOlDVqQheUIq\r\r\n21. Type[8]: File  Name: 4nx9sD5SU8W6rhJJXv\r\r\nTotal file size: 77030\r\r\nFile System:\r\r\n  Block Size:      32768\r\r\n  No. Blocks:      8189\r\r\n  Free Blocks:     8162\r\r\n  Avail. Blocks:   8162\r\r\n  No. File Nodes:  0\r\r\n  Free File Nodes: 0\r\r\n\r\r\nEnd of loop memory usage:\r\r\nVARIABLE  BEFORE   AFTER    DELTA\r\r\n======== ======== ======== ========\r\r\narena     7bd5ff8  7bd5ff8        0\r\r\nordblks         9       12        3\r\r\nmxordblk  7ba4560  7ba4560        0\r\r\nuordblks    318e8    31358 fffffa70\r\r\nfordblks  7ba4710  7ba4ca0      590\r\r\n\r\r\n=== FILLING 9 =============================\r\r\nFilled file system\r\r\n  Number of files: 64\r\r\n  Number deleted:  0\r\r\nDirectory:\r\r\n 1. Type[8]: File  Name: 0D0n02ab\r\r\n 2. Type[8]: File  Name: 6yRV6ZlssyJUf\r\r\n 3. Type[8]: File  Name: vWgaoO4AWGpJtCg31dx\r\r\n 4. Type[8]: File  Name: bEKArDIpyC\r\r\n 5. Type[8]: File  Name: ZId31Ayy3oSTh\r\r\n 6. Type[8]: File  Name: 0hwXXkIOQYbdUMZLTgg\r\r\n 7. Type[8]: File  Name: QLPaxywcs9g43sd\r\r\n 8. Type[8]: File  Name: 0YLfQoJPcXNdQCO\r\r\n 9. Type[8]: File  Name: 35Edj05QTqMBMu2\r\r\n10. Type[8]: File  Name: DJPiaqL\r\r\n11. Type[8]: File  Name: D4spzPwl\r\r\n12. Type[8]: File  Name: 1phySq\r\r\n13. Type[8]: File  Name: PAp80IT37dca9gmx\r\r\n14. Type[8]: File  Name: LfyEwiaMJwUXpj\r\r\n15. Type[8]: File  Name: NOl0WNMCN0w6\r\r\n16. Type[8]: File  Name: sePehI\r\r\n17. Type[8]: File  Name: tOVCRBW1aFuzqy0NsZ6\r\r\n18. Type[8]: File  Name: ZFf7qFIpdlTxU\r\r\n19. Type[8]: File  Name: ey7N4\r\r\n20. Type[8]: File  Name: M08R\r\r\n21. Type[8]: File  Name: jg75V3kc1EbOgbwibZ\r\r\n22. Type[8]: File  Name: aarmkbnDS\r\r\n23. Type[8]: File  Name: E3oEHN3\r\r\n24. Type[8]: File  Name: qZ4Prag\r\r\n25. Type[8]: File  Name: sZ9gojmRManc9KL3qm\r\r\n26. Type[8]: File  Name: 70KDZAgI8xaQ\r\r\n27. Type[8]: File  Name: DQITcmljFfXFRtzV63l\r\r\n28. Type[8]: File  Name: oJ0ZK148PDxOceyah1\r\r\n29. Type[8]: File  Name: zgAVHYgPgGe\r\r\n30. Type[8]: File  Name: n01efG4B3pv\r\r\n31. Type[8]: File  Name: mJcfKpLwBCrr55\r\r\n32. Type[8]: File  Name: 05fAtc8fim2RtMUSb\r\r\n33. Type[8]: File  Name: UiOXSif\r\r\n34. Type[8]: File  Name: c9w33v0j691PzC\r\r\n35. Type[8]: File  Name: kNg2hb3vp\r\r\n36. Type[8]: File  Name: dknxbpj\r\r\n37. Type[8]: File  Name: pMfmPbax3Ze6PKCfji\r\r\n38. Type[8]: File  Name: LEHZ0Cgi0dFwZa6mr\r\r\n39. Type[8]: File  Name: 6lzC\r\r\n40. Type[8]: File  Name: Ldzr2ZdqjY\r\r\n41. Type[8]: File  Name: up0I4ZaLP0OGW5\r\r\n42. Type[8]: File  Name: VKDagOY\r\r\n43. Type[8]: File  Name: U5ZFfC\r\r\n44. Type[8]: File  Name: dVTtkmBtn51QIOvd\r\r\n45. Type[8]: File  Name: Zy6J5ZDer09Mywwa\r\r\n46. Type[8]: File  Name: hRTkKXy\r\r\n47. Type[8]: File  Name: ArzFb0ecFm1Pck2P2gp\r\r\n48. Type[8]: File  Name: tB1BNx3wWL59\r\r\n49. Type[8]: File  Name: ISXp9tePtNYp4Vz6\r\r\n50. Type[8]: File  Name: dbJbL4Y3Og0fet\r\r\n51. Type[8]: File  Name: RTnvUXbPIULnKMb9W\r\r\n52. Type[8]: File  Name: xl6aWf\r\r\n53. Type[8]: File  Name: 2BiLNEmGC1\r\r\n54. Type[8]: File  Name: lMqdpk\r\r\n55. Type[8]: File  Name: HJvk\r\r\n56. Type[8]: File  Name: FJEG5wxXty\r\r\n57. Type[8]: File  Name: w27Kt8exTjogeDg\r\r\n58. Type[8]: File  Name: INEITrmm\r\r\n59. Type[8]: File  Name: 9s3CXYQGKLR9NIvC\r\r\n60. Type[8]: File  Name: ZY0kBqJ\r\r\n61. Type[8]: File  Name: URi9kJrk1rjJY7vZW\r\r\n62. Type[8]: File  Name: 3hd0fmUFOlDVqQheUIq\r\r\n63. Type[8]: File  Name: 2YnUbgPVUhicTILy03\r\r\n64. Type[8]: File  Name: 4nx9sD5SU8W6rhJJXv\r\r\nTotal file size: 214056\r\r\n\r\r\n=== DELETING 9 ============================\r\r\nDeleted some files\r\r\n  Number of files: 64\r\r\n  Number deleted:  31\r\r\nDirectory:\r\r\n 1. Type[8]: File  Name: 0D0n02ab\r\r\n 2. Type[8]: File  Name: 6yRV6ZlssyJUf\r\r\n 3. Type[8]: File  Name: vWgaoO4AWGpJtCg31dx\r\r\n 4. Type[8]: File  Name: bEKArDIpyC\r\r\n 5. Type[8]: File  Name: ZId31Ayy3oSTh\r\r\n 6. Type[8]: File  Name: QLPaxywcs9g43sd\r\r\n 7. Type[8]: File  Name: 35Edj05QTqMBMu2\r\r\n 8. Type[8]: File  Name: DJPiaqL\r\r\n 9. Type[8]: File  Name: 1phySq\r\r\n10. Type[8]: File  Name: jg75V3kc1EbOgbwibZ\r\r\n11. Type[8]: File  Name: mJcfKpLwBCrr55\r\r\n12. Type[8]: File  Name: 05fAtc8fim2RtMUSb\r\r\n13. Type[8]: File  Name: UiOXSif\r\r\n14. Type[8]: File  Name: c9w33v0j691PzC\r\r\n15. Type[8]: File  Name: 6lzC\r\r\n16. Type[8]: File  Name: VKDagOY\r\r\n17. Type[8]: File  Name: U5ZFfC\r\r\n18. Type[8]: File  Name: dVTtkmBtn51QIOvd\r\r\n19. Type[8]: File  Name: Zy6J5ZDer09Mywwa\r\r\n20. Type[8]: File  Name: hRTkKXy\r\r\n21. Type[8]: File  Name: ArzFb0ecFm1Pck2P2gp\r\r\n22. Type[8]: File  Name: ISXp9tePtNYp4Vz6\r\r\n23. Type[8]: File  Name: dbJbL4Y3Og0fet\r\r\n24. Type[8]: File  Name: RTnvUXbPIULnKMb9W\r\r\n25. Type[8]: File  Name: xl6aWf\r\r\n26. Type[8]: File  Name: 2BiLNEmGC1\r\r\n27. Type[8]: File  Name: lMqdpk\r\r\n28. Type[8]: File  Name: INEITrmm\r\r\n29. Type[8]: File  Name: 9s3CXYQGKLR9NIvC\r\r\n30. Type[8]: File  Name: ZY0kBqJ\r\r\n31. Type[8]: File  Name: URi9kJrk1rjJY7vZW\r\r\n32. Type[8]: File  Name: 2YnUbgPVUhicTILy03\r\r\n33. Type[8]: File  Name: 4nx9sD5SU8W6rhJJXv\r\r\nTotal file size: 113360\r\r\nFile System:\r\r\n  Block Size:      32768\r\r\n  No. Blocks:      8189\r\r\n  Free Blocks:     8150\r\r\n  Avail. Blocks:   8150\r\r\n  No. File Nodes:  0\r\r\n  Free File Nodes: 0\r\r\n\r\r\nEnd of loop memory usage:\r\r\nVARIABLE  BEFORE   AFTER    DELTA\r\r\n======== ======== ======== ========\r\r\narena     7bd5ff8  7bd5ff8        0\r\r\nordblks        12       12        0\r\r\nmxordblk  7ba4560  7ba4560        0\r\r\nuordblks    31358    31558      200\r\r\nfordblks  7ba4ca0  7ba4aa0 fffffe00\r\r\n\r\r\n=== FILLING 10 =============================\r\r\nFilled file system\r\r\n  Number of files: 64\r\r\n  Number deleted:  0\r\r\nDirectory:\r\r\n 1. Type[8]: File  Name: 0D0n02ab\r\r\n 2. Type[8]: File  Name: 6yRV6ZlssyJUf\r\r\n 3. Type[8]: File  Name: vWgaoO4AWGpJtCg31dx\r\r\n 4. Type[8]: File  Name: bEKArDIpyC\r\r\n 5. Type[8]: File  Name: ZId31Ayy3oSTh\r\r\n 6. Type[8]: File  Name: reVN\r\r\n 7. Type[8]: File  Name: QLPaxywcs9g43sd\r\r\n 8. Type[8]: File  Name: c6zjmBL9itxF\r\r\n 9. Type[8]: File  Name: 35Edj05QTqMBMu2\r\r\n10. Type[8]: File  Name: DJPiaqL\r\r\n11. Type[8]: File  Name: vG284Zy3\r\r\n12. Type[8]: File  Name: 1phySq\r\r\n13. Type[8]: File  Name: 7nzM69JfluHA00\r\r\n14. Type[8]: File  Name: 09uiNB8dsEbQ\r\r\n15. Type[8]: File  Name: Ym6ImJF15Dylb\r\r\n16. Type[8]: File  Name: 398Uaslz8I16tht7\r\r\n17. Type[8]: File  Name: lpcln3mCt64P6XR\r\r\n18. Type[8]: File  Name: ZVzoo0LTr\r\r\n19. Type[8]: File  Name: 53HXmDMQsZb\r\r\n20. Type[8]: File  Name: jg75V3kc1EbOgbwibZ\r\r\n21. Type[8]: File  Name: GFyvDtuLWS\r\r\n22. Type[8]: File  Name: H2XvVDqk\r\r\n23. Type[8]: File  Name: d2n4umiNqS9KI\r\r\n24. Type[8]: File  Name: zvATgKNfE4U9U7\r\r\n25. Type[8]: File  Name: PHXNQkKkkBeu4\r\r\n26. Type[8]: File  Name: fkkGe6od2c4\r\r\n27. Type[8]: File  Name: D6WS0h5r\r\r\n28. Type[8]: File  Name: a2SHsDSAp\r\r\n29. Type[8]: File  Name: dDdg2SdKRRNKO1U\r\r\n30. Type[8]: File  Name: mJcfKpLwBCrr55\r\r\n31. Type[8]: File  Name: 05fAtc8fim2RtMUSb\r\r\n32. Type[8]: File  Name: UiOXSif\r\r\n33. Type[8]: File  Name: c9w33v0j691PzC\r\r\n34. Type[8]: File  Name: ZNcKAU5Z9J9kjt0oU\r\r\n35. Type[8]: File  Name: Ux1W0va0F0lTUW8xf2\r\r\n36. Type[8]: File  Name: EKvdfaaF5526r00grb\r\r\n37. Type[8]: File  Name: wdf2At\r\r\n38. Type[8]: File  Name: 6lzC\r\r\n39. Type[8]: File  Name: DiOsQM6p0xBc8CiJZb1\r\r\n40. Type[8]: File  Name: 7YdV7cld\r\r\n41. Type[8]: File  Name: VKDagOY\r\r\n42. Type[8]: File  Name: U5ZFfC\r\r\n43. Type[8]: File  Name: dVTtkmBtn51QIOvd\r\r\n44. Type[8]: File  Name: Zy6J5ZDer09Mywwa\r\r\n45. Type[8]: File  Name: hRTkKXy\r\r\n46. Type[8]: File  Name: ArzFb0ecFm1Pck2P2gp\r\r\n47. Type[8]: File  Name: hSyBPSf5kqp9SYI\r\r\n48. Type[8]: File  Name: ISXp9tePtNYp4Vz6\r\r\n49. Type[8]: File  Name: dbJbL4Y3Og0fet\r\r\n50. Type[8]: File  Name: RTnvUXbPIULnKMb9W\r\r\n51. Type[8]: File  Name: xl6aWf\r\r\n52. Type[8]: File  Name: 2BiLNEmGC1\r\r\n53. Type[8]: File  Name: lMqdpk\r\r\n54. Type[8]: File  Name: x4RrVXzfApcv\r\r\n55. Type[8]: File  Name: u7cxGFmWjyzO7ADz0rr\r\r\n56. Type[8]: File  Name: INEITrmm\r\r\n57. Type[8]: File  Name: 9s3CXYQGKLR9NIvC\r\r\n58. Type[8]: File  Name: ZY0kBqJ\r\r\n59. Type[8]: File  Name: URi9kJrk1rjJY7vZW\r\r\n60. Type[8]: File  Name: 2zcydmKesWnijWAp\r\r\n61. Type[8]: File  Name: 2YnUbgPVUhicTILy03\r\r\n62. Type[8]: File  Name: 6jZmnHULXMbD\r\r\n63. Type[8]: File  Name: 4nx9sD5SU8W6rhJJXv\r\r\n64. Type[8]: File  Name: s1nKxIUgBcTl0\r\r\nTotal file size: 248771\r\r\n\r\r\n=== DELETING 10 ============================\r\r\nDeleted some files\r\r\n  Number of files: 64\r\r\n  Number deleted:  34\r\r\nDirectory:\r\r\n 1. Type[8]: File  Name: 0D0n02ab\r\r\n 2. Type[8]: File  Name: 6yRV6ZlssyJUf\r\r\n 3. Type[8]: File  Name: vWgaoO4AWGpJtCg31dx\r\r\n 4. Type[8]: File  Name: reVN\r\r\n 5. Type[8]: File  Name: QLPaxywcs9g43sd\r\r\n 6. Type[8]: File  Name: c6zjmBL9itxF\r\r\n 7. Type[8]: File  Name: DJPiaqL\r\r\n 8. Type[8]: File  Name: vG284Zy3\r\r\n 9. Type[8]: File  Name: 09uiNB8dsEbQ\r\r\n10. Type[8]: File  Name: lpcln3mCt64P6XR\r\r\n11. Type[8]: File  Name: dDdg2SdKRRNKO1U\r\r\n12. Type[8]: File  Name: 05fAtc8fim2RtMUSb\r\r\n13. Type[8]: File  Name: UiOXSif\r\r\n14. Type[8]: File  Name: ZNcKAU5Z9J9kjt0oU\r\r\n15. Type[8]: File  Name: Ux1W0va0F0lTUW8xf2\r\r\n16. Type[8]: File  Name: DiOsQM6p0xBc8CiJZb1\r\r\n17. Type[8]: File  Name: 7YdV7cld\r\r\n18. Type[8]: File  Name: U5ZFfC\r\r\n19. Type[8]: File  Name: dVTtkmBtn51QIOvd\r\r\n20. Type[8]: File  Name: Zy6J5ZDer09Mywwa\r\r\n21. Type[8]: File  Name: hRTkKXy\r\r\n22. Type[8]: File  Name: RTnvUXbPIULnKMb9W\r\r\n23. Type[8]: File  Name: lMqdpk\r\r\n24. Type[8]: File  Name: INEITrmm\r\r\n25. Type[8]: File  Name: ZY0kBqJ\r\r\n26. Type[8]: File  Name: URi9kJrk1rjJY7vZW\r\r\n27. Type[8]: File  Name: 2zcydmKesWnijWAp\r\r\n28. Type[8]: File  Name: 6jZmnHULXMbD\r\r\n29. Type[8]: File  Name: 4nx9sD5SU8W6rhJJXv\r\r\n30. Type[8]: File  Name: s1nKxIUgBcTl0\r\r\nTotal file size: 113876\r\r\nFile System:\r\r\n  Block Size:      32768\r\r\n  No. Blocks:      8189\r\r\n  Free Blocks:     8153\r\r\n  Avail. Blocks:   8153\r\r\n  No. File Nodes:  0\r\r\n  Free File Nodes: 0\r\r\n\r\r\nEnd of loop memory usage:\r\r\nVARIABLE  BEFORE   AFTER    DELTA\r\r\n======== ======== ======== ========\r\r\narena     7bd5ff8  7bd5ff8        0\r\r\nordblks        12       18        6\r\r\nmxordblk  7ba4560  7ba4530 ffffffd0\r\r\nuordblks    31558    31518 ffffffc0\r\r\nfordblks  7ba4aa0  7ba4ae0       40\r\r\n\r\r\nFinal memory usage:\r\r\nVARIABLE  BEFORE   AFTER    DELTA\r\r\n======== ======== ======== ========\r\r\narena     7bd5ff8  7bd5ff8        0\r\r\nordblks         4        4        0\r\r\nmxordblk  7ba47c0  7ba47c0        0\r\r\nuordblks    31008    31008        0\r\r\nfordblks  7ba4ff0  7ba4ff0        0\r\r\nFile system tests done... OK: 20, FAILED: 0\r\r\n"
+        },
+        {
+          "command": "vela_fs_rwloops /data 100",
+          "started_at": "2026-10-24T14:38:37+08:00",
+          "finished_at": "2026-10-24T14:38:37+08:00",
+          "output": "\u001b[Kvela_fs_rwloops /data 100\r\r\ntest dir :/data\r\r\r\nwrite file no.0\r\r\r\nwrite to file! content: J1yfVvRUIodAA7PRlh0ErzmCFujPXt7eE0Uv1UD\r\r\r\nread file no.0\r\r\r\nseek 0 from file head, read length: 39, content:J1yfVvRUIodAA7PRlh0ErzmCFujPXt7eE0Uv1UD\r\r\r\nwrite file no.1\r\r\r\nwrite to file! content: eTbILZLT6LcehemDigkMA8MB3qh1zYDV2vsmrLn\r\r\r\nread file no.1\r\r\r\nseek 39 from file head, read length: 39, content:eTbILZLT6LcehemDigkMA8MB3qh1zYDV2vsmrLn\r\r\r\nwrite file no.2\r\r\r\nwrite to file! content: ywEvDDGRusd9FA8xgfSVTGvAqmgeREJLpqGdfBN\r\r\r\nread file no.2\r\r\r\nseek 78 from file head, read length: 39, content:ywEvDDGRusd9FA8xgfSVTGvAqmgeREJLpqGdfBN\r\r\r\nwrite file no.3\r\r\r\nwrite to file! content: JOrY5r9RjPcdmgVideBdnPVAeifHtuOAdmeUV2w\r\r\r\nread file no.3\r\r\r\nseek 117 from file head, read length: 39, content:JOrY5r9RjPcdmgVideBdnPVAeifHtuOAdmeUV2w\r\r\r\nwrite file no.4\r\r\r\nwrite to file! content: drTBxW4PXwc7JCsSadtl7Y49ReeuKaT1Rh0KLtX\r\r\r\nread file no.4\r\r\r\nseek 156 from file head, read length: 39, content:drTBxW4PXwc7JCsSadtl7Y49ReeuKaT1Rh0KLtX\r\r\r\nwrite file no.5\r\r\r\nwrite to file! content: yJ6pnBxOLUccriFEYdctRge9EadWnFYrGdOB9k6\r\r\r\nread file no.5\r\r\r\nseek 195 from file head, read length: 39, content:yJ6pnBxOLUccriFEYdctRge9EadWnFYrGdOB9k6\r\r\r\nwrite file no.6\r\r\r\nwrite to file! content: ImjRfpsM90c6OEcyVbL1loE82Wc9Ewei4Xm2zbg\r\r\r\nread file no.6\r\r\r\nseek 234 from file head, read length: 39, content:ImjRfpsM90c6OEcyVbL1loE82Wc9Ewei4Xm2zbg\r\r\r\nwrite file no.7\r\r\r\nwrite to file! content: dEM5XTmMyYbavkyjSb494xn7pSblgbjXsTAtpSF\r\r\r\nread file no.7\r\r\r\nseek 273 from file head, read length: 39, content:dEM5XTmMyYbavkyjSb494xn7pSblgbjXsTAtpSF\r\r\r\nwrite file no.8\r\r\r\nwrite to file! content: xhzhO7gKm4c5SGLTQZmHO6N7dNaO8HoNgOXkeJq\r\r\r\nread file no.8\r\r\r\nseek 312 from file head, read length: 39, content:xhzhO7gKm4c5SGLTQZmHO6N7dNaO8HoNgOXkeJq\r\r\r\nwrite file no.9\r\r\r\nwrite to file! content: I9bLGlaIabbZ0niFNZVPhEw6QKZ0axuEUKubTAP\r\r\r\nread file no.9\r\r\r\nseek 351 from file head, read length: 39, content:I9bLGlaIabbZ0niFNZVPhEw6QKZ0axuEUKubTAP\r\r\r\nwrite file no.10\r\r\r\nwrite to file! content: ccEx7PUHO9b3XJ5zLZDY1NW5EGYd1dz3IFIRJ1y\r\r\r\nread file no.10\r\r\r\nseek 390 from file head, read length: 39, content:ccEx7PUHO9b3XJ5zLZDY1NW5EGYd1dz3IFIRJ1y\r\r\r\nwrite file no.11\r\r\r\nwrite to file! content: x4rby4OGDfbY4pSjIXwfLV542BXGTJ4u7AfI8rZ\r\r\r\nread file no.11\r\r\r\nseek 429 from file head, read length: 39, content:x4rby4OGDfbY4pSjIXwfLV542BXGTJ4u7AfI8rZ\r\r\r\nwrite file no.12\r\r\r\nwrite to file! content: HXUDqiIF1Db2cLoUFXfneef4p7VtvzAkv539yi8\r\r\r\nread file no.12\r\r\r\nseek 468 from file head, read length: 39, content:HXUDqiIF1Db2cLoUFXfneef4p7VtvzAkv539yi8\r\r\r\nwrite file no.13\r\r\r\nwrite to file! content: cz6riMCDpjaW9rBFDVOvynE3d3UVNeFaj1R0nZi\r\r\r\nread file no.13\r\r\r\nseek 507 from file head, read length: 39, content:cz6riMCDpjaW9rBFDVOvynE3d3UVNeFaj1R0nZi\r\r\r\nwrite file no.14\r\r\r\nwrite to file! content: wSjUZ07CdHb1gNY0AV63Ivp3QzT8pLKQXwprcQI\r\r\r\nread file no.14\r\r\r\nseek 546 from file head, read length: 39, content:wSjUZ07CdHb1gNY0AV63Ivp3QzT8pLKQXwprcQI\r\r\r\nwrite file no.15\r\r\r\nwrite to file! content: HuN7Qe0ASnaVDtvk7UpBc3O2DvSlH0PGLsBiSHs\r\r\r\nread file no.15\r\r\r\nseek 585 from file head, read length: 39, content:HuN7Qe0ASnaVDtvk7UpBc3O2DvSlH0PGLsBiSHs\r\r\r\nwrite file no.16\r\r\r\nwrite to file! content: cNzkIJvAGKa0lPIV5TXJvCy21rRNjgV7AmZZH8R\r\r\r\nread file no.16\r\r\r\nseek 624 from file head, read length: 39, content:cNzkIJvAGKa0lPIV5TXJvCy21rRNjgV7AmZZH8R\r\r\r\nwrite file no.17\r\r\r\nwrite to file! content: wpcNAxo83sZUIweG2SHSFLX1onQ0AMaxyixP6z1\r\r\r\nread file no.17\r\r\r\nseek 663 from file head, read length: 39, content:wpcNAxo83sZUIweG2SHSFLX1onQ0AMaxyixP6z1\r\r\r\nwrite file no.18\r\r\r\nwrite to file! content: HGE01cj7rOaxpS11zRzaYT70cjPdc2gmmdLGwqb\r\r\r\nread file no.18\r\r\r\nseek 702 from file head, read length: 39, content:HGE01cj7rOaxpS11zRzaYT70cjPdc2gmmdLGwqb\r\r\r\nwrite file no.19\r\r\r\nwrite to file! content: bjrdsGd5gwZSNyOlxRiisbgzPeOG4hldaZi7mhA\r\r\r\nread file no.19\r\r\r\nseek 741 from file head, read length: 39, content:bjrdsGd5gwZSNyOlxRiisbgzPeOG4hldaZi7mhA\r\r\r\nwrite file no.20\r\r\r\nwrite to file! content: wBUGkuX5USZwuUlWuQQqClGyDbNsWOqTNU6ybWk\r\r\r\nread file no.20\r\r\r\nseek 780 from file head, read length: 39, content:wBUGkuX5USZwuUlWuQQqClGyDbNsWOqTNU6ybWk\r\r\r\nwrite file no.21\r\r\r\nwrite to file! content: Ge7ubYS3I0ZQS08HrP9yWtpy0XMVx3vIBPTpQNK\r\r\r\nread file no.21\r\r\r\nseek 819 from file head, read length: 39, content:Ge7ubYS3I0ZQS08HrP9yWtpy0XMVx3vIBPTpQNK\r\r\r\nwrite file no.22\r\r\r\nwrite to file! content: b6kWTCL16XZvzWU1pOr6q1PxnSK7Qj090KrgGEu\r\r\r\nread file no.22\r\r\r\nseek 858 from file head, read length: 39, content:b6kWTCL16XZvzWU1pOr6q1PxnSK7Qj090KrgGEu\r\r\r\nwrite file no.23\r\r\r\nwrite to file! content: vZMAKqG0v4YPX2rmmNbE9AywbOJksP5zoGEW65T\r\r\r\nread file no.23\r\r\r\nseek 897 from file head, read length: 39, content:vZMAKqG0v4YPX2rmmNbE9AywbOJksP5zoGEW65T\r\r\r\nwrite file no.24\r\r\r\nwrite to file! content: G10mCV9zjbZt4YEWkMJMSJYwOKIMJ5CqcBcNuw4\r\r\r\nread file no.24\r\r\r\nseek 936 from file head, read length: 39, content:G10mCV9zjbZt4YEWkMJMSJYwOKIMJ5CqcBcNuw4\r\r\r\nwrite file no.25\r\r\r\nwrite to file! content: aUcQ394yX7YOb5bIhM2VmR7wCGHzlkHfQ60Eknd\r\r\r\nread file no.25\r\r\r\nseek 975 from file head, read length: 39, content:aUcQ394yX7YOb5bIhM2VmR7wCGHzlkHfQ60Eknd\r\r\r\nwrite file no.26\r\r\r\nwrite to file! content: vwF2vnywLfYs9by2eKkd6ZhvzCGcDRMVE1N5aeD\r\r\r\nread file no.26\r\r\r\nseek 1014 from file head, read length: 39, content:vwF2vnywLfYs9by2eKkd6ZhvzCGcDRMVE1N5aeD\r\r\r\nwrite file no.27\r\r\r\nwrite to file! content: FPrgmRsvACYMg7KncKTlQjGum8FFf6RM3wkwOVn\r\r\r\nread file no.27\r\r\r\nseek 1053 from file head, read length: 39, content:FPrgmRsvACYMg7KncKTlQjGum8FFf6RM3wkwOVn\r\r\r\nwrite file no.28\r\r\r\nwrite to file! content: arUId6muyjYrDdhYZIBtjrqta4Er6mWBrs8nEMN\r\r\r\nread file no.28\r\r\r\nseek 1092 from file head, read length: 39, content:arUId6muyjYrDdhYZIBtjrqta4Er6mWBrs8nEMN\r\r\r\nwrite file no.29\r\r\r\nwrite to file! content: uK8wVkgtmGXLk94JWIv13zPtN0DUYSc2fnWe4Cw\r\r\r\nread file no.29\r\r\r\nseek 1131 from file head, read length: 39, content:uK8wVkgtmGXLk94JWIv13zPtN0DUYSc2fnWe4Cw\r\r\r\nwrite file no.30\r\r\r\nwrite to file! content: FmkZNParanYqIfR3UId9N8zsBvC708hsTjuUt3V\r\r\r\nread file no.30\r\r\r\nseek 1170 from file head, read length: 39, content:FmkZNParanYqIfR3UId9N8zsBvC708hsTjuUt3V\r\r\r\nwrite file no.31\r\r\r\nwrite to file! content: ZFNCE3VqPKYKpBooRGMHgHYrysAkSnniHdHLiu6\r\r\r\nread file no.31\r\r\r\nseek 1209 from file head, read length: 39, content:ZFNCE3VqPKYKpBooRGMHgHYrysAkSnniHdHLiu6\r\r\r\nwrite file no.32\r\r\r\nwrite to file! content: uhzq5hOpDrXoMhAZOG4Q0P8qmoAMuUsY6ZeCYlf\r\r\r\nread file no.32\r\r\r\nseek 1248 from file head, read length: 39, content:uhzq5hOpDrXoMhAZOG4Q0P8qmoAMuUsY6ZeCYlf\r\r\r\nwrite file no.33\r\r\r\nwrite to file! content: FAdSxLJo1OYJuEXJMEnYJXhpZk8zM9xOuU23NcF\r\r\r\nread file no.33\r\r\r\nseek 1287 from file head, read length: 39, content:FAdSxLJo1OYJuEXJMEnYJXhpZk8zM9xOuU23NcF\r\r\r\nwrite file no.34\r\r\r\nwrite to file! content: ZcG6pzCmpvXnRku4JEWgdgHqMf8cop2FiQQuDTp\r\r\r\nread file no.34\r\r\r\nseek 1326 from file head, read length: 39, content:ZcG6pzCmpvXnRku4JEWgdgHqMf8cop2FiQQuDTp\r\r\r\nwrite file no.35\r\r\r\nwrite to file! content: u5sigd7keSXHyGHoHDFoxpqpAb6FFV84WLnl2KP\r\r\r\nread file no.35\r\r\r\nseek 1365 from file head, read length: 39, content:u5sigd7keSXHyGHoHDFoxpqpAb6FFV84WLnl2KP\r\r\r\nwrite file no.36\r\r\r\nwrite to file! content: EXVMXH0kSzXmVmeaECxwHxQoxX5qhBDuKGBbrBy\r\r\r\nread file no.36\r\r\r\nseek 1404 from file head, read length: 39, content:EXVMXH0kSzXmVmeaECxwHxQoxX5qhBDuKGBbrBy\r\r\r\nwrite file no.37\r\r\r\nwrite to file! content: Z07yPwviGWXG3I0KBBg4b6znlT4T9qIl8BZSh2Z\r\r\r\nread file no.37\r\r\r\nseek 1443 from file head, read length: 39, content:Z07yPwviGWXG3I0KBBg4b6znlT4T9qIl8BZSh2Z\r\r\r\nwrite file no.38\r\r\r\nwrite to file! content: tSlcGaph43WkaoN59AOCuEZnYP36bXObx7vJWt8\r\r\r\nread file no.38\r\r\r\nseek 1482 from file head, read length: 39, content:tSlcGaph43WkaoN59AOCuEZnYP36bXObx7vJWt8\r\r\r\nwrite file no.39\r\r\r\nwrite to file! content: EvNF8FjftbXF7Kkp6A7KDN8mLL2j2CTQk2JALjh\r\r\r\nread file no.39\r\r\r\nseek 1521 from file head, read length: 39, content:EvNF8FjftbXF7Kkp6A7KDN8mLL2j2CTQk2JALjh\r\r\r\nwrite file no.40\r\r\r\nwrite to file! content: YN0s0tdfh7Wjfq7b39qTXVil9H0LVsYHYyh1BaH\r\r\r\nread file no.40\r\r\r\nseek 1560 from file head, read length: 39, content:YN0s0tdfh7Wjfq7b39qTXVil9H0LVsYHYyh1BaH\r\r\r\nwrite file no.41\r\r\r\nwrite to file! content: tqdVqXXdVeWDCNUL18YareIkwC0yxYe7Ms5s1Rr\r\r\r\nread file no.41\r\r\r\nseek 1599 from file head, read length: 39, content:tqdVqXXdVeWDCNUL18YareIkwC0yxYe7Ms5s1Rr\r\r\r\nwrite file no.42\r\r\r\nwrite to file! content: DIF8iBRcJBWijtp6y7HiBnrkk9ybOEjyAoSjpHR\r\r\r\nread file no.42\r\r\r\nseek 1638 from file head, read length: 39, content:DIF8iBRcJBWijtp6y7HiBnrkk9ybOEjyAoSjpHR\r\r\r\nwrite file no.43\r\r\r\nwrite to file! content: YltlaqMa8iWCGPCqv6zqVvRkX5yEqtonzjpZf80\r\r\r\nread file no.43\r\r\r\nseek 1677 from file head, read length: 39, content:YltlaqMa8iWCGPCqv6zqVvRkX5yEqtonzjpZf80\r\r\r\nwrite file no.44\r\r\r\nwrite to file! content: sDVORUFawGVhovZbt5iyo40jK1wqIatdnfDQVzb\r\r\r\nread file no.44\r\r\r\nseek 1716 from file head, read length: 39, content:sDVORUFawGVhovZbt5iyo40jK1wqIatdnfDQVzb\r\r\r\nwrite file no.45\r\r\r\nwrite to file! content: Df81I8AYkmWBMRwMq4Q68Cai8wwTkFzUbabHKqA\r\r\r\nread file no.45\r\r\r\nseek 1755 from file head, read length: 39, content:Df81I8AYkmWBMRwMq4Q68Cai8wwTkFzUbabHKqA\r\r\r\nwrite file no.46\r\r\r\nwrite to file! content: X7keAm3WYKVftxI6n3AERLAivsu6Bv5JPVy89hk\r\r\r\nread file no.46\r\r\r\nseek 1794 from file head, read length: 39, content:X7keAm3WYKVftxI6n3AERLAivsu6Bv5JPVy89hk\r\r\r\nwrite file no.47\r\r\r\nwrite to file! content: saOH2QyVNqVARTfrl3sNlTkhjotiebAADQMzzYK\r\r\r\nread file no.47\r\r\r\nseek 1833 from file head, read length: 39, content:saOH2QyVNqVARTfrl3sNlTkhjotiebAADQMzzYK\r\r\r\nwrite file no.48\r\r\r\nwrite to file! content: C21vt4rUBOVeyz2ci1bV5cJgWksL5HF01MkqpOt\r\r\r\nread file no.48\r\r\r\nseek 1872 from file head, read length: 39, content:C21vt4rUBOVeyz2ci1bV5cJgWksL5HF01MkqpOt\r\r\r\nwrite file no.49\r\r\r\nwrite to file! content: XUdXljmTzvV7VWPNg1JdOktfKgryXwKqqH7gdFT\r\r\r\nread file no.49\r\r\r\nseek 1911 from file head, read length: 39, content:XUdXljmTzvV7VWPNg1JdOktfKgryXwKqqH7gdFT\r\r\r\nwrite file no.50\r\r\r\nwrite to file! content: sxGBcNgRnRUc22m7d02litSe7cqbzdPgeDUXT62\r\r\r\nread file no.50\r\r\r\nseek 1950 from file head, read length: 39, content:sxGBcNgRnRUc22m7d02litSe7cqbzdPgeDUXT62\r\r\r\nwrite file no.51\r\r\r\nwrite to file! content: CPsnT2aQczV6aY8sazlt222euYoCRIUWS7sOJxd\r\r\r\nread file no.51\r\r\r\nseek 1989 from file head, read length: 39, content:CPsnT2aQczV6aY8sazlt222euYoCRIUWS7sOJxd\r\r\r\nwrite file no.52\r\r\r\nwrite to file! content: XsWRLgUPQVUa74VdYzU1MAbdiToptyaNG3GF8oC\r\r\r\nread file no.52\r\r\r\nseek 2028 from file head, read length: 39, content:XsWRLgUPQVUa74VdYzU1MAbdiToptyaNG3GF8oC\r\r\r\nwrite file no.53\r\r\r\nwrite to file! content: rK83DKOOE3U5easOVxC9fIBdVPmSKegC4ye6xfm\r\r\r\nread file no.53\r\r\r\nseek 2067 from file head, read length: 39, content:rK83DKOOE3U5easOVxC9fIBdVPmSKegC4ye6xfm\r\r\r\nwrite file no.54\r\r\r\nwrite to file! content: Cnlh3yIM2aUZC6F8SxvHySkcJMm5nKl2tu1xnWM\r\r\r\nread file no.54\r\r\r\nseek 2106 from file head, read length: 39, content:Cnlh3yIM2aUZC6F8SxvHySkcJMm5nKl2tu1xnWM\r\r\r\nwrite file no.55\r\r\r\nwrite to file! content: WFOKvcDLr7U3jcctQvdQIaKc6IkhEzqthpOocNw\r\r\r\nread file no.55\r\r\r\nseek 2145 from file head, read length: 39, content:WFOKvcDLr7U3jcctQvdQIaKc6IkhEzqthpOocNw\r\r\r\nwrite file no.56\r\r\r\nwrite to file! content: ri1xnH7JfeTYG8yeNvMYcitbtDkKggvjVjmeSEV\r\r\r\nread file no.56\r\r\r\nseek 2184 from file head, read length: 39, content:ri1xnH7JfeTYG8yeNvMYcitbtDkKggvjVjmeSEV\r\r\r\nwrite file no.57\r\r\r\nwrite to file! content: BAeafv1JTAU2nfLOKu5gwrTah9ix7L0ZJfAVH46\r\r\r\nread file no.57\r\r\r\nseek 2223 from file head, read length: 39, content:BAeafv1JTAU2nfLOKu5gwrTah9ix7L0ZJfAVH46\r\r\r\nwrite file no.58\r\r\r\nwrite to file! content: WdGDWZvHHiTXLBi9ItooG02ZU5haa16P6aXM6vf\r\r\r\nread file no.58\r\r\r\nseek 2262 from file head, read length: 39, content:WdGDWZvHHiTXLBi9ItooG02ZU5haa16P6aXM6vf\r\r\r\nwrite file no.59\r\r\r\nwrite to file! content: q5tqNDpF6FT1sh5uFtWwZ8cZI2gC2hBFvWvDwmE\r\r\r\nread file no.59\r\r\r\nseek 2301 from file head, read length: 39, content:q5tqNDpF6FT1sh5uFtWwZ8cZI2gC2hBFvWvDwmE\r\r\r\nwrite file no.60\r\r\r\nwrite to file! content: BYWTFrjEumTVPDSfCrF4tGBY5xepTNH5jRI4ldo\r\r\r\nread file no.60\r\r\r\nseek 2340 from file head, read length: 39, content:BYWTFrjEumTVPDSfCrF4tGBY5xepTNH5jRI4ldo\r\r\r\nwrite file no.61\r\r\r\nwrite to file! content: V0966VdDiJT0xjoPArxCCQlXtteSw2MvXMgvaUO\r\r\r\nread file no.61\r\r\r\nseek 2379 from file head, read length: 39, content:V0966VdDiJT0xjoPArxCCQlXtteSw2MvXMgvaUO\r\r\r\nwrite file no.62\r\r\r\nwrite to file! content: qTmjyAYCWqSUUFBA7qhLWYKWgpc5NjRlLH3lQLy\r\r\r\nread file no.62\r\r\r\nseek 2418 from file head, read length: 39, content:qTmjyAYCWqSUUFBA7qhLWYKWgpc5NjRlLH3lQLy\r\r\r\nwrite file no.63\r\r\r\nwrite to file! content: AvOMppRALNTy1lYv5pPTqguWTkchpOWc9DRcGCX\r\r\r\nread file no.63\r\r\r\nseek 2457 from file head, read length: 39, content:AvOMppRALNTy1lYv5pPTqguWTkchpOWc9DRcGCX\r\r\r\nwrite file no.64\r\r\r\nwrite to file! content: VO10gTM99uSTYHvg2o8bAoTWHgaKG4cRx8pT428\r\r\r\nread file no.64\r\r\r\nseek 2496 from file head, read length: 39, content:VO10gTM99uSTYHvg2o8bAoTWHgaKG4cRx8pT428\r\r\r\nwrite file no.65\r\r\r\nwrite to file! content: pqecY7F8xRSx6oIQznqjTy3V4dawjkhIm4DKuth\r\r\r\nread file no.65\r\r\r\nseek 2535 from file head, read length: 39, content:pqecY7F8xRSx6oIQznqjTy3V4dawjkhIm4DKuth\r\r\r\nwrite file no.66\r\r\r\nwrite to file! content: AJHGQlA7lySRdLeBxmZrn6cUsZYZAQm8ayZBkjH\r\r\r\nread file no.66\r\r\r\nseek 2574 from file head, read length: 39, content:AJHGQlA7lySRdLeBxmZrn6cUsZYZAQm8ayZBkjH\r\r\r\nwrite file no.67\r\r\r\nwrite to file! content: VlusIP45aVSwAr1wumHz7ECTfUYBc5syOux2Zar\r\r\r\nread file no.67\r\r\r\nseek 2613 from file head, read length: 39, content:VlusIP45aVSwAr1wumHz7ECTfUYBc5syOux2Zar\r\r\r\nwrite file no.68\r\r\r\nwrite to file! content: pEWW84y4O2RQiNOgrk17QNlTSQWo4mxoCpLtORQ\r\r\r\nread file no.68\r\r\r\nseek 2652 from file head, read length: 39, content:pEWW84y4O2RQiNOgrk17QNlTSQWo4mxoCpLtORQ\r\r\r\nwrite file no.69\r\r\r\nwrite to file! content: Ag980is3CZSuGtlRpkjFkWLSGMVRWR3e0lijEI0\r\r\r\nread file no.69\r\r\r\nseek 2691 from file head, read length: 39, content:Ag980is3CZSuGtlRpkjFkWLSGMVRWR3e0lijEI0\r\r\r\nwrite file no.70\r\r\r\nwrite to file! content: U9mmsMm106RPnP8BmjSO3euR3JU4y78Vpg6a39Z\r\r\r\nread file no.70\r\r\r\nseek 2730 from file head, read length: 39, content:U9mmsMm106RPnP8BmjSO3euR3JU4y78Vpg6a39Z\r\r\r\nwrite file no.71\r\r\r\nwrite to file! content: 9312aeaydAROsRrhiitdhv3ReASJsTIARWrIirj\r\r\r\nread file no.71\r\r\r\nseek 2769 from file head, read length: 39, content:9312aeaydAROsRrhiitdhv3ReASJsTIARWrIirj\r\r\r\nwrite file no.72\r\r\r\nwrite to file! content: UVefSIUyRhRsPyESfgbl14dQR6QwJ8N1FSE9XiJ\r\r\r\nread file no.72\r\r\r\nseek 2808 from file head, read length: 39, content:UVefSIUyRhRsPyESfgbl14dQR6QwJ8N1FSE9XiJ\r\r\r\nwrite file no.73\r\r\r\nwrite to file! content: oyIIJxPwFEQMwUbCcgLtLCDPF1QZlpSr3Nc0NZt\r\r\r\nread file no.73\r\r\r\nseek 2847 from file head, read length: 39, content:oyIIJxPwFEQMwUbCcgLtLCDPF1QZlpSr3Nc0NZt\r\r\r\nwrite file no.74\r\r\r\nwrite to file! content: 9QuvBcIv4lRrU0yyae31eLmO2xOBDUZhrJ0qCPT\r\r\r\nread file no.74\r\r\r\nseek 2886 from file head, read length: 39, content:9QuvBcIv4lRrU0yyae31eLmO2xOBDUZhrJ0qCPT\r\r\r\nwrite file no.75\r\r\r\nwrite to file! content: TtXY2GDtrJQL1WKiXem9xUMNquOofAeXgDOh2G2\r\r\r\nread file no.75\r\r\r\nseek 2925 from file head, read length: 39, content:TtXY2GDtrJQL1WKiXem9xUMNquOofAeXgDOh2G2\r\r\r\nwrite file no.76\r\r\r\nwrite to file! content: oL9Buu6tfpQpY2hTVdUIHcvNdqMR6qjNT9kYr7c\r\r\r\nread file no.76\r\r\r\nseek 2964 from file head, read length: 39, content:oL9Buu6tfpQpY2hTVdUIHcvNdqMR6qjNT9kYr7c\r\r\r\nwrite file no.77\r\r\r\nwrite to file! content: 8omolY1rTNQK5Y4EScDQblWMRlM4YWoDH48PhyC\r\r\r\nread file no.77\r\r\r\nseek 3003 from file head, read length: 39, content:8omolY1rTNQK5Y4EScDQblWMRlM4YWoDH48PhyC\r\r\r\nwrite file no.78\r\r\r\nwrite to file! content: TGPRdCvqItQod4RyPcwYvt5LEhKg1Bt350WGWpl\r\r\r\nread file no.78\r\r\r\nseek 3042 from file head, read length: 39, content:TGPRdCvqItQod4RyPcwYvt5LEhKg1Bt350WGWpl\r\r\r\nwrite file no.79\r\r\r\nwrite to file! content: ni25Vqpo6RPHAaojNafgE2fK1dJISsyttvu7LgM\r\r\r\nread file no.79\r\r\r\nseek 3081 from file head, read length: 39, content:ni25Vqpo6RPHAaojNafgE2fK1dJISsyttvu7LgM\r\r\r\nwrite file no.80\r\r\r\nwrite to file! content: 8BfhLVjouyQmh7ATKaNoYAEKpaIvuX4kiqHyBXv\r\r\r\nread file no.80\r\r\r\nseek 3120 from file head, read length: 39, content:8BfhLVjouyQmh7ATKaNoYAEKpaIvuX4kiqHyBXv\r\r\r\nwrite file no.81\r\r\r\nwrite to file! content: SdHLD9dmiUPGFdXFHZ6wsJoKcVGXMDAZWlfo0OV\r\r\r\nread file no.81\r\r\r\nseek 3159 from file head, read length: 39, content:SdHLD9dmiUPGFdXFHZ6wsJoKcVGXMDAZWlfo0OV\r\r\r\nwrite file no.82\r\r\r\nwrite to file! content: n6vx5nXkX2Pkm9uzFYo4BRNJQRGAotFQKh2fpF4\r\r\r\nread file no.82\r\r\r\nseek 3198 from file head, read length: 39, content:n6vx5nXkX2Pkm9uzFYo4BRNJQRGAotFQKh2fpF4\r\r\r\nwrite file no.83\r\r\r\nwrite to file! content: 8YXbwRRjLYPFJfHkCXXCVaxIDNEnFZKG8cQWf5f\r\r\r\nread file no.83\r\r\r\nseek 3237 from file head, read length: 39, content:8YXbwRRjLYPFJfHkCXXCVaxIDNEnFZKG8cQWf5f\r\r\r\nwrite file no.84\r\r\r\nwrite to file! content: S1ADn5Li96PjrBeU9WGLpjWI0JEQhEP5wYnNVwE\r\r\r\nread file no.84\r\r\r\nseek 3276 from file head, read length: 39, content:S1ADn5Li96PjrBeU9WGLpjWI0JEQhEP5wYnNVwE\r\r\r\nwrite file no.85\r\r\r\nwrite to file! content: nTnrfkGhxdOEOh0G7VzT8r6HoEC29vUwlSBEJmo\r\r\r\nread file no.85\r\r\r\nseek 3315 from file head, read length: 39, content:nTnrfkGhxdOEOh0G7VzT8r6HoEC29vUwlSBEJmo\r\r\r\nwrite file no.86\r\r\r\nwrite to file! content: 8wPTXP9fmAPivDN04VhbSzfGbBCfbaamZNZ59dO\r\r\r\nread file no.86\r\r\r\nseek 3354 from file head, read length: 39, content:8wPTXP9fmAPivDN04VhbSzfGbBCfbaamZNZ59dO\r\r\r\nwrite file no.87\r\r\r\nwrite to file! content: TO37O34eahOCSjkl1TQjm8FFP7AI3GfdNJxvzUx\r\r\r\nread file no.87\r\r\r\nseek 3393 from file head, read length: 39, content:TO37O34eahOCSjkl1TQjm8FFP7AI3GfdNJxvzUx\r\r\r\nwrite file no.88\r\r\r\nwrite to file! content: nrfkGhxdOEOh0G7VzT8r6HoEC29vUwlSBEJmoLX\r\r\r\nread file no.88\r\r\r\nseek 3432 from file head, read length: 39, content:nrfkGhxdOEOh0G7VzT8r6HoEC29vUwlSBEJmoLX\r\r\r\nwrite file no.89\r\r\r\nwrite to file! content: 8JIN7LscClOBXmUGwSszQPOE0y8XxcqIzAhddC7\r\r\r\nread file no.89\r\r\r\nseek 3471 from file head, read length: 39, content:8JIN7LscClOBXmUGwSszQPOE0y8XxcqIzAhddC7\r\r\r\nwrite file no.90\r\r\r\nwrite to file! content: Smu0yzma1HOf4Iq1uRa7iXxDnu7AOIv9n45UT3h\r\r\r\nread file no.90\r\r\r\nseek 3510 from file head, read length: 39, content:Smu0yzma1HOf4Iq1uRa7iXxDnu7AOIv9n45UT3h\r\r\r\nwrite file no.91\r\r\r\nwrite to file! content: nEXdqdgZppNAcoDlrRJG2hXDar6nqy1zc0TLIuG\r\r\r\nread file no.91\r\r\r\nseek 3549 from file head, read length: 39, content:nEXdqdgZppNAcoDlrRJG2hXDar6nqy1zc0TLIuG\r\r\r\nwrite file no.92\r\r\r\nwrite to file! content: 7hBGiHbXdMOeAKaWoP1OMp6COm4QId6pQvqD7lq\r\r\r\nread file no.92\r\r\r\nseek 3588 from file head, read length: 39, content:7hBGiHbXdMOeAKaWoP1OMp6COm4QId6pQvqD7lq\r\r\r\nwrite file no.93\r\r\r\nwrite to file! content: S9ntYwUWRtN8hqxHmPkWgxgCBi41kKBfErD4xbQ\r\r\r\nread file no.93\r\r\r\nseek 3627 from file head, read length: 39, content:S9ntYwUWRtN8hqxHmPkWgxgCBi41kKBfErD4xbQ\r\r\r\nwrite file no.94\r\r\r\nwrite to file! content: mcQWQaPVGQNdEMJ2jNSe07FBze2eBzGV2mbumS0\r\r\r\nread file no.94\r\r\r\nseek 3666 from file head, read length: 39, content:mcQWQaPVGQNdEMJ2jNSe07FBze2eBzGV2mbumS0\r\r\r\nwrite file no.95\r\r\r\nwrite to file! content: 7429IEIT4xN7msfmgNCmJFpAma2HdfLLphylcJZ\r\r\r\nread file no.95\r\r\r\nseek 3705 from file head, read length: 39, content:7429IEIT4xN7msfmgNCmJFpAma2HdfLLphylcJZ\r\r\r\nwrite file no.96\r\r\r\nwrite to file! content: RXgmAsDSsUNbJP2XeMuudNO9ZV0u6LRBecMcRA9\r\r\r\nread file no.96\r\r\r\nseek 3744 from file head, read length: 39, content:RXgmAsDSsUNbJP2XeMuudNO9ZV0u6LRBecMcRA9\r\r\r\nwrite file no.97\r\r\r\nwrite to file! content: myIQ1X7Rg1M6qvPIbLd2wVy9NSzWX1X2SYkTG1j\r\r\r\nread file no.97\r\r\r\nseek 3783 from file head, read length: 39, content:myIQ1X7Rg1M6qvPIbLd2wVy9NSzWX1X2SYkTG1j\r\r\r\nwrite file no.98\r\r\r\nwrite to file! content: 6Rv2sB1QVYNaORm3YLLAGfX8AOy9zgcsGT8K6sI\r\r\r\nread file no.98\r\r\r\nseek 3822 from file head, read length: 39, content:6Rv2sB1QVYNaORm3YLLAGfX8AOy9zgcsGT8K6sI\r\r\r\nwrite file no.99\r\r\r\nwrite to file! content: RtYgkqvOJ5M5vx8nWJ4Jan77yJxmRNhh4PUBwjt\r\r\r\nread file no.99\r\r\r\nseek 3861 from file head, read length: 39, content:RtYgkqvOJ5M5vx8nWJ4Jan77yJxmRNhh4PUBwjt\r\r\r\nfile size: 3 K\r\r\r\ntest completed......\r\r\r\nTEST PASSED !\r\r\r\n"
+        },
+        {
+          "command": "encfs stop",
+          "started_at": "2026-10-24T14:38:37+08:00",
+          "finished_at": "2026-10-24T14:38:37+08:00",
+          "output": "\u001b[Kencfs stop\r\r\nencfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        }
+      ],
+      "serial_log": "/home/tourist/Desktop/openvela/encfs-results/extended-20261024/acceptance-final-01/upstream-fs-regression.serial.log",
+      "guest_clock": {
+        "source": "NSH explicit test clock initialization",
+        "value": "Jan 02 03:04:05 2026",
+        "hardware_rtc": false
+      },
+      "exit_status": null,
+      "exit_signal": 15,
+      "finished_at": "2026-10-24T14:38:37+08:00",
+      "status": "completed"
+    },
+    {
+      "name": "power-prepare",
+      "instance": "encfs-power-9dcb698aab5d",
+      "command": [
+        "/home/tourist/Desktop/openvela/run-emulator.sh",
+        "goldfish-arm64-v8a-ap-encfs-extended",
+        "-keep",
+        "encfs-power-9dcb698aab5d",
+        "-no-window",
+        "-no-audio",
+        "-gpu",
+        "off",
+        "-accel",
+        "off"
+      ],
+      "started_at": "2026-10-24T14:38:37+08:00",
+      "commands": [
+        {
+          "command": "date -u -s \"Jan 02 03:04:05 2026\"",
+          "started_at": "2026-10-24T14:38:37+08:00",
+          "finished_at": "2026-10-24T14:38:37+08:00",
+          "output": "\u001b[Kdate -u -s \"Jan 02 03:04:05 2026\"\r\r\n"
+        },
+        {
+          "command": "encfs provision --erase",
+          "started_at": "2026-10-24T14:38:37+08:00",
+          "finished_at": "2026-10-24T14:38:38+08:00",
+          "output": "\u001b[Kencfs provision --erase\r\r\nencfs: formatting encrypted data volume\r\r\nencfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        },
+        {
+          "command": "encfs start",
+          "started_at": "2026-10-24T14:38:38+08:00",
+          "finished_at": "2026-10-24T14:38:38+08:00",
+          "output": "\u001b[Kencfs start\r\r\nencfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        },
+        {
+          "command": "encfs_extended prepare",
+          "started_at": "2026-10-24T14:38:38+08:00",
+          "finished_at": "2026-10-24T14:38:38+08:00",
+          "output": "\u001b[Kencfs_extended prepare\r\r\nENCFS_POWER_PREPARED sentinels=3 committed_generation=0\r\r\nENCFS_EXTENDED_RESULT action=prepare result=0 errno=0\r\r\n"
+        },
+        {
+          "command": "encfs_extended verify 0",
+          "started_at": "2026-10-24T14:38:38+08:00",
+          "finished_at": "2026-10-24T14:38:38+08:00",
+          "output": "\u001b[Kencfs_extended verify 0\r\r\nENCFS_POWER_VERIFIED sentinels=3 committed_generation=0 bytes=131588\r\r\nENCFS_EXTENDED_RESULT action=verify result=0 errno=0\r\r\n"
+        },
+        {
+          "command": "encfs stop",
+          "started_at": "2026-10-24T14:38:38+08:00",
+          "finished_at": "2026-10-24T14:38:38+08:00",
+          "output": "\u001b[Kencfs stop\r\r\nencfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        }
+      ],
+      "serial_log": "/home/tourist/Desktop/openvela/encfs-results/extended-20261024/acceptance-final-01/power-prepare.serial.log",
+      "guest_clock": {
+        "source": "NSH explicit test clock initialization",
+        "value": "Jan 02 03:04:05 2026",
+        "hardware_rtc": false
+      },
+      "exit_status": null,
+      "exit_signal": 15,
+      "finished_at": "2026-10-24T14:38:38+08:00"
+    },
+    {
+      "name": "powercut-01",
+      "instance": "encfs-power-9dcb698aab5d",
+      "command": [
+        "/home/tourist/Desktop/openvela/run-emulator.sh",
+        "goldfish-arm64-v8a-ap-encfs-extended",
+        "-keep",
+        "encfs-power-9dcb698aab5d",
+        "-no-window",
+        "-no-audio",
+        "-gpu",
+        "off",
+        "-accel",
+        "off"
+      ],
+      "started_at": "2026-10-24T14:38:38+08:00",
+      "commands": [
+        {
+          "command": "date -u -s \"Jan 02 03:04:05 2026\"",
+          "started_at": "2026-10-24T14:38:38+08:00",
+          "finished_at": "2026-10-24T14:38:38+08:00",
+          "output": "\u001b[Kdate -u -s \"Jan 02 03:04:05 2026\"\r\r\n"
+        },
+        {
+          "command": "encfs start",
+          "started_at": "2026-10-24T14:38:38+08:00",
+          "finished_at": "2026-10-24T14:38:38+08:00",
+          "output": "\u001b[Kencfs start\r\r\nencfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        },
+        {
+          "command": "encfs_extended verify 0",
+          "started_at": "2026-10-24T14:38:38+08:00",
+          "finished_at": "2026-10-24T14:38:38+08:00",
+          "output": "\u001b[Kencfs_extended verify 0\r\r\nENCFS_POWER_VERIFIED sentinels=3 committed_generation=0 bytes=131588\r\r\nENCFS_EXTENDED_RESULT action=verify result=0 errno=0\r\r\n"
+        }
+      ],
+      "serial_log": "/home/tourist/Desktop/openvela/encfs-results/extended-20261024/acceptance-final-01/powercut-01.serial.log",
+      "guest_clock": {
+        "source": "NSH explicit test clock initialization",
+        "value": "Jan 02 03:04:05 2026",
+        "hardware_rtc": false
+      },
+      "intentional_sigkill": true,
+      "finished_at": "2026-10-24T14:38:40+08:00"
+    },
+    {
+      "name": "powercut-02",
+      "instance": "encfs-power-9dcb698aab5d",
+      "command": [
+        "/home/tourist/Desktop/openvela/run-emulator.sh",
+        "goldfish-arm64-v8a-ap-encfs-extended",
+        "-keep",
+        "encfs-power-9dcb698aab5d",
+        "-no-window",
+        "-no-audio",
+        "-gpu",
+        "off",
+        "-accel",
+        "off"
+      ],
+      "started_at": "2026-10-24T14:38:40+08:00",
+      "commands": [
+        {
+          "command": "date -u -s \"Jan 02 03:04:05 2026\"",
+          "started_at": "2026-10-24T14:38:40+08:00",
+          "finished_at": "2026-10-24T14:38:40+08:00",
+          "output": "\u001b[Kdate -u -s \"Jan 02 03:04:05 2026\"\r\r\n"
+        },
+        {
+          "command": "encfs start",
+          "started_at": "2026-10-24T14:38:40+08:00",
+          "finished_at": "2026-10-24T14:38:40+08:00",
+          "output": "\u001b[Kencfs start\r\r\nencfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        },
+        {
+          "command": "encfs_extended verify 1",
+          "started_at": "2026-10-24T14:38:40+08:00",
+          "finished_at": "2026-10-24T14:38:41+08:00",
+          "output": "\u001b[Kencfs_extended verify 1\r\r\nENCFS_POWER_VERIFIED sentinels=3 committed_generation=1 bytes=197125\r\r\nENCFS_EXTENDED_RESULT action=verify result=0 errno=0\r\r\n"
+        }
+      ],
+      "serial_log": "/home/tourist/Desktop/openvela/encfs-results/extended-20261024/acceptance-final-01/powercut-02.serial.log",
+      "guest_clock": {
+        "source": "NSH explicit test clock initialization",
+        "value": "Jan 02 03:04:05 2026",
+        "hardware_rtc": false
+      },
+      "intentional_sigkill": true,
+      "finished_at": "2026-10-24T14:38:42+08:00"
+    },
+    {
+      "name": "powercut-03",
+      "instance": "encfs-power-9dcb698aab5d",
+      "command": [
+        "/home/tourist/Desktop/openvela/run-emulator.sh",
+        "goldfish-arm64-v8a-ap-encfs-extended",
+        "-keep",
+        "encfs-power-9dcb698aab5d",
+        "-no-window",
+        "-no-audio",
+        "-gpu",
+        "off",
+        "-accel",
+        "off"
+      ],
+      "started_at": "2026-10-24T14:38:42+08:00",
+      "commands": [
+        {
+          "command": "date -u -s \"Jan 02 03:04:05 2026\"",
+          "started_at": "2026-10-24T14:38:42+08:00",
+          "finished_at": "2026-10-24T14:38:43+08:00",
+          "output": "\u001b[Kdate -u -s \"Jan 02 03:04:05 2026\"\r\r\n"
+        },
+        {
+          "command": "encfs start",
+          "started_at": "2026-10-24T14:38:43+08:00",
+          "finished_at": "2026-10-24T14:38:43+08:00",
+          "output": "\u001b[Kencfs start\r\r\nencfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        },
+        {
+          "command": "encfs_extended verify 2",
+          "started_at": "2026-10-24T14:38:43+08:00",
+          "finished_at": "2026-10-24T14:38:43+08:00",
+          "output": "\u001b[Kencfs_extended verify 2\r\r\nENCFS_POWER_VERIFIED sentinels=3 committed_generation=2 bytes=262662\r\r\nENCFS_EXTENDED_RESULT action=verify result=0 errno=0\r\r\n"
+        }
+      ],
+      "serial_log": "/home/tourist/Desktop/openvela/encfs-results/extended-20261024/acceptance-final-01/powercut-03.serial.log",
+      "guest_clock": {
+        "source": "NSH explicit test clock initialization",
+        "value": "Jan 02 03:04:05 2026",
+        "hardware_rtc": false
+      },
+      "intentional_sigkill": true,
+      "finished_at": "2026-10-24T14:38:44+08:00"
+    },
+    {
+      "name": "powercut-04",
+      "instance": "encfs-power-9dcb698aab5d",
+      "command": [
+        "/home/tourist/Desktop/openvela/run-emulator.sh",
+        "goldfish-arm64-v8a-ap-encfs-extended",
+        "-keep",
+        "encfs-power-9dcb698aab5d",
+        "-no-window",
+        "-no-audio",
+        "-gpu",
+        "off",
+        "-accel",
+        "off"
+      ],
+      "started_at": "2026-10-24T14:38:44+08:00",
+      "commands": [
+        {
+          "command": "date -u -s \"Jan 02 03:04:05 2026\"",
+          "started_at": "2026-10-24T14:38:45+08:00",
+          "finished_at": "2026-10-24T14:38:45+08:00",
+          "output": "\u001b[Kdate -u -s \"Jan 02 03:04:05 2026\"\r\r\n"
+        },
+        {
+          "command": "encfs start",
+          "started_at": "2026-10-24T14:38:45+08:00",
+          "finished_at": "2026-10-24T14:38:45+08:00",
+          "output": "\u001b[Kencfs start\r\r\nencfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        },
+        {
+          "command": "encfs_extended verify 3",
+          "started_at": "2026-10-24T14:38:45+08:00",
+          "finished_at": "2026-10-24T14:38:45+08:00",
+          "output": "\u001b[Kencfs_extended verify 3\r\r\nENCFS_POWER_VERIFIED sentinels=3 committed_generation=3 bytes=328199\r\r\nENCFS_EXTENDED_RESULT action=verify result=0 errno=0\r\r\n"
+        }
+      ],
+      "serial_log": "/home/tourist/Desktop/openvela/encfs-results/extended-20261024/acceptance-final-01/powercut-04.serial.log",
+      "guest_clock": {
+        "source": "NSH explicit test clock initialization",
+        "value": "Jan 02 03:04:05 2026",
+        "hardware_rtc": false
+      },
+      "intentional_sigkill": true,
+      "finished_at": "2026-10-24T14:38:46+08:00"
+    },
+    {
+      "name": "powercut-05",
+      "instance": "encfs-power-9dcb698aab5d",
+      "command": [
+        "/home/tourist/Desktop/openvela/run-emulator.sh",
+        "goldfish-arm64-v8a-ap-encfs-extended",
+        "-keep",
+        "encfs-power-9dcb698aab5d",
+        "-no-window",
+        "-no-audio",
+        "-gpu",
+        "off",
+        "-accel",
+        "off"
+      ],
+      "started_at": "2026-10-24T14:38:46+08:00",
+      "commands": [
+        {
+          "command": "date -u -s \"Jan 02 03:04:05 2026\"",
+          "started_at": "2026-10-24T14:38:47+08:00",
+          "finished_at": "2026-10-24T14:38:47+08:00",
+          "output": "\u001b[Kdate -u -s \"Jan 02 03:04:05 2026\"\r\r\n"
+        },
+        {
+          "command": "encfs start",
+          "started_at": "2026-10-24T14:38:47+08:00",
+          "finished_at": "2026-10-24T14:38:47+08:00",
+          "output": "\u001b[Kencfs start\r\r\nencfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        },
+        {
+          "command": "encfs_extended verify 4",
+          "started_at": "2026-10-24T14:38:47+08:00",
+          "finished_at": "2026-10-24T14:38:47+08:00",
+          "output": "\u001b[Kencfs_extended verify 4\r\r\nENCFS_POWER_VERIFIED sentinels=3 committed_generation=4 bytes=393736\r\r\nENCFS_EXTENDED_RESULT action=verify result=0 errno=0\r\r\n"
+        }
+      ],
+      "serial_log": "/home/tourist/Desktop/openvela/encfs-results/extended-20261024/acceptance-final-01/powercut-05.serial.log",
+      "guest_clock": {
+        "source": "NSH explicit test clock initialization",
+        "value": "Jan 02 03:04:05 2026",
+        "hardware_rtc": false
+      },
+      "intentional_sigkill": true,
+      "finished_at": "2026-10-24T14:38:49+08:00"
+    },
+    {
+      "name": "powercut-06",
+      "instance": "encfs-power-9dcb698aab5d",
+      "command": [
+        "/home/tourist/Desktop/openvela/run-emulator.sh",
+        "goldfish-arm64-v8a-ap-encfs-extended",
+        "-keep",
+        "encfs-power-9dcb698aab5d",
+        "-no-window",
+        "-no-audio",
+        "-gpu",
+        "off",
+        "-accel",
+        "off"
+      ],
+      "started_at": "2026-10-24T14:38:49+08:00",
+      "commands": [
+        {
+          "command": "date -u -s \"Jan 02 03:04:05 2026\"",
+          "started_at": "2026-10-24T14:38:49+08:00",
+          "finished_at": "2026-10-24T14:38:49+08:00",
+          "output": "\u001b[Kdate -u -s \"Jan 02 03:04:05 2026\"\r\r\n"
+        },
+        {
+          "command": "encfs start",
+          "started_at": "2026-10-24T14:38:49+08:00",
+          "finished_at": "2026-10-24T14:38:49+08:00",
+          "output": "\u001b[Kencfs start\r\r\nencfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        },
+        {
+          "command": "encfs_extended verify 5",
+          "started_at": "2026-10-24T14:38:49+08:00",
+          "finished_at": "2026-10-24T14:38:49+08:00",
+          "output": "\u001b[Kencfs_extended verify 5\r\r\nENCFS_POWER_VERIFIED sentinels=3 committed_generation=5 bytes=459273\r\r\nENCFS_EXTENDED_RESULT action=verify result=0 errno=0\r\r\n"
+        }
+      ],
+      "serial_log": "/home/tourist/Desktop/openvela/encfs-results/extended-20261024/acceptance-final-01/powercut-06.serial.log",
+      "guest_clock": {
+        "source": "NSH explicit test clock initialization",
+        "value": "Jan 02 03:04:05 2026",
+        "hardware_rtc": false
+      },
+      "intentional_sigkill": true,
+      "finished_at": "2026-10-24T14:38:51+08:00"
+    },
+    {
+      "name": "powercut-07",
+      "instance": "encfs-power-9dcb698aab5d",
+      "command": [
+        "/home/tourist/Desktop/openvela/run-emulator.sh",
+        "goldfish-arm64-v8a-ap-encfs-extended",
+        "-keep",
+        "encfs-power-9dcb698aab5d",
+        "-no-window",
+        "-no-audio",
+        "-gpu",
+        "off",
+        "-accel",
+        "off"
+      ],
+      "started_at": "2026-10-24T14:38:51+08:00",
+      "commands": [
+        {
+          "command": "date -u -s \"Jan 02 03:04:05 2026\"",
+          "started_at": "2026-10-24T14:38:51+08:00",
+          "finished_at": "2026-10-24T14:38:51+08:00",
+          "output": "\u001b[Kdate -u -s \"Jan 02 03:04:05 2026\"\r\r\n"
+        },
+        {
+          "command": "encfs start",
+          "started_at": "2026-10-24T14:38:51+08:00",
+          "finished_at": "2026-10-24T14:38:51+08:00",
+          "output": "\u001b[Kencfs start\r\r\nencfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        },
+        {
+          "command": "encfs_extended verify 6",
+          "started_at": "2026-10-24T14:38:51+08:00",
+          "finished_at": "2026-10-24T14:38:51+08:00",
+          "output": "\u001b[Kencfs_extended verify 6\r\r\nENCFS_POWER_VERIFIED sentinels=3 committed_generation=6 bytes=524810\r\r\nENCFS_EXTENDED_RESULT action=verify result=0 errno=0\r\r\n"
+        }
+      ],
+      "serial_log": "/home/tourist/Desktop/openvela/encfs-results/extended-20261024/acceptance-final-01/powercut-07.serial.log",
+      "guest_clock": {
+        "source": "NSH explicit test clock initialization",
+        "value": "Jan 02 03:04:05 2026",
+        "hardware_rtc": false
+      },
+      "intentional_sigkill": true,
+      "finished_at": "2026-10-24T14:38:53+08:00"
+    },
+    {
+      "name": "powercut-08",
+      "instance": "encfs-power-9dcb698aab5d",
+      "command": [
+        "/home/tourist/Desktop/openvela/run-emulator.sh",
+        "goldfish-arm64-v8a-ap-encfs-extended",
+        "-keep",
+        "encfs-power-9dcb698aab5d",
+        "-no-window",
+        "-no-audio",
+        "-gpu",
+        "off",
+        "-accel",
+        "off"
+      ],
+      "started_at": "2026-10-24T14:38:53+08:00",
+      "commands": [
+        {
+          "command": "date -u -s \"Jan 02 03:04:05 2026\"",
+          "started_at": "2026-10-24T14:38:53+08:00",
+          "finished_at": "2026-10-24T14:38:53+08:00",
+          "output": "\u001b[Kdate -u -s \"Jan 02 03:04:05 2026\"\r\r\n"
+        },
+        {
+          "command": "encfs start",
+          "started_at": "2026-10-24T14:38:53+08:00",
+          "finished_at": "2026-10-24T14:38:53+08:00",
+          "output": "\u001b[Kencfs start\r\r\nencfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        },
+        {
+          "command": "encfs_extended verify 7",
+          "started_at": "2026-10-24T14:38:53+08:00",
+          "finished_at": "2026-10-24T14:38:54+08:00",
+          "output": "\u001b[Kencfs_extended verify 7\r\r\nENCFS_POWER_VERIFIED sentinels=3 committed_generation=7 bytes=590347\r\r\nENCFS_EXTENDED_RESULT action=verify result=0 errno=0\r\r\n"
+        }
+      ],
+      "serial_log": "/home/tourist/Desktop/openvela/encfs-results/extended-20261024/acceptance-final-01/powercut-08.serial.log",
+      "guest_clock": {
+        "source": "NSH explicit test clock initialization",
+        "value": "Jan 02 03:04:05 2026",
+        "hardware_rtc": false
+      },
+      "intentional_sigkill": true,
+      "finished_at": "2026-10-24T14:38:55+08:00"
+    },
+    {
+      "name": "powercut-09",
+      "instance": "encfs-power-9dcb698aab5d",
+      "command": [
+        "/home/tourist/Desktop/openvela/run-emulator.sh",
+        "goldfish-arm64-v8a-ap-encfs-extended",
+        "-keep",
+        "encfs-power-9dcb698aab5d",
+        "-no-window",
+        "-no-audio",
+        "-gpu",
+        "off",
+        "-accel",
+        "off"
+      ],
+      "started_at": "2026-10-24T14:38:55+08:00",
+      "commands": [
+        {
+          "command": "date -u -s \"Jan 02 03:04:05 2026\"",
+          "started_at": "2026-10-24T14:38:55+08:00",
+          "finished_at": "2026-10-24T14:38:56+08:00",
+          "output": "\u001b[Kdate -u -s \"Jan 02 03:04:05 2026\"\r\r\n"
+        },
+        {
+          "command": "encfs start",
+          "started_at": "2026-10-24T14:38:56+08:00",
+          "finished_at": "2026-10-24T14:38:56+08:00",
+          "output": "\u001b[Kencfs start\r\r\nencfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        },
+        {
+          "command": "encfs_extended verify 8",
+          "started_at": "2026-10-24T14:38:56+08:00",
+          "finished_at": "2026-10-24T14:38:56+08:00",
+          "output": "\u001b[Kencfs_extended verify 8\r\r\nENCFS_POWER_VERIFIED sentinels=3 committed_generation=8 bytes=655884\r\r\nENCFS_EXTENDED_RESULT action=verify result=0 errno=0\r\r\n"
+        }
+      ],
+      "serial_log": "/home/tourist/Desktop/openvela/encfs-results/extended-20261024/acceptance-final-01/powercut-09.serial.log",
+      "guest_clock": {
+        "source": "NSH explicit test clock initialization",
+        "value": "Jan 02 03:04:05 2026",
+        "hardware_rtc": false
+      },
+      "intentional_sigkill": true,
+      "finished_at": "2026-10-24T14:38:57+08:00"
+    },
+    {
+      "name": "powercut-10",
+      "instance": "encfs-power-9dcb698aab5d",
+      "command": [
+        "/home/tourist/Desktop/openvela/run-emulator.sh",
+        "goldfish-arm64-v8a-ap-encfs-extended",
+        "-keep",
+        "encfs-power-9dcb698aab5d",
+        "-no-window",
+        "-no-audio",
+        "-gpu",
+        "off",
+        "-accel",
+        "off"
+      ],
+      "started_at": "2026-10-24T14:38:58+08:00",
+      "commands": [
+        {
+          "command": "date -u -s \"Jan 02 03:04:05 2026\"",
+          "started_at": "2026-10-24T14:38:58+08:00",
+          "finished_at": "2026-10-24T14:38:58+08:00",
+          "output": "\u001b[Kdate -u -s \"Jan 02 03:04:05 2026\"\r\r\n"
+        },
+        {
+          "command": "encfs start",
+          "started_at": "2026-10-24T14:38:58+08:00",
+          "finished_at": "2026-10-24T14:38:58+08:00",
+          "output": "\u001b[Kencfs start\r\r\nencfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        },
+        {
+          "command": "encfs_extended verify 9",
+          "started_at": "2026-10-24T14:38:58+08:00",
+          "finished_at": "2026-10-24T14:38:58+08:00",
+          "output": "\u001b[Kencfs_extended verify 9\r\r\nENCFS_POWER_VERIFIED sentinels=3 committed_generation=9 bytes=721421\r\r\nENCFS_EXTENDED_RESULT action=verify result=0 errno=0\r\r\n"
+        }
+      ],
+      "serial_log": "/home/tourist/Desktop/openvela/encfs-results/extended-20261024/acceptance-final-01/powercut-10.serial.log",
+      "guest_clock": {
+        "source": "NSH explicit test clock initialization",
+        "value": "Jan 02 03:04:05 2026",
+        "hardware_rtc": false
+      },
+      "intentional_sigkill": true,
+      "finished_at": "2026-10-24T14:39:00+08:00"
+    },
+    {
+      "name": "powercut-11",
+      "instance": "encfs-power-9dcb698aab5d",
+      "command": [
+        "/home/tourist/Desktop/openvela/run-emulator.sh",
+        "goldfish-arm64-v8a-ap-encfs-extended",
+        "-keep",
+        "encfs-power-9dcb698aab5d",
+        "-no-window",
+        "-no-audio",
+        "-gpu",
+        "off",
+        "-accel",
+        "off"
+      ],
+      "started_at": "2026-10-24T14:39:00+08:00",
+      "commands": [
+        {
+          "command": "date -u -s \"Jan 02 03:04:05 2026\"",
+          "started_at": "2026-10-24T14:39:00+08:00",
+          "finished_at": "2026-10-24T14:39:00+08:00",
+          "output": "\u001b[Kdate -u -s \"Jan 02 03:04:05 2026\"\r\r\n"
+        },
+        {
+          "command": "encfs start",
+          "started_at": "2026-10-24T14:39:00+08:00",
+          "finished_at": "2026-10-24T14:39:00+08:00",
+          "output": "\u001b[Kencfs start\r\r\nencfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        },
+        {
+          "command": "encfs_extended verify 10",
+          "started_at": "2026-10-24T14:39:00+08:00",
+          "finished_at": "2026-10-24T14:39:00+08:00",
+          "output": "\u001b[Kencfs_extended verify 10\r\r\nENCFS_POWER_VERIFIED sentinels=3 committed_generation=10 bytes=786958\r\r\nENCFS_EXTENDED_RESULT action=verify result=0 errno=0\r\r\n"
+        }
+      ],
+      "serial_log": "/home/tourist/Desktop/openvela/encfs-results/extended-20261024/acceptance-final-01/powercut-11.serial.log",
+      "guest_clock": {
+        "source": "NSH explicit test clock initialization",
+        "value": "Jan 02 03:04:05 2026",
+        "hardware_rtc": false
+      },
+      "intentional_sigkill": true,
+      "finished_at": "2026-10-24T14:39:02+08:00"
+    },
+    {
+      "name": "powercut-12",
+      "instance": "encfs-power-9dcb698aab5d",
+      "command": [
+        "/home/tourist/Desktop/openvela/run-emulator.sh",
+        "goldfish-arm64-v8a-ap-encfs-extended",
+        "-keep",
+        "encfs-power-9dcb698aab5d",
+        "-no-window",
+        "-no-audio",
+        "-gpu",
+        "off",
+        "-accel",
+        "off"
+      ],
+      "started_at": "2026-10-24T14:39:02+08:00",
+      "commands": [
+        {
+          "command": "date -u -s \"Jan 02 03:04:05 2026\"",
+          "started_at": "2026-10-24T14:39:02+08:00",
+          "finished_at": "2026-10-24T14:39:02+08:00",
+          "output": "\u001b[Kdate -u -s \"Jan 02 03:04:05 2026\"\r\r\n"
+        },
+        {
+          "command": "encfs start",
+          "started_at": "2026-10-24T14:39:02+08:00",
+          "finished_at": "2026-10-24T14:39:02+08:00",
+          "output": "\u001b[Kencfs start\r\r\nencfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        },
+        {
+          "command": "encfs_extended verify 11",
+          "started_at": "2026-10-24T14:39:02+08:00",
+          "finished_at": "2026-10-24T14:39:03+08:00",
+          "output": "\u001b[Kencfs_extended verify 11\r\r\nENCFS_POWER_VERIFIED sentinels=3 committed_generation=11 bytes=852495\r\r\nENCFS_EXTENDED_RESULT action=verify result=0 errno=0\r\r\n"
+        }
+      ],
+      "serial_log": "/home/tourist/Desktop/openvela/encfs-results/extended-20261024/acceptance-final-01/powercut-12.serial.log",
+      "guest_clock": {
+        "source": "NSH explicit test clock initialization",
+        "value": "Jan 02 03:04:05 2026",
+        "hardware_rtc": false
+      },
+      "intentional_sigkill": true,
+      "finished_at": "2026-10-24T14:39:04+08:00"
+    },
+    {
+      "name": "powercut-13",
+      "instance": "encfs-power-9dcb698aab5d",
+      "command": [
+        "/home/tourist/Desktop/openvela/run-emulator.sh",
+        "goldfish-arm64-v8a-ap-encfs-extended",
+        "-keep",
+        "encfs-power-9dcb698aab5d",
+        "-no-window",
+        "-no-audio",
+        "-gpu",
+        "off",
+        "-accel",
+        "off"
+      ],
+      "started_at": "2026-10-24T14:39:04+08:00",
+      "commands": [
+        {
+          "command": "date -u -s \"Jan 02 03:04:05 2026\"",
+          "started_at": "2026-10-24T14:39:05+08:00",
+          "finished_at": "2026-10-24T14:39:05+08:00",
+          "output": "\u001b[Kdate -u -s \"Jan 02 03:04:05 2026\"\r\r\n"
+        },
+        {
+          "command": "encfs start",
+          "started_at": "2026-10-24T14:39:05+08:00",
+          "finished_at": "2026-10-24T14:39:05+08:00",
+          "output": "\u001b[Kencfs start\r\r\nencfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        },
+        {
+          "command": "encfs_extended verify 12",
+          "started_at": "2026-10-24T14:39:05+08:00",
+          "finished_at": "2026-10-24T14:39:05+08:00",
+          "output": "\u001b[Kencfs_extended verify 12\r\r\nENCFS_POWER_VERIFIED sentinels=3 committed_generation=12 bytes=918032\r\r\nENCFS_EXTENDED_RESULT action=verify result=0 errno=0\r\r\n"
+        }
+      ],
+      "serial_log": "/home/tourist/Desktop/openvela/encfs-results/extended-20261024/acceptance-final-01/powercut-13.serial.log",
+      "guest_clock": {
+        "source": "NSH explicit test clock initialization",
+        "value": "Jan 02 03:04:05 2026",
+        "hardware_rtc": false
+      },
+      "intentional_sigkill": true,
+      "finished_at": "2026-10-24T14:39:06+08:00"
+    },
+    {
+      "name": "powercut-14",
+      "instance": "encfs-power-9dcb698aab5d",
+      "command": [
+        "/home/tourist/Desktop/openvela/run-emulator.sh",
+        "goldfish-arm64-v8a-ap-encfs-extended",
+        "-keep",
+        "encfs-power-9dcb698aab5d",
+        "-no-window",
+        "-no-audio",
+        "-gpu",
+        "off",
+        "-accel",
+        "off"
+      ],
+      "started_at": "2026-10-24T14:39:07+08:00",
+      "commands": [
+        {
+          "command": "date -u -s \"Jan 02 03:04:05 2026\"",
+          "started_at": "2026-10-24T14:39:07+08:00",
+          "finished_at": "2026-10-24T14:39:07+08:00",
+          "output": "\u001b[Kdate -u -s \"Jan 02 03:04:05 2026\"\r\r\n"
+        },
+        {
+          "command": "encfs start",
+          "started_at": "2026-10-24T14:39:07+08:00",
+          "finished_at": "2026-10-24T14:39:07+08:00",
+          "output": "\u001b[Kencfs start\r\r\nencfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        },
+        {
+          "command": "encfs_extended verify 13",
+          "started_at": "2026-10-24T14:39:07+08:00",
+          "finished_at": "2026-10-24T14:39:07+08:00",
+          "output": "\u001b[Kencfs_extended verify 13\r\r\nENCFS_POWER_VERIFIED sentinels=3 committed_generation=13 bytes=983569\r\r\nENCFS_EXTENDED_RESULT action=verify result=0 errno=0\r\r\n"
+        }
+      ],
+      "serial_log": "/home/tourist/Desktop/openvela/encfs-results/extended-20261024/acceptance-final-01/powercut-14.serial.log",
+      "guest_clock": {
+        "source": "NSH explicit test clock initialization",
+        "value": "Jan 02 03:04:05 2026",
+        "hardware_rtc": false
+      },
+      "intentional_sigkill": true,
+      "finished_at": "2026-10-24T14:39:09+08:00"
+    },
+    {
+      "name": "powercut-15",
+      "instance": "encfs-power-9dcb698aab5d",
+      "command": [
+        "/home/tourist/Desktop/openvela/run-emulator.sh",
+        "goldfish-arm64-v8a-ap-encfs-extended",
+        "-keep",
+        "encfs-power-9dcb698aab5d",
+        "-no-window",
+        "-no-audio",
+        "-gpu",
+        "off",
+        "-accel",
+        "off"
+      ],
+      "started_at": "2026-10-24T14:39:09+08:00",
+      "commands": [
+        {
+          "command": "date -u -s \"Jan 02 03:04:05 2026\"",
+          "started_at": "2026-10-24T14:39:09+08:00",
+          "finished_at": "2026-10-24T14:39:09+08:00",
+          "output": "\u001b[Kdate -u -s \"Jan 02 03:04:05 2026\"\r\r\n"
+        },
+        {
+          "command": "encfs start",
+          "started_at": "2026-10-24T14:39:09+08:00",
+          "finished_at": "2026-10-24T14:39:09+08:00",
+          "output": "\u001b[Kencfs start\r\r\nencfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        },
+        {
+          "command": "encfs_extended verify 14",
+          "started_at": "2026-10-24T14:39:09+08:00",
+          "finished_at": "2026-10-24T14:39:10+08:00",
+          "output": "\u001b[Kencfs_extended verify 14\r\r\nENCFS_POWER_VERIFIED sentinels=3 committed_generation=14 bytes=1049106\r\r\nENCFS_EXTENDED_RESULT action=verify result=0 errno=0\r\r\n"
+        }
+      ],
+      "serial_log": "/home/tourist/Desktop/openvela/encfs-results/extended-20261024/acceptance-final-01/powercut-15.serial.log",
+      "guest_clock": {
+        "source": "NSH explicit test clock initialization",
+        "value": "Jan 02 03:04:05 2026",
+        "hardware_rtc": false
+      },
+      "intentional_sigkill": true,
+      "finished_at": "2026-10-24T14:39:11+08:00"
+    },
+    {
+      "name": "powercut-16",
+      "instance": "encfs-power-9dcb698aab5d",
+      "command": [
+        "/home/tourist/Desktop/openvela/run-emulator.sh",
+        "goldfish-arm64-v8a-ap-encfs-extended",
+        "-keep",
+        "encfs-power-9dcb698aab5d",
+        "-no-window",
+        "-no-audio",
+        "-gpu",
+        "off",
+        "-accel",
+        "off"
+      ],
+      "started_at": "2026-10-24T14:39:11+08:00",
+      "commands": [
+        {
+          "command": "date -u -s \"Jan 02 03:04:05 2026\"",
+          "started_at": "2026-10-24T14:39:11+08:00",
+          "finished_at": "2026-10-24T14:39:12+08:00",
+          "output": "\u001b[Kdate -u -s \"Jan 02 03:04:05 2026\"\r\r\n"
+        },
+        {
+          "command": "encfs start",
+          "started_at": "2026-10-24T14:39:12+08:00",
+          "finished_at": "2026-10-24T14:39:12+08:00",
+          "output": "\u001b[Kencfs start\r\r\nencfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        },
+        {
+          "command": "encfs_extended verify 15",
+          "started_at": "2026-10-24T14:39:12+08:00",
+          "finished_at": "2026-10-24T14:39:12+08:00",
+          "output": "\u001b[Kencfs_extended verify 15\r\r\nENCFS_POWER_VERIFIED sentinels=3 committed_generation=15 bytes=1114643\r\r\nENCFS_EXTENDED_RESULT action=verify result=0 errno=0\r\r\n"
+        }
+      ],
+      "serial_log": "/home/tourist/Desktop/openvela/encfs-results/extended-20261024/acceptance-final-01/powercut-16.serial.log",
+      "guest_clock": {
+        "source": "NSH explicit test clock initialization",
+        "value": "Jan 02 03:04:05 2026",
+        "hardware_rtc": false
+      },
+      "intentional_sigkill": true,
+      "finished_at": "2026-10-24T14:39:13+08:00"
+    },
+    {
+      "name": "powercut-17",
+      "instance": "encfs-power-9dcb698aab5d",
+      "command": [
+        "/home/tourist/Desktop/openvela/run-emulator.sh",
+        "goldfish-arm64-v8a-ap-encfs-extended",
+        "-keep",
+        "encfs-power-9dcb698aab5d",
+        "-no-window",
+        "-no-audio",
+        "-gpu",
+        "off",
+        "-accel",
+        "off"
+      ],
+      "started_at": "2026-10-24T14:39:14+08:00",
+      "commands": [
+        {
+          "command": "date -u -s \"Jan 02 03:04:05 2026\"",
+          "started_at": "2026-10-24T14:39:14+08:00",
+          "finished_at": "2026-10-24T14:39:14+08:00",
+          "output": "\u001b[Kdate -u -s \"Jan 02 03:04:05 2026\"\r\r\n"
+        },
+        {
+          "command": "encfs start",
+          "started_at": "2026-10-24T14:39:14+08:00",
+          "finished_at": "2026-10-24T14:39:14+08:00",
+          "output": "\u001b[Kencfs start\r\r\nencfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        },
+        {
+          "command": "encfs_extended verify 16",
+          "started_at": "2026-10-24T14:39:14+08:00",
+          "finished_at": "2026-10-24T14:39:14+08:00",
+          "output": "\u001b[Kencfs_extended verify 16\r\r\nENCFS_POWER_VERIFIED sentinels=3 committed_generation=16 bytes=1180180\r\r\nENCFS_EXTENDED_RESULT action=verify result=0 errno=0\r\r\n"
+        }
+      ],
+      "serial_log": "/home/tourist/Desktop/openvela/encfs-results/extended-20261024/acceptance-final-01/powercut-17.serial.log",
+      "guest_clock": {
+        "source": "NSH explicit test clock initialization",
+        "value": "Jan 02 03:04:05 2026",
+        "hardware_rtc": false
+      },
+      "intentional_sigkill": true,
+      "finished_at": "2026-10-24T14:39:16+08:00"
+    },
+    {
+      "name": "powercut-18",
+      "instance": "encfs-power-9dcb698aab5d",
+      "command": [
+        "/home/tourist/Desktop/openvela/run-emulator.sh",
+        "goldfish-arm64-v8a-ap-encfs-extended",
+        "-keep",
+        "encfs-power-9dcb698aab5d",
+        "-no-window",
+        "-no-audio",
+        "-gpu",
+        "off",
+        "-accel",
+        "off"
+      ],
+      "started_at": "2026-10-24T14:39:16+08:00",
+      "commands": [
+        {
+          "command": "date -u -s \"Jan 02 03:04:05 2026\"",
+          "started_at": "2026-10-24T14:39:16+08:00",
+          "finished_at": "2026-10-24T14:39:16+08:00",
+          "output": "\u001b[Kdate -u -s \"Jan 02 03:04:05 2026\"\r\r\n"
+        },
+        {
+          "command": "encfs start",
+          "started_at": "2026-10-24T14:39:16+08:00",
+          "finished_at": "2026-10-24T14:39:16+08:00",
+          "output": "\u001b[Kencfs start\r\r\nencfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        },
+        {
+          "command": "encfs_extended verify 17",
+          "started_at": "2026-10-24T14:39:16+08:00",
+          "finished_at": "2026-10-24T14:39:17+08:00",
+          "output": "\u001b[Kencfs_extended verify 17\r\r\nENCFS_POWER_VERIFIED sentinels=3 committed_generation=17 bytes=1245717\r\r\nENCFS_EXTENDED_RESULT action=verify result=0 errno=0\r\r\n"
+        }
+      ],
+      "serial_log": "/home/tourist/Desktop/openvela/encfs-results/extended-20261024/acceptance-final-01/powercut-18.serial.log",
+      "guest_clock": {
+        "source": "NSH explicit test clock initialization",
+        "value": "Jan 02 03:04:05 2026",
+        "hardware_rtc": false
+      },
+      "intentional_sigkill": true,
+      "finished_at": "2026-10-24T14:39:18+08:00"
+    },
+    {
+      "name": "powercut-19",
+      "instance": "encfs-power-9dcb698aab5d",
+      "command": [
+        "/home/tourist/Desktop/openvela/run-emulator.sh",
+        "goldfish-arm64-v8a-ap-encfs-extended",
+        "-keep",
+        "encfs-power-9dcb698aab5d",
+        "-no-window",
+        "-no-audio",
+        "-gpu",
+        "off",
+        "-accel",
+        "off"
+      ],
+      "started_at": "2026-10-24T14:39:18+08:00",
+      "commands": [
+        {
+          "command": "date -u -s \"Jan 02 03:04:05 2026\"",
+          "started_at": "2026-10-24T14:39:19+08:00",
+          "finished_at": "2026-10-24T14:39:19+08:00",
+          "output": "\u001b[Kdate -u -s \"Jan 02 03:04:05 2026\"\r\r\n"
+        },
+        {
+          "command": "encfs start",
+          "started_at": "2026-10-24T14:39:19+08:00",
+          "finished_at": "2026-10-24T14:39:19+08:00",
+          "output": "\u001b[Kencfs start\r\r\nencfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        },
+        {
+          "command": "encfs_extended verify 18",
+          "started_at": "2026-10-24T14:39:19+08:00",
+          "finished_at": "2026-10-24T14:39:19+08:00",
+          "output": "\u001b[Kencfs_extended verify 18\r\r\nENCFS_POWER_VERIFIED sentinels=3 committed_generation=18 bytes=1311254\r\r\nENCFS_EXTENDED_RESULT action=verify result=0 errno=0\r\r\n"
+        }
+      ],
+      "serial_log": "/home/tourist/Desktop/openvela/encfs-results/extended-20261024/acceptance-final-01/powercut-19.serial.log",
+      "guest_clock": {
+        "source": "NSH explicit test clock initialization",
+        "value": "Jan 02 03:04:05 2026",
+        "hardware_rtc": false
+      },
+      "intentional_sigkill": true,
+      "finished_at": "2026-10-24T14:39:21+08:00"
+    },
+    {
+      "name": "powercut-20",
+      "instance": "encfs-power-9dcb698aab5d",
+      "command": [
+        "/home/tourist/Desktop/openvela/run-emulator.sh",
+        "goldfish-arm64-v8a-ap-encfs-extended",
+        "-keep",
+        "encfs-power-9dcb698aab5d",
+        "-no-window",
+        "-no-audio",
+        "-gpu",
+        "off",
+        "-accel",
+        "off"
+      ],
+      "started_at": "2026-10-24T14:39:21+08:00",
+      "commands": [
+        {
+          "command": "date -u -s \"Jan 02 03:04:05 2026\"",
+          "started_at": "2026-10-24T14:39:21+08:00",
+          "finished_at": "2026-10-24T14:39:21+08:00",
+          "output": "\u001b[Kdate -u -s \"Jan 02 03:04:05 2026\"\r\r\n"
+        },
+        {
+          "command": "encfs start",
+          "started_at": "2026-10-24T14:39:21+08:00",
+          "finished_at": "2026-10-24T14:39:21+08:00",
+          "output": "\u001b[Kencfs start\r\r\nencfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        },
+        {
+          "command": "encfs_extended verify 19",
+          "started_at": "2026-10-24T14:39:21+08:00",
+          "finished_at": "2026-10-24T14:39:22+08:00",
+          "output": "\u001b[Kencfs_extended verify 19\r\r\nENCFS_POWER_VERIFIED sentinels=3 committed_generation=19 bytes=1376791\r\r\nENCFS_EXTENDED_RESULT action=verify result=0 errno=0\r\r\n"
+        }
+      ],
+      "serial_log": "/home/tourist/Desktop/openvela/encfs-results/extended-20261024/acceptance-final-01/powercut-20.serial.log",
+      "guest_clock": {
+        "source": "NSH explicit test clock initialization",
+        "value": "Jan 02 03:04:05 2026",
+        "hardware_rtc": false
+      },
+      "intentional_sigkill": true,
+      "finished_at": "2026-10-24T14:39:23+08:00"
+    },
+    {
+      "name": "power-final-coldboot",
+      "instance": "encfs-power-9dcb698aab5d",
+      "command": [
+        "/home/tourist/Desktop/openvela/run-emulator.sh",
+        "goldfish-arm64-v8a-ap-encfs-extended",
+        "-keep",
+        "encfs-power-9dcb698aab5d",
+        "-no-window",
+        "-no-audio",
+        "-gpu",
+        "off",
+        "-accel",
+        "off"
+      ],
+      "started_at": "2026-10-24T14:39:23+08:00",
+      "commands": [
+        {
+          "command": "date -u -s \"Jan 02 03:04:05 2026\"",
+          "started_at": "2026-10-24T14:39:23+08:00",
+          "finished_at": "2026-10-24T14:39:23+08:00",
+          "output": "\u001b[Kdate -u -s \"Jan 02 03:04:05 2026\"\r\r\n"
+        },
+        {
+          "command": "encfs start",
+          "started_at": "2026-10-24T14:39:23+08:00",
+          "finished_at": "2026-10-24T14:39:24+08:00",
+          "output": "\u001b[Kencfs start\r\r\nencfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        },
+        {
+          "command": "encfs_extended verify 20",
+          "started_at": "2026-10-24T14:39:24+08:00",
+          "finished_at": "2026-10-24T14:39:24+08:00",
+          "output": "\u001b[Kencfs_extended verify 20\r\r\nENCFS_POWER_VERIFIED sentinels=3 committed_generation=20 bytes=1442328\r\r\nENCFS_EXTENDED_RESULT action=verify result=0 errno=0\r\r\n"
+        },
+        {
+          "command": "encfs stop",
+          "started_at": "2026-10-24T14:39:24+08:00",
+          "finished_at": "2026-10-24T14:39:24+08:00",
+          "output": "\u001b[Kencfs stop\r\r\nencfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        }
+      ],
+      "serial_log": "/home/tourist/Desktop/openvela/encfs-results/extended-20261024/acceptance-final-01/power-final-coldboot.serial.log",
+      "guest_clock": {
+        "source": "NSH explicit test clock initialization",
+        "value": "Jan 02 03:04:05 2026",
+        "hardware_rtc": false
+      },
+      "exit_status": null,
+      "exit_signal": 15,
+      "finished_at": "2026-10-24T14:39:24+08:00"
+    },
+    {
+      "name": "single-byte-corruption-oracle",
+      "instance": "encfs-negative-9dcb698aab5d",
+      "command": [
+        "/home/tourist/Desktop/openvela/run-emulator.sh",
+        "goldfish-arm64-v8a-ap-encfs-extended",
+        "-keep",
+        "encfs-negative-9dcb698aab5d",
+        "-no-window",
+        "-no-audio",
+        "-gpu",
+        "off",
+        "-accel",
+        "off"
+      ],
+      "started_at": "2026-10-24T14:39:24+08:00",
+      "commands": [
+        {
+          "command": "date -u -s \"Jan 02 03:04:05 2026\"",
+          "started_at": "2026-10-24T14:39:24+08:00",
+          "finished_at": "2026-10-24T14:39:24+08:00",
+          "output": "\u001b[Kdate -u -s \"Jan 02 03:04:05 2026\"\r\r\n"
+        },
+        {
+          "command": "encfs provision --erase",
+          "started_at": "2026-10-24T14:39:24+08:00",
+          "finished_at": "2026-10-24T14:39:25+08:00",
+          "output": "\u001b[Kencfs provision --erase\r\r\nencfs: formatting encrypted data volume\r\r\nencfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        },
+        {
+          "command": "encfs start",
+          "started_at": "2026-10-24T14:39:25+08:00",
+          "finished_at": "2026-10-24T14:39:25+08:00",
+          "output": "\u001b[Kencfs start\r\r\nencfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        },
+        {
+          "command": "encfs_extended prepare",
+          "started_at": "2026-10-24T14:39:25+08:00",
+          "finished_at": "2026-10-24T14:39:25+08:00",
+          "output": "\u001b[Kencfs_extended prepare\r\r\nENCFS_POWER_PREPARED sentinels=3 committed_generation=0\r\r\nENCFS_EXTENDED_RESULT action=prepare result=0 errno=0\r\r\n"
+        },
+        {
+          "command": "encfs_extended verify 0",
+          "started_at": "2026-10-24T14:39:25+08:00",
+          "finished_at": "2026-10-24T14:39:25+08:00",
+          "output": "\u001b[Kencfs_extended verify 0\r\r\nENCFS_POWER_VERIFIED sentinels=3 committed_generation=0 bytes=131588\r\r\nENCFS_EXTENDED_RESULT action=verify result=0 errno=0\r\r\n"
+        },
+        {
+          "command": "cd /data/power-fixture",
+          "started_at": "2026-10-24T14:39:25+08:00",
+          "finished_at": "2026-10-24T14:39:25+08:00",
+          "output": "\u001b[Kcd /data/power-fixture\r\r\n"
+        },
+        {
+          "command": "dd if=/dev/zero of=sentinel2 bs=1 count=1 seek=4097 conv=notrunc",
+          "started_at": "2026-10-24T14:39:25+08:00",
+          "finished_at": "2026-10-24T14:39:25+08:00",
+          "output": "\u001b[Kdd if=/dev/zero of=sentinel2 bs=1 count=1 seek=4097 conv=notrunc\r\r\n"
+        },
+        {
+          "command": "cd /",
+          "started_at": "2026-10-24T14:39:25+08:00",
+          "finished_at": "2026-10-24T14:39:25+08:00",
+          "output": "\u001b[Kcd /\r\r\n"
+        },
+        {
+          "command": "ls -l /data/power-fixture",
+          "started_at": "2026-10-24T14:39:25+08:00",
+          "finished_at": "2026-10-24T14:39:25+08:00",
+          "output": "\u001b[Kls -l /data/power-fixture\r\r\n/data/power-fixture:\r\r\n -rwxrwxrwx   0           1 sentinel0\r\r\n -rwxrwxrwx   0         513 sentinel1\r\r\n -rwxrwxrwx   0       65537 sentinel2\r\r\n -rwxrwxrwx   0       65537 committed-0\r\r\n"
+        },
+        {
+          "command": "encfs_extended verify 0",
+          "started_at": "2026-10-24T14:39:25+08:00",
+          "finished_at": "2026-10-24T14:39:25+08:00",
+          "output": "\u001b[Kencfs_extended verify 0\r\r\nENCFS_EXTENDED_RESULT action=verify result=-1 errno=84\r\r\n"
+        },
+        {
+          "command": "encfs stop",
+          "started_at": "2026-10-24T14:39:25+08:00",
+          "finished_at": "2026-10-24T14:39:25+08:00",
+          "output": "\u001b[Kencfs stop\r\r\nencfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        }
+      ],
+      "serial_log": "/home/tourist/Desktop/openvela/encfs-results/extended-20261024/acceptance-final-01/single-byte-corruption-oracle.serial.log",
+      "guest_clock": {
+        "source": "NSH explicit test clock initialization",
+        "value": "Jan 02 03:04:05 2026",
+        "hardware_rtc": false
+      },
+      "exit_status": null,
+      "exit_signal": 15,
+      "finished_at": "2026-10-24T14:39:25+08:00",
+      "status": "passed"
+    }
+  ],
+  "scope": [
+    "Unmodified upstream cmocka filesystem suite on the encrypted /data mount",
+    "Upstream fstest 10 loops with 64 files of up to 8192 bytes",
+    "Original Vela append/read loop, 100 repetitions",
+    "Dedicated encrypted disk, SIGKILL during writes and after commits"
+  ],
+  "artifacts": {
+    "nuttx": {
+      "path": "/home/tourist/Desktop/openvela/cmake_out/vela_encfs_extended_release/nuttx",
+      "size": 8304088,
+      "sha256": "c032811f7323892987c805aabab9bdcfcf3845863b610a781b8561bf9360c278"
+    },
+    "nuttx.bin": {
+      "path": "/home/tourist/Desktop/openvela/cmake_out/vela_encfs_extended_release/nuttx.bin",
+      "size": 1744896,
+      "sha256": "a45288f35ec33fd02a37f4f2f7bfb2f25d2fe8afb3c94aa525be1a9ec379f8ac"
+    },
+    "vela_data.bin": {
+      "path": "/home/tourist/Desktop/openvela/cmake_out/vela_encfs_extended_release/vela_data.bin",
+      "size": 268435456,
+      "sha256": "a6d72ac7690f53be6ae46ba88506bd97302a093f7108472bd9efc3cefda06484"
+    },
+    "vela_system.bin": {
+      "path": "/home/tourist/Desktop/openvela/cmake_out/vela_encfs_extended_release/vela_system.bin",
+      "size": 1024,
+      "sha256": "c6cc97e19e622a920d00f1b56d94622a595d2c9b687ea3f13415203077b571a8"
+    },
+    ".config": {
+      "path": "/home/tourist/Desktop/openvela/cmake_out/vela_encfs_extended_release/.config",
+      "size": 54987,
+      "sha256": "9bbb13e8755386b4c24aee8bad47bbff2d07e447c80b9b16e9dc2b66b7907d25"
+    }
+  },
+  "source_revisions": {
+    "nuttx": {
+      "revision": "04264dc9a71be9dba96c4321bc5d7770e79d2dca",
+      "dirty": false,
+      "changes": []
+    },
+    "apps": {
+      "revision": "e198d0a1a032b886dc43c6cf5e7677f5dad4a42e",
+      "dirty": true,
+      "changes": [
+        "?? testing/drivers/nist-sts/.gitee/",
+        "?? testing/drivers/nist-sts/.github/",
+        "?? testing/drivers/nist-sts/sts/"
+      ]
+    },
+    "tests": {
+      "revision": "264e7219a8d815deaf38a202cba33fa220293dcb",
+      "dirty": false,
+      "changes": []
+    },
+    "vendor/openvela": {
+      "revision": "f08e648c5b1386c70fd74c637307de70cf255533",
+      "dirty": false,
+      "changes": []
+    }
+  },
+  "source_fingerprints": {
+    "apps/testing/fs/encfs_extended/encfs_extended_main.c": "ad8c8d606fb1743a9b880f67ce41b142d7cd5267cdb48631fa229d4c918fd859",
+    "apps/testing/testsuites/kernel/fs/cmocka_fs_test.c": "c83a1fa86c1b32be10fed2fbd5bf13a8f7f1ff9f2da22c74401adb89ef03b254",
+    "apps/testing/fs/fstest/fstest_main.c": "db27738efaabb42a7f68c8130d35cf0715b628a12d30cd0ef8ffb5583557444c",
+    "tests/testcases/vela_fs_test/fs/stress/read_and_write_loops_test.c": "6207fe83ebe4868dd6eb2c52184e41305f72b97683125d5716d3d0704911e770",
+    "nuttx/fs/encpathfs/encpathfs_codec.c": "6fb23c014c27ee168cebe4ef307d66e67b3bbdca85e331d4bc066c3512016a2c",
+    "nuttx/fs/encpathfs/encpathfs_mount.c": "fdae6d6c46aa321a1040f31cc7a9f837dea3ce66787723134eff746b0b04679f",
+    "nuttx/fs/encfs/encfs_manager.c": "39caf1f29e2938a21813eb5591cc5cb2d2060569db8ddbf37bf02bdc24018259"
+  },
+  "time_probe": "\u001b[Kencfs_extended clock\r\r\nENCFS_TIME_RESULT now=1767323045 mtime=1767323044 delta=-1\r\r\nENCFS_EXTENDED_RESULT action=clock result=0 errno=0\r\r\n",
+  "upstream_cmocka": {
+    "started": [
+      "test_nuttx_fs_creat01",
+      "test_nuttx_fs_dup01",
+      "test_nuttx_fs_fcntl01",
+      "test_nuttx_fs_fcntl02",
+      "test_nuttx_fs_fcntl03",
+      "test_nuttx_fs_fstat01",
+      "test_nuttx_fs_fstat02",
+      "test_nuttx_fs_fstatfs01",
+      "test_nuttx_fs_fsync01",
+      "test_nuttx_fs_fsync02",
+      "test_nuttx_fs_file_get01",
+      "test_nuttx_fs_mkdir01",
+      "test_nuttx_fs_open01",
+      "test_nuttx_fs_open02",
+      "test_nuttx_fs_opendir01",
+      "test_nuttx_fs_opendir02",
+      "test_nuttx_fs_pread01",
+      "test_nuttx_fs_pwrite01",
+      "test_nuttx_fs_read01",
+      "test_nuttx_fs_readdir01",
+      "test_nuttx_fs_readlink01",
+      "test_nuttx_fs_rename01",
+      "test_nuttx_fs_rename02",
+      "test_nuttx_fs_rewinddir01",
+      "test_nuttx_fs_rmdir01",
+      "test_nuttx_fs_rmdir02",
+      "test_nuttx_fs_rmdir03",
+      "test_nuttx_fs_seek01",
+      "test_nuttx_fs_seek02",
+      "test_nuttx_fs_stat01",
+      "test_nuttx_fs_statfs01",
+      "test_nuttx_fs_symlink01",
+      "test_nuttx_fs_truncate01",
+      "test_nuttx_fs_unlink01",
+      "test_nuttx_fs_write01",
+      "test_nuttx_fs_write02",
+      "test_nuttx_fs_write03",
+      "test_nuttx_fs_append01",
+      "test_nuttx_fs_sendfile01",
+      "test_nuttx_fs_sendfile02",
+      "test_nuttx_fs_stream01",
+      "test_nuttx_fs_stream02",
+      "test_nuttx_fs_stream03",
+      "test_nuttx_fs_stream04",
+      "test_nuttx_fs_eventfd",
+      "test_nuttx_fs_poll01"
+    ],
+    "passed": [
+      "test_nuttx_fs_creat01",
+      "test_nuttx_fs_dup01",
+      "test_nuttx_fs_fcntl01",
+      "test_nuttx_fs_fcntl02",
+      "test_nuttx_fs_fcntl03",
+      "test_nuttx_fs_fstat01",
+      "test_nuttx_fs_fstat02",
+      "test_nuttx_fs_fstatfs01",
+      "test_nuttx_fs_fsync01",
+      "test_nuttx_fs_fsync02",
+      "test_nuttx_fs_file_get01",
+      "test_nuttx_fs_mkdir01",
+      "test_nuttx_fs_open01",
+      "test_nuttx_fs_open02",
+      "test_nuttx_fs_opendir01",
+      "test_nuttx_fs_opendir02",
+      "test_nuttx_fs_pread01",
+      "test_nuttx_fs_pwrite01",
+      "test_nuttx_fs_read01",
+      "test_nuttx_fs_readdir01",
+      "test_nuttx_fs_readlink01",
+      "test_nuttx_fs_rename01",
+      "test_nuttx_fs_rename02",
+      "test_nuttx_fs_rewinddir01",
+      "test_nuttx_fs_rmdir01",
+      "test_nuttx_fs_rmdir02",
+      "test_nuttx_fs_rmdir03",
+      "test_nuttx_fs_seek01",
+      "test_nuttx_fs_seek02",
+      "test_nuttx_fs_stat01",
+      "test_nuttx_fs_statfs01",
+      "test_nuttx_fs_symlink01",
+      "test_nuttx_fs_truncate01",
+      "test_nuttx_fs_unlink01",
+      "test_nuttx_fs_write01",
+      "test_nuttx_fs_write02",
+      "test_nuttx_fs_write03",
+      "test_nuttx_fs_append01",
+      "test_nuttx_fs_sendfile01",
+      "test_nuttx_fs_sendfile02",
+      "test_nuttx_fs_stream01",
+      "test_nuttx_fs_stream02",
+      "test_nuttx_fs_stream03",
+      "test_nuttx_fs_stream04",
+      "test_nuttx_fs_eventfd",
+      "test_nuttx_fs_poll01"
+    ],
+    "failed": [],
+    "skipped": [],
+    "counts": {
+      "run": 46,
+      "pass": 46,
+      "fail": 0,
+      "skip": 0
+    }
+  },
+  "upstream_fstest": {
+    "loops": 10,
+    "max_open": 64,
+    "max_file_size": 8192,
+    "pass": 20,
+    "fail": 0
+  },
+  "vela_fs_rwloops": {
+    "loops": 100,
+    "status": "passed",
+    "source": "tests/testcases/vela_fs_test/fs/stress/read_and_write_loops_test.c"
+  },
+  "powercuts": [
+    {
+      "index": 1,
+      "boundary": "mid-temporary-write",
+      "expected_committed_generation": 1,
+      "temporary_generation": 2,
+      "temporary_expected_complete": false,
+      "kill_requested_at": "2026-10-24T14:38:40+08:00",
+      "signal": "SIGKILL",
+      "process_group": 173966,
+      "process_id": 173966,
+      "process_group_stopped": true,
+      "exit_status": null,
+      "exit_signal": 9,
+      "killed_at": "2026-10-24T14:38:40+08:00",
+      "image_after_kill": {
+        "path": "/home/tourist/Desktop/openvela/encfs-results/extended-20261024/acceptance-final-01/avd/encfs-power-9dcb698aab5d.vvd/vela_data.bin",
+        "sha256": "24aeede107ddeaddbbf1114f15e285a0b36116bfb83ff1fa663e42f67c69ac1e"
+      }
+    },
+    {
+      "index": 2,
+      "boundary": "after-commit",
+      "expected_committed_generation": 2,
+      "temporary_generation": 3,
+      "temporary_expected_complete": false,
+      "kill_requested_at": "2026-10-24T14:38:42+08:00",
+      "signal": "SIGKILL",
+      "process_group": 174031,
+      "process_id": 174031,
+      "process_group_stopped": true,
+      "exit_status": null,
+      "exit_signal": 9,
+      "killed_at": "2026-10-24T14:38:42+08:00",
+      "image_after_kill": {
+        "path": "/home/tourist/Desktop/openvela/encfs-results/extended-20261024/acceptance-final-01/avd/encfs-power-9dcb698aab5d.vvd/vela_data.bin",
+        "sha256": "a102253f30dcb737c8d387c14aa8980cc851ee5fecd39546469f95fc8ffbf318"
+      }
+    },
+    {
+      "index": 3,
+      "boundary": "mid-temporary-write",
+      "expected_committed_generation": 3,
+      "temporary_generation": 4,
+      "temporary_expected_complete": false,
+      "kill_requested_at": "2026-10-24T14:38:44+08:00",
+      "signal": "SIGKILL",
+      "process_group": 174096,
+      "process_id": 174096,
+      "process_group_stopped": true,
+      "exit_status": null,
+      "exit_signal": 9,
+      "killed_at": "2026-10-24T14:38:44+08:00",
+      "image_after_kill": {
+        "path": "/home/tourist/Desktop/openvela/encfs-results/extended-20261024/acceptance-final-01/avd/encfs-power-9dcb698aab5d.vvd/vela_data.bin",
+        "sha256": "6a105abd8fa67abd6bf1d4dad61977e8c8f8f5a3d4a2087ab592a2285d4df091"
+      }
+    },
+    {
+      "index": 4,
+      "boundary": "after-commit",
+      "expected_committed_generation": 4,
+      "temporary_generation": 5,
+      "temporary_expected_complete": false,
+      "kill_requested_at": "2026-10-24T14:38:46+08:00",
+      "signal": "SIGKILL",
+      "process_group": 174161,
+      "process_id": 174161,
+      "process_group_stopped": true,
+      "exit_status": null,
+      "exit_signal": 9,
+      "killed_at": "2026-10-24T14:38:46+08:00",
+      "image_after_kill": {
+        "path": "/home/tourist/Desktop/openvela/encfs-results/extended-20261024/acceptance-final-01/avd/encfs-power-9dcb698aab5d.vvd/vela_data.bin",
+        "sha256": "748906903991a0bee850a9c7193438e9e223ac6ad1b48e82fe18c6719b42fe3d"
+      }
+    },
+    {
+      "index": 5,
+      "boundary": "mid-temporary-write",
+      "expected_committed_generation": 5,
+      "temporary_generation": 6,
+      "temporary_expected_complete": false,
+      "kill_requested_at": "2026-10-24T14:38:48+08:00",
+      "signal": "SIGKILL",
+      "process_group": 174227,
+      "process_id": 174227,
+      "process_group_stopped": true,
+      "exit_status": null,
+      "exit_signal": 9,
+      "killed_at": "2026-10-24T14:38:49+08:00",
+      "image_after_kill": {
+        "path": "/home/tourist/Desktop/openvela/encfs-results/extended-20261024/acceptance-final-01/avd/encfs-power-9dcb698aab5d.vvd/vela_data.bin",
+        "sha256": "c40ffa4205209cb2dce2c6911685330f69f8a1ae012c6b009c8646074542329a"
+      }
+    },
+    {
+      "index": 6,
+      "boundary": "after-commit",
+      "expected_committed_generation": 6,
+      "temporary_generation": 7,
+      "temporary_expected_complete": false,
+      "kill_requested_at": "2026-10-24T14:38:51+08:00",
+      "signal": "SIGKILL",
+      "process_group": 174294,
+      "process_id": 174294,
+      "process_group_stopped": true,
+      "exit_status": null,
+      "exit_signal": 9,
+      "killed_at": "2026-10-24T14:38:51+08:00",
+      "image_after_kill": {
+        "path": "/home/tourist/Desktop/openvela/encfs-results/extended-20261024/acceptance-final-01/avd/encfs-power-9dcb698aab5d.vvd/vela_data.bin",
+        "sha256": "0d52291bf222554f5985f579077dcee0e1050179b456de454d3664f775778677"
+      }
+    },
+    {
+      "index": 7,
+      "boundary": "mid-temporary-write",
+      "expected_committed_generation": 7,
+      "temporary_generation": 8,
+      "temporary_expected_complete": false,
+      "kill_requested_at": "2026-10-24T14:38:53+08:00",
+      "signal": "SIGKILL",
+      "process_group": 174360,
+      "process_id": 174360,
+      "process_group_stopped": true,
+      "exit_status": null,
+      "exit_signal": 9,
+      "killed_at": "2026-10-24T14:38:53+08:00",
+      "image_after_kill": {
+        "path": "/home/tourist/Desktop/openvela/encfs-results/extended-20261024/acceptance-final-01/avd/encfs-power-9dcb698aab5d.vvd/vela_data.bin",
+        "sha256": "657f206be18f3efbdf6edfb07c69c0e41c860f45faa6a7db026c5ae5adc7f85b"
+      }
+    },
+    {
+      "index": 8,
+      "boundary": "after-commit",
+      "expected_committed_generation": 8,
+      "temporary_generation": 9,
+      "temporary_expected_complete": false,
+      "kill_requested_at": "2026-10-24T14:38:55+08:00",
+      "signal": "SIGKILL",
+      "process_group": 174473,
+      "process_id": 174473,
+      "process_group_stopped": true,
+      "exit_status": null,
+      "exit_signal": 9,
+      "killed_at": "2026-10-24T14:38:55+08:00",
+      "image_after_kill": {
+        "path": "/home/tourist/Desktop/openvela/encfs-results/extended-20261024/acceptance-final-01/avd/encfs-power-9dcb698aab5d.vvd/vela_data.bin",
+        "sha256": "4a4d415314f9411c4055fec28355f08032ad4893b18deaf2500837a182ac9ae4"
+      }
+    },
+    {
+      "index": 9,
+      "boundary": "mid-temporary-write",
+      "expected_committed_generation": 9,
+      "temporary_generation": 10,
+      "temporary_expected_complete": false,
+      "kill_requested_at": "2026-10-24T14:38:57+08:00",
+      "signal": "SIGKILL",
+      "process_group": 174616,
+      "process_id": 174616,
+      "process_group_stopped": true,
+      "exit_status": null,
+      "exit_signal": 9,
+      "killed_at": "2026-10-24T14:38:57+08:00",
+      "image_after_kill": {
+        "path": "/home/tourist/Desktop/openvela/encfs-results/extended-20261024/acceptance-final-01/avd/encfs-power-9dcb698aab5d.vvd/vela_data.bin",
+        "sha256": "2cda57bae2b08782e2a16e66e2b8f54764d12c25a48edd1bfefee5f4930ea6ab"
+      }
+    },
+    {
+      "index": 10,
+      "boundary": "after-commit",
+      "expected_committed_generation": 10,
+      "temporary_generation": 11,
+      "temporary_expected_complete": false,
+      "kill_requested_at": "2026-10-24T14:38:59+08:00",
+      "signal": "SIGKILL",
+      "process_group": 174681,
+      "process_id": 174681,
+      "process_group_stopped": true,
+      "exit_status": null,
+      "exit_signal": 9,
+      "killed_at": "2026-10-24T14:39:00+08:00",
+      "image_after_kill": {
+        "path": "/home/tourist/Desktop/openvela/encfs-results/extended-20261024/acceptance-final-01/avd/encfs-power-9dcb698aab5d.vvd/vela_data.bin",
+        "sha256": "941202544f6d36efa6d474325dbc02cc1a3e060705a2ebac391bc48f9c94f8d2"
+      }
+    },
+    {
+      "index": 11,
+      "boundary": "mid-temporary-write",
+      "expected_committed_generation": 11,
+      "temporary_generation": 12,
+      "temporary_expected_complete": false,
+      "kill_requested_at": "2026-10-24T14:39:02+08:00",
+      "signal": "SIGKILL",
+      "process_group": 174746,
+      "process_id": 174746,
+      "process_group_stopped": true,
+      "exit_status": null,
+      "exit_signal": 9,
+      "killed_at": "2026-10-24T14:39:02+08:00",
+      "image_after_kill": {
+        "path": "/home/tourist/Desktop/openvela/encfs-results/extended-20261024/acceptance-final-01/avd/encfs-power-9dcb698aab5d.vvd/vela_data.bin",
+        "sha256": "72d8663fdd6a8f8fd621c94bb5fe4f5a8213e6fe9ae0070ba6f0dee5850d9984"
+      }
+    },
+    {
+      "index": 12,
+      "boundary": "after-commit",
+      "expected_committed_generation": 12,
+      "temporary_generation": 13,
+      "temporary_expected_complete": false,
+      "kill_requested_at": "2026-10-24T14:39:04+08:00",
+      "signal": "SIGKILL",
+      "process_group": 174810,
+      "process_id": 174810,
+      "process_group_stopped": true,
+      "exit_status": null,
+      "exit_signal": 9,
+      "killed_at": "2026-10-24T14:39:04+08:00",
+      "image_after_kill": {
+        "path": "/home/tourist/Desktop/openvela/encfs-results/extended-20261024/acceptance-final-01/avd/encfs-power-9dcb698aab5d.vvd/vela_data.bin",
+        "sha256": "1cc45c7455bc2ebff807644a02f29925b60c96e7233cf163a40d5eeab8efa126"
+      }
+    },
+    {
+      "index": 13,
+      "boundary": "mid-temporary-write",
+      "expected_committed_generation": 13,
+      "temporary_generation": 14,
+      "temporary_expected_complete": false,
+      "kill_requested_at": "2026-10-24T14:39:06+08:00",
+      "signal": "SIGKILL",
+      "process_group": 174876,
+      "process_id": 174876,
+      "process_group_stopped": true,
+      "exit_status": null,
+      "exit_signal": 9,
+      "killed_at": "2026-10-24T14:39:06+08:00",
+      "image_after_kill": {
+        "path": "/home/tourist/Desktop/openvela/encfs-results/extended-20261024/acceptance-final-01/avd/encfs-power-9dcb698aab5d.vvd/vela_data.bin",
+        "sha256": "011b3314bc6bf0b43c4a9bde949eef9777913f74d476821fd1a83a4e24e87d11"
+      }
+    },
+    {
+      "index": 14,
+      "boundary": "after-commit",
+      "expected_committed_generation": 14,
+      "temporary_generation": 15,
+      "temporary_expected_complete": false,
+      "kill_requested_at": "2026-10-24T14:39:09+08:00",
+      "signal": "SIGKILL",
+      "process_group": 174940,
+      "process_id": 174940,
+      "process_group_stopped": true,
+      "exit_status": null,
+      "exit_signal": 9,
+      "killed_at": "2026-10-24T14:39:09+08:00",
+      "image_after_kill": {
+        "path": "/home/tourist/Desktop/openvela/encfs-results/extended-20261024/acceptance-final-01/avd/encfs-power-9dcb698aab5d.vvd/vela_data.bin",
+        "sha256": "4d1845dc04240708b22edf449a514f604e2fba5bb3b3ac8c7bb16d1505409796"
+      }
+    },
+    {
+      "index": 15,
+      "boundary": "mid-temporary-write",
+      "expected_committed_generation": 15,
+      "temporary_generation": 16,
+      "temporary_expected_complete": false,
+      "kill_requested_at": "2026-10-24T14:39:11+08:00",
+      "signal": "SIGKILL",
+      "process_group": 175004,
+      "process_id": 175004,
+      "process_group_stopped": true,
+      "exit_status": null,
+      "exit_signal": 9,
+      "killed_at": "2026-10-24T14:39:11+08:00",
+      "image_after_kill": {
+        "path": "/home/tourist/Desktop/openvela/encfs-results/extended-20261024/acceptance-final-01/avd/encfs-power-9dcb698aab5d.vvd/vela_data.bin",
+        "sha256": "39af6339227ebbc74202dae767a1dcdd5cb9093dd253315b206c2bcd263c3fe5"
+      }
+    },
+    {
+      "index": 16,
+      "boundary": "after-commit",
+      "expected_committed_generation": 16,
+      "temporary_generation": 17,
+      "temporary_expected_complete": false,
+      "kill_requested_at": "2026-10-24T14:39:13+08:00",
+      "signal": "SIGKILL",
+      "process_group": 175068,
+      "process_id": 175068,
+      "process_group_stopped": true,
+      "exit_status": null,
+      "exit_signal": 9,
+      "killed_at": "2026-10-24T14:39:13+08:00",
+      "image_after_kill": {
+        "path": "/home/tourist/Desktop/openvela/encfs-results/extended-20261024/acceptance-final-01/avd/encfs-power-9dcb698aab5d.vvd/vela_data.bin",
+        "sha256": "d64e71ed935313bc663eaa9ba267b7010c70b0241196c16a368a6e47bae275e3"
+      }
+    },
+    {
+      "index": 17,
+      "boundary": "mid-temporary-write",
+      "expected_committed_generation": 17,
+      "temporary_generation": 18,
+      "temporary_expected_complete": false,
+      "kill_requested_at": "2026-10-24T14:39:16+08:00",
+      "signal": "SIGKILL",
+      "process_group": 175388,
+      "process_id": 175388,
+      "process_group_stopped": true,
+      "exit_status": null,
+      "exit_signal": 9,
+      "killed_at": "2026-10-24T14:39:16+08:00",
+      "image_after_kill": {
+        "path": "/home/tourist/Desktop/openvela/encfs-results/extended-20261024/acceptance-final-01/avd/encfs-power-9dcb698aab5d.vvd/vela_data.bin",
+        "sha256": "b71e41ca45e4fd5dd8e376aad6d42aafd9266ac79e62dd5cfe920ca535d15230"
+      }
+    },
+    {
+      "index": 18,
+      "boundary": "after-commit",
+      "expected_committed_generation": 18,
+      "temporary_generation": 19,
+      "temporary_expected_complete": false,
+      "kill_requested_at": "2026-10-24T14:39:18+08:00",
+      "signal": "SIGKILL",
+      "process_group": 175452,
+      "process_id": 175452,
+      "process_group_stopped": true,
+      "exit_status": null,
+      "exit_signal": 9,
+      "killed_at": "2026-10-24T14:39:18+08:00",
+      "image_after_kill": {
+        "path": "/home/tourist/Desktop/openvela/encfs-results/extended-20261024/acceptance-final-01/avd/encfs-power-9dcb698aab5d.vvd/vela_data.bin",
+        "sha256": "93c8bf9ef59a4c7c029e64caa489c25ce5cd1cdf1284bf12891512e032909c7c"
+      }
+    },
+    {
+      "index": 19,
+      "boundary": "mid-temporary-write",
+      "expected_committed_generation": 19,
+      "temporary_generation": 20,
+      "temporary_expected_complete": false,
+      "kill_requested_at": "2026-10-24T14:39:21+08:00",
+      "signal": "SIGKILL",
+      "process_group": 175527,
+      "process_id": 175527,
+      "process_group_stopped": true,
+      "exit_status": null,
+      "exit_signal": 9,
+      "killed_at": "2026-10-24T14:39:21+08:00",
+      "image_after_kill": {
+        "path": "/home/tourist/Desktop/openvela/encfs-results/extended-20261024/acceptance-final-01/avd/encfs-power-9dcb698aab5d.vvd/vela_data.bin",
+        "sha256": "57fe2513ab033d9241ef0bb27406258d4fffff554bc1911034074f1f182ddeb3"
+      }
+    },
+    {
+      "index": 20,
+      "boundary": "after-commit",
+      "expected_committed_generation": 20,
+      "temporary_generation": 21,
+      "temporary_expected_complete": false,
+      "kill_requested_at": "2026-10-24T14:39:23+08:00",
+      "signal": "SIGKILL",
+      "process_group": 175604,
+      "process_id": 175604,
+      "process_group_stopped": true,
+      "exit_status": null,
+      "exit_signal": 9,
+      "killed_at": "2026-10-24T14:39:23+08:00",
+      "image_after_kill": {
+        "path": "/home/tourist/Desktop/openvela/encfs-results/extended-20261024/acceptance-final-01/avd/encfs-power-9dcb698aab5d.vvd/vela_data.bin",
+        "sha256": "70d049df93752a69521d9772fd488113af5bb3563767307ce3293f39a125f0cf"
+      },
+      "final_verify_output": "\u001b[Kencfs_extended verify 20\r\r\nENCFS_POWER_VERIFIED sentinels=3 committed_generation=20 bytes=1442328\r\r\nENCFS_EXTENDED_RESULT action=verify result=0 errno=0\r\r\n"
+    }
+  ],
+  "power_recovery": {
+    "status": "passed",
+    "cuts": 20,
+    "final_committed_generation": 20,
+    "sentinels_per_boot": 3,
+    "verified_bytes_final_boot": 1442328,
+    "verified_generations_final_boot": 21,
+    "scope": "Dedicated emulator process SIGKILL; not real hardware power loss"
+  },
+  "negative_oracle": {
+    "status": "passed",
+    "offset": 4097,
+    "mutation": "one byte overwritten with zero; length unchanged",
+    "expected_error": "EILSEQ (84)",
+    "output": "\u001b[Kencfs_extended verify 0\r\r\nENCFS_EXTENDED_RESULT action=verify result=-1 errno=84\r\r\n",
+    "directory_listing": "\u001b[Kls -l /data/power-fixture\r\r\n/data/power-fixture:\r\r\n -rwxrwxrwx   0           1 sentinel0\r\r\n -rwxrwxrwx   0         513 sentinel1\r\r\n -rwxrwxrwx   0       65537 sentinel2\r\r\n -rwxrwxrwx   0       65537 committed-0\r\r\n"
+  },
+  "finished_at": "2026-10-24T14:39:25+08:00"
+}

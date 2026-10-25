@@ -1,0 +1,124 @@
+{
+  "started_at": "2026-10-25T11:05:16+08:00",
+  "status": "failed",
+  "phases": [
+    {
+      "name": "legacy-rekey-rejection",
+      "status": "failed",
+      "instance": "encfs-legacy-d7c5d6c7b638",
+      "command": [
+        "/home/tourist/Desktop/openvela/run-emulator.sh",
+        "goldfish-arm64-v8a-ap-encfs-gui",
+        "-keep",
+        "encfs-legacy-d7c5d6c7b638",
+        "-no-window",
+        "-no-audio",
+        "-gpu",
+        "swiftshader_indirect",
+        "-accel",
+        "off"
+      ],
+      "started_at": "2026-10-25T11:05:17+08:00",
+      "commands": [],
+      "serial_log": "/home/tourist/Desktop/openvela/encfs-results/keywrap-180-20261025-01/legacy-rekey-rejection.serial.log",
+      "exit_status": 1,
+      "exit_signal": null,
+      "finished_at": "2026-10-25T11:05:17+08:00"
+    }
+  ],
+  "requested_stress_seconds": 180,
+  "config": "goldfish-arm64-v8a-ap-encfs-gui",
+  "build_dir": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-gui",
+  "limitations": [
+    "Disposable host-file provider models a keystore, not a TEE.",
+    "No real power-loss or malicious-host rollback guarantee.",
+    "Legacy directly-derived volumes reject online rekey.",
+    "Captured old keyslots together with old masters remain decryptable."
+  ],
+  "build_artifacts": {
+    "nuttx": {
+      "path": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-gui/nuttx",
+      "size": 61591200,
+      "sha256": "794119b446b764f4ada8c175467a29b4758001925d63c224273d3e2c1cc10615"
+    },
+    "nuttx.bin": {
+      "path": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-gui/nuttx.bin",
+      "size": 7057408,
+      "sha256": "0728d17af59188f607ed1301ea1e659d43f56205d3f2d6a949837d78bbdd2c4e"
+    },
+    "vela_data.bin": {
+      "path": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-gui/vela_data.bin",
+      "size": 268435456,
+      "sha256": "a6d72ac7690f53be6ae46ba88506bd97302a093f7108472bd9efc3cefda06484"
+    },
+    "vela_system.bin": {
+      "path": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-gui/vela_system.bin",
+      "size": 1024,
+      "sha256": "132c956be1e711a7bde7c0206a663b5ee63804ec3888478b5a1c8092e14b290b"
+    },
+    ".config": {
+      "path": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-gui/.config",
+      "size": 106310,
+      "sha256": "6e4fefba74baa4a02ab99d0c218ae724aa356a940d0f0d1507aa2855283c0c69"
+    }
+  },
+  "source_revisions": {
+    "nuttx": {
+      "revision": "04264dc9a71be9dba96c4321bc5d7770e79d2dca",
+      "dirty": false,
+      "changes": []
+    },
+    "apps": {
+      "revision": "e198d0a1a032b886dc43c6cf5e7677f5dad4a42e",
+      "dirty": true,
+      "changes": [
+        "?? testing/drivers/nist-sts/.gitee/",
+        "?? testing/drivers/nist-sts/.github/",
+        "?? testing/drivers/nist-sts/sts/"
+      ]
+    },
+    "vendor_openvela": {
+      "revision": "f08e648c5b1386c70fd74c637307de70cf255533",
+      "dirty": false,
+      "changes": []
+    },
+    "manifests": {
+      "revision": "b53dd710d5bf58be99c1adb6c42ab2c58064e0df",
+      "dirty": true,
+      "changes": [
+        "M  encfs-sources.json",
+        "M  encfs-tested.xml",
+        "M  overlays/apps/examples/encfs_test/CMakeLists.txt",
+        "M  overlays/apps/examples/encfs_test/Makefile",
+        "M  overlays/apps/examples/encfs_test/encfs_test_main.c",
+        "A  overlays/apps/examples/encfs_test/encfs_test_rekey.c",
+        "M  overlays/apps/examples/encfs_test/encfs_test_shared.h",
+        "A  overlays/apps/examples/encfs_test/encfs_test_utf8.c",
+        "A  overlays/apps/examples/encfs_test/tests/test_rekey_cli.py",
+        "M  overlays/apps/system/encfs/Kconfig",
+        "M  overlays/apps/system/encfs/encfs_main.c",
+        "A  overlays/apps/system/encfs/tests/test_rekey_cli.py",
+        "A  overlays/apps/testing/fs/encfs_extended/CMakeLists.txt",
+        "A  overlays/apps/testing/fs/encfs_extended/Kconfig",
+        "A  overlays/apps/testing/fs/encfs_extended/Make.defs",
+        "A  overlays/apps/testing/fs/encfs_extended/Makefile",
+        "A  overlays/apps/testing/fs/encfs_extended/README.md",
+        "A  overlays/apps/testing/fs/encfs_extended/encfs_extended_main.c",
+        "M  patches/nuttx/encfs.patch",
+        "M  patches/vendor_openvela/encfs.patch",
+        " M tools/analyze_encfs_stress.py",
+        " M tools/test_encfs.py",
+        " M tools/test_encfs_gui.py",
+        "?? docs/encfs_extended_validation.md",
+        "?? docs/encfs_extension_status.md",
+        "?? docs/encfs_keywrap.md",
+        "?? tools/test_encfs_extended.py",
+        "?? tools/test_encfs_keywrap.py"
+      ]
+    }
+  },
+  "updated_at": "2026-10-25T11:05:17+08:00",
+  "error": "End Of File (EOF). Exception style platform.\n<pexpect.pty_spawn.spawn object at 0x7af7d0fe5b70>\ncommand: /home/tourist/Desktop/openvela/run-emulator.sh\nargs: [b'/home/tourist/Desktop/openvela/run-emulator.sh', b'goldfish-arm64-v8a-ap-encfs-gui', b'-keep', b'encfs-legacy-d7c5d6c7b638', b'-no-window', b'-no-audio', b'-gpu', b'swiftshader_indirect', b'-accel', b'off']\nbuffer (last 100 chars): ''\nbefore (last 100 chars): 'ctories are searched in the order $ANDROID_AVD_HOME, $ANDROID_SDK_HOME/avd and $HOME/.android/avd)\\r\\n'\nafter: <class 'pexpect.exceptions.EOF'>\nmatch: None\nmatch_index: None\nexitstatus: 1\nflag_eof: True\npid: 48\nchild_fd: 7\nclosed: False\ntimeout: 300\ndelimiter: <class 'pexpect.exceptions.EOF'>\nlogfile: None\nlogfile_read: <_io.TextIOWrapper name='/home/tourist/Desktop/openvela/encfs-results/keywrap-180-20261025-01/legacy-rekey-rejection.serial.log' mode='w' encoding='utf-8'>\nlogfile_send: None\nmaxread: 2000\nignorecase: False\nsearchwindowsize: None\ndelaybeforesend: 0.05\ndelayafterclose: 0.1\ndelayafterterminate: 0.1\nsearcher: searcher_string:\n    0: 'encfs> '",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/tourist/Desktop/openvela/.repo/manifests/tools/test_encfs_keywrap.py\", line 393, in main\n    run(args, report)\n  File \"/home/tourist/Desktop/openvela/.repo/manifests/tools/test_encfs_keywrap.py\", line 59, in run\n    with Emulator(args, legacy, phase) as emulator:\n  File \"/home/tourist/Desktop/openvela/.repo/manifests/tools/test_encfs.py\", line 260, in __enter__\n    return self._start()\n  File \"/home/tourist/Desktop/openvela/.repo/manifests/tools/test_encfs.py\", line 285, in _start\n    self.child.expect_exact(PROMPT, timeout=args.boot_timeout)\n  File \"/usr/lib/python3/dist-packages/pexpect/spawnbase.py\", line 421, in expect_exact\n    return exp.expect_loop(timeout)\n  File \"/usr/lib/python3/dist-packages/pexpect/expect.py\", line 179, in expect_loop\n    return self.eof(e)\n  File \"/usr/lib/python3/dist-packages/pexpect/expect.py\", line 122, in eof\n    raise exc\npexpect.exceptions.EOF: End Of File (EOF). Exception style platform.\n<pexpect.pty_spawn.spawn object at 0x7af7d0fe5b70>\ncommand: /home/tourist/Desktop/openvela/run-emulator.sh\nargs: [b'/home/tourist/Desktop/openvela/run-emulator.sh', b'goldfish-arm64-v8a-ap-encfs-gui', b'-keep', b'encfs-legacy-d7c5d6c7b638', b'-no-window', b'-no-audio', b'-gpu', b'swiftshader_indirect', b'-accel', b'off']\nbuffer (last 100 chars): ''\nbefore (last 100 chars): 'ctories are searched in the order $ANDROID_AVD_HOME, $ANDROID_SDK_HOME/avd and $HOME/.android/avd)\\r\\n'\nafter: <class 'pexpect.exceptions.EOF'>\nmatch: None\nmatch_index: None\nexitstatus: 1\nflag_eof: True\npid: 48\nchild_fd: 7\nclosed: False\ntimeout: 300\ndelimiter: <class 'pexpect.exceptions.EOF'>\nlogfile: None\nlogfile_read: <_io.TextIOWrapper name='/home/tourist/Desktop/openvela/encfs-results/keywrap-180-20261025-01/legacy-rekey-rejection.serial.log' mode='w' encoding='utf-8'>\nlogfile_send: None\nmaxread: 2000\nignorecase: False\nsearchwindowsize: None\ndelaybeforesend: 0.05\ndelayafterclose: 0.1\ndelayafterterminate: 0.1\nsearcher: searcher_string:\n    0: 'encfs> '\n",
+  "finished_at": "2026-10-25T11:05:17+08:00"
+}

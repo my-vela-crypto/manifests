@@ -1,0 +1,1302 @@
+{
+  "status": "passed_with_limitations",
+  "audited_at": "2026-10-25T11:14:45.161761+08:00",
+  "auditor_script_sha256": "0456b1778d8430aa921c1266d3a0486d901bc84f31d97cff6a0c9ec07c8976c3",
+  "input_report": "/home/tourist/Desktop/openvela/encfs-results/keywrap-60-20261024-02/report.json",
+  "checks_passed": 190,
+  "checks": [
+    {
+      "name": "report completed and every phase passed",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: legacy-rekey-rejection: encfs provision --erase",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: legacy-rekey-rejection: encfs start",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: legacy-rekey-rejection: encfs rekey 1",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: legacy-rekey-rejection: encfs stop",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "no guest test failures: legacy-rekey-rejection",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: gui-wrapped-key-stress: encfs stop",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: gui-wrapped-key-stress: encfs keyfiles /share/keys",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: gui-wrapped-key-stress: encfs start",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: gui-wrapped-key-stress: encfs provision --erase",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: gui-wrapped-key-stress: encfs start",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: gui-wrapped-key-stress: encfs status",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: gui-wrapped-key-stress: mkdir /data/验证",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: gui-wrapped-key-stress: echo ENCFS_WRAP_UTF8_20261024_7df925ca > /data/验证/密钥🔐.txt",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: gui-wrapped-key-stress: cat /data/验证/密钥🔐.txt",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: gui-wrapped-key-stress: encfs rekey 99",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: gui-wrapped-key-stress: encfs keyslot-failcommit on",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: gui-wrapped-key-stress: encfs rekey 1",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: gui-wrapped-key-stress: encfs status",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: gui-wrapped-key-stress: cat /data/验证/密钥🔐.txt",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: gui-wrapped-key-stress: encfs rekey 1",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: gui-wrapped-key-stress: encfs status",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: gui-wrapped-key-stress: cat /data/验证/密钥🔐.txt",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: gui-wrapped-key-stress: lvgldemo widgets &",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: gui-wrapped-key-stress: ps",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: gui-wrapped-key-stress: fbcapture -d /dev/fb0 -o /share/b18d30-initial.bmp",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: gui-wrapped-key-stress: input tap 740 35",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: gui-wrapped-key-stress: fbcapture -d /dev/fb0 -o /share/b18d30-profile.bmp",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: gui-wrapped-key-stress: input tap 950 35",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: gui-wrapped-key-stress: fbcapture -d /dev/fb0 -o /share/b18d30-analytics.bmp",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: gui-wrapped-key-stress: input tap 1160 35",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: gui-wrapped-key-stress: fbcapture -d /dev/fb0 -o /share/b18d30-shop.bmp",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: gui-wrapped-key-stress: input tap 683 357",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: gui-wrapped-key-stress: fbcapture -d /dev/fb0 -o /share/b18d30-checkbox-toggled.bmp",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: gui-wrapped-key-stress: input tap 740 35",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: gui-wrapped-key-stress: fbcapture -d /dev/fb0 -o /share/b18d30-slider-before.bmp",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: gui-wrapped-key-stress: input swipe 685 402 1050 402 400",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: gui-wrapped-key-stress: fbcapture -d /dev/fb0 -o /share/b18d30-slider-after.bmp",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: gui-wrapped-key-stress: encfs_test stress 60 &",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: gui-wrapped-key-stress: encfs status",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: gui-wrapped-key-stress: ps",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: gui-wrapped-key-stress: free",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: gui-wrapped-key-stress: input tap 950 35",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: gui-wrapped-key-stress: fbcapture -d /dev/fb0 -o /share/b18d30-stress-001-analytics.bmp",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: gui-wrapped-key-stress: input tap 1160 35",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: gui-wrapped-key-stress: fbcapture -d /dev/fb0 -o /share/b18d30-stress-001-shop.bmp",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: gui-wrapped-key-stress: encfs status",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: gui-wrapped-key-stress: ps",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: gui-wrapped-key-stress: free",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: gui-wrapped-key-stress: encfs rekey 2",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: gui-wrapped-key-stress: encfs status",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: gui-wrapped-key-stress: cat /data/验证/密钥🔐.txt",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: gui-wrapped-key-stress: encfs status",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: gui-wrapped-key-stress: ps",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: gui-wrapped-key-stress: free",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: gui-wrapped-key-stress: input tap 950 35",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: gui-wrapped-key-stress: fbcapture -d /dev/fb0 -o /share/b18d30-stress-003-analytics.bmp",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: gui-wrapped-key-stress: input tap 1160 35",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: gui-wrapped-key-stress: fbcapture -d /dev/fb0 -o /share/b18d30-stress-003-shop.bmp",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: gui-wrapped-key-stress: cat /data/验证/密钥🔐.txt",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: gui-wrapped-key-stress: fbcapture -d /dev/fb0 -o /share/b18d30-after-wrapped-stress.bmp",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: gui-wrapped-key-stress: encfs stop",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "no guest test failures: gui-wrapped-key-stress",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: wrapped-coldboot-and-negative-keys: encfs stop",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: wrapped-coldboot-and-negative-keys: encfs keyfiles /share/keys",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: wrapped-coldboot-and-negative-keys: encfs start",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: wrapped-coldboot-and-negative-keys: encfs status",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: wrapped-coldboot-and-negative-keys: cat /data/验证/密钥🔐.txt",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: wrapped-coldboot-and-negative-keys: encfs stop",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: wrapped-coldboot-and-negative-keys: encfs start",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: wrapped-coldboot-and-negative-keys: encfs start",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: wrapped-coldboot-and-negative-keys: encfs start",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: wrapped-coldboot-and-negative-keys: encfs start",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: wrapped-coldboot-and-negative-keys: encfs start",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: wrapped-coldboot-and-negative-keys: encfs start",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: wrapped-coldboot-and-negative-keys: encfs status",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: wrapped-coldboot-and-negative-keys: cat /data/验证/密钥🔐.txt",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: wrapped-coldboot-and-negative-keys: encfs stop",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "no guest test failures: wrapped-coldboot-and-negative-keys",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: keyslot-cut-before-commit: encfs stop",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: keyslot-cut-before-commit: encfs keyfiles /share/keys",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: keyslot-cut-before-commit: encfs start",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: keyslot-cut-before-commit: cat /data/验证/密钥🔐.txt",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: keyslot-cut-before-commit: encfs keyslot-pausecommit 10000",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: keyslot-cut-before-commit: encfs rekey 3 &",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "no guest test failures: keyslot-cut-before-commit",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: keyslot-cut-recovery: encfs stop",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: keyslot-cut-recovery: encfs keyfiles /share/keys",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: keyslot-cut-recovery: encfs start",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: keyslot-cut-recovery: encfs status",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: keyslot-cut-recovery: cat /data/验证/密钥🔐.txt",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: keyslot-cut-recovery: encfs_test rekey 3",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: keyslot-cut-recovery: encfs status",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: keyslot-cut-recovery: cat /data/验证/密钥🔐.txt",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: keyslot-cut-recovery: encfs stop",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "no guest test failures: keyslot-cut-recovery",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: recovered-wrapper-coldboot: encfs stop",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: recovered-wrapper-coldboot: encfs keyfiles /share/keys",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: recovered-wrapper-coldboot: encfs start",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: recovered-wrapper-coldboot: encfs status",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: recovered-wrapper-coldboot: cat /data/验证/密钥🔐.txt",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "raw serial supports command: recovered-wrapper-coldboot: encfs stop",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "no guest test failures: recovered-wrapper-coldboot",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "legacy direct-derived volume rejects rotation",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "one final stress result",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "report final statistics equal independently parsed serial",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "report progress equals independently parsed serial",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "both workers and guest met requested real duration",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "independent payload oracle sample 0",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "independent payload oracle sample 1",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "independent payload oracle sample 2",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "online rotation command and acknowledgment lie inside workload lifecycle",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "PNG SHA and dimensions: initial",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "real framebuffer BMP dimensions and RGB565: initial",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "PNG exactly represents raw guest framebuffer: initial",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "PNG SHA and dimensions: profile",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "real framebuffer BMP dimensions and RGB565: profile",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "PNG exactly represents raw guest framebuffer: profile",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "PNG SHA and dimensions: analytics",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "real framebuffer BMP dimensions and RGB565: analytics",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "PNG exactly represents raw guest framebuffer: analytics",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "PNG SHA and dimensions: shop",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "real framebuffer BMP dimensions and RGB565: shop",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "PNG exactly represents raw guest framebuffer: shop",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "PNG SHA and dimensions: checkbox-toggled",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "real framebuffer BMP dimensions and RGB565: checkbox-toggled",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "PNG exactly represents raw guest framebuffer: checkbox-toggled",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "PNG SHA and dimensions: slider-before",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "real framebuffer BMP dimensions and RGB565: slider-before",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "PNG exactly represents raw guest framebuffer: slider-before",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "PNG SHA and dimensions: slider-after",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "real framebuffer BMP dimensions and RGB565: slider-after",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "PNG exactly represents raw guest framebuffer: slider-after",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "PNG SHA and dimensions: stress-001-analytics",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "real framebuffer BMP dimensions and RGB565: stress-001-analytics",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "PNG exactly represents raw guest framebuffer: stress-001-analytics",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress selected-tab header exact match: stress-001-analytics",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "PNG SHA and dimensions: stress-001-shop",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "real framebuffer BMP dimensions and RGB565: stress-001-shop",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "PNG exactly represents raw guest framebuffer: stress-001-shop",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress selected-tab header exact match: stress-001-shop",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "PNG SHA and dimensions: stress-003-analytics",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "real framebuffer BMP dimensions and RGB565: stress-003-analytics",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "PNG exactly represents raw guest framebuffer: stress-003-analytics",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress selected-tab header exact match: stress-003-analytics",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "PNG SHA and dimensions: stress-003-shop",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "real framebuffer BMP dimensions and RGB565: stress-003-shop",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "PNG exactly represents raw guest framebuffer: stress-003-shop",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "stress selected-tab header exact match: stress-003-shop",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "PNG SHA and dimensions: after-wrapped-stress",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "real framebuffer BMP dimensions and RGB565: after-wrapped-stress",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "PNG exactly represents raw guest framebuffer: after-wrapped-stress",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "touch pixel count independently recomputed: profile_to_analytics",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "touch pixel count independently recomputed: analytics_to_shop",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "touch pixel count independently recomputed: shop_checkbox",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "touch pixel count independently recomputed: profile_slider",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "exact post-fsync/readback pre-rename pause appears once in raw serial",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "intentional interruption was SIGKILL with old committed slot preserved",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "cut serial ends at pause before successful replacement acknowledgment",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "live open/dup/DIR helper completed exact 27/0 plus main 28/0",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "live handle evidence: same descriptor reads unchanged data after rekey",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "live handle evidence: same open DIR returns logical names after rekey",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "live handle evidence: same DIR rewinds and reads after rekey",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "live handle evidence: append through duplicate after rekey",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "live handle evidence: restart using new provider master",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "separate coldboot starts id 3 generation 4 and reads Chinese/emoji path",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "later boots never provision existing data",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "final disk equals both recovery and final readonly coldboot hashes",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "final slot matches recovered and staged wrapper hashes",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "current slot format id 3 generation 4",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "only current master file exists and staging file recovered",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "independent OpenSSL authenticates final 64-byte data-key wrapper",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "independent original-serial stress analysis exists",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "analysis input hashes bind this original report and serial",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "analysis plot hash: worker_iterations.svg",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "analysis plot hash: global_heap.svg",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "frozen input unchanged: frozen-inputs/firmware/.config",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "guest-tested firmware equals frozen wrapped firmware: .config",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "frozen input unchanged: frozen-inputs/firmware/nuttx",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "guest-tested firmware equals frozen wrapped firmware: nuttx",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "frozen input unchanged: frozen-inputs/firmware/nuttx.bin",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "guest-tested firmware equals frozen wrapped firmware: nuttx.bin",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "frozen input unchanged: frozen-inputs/firmware/vela_data.bin",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "guest-tested firmware equals frozen wrapped firmware: vela_data.bin",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "frozen input unchanged: frozen-inputs/firmware/vela_system.bin",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "guest-tested firmware equals frozen wrapped firmware: vela_system.bin",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "frozen input unchanged: frozen-inputs/tools/analyze_encfs_stress.py",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "frozen input unchanged: frozen-inputs/tools/test_encfs.py",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "frozen input unchanged: frozen-inputs/tools/test_encfs_gui.py",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "frozen input unchanged: frozen-inputs/tools/test_encfs_keywrap.py",
+      "passed": true,
+      "details": null
+    }
+  ],
+  "stress": {
+    "requested_seconds": 60,
+    "elapsed_ms": 60436,
+    "workers": 2,
+    "iterations": 516,
+    "written_bytes": 4960320,
+    "verified_bytes": 9866332,
+    "worker0_iterations": 242,
+    "worker1_iterations": 274,
+    "worker0_elapsed_ms": 60156,
+    "worker1_elapsed_ms": 60171,
+    "errors": 0,
+    "completed": 1,
+    "heap_before": 5371680,
+    "heap_after": 5371680
+  },
+  "post_rekey_acknowledgment_progress_samples": [
+    {
+      "elapsed_ms": 60436,
+      "iterations": 516,
+      "written_bytes": 4960320,
+      "verified_bytes": 9866332,
+      "worker0_iterations": 242,
+      "worker1_iterations": 274,
+      "errors": 0,
+      "heap_used": 5371680,
+      "heap_free": 117221280
+    }
+  ],
+  "strict_both_workers_continue_after_rotation": false,
+  "frozen_tools_vs_current": [
+    {
+      "tool": "analyze_encfs_stress.py",
+      "frozen_sha256": "6a0abb671d252b39184d765ef560af8224b5d9909eefb9a35eedb65f861baf5c",
+      "current_sha256": "6a0abb671d252b39184d765ef560af8224b5d9909eefb9a35eedb65f861baf5c",
+      "identical": true
+    },
+    {
+      "tool": "test_encfs.py",
+      "frozen_sha256": "3171610504dc13494c44dd3deb23463f90cc7195a8e87aea267110dbdc47747f",
+      "current_sha256": "3171610504dc13494c44dd3deb23463f90cc7195a8e87aea267110dbdc47747f",
+      "identical": true
+    },
+    {
+      "tool": "test_encfs_gui.py",
+      "frozen_sha256": "f6baf979b010390f4c2da2bae2b551c67d34f5ccedc9b001f8ffed90b6ffc5a3",
+      "current_sha256": "f6baf979b010390f4c2da2bae2b551c67d34f5ccedc9b001f8ffed90b6ffc5a3",
+      "identical": true
+    },
+    {
+      "tool": "test_encfs_keywrap.py",
+      "frozen_sha256": "afab25c2cb6cb4735db09bd77beea83923053030205f8ab0357d327cc72e2dec",
+      "current_sha256": "9017aefef69bf275b41f07defa12f50d0ee9ba37871dfa9e07510da4c7e0aa62",
+      "identical": false
+    }
+  ],
+  "frozen_receipt_source_revisions": {
+    "nuttx": "04264dc9a71be9dba96c4321bc5d7770e79d2dca",
+    "apps": "e198d0a1a032b886dc43c6cf5e7677f5dad4a42e",
+    "vendor/openvela": "f08e648c5b1386c70fd74c637307de70cf255533",
+    ".repo/manifests": "b53dd710d5bf58be99c1adb6c42ab2c58064e0df"
+  },
+  "observed_input_receipt": null,
+  "recorded_source_revisions": {
+    "nuttx": {
+      "revision": "04264dc9a71be9dba96c4321bc5d7770e79d2dca",
+      "dirty": false,
+      "changes": []
+    },
+    "apps": {
+      "revision": "e198d0a1a032b886dc43c6cf5e7677f5dad4a42e",
+      "dirty": true,
+      "changes": [
+        "?? testing/drivers/nist-sts/.gitee/",
+        "?? testing/drivers/nist-sts/.github/",
+        "?? testing/drivers/nist-sts/sts/"
+      ]
+    },
+    "vendor_openvela": {
+      "revision": "0b0fce509c7b84a84d8b4e7dc13b59a8c6620d99",
+      "dirty": true,
+      "changes": [
+        " M boards/vela/configs/goldfish-arm64-v8a-ap-encfs-gui/defconfig",
+        " M boards/vela/configs/goldfish-arm64-v8a-ap-encfs/defconfig"
+      ]
+    },
+    "manifests": {
+      "revision": "b53dd710d5bf58be99c1adb6c42ab2c58064e0df",
+      "dirty": true,
+      "changes": [
+        " M tools/analyze_encfs_stress.py",
+        " M tools/test_encfs.py",
+        " M tools/test_encfs_gui.py",
+        "?? docs/encfs_extension_status.md",
+        "?? docs/encfs_keywrap.md",
+        "?? tools/test_encfs_extended.py",
+        "?? tools/test_encfs_keywrap.py"
+      ]
+    }
+  },
+  "provenance_boundary": "Guest report records dirty manifest HEAD b53dd710; that commit alone does not identify these uncommitted runner/tool bytes. The older frozen 24h input receipt hashes remain intact. Tool changes for the stricter 180s run intentionally differ; their own input snapshot is separate.",
+  "qualified_claims": [
+    "The old 60s report's final counters exceed a 30s pre-rotation sample; that does not establish new I/O after the near-completion rekey. Only one post-acknowledgment cleanup sample is present."
+  ],
+  "not_verified": [
+    "Physical media power-loss durability or malicious-host rollback resistance",
+    "Hardware or TEE key protection (host files are simulation fixtures)",
+    "Global absence of leaks: this short run lacks steady samples after 300s",
+    "Legacy-volume migration or data-key revocation using historical slots",
+    "Exhaustive GUI controls beyond the recorded widgets interactions"
+  ],
+  "checked_artifacts": [
+    {
+      "path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-60-20261024-02/report.json",
+      "size": 63748,
+      "sha256": "160422dea13e85ff5b7373fa8c6c37d1d412c1b209b39618110af334604e824c"
+    },
+    {
+      "path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-60-20261024-02/legacy-rekey-rejection.serial.log",
+      "size": 2651,
+      "sha256": "f312bb740ec4b860ef6e050b5997e05af1282cd023a3822b56f692157b51e45c"
+    },
+    {
+      "path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-60-20261024-02/gui-wrapped-key-stress.serial.log",
+      "size": 16277,
+      "sha256": "a866dba7f69e879ec47ab440a8deca18ecd389290e2bbc709bd18ce9f65d6d00"
+    },
+    {
+      "path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-60-20261024-02/wrapped-coldboot-and-negative-keys.serial.log",
+      "size": 4380,
+      "sha256": "54a5d531129583877a79532ef540c0231a6775ebb492eedff782085f76790557"
+    },
+    {
+      "path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-60-20261024-02/keyslot-cut-before-commit.serial.log",
+      "size": 2794,
+      "sha256": "6a80cdd57f7c176957043d09e6c8fd5b4042cf96652be17cbf91cf25768f57d4"
+    },
+    {
+      "path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-60-20261024-02/keyslot-cut-recovery.serial.log",
+      "size": 4506,
+      "sha256": "8d86d888da8b3f9e2ea7d624edb8404366ea6ff00b3be15eefb1b9d8c6f01e00"
+    },
+    {
+      "path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-60-20261024-02/recovered-wrapper-coldboot.serial.log",
+      "size": 2836,
+      "sha256": "53e6f2ab3f22a33fbc9c76330a1b8624bbab2f0c3327e33e815081d4a45a3708"
+    },
+    {
+      "path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-60-20261024-02/frames/gui-wrapped-key-stress-initial.png",
+      "size": 65124,
+      "sha256": "5be7e9964763a238f6e4d27a87bb6d7880207276513b8395c3b39b56836704ee"
+    },
+    {
+      "path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-60-20261024-02/avd/encfs-wrapped-50e48a680ff6.vvd/share/b18d30-initial.bmp",
+      "size": 2048054,
+      "sha256": "b35c4751d2c462d46d21884455460dbb8728e7b3a487f776e29751f8fa805bc3"
+    },
+    {
+      "path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-60-20261024-02/frames/gui-wrapped-key-stress-profile.png",
+      "size": 65124,
+      "sha256": "5be7e9964763a238f6e4d27a87bb6d7880207276513b8395c3b39b56836704ee"
+    },
+    {
+      "path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-60-20261024-02/avd/encfs-wrapped-50e48a680ff6.vvd/share/b18d30-profile.bmp",
+      "size": 2048054,
+      "sha256": "b35c4751d2c462d46d21884455460dbb8728e7b3a487f776e29751f8fa805bc3"
+    },
+    {
+      "path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-60-20261024-02/frames/gui-wrapped-key-stress-analytics.png",
+      "size": 33105,
+      "sha256": "e439cb62d8e4b90f0f8514332e776f50a49330a65bacb9518e50d4c4b75236f2"
+    },
+    {
+      "path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-60-20261024-02/avd/encfs-wrapped-50e48a680ff6.vvd/share/b18d30-analytics.bmp",
+      "size": 2048054,
+      "sha256": "b6b62e984630b18d816c9e0e6247dae54a2e756067a89b63c6ff151fb93d0c15"
+    },
+    {
+      "path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-60-20261024-02/frames/gui-wrapped-key-stress-shop.png",
+      "size": 57316,
+      "sha256": "fe59f3b6e9d7a9150edc6604af160333625625a4f70302ab892ba0d0dbb81cd2"
+    },
+    {
+      "path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-60-20261024-02/avd/encfs-wrapped-50e48a680ff6.vvd/share/b18d30-shop.bmp",
+      "size": 2048054,
+      "sha256": "2b1f3dbc448f5329e9c7eff3f5a711e3459f34da249a4dbdd858c72b5146e957"
+    },
+    {
+      "path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-60-20261024-02/frames/gui-wrapped-key-stress-checkbox-toggled.png",
+      "size": 57412,
+      "sha256": "70471371685064ed98ec1450b39254077306ab015da545057424cdda05e11aae"
+    },
+    {
+      "path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-60-20261024-02/avd/encfs-wrapped-50e48a680ff6.vvd/share/b18d30-checkbox-toggled.bmp",
+      "size": 2048054,
+      "sha256": "686563bd14b3227e0b3faa5df85c6de5a11a4b2e6f284e1cad4d28b59b446f5d"
+    },
+    {
+      "path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-60-20261024-02/frames/gui-wrapped-key-stress-slider-before.png",
+      "size": 65124,
+      "sha256": "5be7e9964763a238f6e4d27a87bb6d7880207276513b8395c3b39b56836704ee"
+    },
+    {
+      "path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-60-20261024-02/avd/encfs-wrapped-50e48a680ff6.vvd/share/b18d30-slider-before.bmp",
+      "size": 2048054,
+      "sha256": "b35c4751d2c462d46d21884455460dbb8728e7b3a487f776e29751f8fa805bc3"
+    },
+    {
+      "path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-60-20261024-02/frames/gui-wrapped-key-stress-slider-after.png",
+      "size": 65132,
+      "sha256": "a13ff6411b93c0d19025d5924f3a0f353580e28b3c361f472df20f3bf2719a9d"
+    },
+    {
+      "path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-60-20261024-02/avd/encfs-wrapped-50e48a680ff6.vvd/share/b18d30-slider-after.bmp",
+      "size": 2048054,
+      "sha256": "91894e31e436e38fc1b6518d184db5a87af643385a349291aa16759ae2fe33b6"
+    },
+    {
+      "path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-60-20261024-02/frames/gui-wrapped-key-stress-stress-001-analytics.png",
+      "size": 33105,
+      "sha256": "e439cb62d8e4b90f0f8514332e776f50a49330a65bacb9518e50d4c4b75236f2"
+    },
+    {
+      "path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-60-20261024-02/avd/encfs-wrapped-50e48a680ff6.vvd/share/b18d30-stress-001-analytics.bmp",
+      "size": 2048054,
+      "sha256": "b6b62e984630b18d816c9e0e6247dae54a2e756067a89b63c6ff151fb93d0c15"
+    },
+    {
+      "path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-60-20261024-02/frames/gui-wrapped-key-stress-stress-001-shop.png",
+      "size": 57412,
+      "sha256": "70471371685064ed98ec1450b39254077306ab015da545057424cdda05e11aae"
+    },
+    {
+      "path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-60-20261024-02/avd/encfs-wrapped-50e48a680ff6.vvd/share/b18d30-stress-001-shop.bmp",
+      "size": 2048054,
+      "sha256": "686563bd14b3227e0b3faa5df85c6de5a11a4b2e6f284e1cad4d28b59b446f5d"
+    },
+    {
+      "path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-60-20261024-02/frames/gui-wrapped-key-stress-stress-003-analytics.png",
+      "size": 33105,
+      "sha256": "e439cb62d8e4b90f0f8514332e776f50a49330a65bacb9518e50d4c4b75236f2"
+    },
+    {
+      "path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-60-20261024-02/avd/encfs-wrapped-50e48a680ff6.vvd/share/b18d30-stress-003-analytics.bmp",
+      "size": 2048054,
+      "sha256": "b6b62e984630b18d816c9e0e6247dae54a2e756067a89b63c6ff151fb93d0c15"
+    },
+    {
+      "path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-60-20261024-02/frames/gui-wrapped-key-stress-stress-003-shop.png",
+      "size": 57412,
+      "sha256": "70471371685064ed98ec1450b39254077306ab015da545057424cdda05e11aae"
+    },
+    {
+      "path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-60-20261024-02/avd/encfs-wrapped-50e48a680ff6.vvd/share/b18d30-stress-003-shop.bmp",
+      "size": 2048054,
+      "sha256": "686563bd14b3227e0b3faa5df85c6de5a11a4b2e6f284e1cad4d28b59b446f5d"
+    },
+    {
+      "path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-60-20261024-02/frames/gui-wrapped-key-stress-after-wrapped-stress.png",
+      "size": 57412,
+      "sha256": "70471371685064ed98ec1450b39254077306ab015da545057424cdda05e11aae"
+    },
+    {
+      "path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-60-20261024-02/avd/encfs-wrapped-50e48a680ff6.vvd/share/b18d30-after-wrapped-stress.bmp",
+      "size": 2048054,
+      "sha256": "686563bd14b3227e0b3faa5df85c6de5a11a4b2e6f284e1cad4d28b59b446f5d"
+    },
+    {
+      "path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-60-20261024-02/avd/encfs-wrapped-50e48a680ff6.vvd/vela_data.bin",
+      "size": 268435456,
+      "sha256": "27cb50dbbb5d34b91a2f71fcd57c5905b8558a980078b681f0e2100fac2ceb64"
+    },
+    {
+      "path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-60-20261024-02/avd/encfs-wrapped-50e48a680ff6.vvd/share/keys/encfs.keyslot",
+      "size": 112,
+      "sha256": "1367cd5f3363965bc04505156eebef92002738a440634d2cd38098a959b1b971"
+    },
+    {
+      "path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-60-20261024-02/analysis/analysis.json",
+      "size": 11907,
+      "sha256": "8962c6b1905b067a23beb205c404a9e5512345f78ec396f1124414ab00a1a646"
+    },
+    {
+      "path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-60-20261024-02/analysis/worker_iterations.svg",
+      "size": 2597,
+      "sha256": "cf448302a0b3caf5f0ce734bb2c544da9c5e8ea9772274a25a9649aab005f105"
+    },
+    {
+      "path": "/home/tourist/Desktop/openvela/encfs-results/keywrap-60-20261024-02/analysis/global_heap.svg",
+      "size": 2577,
+      "sha256": "fed875c4b457229f151570f9b0566f35705fda2747682b9cf690ec7973040fd5"
+    },
+    {
+      "path": "/home/tourist/Desktop/openvela/encfs-results/endurance-24h-wrapped-20261024/input-receipt.json",
+      "size": 1927,
+      "sha256": "2fa2c1031d014138b3764ed76f08925a4e94ee1809aac4e56ec2efcdfe6b91e1"
+    },
+    {
+      "path": "/home/tourist/Desktop/openvela/encfs-results/endurance-24h-wrapped-20261024/frozen-inputs/firmware/.config",
+      "size": 106310,
+      "sha256": "6e4fefba74baa4a02ab99d0c218ae724aa356a940d0f0d1507aa2855283c0c69"
+    },
+    {
+      "path": "/home/tourist/Desktop/openvela/encfs-results/endurance-24h-wrapped-20261024/frozen-inputs/firmware/nuttx",
+      "size": 61591200,
+      "sha256": "794119b446b764f4ada8c175467a29b4758001925d63c224273d3e2c1cc10615"
+    },
+    {
+      "path": "/home/tourist/Desktop/openvela/encfs-results/endurance-24h-wrapped-20261024/frozen-inputs/firmware/nuttx.bin",
+      "size": 7057408,
+      "sha256": "0728d17af59188f607ed1301ea1e659d43f56205d3f2d6a949837d78bbdd2c4e"
+    },
+    {
+      "path": "/home/tourist/Desktop/openvela/encfs-results/endurance-24h-wrapped-20261024/frozen-inputs/firmware/vela_data.bin",
+      "size": 268435456,
+      "sha256": "a6d72ac7690f53be6ae46ba88506bd97302a093f7108472bd9efc3cefda06484"
+    },
+    {
+      "path": "/home/tourist/Desktop/openvela/encfs-results/endurance-24h-wrapped-20261024/frozen-inputs/firmware/vela_system.bin",
+      "size": 1024,
+      "sha256": "132c956be1e711a7bde7c0206a663b5ee63804ec3888478b5a1c8092e14b290b"
+    },
+    {
+      "path": "/home/tourist/Desktop/openvela/encfs-results/endurance-24h-wrapped-20261024/frozen-inputs/tools/analyze_encfs_stress.py",
+      "size": 28008,
+      "sha256": "6a0abb671d252b39184d765ef560af8224b5d9909eefb9a35eedb65f861baf5c"
+    },
+    {
+      "path": "/home/tourist/Desktop/openvela/encfs-results/endurance-24h-wrapped-20261024/frozen-inputs/tools/test_encfs.py",
+      "size": 25461,
+      "sha256": "3171610504dc13494c44dd3deb23463f90cc7195a8e87aea267110dbdc47747f"
+    },
+    {
+      "path": "/home/tourist/Desktop/openvela/encfs-results/endurance-24h-wrapped-20261024/frozen-inputs/tools/test_encfs_gui.py",
+      "size": 21692,
+      "sha256": "f6baf979b010390f4c2da2bae2b551c67d34f5ccedc9b001f8ffed90b6ffc5a3"
+    },
+    {
+      "path": "/home/tourist/Desktop/openvela/encfs-results/endurance-24h-wrapped-20261024/frozen-inputs/tools/test_encfs_keywrap.py",
+      "size": 18283,
+      "sha256": "afab25c2cb6cb4735db09bd77beea83923053030205f8ab0357d327cc72e2dec"
+    }
+  ]
+}

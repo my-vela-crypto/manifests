@@ -1,0 +1,48 @@
+{
+  "captured_at": "2026-10-25T11:06:21.716884+08:00",
+  "scope": "Read-only input snapshot shortly after runner start; not represented as a pre-start receipt",
+  "files": {
+    ".repo/manifests/tools/test_encfs.py": {
+      "size": 25461,
+      "sha256": "3171610504dc13494c44dd3deb23463f90cc7195a8e87aea267110dbdc47747f"
+    },
+    ".repo/manifests/tools/test_encfs_gui.py": {
+      "size": 21692,
+      "sha256": "f6baf979b010390f4c2da2bae2b551c67d34f5ccedc9b001f8ffed90b6ffc5a3"
+    },
+    ".repo/manifests/tools/test_encfs_keywrap.py": {
+      "size": 19161,
+      "sha256": "9017aefef69bf275b41f07defa12f50d0ee9ba37871dfa9e07510da4c7e0aa62"
+    },
+    ".repo/manifests/tools/analyze_encfs_stress.py": {
+      "size": 28008,
+      "sha256": "6a0abb671d252b39184d765ef560af8224b5d9909eefb9a35eedb65f861baf5c"
+    },
+    "cmake_out/vela_goldfish-arm64-v8a-ap-encfs-gui/nuttx": {
+      "size": 61591200,
+      "sha256": "794119b446b764f4ada8c175467a29b4758001925d63c224273d3e2c1cc10615"
+    },
+    "cmake_out/vela_goldfish-arm64-v8a-ap-encfs-gui/nuttx.bin": {
+      "size": 7057408,
+      "sha256": "0728d17af59188f607ed1301ea1e659d43f56205d3f2d6a949837d78bbdd2c4e"
+    },
+    "cmake_out/vela_goldfish-arm64-v8a-ap-encfs-gui/vela_data.bin": {
+      "size": 268435456,
+      "sha256": "a6d72ac7690f53be6ae46ba88506bd97302a093f7108472bd9efc3cefda06484"
+    },
+    "cmake_out/vela_goldfish-arm64-v8a-ap-encfs-gui/vela_system.bin": {
+      "size": 1024,
+      "sha256": "132c956be1e711a7bde7c0206a663b5ee63804ec3888478b5a1c8092e14b290b"
+    },
+    "cmake_out/vela_goldfish-arm64-v8a-ap-encfs-gui/.config": {
+      "size": 106310,
+      "sha256": "6e4fefba74baa4a02ab99d0c218ae724aa356a940d0f0d1507aa2855283c0c69"
+    }
+  },
+  "git_revisions": {
+    "nuttx": "04264dc9a71be9dba96c4321bc5d7770e79d2dca",
+    "apps": "e198d0a1a032b886dc43c6cf5e7677f5dad4a42e",
+    "vendor/openvela": "f08e648c5b1386c70fd74c637307de70cf255533",
+    ".repo/manifests": "b53dd710d5bf58be99c1adb6c42ab2c58064e0df"
+  }
+}

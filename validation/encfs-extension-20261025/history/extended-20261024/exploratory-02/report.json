@@ -1,0 +1,87 @@
+{
+  "schema": 1,
+  "started_at": "2026-10-24T14:16:41+08:00",
+  "status": "failed",
+  "source_root": "/home/tourist/Desktop/openvela",
+  "build_dir": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-extended",
+  "config": "goldfish-arm64-v8a-ap-encfs-extended",
+  "phases": [
+    {
+      "name": "upstream-fs-regression",
+      "instance": "encfs-regression-d74e1d4aabe5",
+      "command": [
+        "/home/tourist/Desktop/openvela/run-emulator.sh",
+        "goldfish-arm64-v8a-ap-encfs-extended",
+        "-keep",
+        "encfs-regression-d74e1d4aabe5",
+        "-no-window",
+        "-no-audio",
+        "-gpu",
+        "off",
+        "-accel",
+        "off"
+      ],
+      "started_at": "2026-10-24T14:16:42+08:00",
+      "commands": [
+        {
+          "command": "encfs provision --erase",
+          "started_at": "2026-10-24T14:16:42+08:00",
+          "finished_at": "2026-10-24T14:16:42+08:00",
+          "output": "\u001b[Kencfs provision --erase\r\r\nencfs: formatting encrypted data volume\r\r\nencfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\n"
+        },
+        {
+          "command": "encfs start",
+          "started_at": "2026-10-24T14:16:42+08:00",
+          "finished_at": "2026-10-24T14:16:42+08:00",
+          "output": "\u001b[Kencfs start\r\r\nencfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1\r\r\n"
+        },
+        {
+          "command": "cmocka_fs_test",
+          "started_at": "2026-10-24T14:16:42+08:00",
+          "finished_at": "2026-10-24T14:16:47+08:00",
+          "output": "\u001b[Kcmocka_fs_test\r\r\n"
+        }
+      ],
+      "serial_log": "/home/tourist/Desktop/openvela/encfs-results/extended-20261024/exploratory-02/upstream-fs-regression.serial.log",
+      "exit_status": null,
+      "exit_signal": 15,
+      "finished_at": "2026-10-24T14:16:48+08:00"
+    }
+  ],
+  "scope": [
+    "Unmodified upstream cmocka filesystem suite on the encrypted /data mount",
+    "Upstream fstest 10 loops with 64 files of up to 8192 bytes",
+    "Original Vela append/read loop, 100 repetitions",
+    "Dedicated encrypted disk, SIGKILL during writes and after commits"
+  ],
+  "artifacts": {
+    "nuttx": {
+      "path": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-extended/nuttx",
+      "size": 8202376,
+      "sha256": "4a02ddd9125a950431a7bac00383087d630bbebfa6d2eed7355dce1a3184ca04"
+    },
+    "nuttx.bin": {
+      "path": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-extended/nuttx.bin",
+      "size": 1736704,
+      "sha256": "292d9997d647c7fb7da9e37d8738e40f32bad7d6103e4dde5bf8fdafec933159"
+    },
+    "vela_data.bin": {
+      "path": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-extended/vela_data.bin",
+      "size": 268435456,
+      "sha256": "a6d72ac7690f53be6ae46ba88506bd97302a093f7108472bd9efc3cefda06484"
+    },
+    "vela_system.bin": {
+      "path": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-extended/vela_system.bin",
+      "size": 1024,
+      "sha256": "3f4b8d082f8927bbf5729c96772bba0588413694c7cef82523c615c896b7a7e9"
+    },
+    ".config": {
+      "path": "/home/tourist/Desktop/openvela/cmake_out/vela_goldfish-arm64-v8a-ap-encfs-extended/.config",
+      "size": 54989,
+      "sha256": "6e56d651c32ccf71dfcb1893681ca09531988fdebc51e24260e116253aa6e6bf"
+    }
+  },
+  "error": "Upstream cmocka did not run any cases",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/tourist/Desktop/openvela/.repo/manifests/tools/test_encfs_extended.py\", line 192, in main\n    regression(args, report, \"encfs-regression-\" + stamp)\n  File \"/home/tourist/Desktop/openvela/.repo/manifests/tools/test_encfs_extended.py\", line 60, in regression\n    report[\"upstream_cmocka\"] = parse_cmocka(output)\n  File \"/home/tourist/Desktop/openvela/.repo/manifests/tools/test_encfs_extended.py\", line 40, in parse_cmocka\n    base.require(started, \"Upstream cmocka did not run any cases\")\n  File \"/home/tourist/Desktop/openvela/.repo/manifests/tools/test_encfs.py\", line 69, in require\n    raise TestFailure(message)\ntest_encfs.TestFailure: Upstream cmocka did not run any cases\n",
+  "finished_at": "2026-10-24T14:16:48+08:00"
+}

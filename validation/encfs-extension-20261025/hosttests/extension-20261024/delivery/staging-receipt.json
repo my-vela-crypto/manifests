@@ -1,0 +1,38 @@
+{
+  "status": "staged",
+  "staged_owned_files": [
+    "encfs-sources.json",
+    "encfs-tested.xml",
+    "overlays/apps/examples/encfs_test/CMakeLists.txt",
+    "overlays/apps/examples/encfs_test/Makefile",
+    "overlays/apps/examples/encfs_test/encfs_test_main.c",
+    "overlays/apps/examples/encfs_test/encfs_test_rekey.c",
+    "overlays/apps/examples/encfs_test/encfs_test_shared.h",
+    "overlays/apps/examples/encfs_test/encfs_test_utf8.c",
+    "overlays/apps/examples/encfs_test/tests/test_rekey_cli.py",
+    "overlays/apps/system/encfs/Kconfig",
+    "overlays/apps/system/encfs/encfs_main.c",
+    "overlays/apps/system/encfs/tests/test_rekey_cli.py",
+    "overlays/apps/testing/fs/encfs_extended/CMakeLists.txt",
+    "overlays/apps/testing/fs/encfs_extended/Kconfig",
+    "overlays/apps/testing/fs/encfs_extended/Make.defs",
+    "overlays/apps/testing/fs/encfs_extended/Makefile",
+    "overlays/apps/testing/fs/encfs_extended/README.md",
+    "overlays/apps/testing/fs/encfs_extended/encfs_extended_main.c",
+    "patches/nuttx/encfs.patch",
+    "patches/vendor_openvela/encfs.patch"
+  ],
+  "preexisting_staged_files_preserved": [],
+  "source_revisions": {
+    "nuttx": "04264dc9a71be9dba96c4321bc5d7770e79d2dca",
+    "apps": "e198d0a1a032b886dc43c6cf5e7677f5dad4a42e",
+    "vendor/openvela": "f08e648c5b1386c70fd74c637307de70cf255533"
+  },
+  "checks": 249,
+  "overlays": 25,
+  "patch_file_counts": {
+    "nuttx": 59,
+    "vendor/openvela": 6
+  },
+  "other_locked_project_revisions_unchanged": 231
+}

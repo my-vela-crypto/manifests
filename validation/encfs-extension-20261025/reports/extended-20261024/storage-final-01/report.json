@@ -1,0 +1,466 @@
+{
+  "started_at": "2026-10-24T14:33:26+08:00",
+  "status": "passed",
+  "source_root": "/home/tourist/Desktop/openvela",
+  "config": "goldfish-arm64-v8a-ap-encfs",
+  "build_dir": "/home/tourist/Desktop/openvela/cmake_out/vela_encfs_storage_final",
+  "results_dir": "/home/tourist/Desktop/openvela/encfs-results/extended-20261024/storage-final-01",
+  "phases": [
+    {
+      "name": "standalone",
+      "status": "passed",
+      "image": {
+        "path": "/home/tourist/Desktop/openvela/encfs-results/extended-20261024/storage-final-01/avd/encfs-plain-20261024-143327-f5efb814.vvd/vela_data.bin",
+        "encrypted": false,
+        "size": 268435456,
+        "sha256": "53c1e22d35f750e09e96cb6d0a19978c8f3341bae5ca39ede3271f01b3e028e9",
+        "observations": {
+          "content_marker": true,
+          "secret_name_ascii": false,
+          "secret_name_utf16le": false,
+          "encoded_prefix_utf16le": true,
+          "plaintext_exfat_header": true
+        },
+        "exfat": {
+          "root_names": [
+            ".p",
+            ".encfs.meta"
+          ],
+          "physical_paths": [
+            {
+              "path": ".p/E1_GUBM1E8P2EPE450DLVJ3E76E11J0EI0Q",
+              "directory": true
+            },
+            {
+              "path": ".p/E1_GUBM1E8P2EPE450DLVJ3E76E11J0EI0Q/E1_CT2KMIUQK74UT265MND509493QSOP98H61VI1POT5S",
+              "directory": false
+            },
+            {
+              "path": ".p/E1_SPUV6FKNN2OM31HCD4A4NJH2EFPE6HJ0SCS4LQU9FHTKEGI4VK",
+              "directory": true
+            },
+            {
+              "path": ".p/E1_SPUV6FKNN2OM31HCD4A4NJH2EFPE6HJ0SCS4LQU9FHTKEGI4VK/E1_FO7O1AC9H7DV52T5ASGHV30GMFV3QI2QNB2LTVQK1O5BC",
+              "directory": true
+            },
+            {
+              "path": ".p/E1_SPUV6FKNN2OM31HCD4A4NJH2EFPE6HJ0SCS4LQU9FHTKEGI4VK/E1_FO7O1AC9H7DV52T5ASGHV30GMFV3QI2QNB2LTVQK1O5BC/E1_F3KQRO62LAOKGS1JHJLSVUH5CJ2IEHUQL0",
+              "directory": false
+            },
+            {
+              "path": ".p/E1_SPUV6FKNN2OM31HCD4A4NJH2EFPE6HJ0SCS4LQU9FHTKEGI4VK/E1_FO7O1AC9H7DV52T5ASGHV30GMFV3QI2QNB2LTVQK1O5BC/E1_09PHND9V30D5FHI6MC0CJATO9OUIDBN4F8M9R28H1D9GBLBBF7BDP68",
+              "directory": false
+            },
+            {
+              "path": ".p/E1_SPUV6FKNN2OM31HCD4A4NJH2EFPE6HJ0SCS4LQU9FHTKEGI4VK/E1_FO7O1AC9H7DV52T5ASGHV30GMFV3QI2QNB2LTVQK1O5BC/E1_UCRLSTQA8M47KVSAJ2D2K5TB26PA02VMFVBG",
+              "directory": false
+            }
+          ]
+        }
+      },
+      "registry_path": "/home/tourist/.vela/encfs-plain-20261024-143327-f5efb814.ini",
+      "instance": "encfs-plain-20261024-143327-f5efb814",
+      "command": [
+        "/home/tourist/Desktop/openvela/run-emulator.sh",
+        "goldfish-arm64-v8a-ap-encfs",
+        "-keep",
+        "encfs-plain-20261024-143327-f5efb814",
+        "-no-window",
+        "-no-audio",
+        "-gpu",
+        "off",
+        "-accel",
+        "off"
+      ],
+      "started_at": "2026-10-24T14:33:27+08:00",
+      "commands": [
+        {
+          "command": "encfs_test standalone",
+          "started_at": "2026-10-24T14:33:27+08:00",
+          "finished_at": "2026-10-24T14:33:34+08:00",
+          "output": "\u001b[Kencfs_test standalone\r\r\n[PASS] RFC5869 test case 1\r\r\n[PASS] RFC5297 deterministic vector\r\r\n[PASS] AES-SIV decrypt\r\r\n[PASS] AES-SIV rejects tampering\r\r\n[PASS] name encode\r\r\n[PASS] name round trip\r\r\n[PASS] deterministic name\r\r\n[PASS] name rejects wrong key\r\r\n[PASS] name rejects tampering\r\r\n[PASS] name rejects invalid Base32\r\r\n[PASS] 128-byte name\r\r\n[PASS] 129-byte name rejected\r\r\n[PASS] structural component rejected\r\r\n[PASS] ASCII E1 disk-format compatibility vector\r\r\n[PASS] UTF8 valid scalar/name vector 0\r\r\n[PASS] UTF8 valid scalar/name vector 1\r\r\n[PASS] UTF8 valid scalar/name vector 2\r\r\n[PASS] UTF8 valid scalar/name vector 3\r\r\n[PASS] UTF8 valid scalar/name vector 4\r\r\n[PASS] UTF8 valid scalar/name vector 5\r\r\n[PASS] UTF8 valid scalar/name vector 6\r\r\n[PASS] UTF8 valid scalar/name vector 7\r\r\n[PASS] UTF8 valid scalar/name vector 8\r\r\n[PASS] UTF8 valid scalar/name vector 9\r\r\n[PASS] UTF8 invalid sequence/name vector 0\r\r\n[PASS] UTF8 invalid sequence/name vector 1\r\r\n[PASS] UTF8 invalid sequence/name vector 2\r\r\n[PASS] UTF8 invalid sequence/name vector 3\r\r\n[PASS] UTF8 invalid sequence/name vector 4\r\r\n[PASS] UTF8 invalid sequence/name vector 5\r\r\n[PASS] UTF8 invalid sequence/name vector 6\r\r\n[PASS] UTF8 invalid sequence/name vector 7\r\r\n[PASS] UTF8 invalid sequence/name vector 8\r\r\n[PASS] UTF8 invalid sequence/name vector 9\r\r\n[PASS] UTF8 invalid sequence/name vector 10\r\r\n[PASS] UTF8 invalid sequence/name vector 11\r\r\n[PASS] UTF8 invalid sequence/name vector 12\r\r\n[PASS] UTF8 invalid sequence/name vector 13\r\r\n[PASS] UTF8 invalid sequence/name vector 14\r\r\n[PASS] UTF8 invalid sequence/name vector 15\r\r\n[PASS] UTF8 invalid sequence/name vector 16\r\r\n[PASS] UTF8 invalid sequence/name vector 17\r\r\n[PASS] UTF8 invalid sequence/name vector 18\r\r\n[PASS] UTF8 invalid sequence/name vector 19\r\r\n[PASS] UTF8 invalid sequence/name vector 20\r\r\n[PASS] UTF8 128-byte supplementary name round trip\r\r\n[PASS] UTF8 129-byte component rejected\r\r\n[PASS] UTF8 incomplete scalar at byte limit rejected\r\r\n[PASS] stop encrypted chain\r\r\n[PASS] format standalone plaintext FAT\r\r\n[PASS] initialize standalone path volume\r\r\n[PASS] initialization does not overwrite an existing volume\r\r\n[PASS] stage wrong path key\r\r\n[PASS] path metadata rejects wrong key\r\r\n[PASS] wrong path key leaves lower available\r\r\n[PASS] set standalone key\r\r\n[PASS] mount standalone path layer\r\r\n[PASS] public lower path hidden\r\r\n[PASS] mkdir logical directory\r\r\n[PASS] open logical file\r\r\n[PASS] write content\r\r\n[PASS] fsync file\r\r\n[PASS] fstat file\r\r\n[PASS] seek file\r\r\n[PASS] random read\r\r\n[PASS] dup file\r\r\n[PASS] dup read\r\r\n[PASS] close file\r\r\n[PASS] read content\r\r\n[PASS] stat logical path\r\r\n[PASS] statfs logical limit\r\r\n[PASS] missing parent rejected\r\r\n[PASS] mkdir move source\r\r\n[PASS] unlink rejects directory\r\r\n[PASS] mkdir with trailing slash\r\r\n[PASS] remove trailing-slash sample\r\r\n[PASS] create moved child\r\r\n[PASS] rename whole directory\r\r\n[PASS] child survives directory rename\r\r\n[PASS] cross-directory rename\r\r\n[PASS] existing target rename rejected\r\r\n[PASS] unlink moved file\r\r\n[PASS] rmdir moved directory\r\r\n[PASS] open truncate sample\r\r\n[PASS] write truncate sample\r\r\n[PASS] truncate file\r\r\n[PASS] unlink truncate sample\r\r\n[PASS] create longest logical name\r\r\n[PASS] unlink longest logical name\r\r\n[PASS] overlong logical name rejected\r\r\n[PASS] opendir\r\r\n[PASS] readdir restores logical names\r\r\n[PASS] rewinddir\r\r\n[PASS] 24-cycle file regression\r\r\n[PASS] UTF8 create test directory\r\r\n[PASS] UTF8 create Chinese nested directory\r\r\n[PASS] UTF8 create, write and sync Chinese/emoji file\r\r\n[PASS] UTF8 stat reports original content length\r\r\n[PASS] UTF8 open existing file\r\r\n[PASS] UTF8 allocate logical FILEPATH buffer\r\r\n[PASS] UTF8 FILEPATH preserves exact logical bytes\r\r\n[PASS] UTF8 close existing file\r\r\n[PASS] UTF8 open Chinese directory\r\r\n[PASS] UTF8 readdir restores exact Chinese/emoji bytes\r\r\n[PASS] UTF8 close Chinese directory\r\r\n[PASS] UTF8 rename whole Chinese directory\r\r\n[PASS] UTF8 rename mixed-name file\r\r\n[PASS] UTF8 renamed file retains contents\r\r\n[PASS] UTF8 create composed accent name\r\r\n[PASS] UTF8 create distinct decomposed accent name\r\r\n[PASS] UTF8 normalization forms retain separate contents\r\r\n[PASS] UTF8 create/read 128-byte logical name\r\r\n[PASS] UTF8 unlink 128-byte logical name\r\r\n[PASS] UTF8 filesystem rejects 129-byte name\r\r\n[PASS] UTF8 filesystem rejects surrogate sequence\r\r\n[PASS] create extended acceptance directory\r\r\n[PASS] extended create attribute sample\r\r\n[PASS] attribute sample write and sync\r\r\n[PASS] chmod passes ordinary FatFs mode bits\r\r\n[PASS] chmod retains FatFs reported mode\r\r\n[PASS] fchmod passes ordinary FatFs mode bits\r\r\n[PASS] fchmod retains FatFs reported mode\r\r\n[PASS] chmod masks unsupported special mode bits\r\r\n[PASS] fchmod masks unsupported special mode bits\r\r\n[PASS] chown propagates FatFs unsupported owner\r\r\n[PASS] fchown propagates FatFs unsupported owner\r\r\n[PASS] utimensat reaches translated lower path\r\r\n[PASS] path mtime preserves FAT two-second precision\r\r\n[PASS] futimens reaches translated open file\r\r\n[PASS] fd mtime reflects FAT timestamp\r\r\n[PASS] allocate FILEPATH buffer\r\r\n[PASS] FILEPATH returns logical upper path\r\r\n[PASS] FILEPATH hides lower mount and encoded components\r\r\n[PASS] FILEPATH rejects null output\r\r\n[PASS] upper layer blocks device flush ioctl\r\r\n[PASS] upper layer rejects unknown ioctl\r\r\n[PASS] close attribute sample\r\r\n[PASS] create mixed-case logical name\r\r\n[PASS] write mixed-case logical name\r\r\n[PASS] create distinct lowercase logical name\r\r\n[PASS] write lowercase logical name\r\r\n[PASS] case-distinct name retains first content\r\r\n[PASS] case-distinct name retains second content\r\r\n[PASS] open case-sensitive directory\r\r\n[PASS] directory lists both case-distinct logical names\r\r\n[PASS] close case-sensitive directory\r\r\n[PASS] remove mixed-case sample\r\r\n[PASS] remove lowercase sample\r\r\n[PASS] create normalization directory\r\r\n[PASS] normalize repeated separators and dot components\r\r\n[PASS] allocate normalized FILEPATH buffer\r\r\n[PASS] FILEPATH returns normalized logical path\r\r\n[PASS] close normalized sample\r\r\n[PASS] missing intermediate cannot be bypassed by dotdot\r\r\n[PASS] file intermediate cannot be bypassed by dotdot\r\r\n[PASS] dot after regular file requires directory\r\r\n[PASS] trailing slash after file requires directory\r\r\n[PASS] regular-file parent rejects child creation\r\r\n[PASS] normalize parent traversal within mounted volume\r\r\n[PASS] remove normalization directory\r\r\n[PASS] allocate path-expansion buffer\r\r\n[PASS] create expansion boundary root\r\r\n[PASS] nested 128-byte names fit until encoded path limit\r\r\n[PASS] encoded path expansion rejects before lower limit\r\r\n[PASS] remove nested expansion directories\r\r\n[PASS] remove expansion boundary root\r\r\n[PASS] allocate multi-sector regression buffers\r\r\nENCFS_STRESS_RESULT requested=1000 completed=1000 bytes=2619734 elapsed_ns=6517474864\r\r\n[PASS] 1000-cycle create/write/fsync/read/rename/delete\r\r\n[PASS] stress monotonic timing available\r\r\n[PASS] remove attribute sample\r\r\n[PASS] remove extended acceptance directory\r\r\n[PASS] unmount standalone path layer\r\r\nENCFS_TEST_RESULT mode=standalone pass=172 fail=0\r\r\n"
+        },
+        {
+          "command": "encfs stop",
+          "started_at": "2026-10-24T14:33:34+08:00",
+          "finished_at": "2026-10-24T14:33:34+08:00",
+          "output": "\u001b[Kencfs stop\r\r\nencfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        }
+      ],
+      "serial_log": "/home/tourist/Desktop/openvela/encfs-results/extended-20261024/storage-final-01/standalone.serial.log",
+      "guest_result": {
+        "mode": "standalone",
+        "pass": 172,
+        "fail": 0
+      },
+      "stress_result": {
+        "requested": 1000,
+        "completed": 1000,
+        "bytes": 2619734,
+        "elapsed_ns": 6517474864
+      },
+      "exit_status": null,
+      "exit_signal": 15,
+      "finished_at": "2026-10-24T14:33:34+08:00"
+    },
+    {
+      "name": "corruption",
+      "status": "passed",
+      "image": {
+        "path": "/home/tourist/Desktop/openvela/encfs-results/extended-20261024/storage-final-01/avd/encfs-corrupt-20261024-143327-f5efb814.vvd/vela_data.bin",
+        "encrypted": false,
+        "size": 268435456,
+        "sha256": "85efc0beb10a66be36e9d712d6d6b89a0bcdfad9db27b2b9313fd2d5e189df13",
+        "purpose": "isolated malformed-metadata fixtures"
+      },
+      "registry_path": "/home/tourist/.vela/encfs-corrupt-20261024-143327-f5efb814.ini",
+      "instance": "encfs-corrupt-20261024-143327-f5efb814",
+      "command": [
+        "/home/tourist/Desktop/openvela/run-emulator.sh",
+        "goldfish-arm64-v8a-ap-encfs",
+        "-keep",
+        "encfs-corrupt-20261024-143327-f5efb814",
+        "-no-window",
+        "-no-audio",
+        "-gpu",
+        "off",
+        "-accel",
+        "off"
+      ],
+      "started_at": "2026-10-24T14:33:34+08:00",
+      "commands": [
+        {
+          "command": "encfs_test corruption",
+          "started_at": "2026-10-24T14:33:34+08:00",
+          "finished_at": "2026-10-24T14:33:35+08:00",
+          "output": "\u001b[Kencfs_test corruption\r\r\nENCFS_CORRUPTION_FIXTURE dedicated blank raw disk; destructive\r\r\n[PASS] corruption setup: refuse any existing live managed chain\r\r\n[PASS] corruption setup: stop is idempotent on dedicated blank fixture\r\r\n[PASS] corruption missing metadata: format dedicated raw exFAT fixture\r\r\n[PASS] corruption missing metadata: initialize authenticated volume\r\r\n[PASS] corruption missing metadata: backup exact metadata record\r\r\n[PASS] corruption missing metadata: inject physical fixture damage\r\r\n[PASS] corruption missing metadata: stage key before rejected bind\r\r\n[PASS] corruption missing metadata: reject with specified errno\r\r\n[PASS] corruption missing metadata: failed bind consumes staged key\r\r\n[PASS] corruption missing metadata: failed bind releases slot lock\r\r\n[PASS] corruption missing metadata: clear re-staged slot\r\r\n[PASS] corruption missing metadata: rejected bind leaves lower visible\r\r\n[PASS] corruption missing metadata: write through lower after rejected bind\r\r\n[PASS] corruption missing metadata: read through lower after rejected bind\r\r\n[PASS] corruption missing metadata: remove lower recovery probe\r\r\n[PASS] corruption missing metadata: restore original authenticated metadata\r\r\n[PASS] corruption missing metadata: stage restored key\r\r\n[PASS] corruption missing metadata: mount authenticated upper\r\r\n[PASS] corruption missing metadata: unmount upper and owned lower\r\r\n[PASS] corruption missing metadata: slot is idle after cleanup\r\r\n[PASS] corruption wrong metadata magic: format dedicated raw exFAT fixture\r\r\n[PASS] corruption wrong metadata magic: initialize authenticated volume\r\r\n[PASS] corruption wrong metadata magic: backup exact metadata record\r\r\n[PASS] corruption wrong metadata magic: inject physical fixture damage\r\r\n[PASS] corruption wrong metadata magic: stage key before rejected bind\r\r\n[PASS] corruption wrong metadata magic: reject with specified errno\r\r\n[PASS] corruption wrong metadata magic: failed bind consumes staged key\r\r\n[PASS] corruption wrong metadata magic: failed bind releases slot lock\r\r\n[PASS] corruption wrong metadata magic: clear re-staged slot\r\r\n[PASS] corruption wrong metadata magic: rejected bind leaves lower visible\r\r\n[PASS] corruption wrong metadata magic: write through lower after rejected bind\r\r\n[PASS] corruption wrong metadata magic: read through lower after rejected bind\r\r\n[PASS] corruption wrong metadata magic: remove lower recovery probe\r\r\n[PASS] corruption wrong metadata magic: restore original authenticated metadata\r\r\n[PASS] corruption wrong metadata magic: stage restored key\r\r\n[PASS] corruption wrong metadata magic: mount authenticated upper\r\r\n[PASS] corruption wrong metadata magic: unmount upper and owned lower\r\r\n[PASS] corruption wrong metadata magic: slot is idle after cleanup\r\r\n[PASS] corruption unsupported metadata version: format dedicated raw exFAT fixture\r\r\n[PASS] corruption unsupported metadata version: initialize authenticated volume\r\r\n[PASS] corruption unsupported metadata version: backup exact metadata record\r\r\n[PASS] corruption unsupported metadata version: inject physical fixture damage\r\r\n[PASS] corruption unsupported metadata version: stage key before rejected bind\r\r\n[PASS] corruption unsupported metadata version: reject with specified errno\r\r\n[PASS] corruption unsupported metadata version: failed bind consumes staged key\r\r\n[PASS] corruption unsupported metadata version: failed bind releases slot lock\r\r\n[PASS] corruption unsupported metadata version: clear re-staged slot\r\r\n[PASS] corruption unsupported metadata version: rejected bind leaves lower visible\r\r\n[PASS] corruption unsupported metadata version: write through lower after rejected bind\r\r\n[PASS] corruption unsupported metadata version: read through lower after rejected bind\r\r\n[PASS] corruption unsupported metadata version: remove lower recovery probe\r\r\n[PASS] corruption unsupported metadata version: restore original authenticated metadata\r\r\n[PASS] corruption unsupported metadata version: stage restored key\r\r\n[PASS] corruption unsupported metadata version: mount authenticated upper\r\r\n[PASS] corruption unsupported metadata version: unmount upper and owned lower\r\r\n[PASS] corruption unsupported metadata version: slot is idle after cleanup\r\r\n[PASS] corruption truncated metadata: format dedicated raw exFAT fixture\r\r\n[PASS] corruption truncated metadata: initialize authenticated volume\r\r\n[PASS] corruption truncated metadata: backup exact metadata record\r\r\n[PASS] corruption truncated metadata: inject physical fixture damage\r\r\n[PASS] corruption truncated metadata: stage key before rejected bind\r\r\n[PASS] corruption truncated metadata: reject with specified errno\r\r\n[PASS] corruption truncated metadata: failed bind consumes staged key\r\r\n[PASS] corruption truncated metadata: failed bind releases slot lock\r\r\n[PASS] corruption truncated metadata: clear re-staged slot\r\r\n[PASS] corruption truncated metadata: rejected bind leaves lower visible\r\r\n[PASS] corruption truncated metadata: write through lower after rejected bind\r\r\n[PASS] corruption truncated metadata: read through lower after rejected bind\r\r\n[PASS] corruption truncated metadata: remove lower recovery probe\r\r\n[PASS] corruption truncated metadata: restore original authenticated metadata\r\r\n[PASS] corruption truncated metadata: stage restored key\r\r\n[PASS] corruption truncated metadata: mount authenticated upper\r\r\n[PASS] corruption truncated metadata: unmount upper and owned lower\r\r\n[PASS] corruption truncated metadata: slot is idle after cleanup\r\r\n[PASS] corruption overlong metadata: format dedicated raw exFAT fixture\r\r\n[PASS] corruption overlong metadata: initialize authenticated volume\r\r\n[PASS] corruption overlong metadata: backup exact metadata record\r\r\n[PASS] corruption overlong metadata: inject physical fixture damage\r\r\n[PASS] corruption overlong metadata: stage key before rejected bind\r\r\n[PASS] corruption overlong metadata: reject with specified errno\r\r\n[PASS] corruption overlong metadata: failed bind consumes staged key\r\r\n[PASS] corruption overlong metadata: failed bind releases slot lock\r\r\n[PASS] corruption overlong metadata: clear re-staged slot\r\r\n[PASS] corruption overlong metadata: rejected bind leaves lower visible\r\r\n[PASS] corruption overlong metadata: write through lower after rejected bind\r\r\n[PASS] corruption overlong metadata: read through lower after rejected bind\r\r\n[PASS] corruption overlong metadata: remove lower recovery probe\r\r\n[PASS] corruption overlong metadata: restore original authenticated metadata\r\r\n[PASS] corruption overlong metadata: stage restored key\r\r\n[PASS] corruption overlong metadata: mount authenticated upper\r\r\n[PASS] corruption overlong metadata: unmount upper and owned lower\r\r\n[PASS] corruption overlong metadata: slot is idle after cleanup\r\r\n[PASS] corruption tampered metadata tag: format dedicated raw exFAT fixture\r\r\n[PASS] corruption tampered metadata tag: initialize authenticated volume\r\r\n[PASS] corruption tampered metadata tag: backup exact metadata record\r\r\n[PASS] corruption tampered metadata tag: inject physical fixture damage\r\r\n[PASS] corruption tampered metadata tag: stage key before rejected bind\r\r\n[PASS] corruption tampered metadata tag: reject with specified errno\r\r\n[PASS] corruption tampered metadata tag: failed bind consumes staged key\r\r\n[PASS] corruption tampered metadata tag: failed bind releases slot lock\r\r\n[PASS] corruption tampered metadata tag: clear re-staged slot\r\r\n[PASS] corruption tampered metadata tag: rejected bind leaves lower visible\r\r\n[PASS] corruption tampered metadata tag: write through lower after rejected bind\r\r\n[PASS] corruption tampered metadata tag: read through lower after rejected bind\r\r\n[PASS] corruption tampered metadata tag: remove lower recovery probe\r\r\n[PASS] corruption tampered metadata tag: restore original authenticated metadata\r\r\n[PASS] corruption tampered metadata tag: stage restored key\r\r\n[PASS] corruption tampered metadata tag: mount authenticated upper\r\r\n[PASS] corruption tampered metadata tag: unmount upper and owned lower\r\r\n[PASS] corruption tampered metadata tag: slot is idle after cleanup\r\r\n[PASS] corruption tampered metadata ciphertext: format dedicated raw exFAT fixture\r\r\n[PASS] corruption tampered metadata ciphertext: initialize authenticated volume\r\r\n[PASS] corruption tampered metadata ciphertext: backup exact metadata record\r\r\n[PASS] corruption tampered metadata ciphertext: inject physical fixture damage\r\r\n[PASS] corruption tampered metadata ciphertext: stage key before rejected bind\r\r\n[PASS] corruption tampered metadata ciphertext: reject with specified errno\r\r\n[PASS] corruption tampered metadata ciphertext: failed bind consumes staged key\r\r\n[PASS] corruption tampered metadata ciphertext: failed bind releases slot lock\r\r\n[PASS] corruption tampered metadata ciphertext: clear re-staged slot\r\r\n[PASS] corruption tampered metadata ciphertext: rejected bind leaves lower visible\r\r\n[PASS] corruption tampered metadata ciphertext: write through lower after rejected bind\r\r\n[PASS] corruption tampered metadata ciphertext: read through lower after rejected bind\r\r\n[PASS] corruption tampered metadata ciphertext: remove lower recovery probe\r\r\n[PASS] corruption tampered metadata ciphertext: restore original authenticated metadata\r\r\n[PASS] corruption tampered metadata ciphertext: stage restored key\r\r\n[PASS] corruption tampered metadata ciphertext: mount authenticated upper\r\r\n[PASS] corruption tampered metadata ciphertext: unmount upper and owned lower\r\r\n[PASS] corruption tampered metadata ciphertext: slot is idle after cleanup\r\r\n[PASS] corruption metadata is a directory: format dedicated raw exFAT fixture\r\r\n[PASS] corruption metadata is a directory: initialize authenticated volume\r\r\n[PASS] corruption metadata is a directory: backup exact metadata record\r\r\n[PASS] corruption metadata is a directory: inject physical fixture damage\r\r\n[PASS] corruption metadata is a directory: stage key before rejected bind\r\r\n[PASS] corruption metadata is a directory: reject with specified errno\r\r\n[PASS] corruption metadata is a directory: failed bind consumes staged key\r\r\n[PASS] corruption metadata is a directory: failed bind releases slot lock\r\r\n[PASS] corruption metadata is a directory: clear re-staged slot\r\r\n[PASS] corruption metadata is a directory: rejected bind leaves lower visible\r\r\n[PASS] corruption metadata is a directory: write through lower after rejected bind\r\r\n[PASS] corruption metadata is a directory: read through lower after rejected bind\r\r\n[PASS] corruption metadata is a directory: remove lower recovery probe\r\r\n[PASS] corruption metadata is a directory: remove metadata directory fixture\r\r\n[PASS] corruption metadata is a directory: restore original authenticated metadata\r\r\n[PASS] corruption metadata is a directory: stage restored key\r\r\n[PASS] corruption metadata is a directory: mount authenticated upper\r\r\n[PASS] corruption metadata is a directory: unmount upper and owned lower\r\r\n[PASS] corruption metadata is a directory: slot is idle after cleanup\r\r\n[PASS] corruption missing physical root: format dedicated raw exFAT fixture\r\r\n[PASS] corruption missing physical root: initialize authenticated volume\r\r\n[PASS] corruption missing physical root: backup exact metadata record\r\r\n[PASS] corruption missing physical root: inject physical fixture damage\r\r\n[PASS] corruption missing physical root: stage key before rejected bind\r\r\n[PASS] corruption missing physical root: reject with specified errno\r\r\n[PASS] corruption missing physical root: failed bind consumes staged key\r\r\n[PASS] corruption missing physical root: failed bind releases slot lock\r\r\n[PASS] corruption missing physical root: clear re-staged slot\r\r\n[PASS] corruption missing physical root: rejected bind leaves lower visible\r\r\n[PASS] corruption missing physical root: write through lower after rejected bind\r\r\n[PASS] corruption missing physical root: read through lower after rejected bind\r\r\n[PASS] corruption missing physical root: remove lower recovery probe\r\r\n[PASS] corruption missing physical root: restore physical root directory\r\r\n[PASS] corruption missing physical root: restore original authenticated metadata\r\r\n[PASS] corruption missing physical root: stage restored key\r\r\n[PASS] corruption missing physical root: mount authenticated upper\r\r\n[PASS] corruption missing physical root: unmount upper and owned lower\r\r\n[PASS] corruption missing physical root: slot is idle after cleanup\r\r\n[PASS] corruption physical root is a file: format dedicated raw exFAT fixture\r\r\n[PASS] corruption physical root is a file: initialize authenticated volume\r\r\n[PASS] corruption physical root is a file: backup exact metadata record\r\r\n[PASS] corruption physical root is a file: inject physical fixture damage\r\r\n[PASS] corruption physical root is a file: stage key before rejected bind\r\r\n[PASS] corruption physical root is a file: reject with specified errno\r\r\n[PASS] corruption physical root is a file: failed bind consumes staged key\r\r\n[PASS] corruption physical root is a file: failed bind releases slot lock\r\r\n[PASS] corruption physical root is a file: clear re-staged slot\r\r\n[PASS] corruption physical root is a file: rejected bind leaves lower visible\r\r\n[PASS] corruption physical root is a file: write through lower after rejected bind\r\r\n[PASS] corruption physical root is a file: read through lower after rejected bind\r\r\n[PASS] corruption physical root is a file: remove lower recovery probe\r\r\n[PASS] corruption physical root is a file: remove physical root file fixture\r\r\n[PASS] corruption physical root is a file: restore physical root directory\r\r\n[PASS] corruption physical root is a file: restore original authenticated metadata\r\r\n[PASS] corruption physical root is a file: stage restored key\r\r\n[PASS] corruption physical root is a file: mount authenticated upper\r\r\n[PASS] corruption physical root is a file: unmount upper and owned lower\r\r\n[PASS] corruption physical root is a file: slot is idle after cleanup\r\r\n[PASS] corruption plaintext directory entry: format dedicated raw exFAT fixture\r\r\n[PASS] corruption plaintext directory entry: initialize authenticated volume\r\r\n[PASS] corruption plaintext directory entry: create sole injected physical entry\r\r\n[PASS] corruption plaintext directory entry: stage restored key\r\r\n[PASS] corruption plaintext directory entry: mount authenticated upper\r\r\n[PASS] corruption plaintext directory entry: upper hides injected lower namespace\r\r\n[PASS] corruption plaintext directory entry: opendir upper with repeated separators\r\r\n[PASS] corruption plaintext directory entry: readdir rejects malformed entry with EBADMSG\r\r\n[PASS] corruption plaintext directory entry: physical name is never returned\r\r\n[PASS] corruption plaintext directory entry: mounted corruption test retains slot lock\r\r\n[PASS] corruption plaintext directory entry: rewind rechecks corrupt entry\r\r\n[PASS] corruption plaintext directory entry: open corrupt directory still blocks unmount\r\r\n[PASS] corruption plaintext directory entry: close corrupt directory\r\r\n[PASS] corruption plaintext directory entry: unmount upper and owned lower\r\r\n[PASS] corruption plaintext directory entry: slot is idle after cleanup\r\r\n[PASS] corruption plaintext directory entry: remount lower after readdir rejection\r\r\n[PASS] corruption plaintext directory entry: readdir rejection preserves physical entry\r\r\n[PASS] corruption plaintext directory entry: remove only injected entry\r\r\n[PASS] corruption plaintext directory entry: stage restored key\r\r\n[PASS] corruption plaintext directory entry: mount authenticated upper\r\r\n[PASS] corruption plaintext directory entry: reopen repaired logical directory\r\r\n[PASS] corruption plaintext directory entry: repaired directory has clean EOF\r\r\n[PASS] corruption plaintext directory entry: close repaired directory\r\r\n[PASS] corruption plaintext directory entry: unmount upper and owned lower\r\r\n[PASS] corruption plaintext directory entry: slot is idle after cleanup\r\r\n[PASS] corruption invalid Base32 directory entry: format dedicated raw exFAT fixture\r\r\n[PASS] corruption invalid Base32 directory entry: initialize authenticated volume\r\r\n[PASS] corruption invalid Base32 directory entry: create sole injected physical entry\r\r\n[PASS] corruption invalid Base32 directory entry: stage restored key\r\r\n[PASS] corruption invalid Base32 directory entry: mount authenticated upper\r\r\n[PASS] corruption invalid Base32 directory entry: upper hides injected lower namespace\r\r\n[PASS] corruption invalid Base32 directory entry: opendir upper with repeated separators\r\r\n[PASS] corruption invalid Base32 directory entry: readdir rejects malformed entry with EBADMSG\r\r\n[PASS] corruption invalid Base32 directory entry: physical name is never returned\r\r\n[PASS] corruption invalid Base32 directory entry: mounted corruption test retains slot lock\r\r\n[PASS] corruption invalid Base32 directory entry: rewind rechecks corrupt entry\r\r\n[PASS] corruption invalid Base32 directory entry: open corrupt directory still blocks unmount\r\r\n[PASS] corruption invalid Base32 directory entry: close corrupt directory\r\r\n[PASS] corruption invalid Base32 directory entry: unmount upper and owned lower\r\r\n[PASS] corruption invalid Base32 directory entry: slot is idle after cleanup\r\r\n[PASS] corruption invalid Base32 directory entry: remount lower after readdir rejection\r\r\n[PASS] corruption invalid Base32 directory entry: readdir rejection preserves physical entry\r\r\n[PASS] corruption invalid Base32 directory entry: remove only injected entry\r\r\n[PASS] corruption invalid Base32 directory entry: stage restored key\r\r\n[PASS] corruption invalid Base32 directory entry: mount authenticated upper\r\r\n[PASS] corruption invalid Base32 directory entry: reopen repaired logical directory\r\r\n[PASS] corruption invalid Base32 directory entry: repaired directory has clean EOF\r\r\n[PASS] corruption invalid Base32 directory entry: close repaired directory\r\r\n[PASS] corruption invalid Base32 directory entry: unmount upper and owned lower\r\r\n[PASS] corruption invalid Base32 directory entry: slot is idle after cleanup\r\r\n[PASS] corruption canonical authenticated entry: encode reference\r\r\n[PASS] corruption canonical tampered directory entry: format dedicated raw exFAT fixture\r\r\n[PASS] corruption canonical tampered directory entry: initialize authenticated volume\r\r\n[PASS] corruption canonical tampered directory entry: create sole injected physical entry\r\r\n[PASS] corruption canonical tampered directory entry: stage restored key\r\r\n[PASS] corruption canonical tampered directory entry: mount authenticated upper\r\r\n[PASS] corruption canonical tampered directory entry: upper hides injected lower namespace\r\r\n[PASS] corruption canonical tampered directory entry: opendir upper with repeated separators\r\r\n[PASS] corruption canonical tampered directory entry: readdir rejects malformed entry with EBADMSG\r\r\n[PASS] corruption canonical tampered directory entry: physical name is never returned\r\r\n[PASS] corruption canonical tampered directory entry: mounted corruption test retains slot lock\r\r\n[PASS] corruption canonical tampered directory entry: rewind rechecks corrupt entry\r\r\n[PASS] corruption canonical tampered directory entry: open corrupt directory still blocks unmount\r\r\n[PASS] corruption canonical tampered directory entry: close corrupt directory\r\r\n[PASS] corruption canonical tampered directory entry: unmount upper and owned lower\r\r\n[PASS] corruption canonical tampered directory entry: slot is idle after cleanup\r\r\n[PASS] corruption canonical tampered directory entry: remount lower after readdir rejection\r\r\n[PASS] corruption canonical tampered directory entry: readdir rejection preserves physical entry\r\r\n[PASS] corruption canonical tampered directory entry: remove only injected entry\r\r\n[PASS] corruption canonical tampered directory entry: stage restored key\r\r\n[PASS] corruption canonical tampered directory entry: mount authenticated upper\r\r\n[PASS] corruption canonical tampered directory entry: reopen repaired logical directory\r\r\n[PASS] corruption canonical tampered directory entry: repaired directory has clean EOF\r\r\n[PASS] corruption canonical tampered directory entry: close repaired directory\r\r\n[PASS] corruption canonical tampered directory entry: unmount upper and owned lower\r\r\n[PASS] corruption canonical tampered directory entry: slot is idle after cleanup\r\r\n[PASS] corruption noncanonical padding bits: encode reference\r\r\n[PASS] corruption noncanonical unused Base32 bits: format dedicated raw exFAT fixture\r\r\n[PASS] corruption noncanonical unused Base32 bits: initialize authenticated volume\r\r\n[PASS] corruption noncanonical unused Base32 bits: create sole injected physical entry\r\r\n[PASS] corruption noncanonical unused Base32 bits: stage restored key\r\r\n[PASS] corruption noncanonical unused Base32 bits: mount authenticated upper\r\r\n[PASS] corruption noncanonical unused Base32 bits: upper hides injected lower namespace\r\r\n[PASS] corruption noncanonical unused Base32 bits: opendir upper with repeated separators\r\r\n[PASS] corruption noncanonical unused Base32 bits: readdir rejects malformed entry with EBADMSG\r\r\n[PASS] corruption noncanonical unused Base32 bits: physical name is never returned\r\r\n[PASS] corruption noncanonical unused Base32 bits: mounted corruption test retains slot lock\r\r\n[PASS] corruption noncanonical unused Base32 bits: rewind rechecks corrupt entry\r\r\n[PASS] corruption noncanonical unused Base32 bits: open corrupt directory still blocks unmount\r\r\n[PASS] corruption noncanonical unused Base32 bits: close corrupt directory\r\r\n[PASS] corruption noncanonical unused Base32 bits: unmount upper and owned lower\r\r\n[PASS] corruption noncanonical unused Base32 bits: slot is idle after cleanup\r\r\n[PASS] corruption noncanonical unused Base32 bits: remount lower after readdir rejection\r\r\n[PASS] corruption noncanonical unused Base32 bits: readdir rejection preserves physical entry\r\r\n[PASS] corruption noncanonical unused Base32 bits: remove only injected entry\r\r\n[PASS] corruption noncanonical unused Base32 bits: stage restored key\r\r\n[PASS] corruption noncanonical unused Base32 bits: mount authenticated upper\r\r\n[PASS] corruption noncanonical unused Base32 bits: reopen repaired logical directory\r\r\n[PASS] corruption noncanonical unused Base32 bits: repaired directory has clean EOF\r\r\n[PASS] corruption noncanonical unused Base32 bits: close repaired directory\r\r\n[PASS] corruption noncanonical unused Base32 bits: unmount upper and owned lower\r\r\n[PASS] corruption noncanonical unused Base32 bits: slot is idle after cleanup\r\r\n[PASS] corruption lowercase Base32 entry: encode reference\r\r\n[PASS] corruption lowercase Base32 entry: lowercase an alphabet symbol\r\r\n[PASS] corruption noncanonical lowercase Base32: format dedicated raw exFAT fixture\r\r\n[PASS] corruption noncanonical lowercase Base32: initialize authenticated volume\r\r\n[PASS] corruption noncanonical lowercase Base32: create sole injected physical entry\r\r\n[PASS] corruption noncanonical lowercase Base32: stage restored key\r\r\n[PASS] corruption noncanonical lowercase Base32: mount authenticated upper\r\r\n[PASS] corruption noncanonical lowercase Base32: upper hides injected lower namespace\r\r\n[PASS] corruption noncanonical lowercase Base32: opendir upper with repeated separators\r\r\n[PASS] corruption noncanonical lowercase Base32: readdir rejects malformed entry with EBADMSG\r\r\n[PASS] corruption noncanonical lowercase Base32: physical name is never returned\r\r\n[PASS] corruption noncanonical lowercase Base32: mounted corruption test retains slot lock\r\r\n[PASS] corruption noncanonical lowercase Base32: rewind rechecks corrupt entry\r\r\n[PASS] corruption noncanonical lowercase Base32: open corrupt directory still blocks unmount\r\r\n[PASS] corruption noncanonical lowercase Base32: close corrupt directory\r\r\n[PASS] corruption noncanonical lowercase Base32: unmount upper and owned lower\r\r\n[PASS] corruption noncanonical lowercase Base32: slot is idle after cleanup\r\r\n[PASS] corruption noncanonical lowercase Base32: remount lower after readdir rejection\r\r\n[PASS] corruption noncanonical lowercase Base32: readdir rejection preserves physical entry\r\r\n[PASS] corruption noncanonical lowercase Base32: remove only injected entry\r\r\n[PASS] corruption noncanonical lowercase Base32: stage restored key\r\r\n[PASS] corruption noncanonical lowercase Base32: mount authenticated upper\r\r\n[PASS] corruption noncanonical lowercase Base32: reopen repaired logical directory\r\r\n[PASS] corruption noncanonical lowercase Base32: repaired directory has clean EOF\r\r\n[PASS] corruption noncanonical lowercase Base32: close repaired directory\r\r\n[PASS] corruption noncanonical lowercase Base32: unmount upper and owned lower\r\r\n[PASS] corruption noncanonical lowercase Base32: slot is idle after cleanup\r\r\n[PASS] corruption padded Base32 entry: encode reference\r\r\n[PASS] corruption forbidden Base32 padding: format dedicated raw exFAT fixture\r\r\n[PASS] corruption forbidden Base32 padding: initialize authenticated volume\r\r\n[PASS] corruption forbidden Base32 padding: create sole injected physical entry\r\r\n[PASS] corruption forbidden Base32 padding: stage restored key\r\r\n[PASS] corruption forbidden Base32 padding: mount authenticated upper\r\r\n[PASS] corruption forbidden Base32 padding: upper hides injected lower namespace\r\r\n[PASS] corruption forbidden Base32 padding: opendir upper with repeated separators\r\r\n[PASS] corruption forbidden Base32 padding: readdir rejects malformed entry with EBADMSG\r\r\n[PASS] corruption forbidden Base32 padding: physical name is never returned\r\r\n[PASS] corruption forbidden Base32 padding: mounted corruption test retains slot lock\r\r\n[PASS] corruption forbidden Base32 padding: rewind rechecks corrupt entry\r\r\n[PASS] corruption forbidden Base32 padding: open corrupt directory still blocks unmount\r\r\n[PASS] corruption forbidden Base32 padding: close corrupt directory\r\r\n[PASS] corruption forbidden Base32 padding: unmount upper and owned lower\r\r\n[PASS] corruption forbidden Base32 padding: slot is idle after cleanup\r\r\n[PASS] corruption forbidden Base32 padding: remount lower after readdir rejection\r\r\n[PASS] corruption forbidden Base32 padding: readdir rejection preserves physical entry\r\r\n[PASS] corruption forbidden Base32 padding: remove only injected entry\r\r\n[PASS] corruption forbidden Base32 padding: stage restored key\r\r\n[PASS] corruption forbidden Base32 padding: mount authenticated upper\r\r\n[PASS] corruption forbidden Base32 padding: reopen repaired logical directory\r\r\n[PASS] corruption forbidden Base32 padding: repaired directory has clean EOF\r\r\n[PASS] corruption forbidden Base32 padding: close repaired directory\r\r\n[PASS] corruption forbidden Base32 padding: unmount upper and owned lower\r\r\n[PASS] corruption forbidden Base32 padding: slot is idle after cleanup\r\r\n[PASS] corruption repeated path separators: format dedicated raw exFAT fixture\r\r\n[PASS] corruption repeated path separators: initialize authenticated volume\r\r\n[PASS] corruption repeated path separators: stage restored key\r\r\n[PASS] corruption repeated path separators: mount authenticated upper\r\r\n[PASS] corruption repeated path separators: mkdir with repeated and trailing separators\r\r\n[PASS] corruption repeated path separators: create through repeated separators\r\r\n[PASS] corruption repeated path separators: canonical path addresses the same file\r\r\n[PASS] corruption repeated path separators: opendir repeated separators\r\r\n[PASS] corruption repeated path separators: valid readdir returns logical name\r\r\n[PASS] corruption repeated path separators: valid directory ends without error\r\r\n[PASS] corruption repeated path separators: close separator directory\r\r\n[PASS] corruption repeated path separators: unlink through repeated separators\r\r\n[PASS] corruption repeated path separators: rmdir through repeated separators\r\r\n[PASS] corruption repeated path separators: unmount upper and owned lower\r\r\n[PASS] corruption repeated path separators: slot is idle after cleanup\r\r\n[PASS] corruption final cleanup: slot is idle after cleanup\r\r\n[PASS] corruption final cleanup: manager stays stopped\r\r\n[PASS] corruption final cleanup: no managed resource remains\r\r\n[PASS] corruption final cleanup: no fixture mount remains\r\r\n[PASS] corruption final cleanup: no encrypted block node remains\r\r\nENCFS_TEST_RESULT mode=corruption pass=361 fail=0\r\r\n"
+        },
+        {
+          "command": "encfs stop",
+          "started_at": "2026-10-24T14:33:35+08:00",
+          "finished_at": "2026-10-24T14:33:35+08:00",
+          "output": "\u001b[Kencfs stop\r\r\nencfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        }
+      ],
+      "serial_log": "/home/tourist/Desktop/openvela/encfs-results/extended-20261024/storage-final-01/corruption.serial.log",
+      "guest_result": {
+        "mode": "corruption",
+        "pass": 361,
+        "fail": 0
+      },
+      "exit_status": null,
+      "exit_signal": 15,
+      "finished_at": "2026-10-24T14:33:35+08:00"
+    },
+    {
+      "name": "encrypted-write",
+      "status": "passed",
+      "image": {
+        "path": "/home/tourist/Desktop/openvela/encfs-results/extended-20261024/storage-final-01/avd/encfs-crypt-20261024-143327-f5efb814.vvd/vela_data.bin",
+        "encrypted": true,
+        "size": 268435456,
+        "sha256": "ab41e933d3dedd52c1167fb72eabd2c77abdeca30b0e52f02714723f75414f70",
+        "observations": {
+          "content_marker": false,
+          "secret_name_ascii": false,
+          "secret_name_utf16le": false,
+          "encoded_prefix_utf16le": false,
+          "plaintext_exfat_header": false
+        }
+      },
+      "registry_path": "/home/tourist/.vela/encfs-crypt-20261024-143327-f5efb814.ini",
+      "instance": "encfs-crypt-20261024-143327-f5efb814",
+      "command": [
+        "/home/tourist/Desktop/openvela/run-emulator.sh",
+        "goldfish-arm64-v8a-ap-encfs",
+        "-keep",
+        "encfs-crypt-20261024-143327-f5efb814",
+        "-no-window",
+        "-no-audio",
+        "-gpu",
+        "off",
+        "-accel",
+        "off"
+      ],
+      "started_at": "2026-10-24T14:33:35+08:00",
+      "commands": [
+        {
+          "command": "encfs provision --erase",
+          "started_at": "2026-10-24T14:33:36+08:00",
+          "finished_at": "2026-10-24T14:33:36+08:00",
+          "output": "\u001b[Kencfs provision --erase\r\r\nencfs: formatting encrypted data volume\r\r\nencfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        },
+        {
+          "command": "encfs_test write",
+          "started_at": "2026-10-24T14:33:36+08:00",
+          "finished_at": "2026-10-24T14:33:51+08:00",
+          "output": "\u001b[Kencfs_test write\r\r\n[PASS] RFC5869 test case 1\r\r\n[PASS] RFC5297 deterministic vector\r\r\n[PASS] AES-SIV decrypt\r\r\n[PASS] AES-SIV rejects tampering\r\r\n[PASS] name encode\r\r\n[PASS] name round trip\r\r\n[PASS] deterministic name\r\r\n[PASS] name rejects wrong key\r\r\n[PASS] name rejects tampering\r\r\n[PASS] name rejects invalid Base32\r\r\n[PASS] 128-byte name\r\r\n[PASS] 129-byte name rejected\r\r\n[PASS] structural component rejected\r\r\n[PASS] ASCII E1 disk-format compatibility vector\r\r\n[PASS] UTF8 valid scalar/name vector 0\r\r\n[PASS] UTF8 valid scalar/name vector 1\r\r\n[PASS] UTF8 valid scalar/name vector 2\r\r\n[PASS] UTF8 valid scalar/name vector 3\r\r\n[PASS] UTF8 valid scalar/name vector 4\r\r\n[PASS] UTF8 valid scalar/name vector 5\r\r\n[PASS] UTF8 valid scalar/name vector 6\r\r\n[PASS] UTF8 valid scalar/name vector 7\r\r\n[PASS] UTF8 valid scalar/name vector 8\r\r\n[PASS] UTF8 valid scalar/name vector 9\r\r\n[PASS] UTF8 invalid sequence/name vector 0\r\r\n[PASS] UTF8 invalid sequence/name vector 1\r\r\n[PASS] UTF8 invalid sequence/name vector 2\r\r\n[PASS] UTF8 invalid sequence/name vector 3\r\r\n[PASS] UTF8 invalid sequence/name vector 4\r\r\n[PASS] UTF8 invalid sequence/name vector 5\r\r\n[PASS] UTF8 invalid sequence/name vector 6\r\r\n[PASS] UTF8 invalid sequence/name vector 7\r\r\n[PASS] UTF8 invalid sequence/name vector 8\r\r\n[PASS] UTF8 invalid sequence/name vector 9\r\r\n[PASS] UTF8 invalid sequence/name vector 10\r\r\n[PASS] UTF8 invalid sequence/name vector 11\r\r\n[PASS] UTF8 invalid sequence/name vector 12\r\r\n[PASS] UTF8 invalid sequence/name vector 13\r\r\n[PASS] UTF8 invalid sequence/name vector 14\r\r\n[PASS] UTF8 invalid sequence/name vector 15\r\r\n[PASS] UTF8 invalid sequence/name vector 16\r\r\n[PASS] UTF8 invalid sequence/name vector 17\r\r\n[PASS] UTF8 invalid sequence/name vector 18\r\r\n[PASS] UTF8 invalid sequence/name vector 19\r\r\n[PASS] UTF8 invalid sequence/name vector 20\r\r\n[PASS] UTF8 128-byte supplementary name round trip\r\r\n[PASS] UTF8 129-byte component rejected\r\r\n[PASS] UTF8 incomplete scalar at byte limit rejected\r\r\n[PASS] start encrypted chain\r\r\n[PASS] mkdir logical directory\r\r\n[PASS] open logical file\r\r\n[PASS] write content\r\r\n[PASS] fsync file\r\r\n[PASS] fstat file\r\r\n[PASS] seek file\r\r\n[PASS] random read\r\r\n[PASS] dup file\r\r\n[PASS] dup read\r\r\n[PASS] close file\r\r\n[PASS] read content\r\r\n[PASS] stat logical path\r\r\n[PASS] statfs logical limit\r\r\n[PASS] missing parent rejected\r\r\n[PASS] mkdir move source\r\r\n[PASS] unlink rejects directory\r\r\n[PASS] mkdir with trailing slash\r\r\n[PASS] remove trailing-slash sample\r\r\n[PASS] create moved child\r\r\n[PASS] rename whole directory\r\r\n[PASS] child survives directory rename\r\r\n[PASS] cross-directory rename\r\r\n[PASS] existing target rename rejected\r\r\n[PASS] unlink moved file\r\r\n[PASS] rmdir moved directory\r\r\n[PASS] open truncate sample\r\r\n[PASS] write truncate sample\r\r\n[PASS] truncate file\r\r\n[PASS] unlink truncate sample\r\r\n[PASS] create longest logical name\r\r\n[PASS] unlink longest logical name\r\r\n[PASS] overlong logical name rejected\r\r\n[PASS] opendir\r\r\n[PASS] readdir restores logical names\r\r\n[PASS] rewinddir\r\r\n[PASS] 24-cycle file regression\r\r\n[PASS] UTF8 create test directory\r\r\n[PASS] UTF8 create Chinese nested directory\r\r\n[PASS] UTF8 create, write and sync Chinese/emoji file\r\r\n[PASS] UTF8 stat reports original content length\r\r\n[PASS] UTF8 open existing file\r\r\n[PASS] UTF8 allocate logical FILEPATH buffer\r\r\n[PASS] UTF8 FILEPATH preserves exact logical bytes\r\r\n[PASS] UTF8 close existing file\r\r\n[PASS] UTF8 open Chinese directory\r\r\n[PASS] UTF8 readdir restores exact Chinese/emoji bytes\r\r\n[PASS] UTF8 close Chinese directory\r\r\n[PASS] UTF8 rename whole Chinese directory\r\r\n[PASS] UTF8 rename mixed-name file\r\r\n[PASS] UTF8 renamed file retains contents\r\r\n[PASS] UTF8 create composed accent name\r\r\n[PASS] UTF8 create distinct decomposed accent name\r\r\n[PASS] UTF8 normalization forms retain separate contents\r\r\n[PASS] UTF8 create/read 128-byte logical name\r\r\n[PASS] UTF8 unlink 128-byte logical name\r\r\n[PASS] UTF8 filesystem rejects 129-byte name\r\r\n[PASS] UTF8 filesystem rejects surrogate sequence\r\r\n[PASS] create extended acceptance directory\r\r\n[PASS] extended create attribute sample\r\r\n[PASS] attribute sample write and sync\r\r\n[PASS] chmod passes ordinary FatFs mode bits\r\r\n[PASS] chmod retains FatFs reported mode\r\r\n[PASS] fchmod passes ordinary FatFs mode bits\r\r\n[PASS] fchmod retains FatFs reported mode\r\r\n[PASS] chmod masks unsupported special mode bits\r\r\n[PASS] fchmod masks unsupported special mode bits\r\r\n[PASS] chown propagates FatFs unsupported owner\r\r\n[PASS] fchown propagates FatFs unsupported owner\r\r\n[PASS] utimensat reaches translated lower path\r\r\n[PASS] path mtime preserves FAT two-second precision\r\r\n[PASS] futimens reaches translated open file\r\r\n[PASS] fd mtime reflects FAT timestamp\r\r\n[PASS] allocate FILEPATH buffer\r\r\n[PASS] FILEPATH returns logical upper path\r\r\n[PASS] FILEPATH hides lower mount and encoded components\r\r\n[PASS] FILEPATH rejects null output\r\r\n[PASS] upper layer blocks device flush ioctl\r\r\n[PASS] upper layer rejects unknown ioctl\r\r\n[PASS] close attribute sample\r\r\n[PASS] create mixed-case logical name\r\r\n[PASS] write mixed-case logical name\r\r\n[PASS] create distinct lowercase logical name\r\r\n[PASS] write lowercase logical name\r\r\n[PASS] case-distinct name retains first content\r\r\n[PASS] case-distinct name retains second content\r\r\n[PASS] open case-sensitive directory\r\r\n[PASS] directory lists both case-distinct logical names\r\r\n[PASS] close case-sensitive directory\r\r\n[PASS] remove mixed-case sample\r\r\n[PASS] remove lowercase sample\r\r\n[PASS] create normalization directory\r\r\n[PASS] normalize repeated separators and dot components\r\r\n[PASS] allocate normalized FILEPATH buffer\r\r\n[PASS] FILEPATH returns normalized logical path\r\r\n[PASS] close normalized sample\r\r\n[PASS] missing intermediate cannot be bypassed by dotdot\r\r\n[PASS] file intermediate cannot be bypassed by dotdot\r\r\n[PASS] dot after regular file requires directory\r\r\n[PASS] trailing slash after file requires directory\r\r\n[PASS] regular-file parent rejects child creation\r\r\n[PASS] normalize parent traversal within mounted volume\r\r\n[PASS] remove normalization directory\r\r\n[PASS] allocate path-expansion buffer\r\r\n[PASS] create expansion boundary root\r\r\n[PASS] nested 128-byte names fit until encoded path limit\r\r\n[PASS] encoded path expansion rejects before lower limit\r\r\n[PASS] remove nested expansion directories\r\r\n[PASS] remove expansion boundary root\r\r\n[PASS] allocate multi-sector regression buffers\r\r\nENCFS_STRESS_RESULT requested=1000 completed=1000 bytes=2619734 elapsed_ns=14273128368\r\r\n[PASS] 1000-cycle create/write/fsync/read/rename/delete\r\r\n[PASS] stress monotonic timing available\r\r\n[PASS] remove attribute sample\r\r\n[PASS] remove extended acceptance directory\r\r\n[PASS] start is idempotent\r\r\n[PASS] mounted block rejects direct key replacement\r\r\n[PASS] mounted block rejects unregister\r\r\n[PASS] busy unregister preserves node\r\r\n[PASS] open mounted block for ioctl\r\r\n[PASS] mounted block rejects DIOC_SETKEY\r\r\n[PASS] close mounted block probe\r\r\n[PASS] mounted block rejects unlink\r\r\n[PASS] busy unlink preserves content\r\r\n[PASS] open busy file\r\r\n[PASS] open file prevents stop\r\r\n[PASS] busy stop keeps READY\r\r\n[PASS] busy mount rejects key replacement\r\r\n[PASS] open busy directory\r\r\n[PASS] open directory prevents stop\r\r\nENCFS_RESTART_RESULT requested=100 completed=100\r\r\n[PASS] 100 restart cycles\r\r\n[PASS] stop before negative tests\r\r\n[PASS] stopped is idempotent\r\r\n[PASS] register block without a key\r\r\n[PASS] open unkeyed block\r\r\n[PASS] query unkeyed block geometry\r\r\n[PASS] unkeyed block rejects reads\r\r\n[PASS] unkeyed block rejects writes\r\r\n[PASS] close unkeyed block\r\r\n[PASS] remove unkeyed block\r\r\n[PASS] select absent master\r\r\n[PASS] absent master rejects start\r\r\n[PASS] absent master leaves no block node\r\r\n[PASS] select wrong master\r\r\n[PASS] wrong master rejects start\r\r\n[PASS] wrong master leaves no block node\r\r\n[PASS] restore board master\r\r\n[PASS] set startup failpoint\r\r\n[PASS] injected failure propagates\r\r\n[PASS] injected failure rolls back\r\r\n[PASS] retry after failure\r\r\n[PASS] stop after retry\r\r\n[PASS] set startup failpoint\r\r\n[PASS] injected failure propagates\r\r\n[PASS] injected failure rolls back\r\r\n[PASS] retry after failure\r\r\n[PASS] stop after retry\r\r\n[PASS] set startup failpoint\r\r\n[PASS] injected failure propagates\r\r\n[PASS] injected failure rolls back\r\r\n[PASS] retry after failure\r\r\n[PASS] stop after retry\r\r\n[PASS] set startup failpoint\r\r\n[PASS] injected failure propagates\r\r\n[PASS] injected failure rolls back\r\r\n[PASS] retry after failure\r\r\n[PASS] stop after retry\r\r\n[PASS] restart after negative tests\r\r\n[PASS] negative tests preserve content\r\r\n[PASS] external upper unmount\r\r\n[PASS] status reconciles externally removed upper\r\r\n[PASS] start never falsely reports externally removed upper ready\r\r\n[PASS] stop recovers after external upper unmount\r\r\n[PASS] external unmount recovery releases block node\r\r\n[PASS] restart after external upper unmount\r\r\n[PASS] external unmount before unrelated target\r\r\n[PASS] mount unrelated filesystem at former upper\r\r\n[PASS] create unrelated mount marker\r\r\n[PASS] write unrelated mount marker\r\r\n[PASS] stop handles replaced target without unrelated unmount\r\r\n[PASS] start refuses unrelated upper mount\r\r\n[PASS] remove unrelated filesystem\r\r\n[PASS] cleanup after unrelated upper mount\r\r\n[PASS] restart after unrelated upper mount\r\r\n[PASS] clean stop\r\r\nENCFS_TEST_RESULT mode=write pass=232 fail=0\r\r\n"
+        },
+        {
+          "command": "encfs stop",
+          "started_at": "2026-10-24T14:33:51+08:00",
+          "finished_at": "2026-10-24T14:33:51+08:00",
+          "output": "\u001b[Kencfs stop\r\r\nencfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        }
+      ],
+      "serial_log": "/home/tourist/Desktop/openvela/encfs-results/extended-20261024/storage-final-01/encrypted-write.serial.log",
+      "guest_result": {
+        "mode": "write",
+        "pass": 232,
+        "fail": 0
+      },
+      "stress_result": {
+        "requested": 1000,
+        "completed": 1000,
+        "bytes": 2619734,
+        "elapsed_ns": 14273128368
+      },
+      "restart_result": {
+        "requested": 100,
+        "completed": 100
+      },
+      "exit_status": null,
+      "exit_signal": 15,
+      "finished_at": "2026-10-24T14:33:51+08:00"
+    },
+    {
+      "name": "encrypted-reboot",
+      "status": "passed",
+      "image": {
+        "path": "/home/tourist/Desktop/openvela/encfs-results/extended-20261024/storage-final-01/avd/encfs-crypt-20261024-143327-f5efb814.vvd/vela_data.bin",
+        "encrypted": true,
+        "size": 268435456,
+        "sha256": "ab41e933d3dedd52c1167fb72eabd2c77abdeca30b0e52f02714723f75414f70",
+        "observations": {
+          "content_marker": false,
+          "secret_name_ascii": false,
+          "secret_name_utf16le": false,
+          "encoded_prefix_utf16le": false,
+          "plaintext_exfat_header": false
+        }
+      },
+      "registry_path": "/home/tourist/.vela/encfs-crypt-20261024-143327-f5efb814.ini",
+      "before_reboot_sha256": "ab41e933d3dedd52c1167fb72eabd2c77abdeca30b0e52f02714723f75414f70",
+      "instance": "encfs-crypt-20261024-143327-f5efb814",
+      "command": [
+        "/home/tourist/Desktop/openvela/run-emulator.sh",
+        "goldfish-arm64-v8a-ap-encfs",
+        "-keep",
+        "encfs-crypt-20261024-143327-f5efb814",
+        "-no-window",
+        "-no-audio",
+        "-gpu",
+        "off",
+        "-accel",
+        "off"
+      ],
+      "started_at": "2026-10-24T14:33:52+08:00",
+      "commands": [
+        {
+          "command": "encfs_test verify",
+          "started_at": "2026-10-24T14:33:52+08:00",
+          "finished_at": "2026-10-24T14:33:52+08:00",
+          "output": "\u001b[Kencfs_test verify\r\r\n[PASS] restart existing encrypted volume\r\r\n[PASS] persistent content after reboot\r\r\n[PASS] persistent logical directory\r\r\n[PASS] UTF8 persistent Chinese directory after reboot\r\r\n[PASS] UTF8 persistent Chinese/emoji file after reboot\r\r\n[PASS] UTF8 persistent composed name after reboot\r\r\n[PASS] UTF8 persistent decomposed name after reboot\r\r\n[PASS] clean stop after reboot\r\r\nENCFS_TEST_RESULT mode=verify pass=8 fail=0\r\r\n"
+        },
+        {
+          "command": "encfs stop",
+          "started_at": "2026-10-24T14:33:52+08:00",
+          "finished_at": "2026-10-24T14:33:52+08:00",
+          "output": "\u001b[Kencfs stop\r\r\nencfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        }
+      ],
+      "serial_log": "/home/tourist/Desktop/openvela/encfs-results/extended-20261024/storage-final-01/encrypted-reboot.serial.log",
+      "guest_result": {
+        "mode": "verify",
+        "pass": 8,
+        "fail": 0
+      },
+      "exit_status": null,
+      "exit_signal": 15,
+      "finished_at": "2026-10-24T14:33:52+08:00"
+    },
+    {
+      "name": "encrypted-reboot-02",
+      "status": "passed",
+      "image": {
+        "path": "/home/tourist/Desktop/openvela/encfs-results/extended-20261024/storage-final-01/avd/encfs-crypt-20261024-143327-f5efb814.vvd/vela_data.bin",
+        "encrypted": true,
+        "size": 268435456,
+        "sha256": "ab41e933d3dedd52c1167fb72eabd2c77abdeca30b0e52f02714723f75414f70",
+        "observations": {
+          "content_marker": false,
+          "secret_name_ascii": false,
+          "secret_name_utf16le": false,
+          "encoded_prefix_utf16le": false,
+          "plaintext_exfat_header": false
+        }
+      },
+      "registry_path": "/home/tourist/.vela/encfs-crypt-20261024-143327-f5efb814.ini",
+      "before_reboot_sha256": "ab41e933d3dedd52c1167fb72eabd2c77abdeca30b0e52f02714723f75414f70",
+      "instance": "encfs-crypt-20261024-143327-f5efb814",
+      "command": [
+        "/home/tourist/Desktop/openvela/run-emulator.sh",
+        "goldfish-arm64-v8a-ap-encfs",
+        "-keep",
+        "encfs-crypt-20261024-143327-f5efb814",
+        "-no-window",
+        "-no-audio",
+        "-gpu",
+        "off",
+        "-accel",
+        "off"
+      ],
+      "started_at": "2026-10-24T14:33:53+08:00",
+      "commands": [
+        {
+          "command": "encfs_test verify",
+          "started_at": "2026-10-24T14:33:53+08:00",
+          "finished_at": "2026-10-24T14:33:53+08:00",
+          "output": "\u001b[Kencfs_test verify\r\r\n[PASS] restart existing encrypted volume\r\r\n[PASS] persistent content after reboot\r\r\n[PASS] persistent logical directory\r\r\n[PASS] UTF8 persistent Chinese directory after reboot\r\r\n[PASS] UTF8 persistent Chinese/emoji file after reboot\r\r\n[PASS] UTF8 persistent composed name after reboot\r\r\n[PASS] UTF8 persistent decomposed name after reboot\r\r\n[PASS] clean stop after reboot\r\r\nENCFS_TEST_RESULT mode=verify pass=8 fail=0\r\r\n"
+        },
+        {
+          "command": "encfs stop",
+          "started_at": "2026-10-24T14:33:53+08:00",
+          "finished_at": "2026-10-24T14:33:53+08:00",
+          "output": "\u001b[Kencfs stop\r\r\nencfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        }
+      ],
+      "serial_log": "/home/tourist/Desktop/openvela/encfs-results/extended-20261024/storage-final-01/encrypted-reboot-02.serial.log",
+      "guest_result": {
+        "mode": "verify",
+        "pass": 8,
+        "fail": 0
+      },
+      "exit_status": null,
+      "exit_signal": 15,
+      "finished_at": "2026-10-24T14:33:53+08:00"
+    },
+    {
+      "name": "encrypted-reboot-03",
+      "status": "passed",
+      "image": {
+        "path": "/home/tourist/Desktop/openvela/encfs-results/extended-20261024/storage-final-01/avd/encfs-crypt-20261024-143327-f5efb814.vvd/vela_data.bin",
+        "encrypted": true,
+        "size": 268435456,
+        "sha256": "ab41e933d3dedd52c1167fb72eabd2c77abdeca30b0e52f02714723f75414f70",
+        "observations": {
+          "content_marker": false,
+          "secret_name_ascii": false,
+          "secret_name_utf16le": false,
+          "encoded_prefix_utf16le": false,
+          "plaintext_exfat_header": false
+        }
+      },
+      "registry_path": "/home/tourist/.vela/encfs-crypt-20261024-143327-f5efb814.ini",
+      "before_reboot_sha256": "ab41e933d3dedd52c1167fb72eabd2c77abdeca30b0e52f02714723f75414f70",
+      "instance": "encfs-crypt-20261024-143327-f5efb814",
+      "command": [
+        "/home/tourist/Desktop/openvela/run-emulator.sh",
+        "goldfish-arm64-v8a-ap-encfs",
+        "-keep",
+        "encfs-crypt-20261024-143327-f5efb814",
+        "-no-window",
+        "-no-audio",
+        "-gpu",
+        "off",
+        "-accel",
+        "off"
+      ],
+      "started_at": "2026-10-24T14:33:54+08:00",
+      "commands": [
+        {
+          "command": "encfs_test verify",
+          "started_at": "2026-10-24T14:33:54+08:00",
+          "finished_at": "2026-10-24T14:33:54+08:00",
+          "output": "\u001b[Kencfs_test verify\r\r\n[PASS] restart existing encrypted volume\r\r\n[PASS] persistent content after reboot\r\r\n[PASS] persistent logical directory\r\r\n[PASS] UTF8 persistent Chinese directory after reboot\r\r\n[PASS] UTF8 persistent Chinese/emoji file after reboot\r\r\n[PASS] UTF8 persistent composed name after reboot\r\r\n[PASS] UTF8 persistent decomposed name after reboot\r\r\n[PASS] clean stop after reboot\r\r\nENCFS_TEST_RESULT mode=verify pass=8 fail=0\r\r\n"
+        },
+        {
+          "command": "encfs stop",
+          "started_at": "2026-10-24T14:33:54+08:00",
+          "finished_at": "2026-10-24T14:33:54+08:00",
+          "output": "\u001b[Kencfs stop\r\r\nencfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0\r\r\nencfs: wrapped=0 master_id=0 generation=0\r\r\n"
+        }
+      ],
+      "serial_log": "/home/tourist/Desktop/openvela/encfs-results/extended-20261024/storage-final-01/encrypted-reboot-03.serial.log",
+      "guest_result": {
+        "mode": "verify",
+        "pass": 8,
+        "fail": 0
+      },
+      "exit_status": null,
+      "exit_signal": 15,
+      "finished_at": "2026-10-24T14:33:54+08:00"
+    }
+  ],
+  "limitations": [
+    "Raw-image searches check specified complete markers and names only.",
+    "XTS does not authenticate arbitrary sector contents.",
+    "Unused blank sectors are not claimed to have been encrypted.",
+    "The board key in the QEMU demonstration is deterministic test material."
+  ],
+  "build_artifacts": {
+    "nuttx": {
+      "path": "/home/tourist/Desktop/openvela/cmake_out/vela_encfs_storage_final/nuttx",
+      "size": 7183264,
+      "sha256": "de42d2b9044511da72868285a6691b1c7ac533a8c172a318d1369b04449ba763"
+    },
+    "nuttx.bin": {
+      "path": "/home/tourist/Desktop/openvela/cmake_out/vela_encfs_storage_final/nuttx.bin",
+      "size": 1634304,
+      "sha256": "c6700820f08ea76f225b0611ce6bf913be5d1832e7fc98ee3fd4f9ccc8ca883e"
+    },
+    "vela_data.bin": {
+      "path": "/home/tourist/Desktop/openvela/cmake_out/vela_encfs_storage_final/vela_data.bin",
+      "size": 268435456,
+      "sha256": "a6d72ac7690f53be6ae46ba88506bd97302a093f7108472bd9efc3cefda06484"
+    },
+    "vela_system.bin": {
+      "path": "/home/tourist/Desktop/openvela/cmake_out/vela_encfs_storage_final/vela_system.bin",
+      "size": 1024,
+      "sha256": "e106fdd98f2d55a8c4fa8bad6d77802ecdc14e8179f4ee4beec9d80e299bd456"
+    },
+    ".config": {
+      "path": "/home/tourist/Desktop/openvela/cmake_out/vela_encfs_storage_final/.config",
+      "size": 52968,
+      "sha256": "72c93b8165d9c83562aeb80de1446395916aef253a469d55de2a867eda1af7d1"
+    }
+  },
+  "source_revisions": {
+    "nuttx": {
+      "revision": "04264dc9a71be9dba96c4321bc5d7770e79d2dca",
+      "dirty": false,
+      "changes": []
+    },
+    "apps": {
+      "revision": "e198d0a1a032b886dc43c6cf5e7677f5dad4a42e",
+      "dirty": true,
+      "changes": [
+        "?? testing/drivers/nist-sts/.gitee/",
+        "?? testing/drivers/nist-sts/.github/",
+        "?? testing/drivers/nist-sts/sts/"
+      ]
+    },
+    "vendor_openvela": {
+      "revision": "0b0fce509c7b84a84d8b4e7dc13b59a8c6620d99",
+      "dirty": true,
+      "changes": [
+        " M boards/vela/configs/goldfish-arm64-v8a-ap-encfs-gui/defconfig",
+        " M boards/vela/configs/goldfish-arm64-v8a-ap-encfs/defconfig"
+      ]
+    },
+    "manifests": {
+      "revision": "b53dd710d5bf58be99c1adb6c42ab2c58064e0df",
+      "dirty": true,
+      "changes": [
+        " M tools/analyze_encfs_stress.py",
+        " M tools/test_encfs.py",
+        " M tools/test_encfs_gui.py",
+        "?? docs/encfs_extension_status.md",
+        "?? docs/encfs_keywrap.md",
+        "?? tools/test_encfs_extended.py",
+        "?? tools/test_encfs_keywrap.py"
+      ]
+    }
+  },
+  "finished_at": "2026-10-24T14:33:55+08:00"
+}

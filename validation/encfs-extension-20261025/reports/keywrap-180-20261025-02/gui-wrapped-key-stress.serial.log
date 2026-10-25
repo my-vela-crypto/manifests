@@ -1,0 +1,343 @@
+Staged emulator artifacts from cmake_out/vela_goldfish-arm64-v8a-ap-encfs-gui/
+TARGETDIR = /home/tourist/Desktop/openvela/vendor/openvela/boards/vela
+arg=-keep
+arg=-no-window
+arg=-no-audio
+arg=-gpu
+arg=swiftshader_indirect
+arg=-accel
+arg=off
+Copy modem_simulator
+Create a core file
+记录了1+0 的读入
+记录了1+0 的写出
+209715200字节（210 MB，200 MiB）已复制，0.273141 s，768 MB/s
+Copy vela_data.img
+INFO    | Android emulator version 32.1.15.0 (build_id 20251216) (CL:N/A)
+INFO    | Found systemPath /home/tourist/Desktop/openvela/nuttx
+INFO    | Crashreporting disabled, not reporting crashes.
+INFO    | Duplicate loglines will be removed, if you wish to see each indiviudal line launch with the -log-nofilter flag.
+WARNING | encryption is off
+WARNING | Unknown Image type 3
+WARNING | Unknown Image type 5
+WARNING | Unknown Image type 4
+WARNING | Unknown Image type 1
+ERROR   | Unable to connect to adb daemon on port: 5037
+WARNING | cannot add library /home/tourist/Desktop/openvela/prebuilts/emulator/linux-x86_64/qemu/linux-x86_64/lib64/vulkan/libvulkan.so: failed
+INFO    | added library /home/tourist/Desktop/openvela/prebuilts/emulator/linux-x86_64/lib64/vulkan/libvulkan.so
+Warning: Allowing host microphone input.
+WARNING | *** No gRPC protection active, consider launching with the -grpc-use-jwt flag.***
+INFO    | Started GRPC server at 127.0.0.1:8560, security: Local, auth: none
+INFO    | Advertising in: /run/user/1000/avd/running/pid_210117.ini
+INFO    | Connecting to bluetooth mesh: localhost:8554
+INFO    | Setting display: 0 configuration to: 1280x800, dpi: 420x420 
+encfs: state=STOPPED result=-22 stage=5 error=-22 cleanup=0/0 block=0 keyed=0 lower=0 upper=0
+encfs: wrapped=0 master_id=0 generation=0
+encfs: Unknown error 22 (-22)
+kvdbd [10:100]
+servicemanager [11:100]
+adbd [12:100]
+telnetd [13:100]
+
+NuttShell (NSH)
+encfs> [Kencfs stop
+encfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0
+encfs: wrapped=0 master_id=0 generation=0
+encfs> [Kencfs keyfiles /share/keys
+encfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0
+encfs: wrapped=0 master_id=0 generation=0
+encfs> [Kencfs start
+encfs: state=STOPPED result=-126 stage=2 error=-126 cleanup=0/0 block=0 keyed=0 lower=0 upper=0
+encfs: wrapped=0 master_id=0 generation=0
+encfs: Unknown error 126 (-126)
+encfs> [Kencfs provision --erase
+encfs: formatting encrypted data volume
+encfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0
+encfs: wrapped=0 master_id=0 generation=0
+encfs> [Kencfs start
+encfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1
+encfs: wrapped=1 master_id=0 generation=1
+encfs> [Kencfs status
+encfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1
+encfs: wrapped=1 master_id=0 generation=1
+encfs> [Kmkdir /data/验证
+encfs> [Kecho ENCFS_WRAP_UTF8_20261024_7df925ca > /data/验证/密钥🔐.txt
+encfs> [Kcat /data/验证/密钥🔐.txt
+ENCFS_WRAP_UTF8_20261024_7df925ca
+encfs> [Kencfs rekey 99
+encfs: state=READY result=-126 stage=15 error=-126 cleanup=0/0 block=1 keyed=1 lower=0 upper=1
+encfs: wrapped=1 master_id=0 generation=1
+encfs: Unknown error 126 (-126)
+encfs> [Kencfs keyslot-failcommit on
+encfs: state=READY result=0 stage=15 error=-126 cleanup=0/0 block=1 keyed=1 lower=0 upper=1
+encfs: wrapped=1 master_id=0 generation=1
+encfs> [Kencfs rekey 1
+encfs: state=READY result=-5 stage=15 error=-5 cleanup=0/0 block=1 keyed=1 lower=0 upper=1
+encfs: wrapped=1 master_id=0 generation=1
+encfs: Unknown error 5 (-5)
+encfs> [Kencfs status
+encfs: state=READY result=0 stage=15 error=-5 cleanup=0/0 block=1 keyed=1 lower=0 upper=1
+encfs: wrapped=1 master_id=0 generation=1
+encfs> [Kcat /data/验证/密钥🔐.txt
+ENCFS_WRAP_UTF8_20261024_7df925ca
+encfs> [Kencfs rekey 1
+encfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1
+encfs: wrapped=1 master_id=1 generation=2
+encfs> [Kencfs status
+encfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1
+encfs: wrapped=1 master_id=1 generation=2
+encfs> [Kcat /data/验证/密钥🔐.txt
+ENCFS_WRAP_UTF8_20261024_7df925ca
+encfs> [Klvgldemo widgets &
+lvgldemo [51:100]
+encfs> [Kps
+  PID GROUP PRI POLICY   TYPE    NPX STATE    EVENT     SIGMASK             STACK    USED FILLED COMMAND
+    0     0   0 FIFO     Kthread   - Ready              0000000000000000  0007984 0002120  26.5%  CPU0 IDLE
+    1     0 192 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001152   7.1%  hpwork 0x408eacc0 0x408ead40
+    2     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001152   7.1%  lpwork 0x408eac00 0x408eac80
+    4     0 100 RR       Kthread   - Ready              0000000000000000  0016112 0001616  10.0%  goldfish_gpu_fb_thread 0x40942ca0
+    5     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001680  10.4%  goldfish_gnss_thread 0x40dcae30
+    6     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001760  10.9%  goldfish_sensor_thread 0x409d59d0
+    7     7 100 RR       Task      - Running            0000000000000000  0016144 0005216  32.3%  nsh_main
+   10    10 100 RR       Task      - Waiting  Semaphore 0000000000000000  0007952 0003464  43.5%  kvdbd
+   11    11 100 RR       Task      - Ready              0000000000000000  0016144 0003208  19.8%  servicemanager
+   12    12 100 RR       Task      - Waiting  Semaphore 0000000000000000  0016144 0002016  12.4%  adbd
+   13    13 100 RR       Task      - Waiting  Semaphore 0000000000020000  0016144 0002256  13.9%  telnetd
+   51    51 100 RR       Task      - Ready              0000000000000000  0032512 0010664  32.8%  lvgldemo widgets
+encfs> [Kfbcapture -d /dev/fb0 -o /share/b18d30-initial.bmp
+Taking screenshot of '/share/b18d30-initial.bmp' ...
+Success
+encfs> [Kinput tap 740 35
+encfs> [Kfbcapture -d /dev/fb0 -o /share/b18d30-profile.bmp
+Taking screenshot of '/share/b18d30-profile.bmp' ...
+Success
+encfs> [Kinput tap 950 35
+encfs> [Kfbcapture -d /dev/fb0 -o /share/b18d30-analytics.bmp
+Taking screenshot of '/share/b18d30-analytics.bmp' ...
+Success
+encfs> [Kinput tap 1160 35
+encfs> [Kfbcapture -d /dev/fb0 -o /share/b18d30-shop.bmp
+Taking screenshot of '/share/b18d30-shop.bmp' ...
+Success
+encfs> [Kinput tap 683 357
+encfs> [Kfbcapture -d /dev/fb0 -o /share/b18d30-checkbox-toggled.bmp
+Taking screenshot of '/share/b18d30-checkbox-toggled.bmp' ...
+Success
+encfs> [Kinput tap 740 35
+encfs> [Kfbcapture -d /dev/fb0 -o /share/b18d30-slider-before.bmp
+Taking screenshot of '/share/b18d30-slider-before.bmp' ...
+Success
+encfs> [Kinput swipe 685 402 1050 402 400
+encfs> [Kfbcapture -d /dev/fb0 -o /share/b18d30-slider-after.bmp
+Taking screenshot of '/share/b18d30-slider-after.bmp' ...
+Success
+encfs> [Kencfs_test stress 180 &
+encfs_test [105:100]
+encfs> [KENCFS_LONG_STRESS_START requested_seconds=180 workers=2 seed=6e637273 max_live_file_bytes=131074 root=/data/.encfs-stress-105-14031
+encfs status
+encfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1
+encfs: wrapped=1 master_id=1 generation=2
+encfs> [Kps
+  PID GROUP PRI POLICY   TYPE    NPX STATE    EVENT     SIGMASK             STACK    USED FILLED COMMAND
+    0     0   0 FIFO     Kthread   - Ready              0000000000000000  0007984 0002120  26.5%  CPU0 IDLE
+    1     0 192 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001152   7.1%  hpwork 0x408eacc0 0x408ead40
+    2     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001152   7.1%  lpwork 0x408eac00 0x408eac80
+    4     0 100 RR       Kthread   - Ready              0000000000000000  0016112 0001616  10.0%  goldfish_gpu_fb_thread 0x40942ca0
+    5     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001680  10.4%  goldfish_gnss_thread 0x40dcae30
+    6     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001760  10.9%  goldfish_sensor_thread 0x409d59d0
+    7     7 100 RR       Task      - Running            0000000000000000  0016144 0005216  32.3%  nsh_main
+   10    10 100 RR       Task      - Waiting  Semaphore 0000000000000000  0007952 0003464  43.5%  kvdbd
+   11    11 100 RR       Task      - Waiting  Semaphore 0000000000000000  0016144 0003208  19.8%  servicemanager
+   12    12 100 RR       Task      - Waiting  Semaphore 0000000000000000  0016144 0002016  12.4%  adbd
+   13    13 100 RR       Task      - Waiting  Semaphore 0000000000020000  0016144 0002256  13.9%  telnetd
+   51    51 100 RR       Task      - Ready              0000000000000000  0032512 0011640  35.8%  lvgldemo widgets
+  105   105 100 RR       Task      - Waiting  Signal    0000000000000000  0016112 0004344  26.9%  encfs_test stress 180
+  110   105 100 RR       pthread   - Ready              0000000000000000  0007984 0005088  63.7%  encfs_test 0x40423a20 0x40e63c28
+  111   105 100 RR       pthread   - Waiting  Mutex:110 0000000000000000  0007984 0005168  64.7%  encfs_test 0x40423a20 0x40e63d18
+encfs> [Kfree
+      total       used       free    maxused    maxfree  nused  nfree name
+      65536       1152      64384       1072      64384      2      1 binder_heap_11
+  122592960    5656064  116936896    5690976  116907648    229     66 Umem
+encfs> [Kinput tap 950 35
+encfs> [KENCFS_LONG_STRESS_PROGRESS elapsed_ms=30453 iterations=236 written_bytes=2161802 verified_bytes=4298788 worker0_iterations=109 worker1_iterations=127 errors=0 heap_used=5655168 heap_free=116937792
+fbcapture -d /dev/fb0 -o /share/b18d30-stress-001-analytics.bmp
+Taking screenshot of '/share/b18d30-stress-001-analytics.bmp' ...
+Success
+encfs> [Kinput tap 1160 35
+encfs> [Kfbcapture -d /dev/fb0 -o /share/b18d30-stress-001-shop.bmp
+Taking screenshot of '/share/b18d30-stress-001-shop.bmp' ...
+Success
+encfs> [KENCFS_LONG_STRESS_PROGRESS elapsed_ms=60516 iterations=469 written_bytes=4390464 verified_bytes=8731726 worker0_iterations=219 worker1_iterations=250 errors=0 heap_used=5657360 heap_free=116935600
+encfs status
+encfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1
+encfs: wrapped=1 master_id=1 generation=2
+encfs> [Kps
+  PID GROUP PRI POLICY   TYPE    NPX STATE    EVENT     SIGMASK             STACK    USED FILLED COMMAND
+    0     0   0 FIFO     Kthread   - Ready              0000000000000000  0007984 0002120  26.5%  CPU0 IDLE
+    1     0 192 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001152   7.1%  hpwork 0x408eacc0 0x408ead40
+    2     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001152   7.1%  lpwork 0x408eac00 0x408eac80
+    4     0 100 RR       Kthread   - Ready              0000000000000000  0016112 0001616  10.0%  goldfish_gpu_fb_thread 0x40942ca0
+    5     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001680  10.4%  goldfish_gnss_thread 0x40dcae30
+    6     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001760  10.9%  goldfish_sensor_thread 0x409d59d0
+    7     7 100 RR       Task      - Running            0000000000000000  0016144 0005216  32.3%  nsh_main
+   10    10 100 RR       Task      - Waiting  Semaphore 0000000000000000  0007952 0003464  43.5%  kvdbd
+   11    11 100 RR       Task      - Waiting  Semaphore 0000000000000000  0016144 0003208  19.8%  servicemanager
+   12    12 100 RR       Task      - Waiting  Semaphore 0000000000000000  0016144 0002016  12.4%  adbd
+   13    13 100 RR       Task      - Waiting  Semaphore 0000000000020000  0016144 0002256  13.9%  telnetd
+   51    51 100 RR       Task      - Ready              0000000000000000  0032512 0011640  35.8%  lvgldemo widgets
+  105   105 100 RR       Task      - Waiting  Signal    0000000000000000  0016112 0004344  26.9%  encfs_test stress 180
+  110   105 100 RR       pthread   - Waiting  Mutex:111 0000000000000000  0007984 0005120  64.1%  encfs_test 0x40423a20 0x40e63c28
+  111   105 100 RR       pthread   - Ready              0000000000000000  0007984 0005184  64.9%  encfs_test 0x40423a20 0x40e63d18
+encfs> [Kfree
+      total       used       free    maxused    maxfree  nused  nfree name
+      65536       1152      64384       1072      64384      2      1 binder_heap_11
+  122592960    5656912  116936048    5695456  116907648    230     64 Umem
+encfs> [Kencfs rekey 2
+encfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1
+encfs: wrapped=1 master_id=2 generation=3
+encfs> [Kencfs status
+encfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1
+encfs: wrapped=1 master_id=2 generation=3
+encfs> [Kcat /data/验证/密钥🔐.txt
+ENCFS_WRAP_UTF8_20261024_7df925ca
+encfs> [KENCFS_LONG_STRESS_PROGRESS elapsed_ms=90623 iterations=700 written_bytes=6606769 verified_bytes=13140088 worker0_iterations=329 worker1_iterations=371 errors=0 heap_used=5657360 heap_free=116935600
+encfs status
+encfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1
+encfs: wrapped=1 master_id=2 generation=3
+encfs> [Kps
+  PID GROUP PRI POLICY   TYPE    NPX STATE    EVENT     SIGMASK             STACK    USED FILLED COMMAND
+    0     0   0 FIFO     Kthread   - Ready              0000000000000000  0007984 0002120  26.5%  CPU0 IDLE
+    1     0 192 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001152   7.1%  hpwork 0x408eacc0 0x408ead40
+    2     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001152   7.1%  lpwork 0x408eac00 0x408eac80
+    4     0 100 RR       Kthread   - Ready              0000000000000000  0016112 0001616  10.0%  goldfish_gpu_fb_thread 0x40942ca0
+    5     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001680  10.4%  goldfish_gnss_thread 0x40dcae30
+    6     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001760  10.9%  goldfish_sensor_thread 0x409d59d0
+    7     7 100 RR       Task      - Running            0000000000000000  0016144 0005216  32.3%  nsh_main
+   10    10 100 RR       Task      - Waiting  Semaphore 0000000000000000  0007952 0003464  43.5%  kvdbd
+   11    11 100 RR       Task      - Waiting  Semaphore 0000000000000000  0016144 0003208  19.8%  servicemanager
+   12    12 100 RR       Task      - Waiting  Semaphore 0000000000000000  0016144 0002016  12.4%  adbd
+   13    13 100 RR       Task      - Waiting  Semaphore 0000000000020000  0016144 0002256  13.9%  telnetd
+   51    51 100 RR       Task      - Ready              0000000000000000  0032512 0011640  35.8%  lvgldemo widgets
+  105   105 100 RR       Task      - Waiting  Signal    0000000000000000  0016112 0004344  26.9%  encfs_test stress 180
+  110   105 100 RR       pthread   - Waiting  Mutex:111 0000000000000000  0007984 0005120  64.1%  encfs_test 0x40423a20 0x40e63c28
+  111   105 100 RR       pthread   - Ready              0000000000000000  0007984 0005184  64.9%  encfs_test 0x40423a20 0x40e63d18
+encfs> [Kfree
+      total       used       free    maxused    maxfree  nused  nfree name
+      65536       1152      64384       1072      64384      2      1 binder_heap_11
+  122592960    5658272  116934688    5695456  116907648    231     65 Umem
+encfs> [KENCFS_LONG_STRESS_PROGRESS elapsed_ms=120684 iterations=930 written_bytes=8814881 verified_bytes=17532068 worker0_iterations=439 worker1_iterations=491 errors=0 heap_used=5654320 heap_free=116938640
+encfs status
+encfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1
+encfs: wrapped=1 master_id=2 generation=3
+encfs> [Kps
+  PID GROUP PRI POLICY   TYPE    NPX STATE    EVENT     SIGMASK             STACK    USED FILLED COMMAND
+    0     0   0 FIFO     Kthread   - Ready              0000000000000000  0007984 0002120  26.5%  CPU0 IDLE
+    1     0 192 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001152   7.1%  hpwork 0x408eacc0 0x408ead40
+    2     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001152   7.1%  lpwork 0x408eac00 0x408eac80
+    4     0 100 RR       Kthread   - Ready              0000000000000000  0016112 0001616  10.0%  goldfish_gpu_fb_thread 0x40942ca0
+    5     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001680  10.4%  goldfish_gnss_thread 0x40dcae30
+    6     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001760  10.9%  goldfish_sensor_thread 0x409d59d0
+    7     7 100 RR       Task      - Running            0000000000000000  0016144 0005216  32.3%  nsh_main
+   10    10 100 RR       Task      - Waiting  Semaphore 0000000000000000  0007952 0003464  43.5%  kvdbd
+   11    11 100 RR       Task      - Waiting  Semaphore 0000000000000000  0016144 0003208  19.8%  servicemanager
+   12    12 100 RR       Task      - Waiting  Semaphore 0000000000000000  0016144 0002016  12.4%  adbd
+   13    13 100 RR       Task      - Waiting  Semaphore 0000000000020000  0016144 0002256  13.9%  telnetd
+   51    51 100 RR       Task      - Ready              0000000000000000  0032512 0011640  35.8%  lvgldemo widgets
+  105   105 100 RR       Task      - Waiting  Signal    0000000000000000  0016112 0004344  26.9%  encfs_test stress 180
+  110   105 100 RR       pthread   - Waiting  Mutex:111 0000000000000000  0007984 0005136  64.3%  encfs_test 0x40423a20 0x40e63c28
+  111   105 100 RR       pthread   - Ready              0000000000000000  0007984 0005184  64.9%  encfs_test 0x40423a20 0x40e63d18
+encfs> [Kfree
+      total       used       free    maxused    maxfree  nused  nfree name
+      65536       1152      64384       1072      64384      2      1 binder_heap_11
+  122592960    5656064  116936896    5695456  116907648    229     66 Umem
+encfs> [KENCFS_LONG_STRESS_PROGRESS elapsed_ms=150732 iterations=1159 written_bytes=11022860 verified_bytes=21924044 worker0_iterations=545 worker1_iterations=614 errors=0 heap_used=5657872 heap_free=116935088
+encfs status
+encfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1
+encfs: wrapped=1 master_id=2 generation=3
+encfs> [Kps
+  PID GROUP PRI POLICY   TYPE    NPX STATE    EVENT     SIGMASK             STACK    USED FILLED COMMAND
+    0     0   0 FIFO     Kthread   - Ready              0000000000000000  0007984 0002120  26.5%  CPU0 IDLE
+    1     0 192 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001152   7.1%  hpwork 0x408eacc0 0x408ead40
+    2     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001152   7.1%  lpwork 0x408eac00 0x408eac80
+    4     0 100 RR       Kthread   - Waiting  Signal    0000000000000000  0016112 0001616  10.0%  goldfish_gpu_fb_thread 0x40942ca0
+    5     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001680  10.4%  goldfish_gnss_thread 0x40dcae30
+    6     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001760  10.9%  goldfish_sensor_thread 0x409d59d0
+    7     7 100 RR       Task      - Running            0000000000000000  0016144 0005216  32.3%  nsh_main
+   10    10 100 RR       Task      - Waiting  Semaphore 0000000000000000  0007952 0003464  43.5%  kvdbd
+   11    11 100 RR       Task      - Waiting  Semaphore 0000000000000000  0016144 0003208  19.8%  servicemanager
+   12    12 100 RR       Task      - Waiting  Semaphore 0000000000000000  0016144 0002016  12.4%  adbd
+   13    13 100 RR       Task      - Waiting  Semaphore 0000000000020000  0016144 0002256  13.9%  telnetd
+   51    51 100 RR       Task      - Ready              0000000000000000  0032512 0011640  35.8%  lvgldemo widgets
+  105   105 100 RR       Task      - Waiting  Signal    0000000000000000  0016112 0004344  26.9%  encfs_test stress 180
+  110   105 100 RR       pthread   - Ready              0000000000000000  0007984 0005136  64.3%  encfs_test 0x40423a20 0x40e63c28
+  111   105 100 RR       pthread   - Waiting  Mutex:110 0000000000000000  0007984 0005184  64.9%  encfs_test 0x40423a20 0x40e63d18
+encfs> [Kfree
+      total       used       free    maxused    maxfree  nused  nfree name
+      65536       1152      64384       1072      64384      2      1 binder_heap_11
+  122592960    5659104  116933856    5695456  116907648    231     66 Umem
+encfs> [Kencfs status
+encfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1
+encfs: wrapped=1 master_id=2 generation=3
+encfs> [Kps
+  PID GROUP PRI POLICY   TYPE    NPX STATE    EVENT     SIGMASK             STACK    USED FILLED COMMAND
+    0     0   0 FIFO     Kthread   - Ready              0000000000000000  0007984 0002120  26.5%  CPU0 IDLE
+    1     0 192 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001152   7.1%  hpwork 0x408eacc0 0x408ead40
+    2     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001152   7.1%  lpwork 0x408eac00 0x408eac80
+    4     0 100 RR       Kthread   - Waiting  Signal    0000000000000000  0016112 0001616  10.0%  goldfish_gpu_fb_thread 0x40942ca0
+    5     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001680  10.4%  goldfish_gnss_thread 0x40dcae30
+    6     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001760  10.9%  goldfish_sensor_thread 0x409d59d0
+    7     7 100 RR       Task      - Running            0000000000000000  0016144 0005216  32.3%  nsh_main
+   10    10 100 RR       Task      - Waiting  Semaphore 0000000000000000  0007952 0003464  43.5%  kvdbd
+   11    11 100 RR       Task      - Waiting  Semaphore 0000000000000000  0016144 0003208  19.8%  servicemanager
+   12    12 100 RR       Task      - Waiting  Semaphore 0000000000000000  0016144 0002016  12.4%  adbd
+   13    13 100 RR       Task      - Waiting  Semaphore 0000000000020000  0016144 0002256  13.9%  telnetd
+   51    51 100 RR       Task      - Ready              0000000000000000  0032512 0011640  35.8%  lvgldemo widgets
+  105   105 100 RR       Task      - Waiting  Signal    0000000000000000  0016112 0004344  26.9%  encfs_test stress 180
+  110   105 100 RR       pthread   - Waiting  Mutex:111 0000000000000000  0007984 0005168  64.7%  encfs_test 0x40423a20 0x40e63c28
+  111   105 100 RR       pthread   - Ready              0000000000000000  0007984 0005184  64.9%  encfs_test 0x40423a20 0x40e63d18
+encfs> [Kfree
+      total       used       free    maxused    maxfree  nused  nfree name
+      65536       1152      64384       1072      64384      2      1 binder_heap_11
+  122592960    5659008  116933952    5695456  116907648    232     65 Umem
+encfs> [KENCFS_LONG_STRESS_PROGRESS elapsed_ms=180813 iterations=1396 written_bytes=13403409 verified_bytes=26660092 worker0_iterations=638 worker1_iterations=758 errors=0 heap_used=5371680 heap_free=117221280
+ENCFS_LONG_STRESS_RESULT requested_seconds=180 elapsed_ms=180813 workers=2 iterations=1396 written_bytes=13403409 verified_bytes=26660092 worker0_iterations=638 worker1_iterations=758 worker0_elapsed_ms=180365 worker1_elapsed_ms=180024 errors=0 completed=1 heap_before=5371680 heap_after=5371680
+[PASS] timed concurrent encrypted filesystem stress
+ENCFS_TEST_RESULT mode=stress pass=1 fail=0
+encfs status
+encfs: state=READY result=0 stage=0 error=0 cleanup=0/0 block=1 keyed=1 lower=0 upper=1
+encfs: wrapped=1 master_id=2 generation=3
+encfs> [Kps
+  PID GROUP PRI POLICY   TYPE    NPX STATE    EVENT     SIGMASK             STACK    USED FILLED COMMAND
+    0     0   0 FIFO     Kthread   - Ready              0000000000000000  0007984 0002120  26.5%  CPU0 IDLE
+    1     0 192 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001152   7.1%  hpwork 0x408eacc0 0x408ead40
+    2     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001152   7.1%  lpwork 0x408eac00 0x408eac80
+    4     0 100 RR       Kthread   - Waiting  Signal    0000000000000000  0016112 0001616  10.0%  goldfish_gpu_fb_thread 0x40942ca0
+    5     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001680  10.4%  goldfish_gnss_thread 0x40dcae30
+    6     0 100 RR       Kthread   - Waiting  Semaphore 0000000000000000  0016112 0001760  10.9%  goldfish_sensor_thread 0x409d59d0
+    7     7 100 RR       Task      - Running            0000000000000000  0016144 0005216  32.3%  nsh_main
+   10    10 100 RR       Task      - Waiting  Semaphore 0000000000000000  0007952 0003464  43.5%  kvdbd
+   11    11 100 RR       Task      - Waiting  Semaphore 0000000000000000  0016144 0003208  19.8%  servicemanager
+   12    12 100 RR       Task      - Waiting  Semaphore 0000000000000000  0016144 0002016  12.4%  adbd
+   13    13 100 RR       Task      - Waiting  Semaphore 0000000000020000  0016144 0002256  13.9%  telnetd
+   51    51 100 RR       Task      - Ready              0000000000000000  0032512 0011640  35.8%  lvgldemo widgets
+encfs> [Kfree
+      total       used       free    maxused    maxfree  nused  nfree name
+      65536       1152      64384       1072      64384      2      1 binder_heap_11
+  122592960    5351504  117241456    5695456  117178112    218     68 Umem
+encfs> [Kinput tap 950 35
+encfs> [Kfbcapture -d /dev/fb0 -o /share/b18d30-stress-007-analytics.bmp
+Taking screenshot of '/share/b18d30-stress-007-analytics.bmp' ...
+Success
+encfs> [Kinput tap 1160 35
+encfs> [Kfbcapture -d /dev/fb0 -o /share/b18d30-stress-007-shop.bmp
+Taking screenshot of '/share/b18d30-stress-007-shop.bmp' ...
+Success
+encfs> [Kcat /data/验证/密钥🔐.txt
+ENCFS_WRAP_UTF8_20261024_7df925ca
+encfs> [Kfbcapture -d /dev/fb0 -o /share/b18d30-after-wrapped-stress.bmp
+Taking screenshot of '/share/b18d30-after-wrapped-stress.bmp' ...
+Success
+encfs> [Kencfs stop
+encfs: state=STOPPED result=0 stage=0 error=0 cleanup=0/0 block=0 keyed=0 lower=0 upper=0
+encfs: wrapped=0 master_id=0 generation=0
+encfs> [K

@@ -9,6 +9,7 @@ retained on both success and failure.
 """
 
 import argparse
+import fcntl
 import hashlib
 import json
 import math
@@ -250,6 +251,15 @@ class Emulator:
         self.group = None
 
     def __enter__(self):
+        # The launcher stages common nuttx/ firmware symlinks. Independent
+        # guests can run concurrently after boot, but their staging and
+        # requested-artifact checks must be serialized across runners.
+        lock_path = self.args.source_root / ".repo" / "encfs-emulator-start.lock"
+        with lock_path.open("a+") as startup_lock:
+            fcntl.flock(startup_lock.fileno(), fcntl.LOCK_EX)
+            return self._start()
+
+    def _start(self):
         args = self.args
         command = [str(args.source_root / "run-emulator.sh"),
                    getattr(args, "config", CONFIG),
@@ -461,6 +471,8 @@ def parse_args(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--source-root", type=Path, default=source_default())
     parser.add_argument("--build-dir", type=Path)
+    parser.add_argument("--config", default=CONFIG,
+                        help="emulator configuration name matching the supplied build")
     parser.add_argument("--results-dir", type=Path)
     parser.add_argument("--boot-timeout", type=float, default=240)
     parser.add_argument("--command-timeout", type=float, default=240)
@@ -471,7 +483,7 @@ def parse_args(argv=None):
     if not 1 <= args.reboot_count <= 20:
         parser.error("--reboot-count must be between 1 and 20")
     args.source_root = args.source_root.resolve()
-    args.build_dir = (args.build_dir or args.source_root / "cmake_out" / ("vela_" + CONFIG)).resolve()
+    args.build_dir = (args.build_dir or args.source_root / "cmake_out" / ("vela_" + args.config)).resolve()
     stamp = datetime.now(SHANGHAI).strftime("%Y%m%d-%H%M%S") + "-" + uuid.uuid4().hex[:6]
     args.results_dir = (args.results_dir or args.source_root / "encfs-results" / stamp).resolve()
     for name in ("boot_timeout", "command_timeout", "shutdown_timeout"):
@@ -489,6 +501,7 @@ def main(argv=None):
         return 2
     args.results_dir.mkdir(parents=True, exist_ok=True)
     report = {"started_at": now(), "status": "running", "source_root": str(args.source_root),
+              "config": args.config,
               "build_dir": str(args.build_dir), "results_dir": str(args.results_dir),
               "phases": [], "limitations": [
                   "Raw-image searches check specified complete markers and names only.",

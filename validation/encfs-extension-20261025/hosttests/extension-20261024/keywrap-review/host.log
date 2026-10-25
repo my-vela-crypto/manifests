@@ -1,0 +1,46 @@
+{
+  "status": "passed",
+  "checks": 3248,
+  "single_bit_slot_mutations": 896,
+  "actual_sources": [
+    "fs/encfs/encfs_keywrap.c",
+    "fs/encfs/encfs_key.c",
+    "crypto/aes.c",
+    "crypto/cmac.c",
+    "crypto/aes_siv.c",
+    "crypto/hkdf.c",
+    "crypto/hmac.c",
+    "crypto/md5.c",
+    "crypto/sha1.c",
+    "crypto/sha2.c"
+  ],
+  "keywrap_sha256": "dc3787d072c2beb1c26b6d10e895adc8a6e314b8f30eb455c99473825a62a832",
+  "source_sha256": {
+    "fs/encfs/encfs_keywrap.c": "dc3787d072c2beb1c26b6d10e895adc8a6e314b8f30eb455c99473825a62a832",
+    "fs/encfs/encfs.h": "76b3259e15f52c57341f2f17ef7ebc60f4c9e2315c57952e0bce0a7085f4b247",
+    "fs/encfs/encfs_key.c": "da89685fdfe965ac44f9375d5f734b6d35b5b431e49ed1fa143570938ad3aad6",
+    "crypto/aes.c": "c685d685cb6125c2c0e8037b79ff90b8b065a08c827fe30f03f7975ceb2fa069",
+    "crypto/cmac.c": "05cf062291844ef75fe4b08848530fde5c88c4aa39a9ad3b7265698b1e6e4fee",
+    "crypto/aes_siv.c": "dec57963f557cd4b2f6c0193e800b135bc0169cad63d3104522b89691adfc056",
+    "crypto/hkdf.c": "50feff221045732fbfddf600bf01600cf580d264eea0826921f88b657654ec7f",
+    "crypto/hmac.c": "25dfa2f69b30ca579d8dde71491a29c015c2b40035a0721d4115a9c10a280494",
+    "crypto/md5.c": "efa9e373dfc16cd7ad2496a0dbc062e7a21e4b443fcb9cc9bcd6007ad498c6c7",
+    "crypto/sha1.c": "385349bf06468407f4c40858021b365dcdec14d30bda8d18082f08fcfc3b766c",
+    "crypto/sha2.c": "146d5e96620409a3d338e02b7e8bbdd5cb44b686ac9db6d857bfeccae521e03c",
+    "include/crypto/aes.h": "90a705533fc3add5138739fb321076f602219daa40cf06b79b078c4c19ebde4e",
+    "include/crypto/cmac.h": "2cb2617fb1c9f4080630ea2881cc03510f5f4da0077a8d28340f88d718c17d2c",
+    "include/crypto/md5.h": "2a0d02b0275eafd6dd30867c313f446e1f5e23596eadafb8170bdf2f7523cff8",
+    "include/crypto/sha1.h": "089380a86f561c6cad84f1ca6b967e4cb559b817b32561c0257a95fe40239492",
+    "include/crypto/sha2.h": "814c3c6ca3677b7d811c09a09bba763fa99ca59ad286d739233f44280b9297ff",
+    "include/crypto/hmac.h": "21b8b30eec39ff249f1e2c7c7a869d06587a890fb3cd057222aa56443e17e40b",
+    "include/nuttx/crypto/aes_siv.h": "7cb0761c2aa130e2d470765cc56e88d9bf51b2db640fb230a4217ff0b7aa45b9",
+    "include/nuttx/crypto/hkdf.h": "e9702c9b966913819a3095b8b48632cfb6282b057432cf3f6b3e300fa283bdfe",
+    "include/nuttx/fs/encfs.h": "ca4b16c3c74a31ad33c87b22aae86147b588ffe696d26f5ed6a02ad15e6e4b9e"
+  },
+  "sanitizer": "undefined behavior; fatal on first diagnostic",
+  "limits": [
+    "provider atomicity is modeled, not physical media",
+    "saved old slot and old master allow rollback",
+    "manager concurrency requires separate guest tests"
+  ]
+}

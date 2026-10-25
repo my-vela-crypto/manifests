@@ -1,0 +1,17 @@
+[2026-10-25T11:12:04+08:00] manual-key: booting encfs-manual-20261025-111204-e042cc53
+[2026-10-25T11:12:07+08:00] manual-key: passed
+[2026-10-25T11:12:07+08:00] manual-key-coldboot: booting encfs-manual-20261025-111204-e042cc53
+[2026-10-25T11:12:08+08:00] manual-key-coldboot: passed
+[2026-10-25T11:12:08+08:00] gui-music: booting encfs-gui-20261025-111204-e042cc53
+[2026-10-25T11:12:24+08:00] gui-music: passed
+[2026-10-25T11:12:24+08:00] gui-keypad: booting encfs-gui-20261025-111204-e042cc53
+[2026-10-25T11:12:34+08:00] gui-keypad: passed
+[2026-10-25T11:12:34+08:00] gui-stress-demo: booting encfs-gui-20261025-111204-e042cc53
+[2026-10-25T11:12:43+08:00] gui-stress-demo: passed
+[2026-10-25T11:12:43+08:00] gui-widgets-storage: booting encfs-gui-20261025-111204-e042cc53
+[2026-10-25T11:14:55+08:00] GUI + encrypted stress: 32 / 60 seconds
+[2026-10-25T11:15:23+08:00] GUI + encrypted stress: 60 / 60 seconds
+[2026-10-25T11:15:26+08:00] gui-widgets-storage: passed
+[2026-10-25T11:15:26+08:00] gui-persistence-coldboot: booting encfs-gui-20261025-111204-e042cc53
+[2026-10-25T11:15:39+08:00] gui-persistence-coldboot: passed
+Report: /home/tourist/Desktop/openvela/encfs-results/gui-extension-20261025-02/report.json
