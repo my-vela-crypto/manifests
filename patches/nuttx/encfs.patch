@@ -1,5 +1,5 @@
 diff --git a/crypto/CMakeLists.txt b/crypto/CMakeLists.txt
-index 84ca74307a548e6710c3403e63a66e42f1db139d..dc1874f5b6a669ee827c9de5469663371ecdd149 100644
+index 84ca74307a..dc1874f5b6 100644
 --- a/crypto/CMakeLists.txt
 +++ b/crypto/CMakeLists.txt
 @@ -40,6 +40,12 @@ if(CONFIG_CRYPTO)
@@ -16,7 +16,7 @@ index 84ca74307a548e6710c3403e63a66e42f1db139d..dc1874f5b6a669ee827c9de546966337
    list(APPEND SRCS blf.c)
    list(APPEND SRCS cast.c)
 diff --git a/crypto/Kconfig b/crypto/Kconfig
-index 6bf77de0800900b15a681b03622d3e9b091304b8..323cd2ccac0ee39efed166e283ca23f08510c766 100644
+index 6bf77de080..323cd2ccac 100644
 --- a/crypto/Kconfig
 +++ b/crypto/Kconfig
 @@ -15,6 +15,23 @@ config CRYPTO_AES
@@ -44,7 +44,7 @@ index 6bf77de0800900b15a681b03622d3e9b091304b8..323cd2ccac0ee39efed166e283ca23f0
  	bool "Perform automatic crypto algorithms test on startup"
  	default n
 diff --git a/crypto/Makefile b/crypto/Makefile
-index be3812ba8dfaf8705c57cdb4d1e6785d27839082..1d6756eec45a9fef208c25a990d76536c0dd07b5 100644
+index be3812ba8d..1d6756eec4 100644
 --- a/crypto/Makefile
 +++ b/crypto/Makefile
 @@ -43,6 +43,12 @@ endif
@@ -62,7 +62,7 @@ index be3812ba8dfaf8705c57cdb4d1e6785d27839082..1d6756eec45a9fef208c25a990d76536
  CRYPTO_CSRCS += cast.c
 diff --git a/crypto/aes_siv.c b/crypto/aes_siv.c
 new file mode 100644
-index 0000000000000000000000000000000000000000..d5c434894be6e8cf4c3b524ddeccc6e785322af1
+index 0000000000..d5c434894b
 --- /dev/null
 +++ b/crypto/aes_siv.c
 @@ -0,0 +1,255 @@
@@ -323,7 +323,7 @@ index 0000000000000000000000000000000000000000..d5c434894be6e8cf4c3b524ddeccc6e7
 +}
 diff --git a/crypto/hkdf.c b/crypto/hkdf.c
 new file mode 100644
-index 0000000000000000000000000000000000000000..093207a89c714dec0f851186deb96f55662dd0a2
+index 0000000000..093207a89c
 --- /dev/null
 +++ b/crypto/hkdf.c
 @@ -0,0 +1,119 @@
@@ -447,7 +447,7 @@ index 0000000000000000000000000000000000000000..093207a89c714dec0f851186deb96f55
 +  return 0;
 +}
 diff --git a/drivers/crypto/blkcrypt.c b/drivers/crypto/blkcrypt.c
-index 5a0a79b5f092f648e3d714e1cbd42cc4be0b9fc1..90fbea9ecfabbfd54c1ed516a34c592007fb3960 100644
+index 5a0a79b5f0..90fbea9ecf 100644
 --- a/drivers/crypto/blkcrypt.c
 +++ b/drivers/crypto/blkcrypt.c
 @@ -43,6 +43,7 @@
@@ -710,7 +710,7 @@ index 5a0a79b5f092f648e3d714e1cbd42cc4be0b9fc1..90fbea9ecfabbfd54c1ed516a34c5920
    return OK;
  }
 diff --git a/fs/Kconfig b/fs/Kconfig
-index ed0c0819c6afe712b95848418eab73da98942017..862d68ebac0200deb3cec63f4b42abb1e83be5e9 100644
+index ed0c0819c6..862d68ebac 100644
 --- a/fs/Kconfig
 +++ b/fs/Kconfig
 @@ -160,6 +160,8 @@ source "fs/procfs/Kconfig"
@@ -723,7 +723,7 @@ index ed0c0819c6afe712b95848418eab73da98942017..862d68ebac0200deb3cec63f4b42abb1
  source "fs/hostfs/Kconfig"
  source "fs/rpmsgfs/Kconfig"
 diff --git a/fs/Makefile b/fs/Makefile
-index a3421705cfdedf11d0675d677d02f2dd9934a93c..dd1c5eeb9e81d31a2ba0a887ff3e60b00208dc4b 100644
+index a3421705cf..dd1c5eeb9e 100644
 --- a/fs/Makefile
 +++ b/fs/Makefile
 @@ -60,6 +60,8 @@ include binfs/Make.defs
@@ -737,7 +737,7 @@ index a3421705cfdedf11d0675d677d02f2dd9934a93c..dd1c5eeb9e81d31a2ba0a887ff3e60b0
  include littlefs/Make.defs
 diff --git a/fs/encfs/CMakeLists.txt b/fs/encfs/CMakeLists.txt
 new file mode 100644
-index 0000000000000000000000000000000000000000..4058a6370a6ab1bba34fd2f98ddfe3f0611403fc
+index 0000000000..4058a6370a
 --- /dev/null
 +++ b/fs/encfs/CMakeLists.txt
 @@ -0,0 +1,11 @@
@@ -754,7 +754,7 @@ index 0000000000000000000000000000000000000000..4058a6370a6ab1bba34fd2f98ddfe3f0
 +endif()
 diff --git a/fs/encfs/Kconfig b/fs/encfs/Kconfig
 new file mode 100644
-index 0000000000000000000000000000000000000000..6c7eb6e1875b13ebec724e14ca684b1b7334469f
+index 0000000000..6c7eb6e187
 --- /dev/null
 +++ b/fs/encfs/Kconfig
 @@ -0,0 +1,38 @@
@@ -798,7 +798,7 @@ index 0000000000000000000000000000000000000000..6c7eb6e1875b13ebec724e14ca684b1b
 +endif
 diff --git a/fs/encfs/Make.defs b/fs/encfs/Make.defs
 new file mode 100644
-index 0000000000000000000000000000000000000000..a95c6db358233f58f1043e0d1891e7762504970c
+index 0000000000..a95c6db358
 --- /dev/null
 +++ b/fs/encfs/Make.defs
 @@ -0,0 +1,18 @@
@@ -822,7 +822,7 @@ index 0000000000000000000000000000000000000000..a95c6db358233f58f1043e0d1891e776
 +endif
 diff --git a/fs/encfs/README.md b/fs/encfs/README.md
 new file mode 100644
-index 0000000000000000000000000000000000000000..76ccd72317c911009a3e66fdc3781b3e26cd81a0
+index 0000000000..76ccd72317
 --- /dev/null
 +++ b/fs/encfs/README.md
 @@ -0,0 +1,167 @@
@@ -995,7 +995,7 @@ index 0000000000000000000000000000000000000000..76ccd72317c911009a3e66fdc3781b3e
 +and exclusion of test-provider controls from production builds.
 diff --git a/fs/encfs/encfs.h b/fs/encfs/encfs.h
 new file mode 100644
-index 0000000000000000000000000000000000000000..92143a04c9238bae4f864a2bebb355b0aef9a202
+index 0000000000..92143a04c9
 --- /dev/null
 +++ b/fs/encfs/encfs.h
 @@ -0,0 +1,73 @@
@@ -1074,7 +1074,7 @@ index 0000000000000000000000000000000000000000..92143a04c9238bae4f864a2bebb355b0
 +#endif /* __FS_ENCFS_ENCFS_H */
 diff --git a/fs/encfs/encfs_block_port.c b/fs/encfs/encfs_block_port.c
 new file mode 100644
-index 0000000000000000000000000000000000000000..8e80c601b316b8c72348268b0b1531d50a4fa99c
+index 0000000000..8e80c601b3
 --- /dev/null
 +++ b/fs/encfs/encfs_block_port.c
 @@ -0,0 +1,38 @@
@@ -1118,7 +1118,7 @@ index 0000000000000000000000000000000000000000..8e80c601b316b8c72348268b0b1531d5
 +}
 diff --git a/fs/encfs/encfs_key.c b/fs/encfs/encfs_key.c
 new file mode 100644
-index 0000000000000000000000000000000000000000..ba7582c2dcba64c18a4c40ebc60185b5ce14d17e
+index 0000000000..ba7582c2dc
 --- /dev/null
 +++ b/fs/encfs/encfs_key.c
 @@ -0,0 +1,157 @@
@@ -1281,7 +1281,7 @@ index 0000000000000000000000000000000000000000..ba7582c2dcba64c18a4c40ebc60185b5
 +#endif
 diff --git a/fs/encfs/encfs_keyfile.c b/fs/encfs/encfs_keyfile.c
 new file mode 100644
-index 0000000000000000000000000000000000000000..20a2b39049d21fa8bdd14e3f3a97b5238259d494
+index 0000000000..20a2b39049
 --- /dev/null
 +++ b/fs/encfs/encfs_keyfile.c
 @@ -0,0 +1,493 @@
@@ -1780,7 +1780,7 @@ index 0000000000000000000000000000000000000000..20a2b39049d21fa8bdd14e3f3a97b523
 +}
 diff --git a/fs/encfs/encfs_keywrap.c b/fs/encfs/encfs_keywrap.c
 new file mode 100644
-index 0000000000000000000000000000000000000000..07eba2e5fa8332f10a2895642cb3a845b5abfcd0
+index 0000000000..07eba2e5fa
 --- /dev/null
 +++ b/fs/encfs/encfs_keywrap.c
 @@ -0,0 +1,406 @@
@@ -2192,7 +2192,7 @@ index 0000000000000000000000000000000000000000..07eba2e5fa8332f10a2895642cb3a845
 +#endif
 diff --git a/fs/encfs/encfs_manager.c b/fs/encfs/encfs_manager.c
 new file mode 100644
-index 0000000000000000000000000000000000000000..3121d7f7d126e768c05c588557a53606fadcf6b8
+index 0000000000..3121d7f7d1
 --- /dev/null
 +++ b/fs/encfs/encfs_manager.c
 @@ -0,0 +1,874 @@
@@ -3072,7 +3072,7 @@ index 0000000000000000000000000000000000000000..3121d7f7d126e768c05c588557a53606
 +#endif
 diff --git a/fs/encfs/tests/test_keywrap.py b/fs/encfs/tests/test_keywrap.py
 new file mode 100644
-index 0000000000000000000000000000000000000000..ed208a23c6d612149ff4bdd8f357369923e931c2
+index 0000000000..ed208a23c6
 --- /dev/null
 +++ b/fs/encfs/tests/test_keywrap.py
 @@ -0,0 +1,334 @@
@@ -3412,7 +3412,7 @@ index 0000000000000000000000000000000000000000..ed208a23c6d612149ff4bdd8f3573699
 +    main()
 diff --git a/fs/encfs/tests/test_keywrap_adversarial.py b/fs/encfs/tests/test_keywrap_adversarial.py
 new file mode 100644
-index 0000000000000000000000000000000000000000..bdb1ad5cbc7b046b976d71a9c1f2a754c10f32b2
+index 0000000000..bdb1ad5cbc
 --- /dev/null
 +++ b/fs/encfs/tests/test_keywrap_adversarial.py
 @@ -0,0 +1,326 @@
@@ -3744,7 +3744,7 @@ index 0000000000000000000000000000000000000000..bdb1ad5cbc7b046b976d71a9c1f2a754
 +    main()
 diff --git a/fs/encpathfs/CMakeLists.txt b/fs/encpathfs/CMakeLists.txt
 new file mode 100644
-index 0000000000000000000000000000000000000000..53470fc4aa16bafd3df2dfc0b00bcc47edbb95e0
+index 0000000000..53470fc4aa
 --- /dev/null
 +++ b/fs/encpathfs/CMakeLists.txt
 @@ -0,0 +1,6 @@
@@ -3756,7 +3756,7 @@ index 0000000000000000000000000000000000000000..53470fc4aa16bafd3df2dfc0b00bcc47
 +endif()
 diff --git a/fs/encpathfs/Kconfig b/fs/encpathfs/Kconfig
 new file mode 100644
-index 0000000000000000000000000000000000000000..459e6ddb853071db306dd96cae37c618b3108008
+index 0000000000..459e6ddb85
 --- /dev/null
 +++ b/fs/encpathfs/Kconfig
 @@ -0,0 +1,19 @@
@@ -3781,7 +3781,7 @@ index 0000000000000000000000000000000000000000..459e6ddb853071db306dd96cae37c618
 +		mounts only validate existing metadata and never format data.
 diff --git a/fs/encpathfs/Make.defs b/fs/encpathfs/Make.defs
 new file mode 100644
-index 0000000000000000000000000000000000000000..be1f14d5194e8195048f67cc3a41d6b3a03a5cf9
+index 0000000000..be1f14d519
 --- /dev/null
 +++ b/fs/encpathfs/Make.defs
 @@ -0,0 +1,8 @@
@@ -3795,7 +3795,7 @@ index 0000000000000000000000000000000000000000..be1f14d5194e8195048f67cc3a41d6b3
 +endif
 diff --git a/fs/encpathfs/encpathfs.h b/fs/encpathfs/encpathfs.h
 new file mode 100644
-index 0000000000000000000000000000000000000000..c68a31303ed47cd23aa97b09f4d5c9b899a3d71f
+index 0000000000..c68a31303e
 --- /dev/null
 +++ b/fs/encpathfs/encpathfs.h
 @@ -0,0 +1,104 @@
@@ -3905,7 +3905,7 @@ index 0000000000000000000000000000000000000000..c68a31303ed47cd23aa97b09f4d5c9b8
 +#endif /* __FS_ENCPATHFS_ENCPATHFS_H */
 diff --git a/fs/encpathfs/encpathfs_codec.c b/fs/encpathfs/encpathfs_codec.c
 new file mode 100644
-index 0000000000000000000000000000000000000000..038e155911f5b9cc69fa3a8a76ea653e8318432e
+index 0000000000..038e155911
 --- /dev/null
 +++ b/fs/encpathfs/encpathfs_codec.c
 @@ -0,0 +1,281 @@
@@ -4192,7 +4192,7 @@ index 0000000000000000000000000000000000000000..038e155911f5b9cc69fa3a8a76ea653e
 +}
 diff --git a/fs/encpathfs/encpathfs_dir.c b/fs/encpathfs/encpathfs_dir.c
 new file mode 100644
-index 0000000000000000000000000000000000000000..321173c08843f21ffb6a6ea9229c4801c35d0bab
+index 0000000000..321173c088
 --- /dev/null
 +++ b/fs/encpathfs/encpathfs_dir.c
 @@ -0,0 +1,354 @@
@@ -4552,7 +4552,7 @@ index 0000000000000000000000000000000000000000..321173c08843f21ffb6a6ea9229c4801
 +}
 diff --git a/fs/encpathfs/encpathfs_file.c b/fs/encpathfs/encpathfs_file.c
 new file mode 100644
-index 0000000000000000000000000000000000000000..c75552f8f8473171b8e06b1ae57b9edaa5e3b6d6
+index 0000000000..c75552f8f8
 --- /dev/null
 +++ b/fs/encpathfs/encpathfs_file.c
 @@ -0,0 +1,346 @@
@@ -4904,7 +4904,7 @@ index 0000000000000000000000000000000000000000..c75552f8f8473171b8e06b1ae57b9eda
 +}
 diff --git a/fs/encpathfs/encpathfs_mount.c b/fs/encpathfs/encpathfs_mount.c
 new file mode 100644
-index 0000000000000000000000000000000000000000..9fa3e804a0be5e31b04e2e3a140e3e10d6ba811e
+index 0000000000..9fa3e804a0
 --- /dev/null
 +++ b/fs/encpathfs/encpathfs_mount.c
 @@ -0,0 +1,950 @@
@@ -5860,7 +5860,7 @@ index 0000000000000000000000000000000000000000..9fa3e804a0be5e31b04e2e3a140e3e10
 +}
 diff --git a/fs/encpathfs/encpathfs_path.c b/fs/encpathfs/encpathfs_path.c
 new file mode 100644
-index 0000000000000000000000000000000000000000..d25bc60dcbb3e53055e17ab9fe46525144cdb557
+index 0000000000..d25bc60dcb
 --- /dev/null
 +++ b/fs/encpathfs/encpathfs_path.c
 @@ -0,0 +1,170 @@
@@ -6036,7 +6036,7 @@ index 0000000000000000000000000000000000000000..d25bc60dcbb3e53055e17ab9fe465251
 +}
 diff --git a/fs/encpathfs/tests/test_utf8.py b/fs/encpathfs/tests/test_utf8.py
 new file mode 100644
-index 0000000000000000000000000000000000000000..979adea062959347e0c200d26ff13f4975c1934f
+index 0000000000..979adea062
 --- /dev/null
 +++ b/fs/encpathfs/tests/test_utf8.py
 @@ -0,0 +1,188 @@
@@ -6229,7 +6229,7 @@ index 0000000000000000000000000000000000000000..979adea062959347e0c200d26ff13f49
 +if __name__ == "__main__":
 +    main()
 diff --git a/fs/fatfs/fatfs_vfs.c b/fs/fatfs/fatfs_vfs.c
-index de175f1bb69289400a40778c84c0951169840678..f1ac5e383fee969c800346579440f07e2e8178e3 100644
+index de175f1bb6..f1ac5e383f 100644
 --- a/fs/fatfs/fatfs_vfs.c
 +++ b/fs/fatfs/fatfs_vfs.c
 @@ -32,6 +32,7 @@
@@ -6484,7 +6484,7 @@ index de175f1bb69289400a40778c84c0951169840678..f1ac5e383fee969c800346579440f07e
    nxmutex_destroy(&fs->lock);
    fs_heap_free(fs);
 diff --git a/fs/mount/fs_mount.c b/fs/mount/fs_mount.c
-index ea661513e3446ce46ec8e3e2611c4fae71e3c471..aa601029839fffc68affb4d80306ab0caab22476 100644
+index ea661513e3..aa60102983 100644
 --- a/fs/mount/fs_mount.c
 +++ b/fs/mount/fs_mount.c
 @@ -76,7 +76,7 @@
@@ -6618,7 +6618,7 @@ index ea661513e3446ce46ec8e3e2611c4fae71e3c471..aa601029839fffc68affb4d80306ab0c
  #ifndef CONFIG_DISABLE_PSEUDOFS_OPERATIONS
    RELEASE_SEARCH(&desc);
 diff --git a/fs/vfs/fs_dir.c b/fs/vfs/fs_dir.c
-index 6e094de7b7b5638a244fb76790658ae76bd3e962..6a1be898eb0a9ca079a7a15bb9cb5fec50257886 100644
+index 6e094de7b7..6a1be898eb 100644
 --- a/fs/vfs/fs_dir.c
 +++ b/fs/vfs/fs_dir.c
 @@ -306,11 +306,21 @@ static off_t seek_mountptdir(FAR struct file *filep, off_t offset)
@@ -6646,7 +6646,7 @@ index 6e094de7b7b5638a244fb76790658ae76bd3e962..6a1be898eb0a9ca079a7a15bb9cb5fec
          }
        else
 diff --git a/fs/vfs/fs_rename.c b/fs/vfs/fs_rename.c
-index 0f7dae6a7e561db5df3fd23f8e3db953e07e7544..b75229be42dc2aa54970ebb7b2d9da5a65386d19 100644
+index 0f7dae6a7e..b75229be42 100644
 --- a/fs/vfs/fs_rename.c
 +++ b/fs/vfs/fs_rename.c
 @@ -468,7 +468,8 @@ static int mountptrename(FAR const char *oldpath, FAR struct inode *oldinode,
@@ -6671,7 +6671,7 @@ index 0f7dae6a7e561db5df3fd23f8e3db953e07e7544..b75229be42dc2aa54970ebb7b2d9da5a
                     *
 diff --git a/include/nuttx/crypto/aes_siv.h b/include/nuttx/crypto/aes_siv.h
 new file mode 100644
-index 0000000000000000000000000000000000000000..645665a093009c4f50857dae4a0db891b2fc814a
+index 0000000000..645665a093
 --- /dev/null
 +++ b/include/nuttx/crypto/aes_siv.h
 @@ -0,0 +1,60 @@
@@ -6736,7 +6736,7 @@ index 0000000000000000000000000000000000000000..645665a093009c4f50857dae4a0db891
 +
 +#endif /* __INCLUDE_NUTTX_CRYPTO_AES_SIV_H */
 diff --git a/include/nuttx/crypto/blkcrypt.h b/include/nuttx/crypto/blkcrypt.h
-index 1cc32cbe9e56bea27d7f121ca47727a1d3516298..29c8614c06b16806192a977c6985d98ee5a41780 100644
+index 1cc32cbe9e..29c8614c06 100644
 --- a/include/nuttx/crypto/blkcrypt.h
 +++ b/include/nuttx/crypto/blkcrypt.h
 @@ -26,6 +26,7 @@
@@ -6767,7 +6767,7 @@ index 1cc32cbe9e56bea27d7f121ca47727a1d3516298..29c8614c06b16806192a977c6985d98e
  
 diff --git a/include/nuttx/crypto/hkdf.h b/include/nuttx/crypto/hkdf.h
 new file mode 100644
-index 0000000000000000000000000000000000000000..fb9ca2680ce46927279a7c734aaf611f4f330c91
+index 0000000000..fb9ca2680c
 --- /dev/null
 +++ b/include/nuttx/crypto/hkdf.h
 @@ -0,0 +1,50 @@
@@ -6823,7 +6823,7 @@ index 0000000000000000000000000000000000000000..fb9ca2680ce46927279a7c734aaf611f
 +#endif /* __INCLUDE_NUTTX_CRYPTO_HKDF_H */
 diff --git a/include/nuttx/fs/encfs.h b/include/nuttx/fs/encfs.h
 new file mode 100644
-index 0000000000000000000000000000000000000000..1ba0a69af50acc5ba6da7ebbd47b9aa509180c7f
+index 0000000000..1ba0a69af5
 --- /dev/null
 +++ b/include/nuttx/fs/encfs.h
 @@ -0,0 +1,198 @@
@@ -7027,7 +7027,7 @@ index 0000000000000000000000000000000000000000..1ba0a69af50acc5ba6da7ebbd47b9aa5
 +#endif /* __INCLUDE_NUTTX_FS_ENCFS_H */
 diff --git a/include/nuttx/fs/encpathfs.h b/include/nuttx/fs/encpathfs.h
 new file mode 100644
-index 0000000000000000000000000000000000000000..78c9f0b9d52bdc0ee09482c35f6f9c39909be5a3
+index 0000000000..78c9f0b9d5
 --- /dev/null
 +++ b/include/nuttx/fs/encpathfs.h
 @@ -0,0 +1,70 @@
@@ -7102,7 +7102,7 @@ index 0000000000000000000000000000000000000000..78c9f0b9d52bdc0ee09482c35f6f9c39
 +#endif
 +#endif /* __INCLUDE_NUTTX_FS_ENCPATHFS_H */
 diff --git a/include/nuttx/fs/fs.h b/include/nuttx/fs/fs.h
-index 0ad0c2f7959f63ae479fbe19b2c49c08cf7cea00..a6e7ce2e595c2ecf3c3d7d2c1244ee6b6649dff3 100644
+index 0ad0c2f795..a6e7ce2e59 100644
 --- a/include/nuttx/fs/fs.h
 +++ b/include/nuttx/fs/fs.h
 @@ -293,6 +293,8 @@ struct block_operations
@@ -7128,30 +7128,98 @@ index 0ad0c2f7959f63ae479fbe19b2c49c08cf7cea00..a6e7ce2e595c2ecf3c3d7d2c1244ee6b
  #endif /* CONFIG_DISABLE_MOUNTPOINT */
  
 diff --git a/tools/run-emulator.sh b/tools/run-emulator.sh
-index 6810f838e4d6803d0df7941fa4d967466cb348c3..e2ca0434d0874504e0247b51732a2f4aa9ac5180 100755
+index 6810f838e4..d5aff61943 100755
 --- a/tools/run-emulator.sh
 +++ b/tools/run-emulator.sh
-@@ -40,7 +40,7 @@ if [[ $# -gt 0 && "${1}" != -* ]]; then
+@@ -1,7 +1,7 @@
+ #!/usr/bin/env bash
+ #
+-# Stage CMake build artifacts for the Vela emulator, then invoke the upstream
+-# emulator.sh. Intended for out-of-tree (--cmake) builds whose outputs live
++# Stage CMake build artifacts for the Vela emulator, then invoke its board
++# launcher. Intended for out-of-tree (--cmake) builds whose outputs live
+ # under cmake_out/vela_<config>/ instead of nuttx/.
+ #
+ 
+@@ -17,7 +17,7 @@ usage() {
+   cat <<EOF
+ Usage: $(basename "$0") [config] [emulator options...]
+ 
+-Stage cmake_out/vela_<config>/ artifacts into nuttx/, then run emulator.sh.
++Stage cmake_out/vela_<config>/ artifacts into nuttx/, then run the Vela emulator.
+ 
+ Examples:
+   $(basename "$0")
+@@ -27,6 +27,9 @@ Examples:
+ 
+ Build first:
+   ./build.sh vendor/openvela/boards/vela/configs/<config>/ --cmake -j\$(nproc)
++
++VELA_BUILD_DIR overrides the build directory. Relative paths are resolved from
++the project root, so this launcher can be invoked from any working directory.
+ EOF
+ }
+ 
+@@ -40,7 +43,10 @@ if [[ $# -gt 0 && "${1}" != -* ]]; then
    shift
  fi
  
 -OUT="${TOP_DIR}/cmake_out/vela_${CONFIG}"
 +OUT="${VELA_BUILD_DIR:-${TOP_DIR}/cmake_out/vela_${CONFIG}}"
++if [[ "${OUT}" != /* ]]; then
++  OUT="${TOP_DIR}/${OUT}"
++fi
  NUTTX_DIR="${TOP_DIR}/nuttx"
  ARTIFACTS=(nuttx nuttx.bin vela_data.bin vela_system.bin)
  
-@@ -65,7 +65,7 @@ fi
+@@ -51,6 +57,8 @@ if [[ ! -d "${OUT}" ]]; then
+   exit 1
+ fi
  
++OUT="$(cd -- "${OUT}" && pwd -P)"
++
+ missing=()
+ for artifact in "${ARTIFACTS[@]}"; do
+   if [[ ! -e "${OUT}/${artifact}" ]]; then
+@@ -63,10 +71,32 @@ if [[ ${#missing[@]} -gt 0 ]]; then
+   exit 1
+ fi
+ 
++case "$(uname -s)" in
++  Linux) HOST_OS="linux" ;;
++  Darwin) HOST_OS="darwin" ;;
++  *) echo "Unsupported emulator host: $(uname -s)" >&2; exit 1 ;;
++esac
++
++case "$(uname -m)" in
++  x86_64) HOST_ARCH="x86_64" ;;
++  arm64|aarch64) HOST_ARCH="aarch64" ;;
++  *) echo "Unsupported emulator host architecture: $(uname -m)" >&2; exit 1 ;;
++esac
++
++TARGETDIR="${TOP_DIR}/vendor/openvela/boards/${BOARD}"
++EMULATOR_BIN="${TOP_DIR}/prebuilts/emulator/${HOST_OS}-${HOST_ARCH}/emulator"
++if [[ ! -x "${EMULATOR_BIN}" ]]; then
++  echo "Emulator binary not found or not executable: ${EMULATOR_BIN}" >&2
++  exit 1
++fi
++
  mkdir -p "${NUTTX_DIR}"
  for artifact in "${ARTIFACTS[@]}"; do
 -  ln -sf "../cmake_out/vela_${CONFIG}/${artifact}" "${NUTTX_DIR}/${artifact}"
-+  ln -sf "${OUT}/${artifact}" "${NUTTX_DIR}/${artifact}"
++  # Relative links survive moving the checkout to another machine. Replace old
++  # links without following a stale link to a directory.
++  ln -sfnrT -- "${OUT}/${artifact}" "${NUTTX_DIR}/${artifact}"
  done
  
- echo "Staged emulator artifacts from cmake_out/vela_${CONFIG}/"
+-echo "Staged emulator artifacts from cmake_out/vela_${CONFIG}/"
+-exec "${TOP_DIR}/emulator.sh" "${BOARD}" "$@"
++echo "Staged emulator artifacts from ${OUT}"
++export TOP_DIR TARGETDIR EMULATOR_BIN HOST_OS HOST_ARCH
++exec bash "${TARGETDIR}/prebuilts/tools/run_emulator.sh" "$@"
 diff --git a/tools/tests/.gitignore b/tools/tests/.gitignore
 new file mode 100644
-index 0000000000000000000000000000000000000000..7a60b85e148f80966a550e5ab6a762a907c69ca6
+index 0000000000..7a60b85e14
 --- /dev/null
 +++ b/tools/tests/.gitignore
 @@ -0,0 +1,2 @@
@@ -7159,7 +7227,7 @@ index 0000000000000000000000000000000000000000..7a60b85e148f80966a550e5ab6a762a9
 +*.pyc
 diff --git a/tools/tests/encfs_crypto/README.md b/tools/tests/encfs_crypto/README.md
 new file mode 100644
-index 0000000000000000000000000000000000000000..3f90ec09c2b0e553a548e98ce03c8458da457b8b
+index 0000000000..3f90ec09c2
 --- /dev/null
 +++ b/tools/tests/encfs_crypto/README.md
 @@ -0,0 +1,90 @@
@@ -7255,7 +7323,7 @@ index 0000000000000000000000000000000000000000..3f90ec09c2b0e553a548e98ce03c8458
 +are changed by this behavior.
 diff --git a/tools/tests/encfs_crypto/test_blkcrypt.c b/tools/tests/encfs_crypto/test_blkcrypt.c
 new file mode 100644
-index 0000000000000000000000000000000000000000..0e19df0c8913ae13e68954a7410450f2d82a3ec6
+index 0000000000..0e19df0c89
 --- /dev/null
 +++ b/tools/tests/encfs_crypto/test_blkcrypt.c
 @@ -0,0 +1,377 @@
@@ -7638,7 +7706,7 @@ index 0000000000000000000000000000000000000000..0e19df0c8913ae13e68954a7410450f2
 +}
 diff --git a/tools/tests/encfs_crypto/test_blkcrypt.py b/tools/tests/encfs_crypto/test_blkcrypt.py
 new file mode 100644
-index 0000000000000000000000000000000000000000..16c6a352cf8b5f8419cd03028c5c4ed80e01cf2d
+index 0000000000..16c6a352cf
 --- /dev/null
 +++ b/tools/tests/encfs_crypto/test_blkcrypt.py
 @@ -0,0 +1,101 @@
@@ -7745,7 +7813,7 @@ index 0000000000000000000000000000000000000000..16c6a352cf8b5f8419cd03028c5c4ed8
 +    main()
 diff --git a/tools/tests/encfs_crypto/test_crypto.py b/tools/tests/encfs_crypto/test_crypto.py
 new file mode 100644
-index 0000000000000000000000000000000000000000..1e949e22e48636f2da9b76ba7956b75ecb77e4ca
+index 0000000000..1e949e22e4
 --- /dev/null
 +++ b/tools/tests/encfs_crypto/test_crypto.py
 @@ -0,0 +1,288 @@
@@ -8039,7 +8107,7 @@ index 0000000000000000000000000000000000000000..1e949e22e48636f2da9b76ba7956b75e
 +    main()
 diff --git a/tools/tests/encfs_crypto/test_directory_rewind.py b/tools/tests/encfs_crypto/test_directory_rewind.py
 new file mode 100644
-index 0000000000000000000000000000000000000000..fd90b023023a9d7fa03b4c913547cb2e3a9c08e5
+index 0000000000..fd90b02302
 --- /dev/null
 +++ b/tools/tests/encfs_crypto/test_directory_rewind.py
 @@ -0,0 +1,292 @@
@@ -8337,7 +8405,7 @@ index 0000000000000000000000000000000000000000..fd90b023023a9d7fa03b4c913547cb2e
 +    main()
 diff --git a/tools/tests/encfs_crypto/test_vfs_lifecycle.py b/tools/tests/encfs_crypto/test_vfs_lifecycle.py
 new file mode 100644
-index 0000000000000000000000000000000000000000..f484ea0a4071aa731e042fb2d856584f86350151
+index 0000000000..f484ea0a40
 --- /dev/null
 +++ b/tools/tests/encfs_crypto/test_vfs_lifecycle.py
 @@ -0,0 +1,333 @@
@@ -8676,7 +8744,7 @@ index 0000000000000000000000000000000000000000..f484ea0a4071aa731e042fb2d856584f
 +    main()
 diff --git a/tools/tests/encfs_manager/README.md b/tools/tests/encfs_manager/README.md
 new file mode 100644
-index 0000000000000000000000000000000000000000..65614b283ff83275910399cac550a22f3bc7a2e2
+index 0000000000..65614b283f
 --- /dev/null
 +++ b/tools/tests/encfs_manager/README.md
 @@ -0,0 +1,43 @@
@@ -8725,7 +8793,7 @@ index 0000000000000000000000000000000000000000..65614b283ff83275910399cac550a22f
 +that default outside such a sandbox.
 diff --git a/tools/tests/encfs_manager/run_host_tests.sh b/tools/tests/encfs_manager/run_host_tests.sh
 new file mode 100755
-index 0000000000000000000000000000000000000000..93ce939dcc9bac19df24c5947c877046d9f60caf
+index 0000000000..93ce939dcc
 --- /dev/null
 +++ b/tools/tests/encfs_manager/run_host_tests.sh
 @@ -0,0 +1,29 @@
@@ -8760,7 +8828,7 @@ index 0000000000000000000000000000000000000000..93ce939dcc9bac19df24c5947c877046
 +  "$build_dir/test_manager"
 diff --git a/tools/tests/encfs_manager/shim/inode/inode.h b/tools/tests/encfs_manager/shim/inode/inode.h
 new file mode 100644
-index 0000000000000000000000000000000000000000..b19a1d39cb37ca2938edbdb443918de6e75fa90f
+index 0000000000..b19a1d39cb
 --- /dev/null
 +++ b/tools/tests/encfs_manager/shim/inode/inode.h
 @@ -0,0 +1,26 @@
@@ -8792,7 +8860,7 @@ index 0000000000000000000000000000000000000000..b19a1d39cb37ca2938edbdb443918de6
 +#endif
 diff --git a/tools/tests/encfs_manager/shim/nuttx/board.h b/tools/tests/encfs_manager/shim/nuttx/board.h
 new file mode 100644
-index 0000000000000000000000000000000000000000..8854b9bd58ed15eba44113b064adc72bae7cf5d2
+index 0000000000..8854b9bd58
 --- /dev/null
 +++ b/tools/tests/encfs_manager/shim/nuttx/board.h
 @@ -0,0 +1,6 @@
@@ -8804,7 +8872,7 @@ index 0000000000000000000000000000000000000000..8854b9bd58ed15eba44113b064adc72b
 +#endif
 diff --git a/tools/tests/encfs_manager/shim/nuttx/compiler.h b/tools/tests/encfs_manager/shim/nuttx/compiler.h
 new file mode 100644
-index 0000000000000000000000000000000000000000..f3dcd864f492fe798048374351fba8071bac1874
+index 0000000000..f3dcd864f4
 --- /dev/null
 +++ b/tools/tests/encfs_manager/shim/nuttx/compiler.h
 @@ -0,0 +1,5 @@
@@ -8815,7 +8883,7 @@ index 0000000000000000000000000000000000000000..f3dcd864f492fe798048374351fba807
 +#endif
 diff --git a/tools/tests/encfs_manager/shim/nuttx/config.h b/tools/tests/encfs_manager/shim/nuttx/config.h
 new file mode 100644
-index 0000000000000000000000000000000000000000..4eb54993c3ff165881486673533f035fc1cc11e5
+index 0000000000..4eb54993c3
 --- /dev/null
 +++ b/tools/tests/encfs_manager/shim/nuttx/config.h
 @@ -0,0 +1,9 @@
@@ -8830,7 +8898,7 @@ index 0000000000000000000000000000000000000000..4eb54993c3ff165881486673533f035f
 +#endif
 diff --git a/tools/tests/encfs_manager/shim/nuttx/fs/fs.h b/tools/tests/encfs_manager/shim/nuttx/fs/fs.h
 new file mode 100644
-index 0000000000000000000000000000000000000000..b7c0ee0fd07d63930200bdae8099eab604961e77
+index 0000000000..b7c0ee0fd0
 --- /dev/null
 +++ b/tools/tests/encfs_manager/shim/nuttx/fs/fs.h
 @@ -0,0 +1,28 @@
@@ -8864,7 +8932,7 @@ index 0000000000000000000000000000000000000000..b7c0ee0fd07d63930200bdae8099eab6
 +#endif
 diff --git a/tools/tests/encfs_manager/shim/nuttx/mutex.h b/tools/tests/encfs_manager/shim/nuttx/mutex.h
 new file mode 100644
-index 0000000000000000000000000000000000000000..e75ee123e6f0b3797cf435775649840f5ca0947a
+index 0000000000..e75ee123e6
 --- /dev/null
 +++ b/tools/tests/encfs_manager/shim/nuttx/mutex.h
 @@ -0,0 +1,15 @@
@@ -8885,7 +8953,7 @@ index 0000000000000000000000000000000000000000..e75ee123e6f0b3797cf435775649840f
 +#endif
 diff --git a/tools/tests/encfs_manager/test_manager.c b/tools/tests/encfs_manager/test_manager.c
 new file mode 100644
-index 0000000000000000000000000000000000000000..44838745e5a4118d6e52b36104116465e923b266
+index 0000000000..44838745e5
 --- /dev/null
 +++ b/tools/tests/encfs_manager/test_manager.c
 @@ -0,0 +1,557 @@
@@ -9448,7 +9516,7 @@ index 0000000000000000000000000000000000000000..44838745e5a4118d6e52b36104116465
 +}
 diff --git a/tools/tests/encpathfs/README.md b/tools/tests/encpathfs/README.md
 new file mode 100644
-index 0000000000000000000000000000000000000000..f36c928aaee7d46be021352107189b5ab24af7d2
+index 0000000000..f36c928aae
 --- /dev/null
 +++ b/tools/tests/encpathfs/README.md
 @@ -0,0 +1,43 @@
@@ -9497,7 +9565,7 @@ index 0000000000000000000000000000000000000000..f36c928aaee7d46be021352107189b5a
 +```
 diff --git a/tools/tests/encpathfs/test_encpathfs.py b/tools/tests/encpathfs/test_encpathfs.py
 new file mode 100644
-index 0000000000000000000000000000000000000000..52f000fa4a0440724323aa3baeca398a4e39cf94
+index 0000000000..52f000fa4a
 --- /dev/null
 +++ b/tools/tests/encpathfs/test_encpathfs.py
 @@ -0,0 +1,287 @@
@@ -9788,3 +9856,146 @@ index 0000000000000000000000000000000000000000..52f000fa4a0440724323aa3baeca398a
 +
 +if __name__ == "__main__":
 +    main()
+diff --git a/tools/tests/test_run_emulator_paths.py b/tools/tests/test_run_emulator_paths.py
+new file mode 100644
+index 0000000000..9f6eddb831
+--- /dev/null
++++ b/tools/tests/test_run_emulator_paths.py
+@@ -0,0 +1,137 @@
++#!/usr/bin/env python3
++"""Exercise launcher relocation with fake firmware and a stub emulator."""
++
++import os
++from pathlib import Path
++import shutil
++import subprocess
++import tempfile
++import unittest
++
++
++LAUNCHER = Path(__file__).resolve().parents[1] / "run-emulator.sh"
++ARTIFACTS = ("nuttx", "nuttx.bin", "vela_data.bin", "vela_system.bin")
++
++
++class LauncherPaths(unittest.TestCase):
++    def setUp(self):
++        self.temp = tempfile.TemporaryDirectory(prefix="vela launcher paths ")
++        self.addCleanup(self.temp.cleanup)
++        self.base = Path(self.temp.name)
++        self.root = self.base / "original checkout"
++        (self.root / "nuttx/tools").mkdir(parents=True)
++        shutil.copy2(LAUNCHER, self.root / "nuttx/tools/run-emulator.sh")
++        host_os = {"Linux": "linux", "Darwin": "darwin"}[os.uname().sysname]
++        host_arch = {"x86_64": "x86_64", "arm64": "aarch64", "aarch64": "aarch64"}[
++            os.uname().machine
++        ]
++        self.emulator_relative = Path("prebuilts/emulator") / f"{host_os}-{host_arch}/emulator"
++        emulator = self.root / self.emulator_relative
++        emulator.parent.mkdir(parents=True)
++        emulator.write_text('#!/usr/bin/env bash\nprintf "%s\\n" "$@" > "$CAPTURE"\n')
++        emulator.chmod(0o755)
++        board_launcher = self.root / "vendor/openvela/boards/vela/prebuilts/tools/run_emulator.sh"
++        board_launcher.parent.mkdir(parents=True)
++        board_launcher.write_text(
++            '#!/usr/bin/env bash\n'
++            'printf "%s\\n" "$TOP_DIR" "$TARGETDIR" "$EMULATOR_BIN" > "$CONTEXT_CAPTURE"\n'
++            'exec "$EMULATOR_BIN" "$@"\n'
++        )
++        self.capture = self.base / "emulator args"
++        self.context_capture = self.base / "emulator context"
++        self.outside = self.base / "unrelated working directory"
++        self.outside.mkdir()
++
++    def firmware(self, output):
++        output.mkdir(parents=True)
++        for artifact in ARTIFACTS:
++            (output / artifact).write_text("firmware: " + artifact)
++        return output
++
++    def launch(self, *args, build_dir=None, check=True):
++        env = os.environ.copy()
++        env.pop("VELA_BUILD_DIR", None)
++        env["CAPTURE"] = str(self.capture)
++        env["CONTEXT_CAPTURE"] = str(self.context_capture)
++        if build_dir is not None:
++            env["VELA_BUILD_DIR"] = str(build_dir)
++        return subprocess.run(
++            [str(self.root / "nuttx/tools/run-emulator.sh"), *args],
++            cwd=self.outside, env=env, check=check,
++            stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True,
++        )
++
++    def assert_staged(self, output):
++        for artifact in ARTIFACTS:
++            staged = self.root / "nuttx" / artifact
++            self.assertTrue(staged.is_symlink(), staged)
++            self.assertFalse(os.path.isabs(os.readlink(staged)), staged)
++            self.assertEqual(staged.resolve(), output / artifact)
++            self.assertEqual(staged.read_text(), "firmware: " + artifact)
++        self.assertEqual(
++            self.context_capture.read_text().splitlines(),
++            [str(self.root), str(self.root / "vendor/openvela/boards/vela"),
++             str(self.root / self.emulator_relative)],
++        )
++
++    def test_default_outside_cwd_replaces_stale_links_and_survives_move(self):
++        self.firmware(self.root / "cmake_out/vela_goldfish-arm64-v8a-ap")
++        for artifact in ARTIFACTS:
++            (self.root / "nuttx" / artifact).symlink_to(
++                "/unavailable/previous/computer/" + artifact
++            )
++        self.launch("-no-window")
++        self.assert_staged(self.root / "cmake_out/vela_goldfish-arm64-v8a-ap")
++        self.assertEqual(self.capture.read_text().splitlines(), ["-no-window"])
++        destination = self.base / "another computer checkout"
++        self.root.rename(destination)
++        self.root = destination
++        # Read through the copied links before relaunching, so relocation is
++        # tested independently of a launcher's ability to refresh them.
++        for artifact in ARTIFACTS:
++            staged = self.root / "nuttx" / artifact
++            self.assertEqual(staged.read_text(), "firmware: " + artifact)
++        self.launch("-no-window")
++        self.assert_staged(self.root / "cmake_out/vela_goldfish-arm64-v8a-ap")
++
++    def test_relative_override_with_spaces_and_argument_forwarding(self):
++        output = self.firmware(self.root / "custom build/firmware output")
++        self.launch(
++            "goldfish-armeabi-v7a-ap", "-keep", "demo with spaces", "-no-window",
++            build_dir="custom build/firmware output",
++        )
++        self.assert_staged(output)
++        self.assertEqual(
++            self.capture.read_text().splitlines(),
++            ["-keep", "demo with spaces", "-no-window"],
++        )
++
++    def test_absolute_override_replaces_symlink_to_directory(self):
++        output = self.firmware(self.base / "external build with spaces")
++        old_dir = self.base / "old staging target"
++        old_dir.mkdir()
++        (self.root / "nuttx/nuttx").symlink_to(old_dir, target_is_directory=True)
++        self.launch(build_dir=output)
++        self.assert_staged(output)
++        self.assertEqual(list(old_dir.iterdir()), [])
++
++    def test_missing_firmware_does_not_start_emulator(self):
++        output = self.firmware(self.root / "partial build")
++        (output / "vela_data.bin").unlink()
++        result = self.launch(build_dir="partial build", check=False)
++        self.assertNotEqual(result.returncode, 0)
++        self.assertIn("vela_data.bin", result.stderr)
++        self.assertFalse(self.capture.exists())
++
++    def test_missing_emulator_does_not_stage_or_start(self):
++        self.firmware(self.root / "cmake_out/vela_goldfish-arm64-v8a-ap")
++        (self.root / self.emulator_relative).unlink()
++        result = self.launch(check=False)
++        self.assertNotEqual(result.returncode, 0)
++        self.assertIn("Emulator binary not found", result.stderr)
++        self.assertFalse((self.root / "nuttx/nuttx").is_symlink())
++        self.assertFalse(self.capture.exists())
++
++
++if __name__ == "__main__":
++    unittest.main()

@@ -155,11 +155,11 @@ Guest 合计 **169 个检查通过、0 失败**。前期失败日志保留在旧
 
 最终验收时间：2026-10-22T22:57:52+08:00 至 2026-10-22T22:57:56+08:00。
 
-独立路径层数据盘：`/home/tourist/Desktop/openvela/encfs-results/acceptance-02/avd/encfs-plain-20261022-225752-72fb805f.vvd/vela_data.bin`。
+独立路径层数据盘：`encfs-results/acceptance-02/avd/encfs-plain-20261022-225752-72fb805f.vvd/vela_data.bin`。
 
 Host 直接解析 exFAT 的已分配目录项，根目录包含 `.p` 与 `.encfs.meta`，`.p` 下实际名称为 `E1_...` 编码串，测试内容仍以明文存在。这单独证明了第二层的名称转换，避免只用块加密后的不可见性代替第二层验证。
 
-完整加密数据盘：`/home/tourist/Desktop/openvela/encfs-results/acceptance-02/avd/encfs-crypt-20261022-225752-72fb805f.vvd/vela_data.bin`。
+完整加密数据盘：`encfs-results/acceptance-02/avd/encfs-crypt-20261022-225752-72fb805f.vvd/vela_data.bin`。
 
 Host 对停止后的实际运行镜像检查：完整测试内容、`secret.txt` 的 ASCII/UTF-16LE 名称、编码名称前缀以及明文 exFAT 头均不可见。两次启动之间确认同一数据盘没有被替换，重启读回后仍保持同一 SHA-256：
 

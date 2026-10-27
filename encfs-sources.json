@@ -3,12 +3,12 @@
   "patches": {
     "nuttx": {
       "file": "patches/nuttx/encfs.patch",
-      "sha256": "7249672a8f6912bc802fcb9a1f145b635f3dd1188c06df1155c4a33561cb9d95",
+      "sha256": "313ee60a7720cd805dd5df483ff47122a26b8c3a2274c776e2625d8a1c1fdc2e",
       "base": "52939a185be4c940c83c843ae1f0b076f3d1d861"
     },
     "vendor/openvela": {
       "file": "patches/vendor_openvela/encfs.patch",
-      "sha256": "1036132fa37edda1fc6be643cb154cdd1c85f22a336372e9ee6956bfb6d26a45",
+      "sha256": "1c14d3d67d72a001faf72afb17acacea709dbd6a40e24c515326fb8cf32819d1",
       "base": "4351221032aa88cb9da86336c53afe0cb6159e3e"
     }
   },

@@ -1,0 +1,27 @@
+{
+  "schema": 1,
+  "status": "passed",
+  "unit_tests": {
+    "launcher_paths": 5,
+    "board_arguments": 6,
+    "demo_cli": 7
+  },
+  "emulator": {
+    "online_rekey_pass": 28,
+    "online_rekey_fail": 0,
+    "same_disk_coldboot": "passed",
+    "chinese_path_readback": "passed",
+    "report_sha256": "e14a02842e1a1aeb1d7b7a2749561e6a3afd63a914992eab9a44dd56ae9e5afb",
+    "serial_sha256": {
+      "coldboot.serial.log": "6e69a9cc9f70640d3b510305031e2a4c6a5c28d870c3b6c38d2f62133b8fa63a",
+      "create-and-rekey.serial.log": "8b8dabec1daa126e872332c6d2121d0b742548f3842c36ea2f7079182a445c1e"
+    }
+  },
+  "guest_source_revision": "04264dc9a71be9dba96c4321bc5d7770e79d2dca",
+  "launcher_revision": "912b95a5e4a258d763c61338a51c0443815c212b",
+  "files": {
+    ".repo/manifests/tools/encfs_demo.py": "89b4304209ff531dbce954627410fae40c17a70bf0d4544f18ac41895d7f4ebf",
+    "nuttx/tools/run-emulator.sh": "6e12ba32f90a28f662bb887809800162142c7ea68fb770f721361b2e89eff060",
+    "vendor/openvela/boards/vela/prebuilts/tools/run_emulator.sh": "44ef76a1e8c9f8ce0cd7083d2ddedc2e26cdd17829dd13b62c685ad5b111fd6b"
+  }
+}

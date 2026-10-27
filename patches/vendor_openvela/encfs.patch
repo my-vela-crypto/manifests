@@ -1,5 +1,5 @@
 diff --git a/boards/vela/CMakeLists.txt b/boards/vela/CMakeLists.txt
-index 871399093185e58be7b3a397889a1b47357de677..cdec0336bf819cd3d014f0677fc89ef2e0022ae9 100644
+index 8713990..cdec033 100644
 --- a/boards/vela/CMakeLists.txt
 +++ b/boards/vela/CMakeLists.txt
 @@ -107,14 +107,24 @@ if(qemu_args_str)
@@ -37,7 +37,7 @@ index 871399093185e58be7b3a397889a1b47357de677..cdec0336bf819cd3d014f0677fc89ef2
    add_custom_target(
 diff --git a/boards/vela/configs/goldfish-arm64-v8a-ap-encfs-extended/defconfig b/boards/vela/configs/goldfish-arm64-v8a-ap-encfs-extended/defconfig
 new file mode 100644
-index 0000000000000000000000000000000000000000..7c34532767b61800c0d1ce837a5b588aed20f455
+index 0000000..7c34532
 --- /dev/null
 +++ b/boards/vela/configs/goldfish-arm64-v8a-ap-encfs-extended/defconfig
 @@ -0,0 +1,94 @@
@@ -137,7 +137,7 @@ index 0000000000000000000000000000000000000000..7c34532767b61800c0d1ce837a5b588a
 +CONFIG_UART_PL011=y
 diff --git a/boards/vela/configs/goldfish-arm64-v8a-ap-encfs-gui/defconfig b/boards/vela/configs/goldfish-arm64-v8a-ap-encfs-gui/defconfig
 new file mode 100644
-index 0000000000000000000000000000000000000000..6cc1a7cdad8284fa91df270178b0cc43a8cff34e
+index 0000000..6cc1a7c
 --- /dev/null
 +++ b/boards/vela/configs/goldfish-arm64-v8a-ap-encfs-gui/defconfig
 @@ -0,0 +1,339 @@
@@ -482,7 +482,7 @@ index 0000000000000000000000000000000000000000..6cc1a7cdad8284fa91df270178b0cc43
 +CONFIG_GRAPHICS_INPUT_TOOL=y
 diff --git a/boards/vela/configs/goldfish-arm64-v8a-ap-encfs/defconfig b/boards/vela/configs/goldfish-arm64-v8a-ap-encfs/defconfig
 new file mode 100644
-index 0000000000000000000000000000000000000000..4d8adcbae5926f8e49142e844af14a77553753e6
+index 0000000..4d8adcb
 --- /dev/null
 +++ b/boards/vela/configs/goldfish-arm64-v8a-ap-encfs/defconfig
 @@ -0,0 +1,76 @@
@@ -563,30 +563,115 @@ index 0000000000000000000000000000000000000000..4d8adcbae5926f8e49142e844af14a77
 +CONFIG_UART1_SERIAL_CONSOLE=y
 +CONFIG_UART_PL011=y
 diff --git a/boards/vela/prebuilts/tools/run_emulator.sh b/boards/vela/prebuilts/tools/run_emulator.sh
-index 498c5f257e0f81d713274ad79dd9f3551a448321..fa7562e7e646402d680d327c7092d3dbe3ab79a7 100755
+index 498c5f2..0ccdb8c 100755
 --- a/boards/vela/prebuilts/tools/run_emulator.sh
 +++ b/boards/vela/prebuilts/tools/run_emulator.sh
-@@ -33,7 +33,7 @@ fi
+@@ -1,3 +1,4 @@
++#!/usr/bin/env bash
+ ############################################################################
+ # vendor/openvela/boards/vela/prebuilts/tools/run_emulator.sh
+ #
+@@ -18,9 +19,11 @@
+ #
+ ############################################################################
+ 
++set -e
++
+ NUTTX_BIN="${TOP_DIR}/nuttx/nuttx"
+ 
+-if [ ! -e ${NUTTX_BIN} ]; then
++if [ ! -e "${NUTTX_BIN}" ]; then
+   echo "NuttX binary not found. Build with the following command:"
+   echo "[arm]"
+   echo "./build.sh vendor/openvela/boards/vela/configs/goldfish-armeabi-v7a-ap"
+@@ -28,21 +31,15 @@ if [ ! -e ${NUTTX_BIN} ]; then
+   echo "./build.sh vendor/openvela/boards/vela/configs/goldfish-arm64-v8a-ap"
+   echo "[x86_64]"
+   echo "./build.sh vendor/openvela/boards/vela/configs/goldfish-x86_64-ap"
+-  exit
++  exit 1
+ fi
  
  # default variables
  
 -AVD_HOME="${HOME}/.vela/vvd"
 +AVD_HOME="${ANDROID_AVD_HOME:-${HOME}/.vela/vvd}"
  AVD_NAME="Vela_Generic_Device"
- AVD_DISPLAY_NAME=$(echo ${AVD_NAME} | tr '_' ' ')
+-AVD_DISPLAY_NAME=$(echo ${AVD_NAME} | tr '_' ' ')
+-
+-AVD_PATH_REL="avd/${AVD_NAME}.vvd"
+-
+-INDEX_PROVIDED=false
+-QEMU_OPTION="-qemu"
+-ARG_OPTION=""
+-GOLDFISH_OPTION=""
++QEMU_OPTION=(-qemu)
++ARG_OPTION=()
  
-@@ -89,13 +89,20 @@ HOST_9PFS_DIR=${HOST_9PFS_DIR:-"${AVD_PATH}/share"}
+ # parse input arguments
+ 
+@@ -52,9 +49,8 @@ while [ $# -gt 0 ]; do
+ 
+   case "$arg" in
+     "-keep")
+-      if [[ -n $2 ]]; then
++      if [[ $# -ge 2 && -n "$2" ]]; then
+         AVD_NAME="$2"
+-        INDEX_PROVIDED=true
+         shift
+       else
+         echo "Error: -keep requires a value."
+@@ -62,15 +58,20 @@ while [ $# -gt 0 ]; do
+       fi
+       ;;
+     "-qemu")
+-      QEMU_OPTION=""
+-      ARG_OPTION="${ARG_OPTION} ${arg}"
++      QEMU_OPTION=()
++      ARG_OPTION+=("${arg}")
+       ;;
+     "-p")
+-      HOST_9PFS_DIR="$2"
+-      shift
++      if [[ $# -ge 2 && -n "$2" ]]; then
++        HOST_9PFS_DIR="$2"
++        shift
++      else
++        echo "Error: -p requires a value." >&2
++        exit 1
++      fi
+       ;;
+     *)
+-      ARG_OPTION="${ARG_OPTION} ${arg}"
++      ARG_OPTION+=("${arg}")
+       ;;
+   esac
+ 
+@@ -79,7 +80,9 @@ done
+ 
+ # update variables
+ 
+-if [[ -n ${CUSTOM_AVD_SPACE} ]];then
++AVD_DISPLAY_NAME="${AVD_NAME//_/ }"
++
++if [[ -n ${CUSTOM_AVD_SPACE:-} ]]; then
+   AVD_PATH="${CUSTOM_AVD_SPACE}/${AVD_NAME}.vvd"
+ else
+   AVD_PATH="${AVD_HOME}/${AVD_NAME}.vvd"
+@@ -89,27 +92,36 @@ HOST_9PFS_DIR=${HOST_9PFS_DIR:-"${AVD_PATH}/share"}
  AVD_INI="${AVD_HOME}/${AVD_NAME}.ini"
  AVD_CONFIG_INI="${AVD_PATH}/config.ini"
  
 -mkdir -p ${AVD_PATH}
 +mkdir -p "${AVD_HOME}" "${AVD_PATH}"
  
- cat << EOF > ${AVD_INI}
+-cat << EOF > ${AVD_INI}
++cat << EOF > "${AVD_INI}"
  path=${AVD_PATH}
 -path.rel=avd/${AVD_PATH_REL}
  EOF
  
+-if [ -n "$(file -bL ${NUTTX_BIN} | grep 'ELF 64-bit LSB executable, ARM aarch64')" ]; then
 +# The bundled Vela emulator resolves VVD registrations directly in ~/.vela,
 +# even when ANDROID_AVD_HOME or CUSTOM_AVD_SPACE selects an external data disk.
 +# Publish only the selected instance's registration; its images stay in AVD_PATH.
@@ -595,11 +680,272 @@ index 498c5f257e0f81d713274ad79dd9f3551a448321..fa7562e7e646402d680d327c7092d3db
 +  cp "${AVD_INI}" "${HOME}/.vela/${AVD_NAME}.ini"
 +fi
 +
- if [ -n "$(file -bL ${NUTTX_BIN} | grep 'ELF 64-bit LSB executable, ARM aarch64')" ]; then
++NUTTX_FORMAT=$(file -bL -- "${NUTTX_BIN}")
++if [[ "${NUTTX_FORMAT}" == *"ELF 64-bit LSB executable, ARM aarch64"* ]]; then
    AVD_ABI="arm64-v8a"
    AVD_ARCH="arm64"
+-elif [ -n "$(file -bL ${NUTTX_BIN} | grep 'ELF 32-bit LSB executable, ARM')" ]; then
++elif [[ "${NUTTX_FORMAT}" == *"ELF 32-bit LSB executable, ARM"* ]]; then
+   AVD_ABI="armeabi-v7a"
+   AVD_ARCH="arm"
+-elif [ -n "$(file -bL ${NUTTX_BIN} | grep 'ELF 64-bit LSB executable, x86-64')" ]; then
++elif [[ "${NUTTX_FORMAT}" == *"ELF 64-bit LSB executable, x86-64"* ]]; then
+   AVD_ABI="x86_64"
+   AVD_ARCH="x86_64"
+ else
+   echo "Invalid NuttX binary."
++  exit 1
+ fi
+ 
+-cat << EOF > ${AVD_CONFIG_INI}
++cat << EOF > "${AVD_CONFIG_INI}"
+ AvdId = ${AVD_NAME}
+ abi.type = ${AVD_ABI}
+ avd.ini.displayname = ${AVD_DISPLAY_NAME}
+@@ -151,29 +163,28 @@ skin.name = xiaomi_smart_screen_10
+ skin.path = ${TARGETDIR}/prebuilts/tools/xiaomi_smart_screen_10
+ EOF
+ 
+-if [ ! -f ${AVD_PATH}/modem_simulator ]; then
++if [ ! -f "${AVD_PATH}/modem_simulator" ]; then
+   echo "Copy modem_simulator"
+-  cp -a ${TOP_DIR}/vendor/openvela/boards/vela/prebuilts/tools/modem_simulator ${AVD_PATH}/modem_simulator
++  cp -a "${TARGETDIR}/prebuilts/tools/modem_simulator" "${AVD_PATH}/modem_simulator"
+ fi
+ 
+ # coredump device
+ 
+-if [ -e ${AVD_PATH}/coredump.core ]; then
++if [ -e "${AVD_PATH}/coredump.core" ]; then
+ 
+-  core_format=$(file ${AVD_PATH}/coredump.core)
+   timesamp=$(date +%Y%m%d%H%M%S)
+-  mv ${AVD_PATH}/coredump.core ${AVD_PATH}/${timesamp}.core
+-  dd if=/dev/zero of=${AVD_PATH}/coredump.core bs=200M count=1
++  mv "${AVD_PATH}/coredump.core" "${AVD_PATH}/${timesamp}.core"
++  dd if=/dev/zero "of=${AVD_PATH}/coredump.core" bs=200M count=1
+   echo "A core file already exists. will be backed to ${timesamp}.core"
+ 
+ else
+   echo "Create a core file"
+-  dd if=/dev/zero of=${AVD_PATH}/coredump.core bs=200M count=1
++  dd if=/dev/zero "of=${AVD_PATH}/coredump.core" bs=200M count=1
+ fi
+ 
+-if [ ! -f ${AVD_PATH}/vela_data.bin ]; then
++if [ ! -f "${AVD_PATH}/vela_data.bin" ]; then
+   echo "Copy vela_data.img"
+-  cp ${TOP_DIR}/nuttx/vela_data.bin ${AVD_PATH}/vela_data.bin
++  cp "${TOP_DIR}/nuttx/vela_data.bin" "${AVD_PATH}/vela_data.bin"
+ fi
+ 
+ # 9pfs device
+@@ -183,29 +194,28 @@ if [ ! -d "$HOST_9PFS_DIR" ]; then
+ fi
+ 
+ if [ "$AVD_ARCH" == "x86_64" ]; then
+-QEMU_OPTION="${QEMU_OPTION} -cpu Skylake-Client,-hle,-rtm,-mpx
+--drive index=2,id=vendor,if=none,format=raw,file=${AVD_PATH}/coredump.core \
+--device virtio-blk-pci,drive=vendor"
++QEMU_OPTION+=(-cpu Skylake-Client,-hle,-rtm,-mpx
++  -drive "index=2,id=vendor,if=none,format=raw,file=${AVD_PATH}/coredump.core"
++  -device virtio-blk-pci,drive=vendor)
+ 
+ # 9pfs device
+ 
+-QEMU_OPTION="${QEMU_OPTION} \
+--fsdev local,security_model=none,id=fsdev0,path=$HOST_9PFS_DIR \
+--device virtio-9p-pci,id=fs0,fsdev=fsdev0,mount_tag=host"
++QEMU_OPTION+=(-fsdev "local,security_model=none,id=fsdev0,path=${HOST_9PFS_DIR}"
++  -device virtio-9p-pci,id=fs0,fsdev=fsdev0,mount_tag=host)
+ else
+-QEMU_OPTION="${QEMU_OPTION} \
+--drive index=2,id=vendor,if=none,format=raw,file=${AVD_PATH}/coredump.core \
+--device virtio-blk-device,bus=virtio-mmio-bus.5,drive=vendor \
+--netdev user,id=network,net=10.0.2.0/24,dhcpstart=10.0.2.16 \
+--device virtio-net-device,netdev=network,bus=virtio-mmio-bus.4 \
+--device virtio-snd,bus=virtio-mmio-bus.2 -allow-host-audio -semihosting \
+--device virtio-gpu-device,xres=720,yres=1280,bus=virtio-mmio-bus.6"
++QEMU_OPTION+=(
++  -drive "index=2,id=vendor,if=none,format=raw,file=${AVD_PATH}/coredump.core"
++  -device virtio-blk-device,bus=virtio-mmio-bus.5,drive=vendor
++  -netdev user,id=network,net=10.0.2.0/24,dhcpstart=10.0.2.16
++  -device virtio-net-device,netdev=network,bus=virtio-mmio-bus.4
++  -device virtio-snd,bus=virtio-mmio-bus.2 -allow-host-audio -semihosting
++  -device virtio-gpu-device,xres=720,yres=1280,bus=virtio-mmio-bus.6)
+ 
+ # 9pfs device
+ 
+-QEMU_OPTION="${QEMU_OPTION} \
+--fsdev local,security_model=none,id=fsdev0,path=$HOST_9PFS_DIR \
+--device virtio-9p-device,id=fs0,fsdev=fsdev0,mount_tag=host"
++QEMU_OPTION+=(-fsdev "local,security_model=none,id=fsdev0,path=${HOST_9PFS_DIR}"
++  -device virtio-9p-device,id=fs0,fsdev=fsdev0,mount_tag=host)
+ fi
+ 
+-${EMULATOR_BIN} -vela -avd ${AVD_NAME} -show-kernel $@ ${ARG_OPTION} ${QEMU_OPTION}
++exec "${EMULATOR_BIN}" -vela -avd "${AVD_NAME}" -show-kernel \
++  "${ARG_OPTION[@]}" "${QEMU_OPTION[@]}"
+diff --git a/boards/vela/prebuilts/tools/tests/test_run_emulator_portable.py b/boards/vela/prebuilts/tools/tests/test_run_emulator_portable.py
+new file mode 100644
+index 0000000..f79bf0a
+--- /dev/null
++++ b/boards/vela/prebuilts/tools/tests/test_run_emulator_portable.py
+@@ -0,0 +1,152 @@
++#!/usr/bin/env python3
++"""Check launcher arguments using tiny fixtures, without starting an emulator."""
++
++import json
++import os
++from pathlib import Path
++import shutil
++import subprocess
++import tempfile
++import unittest
++
++
++SCRIPT = Path(__file__).resolve().parents[1] / "run_emulator.sh"
++
++
++class PortableLauncherTest(unittest.TestCase):
++    def setUp(self):
++        self.temporary = tempfile.TemporaryDirectory(prefix="vela launcher ")
++        self.addCleanup(self.temporary.cleanup)
++        self.root = Path(self.temporary.name) / "项目 workspace"
++        self.target = self.root / "vendor/openvela/boards/vela"
++        self.tools = self.target / "prebuilts/tools"
++        self.tools.mkdir(parents=True)
++        self.script = self.tools / "run_emulator.sh"
++        shutil.copyfile(SCRIPT, self.script)
++        (self.tools / "modem_simulator").write_bytes(b"modem fixture")
++        (self.root / "nuttx").mkdir()
++        (self.root / "nuttx/nuttx").write_bytes(b"ELF fixture")
++        (self.root / "nuttx/vela_data.bin").write_bytes(b"data fixture")
++        self.bin = self.root / "host tools"
++        self.bin.mkdir()
++        self.argv = self.root / "arguments.json"
++        self.file_args = self.root / "file-arguments.json"
++        self.emulator = self.bin / "stub emulator"
++        self.write_executable(self.emulator, """
++import json, os, sys
++from pathlib import Path
++Path(os.environ['ARGV_LOG']).write_text(json.dumps(sys.argv[1:]))
++sys.exit(int(os.environ.get('EMULATOR_STATUS', '0')))
++""")
++        self.write_executable(self.bin / "file", """
++import json, os, sys
++from pathlib import Path
++assert len(sys.argv) == 4 and sys.argv[1:3] == ['-bL', '--'], sys.argv
++assert Path(sys.argv[3]).is_file(), sys.argv
++Path(os.environ['FILE_LOG']).write_text(json.dumps(sys.argv[1:]))
++print(os.environ.get('FILE_FORMAT', 'ELF 64-bit LSB executable, ARM aarch64'))
++""")
++        self.write_executable(self.bin / "dd", """
++import sys
++from pathlib import Path
++assert len(sys.argv) == 5, sys.argv
++assert sys.argv[1] == 'if=/dev/zero', sys.argv
++assert sys.argv[3:] == ['bs=200M', 'count=1'], sys.argv
++assert sys.argv[2].startswith('of='), sys.argv
++Path(sys.argv[2][3:]).write_bytes(b'core fixture')
++""")
++        self.home = self.root / "home 中文"
++        self.avd_home = self.root / "AVD registrations"
++        self.avd_space = self.root / "AVD images"
++        self.env = dict(os.environ, PATH=str(self.bin) + os.pathsep + os.environ["PATH"],
++                        TOP_DIR=str(self.root), TARGETDIR=str(self.target),
++                        EMULATOR_BIN=str(self.emulator), HOME=str(self.home),
++                        ANDROID_AVD_HOME=str(self.avd_home),
++                        CUSTOM_AVD_SPACE=str(self.avd_space), ARGV_LOG=str(self.argv),
++                        FILE_LOG=str(self.file_args))
++
++    @staticmethod
++    def write_executable(path, body):
++        path.write_text("#!/usr/bin/env python3\n" + body)
++        path.chmod(0o755)
++
++    def run_launcher(self, *arguments, **env):
++        return subprocess.run(["bash", str(self.script), *arguments],
++                              cwd=self.root.parent, env=dict(self.env, **env),
++                              text=True, capture_output=True)
++
++    def test_aarch64_paths_options_and_registration(self):
++        name = "class_demo 中文"
++        share = self.root / "shared files 中文"
++        result = self.run_launcher("-keep", name, "-no-window", "-gpu",
++                                   "swiftshader_indirect", "-p", str(share))
++        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
++        args = json.loads(self.argv.read_text())
++        self.assertEqual(args[:8], ["-vela", "-avd", name, "-show-kernel",
++                                   "-no-window", "-gpu", "swiftshader_indirect", "-qemu"])
++        self.assertEqual(args.count("-qemu"), 1)
++        self.assertEqual(args.count("-no-window"), 1)
++        self.assertNotIn("-keep", args)
++        self.assertNotIn("-p", args)
++        avd = self.avd_space / (name + ".vvd")
++        self.assertIn("index=2,id=vendor,if=none,format=raw,file=" + str(avd / "coredump.core"), args)
++        self.assertIn("local,security_model=none,id=fsdev0,path=" + str(share), args)
++        self.assertTrue(share.is_dir())
++        registration = "path=" + str(avd) + "\n"
++        self.assertEqual((self.avd_home / (name + ".ini")).read_text(), registration)
++        self.assertEqual((self.home / ".vela" / (name + ".ini")).read_text(), registration)
++        config = (avd / "config.ini").read_text()
++        self.assertIn("image.sysdir.1 = " + str(self.root / "nuttx"), config)
++        self.assertIn("skin.path = " + str(self.tools / "xiaomi_smart_screen_10"), config)
++        self.assertIn("avd.ini.displayname = class demo 中文", config)
++        self.assertEqual((avd / "vela_data.bin").read_bytes(), b"data fixture")
++        self.assertEqual((avd / "modem_simulator").read_bytes(), b"modem fixture")
++        self.assertEqual(json.loads(self.file_args.read_text()),
++                         ["-bL", "--", str(self.root / "nuttx/nuttx")])
++
++    def test_explicit_qemu_boundary_and_x86_defaults(self):
++        result = self.run_launcher("-keep", "x86", "-no-window", "-qemu", "-d",
++                                   "guest errors", FILE_FORMAT="ELF 64-bit LSB executable, x86-64")
++        self.assertEqual(result.returncode, 0, result.stderr)
++        args = json.loads(self.argv.read_text())
++        self.assertEqual(args[:8], ["-vela", "-avd", "x86", "-show-kernel",
++                                   "-no-window", "-qemu", "-d", "guest errors"])
++        self.assertEqual(args.count("-qemu"), 1)
++        self.assertIn("Skylake-Client,-hle,-rtm,-mpx", args)
++        self.assertIn("virtio-blk-pci,drive=vendor", args)
++        self.assertNotIn("virtio-blk-device,bus=virtio-mmio-bus.5,drive=vendor", args)
++
++    def test_existing_data_survives_and_core_is_backed_up(self):
++        result = self.run_launcher("-keep", "persistent")
++        self.assertEqual(result.returncode, 0, result.stderr)
++        avd = self.avd_space / "persistent.vvd"
++        (avd / "vela_data.bin").write_bytes(b"existing encrypted data")
++        (avd / "coredump.core").write_bytes(b"previous core")
++        result = self.run_launcher("-keep", "persistent")
++        self.assertEqual(result.returncode, 0, result.stderr)
++        self.assertEqual((avd / "vela_data.bin").read_bytes(), b"existing encrypted data")
++        backups = [path for path in avd.glob("*.core") if path.name != "coredump.core"]
++        self.assertEqual(len(backups), 1)
++        self.assertEqual(backups[0].read_bytes(), b"previous core")
++
++    def test_missing_keep_and_share_values_fail_before_launch(self):
++        for option in ("-keep", "-p"):
++            with self.subTest(option=option):
++                result = self.run_launcher(option)
++                self.assertNotEqual(result.returncode, 0)
++                self.assertIn("requires a value", result.stdout + result.stderr)
++                self.assertFalse(self.argv.exists())
++
++    def test_invalid_kernel_fails_before_launch(self):
++        result = self.run_launcher(FILE_FORMAT="ASCII text")
++        self.assertNotEqual(result.returncode, 0)
++        self.assertIn("Invalid NuttX binary", result.stdout)
++        self.assertFalse(self.argv.exists())
++
++    def test_emulator_exit_status_is_preserved(self):
++        result = self.run_launcher(EMULATOR_STATUS="37")
++        self.assertEqual(result.returncode, 37)
++
++
++if __name__ == "__main__":
++    unittest.main()
 diff --git a/boards/vela/src/etc/init.d/rc.sysinit b/boards/vela/src/etc/init.d/rc.sysinit
-index 9224c8f60774ad7da9f85d442bbd6b79f0134994..a38e7ac0295c86854c099f84b0d9d847d573c71c 100644
+index 9224c8f..a38e7ac 100644
 --- a/boards/vela/src/etc/init.d/rc.sysinit
 +++ b/boards/vela/src/etc/init.d/rc.sysinit
 @@ -50,6 +50,9 @@ mount -t hostfs -o fs=vendor/qemu/boards/vela/resource /host

@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "status": "passed",
+  "workload": {
+    "requested_seconds": 86400,
+    "guest_elapsed_ms": 86400640,
+    "host_elapsed_seconds": 86403.248,
+    "completed_iterations": 707001,
+    "worker0_iterations": 353379,
+    "worker1_iterations": 353622,
+    "worker0_elapsed_ms": 86400101,
+    "worker1_elapsed_ms": 86400028,
+    "logical_written_bytes": 6783168387,
+    "logical_verified_read_bytes": 13492123166,
+    "errors": 0,
+    "counter_scope": "Logical test payload only; not physical device I/O",
+    "progress_sample_count": 2878
+  },
+  "framebuffer_count": 578,
+  "source_analysis_sha256": "6aca64b22acbbd3a52159d62d4ecd44aef1d18638ee5ac38ccd448bccf1f5215",
+  "source_analysis": "encfs-results/endurance-24h-wrapped-20261024/run/analysis/analysis.json"
+}

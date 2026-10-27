@@ -8,11 +8,11 @@
 
 ## 环境要求
 
-课程扩展当前进度见[扩展状态](docs/encfs_extension_status.md)：UTF-8文件名、在线包装密钥轮换、789项存储回归和通用文件系统/模拟中断验证已集成；两轮24小时任务仍在运行，不能当作已通过。复现在线换钥见[说明](docs/encfs_keywrap.md)，通用回归见[验收说明](docs/encfs_extended_validation.md)。原10月24日首版报告继续保留历史范围。
+课程项目已实现中文路径加密、在线主密钥轮换，完成789项存储回归、通用文件系统与模拟中断恢复测试，以及24小时双线程707,001次事务、0错误的压力测试。换电脑演示请按[模拟器启动与测试流程](docs/encfs_demo.md)操作：启动入口自动定位项目，测试密钥和冷启动共用演示实例配置。
 
 - Ubuntu 22.04（**x86_64 / arm64 均可**）
 - 至少 40 GB 磁盘、16 GB 内存
-- 源码路径**仅使用英文字母**（不要用 `桌面` 等中文目录，否则编译/模拟器会异常）
+- 启动脚本支持移动项目目录及包含空格、中文的运行路径；源码编译目录按对应工具链要求选择
 - 已安装：git、git-lfs、curl、python3、build-essential（cmake/ninja 由 prebuilts 提供，ARM 宿主会自动选用对应架构）
 
 ```bash
@@ -102,7 +102,7 @@ goldfish-armv8a-ap>
 
 ### 原理说明
 
-官方 `emulator.sh` 从 `nuttx/` 目录读取内核与镜像，而 `--cmake` 编译产物在 `cmake_out/`。`run-emulator.sh` 会在启动前自动将产物 symlink 到 `nuttx/`，再调用 `./emulator.sh vela`。
+官方 `emulator.sh` 从 `nuttx/` 目录读取内核与镜像，而 `--cmake` 编译产物在 `cmake_out/`。`run-emulator.sh` 会在启动前自动将产物 symlink 到 `nuttx/`，再定位宿主模拟器并调用板级启动脚本。
 
 ## 仓库结构说明
 
